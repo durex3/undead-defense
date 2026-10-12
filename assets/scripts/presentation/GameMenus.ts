@@ -1,0 +1,540 @@
+import { WEAPON_ROLES } from "../battle/BuildProgression";
+
+import { STAGES, STAGE_GUIDES } from "../battle/StageRules";
+import { PLAY_VERSION, setupWechatShare } from "../platform/PlayPreferences";
+
+import {
+  CHARACTERS,
+  ACHIEVEMENTS,
+  CharacterId,
+  StageId,
+} from "../battle/ProgressionConfig";
+
+import { battleReport } from "../battle/BattleReport";
+import { Node, Graphics, EventTouch, KeyCode } from "cc";
+
+import { SYNTHESIS_RECIPES, MAX_SKILL_LEVEL, Skill, Passive, WEAPONS as SKILLS, cardText, NAMES as names, COLORS as colors, EVOLUTIONS } from "../battle/SurvivalConfig";
+import { skillGlyph } from "./BattlePainter";
+
+import { weaponFormName } from "../battle/WeaponForms";
+
+import type { GameBootstrap } from "../GameBootstrap";
+
+/** Composes menu screens through a typed view of bootstrap state and actions. */
+export class GameMenus {
+  private targetPicker = false;
+  private targetRecipes = Object.keys(SYNTHESIS_RECIPES) as Skill[];
+  handleTargetKey(code: number) {
+    if (!this.targetPicker || this.host.world.state !== "upgrade") return false;
+    if (code === KeyCode.ESCAPE) this.closeTargetPicker();
+    const index = [KeyCode.DIGIT_1, KeyCode.DIGIT_2, KeyCode.DIGIT_3, KeyCode.DIGIT_4, KeyCode.DIGIT_5, KeyCode.DIGIT_6, KeyCode.DIGIT_7, KeyCode.DIGIT_8, KeyCode.DIGIT_9].indexOf(code);
+    if (index >= 0) this.selectTarget(this.targetRecipes[index]);
+    return true;
+  }
+  private closeTargetPicker() { this.targetPicker = false; this.host.shown = ""; this.host.menus(); }
+  private selectTarget(skill: Skill | null) {
+    if (this.host.world.setBuildTarget(skill)) this.closeTargetPicker();
+  }
+  private drawTargetPicker() {
+    const w = this.host.world;
+    this.host.text(this.host.overlay, "选择目标组合", 0, 220, 34);
+    this.host.text(this.host.overlay, "锁定后优先提供两把配方武器 · 不消耗重抽次数", 0, 174, 18, "#a7b8c5");
+    this.targetRecipes.forEach((main, i) => {
+      const partner = SYNTHESIS_RECIPES[main]!;
+      const x = (i % 3 - 1) * 350, y = 102 - Math.floor(i / 3) * 103;
+      const reason = w.targetReason(main);
+      const remaining = 20 - w.skills[main] - w.skills[partner];
+      this.host.panel(this.host.overlay, x, y, 330, 91, reason ? "#222a36" : "#293443");
+      const title = this.host.button(this.host.overlay, `${i + 1}  ${names[main]} + ${names[partner]}`, x, y + 16, 310, 40, () => this.selectTarget(main));
+      title.fontSize = 18; title.lineHeight = 27;
+      this.host.text(this.host.overlay, reason || `${w.skills[main]}/10 + ${w.skills[partner]}/10 · 还需 ${remaining} 次武器升级${w.buildTarget === main ? " · 已锁定" : ""}`, x, y - 25, 14, reason ? "#ad9292" : "#9edac8", 316);
+    });
+    this.host.button(this.host.overlay, "自动推荐", -150, -223, 250, 42, () => this.selectTarget(null));
+    this.host.button(this.host.overlay, "返回升级", 150, -223, 250, 42, () => this.closeTargetPicker());
+  }
+  constructor(private host: ReturnType<GameBootstrap["menuContext"]>) {}
+  showStart() {
+    this.host.confirmation = null;
+    setupWechatShare();
+    this.host.started = false;
+    this.host.clearInput();
+    this.host.progress.flush();
+    this.host.overlay.destroyAllChildren();
+    this.host.panel(this.host.overlay, 0, 0, 1100, 570, "#191e2d");
+    this.host.text(this.host.overlay, "余烬幸存者 · 选择冒险", 0, 220, 34);
+    this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
+    this.host.muteButton(425, 225, true);
+    const count = this.host.progress.data.achievements.length;
+    this.host.text(
+      this.host.overlay,
+      `成就 ${count}/${ACHIEVEMENTS.length} · 武器槽 ${this.host.progress.weaponSlots}/6 · 5槽：8成就+第三关；6槽：14成就+第五关`,
+      0,
+      174,
+      20,
+      "#b9c8d5",
+    );
+    (Object.keys(CHARACTERS) as CharacterId[]).forEach((id, i) => {
+      const c = CHARACTERS[id],
+        x = (i - 1) * 340,
+        unlocked = this.host.progress.unlockedCharacter(id);
+      this.host.panel(
+        this.host.overlay,
+        x,
+        45,
+        315,
+        185,
+        this.host.selectedCharacter === id ? "#374a55" : "#252f3c",
+      );
+      this.host.text(
+        this.host.overlay,
+        c.name,
+        x,
+        102,
+        25,
+        unlocked ? "#f3d798" : "#9ba5b1",
+        290,
+      );
+      this.host.text(
+        this.host.overlay,
+        unlocked ? c.description.replace(" · ", "\n") : `需要 ${c.need} 项成就\n并通关${STAGES[c.stage as StageId]?.name || "地牢"}`,
+        x,
+        46,
+        18,
+        "#c4cdd7",
+        295,
+      );
+      this.host.button(
+        this.host.overlay,
+        unlocked
+          ? this.host.selectedCharacter === id
+            ? "已选择"
+            : "选择角色"
+          : `成就 ${count}/${c.need} · 未解锁`,
+        x,
+        -15,
+        278,
+        42,
+        () => {
+          if (unlocked) {
+            this.host.selectedCharacter = id;
+            this.host.showStart();
+          }
+        },
+      );
+    });
+    for (const stage of [1, 2, 3, 4, 5, 6, 7] as StageId[]) {
+      const unlocked = this.host.progress.unlockedStage(stage);
+      this.host.button(
+        this.host.overlay,
+        unlocked ? `${this.host.selectedStage === stage ? "✓ " : ""}${stage} · ${STAGES[stage].name}`
+          : `${stage} · 通关第${stage-1}关解锁`,
+        stage<=4 ? (stage-2.5)*263 : (stage-6)*345,
+        stage<=4 ? -83 : -132,
+        stage<=4 ? 250 : 325,
+        42,
+        () => {
+          if (unlocked) {
+            this.host.selectedStage = stage;
+            this.host.showStart();
+          }
+        },
+      );
+    }
+    const guide = STAGE_GUIDES[this.host.selectedStage];
+    if (guide) {
+      this.host.text(this.host.overlay, guide.threat, 0, -173, 16, "#e8cc92", 1050);
+      this.host.text(this.host.overlay, guide.builds, 0, -199, 15, "#a9cdbc", 1050);
+    }
+    this.host.text(
+      this.host.overlay,
+      this.host.progress.pending
+        ? "进度暂未保存，将自动重试"
+        : this.host.touchMode ? "左侧拖动移动 · 右下角释放新星 · 4 分钟迎战首领" : "WASD 移动 · 空格新星 · 4 分钟迎战首领",
+      0,
+      guide ? -224 : -194,
+      16,
+      "#adbccc",
+    );
+    this.host.button(this.host.overlay, "查看成就", -190, -260, 290, 50, () =>
+      this.host.showAchievements(),
+    );
+    this.host.button(this.host.overlay, "开始冒险", 190, -260, 290, 50, () =>
+      this.host.restart(),
+    );
+  }
+  showAchievements(page = 0) {
+    page = Math.max(0, Math.min(Math.ceil(ACHIEVEMENTS.length/10)-1,page));
+    this.host.overlay.destroyAllChildren();
+    this.host.panel(this.host.overlay, 0, 0, 1100, 570, "#191e2d");
+    this.host.text(
+      this.host.overlay,
+      `冒险成就 · ${this.host.progress.data.achievements.length}/${ACHIEVEMENTS.length} · ${page+1}/${Math.ceil(ACHIEVEMENTS.length/10)} 页`,
+      0,
+      225,
+      32,
+    );
+    ACHIEVEMENTS.slice(page*10,page*10+10).forEach((a, i) => {
+      const x = i<5 ? -260 : 260,
+        y = 156 - (i % 5) * 75,
+        done = this.host.progress.data.achievements.includes(a.id);
+      this.host.text(
+        this.host.overlay,
+        `${done ? "✓" : "○"} ${a.name}`,
+        x,
+        y,
+        22,
+        done ? "#e8cc92" : "#b5c2cf",
+        330,
+      );
+      this.host.text(this.host.overlay, a.description, x, y - 22, 16, "#adbccc", 330);
+      this.host.text(
+        this.host.overlay,
+        this.host.progress.progressLine(a.id, this.host.started ? this.host.world : undefined),
+        x,
+        y - 43,
+        15,
+        done ? "#e8cc92" : "#8fcfbd",
+        330,
+      );
+    });
+    if(page>0)this.host.button(this.host.overlay,"上一页",-385,-237,180,46,()=>this.host.showAchievements(page-1));
+    if((page+1)*10<ACHIEVEMENTS.length)this.host.button(this.host.overlay,"下一页",385,-237,180,46,()=>this.host.showAchievements(page+1));
+    this.host.button(
+      this.host.overlay,
+      this.host.started ? "返回暂停" : "返回选择",
+      0,
+      -237,
+      280,
+      46,
+      () => {
+        if (this.host.started) {
+          this.host.shown = "";
+          this.host.menus();
+        } else this.host.showStart();
+      },
+    );
+  }
+  menus() {
+    if (this.host.confirmation) return;
+    const w = this.host.world;
+    if (w.state !== "upgrade") this.targetPicker = false;
+    if (w.state === "won" && !this.host.victorySeen) {
+      this.host.victorySeen = true;
+      this.host.victoryTime = 2.2;
+      this.host.sound("choose");
+    }
+    const state = (this.host.victoryTime > 0 ? "victory" : w.state) + (w.pauses.has("menu") ? "paused" : "");
+    if (state === this.host.shown) return;
+    this.host.shown = state;
+    this.host.overlay.destroyAllChildren();
+    if (state === "battle") return;
+    this.host.clearInput();
+    this.host.panel(this.host.overlay, 0, 0, 1180, 570, "#151b29");
+    if (this.host.victoryTime > 0) {
+      this.host.text(this.host.overlay, w.stageId===5 ? "亡者君王已击败" : "首领已击败 · 通关成功", 0, 75, 42, "#e8cc92");
+      this.host.text(this.host.overlay, w.stageId===5 ? "王庭远征完成 · 熔炉已开启" : `你击败了${STAGES[w.stageId].boss}`, 0, 0, 26);
+      this.host.text(this.host.overlay, "正在整理战斗报告…", 0, -85, 19, "#adbccc");
+    } else if (w.state === "evolution" && w.pendingEvolution) {
+      const skill = w.pendingEvolution;
+      this.host.text(this.host.overlay, "秘术进化", 0, 208, 36);
+      this.host.text(
+        this.host.overlay,
+        SYNTHESIS_RECIPES[skill] ? "组合条件已达成 · 选择玩法 · 两把武器均保留" : "选择攻击形态 · 保留原武器槽位",
+        0,
+        159,
+        18,
+        "#a7b8c5",
+      );
+      EVOLUTIONS[skill].forEach((e, i) => {
+        const x = (i - (EVOLUTIONS[skill].length - 1) / 2) * 420;
+        const p = this.host.panel(this.host.overlay, x, -12, 382, 300, "#303948");
+        skillGlyph(
+          this.host.make("EvolutionIcon", p).addComponent(Graphics),
+          skill,
+          0,
+          94,
+          26,
+        );
+        this.host.text(p, `${i + 1}  ${e.name}`, 0, 43, 27, colors[skill], 360);
+        this.host.text(p, e.description, 0, -23, 19, "#d5e0e5", 350);
+        this.host.button(p, "完成进化", 0, -110, 295, 46, () => this.host.evolve(e.id));
+      });
+      this.host.button(this.host.overlay, SYNTHESIS_RECIPES[skill] ? "使用默认分支" : "返回三选一", 0, -220, 210, 42, () => {
+        w.back();
+        this.host.shown = "";
+      });
+    } else if (w.state === "upgrade") {
+      if (this.targetPicker) { this.drawTargetPicker(); return; }
+      const progress = w.growthProgress;
+      this.host.text(this.host.overlay, "灵魂觉醒", 0, 210, 36);
+      this.host.text(
+        this.host.overlay,
+        progress
+          ? `${progress.locked ? "已锁定" : "推荐组合"} · ${names[progress.main]} ${w.skills[progress.main]}/10 + ${names[progress.partner]} ${w.skills[progress.partner]}/10 · 还需 ${progress.remaining} 次武器升级`
+          : `主修 ${names[w.buildWeapons[0]]} · 4级小成 / 7级觉醒 / 10级终式`,
+        0,
+        162,
+        18,
+        "#a7b8c5",
+      );
+      this.host.button(this.host.overlay, "选择目标组合", 330, -223, 250, 42, () => {
+        this.targetPicker = true; this.host.shown = ""; this.host.menus();
+      });
+      if (w.buildTarget) this.host.button(this.host.overlay, "取消锁定", -330, -223, 210, 42, () => this.selectTarget(null));
+      w.cards.forEach((c, i) => {
+        const x = (i - (w.cards.length - 1) / 2) * 350;
+        const p = this.host.panel(this.host.overlay, x, -12, 328, 330, "#293443");
+        p.on(Node.EventType.TOUCH_END, (e: EventTouch) => {
+          e.propagationStopped = true;
+          this.host.choose(c);
+        });
+        const icon = this.host.make("SkillIcon", p).addComponent(Graphics);
+        skillGlyph(icon, c, 0, 112, 23);
+        const isSkill = SKILLS.includes(c as Skill);
+        const lv = isSkill
+          ? w.skills[c as Skill]
+          : c === "repair"
+            ? 0
+            : w.passives[c as Passive];
+        this.host.text(
+          p,
+          `${i + 1}  ${names[c]}`,
+          0,
+          43,
+          25,
+          colors[c] || "#e9cf92",
+          306,
+        );
+        const nextLevel = Math.min(MAX_SKILL_LEVEL, lv + 1);
+        if (isSkill) {
+          const skill = c as Skill;
+          const branch = lv >= MAX_SKILL_LEVEL && !w.evolutions[skill];
+          const current = weaponFormName(skill, lv, !!w.evolutions[skill]);
+          const next = weaponFormName(skill, nextLevel, !!w.evolutions[skill]);
+          const pair = w.growthPair;
+          const lane = skill === pair?.main ? "组合武器" : skill === pair?.partner ? "配方伙伴" : skill === w.buildWeapons[0] ? "主修" : skill === w.buildWeapons[1] ? "副修" : !lv ? "新武器" : "强化";
+          const partner = SYNTHESIS_RECIPES[skill] || (Object.entries(SYNTHESIS_RECIPES).find(([,p]) => p === skill)?.[0] as Skill | undefined);
+          this.host.text(p, `${lane} · ${lv}/${MAX_SKILL_LEVEL}`, 0, 76, 16, "#e8cc92", 300);
+          this.host.text(p, branch ? "终极进化 · 选择流派分支" : !lv ? `获得 ${next}` : current === next ? `${current} · 强度提升` : `${current} → ${next}`, 0, 8, 16, "#e8cc92", 304);
+          this.host.text(p, partner ? `组合需 ${names[partner]} ${w.skills[partner]}/10 · 双满级自动触发` : WEAPON_ROLES[skill], 0, -27, 15, "#9edac8", 304);
+        }
+        this.host.text(p, cardText(c, lv), 0, -70, 16, "#c7d2dc", 302);
+        this.host.button(
+          p,
+          isSkill
+            ? lv >= MAX_SKILL_LEVEL && !w.evolutions[c as Skill]
+              ? "终极进化"
+              : lv
+                ? "升级至 " + (lv + 1) + " 级"
+                : "学习 · 立即释放"
+            : "选择",
+          0,
+          -144,
+          282,
+          45,
+          () => this.host.choose(c),
+        );
+      });
+      this.host.button(
+        this.host.overlay,
+        `重抽（${w.refreshes}）`,
+        0,
+        -223,
+        210,
+        42,
+        () => {
+          w.refresh();
+          this.host.shown = "";
+        },
+      );
+    } else if (w.state === "won" || w.state === "lost") {
+      const report = battleReport(w);
+      this.host.text(
+        this.host.overlay,
+        w.state === "won" ? "通关成功 · 首领已击败" : report.bossRemaining !== null ? `挑战失败 · 首领还剩 ${report.bossRemaining}% 生命` : "挑战失败 · 战斗报告",
+        0,
+        215,
+        32,
+      );
+      this.host.text(
+        this.host.overlay,
+        `存活 ${this.host.clock(w.time)} · 击败 ${w.kills} · 等级 ${w.level}${report.phase ? ` · 首领第 ${report.phase} 阶段` : ""} · 总伤害 ${Math.round(report.total)}`,
+        0,
+        167,
+        21,
+      );
+      this.host.text(this.host.overlay, "武器 / 成长", -315, 120, 19, "#adbccc", 300);
+      this.host.text(this.host.overlay, "有效伤害 / 占比", 60, 120, 19, "#adbccc", 280);
+      this.host.text(this.host.overlay, "击杀", 370, 120, 19, "#adbccc", 100);
+      report.rows.forEach((row, i) => {
+        const y = 90 - i * 29;
+        this.host.panel(this.host.overlay, 0, y, 940, 26, "#26323f");
+        this.host.text(
+          this.host.overlay,
+          `${row.name} · ${row.stage}`,
+          -285,
+          y,
+          18,
+          colors[row.skill],
+          365,
+        );
+        this.host.text(
+          this.host.overlay,
+          `${Math.round(row.damage)} · ${(row.share * 100).toFixed(1)}%${w.combinations.stats[row.skill] ? ` · 联动+${Math.round(w.combinations.stats[row.skill]!.damage)}/${w.combinations.stats[row.skill]!.triggers}次` : ""}`,
+          60,
+          y,
+          15,
+          "#f4e8d3",
+          320,
+        );
+        this.host.text(this.host.overlay, `${row.kills}`, 370, y, 20, "#f4e8d3", 100);
+      });
+      this.host.text(
+        this.host.overlay,
+        `其他伤害 ${Math.round(report.otherDamage)} · 击杀 ${report.otherKills}  |  回复：药水 ${Math.round(w.healing.potion)} / 技能 ${Math.round(w.healing.repair)} / 蝙蝠 ${Math.round(w.expansion.healed)}`,
+        0,
+        -136,
+        18,
+        "#adbccc",
+      );
+      this.host.text(
+        this.host.overlay,
+        report.losses.length
+          ? w.state === "lost" && report.deathSource
+            ? `致命来源：${report.deathSource} · 下局建议：${report.retryTip}`
+            : "主要受伤：" + report.losses.slice(0,3).map(r=>`${r.name} ${Math.round(r.damage)}`).join(" / ")
+          : "本局未受到伤害",
+        0,
+        -173,
+        18,
+        "#edb5ad",
+      );
+      this.host.text(this.host.overlay, this.host.progress.bestLine(w.stageId), 0, -77, 14, "#e8cc92", 940);
+      this.host.text(this.host.overlay, report.comboTriggers
+        ? `组合联动 · 额外伤害 ${Math.round(report.comboDamage)} · 触发 ${report.comboTriggers} 次（已计入总伤害）`
+        : "组合联动 · 本局尚未触发", 0, -103, 17, "#9edac8", 940);
+      this.host.button(this.host.overlay, "再战一局", -175, -247, 250, 50, () =>
+        this.host.restart(),
+      );
+      this.host.text(
+        this.host.overlay,
+        this.host.runUnlocks.length
+          ? "新解锁：" + this.host.runUnlocks.join(" / ")
+          : `本局成就 +${this.host.runEarned.length} · 累计 ${this.host.progress.data.achievements.length}/${ACHIEVEMENTS.length}${this.host.progress.pending ? " · 保存待重试" : ""}`,
+        0,
+        -208,
+        17,
+        "#e8cc92",
+      );
+      this.host.button(this.host.overlay, "返回选关页面", 175, -247, 250, 50, () =>
+        this.host.showStart(),
+      );
+    } else {
+      if (w.shopOpen) {
+        this.host.text(this.host.overlay, `补给商店 · 金币 ${w.gold} · 装备 ${w.weaponCount}/${w.weaponSlots}`, 0, 225, 26, "#e8cc92");
+        (["buy", "sell", "fusion"] as const).forEach((tab, i) => {
+          this.host.button(this.host.overlay, ({buy:"购买补给",sell:"回收装备",fusion:"终阶融合"})[tab] + (this.host.shopTab === tab ? " ·" : ""), (i-1)*300, 155, 270, 52, () => { this.host.shopTab=tab; this.host.pendingShopAction=null; this.host.shown=""; });
+        });
+        const pending = this.host.pendingShopAction;
+        if (pending) {
+          const sacrifice = pending.skill;
+          this.host.text(this.host.overlay, "确认回收装备", 0, 65, 27);
+          this.host.text(this.host.overlay, `将失去 ${names[sacrifice]} Lv.${w.skills[sacrifice]} 及其进化`, 0, 8, 21, "#f1b9a9", 900);
+          this.host.text(this.host.overlay, "获得 3 金币；该装备的攻击与效果立即移除", 0, -42, 19, "#c7d2dc", 900);
+          this.host.button(this.host.overlay, "取消", -160, -112, 260, 56, () => {this.host.pendingShopAction=null;this.host.shown="";});
+          this.host.button(this.host.overlay, "确认回收", 160, -112, 260, 56, () => {w.sellShop(pending.skill);this.host.pendingShopAction=null;this.host.shown="";});
+        } else if (this.host.shopTab === "buy") {
+          w.shopItems.forEach((s,i) => {
+            const x=(i-1.5)*250, lv=w.skills[s];
+            this.host.panel(this.host.overlay,x,10,230,210,"#26323f");
+            this.host.text(this.host.overlay,names[s],x,78,20,colors[s],220);
+            this.host.text(this.host.overlay,`${lv ? `Lv.${lv} → ${lv+1}` : "学习武器"} · ${w.shopCost(s)} 金`,x,38,17,"#c7d2dc",220);
+            this.host.button(this.host.overlay,w.shopBuyReason(s)||"购买",x,-12,204,52,()=>{w.buyShop(s);this.host.shown="";});
+            this.host.button(this.host.overlay,w.shopLocked.includes(s)?"已锁定":"锁定",x,-70,204,44,()=>{w.toggleShopLock(s);this.host.shown="";});
+          });
+          if (!w.shopItems.length) this.host.text(this.host.overlay,"本批补给已售罄，可付费刷新",0,20,24);
+          this.host.button(this.host.overlay,`刷新 · 2 金 · 剩 ${w.shopRefreshes} 次`,0,-136,360,48,()=>{w.refreshShop();this.host.shown="";});
+        } else if (this.host.shopTab === "sell") {
+          SKILLS.filter(s=>w.skills[s]).forEach((s,i)=>{
+            const x=(i%3-1)*330,y=65-Math.floor(i/3)*115;
+            this.host.panel(this.host.overlay,x,y,310,100,"#26323f");
+            this.host.text(this.host.overlay,`${names[s]} Lv.${w.skills[s]}`,x,y+24,18,colors[s],300);
+            this.host.button(this.host.overlay,w.weaponCount<=1?"保留最后武器":"回收 +3 金",x,y-20,280,44,()=>{if(w.weaponCount<=1)w.sellShop(s);else this.host.pendingShopAction={type:"sell",skill:s};this.host.shown="";});
+          });
+        } else {
+          this.host.text(this.host.overlay,"两把配方武器都满 10 级 → 自动组合超武",0,94,20,"#c7d2dc");
+          this.host.text(this.host.overlay,"无需购买或确认 · 两把武器均保留 · 最终伤害 +80%",0,52,18,"#e8cc92");
+          Object.entries(SYNTHESIS_RECIPES).forEach(([main, other], i) => {
+            const skill = main as Skill, partner = other as Skill;
+            this.host.text(this.host.overlay,`${names[skill]} ${w.skills[skill]}/10 + ${names[partner]} ${w.skills[partner]}/10  →  ${w.evolutions[skill] ? EVOLUTIONS[skill].find(e => e.id === w.evolutions[skill])?.name || "已觉醒" : EVOLUTIONS[skill].map(e => e.name).join(" / ")}`,0,10-i*32,18,colors[skill],1000);
+          });
+        }
+        this.host.text(this.host.overlay,w.shopMessage,0,-190,17,"#e8cc92",1020);
+        this.host.button(this.host.overlay,"返回暂停菜单",-230,-247,400,54,()=>{w.closeShop();this.host.pendingShopAction=null;this.host.shown="";});
+        this.host.button(this.host.overlay,"继续冒险",230,-247,400,54,()=>this.host.togglePause());
+        return;
+      }
+      this.host.text(this.host.overlay, "已暂停", 0, 180, 36);
+      this.host.muteButton(445, 225, false);
+      this.host.text(this.host.overlay, "移动拾取结晶 · 升级选择秘术\n空格释放新星 · 躲开红色预警", -230, -152, 17, "#adbccc", 440);
+      this.host.text(
+        this.host.overlay,
+        SKILLS.filter((k) => w.skills[k])
+          .map(
+            (k) =>
+              `${weaponFormName(k, w.skills[k], !!w.evolutions[k])}  ${w.evolutions[k] ? "已进化" : "Lv." + w.skills[k]}  ·  伤害 ${Math.round(w.damage[k] || 0)}`,
+          )
+          .join("\n"),
+        -230,
+        80,
+        18,
+        "#c7d2dc",
+        440,
+      );
+      const bonus = Object.entries(w.tagBonus).filter(([, v]) => v > 0).map(([k, v]) => `${k} +${Math.round(v * 100)}%`).join(" · ");
+      if (bonus) this.host.text(this.host.overlay, `流派加成：${bonus}`, -230, -75, 16, "#e8cc92", 440);
+      this.host.button(this.host.overlay, "继续冒险", 280, 88, 270, 48, () =>
+        this.host.togglePause(),
+      );
+      if (!w.shopOpen) this.host.button(this.host.overlay, "打开补给商店", 280, 26, 270, 48, () => {
+        this.host.shopTab="buy"; this.host.pendingShopAction=null; w.openShop(); this.host.shown = "";
+      });
+      this.host.button(this.host.overlay, "重新开始", 280, -36, 270, 48, () =>
+        this.host.confirmAbandon("restart"),
+      );
+      this.host.button(this.host.overlay, "返回选关页面", 280, -98, 270, 48, () =>
+        this.host.confirmAbandon("selection"),
+      );
+      this.host.button(this.host.overlay, "本局成就进度", 280, -160, 270, 48, () =>
+        this.host.showAchievements(),
+      );
+    }
+  }
+  muteButton(x: number, y: number, start: boolean) {
+    this.host.button(this.host.overlay, this.host.preferences.muted ? "声音：关" : "声音：开", x, y, 160, 40, () => {
+      this.host.preferences.toggleMute();
+      if (start) this.host.showStart();
+      else { this.host.shown = ""; this.host.menus(); }
+    });
+  }
+  cancelConfirmation() {
+    this.host.confirmation = null;
+    this.host.clearInput();
+    this.host.shown = "";
+    this.host.menus();
+  }
+  confirmAbandon(action: "restart" | "selection") {
+    this.host.confirmation = action;
+    this.host.clearInput();
+    this.host.overlay.destroyAllChildren();
+    this.host.panel(this.host.overlay, 0, 0, 850, 350, "#191e2d");
+    this.host.text(this.host.overlay, "结束本次冒险？", 0, 100, 32);
+    this.host.text(this.host.overlay, "本局战斗无法继续，已获得的成就会保留。", 0, 20, 22);
+    this.host.button(this.host.overlay, "取消", -170, -95, 250, 55, () => this.host.cancelConfirmation());
+    this.host.button(this.host.overlay, "确认结束", 170, -95, 250, 55, () => {
+      this.host.syncProgress();
+      this.host.progress.flush();
+      if (action === "restart") this.host.restart(); else this.host.showStart();
+    });
+  }
+}

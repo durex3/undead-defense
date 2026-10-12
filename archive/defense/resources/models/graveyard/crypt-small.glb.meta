@@ -1,0 +1,139 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "289d2938-4c1b-46e6-8ddf-39b273b20053",
+  "files": [],
+  "subMetas": {
+    "1f746": {
+      "importer": "gltf-mesh",
+      "uuid": "289d2938-4c1b-46e6-8ddf-39b273b20053@1f746",
+      "displayName": "",
+      "id": "1f746",
+      "name": "crypt-small.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 414
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2b33f": {
+      "importer": "gltf-embeded-image",
+      "uuid": "289d2938-4c1b-46e6-8ddf-39b273b20053@2b33f",
+      "displayName": "",
+      "id": "2b33f",
+      "name": "colormap.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "96c50": {
+      "importer": "texture",
+      "uuid": "289d2938-4c1b-46e6-8ddf-39b273b20053@96c50",
+      "displayName": "",
+      "id": "96c50",
+      "name": "colormap.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "289d2938-4c1b-46e6-8ddf-39b273b20053@2b33f"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9991c": {
+      "importer": "gltf-material",
+      "uuid": "289d2938-4c1b-46e6-8ddf-39b273b20053@9991c",
+      "displayName": "",
+      "id": "9991c",
+      "name": "colormap.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bf27e": {
+      "importer": "gltf-scene",
+      "uuid": "289d2938-4c1b-46e6-8ddf-39b273b20053@bf27e",
+      "displayName": "",
+      "id": "bf27e",
+      "name": "crypt-small.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "colormap",
+        "uri": "289d2938-4c1b-46e6-8ddf-39b273b20053@2b33f"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "289d2938-4c1b-46e6-8ddf-39b273b20053@1f746"
+      ],
+      "skeletons": [],
+      "textures": [
+        "289d2938-4c1b-46e6-8ddf-39b273b20053@96c50"
+      ],
+      "materials": [
+        "289d2938-4c1b-46e6-8ddf-39b273b20053@9991c"
+      ],
+      "scenes": [
+        "289d2938-4c1b-46e6-8ddf-39b273b20053@bf27e"
+      ]
+    }
+  }
+}

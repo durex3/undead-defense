@@ -1,0 +1,123 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "eb4afa07-a467-49cf-889c-fd21cb997060",
+  "files": [],
+  "subMetas": {
+    "e490f": {
+      "importer": "gltf-mesh",
+      "uuid": "eb4afa07-a467-49cf-889c-fd21cb997060@e490f",
+      "displayName": "",
+      "id": "e490f",
+      "name": "shotgun.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1120
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e39f7": {
+      "importer": "texture",
+      "uuid": "eb4afa07-a467-49cf-889c-fd21cb997060@e39f7",
+      "displayName": "",
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/models/props/engineer_texture.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "693f5": {
+      "importer": "gltf-material",
+      "uuid": "eb4afa07-a467-49cf-889c-fd21cb997060@693f5",
+      "displayName": "",
+      "id": "693f5",
+      "name": "engineer.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "df9d9": {
+      "importer": "gltf-scene",
+      "uuid": "eb4afa07-a467-49cf-889c-fd21cb997060@df9d9",
+      "displayName": "",
+      "id": "df9d9",
+      "name": "shotgun.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "engineer_texture",
+        "uri": "db://assets/resources/models/props/engineer_texture.png"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "eb4afa07-a467-49cf-889c-fd21cb997060@e490f"
+      ],
+      "skeletons": [],
+      "textures": [
+        "eb4afa07-a467-49cf-889c-fd21cb997060@e39f7"
+      ],
+      "materials": [
+        "eb4afa07-a467-49cf-889c-fd21cb997060@693f5"
+      ],
+      "scenes": [
+        "eb4afa07-a467-49cf-889c-fd21cb997060@df9d9"
+      ]
+    }
+  }
+}

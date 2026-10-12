@@ -1,0 +1,139 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea",
+  "files": [],
+  "subMetas": {
+    "ffb1e": {
+      "importer": "gltf-mesh",
+      "uuid": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@ffb1e",
+      "displayName": "",
+      "id": "ffb1e",
+      "name": "gravestone-decorative.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 92
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2b33f": {
+      "importer": "gltf-embeded-image",
+      "uuid": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@2b33f",
+      "displayName": "",
+      "id": "2b33f",
+      "name": "colormap.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "96c50": {
+      "importer": "texture",
+      "uuid": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@96c50",
+      "displayName": "",
+      "id": "96c50",
+      "name": "colormap.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@2b33f"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9991c": {
+      "importer": "gltf-material",
+      "uuid": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@9991c",
+      "displayName": "",
+      "id": "9991c",
+      "name": "colormap.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e182e": {
+      "importer": "gltf-scene",
+      "uuid": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@e182e",
+      "displayName": "",
+      "id": "e182e",
+      "name": "gravestone-decorative.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "colormap",
+        "uri": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@2b33f"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@ffb1e"
+      ],
+      "skeletons": [],
+      "textures": [
+        "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@96c50"
+      ],
+      "materials": [
+        "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@9991c"
+      ],
+      "scenes": [
+        "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@e182e"
+      ]
+    }
+  }
+}

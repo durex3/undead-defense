@@ -1,0 +1,20 @@
+export const MODELS: Record<string,string> = {
+  "Skeleton_Golem": "8490eec4-83ed-412f-8aab-92d6e330d992@f7858",
+  "Skeleton_Warrior": "58613aae-ebd2-42c3-b2de-75061e4c6a50@c045d",
+  "Skeleton_Mage": "f2b348bc-d0b4-4f92-a502-e64fd157d498@f3480",
+  "Skeleton_Minion": "dac72f6a-caf2-4ef7-94d9-d9e5ec72f163@e8979",
+  "Engineer": "e8880dd8-81d7-4ab9-aa29-c3c4c96dfc62@3d67c",
+  "Skeleton_Rogue": "6e60b0b3-f04c-48ef-8d2f-2d66513e5fde@68ee3",
+  "column": "32a05348-2a9a-4392-bf80-4411e30c376b@da77c",
+  "floor_tile_large": "7b6d8502-8f3b-45c8-bc39-5a3706dabb3e@ddc70",
+  "wall": "ff573230-cd77-4942-b571-71a13164ad9f@e87ad",
+  "shotgun": "eb4afa07-a467-49cf-889c-fd21cb997060@df9d9",
+  "torch": "7dcf756a-35c5-4665-8dcd-04ef93a2ef18@e9756",
+  "chest": "e9d2908c-f773-4654-9be4-62b2b4ca0ccf@a19ff",
+  "lantern-candle": "a32bf771-d620-4ec5-9c5e-6d4add094525@957c3",
+  "pine-fall": "edb7fd5d-a902-44b4-94f5-bb553fd647e1@554b4",
+  "rocks": "bba2dd2f-f4cf-449d-b318-4d92fed4e537@9c9ed",
+  "gravestone-decorative": "7728559e-a9a3-4dd0-8e1b-d9f76f5d7eea@e182e",
+  "crypt-small": "289d2938-4c1b-46e6-8ddf-39b273b20053@bf27e",
+  "grave": "93a59263-d01f-4bb5-897b-c553e371ee3a@900f0"
+};

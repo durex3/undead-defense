@@ -1,0 +1,43 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { SurvivalWorld } from "../temp/tests/battle/SurvivalWorld.mjs";
+import { battleReport } from "../temp/tests/battle/BattleReport.mjs";
+test("report attributes effective damage and kills exactly once including poison bursts and ultimate", () => {
+  const w = new SurvivalWorld();
+  w.skills.poison = 1;
+  const e = w.addEnemy("minion", 5, 0);
+  w.hit(e, 10, "poisonBurst");
+  w.hit(e, 1000, "poisonBurst");
+  w.hit(e, 1000, "poisonBurst");
+  const e2 = w.addEnemy("minion", 6, 0);
+  w.hit(e2, 1000, "ultimate");
+  const r = battleReport(w);
+  assert.equal(r.total, 60);
+  assert.equal(r.rows.find((r) => r.skill === "poison").damage, 30);
+  assert.equal(r.rows.find((r) => r.skill === "poison").kills, 1);
+  assert.equal(r.otherDamage, 30);
+  assert.equal(r.otherKills, 1);
+  assert.equal(r.rows.find((r) => r.skill === "poison").share, 0.5);
+});
+test("received damage excludes lethal overkill and invulnerable hits; empty report is finite", () => {
+  const w = new SurvivalWorld();
+  assert.ok(battleReport(w).rows.every((r) => r.share === 0));
+  w.hp = 3;
+  w.hurt(20, "archer");
+  w.hurt(20, "archer");
+  assert.equal(battleReport(w).losses[0].damage, 3);
+  assert.equal(battleReport(w).losses[0].name, "骨弓猎手");
+  assert.equal(new SurvivalWorld().weaponKills.archer, undefined);
+});
+test("ice evolution preserves coverage and spring adds damage without overlapping ticks", () => {
+  const w = new SurvivalWorld();
+  w.skills.ice = 4;
+  w.evolutions.ice = "domain";
+  w.ring(true);
+  assert.equal(w.rings[0].maxRadius, 3.5);
+  w.skills.water = 4;
+  w.evolutions.water = "spring";
+  w.expansion.cast("water");
+  assert.equal(w.expansion.fields[0].damage, 13);
+  assert.equal(w.expansion.fields[0].radius, 2.8);
+});

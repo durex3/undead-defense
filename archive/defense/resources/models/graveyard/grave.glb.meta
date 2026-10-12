@@ -1,0 +1,139 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "93a59263-d01f-4bb5-897b-c553e371ee3a",
+  "files": [],
+  "subMetas": {
+    "b7e45": {
+      "importer": "gltf-mesh",
+      "uuid": "93a59263-d01f-4bb5-897b-c553e371ee3a@b7e45",
+      "displayName": "",
+      "id": "b7e45",
+      "name": "grave.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 256
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2b33f": {
+      "importer": "gltf-embeded-image",
+      "uuid": "93a59263-d01f-4bb5-897b-c553e371ee3a@2b33f",
+      "displayName": "",
+      "id": "2b33f",
+      "name": "colormap.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "96c50": {
+      "importer": "texture",
+      "uuid": "93a59263-d01f-4bb5-897b-c553e371ee3a@96c50",
+      "displayName": "",
+      "id": "96c50",
+      "name": "colormap.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "93a59263-d01f-4bb5-897b-c553e371ee3a@2b33f"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9991c": {
+      "importer": "gltf-material",
+      "uuid": "93a59263-d01f-4bb5-897b-c553e371ee3a@9991c",
+      "displayName": "",
+      "id": "9991c",
+      "name": "colormap.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "900f0": {
+      "importer": "gltf-scene",
+      "uuid": "93a59263-d01f-4bb5-897b-c553e371ee3a@900f0",
+      "displayName": "",
+      "id": "900f0",
+      "name": "grave.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "colormap",
+        "uri": "93a59263-d01f-4bb5-897b-c553e371ee3a@2b33f"
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "93a59263-d01f-4bb5-897b-c553e371ee3a@b7e45"
+      ],
+      "skeletons": [],
+      "textures": [
+        "93a59263-d01f-4bb5-897b-c553e371ee3a@96c50"
+      ],
+      "materials": [
+        "93a59263-d01f-4bb5-897b-c553e371ee3a@9991c"
+      ],
+      "scenes": [
+        "93a59263-d01f-4bb5-897b-c553e371ee3a@900f0"
+      ]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "asset": "Engineer",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Adventurers_2.0_EXTRA/Characters/gltf/Engineer.glb",
+    "license": "CC0",
+    "animations": [
+      "Death_A",
+      "Hit_A",
+      "Idle_A",
+      "Running_A",
+      "Walking_A",
+      "Ranged_2H_Aiming",
+      "Ranged_2H_Shooting"
+    ]
+  },
+  {
+    "asset": "Skeleton_Minion",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Skeletons_1.1_EXTRA/characters/gltf/Skeleton_Minion.glb",
+    "license": "CC0",
+    "animations": [
+      "Death_A",
+      "Hit_A",
+      "Idle_A",
+      "Running_A",
+      "Walking_A"
+    ]
+  },
+  {
+    "asset": "Skeleton_Rogue",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Skeletons_1.1_EXTRA/characters/gltf/Skeleton_Rogue.glb",
+    "license": "CC0",
+    "animations": [
+      "Death_A",
+      "Hit_A",
+      "Idle_A",
+      "Running_A",
+      "Walking_A"
+    ]
+  },
+  {
+    "asset": "Skeleton_Warrior",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Skeletons_1.1_EXTRA/characters/gltf/Skeleton_Warrior.glb",
+    "license": "CC0",
+    "animations": [
+      "Death_A",
+      "Hit_A",
+      "Idle_A",
+      "Running_A",
+      "Walking_A"
+    ]
+  },
+  {
+    "asset": "Skeleton_Mage",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Skeletons_1.1_EXTRA/characters/gltf/Skeleton_Mage.glb",
+    "license": "CC0",
+    "animations": [
+      "Death_A",
+      "Hit_A",
+      "Idle_A",
+      "Running_A",
+      "Walking_A"
+    ]
+  },
+  {
+    "asset": "Skeleton_Golem",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Skeletons_1.1_EXTRA/characters/gltf/Skeleton_Golem.glb",
+    "license": "CC0",
+    "animations": [
+      "Death_A",
+      "Hit_A",
+      "Idle_A",
+      "Running_A",
+      "Walking_A"
+    ]
+  },
+  {
+    "asset": "floor_tile_large",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Dungeon_Pack_1.1_EXTRA/Assets/gltf/floor_tile_large.gltf",
+    "license": "CC0"
+  },
+  {
+    "asset": "wall",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Dungeon_Pack_1.1_EXTRA/Assets/gltf/wall.gltf",
+    "license": "CC0"
+  },
+  {
+    "asset": "column",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Dungeon_Pack_1.1_EXTRA/Assets/gltf/column.gltf",
+    "license": "CC0"
+  },
+  {
+    "asset": "chest",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Dungeon_Pack_1.1_EXTRA/Assets/gltf/chest.gltf",
+    "license": "CC0"
+  },
+  {
+    "asset": "torch",
+    "source": "/Users/liugelong/Desktop/purchased/KayKit_Dungeon_Pack_1.1_EXTRA/Assets/gltf/torch.gltf",
+    "license": "CC0"
+  }
+]
