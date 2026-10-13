@@ -179,9 +179,9 @@ test("slime splits once into two arriving children with no experience, respectin
   assert.equal(w.enemies.length, 3);
   const full = make();
   const slime = enemy(full, "slime", 4);
-  for (let i = 0; i < 74; i++) enemy(full, "minion", 10);
+  for (let i = 0; i < 99; i++) enemy(full, "minion", 10);
   full.hit(slime, 1000, "bone");
-  assert.equal(full.enemies.filter((e) => e.hp > 0).length, 75);
+  assert.equal(full.enemies.filter((e) => e.hp > 0).length, 100);
 });
 test("archer locks a telegraphed arrow and moving sideways dodges it", () => {
   const w = make();

@@ -1,3 +1,8 @@
+import {resolveObservatory} from "./ObservatoryMap";
+import {starAirborne} from "./ObservatorySystem";
+import {resolveArsenal} from "./ArsenalMap";
+import {resolveHarbor} from "./HarborMap";
+import { FURNACE_STONES } from "./FurnaceEncounters";
 import { CROWN_STONES } from "./CrownSystem";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Point } from "./SurvivalTypes";
@@ -27,7 +32,10 @@ export function resolveGarden(p: Point, radius = 0.3, stones = GARDEN_STONES) {
 }
 export function stepGarden(w: SurvivalWorld, dt: number) {
   if (w.stageId === 1) return;
-  const stones = w.stageId >= 5 ? CROWN_STONES : w.stageId === 4 ? CHURCH_STONES : w.stageId === 3 ? ALTAR_STONES : GARDEN_STONES;
+  if(w.stageId===10){resolveObservatory(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving"&&!starAirborne(e))resolveObservatory(e,e.kind==="boss"?.65:.35);return;}
+  if(w.stageId===9){resolveArsenal(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")resolveArsenal(e,e.kind==="boss"?.65:.35);return;}
+  if(w.stageId===8){resolveHarbor(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")resolveHarbor(e,e.kind==="boss"?.65:.35);return;}
+  const stones = w.stageId === 6 ? FURNACE_STONES : w.stageId >= 5 ? CROWN_STONES : w.stageId === 4 ? CHURCH_STONES : w.stageId === 3 ? ALTAR_STONES : GARDEN_STONES;
   resolveGarden(w.player, .3, stones);
   w.player.x = Math.max(-22, Math.min(22, w.player.x));
   w.player.y = Math.max(-26, Math.min(26, w.player.y));

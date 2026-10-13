@@ -1,3 +1,10 @@
+import {stepArsenalEnemy, arsenalAura} from "./ArsenalSystem";
+import {stepObservatoryEnemy,isStarEnemy} from "./ObservatorySystem";
+import {observatoryHeading} from "./ObservatoryMap";
+import {starContains} from "./ObservatoryPath";
+import {arsenalHeading} from "./ArsenalMap";
+import {stepHarborEnemy} from "./HarborSystem";
+import {harborHeading} from "./HarborMap";
 import { crownEscape } from "./CrownSystem";
 import { bellContains } from "./ChurchSystem";
 import { stepBoss } from "./BossSystem";
@@ -69,12 +76,19 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       stepBoss(w, e, dt);
       continue;
     }
+    if(e.kind==="warflag"){stepArsenalEnemy(w,e,dt);continue;}
     if (e.freezeUntil > w.time) {
+      if(e.starUntil!==undefined)e.starUntil+=dt;
+      if(e.arsenalUntil!==undefined)e.arsenalUntil+=dt;
       for (const h of w.hazards) if (h.source === e.id && !h.fired) {
         h.created += dt; h.due += dt; h.until += dt;
       }
       continue;
     }
+    if(isStarEnemy(e)){stepObservatoryEnemy(w,e,dt);continue;}
+    if(["boneguard","standardbearer","crossbowman"].includes(e.kind)){stepArsenalEnemy(w,e,dt);continue;}
+    if(["sailor","drowned","anchorhand"].includes(e.kind)){stepHarborEnemy(w,e,dt);continue;}
+    const moveAngle=w.stageId===10?observatoryHeading(e,w.player):w.stageId===9?arsenalHeading(e,w.player):w.stageId===8?harborHeading(e,w.player):Math.atan2(w.player.y-e.y,w.player.x-e.x);
     const d = distance(e, w.player),
       angle = Math.atan2(w.player.y - e.y, w.player.x - e.x),
       slow = e.slowUntil > w.time ? 1 - e.slow : 1;
@@ -146,7 +160,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       }
     } else {
       e.attack -= dt;
-      let speed = ENEMIES[e.kind].speed;
+      let speed = ENEMIES[e.kind].speed * (w.stageId===9?arsenalAura(w,e):1);
       if (e.kind === "rogue") {
         const phase = (w.time - e.born) % 2;
         speed = phase < 1.2 ? 3.6 : 1;
@@ -175,8 +189,8 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
               ? 3
               : 0.6;
       if (d > stop) {
-        e.x += Math.cos(angle) * speed * slow * dt;
-        e.y += Math.sin(angle) * speed * slow * dt;
+        e.x += Math.cos(moveAngle) * speed * slow * dt;
+        e.y += Math.sin(moveAngle) * speed * slow * dt;
       }
       if (e.kind === "wisp" && d <= 3.5 && e.attack > 0) {
         e.x += Math.cos(angle + Math.PI / 2) * speed * slow * dt;
@@ -253,13 +267,13 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
     grid.set(key, list);
   }
   for (const e of w.enemies) {
-    if (e.hp <= 0 || e.state !== "seek") continue;
+    if (e.hp <= 0 || e.kind === "warflag" || e.state !== "seek") continue;
     const x = Math.floor(e.x),
       y = Math.floor(e.y);
     for (let a = x - 1; a <= x + 1; a++)
       for (let b = y - 1; b <= y + 1; b++)
         for (const o of grid.get(a + "," + b) || []) {
-          if (o.id <= e.id || o.state !== "seek") continue;
+          if (o.id <= e.id || o.kind === "warflag" || o.state !== "seek") continue;
           const dx = e.x - o.x,
             dy = e.y - o.y,
             d = Math.hypot(dx, dy);
@@ -277,11 +291,23 @@ export function stepHazards(w: SurvivalWorld) {
   w.hazards = w.hazards.filter(
     (h) =>
       h.until > w.time &&
-      (h.source === 0 || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
+      (h.source === 0 || (h.kind === "arrow" && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
   );
   for (const h of w.hazards) {
     if (h.due > w.time) continue;
     const d = distance(h, w.player);
+    if(h.kind==='starTrace'){
+      h.fired=true;
+      if(!h.groupHit&&starContains(h,w.player)){
+        w.hurt(h.damage,h.damageLabel||'旧路星痕',false);
+        for(const o of w.hazards)if(o.id===h.id||(h.group!==undefined&&o.group===h.group))o.groupHit=true;
+      }
+      continue;
+    }
+    if(h.kind==='starLeap'){
+      if(!h.fired){h.fired=true;if(starContains(h,w.player))w.hurt(h.damage,h.damageLabel||'坠星踏击',false);w.effects.push({type:'hazard',x:h.x,y:h.y,radius:h.radius});}
+      continue;
+    }
     if (h.kind === "bellRing" || h.kind === "bellPulse") {
       if (!h.fired) {
         h.fired=true;
@@ -316,8 +342,8 @@ export function stepHazards(w: SurvivalWorld) {
         x: h.x + Math.cos(h.angle) * current,
         y: h.y + Math.sin(h.angle) * current,
       };
-      if (segmentDistance(w.player, a, b) < 0.38) {
-        w.hurt(h.damage, "骨箭");
+      if (segmentDistance(w.player, a, b) < (h.fixedDamage ? h.width : 0.38)) {
+        w.hurt(h.damage, h.damageLabel || "骨箭", !h.fixedDamage);
         h.until = w.time;
       }
       h.next = w.time;

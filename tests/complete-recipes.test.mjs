@@ -13,6 +13,7 @@ test('nine disjoint recipes cover all eighteen weapons and each final combinatio
   const w=new SurvivalWorld();const partner=SYNTHESIS_RECIPES[main];w.skills[main]=10;w.skills[partner]=9;
   assert.equal(w.synthesize(main),false);w.skills[partner]=10;w.step(1/60);
   assert.equal(w.evolutions[main],EVOLUTIONS[main][0].id);assert.equal(w.skills[main],10);assert.equal(w.skills[partner],10);
+  if(w.state==='evolution')w.back();
   assert.equal(w.drain().filter(e=>e.final&&e.skill===main).length,1);w.step(1/60);
   assert.equal(w.drain().filter(e=>e.final&&e.skill===main).length,0);
  }

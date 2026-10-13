@@ -28,13 +28,13 @@ test('rift inner circle is safe during ring but not pulse; hazards cancel with s
 });
 test('environment skips elite/rest windows, never catches up missed events and pause freezes time',()=>{
  for(const stage of [6,7]){
-  const w=new SurvivalWorld(1,'ranger',stage),d=new LateStageDirector();w.time=60;d.step(w);assert.equal(w.hazards.length,1);
-  w.pause('qa',true);w.step(2);assert.equal(w.time,60);w.pause('qa',false);
-  w.time=85;d.step(w);assert.equal(w.hazards.length,0);
-  w.time=132;w.addEnemy('executioner');d.step(w);assert.equal(w.hazards.length,0);
-  w.enemies=[];w.time=150;d.step(w);assert.equal(w.hazards.length,1);
-  w.time=230;d.step(w);assert.equal(w.hazards.length,0);
-  w.time=240;w.director.step(w,0);assert.equal(w.enemies.filter(e=>e.kind==='boss').length,1);
+  const w=new SurvivalWorld(1,'ranger',stage),d=new LateStageDirector();w.time=120;d.step(w);assert.equal(w.hazards.length,1);
+  w.pause('qa',true);w.step(2);assert.equal(w.time,120);w.pause('qa',false);
+  w.time=170;d.step(w);assert.equal(w.hazards.length,0);
+  w.time=264;w.addEnemy('executioner');d.step(w);assert.equal(w.hazards.length,0);
+  w.enemies=[];w.time=300;d.step(w);assert.equal(w.hazards.length,1);
+  w.time=460;d.step(w);assert.equal(w.hazards.length,0);
+  w.time=480;w.director.step(w,0);assert.equal(w.enemies.filter(e=>e.kind==='boss').length,1);
  }
 });
 test('furnace temporary armour distinguishes direct and persistent damage without immunity',()=>{

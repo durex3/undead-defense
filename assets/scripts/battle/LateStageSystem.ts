@@ -1,7 +1,8 @@
+import { furnaceRest } from "./FurnaceEncounters";
 import type { SurvivalWorld } from './SurvivalWorld';
 import { Enemy, Hazard, distance } from './SurvivalTypes';
 import { crownEscape } from './CrownSystem';
-import { encounterBeat } from './EncounterPacing';
+import { encounterBeat, encounterTime } from './EncounterPacing';
 import { isElite } from './SurvivalConfig';
 
 /** Armour is a temporary attack-state property, never an immunity to a weapon. */
@@ -37,16 +38,16 @@ export class LateStageDirector {
   private cursor = 0;
   private readonly times = [60, 78, 132, 150, 205, 218];
   step(w: SurvivalWorld) {
-    if (w.stageId < 6) return;
-    if (w.time >= 230 || encounterBeat(w.time).rest || w.enemies.some(e=>e.hp>0 && isElite(e.kind))) {
+    if (w.stageId !== 6 && w.stageId !== 7) return;
+    if (encounterTime(w.time) >= 230 || encounterBeat(w.time).rest || (w.stageId===6 && furnaceRest(w.time)) || w.enemies.some(e=>e.hp>0 && isElite(e.kind))) {
       w.hazards = w.hazards.filter(h=>h.source!==0);
     }
-    while (this.cursor < this.times.length && w.time >= this.times[this.cursor]) {
+    while (this.cursor < this.times.length && w.time >= this.times[this.cursor]*2) {
       const index = this.cursor++;
-      if (w.time - this.times[index] > .5 || w.time >= 230 || encounterBeat(w.time).rest
+      if (w.time - this.times[index]*2 > .5 || encounterTime(w.time) >= 230 || encounterBeat(w.time).rest || (w.stageId===6 && furnaceRest(w.time))
         || w.time < w.reinforcementRestUntil || w.hazards.length
         || w.enemies.some(e=>e.hp>0 && (isElite(e.kind)||e.kind==='boss'))) continue;
-      lateCast(w, 0, index);
+      lateCast(w, 0, w.stageId===6 && index>=2 ? index+w.furnaceRoute : index);
     }
   }
 }
@@ -67,7 +68,7 @@ export function stepLateBoss(w: SurvivalWorld, e: Enemy, dt: number) {
         e.pattern++; e.timer = 1.7; return;
       }
     }
-    e.state = 'recover'; e.timer = w.stageId === 6 ? 3.4 : 3;
+    e.state = 'recover'; e.timer = w.stageId === 6 ? (phase === 2 ? 2.8 : 3.4) : (phase === 2 ? 2.6 : 3);
     return;
   }
   if (e.state === 'recover') {
@@ -77,8 +78,8 @@ export function stepLateBoss(w: SurvivalWorld, e: Enemy, dt: number) {
   }
   const d = distance(e,w.player), angle = Math.atan2(w.player.y-e.y,w.player.x-e.x);
   e.facing = angle; e.attack -= dt;
-  if (d > (w.stageId === 7 ? 4 : 2.8)) {
-    const speed = (w.stageId === 7 ? 1.6 : 1.2) * (e.slowUntil>w.time?1-e.slow:1);
+  if (d > .75) {
+    const speed = (w.stageId === 7 ? 1.9 : 1.7) * (e.slowUntil>w.time?1-e.slow:1);
     e.x += Math.cos(angle)*speed*dt; e.y += Math.sin(angle)*speed*dt;
   }
   if (d < 1) w.hurt(18,'boss',false);

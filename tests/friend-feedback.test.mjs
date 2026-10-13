@@ -40,8 +40,8 @@ test('valid potion heals once and pause does not consume its battle-time lifetim
  assert.equal(w.time,0);assert.equal(w.potions.length,1);w.pause('test',false);
  w.hp=85;w.collect(0);w.collect(0);assert.equal(w.hp,100);assert.equal(w.healing.potion,15);assert.equal(w.potions.length,0);
 });
-test('feedback fixes: nova kills drop XP, boss is targetable at range, and black hole deals periodic damage',()=>{
- const w=new SurvivalWorld(1,'ranger',1);w.skills.blade=1;const min=w.addEnemy('minion',5,0),boss=w.addEnemy('boss',7,0);min.hp=boss.hp=10;w.xp=0;w.useUltimate();assert.ok(w.gems.length>=1);assert.ok(w.gems.some(g=>g.value>0));
+test('feedback fixes: experience collection leaves enemies intact, boss is targetable at range, and black hole deals periodic damage',()=>{
+ const w=new SurvivalWorld(1,'ranger',1);const min=w.addEnemy('minion',5,0);w.gems=[{id:w.id(),x:20,y:20,value:2}];const minHp=min.hp;w.useUltimate();assert.equal(w.gems.length,0);assert.equal(w.xp,2);assert.equal(min.hp,minHp);
  const w2=new SurvivalWorld(1,'ranger',1);const farBoss=w2.addEnemy('boss',10,0),near=w2.addEnemy('minion',2,0);farBoss.state=near.state='seek';const picked=w2.target(w2.player,14);assert.equal(picked.kind,'boss');
  const w3=new SurvivalWorld(1,'ranger',1);w3.skills.void=1;w3.expansion.field('void',{x:1,y:0},2,2,10);const e=w3.addEnemy('minion',1,0);const hp=e.hp;w3.expansion.stepFields(.6);assert.ok(e.hp<hp);
 });

@@ -1,3 +1,6 @@
+import {observatoryHeading} from "../temp/tests/battle/ObservatoryMap.mjs";
+import {arsenalHeading} from "../temp/tests/battle/ArsenalMap.mjs";
+import {harborHeading} from "../temp/tests/battle/HarborMap.mjs";
 import { SurvivalWorld } from "../temp/tests/battle/SurvivalWorld.mjs";
 import { EVOLUTIONS, WEAPONS, SYNTHESIS_RECIPES } from "../temp/tests/battle/SurvivalConfig.mjs";
 const profiles = {
@@ -18,12 +21,17 @@ const profile = process.argv[2] || "classic";
 for (const mode of profile === "classic"
   ? ["stationary", "collector"]
   : ["collector"])
-  for (const seed of [1, 19, 72]) {
+  for (const seed of process.argv[9] ? process.argv[9].split(",").map(Number) : [1, 19, 72]) {
     const w = new SurvivalWorld(
       seed,
       process.argv[3] || "ranger",
       Number(process.argv[4] || 1),
+      Number(process.argv[8] || 6),
     );
+    w.offerStartingWeapons();
+    const preferred={ranger:"blade",alchemist:"water",necromancer:"ghost"}[w.character];
+    w.chooseStartingWeapon(w.startingWeapons.includes(preferred)?preferred:w.startingWeapons[1]);
+    const navigation={x:0,y:0};
     const checkpoints = [];
     const comboTriggers = {};
     const requestedMain = profile.startsWith("pair:") ? profile.slice(5) : null;
@@ -37,7 +45,7 @@ for (const mode of profile === "classic"
       next = 30;
     for (
       let i = 0;
-      i < 60 * 400 && w.state !== "lost" && w.state !== "won";
+      i < 60 * 720 && w.state !== "lost" && w.state !== "won";
       i++
     ) {
       if (w.state === "upgrade") {
@@ -69,9 +77,10 @@ for (const mode of profile === "classic"
           };
         let dx = (target.x - w.player.x) / Math.max(1, distance(target)),
           dy = (target.y - w.player.y) / Math.max(1, distance(target));
+        if(w.stageId===8||w.stageId===9||w.stageId===10){Object.assign(navigation,w.player);const a=(w.stageId===10?observatoryHeading:w.stageId===9?arsenalHeading:harborHeading)(navigation,target);dx=Math.cos(a);dy=Math.sin(a);}
         for (const e of w.enemies) {
           const d = distance(e),
-            r = cautious && ["executioner","charger","boss"].includes(e.kind) ? 3.4 : e.kind === "boss" ? 2.1 : 1.4;
+            r = cautious && profile === "pair:water" && e.kind === "boss" ? 2.1 : cautious && ["executioner","charger","boss"].includes(e.kind) ? 3.4 : e.kind === "boss" ? 2.1 : 1.4;
           if (d < r) {
             dx += ((w.player.x - e.x) / Math.max(0.01, d)) * (r - d) * 3;
             dy += ((w.player.y - e.y) / Math.max(0.01, d)) * (r - d) * 3;
@@ -79,7 +88,7 @@ for (const mode of profile === "classic"
         }
         for (const h of w.hazards) {
           const d = distance(h);
-          if (["circle", "pool", ...(cautious ? ["flame", "sector"] : [])].includes(h.kind) && d < h.radius + 1) {
+          if (["circle", "pool", "starLeap", ...(cautious ? ["flame", "sector"] : [])].includes(h.kind) && d < h.radius + 1) {
             dx += ((w.player.x - h.x) / Math.max(0.1, d)) * 2;
             dy += ((w.player.y - h.y) / Math.max(0.1, d)) * 2;
           }
@@ -88,6 +97,12 @@ for (const mode of profile === "classic"
             const sign = inward ? -1 : 1;
             dx += sign * ((w.player.x-h.x)/Math.max(.1,d))*3;
             dy += sign * ((w.player.y-h.y)/Math.max(.1,d))*3;
+          }
+          if(h.kind === "starTrace") {
+            const vx=(h.endX??h.x)-h.x,vy=(h.endY??h.y)-h.y,len=Math.hypot(vx,vy);
+            const t=Math.max(0,Math.min(1,((w.player.x-h.x)*vx+(w.player.y-h.y)*vy)/(len*len||1)));
+            const rx=w.player.x-h.x-vx*t,ry=w.player.y-h.y-vy*t,d=Math.hypot(rx,ry);
+            if(d<h.width+.8){const nx=d>.05?rx/d:-vy/(len||1),ny=d>.05?ry/d:vx/(len||1);dx+=nx*3;dy+=ny*3;}
           }
           if (h.kind === "line" || (cautious && h.kind === "flameLine")) {
             const rx = w.player.x - h.x,
@@ -103,7 +118,7 @@ for (const mode of profile === "classic"
         if (Math.abs(w.player.x) > 20) dx -= Math.sign(w.player.x) * 2;
         if (Math.abs(w.player.y) > 24) dy -= Math.sign(w.player.y) * 2;
         w.setMove(dx, dy);
-        if (w.enemies.filter((e) => distance(e) < 3).length > 5)
+        if (w.gems.length>=8 || w.gems.reduce((sum,g)=>sum+g.value,0)>=w.xpNeed)
           w.useUltimate();
       }
       w.camera = {
@@ -125,6 +140,10 @@ for (const mode of profile === "classic"
         alternate,
         character: w.character,
         stage: w.stageId,
+        furnaceRoute: w.stageId===6 ? w.furnaceRoute : null,
+        losses: w.losses,
+        lastDamageSource: w.lastDamageSource,
+        bossRemaining: (()=>{const b=w.enemies.find(e=>e.kind==="boss"&&e.hp>0);return b?Math.ceil(b.hp/b.maxHp*100):null;})(),
         mode,
         seed,
         state: w.state,
@@ -133,7 +152,7 @@ for (const mode of profile === "classic"
         kills: w.kills,
         level: w.level,
         firstCombo,
-        comboBeforeBoss: firstCombo !== null && firstCombo < 240,
+        comboBeforeBoss: firstCombo !== null && firstCombo < 480,
         firstUpgrade: Math.round(firstUpgrade),
         firstEvolution: Math.round(firstEvolution),
         skills: w.skills,

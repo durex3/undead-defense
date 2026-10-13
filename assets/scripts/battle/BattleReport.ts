@@ -45,7 +45,7 @@ export function battleReport(w: SurvivalWorld) {
     .sort((a, b) => b.damage - a.damage);
   const boss = w.enemies.find(e=>e.kind === "boss" && e.hp > 0);
   return {
-    retryTip: w.stageId === 6
+    retryTip: w.stageId === 10 ? "星痕锁定旧路线，换线时避免立刻折返；坠星落地后贴近反击，基座不挡星痕" : w.stageId === 9 ? "旗手加速不叠加，可绕侧拆除；弩线锁定后横移，统领扫击侧后与插旗时可反击" : w.stageId === 8 ? "成排敌人可绕侧或贯穿；落锚锁定后离圈，船长撞货堆后可反击" : w.stageId === 6
       ? (/熔|锻/.test(w.lastDamageSource) ? "熔流预警后横向离开；尝试随身圣潮维持移动输出" : boss ? "监工恢复时集中输出；尝试幽灵＋蝙蝠，持续伤害可绕过蓄力护甲" : "盾兵正面会格挡；尝试圣水＋毒雾或骨矛＋地雷清群")
       : w.stageId === 7
       ? (/裂|夜/.test(w.lastDamageSource) ? "空心环内侧安全，实心圆需向外躲；两次预警分别判断" : boss ? "织主恢复时追击；尝试幽灵＋蝙蝠或雷电＋冰环" : "横移躲箭，控制与分散清群可减压；尝试雷电＋冰环或镰刀＋战斧")

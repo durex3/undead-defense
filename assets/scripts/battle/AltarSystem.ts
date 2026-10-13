@@ -2,7 +2,7 @@ import { crownEscape } from "./CrownSystem";
 import type { SurvivalWorld } from './SurvivalWorld';
 import type { Enemy } from './SurvivalTypes';
 import { isElite } from './SurvivalConfig';
-import { encounterBeat } from './EncounterPacing';
+import { encounterBeat, encounterTime } from './EncounterPacing';
 export const ALTAR_ZONES = [{x:-7,y:-7},{x:7,y:-7},{x:7,y:7},{x:-7,y:7}];
 export const ALTAR_RADIUS = 4;
 export function altarFlame(w: SurvivalWorld, index: number, source = 0) {
@@ -16,12 +16,12 @@ export function altarFlame(w: SurvivalWorld, index: number, source = 0) {
   return true;
 }
 export class AltarSystem {
-  private next = 60;
+  private next = 120;
   private zone = 0;
   step(w: SurvivalWorld) {
-    if(w.stageId!==3 || w.time>=230 || w.time<this.next) return;
+    if(w.stageId!==3 || encounterTime(w.time)>=230 || w.time<this.next) return;
     if(encounterBeat(w.time).rest || w.enemies.some(e=>e.hp>0 && (isElite(e.kind)||e.kind==='boss'))) return;
-    if(altarFlame(w,this.zone)) {this.zone=(this.zone+1)%4;this.next=w.time+20;}
+    if(altarFlame(w,this.zone)) {this.zone=(this.zone+1)%4;this.next=w.time+32;}
   }
 }
 export function altarLance(w: SurvivalWorld, e: Enemy) {

@@ -1,4 +1,6 @@
 import { formTier } from "../battle/WeaponForms";
+import {arsenalAura} from "../battle/ArsenalSystem";
+import {starHeight} from "../battle/ObservatorySystem";
 import { bossExposed } from "../battle/BossSystem";
 import { expansionGlyph, drawExpansion } from "./ExpansionPainter";
 import { Graphics, Color } from "cc";
@@ -208,7 +210,7 @@ export class BattlePainter {
         g.stroke();
       }
     }
-    if (w.weaponEvolution("ice")) {
+    if (w.weaponEvolution("ice") === "domain") {
       g.fillColor = color("#7ad9f2", 18);
       g.circle(w.player.x * 48, w.player.y * 48, 3.5 * 48);
       g.fill();
@@ -222,6 +224,41 @@ export class BattlePainter {
       g.fillColor = color("#040811", 75);
       g.ellipse(x, y - 7, isLarge(e.kind) ? 27 : 17, 6);
       g.fill();
+      if(e.kind==='sailor'){g.fillColor=color("#bde1db",210);g.rect(x-13,y+24,26,6);g.fill();}
+      if(['starpatrol','starweaver','starpuppet'].includes(e.kind)||(e.kind==='boss'&&w.stageId===10)){
+        const sy=y+starHeight(e)+(e.kind==='boss'?72:44);
+        g.strokeColor=color('#d3c6ef');g.lineWidth=2;g.circle(x,sy,e.kind==='boss'?30:13);g.stroke();
+        crystal(g,x,sy,e.kind==='starweaver'?10:6,Math.PI/4);
+        if(e.kind==='starpatrol'){g.moveTo(x-22,sy-4);g.lineTo(x-12,sy+5);g.moveTo(x+22,sy-4);g.lineTo(x+12,sy+5);g.stroke();}
+        if(e.kind==='starweaver'){g.moveTo(x+20,sy-35);g.lineTo(x+20,sy+15);g.stroke();}
+        if(e.kind==='starpuppet'&&e.state==='windup'){g.circle(x,y+6,17);g.stroke();}
+        if(e.leapStart&&e.leapEnd){g.strokeColor=color('#cfbdeb',140);g.moveTo(e.leapStart.x*48,e.leapStart.y*48);g.quadraticCurveTo((e.leapStart.x+e.leapEnd.x)*24,(e.leapStart.y+e.leapEnd.y)*24+100,e.leapEnd.x*48,e.leapEnd.y*48);g.stroke();}
+      }
+      if(e.kind==='boneguard'){
+        g.strokeColor=color('#d6c9ac');g.lineWidth=3;g.moveTo(x+19,y+4);g.lineTo(x+19,y+50);g.stroke();
+        g.fillColor=color('#e5ded0');g.moveTo(x+19,y+57);g.lineTo(x+13,y+42);g.lineTo(x+25,y+42);g.close();g.fill();
+      }
+      if(e.kind==='standardbearer'||e.kind==='warflag'||(e.kind==='boss'&&w.stageId===9)){
+        const height=e.kind==='boss'?85:55;
+        g.strokeColor=color('#ead5a7');g.lineWidth=3;g.moveTo(x+18,y);g.lineTo(x+18,y+height);g.stroke();
+        g.fillColor=color('#c26c62');g.moveTo(x+18,y+height);g.lineTo(x+45,y+height-9);g.lineTo(x+18,y+height-20);g.close();g.fill();
+        if((e.kind==='standardbearer'&&e.state==='windup'&&e.freezeUntil<=w.time)||e.kind==='warflag'){
+          g.strokeColor=color('#dfbf7d',70);g.lineWidth=2;g.circle(x,y,4*48);g.stroke();
+          for(const o of w.enemies)if(o.hp>0&&['minion','boneguard'].includes(o.kind)&&Math.hypot(o.x-e.x,o.y-e.y)<=4){g.moveTo(x,y);g.lineTo(o.x*48,o.y*48+12);}g.stroke();
+        }
+      }
+      if(e.kind==='crossbowman'){
+        g.strokeColor=color('#e3d5bb');g.lineWidth=3;g.moveTo(x-18,y+24);g.lineTo(x+18,y+24);g.moveTo(x,y+14);g.lineTo(x,y+39);g.stroke();
+      }
+      if(w.stageId===9&&arsenalAura(w,e)>1){g.fillColor=color('#e8c06c',200);g.moveTo(x-5,y+42);g.lineTo(x,y+49);g.lineTo(x+5,y+42);g.close();g.fill();}
+      if(e.kind==='drowned'){g.strokeColor=color("#81c8df",180);g.lineWidth=2;g.moveTo(x-18,y-8);g.lineTo(x+18,y-8);g.stroke();}
+      if(e.kind==='anchorhand'||(e.kind==='boss'&&w.stageId===8)){g.strokeColor=color("#d9c597",230);g.lineWidth=3;const sy=y+(e.kind==='boss'?55:28);g.circle(x,sy+12,4);g.moveTo(x,sy+8);g.lineTo(x,sy-10);g.moveTo(x-12,sy);g.quadraticCurveTo(x,sy-20,x+12,sy);g.stroke();}
+      const venomStacks=w.expansion.venomStacks(e.id);
+      if(venomStacks && e.hp>0){
+        g.fillColor=color("#c8ef75",225);
+        for(let i=0;i<venomStacks;i++)g.circle(x+(i-(venomStacks-1)/2)*6,y+(isLarge(e.kind)?79:62),2);
+        g.fill();
+      }
       if (e.hp < e.maxHp || isLarge(e.kind)) {
         g.fillColor = color("#351f2f");
         g.rect(x - 20, y + (isLarge(e.kind) ? 70 : 53), 40, 4);
@@ -461,6 +498,13 @@ export class BattlePainter {
           g.fillColor=color("#ffbf67");for(let i=0;i<4;i++)crystal(g,x,y,21,p.age*5+i*Math.PI/2);
           g.fillColor=color("#fff3bc");g.circle(x,y,6);g.fill();
         }
+      } else if (p.skill === "ice") {
+        g.strokeColor=color("#a3f4ff",240);g.fillColor=color("#dcfcff",235);g.lineWidth=2;
+        polygon(g,x,y,direction,[[23,0],[-7,7],[-3,0],[-7,-7]]);
+        g.moveTo(x-Math.cos(direction)*25,y-Math.sin(direction)*25);g.lineTo(x,y);g.stroke();
+      } else if (p.skill === "bone" && p.form === "ricochet") {
+        g.fillColor=color("#fff0cf",235);g.strokeColor=color("#b9a890",200);g.lineWidth=2;
+        polygon(g,x,y,p.age*15,[[11,0],[3,6],[-5,8],[-3,0],[-5,-8],[3,-6]]);
       } else if (p.skill === "bone") {
         const dx = p.vx / 13,
           dy = p.vy / 13,
@@ -497,8 +541,8 @@ export class BattlePainter {
           for(let i=0;i<4;i++)polygon(g,x,y,p.age*16+i*Math.PI/2,[[r,0],[r*.6,r*.5],[r*.3,r*.2],[r*.5,-r*.3]]);
         }
       } else if (p.skill === "axe") {
-        const r = tier>=2 ? 20 : 14;
-        const a = p.age * 14;
+        const r = p.form === "execution" ? 27 : tier>=2 ? 20 : 14;
+        const a = p.form === "execution" ? direction : p.age * 14;
         g.strokeColor = color(COLORS.axe, 235);
         g.fillColor = color(COLORS.axe, 235);
         g.lineWidth = 4;
@@ -511,7 +555,7 @@ export class BattlePainter {
         g.close();
         g.fill();
         if(tier===1)polygon(g,x,y,a+Math.PI,[[r*.1,-r*.75],[r*.8,-r*.35],[r*.55,r*.35],[r*.1,r*.75]]);
-        if(tier>=2) {
+        if(tier>=2 && p.form !== "execution") {
           g.circle(x,y,r*.65);g.stroke();
           for(let i=0;i<(tier===3?4:8);i++)polygon(g,x,y,a+i*Math.PI*2/(tier===3?4:8),[[r*.5,-3],[r+3,-5],[r*.8,6],[r*.5,3]]);
         }
@@ -567,6 +611,9 @@ export class BattlePainter {
       const x=p.x*48,y=p.y*48,ex=p.endX*48,ey=p.endY*48;
       const angle=Math.atan2(ey-y,ex-x),length=Math.hypot(ex-x,ey-y);
       g.strokeColor=color(COLORS[p.skill],190);g.fillColor=color(COLORS[p.skill],190);
+      if(p.form==='brand'||p.form==='torment'){
+        g.lineWidth=3;polygon(g,x,y,angle,[[0,23],[17,0],[0,-23],[-17,0]]);g.circle(x,y,12);g.stroke();
+      }
       g.lineWidth=2;g.moveTo(x,y);g.lineTo(ex,ey);g.stroke();
       if(tier>=1)for(let d=8;d<length;d+=20) {
         const cx=x+Math.cos(angle)*d,cy=y+Math.sin(angle)*d;
@@ -596,7 +643,11 @@ export class BattlePainter {
       g.fillColor=color(COLORS[p.skill],warning>0?35:100);g.lineWidth=2;
       g.circle(x,y,r);g.stroke();
       // Inner motifs stay inside the simulation radius; the outer boundary is unchanged.
-      if(p.skill==="pillar") {
+      if(p.form==='sunlance'){
+        polygon(g,x,y,0,[[0,-r*.85],[-r*.18,0],[0,r*.85],[r*.18,0]]);g.rect(x-r*.4,y+r*.25,r*.8,4);g.fill();
+      } else if(p.form==='impact'){
+        polygon(g,x,y,warning,[[0,r*.8],[r*.65,0],[0,-r*.8],[-r*.65,0]]);g.circle(x,y,r*.35);g.fill();
+      } else if(p.skill==="pillar") {
         if(tier<=1){g.rect(x-3,y-r*.55,6,r*1.1);g.fill();if(tier===1){g.rect(x-r*.35,y+r*.15,r*.7,6);g.fill();}}
         else {
           const sword=(cx:number,cy:number,rr:number)=>{
@@ -617,6 +668,7 @@ export class BattlePainter {
     for (const p of w.arsenal.totems) if (p.active) {
       const x=p.x*48,y=p.y*48,tier=formTier(w.skills.totem,!!w.evolutions.totem);
       g.fillColor=color(COLORS.totem,210);g.strokeColor=color(COLORS.totem,220);g.lineWidth=2;
+      if(p.form==='obelisk'){g.circle(x,y,30);g.stroke();polygon(g,x,y,0,[[0,42],[-11,25],[11,25]]);}
       if(tier===3){polygon(g,x,y,0,[[-23,-18],[23,-18],[17,-9],[-17,-9]]);g.rect(x-16,y-9,32,5);g.fill();}
       g.rect(x-7,y-18,14,36);g.fill();
       if(tier>=1) {
@@ -797,6 +849,16 @@ export class BattlePainter {
         h.kind === "pool" ? "#a3bc51" : "#ed6c88",
         h.fired ? 65 : 25 + progress * 35,
       );
+      if(h.kind==='starTrace'){
+        const bx=(h.endX??h.x)*48,by=(h.endY??h.y)*48,a=Math.atan2(by-y,bx-x),r=h.width*48,dx=-Math.sin(a)*r,dy=Math.cos(a)*r;
+        g.fillColor=color('#dc9fc9',w.time>=h.due?120:20+progress*35);g.strokeColor=color('#f7b4d9',240);g.lineWidth=2;
+        g.moveTo(x+dx,y+dy);for(let i=0;i<=12;i++){const t=a+Math.PI/2-i*Math.PI/12;g.lineTo(bx+Math.cos(t)*r,by+Math.sin(t)*r);}for(let i=0;i<=12;i++){const t=a-Math.PI/2-i*Math.PI/12;g.lineTo(x+Math.cos(t)*r,y+Math.sin(t)*r);}g.close();g.fill();g.stroke();
+        crystal(g,x,y,4);crystal(g,bx,by,4);continue;
+      }
+      if(h.kind==='starLeap'){
+        g.strokeColor=color('#ffc3e3',240);g.fillColor=color('#e1a2c7',h.fired?110:20+progress*40);g.circle(x,y,r);g.fill();g.stroke();
+        g.circle(x,y,r*progress);g.stroke();crystal(g,x,y,8,Math.PI/4);continue;
+      }
       g.lineWidth = 3;
       if (h.kind === "bellRing" || h.kind === "bellPulse") {
         const inner=h.width*48;
@@ -848,6 +910,12 @@ export class BattlePainter {
         const dx = Math.cos(h.angle),
           dy = Math.sin(h.angle);
         if (w.time < h.due) {
+          if(h.fixedDamage){
+            g.strokeColor=color('#ffc4a0',180+progress*65);g.lineWidth=2;
+            const spread=h.width*48;
+            g.moveTo(x-dy*spread,y+dx*spread);g.lineTo(x+dx*r-dy*spread,y+dy*r+dx*spread);
+            g.moveTo(x+dy*spread,y-dx*spread);g.lineTo(x+dx*r+dy*spread,y+dy*r-dx*spread);g.stroke();
+          }
           // A local bow glint replaces the screen-spanning aiming ray.
           const flash = Math.sin(progress * Math.PI);
           g.strokeColor = color("#ffe6a5", 100 + flash * 155);

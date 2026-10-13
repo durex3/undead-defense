@@ -162,7 +162,8 @@ export function drawExpansion(g: Graphics, w: SurvivalWorld) {
       if (form < 2) { g.circle(x, y, r * .22); g.fill(); }
       else { polygon(g, x, y, r * .3, form === 2 ? 4 : 6, -phase); g.fill(); }
       g.strokeColor = color("#bb9eff", 120); g.lineWidth = 2;
-      if (form === 0) {
+      if(f.form === "singularity"){g.lineWidth=4;polygon(g,x,y,r*.6,3,-phase);g.stroke();g.circle(x,y,r*.18);g.fill();}
+      else if (form === 0) {
         for (let i = 0; i < 3; i++) { const a = phase + i * 2.1; g.arc(x, y, r * (.45 + i * .18), a, a + 1.8, false); g.stroke(); }
       } else {
         // Inward spiral arms become a rotating aperture, then an eclipse.
@@ -177,7 +178,12 @@ export function drawExpansion(g: Graphics, w: SurvivalWorld) {
       }
     } else {
       g.strokeColor = color("#d8ffa4", 110); g.lineWidth = 2;
-      if (form === 0) {
+      if(f.form === "venom") {
+        g.strokeColor=color("#e7ff87",190);g.lineWidth=3;
+        polygon(g,x,y,r*.7,3,-Math.PI/2);g.stroke();
+        g.fillColor=color("#d0f578",110);g.circle(x,y,r*.25);g.fill();
+        for(let i=0;i<5;i++){const a=i*Math.PI*2/5+phase;g.circle(x+Math.cos(a)*r*.55,y+Math.sin(a)*r*.55,3);g.fill();}
+      } else if (form === 0) {
         for (let i = 0; i < 4; i++) { const a = i * 1.57 + phase * .1; g.fillColor = color(COLORS.poison, 22); g.circle(x + Math.cos(a) * r * .4, y + Math.sin(a) * r * .4, r * .35); g.fill(); }
       } else {
         // Toxic puddle develops roots, thorned leaves, then a spore flower.
@@ -197,7 +203,8 @@ export function drawExpansion(g: Graphics, w: SurvivalWorld) {
   for (const m of w.expansion.mines) {
     const x = m.x * 48, y = m.y * 48, form = stage(w, "mine");
     g.fillColor = color(COLORS.mine, m.armed > w.time ? 80 : 230); g.strokeColor = color("#fff4c4", 190); g.lineWidth = 2;
-    if (form === 0) expansionGlyph(g, "mine", x, y, 9);
+    if(m.form === "demolition"){g.roundRect(x-13,y-10,26,20,3);g.fill();g.moveTo(x-8,y-7);g.lineTo(x+8,y+7);g.moveTo(x-8,y+7);g.lineTo(x+8,y-7);g.stroke();}
+    else if (form === 0) expansionGlyph(g, "mine", x, y, 9);
     else {
       // Round charge -> jaw trap -> runic plate -> mechanical star.
       polygon(g, x, y, 10, form === 1 ? 4 : form === 2 ? 6 : 8, Math.PI / 4); g.fill(); g.stroke();
@@ -211,7 +218,8 @@ export function drawExpansion(g: Graphics, w: SurvivalWorld) {
   for (const b of w.expansion.bats) {
     const form = stage(w, "bat"), x = b.x * 48, y = b.y * 48 + 14;
     g.fillColor = color(b.returning ? "#eea5b8" : COLORS.bat); g.strokeColor = color("#f6b8d0", 170); g.lineWidth = 1.5;
-    if (form === 0) expansionGlyph(g, "bat", x, y + Math.sin(w.time * 22 + b.id) * 3, 9);
+    if(b.form === "bloodhunt"){g.fillColor=color("#ffb3d3",230);polygon(g,x,y,16,3,-Math.PI/2);g.fill();for(const side of [-1,1]){g.moveTo(x,y);g.lineTo(x+side*24,y+8);g.lineTo(x+side*13,y-7);g.close();g.fill();}}
+    else if (form === 0) expansionGlyph(g, "bat", x, y + Math.sin(w.time * 22 + b.id) * 3, 9);
     else {
       // Animated membrane wings; higher forms gain hooked tips and a crown.
       const flap = Math.sin(w.time * 22 + b.id), wing = 13 + form * 2;

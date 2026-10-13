@@ -58,20 +58,19 @@ test("global invulnerability prevents stacked contact damage", () => {
   w.step(1 / 60);
   assert.equal(w.hp, 92);
 });
-test("first upgrade offers blade and a new weapon; choice cannot apply twice", () => {
+test("first upgrade offers three legal distinct choices and cannot apply twice", () => {
   const w = isolated();
   w.xp = 8;
   w.step(1 / 60);
   assert.equal(w.state, "upgrade");
-  assert.ok(w.cards.includes("blade"));
   assert.ok(w.cards.some((c) => WEAPONS.includes(c) && c !== "blade"));
   assert.equal(new Set(w.cards).size, 3);
   const t = w.time;
   step(w, 1);
   assert.equal(w.time, t);
-  assert.equal(w.choose("blade"), true);
-  assert.equal(w.choose("blade"), false);
-  assert.equal(w.bladeCount, 2);
+  const card=w.cards[0];
+  assert.equal(w.choose(card),true);
+  assert.equal(w.choose(card),false);
 });
 test("weapon/passive slots, caps and evolution availability hold across seeds", () => {
   for (let seed = 1; seed < 80; seed++) {
@@ -85,8 +84,7 @@ test("weapon/passive slots, caps and evolution availability hold across seeds", 
     assert.ok(!legal.includes("boots"));
     w.level = 8;
     w.roll();
-    assert.ok(w.cards.includes("blade"));
-    assert.equal(new Set(w.cards).size, w.cards.length);
+      assert.equal(new Set(w.cards).size, w.cards.length);
   }
 });
 test("evolution back preserves choices; branch consumes exactly once", () => {
@@ -263,8 +261,8 @@ test("bloater death is delayed and pool uses normal invulnerability", () => {
 });
 test("spawn cap includes summons; summoned units do not grant experience", () => {
   const w = isolated();
-  for (let i = 0; i < 80; i++) w.addEnemy("minion", 10, 10, true);
-  assert.equal(w.enemies.length, 75);
+  for (let i = 0; i < 105; i++) w.addEnemy("minion", 10, 10, true);
+  assert.equal(w.enemies.length, 100);
   w.hit(w.enemies[0], 1000, "fire");
   assert.equal(w.gems.length, 0);
   assert.equal(w.xp, 0);
@@ -273,7 +271,7 @@ test("boss arrival clears elites and pending hazards; boss death wins", () => {
   const w = isolated();
   enemy(w, "executioner", 10, 0);
   enemy(w, "mage", 6, 0);
-  w.time = 240;
+  w.time = 480;
   w.step(1 / 60);
   assert.ok(
     !w.enemies.some((e) => e.kind === "executioner" || e.kind === "mage"),
@@ -281,10 +279,10 @@ test("boss arrival clears elites and pending hazards; boss death wins", () => {
   const boss = w.enemies.find((e) => e.kind === "boss");
   assert.ok(boss);
   assert.equal(boss.state, "arriving");
-  w.hit(boss, 10000, "fire");
+  w.hit(boss, 1000000, "fire");
   assert.ok(boss.hp > 0);
   boss.state = "seek";
-  w.hit(boss, 10000, "fire");
+  w.hit(boss, 1000000, "fire");
   assert.equal(w.state, "won");
   assert.equal(w.hazards.length, 0);
 });

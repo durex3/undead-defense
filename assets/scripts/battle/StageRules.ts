@@ -7,9 +7,15 @@ export const STAGES = {
   5: {name:'亡者王庭',boss:'亡者君王',health:1.42,elite:1.6,bossHealth:2,damage:1.22,xp:.85,medicine:40},
   6: {name:'亡者熔炉',boss:'铸魂监工',health:1.44,elite:1.62,bossHealth:2.04,damage:1.24,xp:.85,medicine:40},
   7: {name:'永夜裂隙',boss:'裂隙织主',health:1.46,elite:1.64,bossHealth:2.08,damage:1.26,xp:.85,medicine:40},
+  8: {name:"骸潮港湾",boss:"沉港船长",health:1.48,elite:1.66,bossHealth:2.14,damage:1.28,xp:.85,medicine:40},
+  9: {name:"白骨军械库",boss:"军械统领",health:1.50,elite:1.68,bossHealth:2.18,damage:1.30,xp:.85,medicine:40},
+  10: {name:"葬星观测台",boss:"葬星占卜者",health:1.52,elite:1.70,bossHealth:2.22,damage:1.32,xp:.85,medicine:40},
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Partial<Record<StageId, {threat: string; builds: string}>> = {
-  6: {threat:'盾兵护阵 · 熔流封路 · 监工蓄力时直接伤害降低', builds:'尝试圣水＋毒雾、骨矛＋地雷；搭配幽灵＋蝙蝠集中输出'},
+  10: {threat:"旧路星痕、侧向切入、坠星落点 · 基座不挡星痕",builds:"清路换线、追踪后排、持续引怪；躲落点后贴近反击"},
+  9: {threat:"骨卫护阵、旗手加速、弩手锁线 · 兵器架不挡弩箭",builds:"贯穿清路后切入、持续引怪、追踪后排；统领恢复时反击"},
+  6: {threat:'护阵/追猎/唤潮轮换 · 中央绕行、两侧炉柱引怪', builds:'尝试圣水＋毒雾、骨矛＋地雷；搭配幽灵＋蝙蝠集中输出'},
+  8: {threat:"排队推进、侧切与落锚 · 货堆挡冲锋，不挡远程",builds:"贯穿清路、持续引怪、追踪打后排；多种组合均可"},
   7: {threat:'远程分散 · 内外圈交替 · 织主恢复时可追击', builds:'尝试雷电＋冰环、幽灵＋蝙蝠；搭配镰刀＋战斧清群'},
 };

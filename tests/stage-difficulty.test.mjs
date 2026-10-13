@@ -41,8 +41,8 @@ test('garden boss staggered route cut locks both positions and keeps threat cap'
 });
 test('later elite has greater pressure than first elite on challenge maps',()=>{
  for(const stage of [2,3]){
- const w=new SurvivalWorld(1,'ranger',stage);w.time=90;w.director.step(w,0);const first=w.enemies.find(e=>e.kind==='executioner');
- const base=new SurvivalWorld(1,'ranger',stage);base.time=90;const f=base.addEnemy('executioner');assert.ok(Math.abs(first.maxHp/f.maxHp-.9)<1e-9);
- w.enemies=[];w.time=175;w.director.step(w,0);const second=w.enemies.find(e=>e.kind==='charger');base.time=175;const s=base.addEnemy('charger');assert.ok(Math.abs(second.maxHp/s.maxHp-1.1)<1e-9);
+ const w=new SurvivalWorld(1,'ranger',stage);w.time=180;w.director.step(w,0);const first=w.enemies.find(e=>e.kind==='executioner');
+ const base=new SurvivalWorld(1,'ranger',stage);base.time=180;const f=base.addEnemy('executioner');assert.ok(Math.abs(first.maxHp/f.maxHp-.9)<1e-9);
+ w.enemies=[];w.time=350;w.director.step(w,0);const second=w.enemies.find(e=>e.kind==='charger');base.time=350;const s=base.addEnemy('charger');assert.ok(Math.abs(second.maxHp/s.maxHp-1.1)<1e-9);
  }
 });

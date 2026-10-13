@@ -39,7 +39,7 @@ export function stepKing(w: SurvivalWorld,e: Enemy,dt:number){
  }
  if(e.state==='recover'){e.timer-=dt;if(e.timer<=0){e.state='seek';e.attack=.65;}return;}
  const d=distance(e,w.player),a=Math.atan2(w.player.y-e.y,w.player.x-e.x);e.facing=a;e.attack-=dt;
- if(d>2.5){const speed=([0,1.25,1.4,1.5][e.bossPhase])*(e.slowUntil>w.time?1-e.slow:1);e.x+=Math.cos(a)*speed*dt;e.y+=Math.sin(a)*speed*dt;}
+ if(d>.75){const speed=([0,1.7,1.9,2.1][e.bossPhase])*(e.slowUntil>w.time?1-e.slow:1);e.x+=Math.cos(a)*speed*dt;e.y+=Math.sin(a)*speed*dt;}
  if(d<1)w.hurt(18,'boss',false);
  if(e.attack>0||e.visibleSince<0||w.time-e.visibleSince<.8||!w.visible(e,.3)||w.hazards.length>=2)return;
  const sequence=e.bossPhase===1?['sweep','tombstone','summon']:e.bossPhase===2?['bellRing','tombstone','lance','summon']:['bellRing','lance'];

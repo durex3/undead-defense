@@ -4,6 +4,19 @@ export interface Point {
   y: number;
 }
 export interface Enemy extends Point {
+  starTarget?: Point;
+  starUntil?: number;
+  leapStart?: Point;
+  leapEnd?: Point;
+  leapDuration?: number;
+  starRetry?: number;
+  navWaypoint?: Point;
+  arsenalTarget?: Point;
+  arsenalUntil?: number;
+  expires?: number;
+  harborWaypoint?: Point;
+  harborTarget?: Point;
+  harborUntil?: number;
   id: number;
   kind: Kind;
   hp: number;
@@ -29,7 +42,7 @@ export interface Enemy extends Point {
   owner: number;
   bossPhase: 1 | 2 | 3;
   bossAction:
-    "none" | "sweep" | "burst" | "summon" | "tombstone" | "transition" | "lance" | "altar" | "bellRing" | "bellPulse";
+    "none" | "sweep" | "burst" | "summon" | "tombstone" | "transition" | "lance" | "altar" | "bellRing" | "bellPulse" | "anchor" | "harborCharge" | "harborSummon" | "arsenalSweep" | "arsenalBolt" | "arsenalFlag" | "starTrace" | "starBlade" | "starLeap";
 }
 export interface Shot extends Point {
   form?: string;
@@ -80,11 +93,15 @@ export interface Ring extends Point {
   freeze: boolean;
 }
 export interface Hazard extends Point {
+  endX?: number;
+  endY?: number;
+  group?: number;
+  groupHit?: boolean;
   fixedDamage?: boolean;
   damageLabel?: string;
   id: number;
   source: number;
-  kind: "circle" | "line" | "sector" | "pool" | "burst" | "arrow" | "flame" | "flameLine" | "bellRing" | "bellPulse";
+  kind: "circle" | "line" | "sector" | "pool" | "burst" | "arrow" | "flame" | "flameLine" | "bellRing" | "bellPulse" | "starTrace" | "starLeap";
   angle: number;
   radius: number;
   width: number;

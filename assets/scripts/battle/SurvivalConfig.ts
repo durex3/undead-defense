@@ -1,5 +1,5 @@
 import { rankDamage } from "./BuildProgression";
-export const MAX_ENEMIES = 75;
+export const MAX_ENEMIES = 100;
 export const MAX_SKILL_LEVEL = 10;
 export const EVOLUTION_LEVELS = [10] as const;
 export const WEAPONS = [
@@ -100,8 +100,9 @@ export const EVOLUTIONS: Record<
     {
       id: "domain",
       name: "极寒领域",
-      description: "领域半径扩大至 3.5\n持续减速，每 4 秒冻结脉冲",
+      description: "随身领域半径 3.5\n持续减速，每 4 秒冻结脉冲\n适合近身控场，冰雷组合效果保留",
     },
+    { id: "icicle", name: "极点冰刺", description: "三枚高速冰刺集中瞄准首领与精英\n命中减速；放弃随身领域与冻结脉冲" },
   ],
   lightning: [
     {
@@ -141,6 +142,7 @@ export const EVOLUTIONS: Record<
       name: "瘟疫行者",
       description: "毒雾中的敌人死亡触发毒爆\n每秒最多 4 次，不递归引爆",
     },
+    { id: "venom", name: "蚀骨剧毒", description: "向目标脚下投放小毒池，站定也会施放\n叠毒最多5层，离池后持续4秒；不触发死亡毒爆" },
   ],
   bone: [
     {
@@ -148,6 +150,7 @@ export const EVOLUTIONS: Record<
       name: "白骨冲车",
       description: "齐射化作巨型穿透骨矛\n击退普通敌人；穿过已武装地雷时引爆\n雷爆追加骨片冲击",
     },
+    { id: "ricochet", name: "碎骨跳弹", description: "三枚骨片各弹射最多4个不同目标\n弹射伤害逐次衰减，不击退；保留地雷联动" },
   ],
   mine: [
     {
@@ -155,6 +158,7 @@ export const EVOLUTIONS: Record<
       name: "连环雷阵",
       description: "爆炸引爆附近已武装地雷\n每帧最多连锁 4 枚",
     },
+    {id:"demolition",name:"定点重雷",description:"两枚重雷瞄准首领与精英脚下\n爆炸范围更小、伤害更高，不连锁；保留骨雷联动"},
   ],
   void: [
     {
@@ -162,19 +166,22 @@ export const EVOLUTIONS: Record<
       name: "坍缩核心",
       description: "黑洞结束时发生大爆炸\n在聚怪之后集中收割",
     },
+    {id:"singularity",name:"奇点压缩",description:"小范围黑洞集中持续伤害与终结爆破\n牵引较弱，适合集中输出；保留陨石联动"},
   ],
-  axe: [{ id: "warwheel", name: "战轮回旋", description: "双斧交叉回旋，返回路径伤害提高" }],
-  chain: [{ id: "hellchain", name: "地狱锁链", description: "火链持续标记敌人，光柱加速落下\n命中标记触发灼爆，每敌1秒一次" }],
-  pillar: [{ id: "judgmentsky", name: "审判天穹", description: "连续三次落柱，中心命中额外伤害" }],
-  totem: [{ id: "gravegrid", name: "墓园矩阵", description: "三座图腾组成交叉射线\n命中魂链束缚目标追加魂击，每敌0.5秒一次" }],
-  soul: [{ id: "reincarnation", name: "轮回枷锁", description: "锁链断裂时爆发" }],
-  meteor: [{ id: "doomsfall", name: "末日星坠", description: "落点形成短时余烬区\n命中黑洞牵引区追加坍缩冲击" }],
+  axe: [{ id: "warwheel", name: "战轮回旋", description: "双斧宽幅往返，返回伤害提高70%\n适合清理成群敌人，保留镰刀印记" },
+    { id: "execution", name: "断头重斧", description: "单柄重斧瞄准首领与精英，集中重击\n攻击范围更窄、间隔更长；保留镰刀印记" }],
+  chain: [{ id: "hellchain", name: "地狱锁链", description: "火链持续标记敌人，光柱加速落下\n命中标记触发灼爆，每敌1秒一次" }, {id:"brand",name:"焚魂烙印",description:"单链优先锁定首领与精英，集中灼烧\n不转接新目标；保留光柱加速与灼爆"}],
+  pillar: [{ id: "judgmentsky", name: "审判天穹", description: "连续三次落柱，中心命中额外伤害" }, {id:"sunlance",name:"裁决光矛",description:"单次窄幅重击，优先首领与精英\n替代三连落柱；保留火链标记联动"}],
+  totem: [{ id: "gravegrid", name: "墓园矩阵", description: "三座图腾组成交叉射线\n命中魂链束缚目标追加魂击，每敌0.5秒一次" }, {id:"obelisk",name:"随行骨塔",description:"一座骨塔跟随角色，集中速射\n不再穿透敌群；保留魂链追加魂击"}],
+  soul: [{ id: "reincarnation", name: "轮回枷锁", description: "锁链断裂时爆发" }, {id:"torment",name:"蚀魂独缚",description:"单链锁定首领与精英，持续伤害递增\n不减速、不触发断链爆破；保留图腾魂击"}],
+  meteor: [{ id: "doomsfall", name: "末日星坠", description: "落点形成短时余烬区\n命中黑洞牵引区追加坍缩冲击" }, {id:"impact",name:"灭星重陨",description:"一枚重陨集中轰击首领与精英\n范围较小、不留余烬；保留黑洞坍缩联动"}],
   bat: [
     {
       id: "bloodmoon",
       name: "血月归巢",
       description: "每轮 6 只，生命≥70%时伤害 +20%\n吸血仅至70%，间隔2.5秒，受伤停2秒",
     },
+    {id:"bloodhunt",name:"血影猎杀",description:"两只血蝠集中追击首领与精英\n高伤、不穿梭、不回血；保留幽灵噬魂标记"},
   ],
 };
 const DESCRIPTIONS: Record<Skill, string[]> = {
@@ -310,7 +317,7 @@ export function cardText(card: Card, level: number) {
   );
 }
 export const ENEMY_KINDS = [
-  "minion",
+  "minion", "sailor", "drowned", "anchorhand", "boneguard", "standardbearer", "crossbowman", "warflag", "starpatrol", "starweaver", "starpuppet",
   "rogue",
   "shield",
   "boar",
@@ -341,6 +348,16 @@ export interface EnemyConfig {
   elite?: boolean;
 }
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+  starpatrol:{name:"巡星骨兵",health:1,speed:1.4,contact:8,xp:1,threat:0,cap:12,sprite:"skelet_run",scale:3.1},
+  starweaver:{name:"刻痕师",health:1.05,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.2},
+  starpuppet:{name:"坠星傀儡",health:.9,speed:1.3,contact:8,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3.1},
+  boneguard:{name:"护旗骨卫",health:1.15,speed:1.35,contact:8,xp:1,threat:0,cap:16,sprite:"skelet_run",scale:3.3},
+  standardbearer:{name:"枯骨旗手",health:1.1,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.2},
+  crossbowman:{name:"裂甲弩手",health:.85,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3},
+  warflag:{name:"整军旗标",health:3,speed:0,contact:0,xp:0,threat:0,cap:1,sprite:"skelet_run",scale:.8},
+  sailor:{name:"水手尸",health:1,speed:1.4,contact:8,xp:1,threat:0,cap:24,sprite:"skelet_run",scale:3.2},
+  drowned:{name:"溺亡者",health:.8,speed:2,contact:8,xp:1,threat:1,cap:6,sprite:"goblin_run",scale:2.8},
+  anchorhand:{name:"投锚手",health:1.25,speed:1.3,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.3},
   minion: {
     name: "游荡骷髅",
     health: 1,

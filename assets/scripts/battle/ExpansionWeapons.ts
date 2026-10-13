@@ -19,14 +19,17 @@ export interface Field extends Point {
   damage: number;
   origin: Point;
   follow?: boolean;
+  form?: string;
 }
 export interface Mine extends Point {
+  form?: string;
   id: number;
   armed: number;
   until: number;
   queued: boolean;
 }
 export interface Bat extends Point {
+  form?: string;
   id: number;
   batch: number;
   target: number;
@@ -53,6 +56,7 @@ export class ExpansionWeapons {
   private poisonSeen = 0;
   private poisonFresh = false;
   private fieldHits = new Map<string, number>();
+  private venom = new Map<number, {stacks:number;until:number;next:number}>();
   private poisonDeaths: number[] = [];
   private poisonBursts: Point[] = [];
   private batBatches = new Map<number, BatBatch>();
@@ -70,7 +74,11 @@ export class ExpansionWeapons {
     if (skill === "mine") this.mines = [];
     if (skill === "bat") { this.bats = []; this.batBatches.clear(); }
     if (skill === "bone") this.volleys = [];
-    if (skill === "poison") { this.poisonSeen = 0; this.poisonFresh = false; this.walked = 0; this.poisonDeaths = []; this.poisonBursts = []; }
+    if (skill === "poison") { this.poisonSeen = 0; this.poisonFresh = false; this.walked = 0; this.poisonDeaths = []; this.poisonBursts = []; this.venom.clear(); }
+  }
+  venomStacks(id: number) {
+    const mark=this.venom.get(id);
+    return mark && mark.until>this.w.time ? mark.stacks : 0;
   }
   refresh(skill: Skill) {
     if (skill === "poison") this.poisonFresh = true;
@@ -87,6 +95,13 @@ export class ExpansionWeapons {
       w.cooldowns[skill] = Math.max(0, w.cooldowns[skill] - dt);
       if (!w.skills[skill]) continue;
       if (skill === "poison") {
+        if (w.weaponEvolution("poison") === "venom") {
+          if(w.cooldowns.poison<=0 && w.target(w.player,8)) {
+            this.cast(skill);w.cooldowns.poison=1.4*w.cooldownFactor(skill);
+            this.poisonFresh=false;this.walked=0;
+          }
+          continue;
+        }
         if (
           this.poisonFresh ||
           (this.walked >= (w.skills.poison >= 4 ? 2 : 3) &&
@@ -105,7 +120,7 @@ export class ExpansionWeapons {
               (e) =>
                 e.hp > 0 &&
                 e.state !== "arriving" &&
-                distance(e, w.player) >= 2.5 &&
+                (w.weaponEvolution("void") === "singularity" || distance(e, w.player) >= 2.5) &&
                 distance(e, w.player) < 7,
             )
           : !!w.target(w.player, skill === "bat" ? 7 : 8);
@@ -165,6 +180,7 @@ export class ExpansionWeapons {
         duration * (w.character === "alchemist" && skill !== "void" ? 1.2 : 1),
       damage,
       origin: { ...w.player },
+      form: w.weaponEvolution(skill),
     });
     if (this.fields.length > 64) this.fields.shift();
   }
@@ -229,7 +245,13 @@ export class ExpansionWeapons {
       }
       return;
     }
+
     if (skill === "poison") {
+      if(w.weaponEvolution("poison") === "venom") {
+        const target=w.near(w.player,8).filter(e=>e.state!=="arriving").sort((a,b)=>Number(b.kind==="boss")-Number(a.kind==="boss") || Number(isLarge(b.kind))-Number(isLarge(a.kind)) || distance(a,w.player)-distance(b,w.player))[0];
+        if(target)this.field("poison",target,1.2,2.8,0);
+        return;
+      }
       this.field(
         "poison",
         {
@@ -243,13 +265,17 @@ export class ExpansionWeapons {
       return;
     }
     if (skill === "mine") {
-      for (let i = 0; i < (level >= 10 ? 5 : level >= 7 ? 4 : level >= 2 ? 2 : 1); i++) {
+      for (let i = 0; i < (w.weaponEvolution("mine") === "demolition" ? 2 : level >= 10 ? 5 : level >= 7 ? 4 : level >= 2 ? 2 : 1); i++) {
         if (this.mines.length >= 24) break;
         const offset = level >= 2 ? (i - 0.5) * 1.2 : 0;
+        const demolition=w.weaponEvolution("mine") === "demolition";
+        const target=demolition ? this.priority(8) : undefined;
+        const center=target || w.player;
         this.mines.push({
+          form:w.weaponEvolution("mine"),
           id: w.id(),
-          x: w.player.x - w.lastMove.y * offset,
-          y: w.player.y + w.lastMove.x * offset,
+          x: center.x - w.lastMove.y * offset,
+          y: center.y + w.lastMove.x * offset,
           armed: w.time + 0.5,
           until: w.time + 8,
           queued: false,
@@ -269,7 +295,7 @@ export class ExpansionWeapons {
         .sort(
           (a, b) => w.near(b, 2).length - w.near(a, 2).length || a.id - b.id,
         );
-      const t = candidates[0];
+      const t = w.weaponEvolution("void") === "singularity" ? this.priority(7) || candidates[0] : candidates[0];
       if (!t) {
         w.cooldowns.void = 0;
         return;
@@ -277,14 +303,16 @@ export class ExpansionWeapons {
       this.field(
         "void",
         t,
-        level >= 2 ? 2.8 : 2,
+        w.weaponEvolution("void") === "singularity" ? 1.6 : level >= 2 ? 2.8 : 2,
         level >= 3 ? 2 : 1.5,
-        w.attack * (w.weaponEvolution("void") ? 2 : 0.8),
+        w.attack * (w.weaponEvolution("void") === "singularity" ? 4.5 : w.weaponEvolution("void") ? 2 : 0.8),
       );
       return;
     }
     if (skill === "bone") {
-      const t = w.target();
+      const t = w.weaponEvolution("bone") === "ricochet"
+        ? w.near(w.player,14).filter(e=>e.state!=="arriving").sort((a,b)=>Number(b.kind==="boss")-Number(a.kind==="boss") || Number(isLarge(b.kind))-Number(isLarge(a.kind)) || distance(a,w.player)-distance(b,w.player))[0]
+        : w.target();
       if (!t) return;
       const angle = Math.atan2(t.y - w.player.y, t.x - w.player.x);
       this.boneVolley(angle, level, !!w.weaponEvolution("bone"));
@@ -293,22 +321,24 @@ export class ExpansionWeapons {
       return;
     }
     if (skill === "bat") {
-      const count = w.weaponEvolution("bat") ? 6 : level >= 10 ? 10 : level >= 7 ? 8 : level >= 4 ? 6 : level >= 2 ? 4 : 2;
+      const hunt=w.weaponEvolution("bat") === "bloodhunt";
+      const count = hunt ? 2 : w.weaponEvolution("bat") ? 6 : level >= 10 ? 10 : level >= 7 ? 8 : level >= 4 ? 6 : level >= 2 ? 4 : 2;
       const batchId = w.id();
       const batch = {
         remaining: 0,
         healed: 0,
-        limit: w.weaponEvolution("bat") ? 3 : level >= 10 ? 4 : level >= 7 ? 3 : level >= 4 ? 2 : 1,
+        limit: hunt ? 0 : w.weaponEvolution("bat") ? 3 : level >= 10 ? 4 : level >= 7 ? 3 : level >= 4 ? 2 : 1,
       };
       this.batBatches.set(batchId, batch);
       const targets: number[] = [];
       for (let i = 0; i < count && this.bats.length < 64; i++) {
-        const t = w.target(w.player, 7, targets) || w.target(w.player, 7);
+        const t = hunt ? this.priority(7) : w.target(w.player, 7, targets) || w.target(w.player, 7);
         if (!t) break;
         targets.push(t.id);
         this.bats.push({
           id: w.id(),
           batch: batchId,
+          form:w.weaponEvolution("bat"),
           x: w.player.x + Math.cos((i * Math.PI * 2) / count) * 0.2,
           y: w.player.y + Math.sin((i * Math.PI * 2) / count) * 0.2,
           target: t.id,
@@ -316,34 +346,41 @@ export class ExpansionWeapons {
           returning: false,
           ttl: 6,
           damage:
-            w.attack * 0.6 * (w.weaponEvolution("bat") && w.hp >= w.maxHp * .7 ? 1.2 : 1),
-          maxHits: level >= 10 ? 4 : level >= 7 ? 3 : level >= 4 ? 2 : 1,
+            w.attack * (hunt ? 2.2 : .6) * (!hunt && w.weaponEvolution("bat") && w.hp >= w.maxHp * .7 ? 1.2 : 1),
+          maxHits: hunt ? 1 : level >= 10 ? 4 : level >= 7 ? 3 : level >= 4 ? 2 : 1,
         });
         batch.remaining++;
       }
       if (!batch.remaining) this.batBatches.delete(batchId);
     }
   }
+  private priority(radius: number) {
+    const w=this.w;
+    return w.near(w.player,radius).filter(e=>e.state!=="arriving")
+      .sort((a,b)=>Number(b.kind==="boss")-Number(a.kind==="boss") || Number(isLarge(b.kind))-Number(isLarge(a.kind)) || distance(a,w.player)-distance(b,w.player))[0];
+  }
   private boneVolley(angle: number, level: number, evolved: boolean) {
     const w = this.w,
-      count = evolved ? 1 : level >= 10 ? 7 : level >= 7 ? 5 : level >= 2 ? 3 : 1;
+      ricochet = w.weaponEvolution("bone") === "ricochet",
+      count = ricochet ? 3 : evolved ? 1 : level >= 10 ? 7 : level >= 7 ? 5 : level >= 2 ? 3 : 1;
     for (let i = 0; i < count; i++) {
-      const a = angle + (i - (count - 1) / 2) * 0.2;
+      const a = angle + (i - (count - 1) / 2) * (ricochet ? .08 : .2);
       w.shots.push({
         id: w.id(),
         skill: "bone",
+        form: w.weaponEvolution("bone"),
         ...w.player,
         vx: Math.cos(a) * 13,
         vy: Math.sin(a) * 13,
-        damage: w.attack * (evolved ? 3 : level >= 2 ? 0.8 : 1.2),
-        left: evolved ? 75 : level >= 3 ? 7 : 4,
+        damage: w.attack * (ricochet ? 1.6 : evolved ? 3 : level >= 2 ? 0.8 : 1.2),
+        left: ricochet ? 4 : evolved ? 75 : level >= 3 ? 7 : 4,
         hit: [],
         target: 0,
-        ttl: 10 / 13,
+        ttl: ricochet ? 2 : 10 / 13,
         age: 0,
         range: 10,
         returning: false,
-        width: evolved ? 0.8 : 0.25,
+        width: ricochet ? .22 : evolved ? 0.8 : 0.25,
         extra: 0,
         excursion: 0,
       });
@@ -375,13 +412,13 @@ export class ExpansionWeapons {
           const key = f.skill + ":" + e.id;
           if ((this.fieldHits.get(key) || 0) <= w.time) {
             this.fieldHits.set(key, w.time + .5);
-            w.hit(e, f.damage * .28, "void", false, f, false);
+            w.hit(e, f.damage * (f.form === "singularity" ? .35 : .28), "void", false, f, false);
           }
-          if (e.kind !== "boss" && !pulls.has(e.id)) {
+          if (e.kind !== "boss" && e.kind !== "warflag" && !pulls.has(e.id)) {
             const d = distance(e, f),
               move = Math.min(
                 d,
-                0.7 * (isLarge(e.kind) || e.kind === "shield" ? 0.5 : 1) * dt,
+                (f.form === "singularity" ? .3 : .7) * (isLarge(e.kind) || e.kind === "shield" ? 0.5 : 1) * dt,
               );
             e.x += ((f.x - e.x) / Math.max(0.01, d)) * move;
             e.y += ((f.y - e.y) / Math.max(0.01, d)) * move;
@@ -402,6 +439,12 @@ export class ExpansionWeapons {
         const key = f.skill + ":" + e.id;
         if ((this.fieldHits.get(key) || 0) > w.time) continue;
         this.fieldHits.set(key, w.time + (f.skill === "water" ? 0.5 : 1));
+        if(f.skill === "poison" && f.form === "venom") {
+          const mark=this.venom.get(e.id) || {stacks:0,until:0,next:w.time};
+          mark.stacks=Math.min(5,mark.stacks+1);mark.until=w.time+4;
+          this.venom.set(e.id,mark);
+          continue;
+        }
         const purified = f.skill === "water" && !!w.evolutions.water && w.skills.poison >= 10 &&
           this.fields.some(p => p.skill === "poison" && p.due <= w.time && p.until > w.time && distance(e, p) <= p.radius);
         w.hit(e, f.damage * (purified ? 1.5 : 1), f.skill, false, f, false, purified ? "water" : undefined, purified ? 1 / 3 : 1);
@@ -409,6 +452,11 @@ export class ExpansionWeapons {
       }
     }
     this.fields = this.fields.filter((f) => f.until > w.time);
+    for(const [id,mark] of this.venom) {
+      const e=w.enemies.find(e=>e.id===id&&e.hp>0);
+      if(!e || mark.until<=w.time){this.venom.delete(id);continue;}
+      if(mark.next<=w.time){mark.next=w.time+1;w.hit(e,w.attack*(.35+.25*mark.stacks),"poison",false,e,false);}
+    }
     const bursts = this.poisonBursts;
     this.poisonBursts = [];
     for (const p of bursts) {
@@ -419,7 +467,7 @@ export class ExpansionWeapons {
   }
   onDeath(e: Enemy, source: string) {
     const w = this.w;
-    if (isLarge(e.kind) || source === "poisonBurst" || !w.weaponEvolution("poison"))
+    if (isLarge(e.kind) || source === "poisonBurst" || w.weaponEvolution("poison") !== "plague")
       return;
     if (
       !this.fields.some(
@@ -458,9 +506,9 @@ export class ExpansionWeapons {
       if (!m) break;
       count++;
       fired.add(m.id);
-      const radius = w.skills.mine >= 3 ? 2.2 : 1.7;
+      const radius = m.form === "demolition" ? 1.5 : w.skills.mine >= 3 ? 2.2 : 1.7;
       for (const e of w.near(m, radius)) {
-        w.hit(e, w.attack * 1.8, "mine", false, m);
+        w.hit(e, w.attack * (m.form === "demolition" ? 5.5 : 1.8), "mine", false, m);
         if (w.skills.mine >= 4 && e.freezeReady <= w.time) {
           if (e.kind === "boss") {
             e.slow = Math.max(e.slowUntil > w.time ? e.slow : 0, 0.1);
@@ -483,7 +531,7 @@ export class ExpansionWeapons {
         for (const e of w.near(m, shardRadius)) w.hit(e, w.attack * 0.55, "bone", false, m, true, "bone");
         w.combinations.trigger("bone", "comboBone", m, shardRadius);
       }
-      if (w.weaponEvolution("mine"))
+      if ((m.form ?? w.weaponEvolution("mine")) === "network")
         for (const other of this.mines)
           if (other.armed <= w.time && distance(other, m) < 3)
             other.queued = true;
@@ -504,7 +552,7 @@ export class ExpansionWeapons {
             (e) => e.id === b.target && e.hp > 0 && e.state !== "arriving",
           );
           if (!target) {
-            target = w.target(b, 7, b.hit);
+            target = b.form === "bloodhunt" ? this.priority(7) : w.target(b, 7, b.hit);
             if (target) b.target = target.id;
             else b.returning = true;
           }

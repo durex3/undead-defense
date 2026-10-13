@@ -1,3 +1,6 @@
+import {stepObservatoryBoss} from "./ObservatorySystem";
+import {stepArsenalBoss} from "./ArsenalSystem";
+import {stepHarborBoss} from "./HarborSystem";
 import { stepLateBoss } from "./LateStageSystem";
 import { crownEscape } from "./CrownSystem";
 import { stepKing } from "./KingBossSystem";
@@ -13,6 +16,9 @@ export function bossExposed(w: SurvivalWorld, e: Enemy) {
   );
 }
 export function stepBoss(w: SurvivalWorld, e: Enemy, dt: number) {
+  if(w.stageId===10){stepObservatoryBoss(w,e,dt);return;}
+  if(w.stageId===9){stepArsenalBoss(w,e,dt);return;}
+  if(w.stageId===8){stepHarborBoss(w,e,dt);return;}
   if(w.stageId>=6){stepLateBoss(w,e,dt);return;}
   if(w.stageId===5){stepKing(w,e,dt);return;}
   if (e.bossPhase === 1 && e.hp <= e.maxHp * 0.5) {
@@ -36,7 +42,7 @@ export function stepBoss(w: SurvivalWorld, e: Enemy, dt: number) {
       e.state = "recover";
       e.timer =
         e.bossAction === "burst"
-          ? 4.8
+          ? (e.bossPhase === 2 ? 3.6 : 4.2)
           : e.bossAction === "transition"
             ? 1.5
             : 2.5;
@@ -55,9 +61,9 @@ export function stepBoss(w: SurvivalWorld, e: Enemy, dt: number) {
     angle = Math.atan2(w.player.y - e.y, w.player.x - e.x);
   e.facing = angle;
   e.attack -= dt;
-  if (d > 2.5) {
+  if (d > .75) {
     const speed =
-      (e.bossPhase === 2 ? 1.5 : 1.15) *
+      (e.bossPhase === 2 ? 2.1 : 1.7) *
       (e.slowUntil > w.time ? 1 - e.slow : 1);
     e.x += Math.cos(angle) * speed * dt;
     e.y += Math.sin(angle) * speed * dt;

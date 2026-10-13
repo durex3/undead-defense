@@ -5,7 +5,7 @@ export const ARSENAL_SKILLS: Skill[] = ['chain', 'pillar', 'totem', 'soul', 'met
 export interface ArsenalEntity extends Point {
   active: boolean; skill: Skill; a: number; b: number; until: number; next: number;
   due: number; created: number; radius: number; damage: number; remaining: number;
-  evolved: boolean; level: number; endX: number; endY: number;
+  form?: string; evolved: boolean; level: number; endX: number; endY: number;
 }
 // Simulation and drawing share preallocated records; no Cocos node is created per cast.
 const entity = (): ArsenalEntity => ({active:false,skill:'chain',x:0,y:0,a:0,b:0,until:0,next:0,due:0,created:0,radius:0,damage:0,remaining:0,evolved:false,level:0,endX:0,endY:0});
@@ -27,19 +27,31 @@ export class ArsenalWeapons {
   private acquire(pool: ArsenalEntity[], skill: Skill): ArsenalEntity | undefined {
     const p = pool.find(p=>!p.active);
     if (!p) return undefined; // defer casts until a slot is free; never evict pending damage
-    Object.assign(p, {active:true,skill,x:0,y:0,a:0,b:0,created:this.w.time,due:this.w.time,next:this.w.time,until:this.w.time,remaining:0,level:this.w.skills[skill],evolved:!!this.w.weaponEvolution(skill),damage:0,radius:0,endX:0,endY:0});
+    Object.assign(p, {active:true,skill,x:0,y:0,a:0,b:0,created:this.w.time,due:this.w.time,next:this.w.time,until:this.w.time,remaining:0,level:this.w.skills[skill],evolved:!!this.w.weaponEvolution(skill),form:this.w.weaponEvolution(skill),damage:0,radius:0,endX:0,endY:0});
     return p;
   }
   private enemies() { return this.w.enemies.filter(e=>e.hp>0 && e.state!=='arriving'); }
   private dense(): Enemy | undefined {
     return this.enemies().filter(e=>distance(e,this.w.player)<14).sort((a,b)=>this.w.near(b,2).length-this.w.near(a,2).length || Number(b.kind==='boss')-Number(a.kind==='boss'))[0];
   }
+  private priority() {
+    return this.enemies().filter(e=>distance(e,this.w.player)<14).sort((a,b)=>Number(b.kind==='boss')-Number(a.kind==='boss') || Number(isLarge(b.kind))-Number(isLarge(a.kind)) || distance(a,this.w.player)-distance(b,this.w.player))[0];
+  }
   cast(skill: Skill): boolean {
     const w=this.w, level=w.skills[skill], evolved=!!w.weaponEvolution(skill);
-    const target=skill==='pillar'||skill==='meteor'?this.dense():w.target(w.player,14);
+    const form=w.weaponEvolution(skill), focused=["brand","sunlance","obelisk","torment","impact"].includes(form || "");
+    const target=focused ? this.priority() : skill==='pillar'||skill==='meteor'?this.dense():w.target(w.player,14);
     if (!target) return false;
     let made=0;
     if(skill==='chain'||skill==='soul') {
+      if(focused) {
+        const p=this.acquire(this.links,skill);
+        if(!p)return false;
+        p.a=p.b=target.id;p.x=target.x;p.y=target.y;p.endX=target.x;p.endY=target.y;
+        p.radius=14;p.until=w.time+3.6;p.damage=w.attack*(skill==='chain'?.65:.4);
+        w.castCounts[skill]=(w.castCounts[skill]||0)+1;w.effects.push({type:'cast',...w.player,skill});
+        return true;
+      }
       const used:number[]=[];
       let a=target;
       const count=skill==='chain'?(level>=2?3:2):(level>=2?2:1);
@@ -57,23 +69,25 @@ export class ArsenalWeapons {
         const p=this.acquire(this.links,skill);if(p){p.a=target.id;p.b=target.id;p.until=w.time+2.4;p.damage=w.attack*(skill==='chain'?.22:.15);p.radius=6;made++;}
       }
     } else if(skill==='totem') {
-      const count=evolved?3:level>=2?2:1;
+      const count=form==='obelisk'?1:evolved?3:level>=2?2:1;
       if(this.totems.filter(p=>!p.active).length<count)return false;
       for(let i=0;i<count;i++) {
         const p=this.acquire(this.totems,skill)!;const angle=w.time+i*Math.PI*2/count;
         p.x=Math.max(-22,Math.min(22,w.player.x+Math.cos(angle)*1.4));p.y=Math.max(-26,Math.min(26,w.player.y+Math.sin(angle)*1.4));
-        p.until=w.time+(level>=4?7:5);p.damage=w.attack*(evolved?.42:.5);made++;
+        p.until=w.time+(level>=4?7:5);p.damage=w.attack*(form==='obelisk'?1.25:evolved?.42:.5);made++;
       }
     } else {
-      const count=level>=2?2:1;
+      const count=focused?1:level>=2?2:1;
       const targets=this.enemies().filter(e=>distance(e,w.player)<14).sort((a,b)=>w.near(b,2).length-w.near(a,2).length);
       const chosen:Point[]=[];
       for(let i=0;i<count;i++) {
-        const t=targets.find(e=>chosen.every(p=>distance(p,e)>2)) || (i===0?target:undefined);if(!t)break;
+        const t=focused?target:targets.find(e=>chosen.every(p=>distance(p,e)>2)) || (i===0?target:undefined);if(!t)break;
         const p=this.acquire(this.markers,skill);if(!p)break;
         chosen.push(t);p.x=t.x;p.y=t.y;p.due=w.time+(skill==='meteor'?1.2:skill==='pillar'&&w.evolutions.chain&&w.skills.chain>=10&&w.skills.pillar>=10?.35:.8);p.next=p.due;
         p.radius=(skill==='meteor'?2:1.5)*(level>=3?1.25:1);p.damage=w.attack*(skill==='meteor'?2.8:1.8);
-        p.remaining=skill==='pillar'&&evolved?3:1;p.until=p.due+(evolved&&skill==='meteor'?2:.8);made++;
+        if(form==='sunlance'){p.radius=1.05;p.damage=w.attack*5.5;}
+        if(form==='impact'){p.radius=1.8;p.damage=w.attack*7;}
+        p.remaining=skill==='pillar'&&evolved&&!focused?3:1;p.until=p.due+(evolved&&skill==='meteor'?2:.8);made++;
       }
     }
     if(made){w.castCounts[skill]=(w.castCounts[skill]||0)+1;w.effects.push({type:'cast',...w.player,skill});}
@@ -93,20 +107,20 @@ export class ArsenalWeapons {
     }
     for(const p of this.links)if(p.active) {
       let a=w.enemies.find(e=>e.id===p.a&&e.hp>0),b=w.enemies.find(e=>e.id===p.b&&e.hp>0);
-      if(p.evolved&&p.skill==='chain'&&a&&!b) {b=w.target(a,4,[a.id]);if(b)p.b=b.id;}
+      if(p.evolved&&p.form!=='brand'&&p.skill==='chain'&&a&&!b) {b=w.target(a,4,[a.id]);if(b)p.b=b.id;}
       if(a){p.x=a.x;p.y=a.y;}if(b){p.endX=b.x;p.endY=b.y;}
       if(!a||!b||w.time>=p.until||distance(a,b)>p.radius) {
-        if(p.evolved&&p.skill==='soul')this.burst(p,w.attack*.8,1.3);
+        if(p.evolved&&p.form!=='torment'&&p.skill==='soul')this.burst(p,w.attack*.8,1.3);
         p.active=false;continue;
       }
       if(w.time>=p.next) {
         p.next=w.time+.5;
         const targets=a===b?[a]:[a,b];
         for(const e of targets) {
-          if(p.skill==='soul'&&e.kind!=='boss'){e.slow=Math.max(e.slow,p.level>=3?.4:.25);e.slowUntil=w.time+.6;}
+          if(p.skill==='soul'&&p.form!=='torment'&&e.kind!=='boss'){e.slow=Math.max(e.slow,p.level>=3?.4:.25);e.slowUntil=w.time+.6;}
           if (p.skill === "chain") this.chainMarks.set(e.id, w.time + 0.8);
           if (p.skill === "soul") this.soulMarks.set(e.id, w.time + 0.8);
-          w.hit(e,p.damage,p.skill,false,p);
+          w.hit(e,p.damage*(p.form==='torment'?Math.min(1.6,1+Math.floor(w.time-p.created)*.2):1),p.skill,false,p);
         }
       }
     }
@@ -114,18 +128,19 @@ export class ArsenalWeapons {
       if(p.remaining>0) {
         this.burst(p,p.damage,p.radius);p.remaining--;p.next=w.time+.28;
         if(!p.remaining)p.next=w.time+.5;
-      } else if(p.skill==='meteor'&&p.evolved&&w.time<p.until) {
+      } else if(p.skill==='meteor'&&p.evolved&&p.form!=='impact'&&w.time<p.until) {
         this.burst(p,w.attack*.18,p.radius,false);p.next=w.time+.5;
       } else p.active=false;
     }
     for(const p of this.totems)if(p.active) {
       if(w.time>=p.until){p.active=false;continue;}
+      if(p.form==='obelisk'){p.x=w.player.x;p.y=w.player.y+1.1;}
       if(w.time<p.next)continue;
-      const target=this.enemies().filter(e=>distance(e,p)<8).sort((a,b)=>distance(a,p)-distance(b,p))[0];
+      const target=this.enemies().filter(e=>distance(e,p)<8).sort((a,b)=>(p.form==='obelisk'?Number(b.kind==='boss')-Number(a.kind==='boss') || Number(isLarge(b.kind))-Number(isLarge(a.kind)):0) || distance(a,p)-distance(b,p))[0];
       if(!target)continue;
       const bolt=this.acquire(this.bolts,'totem');if(!bolt)continue;
-      p.next=w.time+(p.level>=3?.75:1);bolt.x=p.x;bolt.y=p.y;bolt.endX=target.x;bolt.endY=target.y;bolt.until=w.time+.16;
-      if(p.evolved) {for(const e of this.enemies())if(segmentDistance(e,p,target)<.35){this.soulStrike(e,p);w.hit(e,p.damage,'totem',false,p);}}
+      p.next=w.time+(p.form==='obelisk'?.6:p.level>=3?.75:1);bolt.x=p.x;bolt.y=p.y;bolt.endX=target.x;bolt.endY=target.y;bolt.until=w.time+.16;
+      if(p.evolved&&p.form!=='obelisk') {for(const e of this.enemies())if(segmentDistance(e,p,target)<.35){this.soulStrike(e,p);w.hit(e,p.damage,'totem',false,p);}}
       else {this.soulStrike(target,p);w.hit(target,p.damage,'totem',false,p);}
     }
     for(const p of this.bolts)if(p.active&&w.time>=p.until)p.active=false;
@@ -157,7 +172,7 @@ export class ArsenalWeapons {
         w.combinations.trigger('chain','comboJudgment',e,0.8);
       }
       w.hit(e,amount*(p.skill==='pillar'&&p.evolved&&distance(e,p)<radius*.4?1.4:1),p.skill,false,p);
-      if(impact&&p.skill==='meteor'&&!isLarge(e.kind)) {
+      if(impact&&p.skill==='meteor'&&e.kind!=='warflag'&&!isLarge(e.kind)) {
         const d=Math.max(.01,distance(e,p));e.x=Math.max(-22,Math.min(22,e.x+(e.x-p.x)/d*.7));e.y=Math.max(-26,Math.min(26,e.y+(e.y-p.y)/d*.7));
       }
     }

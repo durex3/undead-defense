@@ -1,3 +1,4 @@
+import { MAX_PLAYER_LEVEL } from "./EncounterPacing";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { CHARACTERS } from "./ProgressionConfig";
 import { Card, Skill, Passive, WEAPONS, MAX_SKILL_LEVEL, SYNTHESIS_RECIPES, PASSIVES, EVOLUTIONS } from "./SurvivalConfig";
@@ -23,13 +24,6 @@ export class UpgradeSystem {
     if (this.world.state !== "upgrade" && !(this.world.state === "battle" && (this.world.time === 0 || this.world.pauses.has("menu")))) return false;
     if (main !== null && this.targetReason(main)) return false;
     this.target = main;
-    if (main && this.world.state === "upgrade") {
-      // Keep existing alternatives; changing targets never rerolls random rewards.
-      const legal = this.legal();
-      const pair: Card[] = [main, SYNTHESIS_RECIPES[main]!];
-      const candidates = pair.concat(this.world.cards, legal);
-      this.world.cards = candidates.filter((c, index) => legal.includes(c) && candidates.indexOf(c) === index).slice(0, 3);
-    }
     this.world.touch();
     return true;
   }
@@ -57,10 +51,18 @@ export class UpgradeSystem {
   }
   autoSynthesize() {
     for (const skill of this.synthesisOptions()) this.synthesize(skill);
+    // Partner weapons choose their own attack style at rank ten, without another XP roll.
+    for (const skill of WEAPONS) {
+      if (SYNTHESIS_RECIPES[skill] || EVOLUTIONS[skill].length < 2 || this.world.skills[skill] < MAX_SKILL_LEVEL || this.world.evolutions[skill]) continue;
+      this.world.evolutions[skill] = EVOLUTIONS[skill][0].id;
+      this.branchQueue.push(skill);
+      this.world.cooldowns[skill] = 0;
+      this.world.effects.push({type:"evolve",...this.world.player,skill,form:this.world.evolutions[skill],final:false});
+    }
   }
   openAutomaticBranch() {
     if (this.world.state !== "battle" || !this.branchQueue.length) return false;
-    this.branchQueue = this.branchQueue.filter(s => this.world.skills[s] >= MAX_SKILL_LEVEL && !!this.world.evolutions[s] && this.world.skills[SYNTHESIS_RECIPES[s]!] >= MAX_SKILL_LEVEL);
+    this.branchQueue = this.branchQueue.filter(s => this.world.skills[s] >= MAX_SKILL_LEVEL && !!this.world.evolutions[s] && (!SYNTHESIS_RECIPES[s] || this.world.skills[SYNTHESIS_RECIPES[s]!] >= MAX_SKILL_LEVEL));
     if (!this.branchQueue.length) return false;
     this.world.pendingEvolution = this.branchQueue.shift()!;
     this.automaticBranch = true;
@@ -89,7 +91,7 @@ export class UpgradeSystem {
     return WEAPONS.filter(s => this.world.skills[s] > 0).sort((a,b) => this.world.skills[b]-this.world.skills[a] || Number(b===starter)-Number(a===starter));
   }
   checkUpgrade() {
-    if (this.world.level < 50 && this.world.xp >= this.world.xpNeed) {
+    if (this.world.level < MAX_PLAYER_LEVEL && this.world.xp >= this.world.xpNeed) {
       this.world.xp -= this.world.xpNeed;
       this.world.level++;
       this.world.hp = Math.min(this.world.maxHp, this.world.hp + 5);
@@ -113,37 +115,21 @@ export class UpgradeSystem {
     return pool;
   }
   roll() {
-    const pool = this.legal(),
-      cards: Card[] = [];
-    const pick = (c?: Card) => {
-      if (cards.length < 3 && c && pool.includes(c) && !cards.includes(c)) {
-        cards.push(c);
-        pool.splice(pool.indexOf(c), 1);
-      }
-    };
-    const randomPick = (p: Card[]) => {
-      if (p.length) pick(p[Math.floor(this.world.random() * p.length)]);
-    };
-    const target = this.buildTarget;
-    if (target) { pick(target); pick(SYNTHESIS_RECIPES[target]); }
-    const evolutions = pool.filter(
-      (c) => WEAPONS.includes(c as Skill) && this.world.skills[c as Skill] >= MAX_SKILL_LEVEL && !this.world.evolutions[c as Skill],
-    );
-    if (evolutions.length) {
-      pick(evolutions[this.specialIndex++ % evolutions.length]);
-    } else if (this.world.level === 2) pick(this.buildWeapons[0]);
-    const owned = pool.filter((c) => WEAPONS.includes(c as Skill) && this.world.skills[c as Skill] > 0);
-    const fresh = pool.filter((c) => WEAPONS.includes(c as Skill) && !this.world.skills[c as Skill]);
-    // Keep the invested weapon and its legal recipe partner available.
-    // Remaining slots can offer a different build or a passive.
-    const focused = this.buildWeapons.filter(s => owned.includes(s));
+    const pool = this.legal(), cards: Card[] = [];
     const pair = this.growthPair;
-    pick(pair?.main);
-    pick(pair?.partner);
-    pick(focused[0]);
-    pick(focused[1]);
-    if (this.world.weaponCount < this.world.weaponSlots && fresh.length && (this.world.level <= 4 || this.world.random() < 0.35)) randomPick(fresh);
-    while (cards.length < 3 && pool.length) randomPick(pool);
+    // Sampling without replacement: a target changes odds, never guarantees a card.
+    const weight = (c: Card) => {
+      if (!WEAPONS.includes(c as Skill)) return 1;
+      const owned = this.world.skills[c as Skill] > 0;
+      const recommended = c === pair?.main || c === pair?.partner;
+      return (owned ? 1.5 : 1) * (recommended ? (this.buildTarget ? 2 : 1.3) : 1);
+    };
+    while (cards.length < 3 && pool.length) {
+      let roll = this.world.random() * pool.reduce((sum,c)=>sum+weight(c),0);
+      let index = pool.length - 1;
+      for(let i=0;i<pool.length;i++){roll-=weight(pool[i]);if(roll<0){index=i;break;}}
+      cards.push(pool.splice(index,1)[0]);
+    }
     this.world.cards = cards.length ? cards : ["repair"];
     this.world.touch();
   }

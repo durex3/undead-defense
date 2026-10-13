@@ -1,3 +1,5 @@
+import {ObservatoryPath} from "./ObservatoryPath";
+import { furnaceRoute } from "./FurnaceEncounters";
 import { LateStageDirector, lateStageDamage } from "./LateStageSystem";
 import { CombinationSystem } from "./CombinationSystem";
 import { UpgradeSystem } from "./UpgradeSystem";
@@ -30,6 +32,7 @@ import { ExpansionWeapons, EXPANSION_SKILLS } from "./ExpansionWeapons";
 export type { Enemy, Shot, Effect } from "./SurvivalTypes";
 const XP = [6, 8, 10, 10, 12, 12, 14, 14, 16, 16, 18, 18, 20, 20, 22, 22, 24, 24, 26, 26, 28, 28, 30, 30];
 export class SurvivalWorld {
+  starPath=new ObservatoryPath();
   enemies: Enemy[] = [];
   shots: Shot[] = [];
   effects: Effect[] = [];
@@ -47,7 +50,7 @@ export class SurvivalWorld {
   lastHurt = -Infinity;
   lastDamageSource = "";
   healing = { potion: 0, repair: 0 };
-  state: "battle" | "upgrade" | "evolution" | "won" | "lost" = "battle";
+  state: "starting" | "battle" | "upgrade" | "evolution" | "won" | "lost" = "battle";
   pauses = new Set<string>();
   hp = 100;
   maxHp = 100;
@@ -117,6 +120,7 @@ export class SurvivalWorld {
   losses: Record<string, number> = {};
   castCounts: Record<string, number> = {};
   scheduled: ScheduledCast[] = [];
+  readonly furnaceRoute: number;
   private nextId = 1;
   private bladeHits = new Map<number, number>();
   private bladePhases = new Map<string, number>();
@@ -127,9 +131,23 @@ export class SurvivalWorld {
     public stageId: StageId = 1,
     public weaponSlots = 4,
   ) {
+    this.furnaceRoute = furnaceRoute(seed);
     this.seed = seed;
     this.skills.blade = 0;
     this.skills[CHARACTERS[character].weapon] = 1;
+  }
+  startingWeapons: Skill[] = [];
+  offerStartingWeapons() {
+    if(this.time!==0 || this.state!=="battle")return false;
+    for(const skill of WEAPONS)this.skills[skill]=0;
+    const groups: Skill[][] = [["blade","scythe","axe"],["fire","lightning","ghost","bone"],["water","poison","meteor"]];
+    this.startingWeapons=groups.map(group=>group[Math.floor(this.random()*group.length)]);
+    this.state="starting";this.setMove(0,0);this.touch();return true;
+  }
+  chooseStartingWeapon(skill: Skill) {
+    if(this.state!=="starting" || !this.startingWeapons.includes(skill))return false;
+    this.skills[skill]=1;this.startingWeapons=[];this.state="battle";
+    this.effects.push({type:"learn",...this.player,skill});this.touch();return true;
   }
   cooldownFactor(skill: Skill) {
     return (
@@ -323,8 +341,8 @@ export class SurvivalWorld {
     const c = ENEMIES[kind];
     const hp =
       kind === "boss"
-        ? c.health * STAGES[this.stageId].bossHealth
-        : 30 * (1 + Math.min(this.time, kind === "minion" ? 90 : 240) / 300) * c.health *
+        ? c.health * STAGES[this.stageId].bossHealth * 8
+        : 30 * (1 + Math.min(this.time, ["minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health);
     const e: Enemy = {
       id: this.id(),
@@ -405,7 +423,7 @@ export class SurvivalWorld {
     if (WEAPONS.includes(source as Skill)) {
       const rank = this.skills[source as Skill];
       amount *= rankDamage(rank);
-      if (this.evolutions[source as Skill] && rank >= MAX_SKILL_LEVEL) amount *= 1.8;
+      if (this.evolutions[source as Skill] && rank >= MAX_SKILL_LEVEL) amount *= e.kind === "boss" ? 1.25 : 1.8;
       const tags = WEAPON_TAGS[source as Skill];
       const bonus = Math.max(...tags.map((tag) => (this.tagBonus as Record<string, number>)[tag] || 0), 0);
       amount *= 1 + bonus;
@@ -438,6 +456,7 @@ export class SurvivalWorld {
       skill: source,
     });
     if (e.hp <= 0) {
+      if(e.kind === "warflag"){this.effects.push({type:"death",x:e.x,y:e.y});this.touch();return;}
       this.kills++;
       this.gold += e.summoned ? 0 : 1;
       this.weaponKills[attribution] = (this.weaponKills[attribution] || 0) + 1;
@@ -510,7 +529,7 @@ export class SurvivalWorld {
     if (freeze && e.kind !== "boss" && e.freezeReady <= this.time) {
       e.freezeUntil = this.time + (isElite(e.kind) ? 0.25 : 0.5);
       e.freezeReady = this.time + 3;
-      if (e.state === "windup") {
+      if (e.state === "windup" && !["starpatrol","starweaver","starpuppet"].includes(e.kind)) {
         this.hazards = this.hazards.filter((h) => h.source !== e.id);
         e.state = "recover";
         e.timer = 0.5;
@@ -543,6 +562,7 @@ export class SurvivalWorld {
           : 2.4);
     this.director.step(this, dt);
     stepGarden(this, 0);
+    if(this.stageId===10)this.starPath.sample(this.time,this.player);
     this.altar.step(this);
     this.church.step(this);
     this.crown.step(this);
@@ -626,7 +646,7 @@ export class SurvivalWorld {
       }
     for (const [key, until] of this.bladePhases)
       if (until < this.time) this.bladePhases.delete(key);
-    if (this.weaponEvolution("ice"))
+    if (this.weaponEvolution("ice") === "domain")
       for (const e of this.near(this.player, 3.5)) {
         e.slow = isLarge(e.kind) ? 0.2 : 0.4;
         e.slowUntil = this.time + 0.15;
@@ -641,7 +661,7 @@ export class SurvivalWorld {
         this.target(
           this.player,
           s === "ice"
-            ? this.weaponEvolution("ice")
+            ? this.weaponEvolution("ice") === "icicle" ? 14 : this.weaponEvolution("ice")
               ? 3.5
               : this.skills.ice >= 2
                 ? 3.2
@@ -657,7 +677,7 @@ export class SurvivalWorld {
               ? 4
               : s === "lightning"
                 ? 2.6
-                : s === "axe" ? (this.skills.axe >= 4 ? 2.2 : 2.8) : s === "scythe"
+                : s === "axe" ? (this.weaponEvolution("axe") === "execution" ? 3 : this.skills.axe >= 4 ? 2.2 : 2.8) : s === "scythe"
                   ? this.skills.scythe >= 4
                     ? 1.8
                     : 2.5
@@ -702,6 +722,18 @@ export class SurvivalWorld {
     this.castCounts[s] = (this.castCounts[s] || 0) + 1;
     this.effects.push({ type: "cast", ...this.player, skill: s });
     if (s === "ice") {
+      if (this.weaponEvolution("ice") === "icicle") {
+        const target=this.priorityTarget();
+        if (!target) return;
+        const angle=Math.atan2(target.y-this.player.y,target.x-this.player.x);
+        for(let i=0;i<3;i++) {
+          const a=angle+(i-1)*.055;
+          this.shots.push({id:this.id(),skill:"ice",form:"icicle",...this.player,
+            vx:Math.cos(a)*18,vy:Math.sin(a)*18,damage:this.attack*1.6,left:1,hit:[],target:target.id,
+            ttl:14/18,age:0,range:14,returning:false,width:.22,extra:0,excursion:0});
+        }
+        return;
+      }
       this.ring(true);
       if (this.skills.ice >= 3 && !this.weaponEvolution("ice"))
         this.scheduled.push({
@@ -725,7 +757,7 @@ export class SurvivalWorld {
             : this.skills.fire >= 2
               ? 2
               : 1
-        : s === "axe" ? (this.skills.axe >= 2 ? 2 : 1)
+        : s === "axe" ? (this.weaponEvolution("axe") === "execution" ? 1 : this.skills.axe >= 2 ? 2 : 1)
         : s === "scythe"
           ? this.weaponEvolution("scythe") === "cross" ? 2 : this.weaponEvolution("scythe")
             ? 1
@@ -819,6 +851,10 @@ export class SurvivalWorld {
     this.hit(e, this.attack * 0.8, "lightning", false, e, true, "lightning");
     this.combinations.trigger("lightning", "comboIce", e, 0.8, "ice");
   }
+  private priorityTarget() {
+    return this.near(this.player,14).filter(e=>e.state!=="arriving")
+      .sort((a,b)=>Number(b.kind==="boss")-Number(a.kind==="boss") || Number(isElite(b.kind))-Number(isElite(a.kind)) || distance(a,this.player)-distance(b,this.player))[0];
+  }
   private castPart(q: ScheduledCast) {
     const s = q.skill;
     if (s === "ice") {
@@ -867,9 +903,10 @@ export class SurvivalWorld {
           .sort(
             (a, b) => Number(b.kind === "boss") - Number(a.kind === "boss") || this.near(b, 1.5).length - this.near(a, 1.5).length,
           )[0] || target;
+    if(s === "axe" && this.weaponEvolution("axe") === "execution") target=this.priorityTarget() || target;
     q.targets.push(target.id);
     let angle = Math.atan2(target.y - origin.y, target.x - origin.x);
-    if (s === "scythe" || s === "axe")
+    if (s === "scythe" || (s === "axe" && this.weaponEvolution("axe") !== "execution"))
       angle =
         Math.atan2(-this.lastMove.y, -this.lastMove.x) +
         (s === "scythe" && this.weaponEvolution("scythe") === "cross" ? (q.index === 0 ? -0.45 : 0.45) :
@@ -890,7 +927,7 @@ export class SurvivalWorld {
           ? this.weaponEvolution("fire")
             ? this.weaponEvolution("fire") === "inferno" ? 1.25 : 3
             : 1.6
-          : s === "axe" ? .95 : s === "scythe"
+          : s === "axe" ? (this.weaponEvolution("axe") === "execution" ? 3 : .95) : s === "scythe"
             ? this.weaponEvolution("scythe") === "cross" ? 1.15 : this.weaponEvolution("scythe")
               ? 2
               : 0.9
@@ -901,11 +938,11 @@ export class SurvivalWorld {
       target: target.id,
       ttl: 4,
       age: 0,
-      range: s === "axe" ? (this.skills.axe >= 3 ? 7 : 5) : s === "scythe" ? (this.weaponEvolution("scythe") === "cross" ? 5.5 : this.skills.scythe >= 3 ? 8 : 6) : 0,
+      range: s === "axe" ? (this.weaponEvolution("axe") === "execution" ? 6 : this.skills.axe >= 3 ? 7 : 5) : s === "scythe" ? (this.weaponEvolution("scythe") === "cross" ? 5.5 : this.skills.scythe >= 3 ? 8 : 6) : 0,
       returning: false,
       width:
         s === "scythe" || s === "axe"
-          ? s === "scythe" && this.weaponEvolution("scythe") === "cross" ? 0.8 : this.weaponEvolution(s)
+          ? s === "axe" && this.weaponEvolution("axe") === "execution" ? .55 : s === "scythe" && this.weaponEvolution("scythe") === "cross" ? 0.8 : this.weaponEvolution(s)
             ? 1.2
             : this.skills[s] >= 3
               ? 0.65
@@ -976,11 +1013,12 @@ export class SurvivalWorld {
         p.left = 0;
         break;
       }
+      if (p.skill === "ice") this.slow(e, false);
       if (p.skill === "axe") this.combinations.mark("scythe", e);
       if (p.skill === "ghost") this.combinations.strike("ghost", e, old);
       if (p.skill === "scythe" && p.returning) this.combinations.strike("scythe", e, old);
-      this.hit(e, p.damage * (p.skill === "axe" && p.returning ? (this.weaponEvolution("axe") ? 1.7 : this.skills.axe >= 4 ? 1.35 : 1) : p.skill === "scythe" && p.form === "cross" && p.returning ? 1.5 : 1), p.skill, false, old);
-      if (p.skill === "bone" && this.weaponEvolution("bone") && e.kind !== "boss") {
+      this.hit(e, p.damage * (p.skill === "axe" && p.returning ? (p.form === "execution" ? 1.15 : p.form ? 1.7 : this.skills.axe >= 4 ? 1.35 : 1) : p.skill === "scythe" && p.form === "cross" && p.returning ? 1.5 : 1), p.skill, false, old);
+      if (p.skill === "bone" && p.form === "ram" && e.kind !== "boss" && e.kind !== "warflag") {
         const push = isLarge(e.kind) ? 0.35 : 0.7;
         e.x = Math.max(-22.7, Math.min(22.7, e.x + (p.vx / 13) * push));
         e.y = Math.max(-26.7, Math.min(26.7, e.y + (p.vy / 13) * push));
@@ -1008,6 +1046,12 @@ export class SurvivalWorld {
         p.extra++;
         p.excursion += 1;
         p.ttl += 0.2;
+      }
+      if (p.skill === "bone" && p.form === "ricochet") {
+        const next=this.target(e,4,p.hit);
+        if(next && p.left>0){const d=Math.max(.01,distance(next,e));p.x=e.x;p.y=e.y;p.vx=(next.x-e.x)/d*13;p.vy=(next.y-e.y)/d*13;p.target=next.id;p.damage*=.85;}
+        else p.left=0;
+        break;
       }
       if (p.left <= 0) break;
     }
@@ -1055,22 +1099,15 @@ export class SurvivalWorld {
     });
   }
   useUltimate() {
-    if (!this.active || this.ultimate > 0) return false;
-    for (const e of this.near(this.player, 7.5)) {
-      this.hit(e, this.attack * 3, "ultimate");
-      if (!isLarge(e.kind)) {
-        const d = distance(e, this.player);
-        e.x += ((e.x - this.player.x) / Math.max(0.01, d)) * 2;
-        e.y += ((e.y - this.player.y) / Math.max(0.01, d)) * 2;
-        if (e.state === "windup") {
-          this.hazards = this.hazards.filter((h) => h.source !== e.id);
-          e.state = "recover";
-          e.timer = 1;
-        }
-      }
-    }
-    this.ultimate = 25;
-    this.effects.push({ type: "ultimate", ...this.player, radius: 7.5 });
+    if (!this.active || this.ultimate > 0 || !this.gems.some(g=>g.value>0)) return false;
+    let total=0;
+    for(const g of this.gems)total+=Math.max(0,g.value);
+    this.gems=[];
+    this.xp+=total;
+    this.ultimate=25;
+    this.effects.push({type:"pickup",...this.player,value:total});
+    this.checkUpgrade();
+    this.touch();
     return true;
   }
 

@@ -2,7 +2,7 @@ import { crownEscape } from "./CrownSystem";
 import type { SurvivalWorld } from './SurvivalWorld';
 import type { Enemy, Hazard, Point } from './SurvivalTypes';
 import { isElite } from './SurvivalConfig';
-import { encounterBeat } from './EncounterPacing';
+import { encounterBeat, encounterTime } from './EncounterPacing';
 export const CHURCH_BELLS = [{x:-8,y:6},{x:8,y:6},{x:0,y:-8}];
 export function bellContains(h: Hazard, p: Point) {
   const d=Math.hypot(p.x-h.x,p.y-h.y);
@@ -30,14 +30,14 @@ export function churchCast(w: SurvivalWorld,e: Enemy,pulse=false) {
   return true;
 }
 export class ChurchSystem {
-  private next=60;
+  private next=120;
   private bell=0;
   step(w: SurvivalWorld) {
     if(w.stageId!==4)return;
-    if(w.time>=230){w.hazards=w.hazards.filter(h=>!(h.source===0 && h.kind==='bellRing'));return;}
+    if(encounterTime(w.time)>=230){w.hazards=w.hazards.filter(h=>!(h.source===0 && h.kind==='bellRing'));return;}
     if(w.time<this.next||encounterBeat(w.time).rest||w.time<w.reinforcementRestUntil||w.enemies.some(e=>e.hp>0&&(isElite(e.kind)||e.kind==='boss')))return;
     // Start environment attacks only when no enemy warning is already active.
     if(w.hazards.length || !bellHazard(w,CHURCH_BELLS[this.bell]))return;
-    this.bell=(this.bell+1)%3;this.next=w.time+24;
+    this.bell=(this.bell+1)%3;this.next=w.time+36;
   }
 }

@@ -8,23 +8,24 @@ test('weapons grow continuously past four; seven awakens without spending anothe
  for(const s of WEAPONS){
   const w=new SurvivalWorld(8);w.skills[s]=4;
   for(let rank=5;rank<=10;rank++){
-   choose(w,s);assert.equal(w.skills[s],rank,s);assert.equal(w.state,'battle',s);
+   choose(w,s);assert.equal(w.skills[s],rank,s);
+   if(rank===10 && !SYNTHESIS_RECIPES[s]){assert.equal(w.state,'evolution');w.back();}
+   assert.equal(w.state,'battle',s);
    assert.equal(w.weaponEvolution(s),rank>=7?EVOLUTIONS[s][0].id:undefined,s);
   }
   if(SYNTHESIS_RECIPES[s]){w.skills[SYNTHESIS_RECIPES[s]]=10;w.step(1/60);assert.equal(w.evolutions[s],EVOLUTIONS[s][0].id);assert.equal(w.skills[SYNTHESIS_RECIPES[s]],10);continue;}
-  choose(w,s);assert.equal(w.state,'evolution',s);
-  assert.equal(w.evolve(EVOLUTIONS[s][0].id),true);assert.equal(w.legal().includes(s),false);
+  if(!SYNTHESIS_RECIPES[s]){assert.equal(w.legal().includes(s),false);continue;}
+
  }
 });
 test('old early evolutions and shop synthesis can still be upgraded through rank ten',()=>{
  const w=new SurvivalWorld(2);w.skills.fire=4;w.evolutions.fire='meteor';
  assert(w.legal().includes('fire'));choose(w,'fire');assert.equal(w.skills.fire,5);
 });
-test('main and secondary stay offered across seeds once the two-weapon build is established',()=>{
- for(let seed=1;seed<=80;seed++){
-  const w=new SurvivalWorld(seed);w.level=8;w.skills.blade=6;w.skills.fire=3;
-  for(let i=0;i<8;i++){w.roll();assert(w.cards.includes('blade'));assert(w.cards.includes('fire'));assert.equal(new Set(w.cards).size,3);}
- }
+test('established builds still receive other choices across repeated upgrades',()=>{
+ const w=new SurvivalWorld(19);w.skills.blade=6;w.skills.fire=3;let alternatives=0;
+ for(let i=0;i<100;i++){w.roll();assert.equal(new Set(w.cards).size,3);if(!w.cards.includes('blade'))alternatives++;}
+ assert(alternatives>0);
 });
 test('each late rank improves damage and enemies do not gain health from weapon ranks',()=>{
  const w=new SurvivalWorld(1);const a=w.addEnemy('minion',4,0).maxHp;
@@ -39,10 +40,10 @@ test('midgame fodder health stops inflating while special enemies retain progres
 });
 test('a completed main/support build clears the identical fifty-enemy wave substantially faster',()=>{
  function clearTime(blade,fire){
-  const w=new SurvivalWorld(22);w.time=120;w.level=50;w.invulnerable=999;w.skills.blade=blade;w.skills.fire=fire;
+  const w=new SurvivalWorld(22);w.time=120;w.level=60;w.invulnerable=999;w.skills.blade=blade;w.skills.fire=fire;
   w.director.nextGroup=1e9;w.director.nextSpecial=1e9;w.director.elites=[true,true];
   for(let i=0;i<50;i++){const a=i*Math.PI*2/50;w.addEnemy('minion',Math.cos(a)*3.5,Math.sin(a)*3.5);}
-  for(let i=0;i<300;i++){w.step(1/60);w.drain();if(w.kills===50)return (i+1)/60;}
+  for(let i=0;i<300;i++){if(w.state==='evolution')w.back();w.step(1/60);w.drain();if(w.kills===50)return (i+1)/60;}
   return Infinity;
  }
  const basic=clearTime(4,3),complete=clearTime(10,7);

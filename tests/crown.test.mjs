@@ -19,8 +19,8 @@ test('five-stage progression persists and prior three-stage milestone remains fi
  assert.deepEqual(p.data.stages,[1,2,3,4,5]);
 });
 test('king phase transitions merge skipped thresholds, do not heal and do not repeat',()=>{
- const {w,e}=setup();assert.equal(e.maxHp,5600);kingCast(w,e,'lance');e.hp=e.maxHp*.25;
- stepKing(w,e,0);assert.equal(e.bossPhase,3);assert.equal(e.timer,1.5);assert.equal(w.hazards.length,0);assert.equal(e.hp,1400);
+ const {w,e}=setup();assert.equal(e.maxHp,44800);kingCast(w,e,'lance');e.hp=e.maxHp*.25;
+ stepKing(w,e,0);assert.equal(e.bossPhase,3);assert.equal(e.timer,1.5);assert.equal(w.hazards.length,0);assert.equal(e.hp,11200);
  const count=w.effects.filter(x=>x.type==='bossPhase').length;stepKing(w,e,.2);assert.equal(w.effects.filter(x=>x.type==='bossPhase').length,count);
  e.hp=0;stepKing(w,e,5);assert.equal(e.timer,1.3);
 });
@@ -36,12 +36,12 @@ test('king damage is fixed, aim locks, and unsafe candidates are rejected',()=>{
  w.player={...CROWN_STONES[0]};assert.equal(crownEscape(w,[{...h,created:w.time,due:w.time+1,until:w.time+1.25}]),false);
 });
 test('environment events skip blocked windows rather than accumulating; pre-boss clears hazards',()=>{
- const w=new SurvivalWorld(1,'ranger',5),d=new CrownDirector();w.time=60;w.addEnemy('executioner');d.step(w);assert.equal(w.hazards.length,0);
- w.enemies=[];w.time=65;d.step(w);assert.equal(w.hazards.length,0);
- w.time=80;d.step(w);assert.equal(w.hazards.length,1);
- w.time=83;d.step(w);assert.equal(w.hazards.length,0);
- w.time=217;d.step(w);assert.equal(w.hazards.length,1);assert.equal(w.hazards[0].kind,'bellRing');
- w.time=230;d.step(w);assert.equal(w.hazards.length,0);
+ const w=new SurvivalWorld(1,'ranger',5),d=new CrownDirector();w.time=120;w.addEnemy('executioner');d.step(w);assert.equal(w.hazards.length,0);
+ w.enemies=[];w.time=130;d.step(w);assert.equal(w.hazards.length,0);
+ w.time=160;d.step(w);assert.equal(w.hazards.length,1);
+ w.time=166;d.step(w);assert.equal(w.hazards.length,0);
+ w.time=434;d.step(w);assert.equal(w.hazards.length,1);assert.equal(w.hazards[0].kind,'bellRing');
+ w.time=460;d.step(w);assert.equal(w.hazards.length,0);
 });
 test('king summon cap holds and phase three never adds summons',()=>{
  const {w,e}=setup();e.pattern=2;stepKing(w,e,0);assert.equal(w.enemies.filter(x=>x.owner===e.id).length,4);

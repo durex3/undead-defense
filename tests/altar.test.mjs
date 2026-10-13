@@ -32,12 +32,12 @@ test('altar has a safe center, full warning, periodic fixed damage and shared ha
  altarFlame(w,0);w.hazards.push({...w.hazards[0],id:999,kind:'circle'});assert.equal(altarFlame(w,2),false);
 });
 test('map fire respects elite/rest windows, pausing and boss arrival cleanup',()=>{
- const w=new SurvivalWorld(1,'ranger',3),a=new AltarSystem();w.time=59;a.step(w);assert.equal(w.hazards.length,0);
- w.time=60;a.step(w);assert.equal(w.hazards.length,1);w.pause('test',true);w.step(10);assert.equal(w.time,60);w.pause('test',false);
- w.hazards=[];w.time=85;a.step(w);assert.equal(w.hazards.length,0);
- w.time=90;const e=w.addEnemy('executioner');a.step(w);assert.equal(w.hazards.length,0);e.hp=0;
- w.time=120;a.step(w);assert.equal(w.hazards.length,1);
- w.time=240;w.director.step(w,0);assert.equal(w.hazards.length,0);
+ const w=new SurvivalWorld(1,'ranger',3),a=new AltarSystem();w.time=118;a.step(w);assert.equal(w.hazards.length,0);
+ w.time=120;a.step(w);assert.equal(w.hazards.length,1);w.pause('test',true);w.step(10);assert.equal(w.time,120);w.pause('test',false);
+ w.hazards=[];w.time=170;a.step(w);assert.equal(w.hazards.length,0);
+ w.time=180;const e=w.addEnemy('executioner');a.step(w);assert.equal(w.hazards.length,0);e.hp=0;
+ w.time=240;a.step(w);assert.equal(w.hazards.length,1);
+ w.time=480;w.director.step(w,0);assert.equal(w.hazards.length,0);
 });
 test('lance locks aim, has exact rectangle hit region and cancels on caster death',()=>{
  const w=new SurvivalWorld(1,'ranger',3),e=w.addEnemy('boss',0,0);e.state='seek';w.player={x:5,y:0};altarLance(w,e);

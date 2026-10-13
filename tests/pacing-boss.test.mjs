@@ -22,16 +22,16 @@ function tick(w, n) {
   }
 }
 test("pacing has finite harvest/rest beats and no fresh spawns during pre-boss rest", () => {
-  assert.equal(encounterBeat(40).harvest, true);
-  assert.equal(encounterBeat(84).rest, true);
-  assert.equal(encounterBeat(95).rest, false);
-  assert.equal(encounterBeat(235).rest, true);
+  assert.equal(encounterBeat(80).harvest, true);
+  assert.equal(encounterBeat(168).rest, true);
+  assert.equal(encounterBeat(190).rest, false);
+  assert.equal(encounterBeat(470).rest, true);
   const w = new SurvivalWorld();
-  w.time = 235;
+  w.time = 470;
   w.director.elites = [true, true];
   w.director.step(w, 1 / 60);
   assert.equal(w.enemies.length, 0);
-  w.time = 240;
+  w.time = 480;
   w.director.step(w, 1 / 60);
   assert.equal(w.enemies.filter((e) => e.kind === "boss").length, 1);
 });
@@ -101,4 +101,17 @@ test("boss summons have a warning, no XP and owner cap; offscreen boss cannot in
   e.attack = 0;
   stepEnemies(w, 1 / 60);
   assert.equal(w.hazards.length, 0);
+});
+test('mid-run collection breaks are shorter and late harvest alternates pure fodder with special roles',()=>{
+ assert.equal(encounterBeat(170).rest,true);
+ assert.equal(encounterBeat(174).rest,false);
+ assert.equal(encounterBeat(338).rest,true);
+ assert.equal(encounterBeat(342).rest,false);
+ assert.equal(encounterBeat(462).rest,false);
+ assert.equal(encounterBeat(470).rest,true);
+ for(const [time,hasSpecial] of [[240,false],[260,true]]){
+  const w=new SurvivalWorld(19,'ranger',1);w.time=time;w.director.elites=[true,true];
+  w.director.step(w,1/60);
+  assert.equal(w.enemies.some(e=>e.kind!=='minion'),hasSpecial);
+ }
 });

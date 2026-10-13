@@ -1,3 +1,4 @@
+import {starHeight} from "./battle/ObservatorySystem";
 import { drawLateStage } from "./presentation/LateStagePainter";
 import { GameMenus } from "./presentation/GameMenus";
 import { MenuWidgets } from "./presentation/MenuWidgets";
@@ -236,13 +237,13 @@ export class GameBootstrap extends Component {
       );
       this.novaLabel = this.button(
         this.hud,
-        "新星 [空格]",
+        "全收经验 [空格]",
         this.screenW / 2 - 112,
         -this.screenH / 2 + 78,
         174,
         this.touchMode ? 84 : 56,
         () => {
-          if (this.world.useUltimate()) this.sound("ultimate");
+          if (this.world.useUltimate()) this.sound("choose");
         },
       );
       this.announcement = this.text(this.hud, "", 0, 227, 26, "#f5da9e");
@@ -350,6 +351,11 @@ export class GameBootstrap extends Component {
       }
       return;
     }
+    if(this.world.state === "starting") {
+      const index=[KeyCode.DIGIT_1,KeyCode.DIGIT_2,KeyCode.DIGIT_3].indexOf(e.keyCode);
+      if(index>=0 && this.world.startingWeapons[index])this.world.chooseStartingWeapon(this.world.startingWeapons[index]);
+      return;
+    }
     if (e.keyCode === KeyCode.ESCAPE) {
       if (this.world.state === "evolution") {
         this.world.back();
@@ -357,7 +363,7 @@ export class GameBootstrap extends Component {
       } else this.togglePause();
     }
     if (e.keyCode === KeyCode.SPACE && this.world.active && this.started) {
-      if (this.world.useUltimate()) this.sound("ultimate");
+      if (this.world.useUltimate()) this.sound("choose");
     }
     if (this.world.state === "evolution") {
       const i = [KeyCode.DIGIT_1, KeyCode.DIGIT_2].indexOf(e.keyCode);
@@ -417,7 +423,7 @@ export class GameBootstrap extends Component {
     const before = (Object.keys(CHARACTERS) as CharacterId[]).filter((id) =>
       this.progress.unlockedCharacter(id),
     );
-    const stageBefore = [2,3,4,5,6,7].filter(id=>this.progress.unlockedStage(id as StageId));
+    const stageBefore = [2,3,4,5,6,7,8,9,10].filter(id=>this.progress.unlockedStage(id as StageId));
     const earned = this.progress.observe(this.world);
     for (const id of earned)
       if (!this.runEarned.includes(id)) this.runEarned.push(id);
@@ -426,7 +432,7 @@ export class GameBootstrap extends Component {
         (id) => !before.includes(id) && this.progress.unlockedCharacter(id),
       )
       .map((id) => CHARACTERS[id].name);
-    for (const id of [2,3,4,5,6,7] as StageId[])
+    for (const id of [2,3,4,5,6,7,8,9,10] as StageId[])
       if (!stageBefore.includes(id) && this.progress.unlockedStage(id)) unlocks.push(STAGES[id].name);
     this.runUnlocks.push(...unlocks);
     if (unlocks.length)
@@ -471,6 +477,7 @@ export class GameBootstrap extends Component {
       this.selectedStage,
       this.progress.weaponSlots,
     );
+    this.world.offerStartingWeapons();
     this.runEarned = [];
     this.runUnlocks = [];
     this.progressNotice = "";
@@ -702,14 +709,14 @@ export class GameBootstrap extends Component {
           ? { ...ENEMIES.boss, sprite: "necromancer", scale: 5.5 }
           : ENEMIES[e.kind];
       this.pixel(n, `${config.sprite}_anim_f${anim}`, config.scale);
-      n.setPosition(e.x * 48, e.y * 48 + 20);
+      n.setPosition(e.x * 48, e.y * 48 + 20 + starHeight(e));
       n.setScale(Math.cos(e.facing) < 0 ? -1 : 1, 1, 1);
       n.getComponent(Sprite)!.color =
         (this.flashes.get(e.id) || 0) > w.time
           ? new Color(255, 180, 125)
           : e.slowUntil > w.time
             ? new Color(138, 215, 255)
-            : e.kind === "boss" && w.stageId === 3 ? new Color("#ff9865") : e.kind === "boss" && w.stageId === 4 ? new Color("#a4d9ef") : e.kind === "boss" && w.stageId === 5 ? new Color("#ead7ad") : e.kind === "boss" && w.stageId === 6 ? new Color("#efaa70") : e.kind === "boss" && w.stageId === 7 ? new Color("#aab5ff") : Color.WHITE;
+            : e.kind === "boss" && w.stageId === 3 ? new Color("#ff9865") : e.kind === "boss" && w.stageId === 4 ? new Color("#a4d9ef") : e.kind === "boss" && w.stageId === 5 ? new Color("#ead7ad") : e.kind === "boss" && w.stageId === 6 ? new Color("#efaa70") : e.kind === "boss" && w.stageId === 7 ? new Color("#aab5ff") : e.kind === "boss" && w.stageId === 8 ? new Color("#80c5cb") : e.kind === "sailor" ? new Color("#a6d3ca") : e.kind === "drowned" ? new Color("#79b9d0") : e.kind === "anchorhand" ? new Color("#ccb98a") : e.kind === "boss" && w.stageId === 10 ? new Color("#b6b5e5") : ["starpatrol","starweaver","starpuppet"].includes(e.kind) ? new Color("#c4c4e0") : e.kind === "boss" && w.stageId === 9 ? new Color("#e0b78e") : ["boneguard","standardbearer","crossbowman","warflag"].includes(e.kind) ? new Color("#cfb393") : Color.WHITE;
     }
     const ordered = [this.hero, ...Array.from(this.units.values())].sort(
       (a, b) => b.position.y - a.position.y,

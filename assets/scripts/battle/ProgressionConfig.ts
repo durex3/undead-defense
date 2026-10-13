@@ -5,25 +5,25 @@ export const CHARACTERS = {
     need: 0,
     stage: 0,
     weapon: "blade" as Skill,
-    description: "环绕飞刀开局 · 灵活收割",
+    description: "开局武器三选一 · 灵活收割",
   },
   alchemist: {
     name: "炼金术士",
     need: 5,
     stage: 1,
     weapon: "water" as Skill,
-    description: "圣水开局，近敌瞄准 · 圣水、毒雾持续 +20%",
+    description: "开局武器三选一 · 圣水、毒雾持续 +20%",
   },
   necromancer: {
     name: "亡灵使者",
     need: 9,
     stage: 2,
     weapon: "ghost" as Skill,
-    description: "幽灵开局 · 幽灵伤害 +20%，幽灵、蝙蝠冷却 -10%",
+    description: "开局武器三选一 · 幽灵伤害 +20%，幽灵、蝙蝠冷却 -10%",
   },
 };
 export type CharacterId = keyof typeof CHARACTERS;
-export type StageId = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type StageId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 export const ACHIEVEMENTS = [
   { id: "level", name: "初次觉醒", description: "首次升级" },
   { id: "learn", name: "秘术学徒", description: "首次学习一把新武器" },

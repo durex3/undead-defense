@@ -3,30 +3,18 @@ import assert from 'node:assert/strict';
 import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
 import {SYNTHESIS_RECIPES, EVOLUTIONS, WEAPONS} from '../temp/tests/battle/SurvivalConfig.mjs';
 
-test('all nine explicitly targeted recipes stay offered from an unrelated starter through automatic fusion',()=>{
- for(const [main,partner] of Object.entries(SYNTHESIS_RECIPES))for(let seed=1;seed<=25;seed++){
-  const w=new SurvivalWorld(seed);assert(w.setBuildTarget(main));
-  const upgrades=20-w.skills[main]-w.skills[partner];
-  for(let i=0;i<upgrades;i++){
-   w.state='upgrade';w.level=i+2;w.roll();
-   for(const skill of [main,partner])if(w.skills[skill]<10)assert(w.cards.includes(skill),`${main} seed ${seed} missing ${skill}`);
-   assert.equal(new Set(w.cards).size,w.cards.length);assert.equal(w.cards.length,3);
-   const skill=[main,partner].filter(s=>w.skills[s]<10).sort((a,b)=>w.skills[a]-w.skills[b])[0];
-   assert(w.choose(skill));
-   if(w.state==='evolution')assert(w.evolve(EVOLUTIONS[w.pendingEvolution][0].id));
-  }
-  assert(w.evolutions[main]);assert.equal(w.buildTarget,null);assert.equal(w.skills[partner],10);assert.equal(w.refreshes,2);
+test('all nine targeted recipes receive a probabilistic bias without guaranteed cards',()=>{
+ for(const main of Object.keys(SYNTHESIS_RECIPES)){
+  const partner=SYNTHESIS_RECIPES[main];let hit=0,miss=0;
+  const w=new SurvivalWorld(19);assert(w.setBuildTarget(main));w.state='upgrade';
+  for(let i=0;i<150;i++){w.roll();assert.equal(new Set(w.cards).size,w.cards.length);if(w.cards.includes(main)||w.cards.includes(partner))hit++;else miss++;}
+  assert(hit>50,main);assert(miss>0,main);
  }
 });
-
-test('switching target updates cards immediately without RNG, resources or free alternative rerolls',()=>{
- const w=new SurvivalWorld(19);w.state='upgrade';w.level=2;w.roll();
- const {seed,xp,gold,refreshes}=w;assert(w.setBuildTarget('scythe'));
- assert(w.cards.includes('scythe'));assert(w.cards.includes('axe'));
- const cards=[...w.cards];assert(w.setBuildTarget('scythe'));assert.deepEqual(w.cards,cards);
- assert(w.setBuildTarget(null));assert.deepEqual(w.cards,cards);
- assert.deepEqual({seed:w.seed,xp:w.xp,gold:w.gold,refreshes:w.refreshes},{seed,xp,gold,refreshes});
- assert.equal(w.growthProgress.locked,false);
+test('switching target only changes future odds, never current cards or RNG/resources',()=>{
+ const w=new SurvivalWorld(19);w.state='upgrade';w.roll();const cards=[...w.cards],seed=w.seed,refreshes=w.refreshes;
+ assert(w.setBuildTarget('scythe'));assert.deepEqual(w.cards,cards);assert.equal(w.seed,seed);
+ assert(w.setBuildTarget(null));assert.deepEqual(w.cards,cards);assert.equal(w.refreshes,refreshes);
 });
 
 test('target selection rejects incomplete recipes with insufficient slots and completed or nonexistent recipes',()=>{
@@ -52,10 +40,9 @@ test('battle and final screens cannot switch target; a new run never inherits th
  assert.equal(new SurvivalWorld().buildTarget,null);
 });
 
-test('locked pair survives unrelated evolution priority and paid refreshes without duplicate offers',()=>{
- const w=new SurvivalWorld();w.skills.pillar=10;assert(w.setBuildTarget('scythe'));w.state='upgrade';w.roll();
- assert.deepEqual(w.cards.slice(0,2),['scythe','axe']);assert(w.cards.includes('pillar'));
- assert(w.refresh());assert.deepEqual(w.cards.slice(0,2),['scythe','axe']);assert.equal(w.refreshes,1);
+test('paid refresh samples a legal distinct set and consumes one refresh',()=>{
+ const w=new SurvivalWorld(19);w.setBuildTarget('scythe');w.state='upgrade';w.roll();assert(w.refresh());
+ assert.equal(w.refreshes,1);assert.equal(new Set(w.cards).size,3);assert(w.cards.every(c=>w.legal().includes(c)));
 });
 
 test('shop purchases that fill reserved space clear impossible targets rather than offering illegal weapons',()=>{
