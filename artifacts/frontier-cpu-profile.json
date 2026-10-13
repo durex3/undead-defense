@@ -1,0 +1,29 @@
+{
+  "note": "Desktop Node CPU battle update only; 100 high-HP enemies, 6 max weapons, 60 warm-up and 600 measured frames. Excludes painting, GPU, WeChat runtime and phone temperature.",
+  "results": [
+    {
+      "stage": 11,
+      "samples": 600,
+      "meanMs": 0.542,
+      "p95Ms": 1.183,
+      "maxHazards": 2,
+      "maxEnemies": 100
+    },
+    {
+      "stage": 12,
+      "samples": 600,
+      "meanMs": 0.49,
+      "p95Ms": 1.131,
+      "maxHazards": 2,
+      "maxEnemies": 100
+    },
+    {
+      "stage": 13,
+      "samples": 600,
+      "meanMs": 0.438,
+      "p95Ms": 0.817,
+      "maxHazards": 2,
+      "maxEnemies": 100
+    }
+  ]
+}

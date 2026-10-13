@@ -1,3 +1,6 @@
+import {isFrontier,frontierMap} from "./FrontierMaps";
+import {frontierEnemy,stepFrontierEnemy} from "./FrontierSystem";
+import {frontierContains} from "./FrontierGeometry";
 import {stepArsenalEnemy, arsenalAura} from "./ArsenalSystem";
 import {stepObservatoryEnemy,isStarEnemy} from "./ObservatorySystem";
 import {observatoryHeading} from "./ObservatoryMap";
@@ -78,6 +81,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
     }
     if(e.kind==="warflag"){stepArsenalEnemy(w,e,dt);continue;}
     if (e.freezeUntil > w.time) {
+      if(e.frontierUntil!==undefined)e.frontierUntil+=dt;
       if(e.starUntil!==undefined)e.starUntil+=dt;
       if(e.arsenalUntil!==undefined)e.arsenalUntil+=dt;
       for (const h of w.hazards) if (h.source === e.id && !h.fired) {
@@ -85,10 +89,11 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       }
       continue;
     }
+    if(isFrontier(w.stageId)&&frontierEnemy(e.kind)){stepFrontierEnemy(w,e,dt);continue;}
     if(isStarEnemy(e)){stepObservatoryEnemy(w,e,dt);continue;}
     if(["boneguard","standardbearer","crossbowman"].includes(e.kind)){stepArsenalEnemy(w,e,dt);continue;}
     if(["sailor","drowned","anchorhand"].includes(e.kind)){stepHarborEnemy(w,e,dt);continue;}
-    const moveAngle=w.stageId===10?observatoryHeading(e,w.player):w.stageId===9?arsenalHeading(e,w.player):w.stageId===8?harborHeading(e,w.player):Math.atan2(w.player.y-e.y,w.player.x-e.x);
+    const moveAngle=isFrontier(w.stageId)?frontierMap(w.stageId).heading(e,w.player):w.stageId===10?observatoryHeading(e,w.player):w.stageId===9?arsenalHeading(e,w.player):w.stageId===8?harborHeading(e,w.player):Math.atan2(w.player.y-e.y,w.player.x-e.x);
     const d = distance(e, w.player),
       angle = Math.atan2(w.player.y - e.y, w.player.x - e.x),
       slow = e.slowUntil > w.time ? 1 - e.slow : 1;
@@ -296,6 +301,10 @@ export function stepHazards(w: SurvivalWorld) {
   for (const h of w.hazards) {
     if (h.due > w.time) continue;
     const d = distance(h, w.player);
+    if(h.kind==="frontierLane"||h.kind==="frontierImpact"){
+      if(!h.fired){h.fired=true;if(!h.groupHit&&frontierContains(h,w.player)){w.hurt(h.damage,h.damageLabel||"铸潮攻击",false);for(const other of w.hazards)if(other.id===h.id||(h.group!==undefined&&other.group===h.group))other.groupHit=true;}}
+      continue;
+    }
     if(h.kind==='starTrace'){
       h.fired=true;
       if(!h.groupHit&&starContains(h,w.player)){

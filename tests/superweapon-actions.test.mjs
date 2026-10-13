@@ -31,16 +31,16 @@ test('seal lies inside both damage fields, ignores flying flasks and disappearin
   w.expansion.remove('poison');assert.equal(w.combinations.superWeapons.seals.length,0);
 });
 
-test('all water/poison branch combinations create seals and many overlaps remain capped at three',()=>{
+test('only first water/poison branches create seals and many overlaps remain capped at three',()=>{
   for(const water of ['spring','tide'])for(const poison of ['plague','venom']){
     const w=prepare('water','poison',water);w.evolutions.poison=poison;
     for(let i=0;i<10;i++){w.expansion.field('water',{x:i*3,y:0},2,4,0);w.expansion.field('poison',{x:i*3,y:0},1.2,4,0);}
-    w.combinations.superWeapons.stepPurification();assert.equal(w.combinations.superWeapons.seals.length,3);
+    w.combinations.superWeapons.stepPurification();assert.equal(w.combinations.superWeapons.seals.length,water==='spring'&&poison==='plague'?3:0);
   }
 });
 
 test('bat-marked death releases two real tracking souls, deals attributed damage, and never chains more souls',()=>{
-  const w=prepare('ghost','bat','hunters'),a=enemy(w,0,0,1),b=enemy(w,1,0,1),c=enemy(w,2,0,1);
+  const w=prepare('ghost','bat','legion'),a=enemy(w,0,0,1),b=enemy(w,1,0,1),c=enemy(w,2,0,1);
   for(const e of [a,b,c])w.combinations.mark('ghost',e);
   w.hit(a,10,'blade');
   assert.equal(w.combinations.superWeapons.souls.length,2);
@@ -83,7 +83,7 @@ test('HUD replaces each completed pair with one superweapon name without hiding 
 });
 
 test('a soul killing the boss cannot reopen upgrade after victory',()=>{
-  const w=prepare('ghost','bat','hunters');w.evolutions.bat='bloodhunt';
+  const w=prepare('ghost','bat','legion');w.evolutions.bat='bloodmoon';
   const boss=w.addEnemy('boss',1,0);boss.state='seek';boss.hp=1;
   w.combinations.superWeapons.souls.push({id:w.id(),x:1,y:0,target:boss.id,ttl:2,vx:0,vy:0});
   w.xp=w.xpNeed;w.step(1/60);

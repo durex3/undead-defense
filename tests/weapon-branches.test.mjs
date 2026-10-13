@@ -19,23 +19,23 @@ test('pending shop branch waits until unpaused and can select the alternate form
  w.step(1);assert.equal(w.state,'battle');w.closeShop();w.pause('menu',false);w.step(1/60);
  assert.equal(w.pendingEvolution,'water');assert(w.evolve('tide'));assert.equal(w.skills.poison,10);
 });
-test('fire rain creates four distinct projectiles instead of one meteor',()=>{
- for(const [form,count] of [['meteor',1],['inferno',4]]){
+test('full fire branches retain distinct multi-target volleys',()=>{
+ for(const [form,count] of [['meteor',3],['inferno',6]]){
   const w=new SurvivalWorld();w.skills.fire=10;w.evolutions.fire=form;
-  for(let i=0;i<4;i++)enemy(w,4+i,1);w.cast('fire');assert.equal(w.scheduled.length,count);
+  for(let i=0;i<6;i++)enemy(w,4+i,1);w.cast('fire');assert.equal(w.scheduled.length,count);
   for(const q of w.scheduled)w.castPart(q);
   assert.equal(w.shots.length,count);assert.equal(new Set(w.shots.map(p=>p.target)).size,count);
   if(form==='inferno')assert(w.shots.every(p=>p.damage===w.attack*1.25));
  }
 });
-test('thunder prioritizes boss and elite, hits at most three targets with no decay',()=>{
+test('thunder keeps three priority heavy strikes and adds two crowd strikes',()=>{
  const w=new SurvivalWorld();w.skills.lightning=10;w.evolutions.lightning='thunder';
  const boss=enemy(w,10,0,'boss'),elite=enemy(w,9,0,'charger');for(let i=0;i<5;i++)enemy(w,1+i,1);
- w.lightning();const hits=w.drain().filter(e=>e.type==='lightning');assert.equal(hits.length,3);assert.equal(hits[0].endX,boss.x);assert.equal(hits[1].endX,elite.x);
+ w.lightning();const hits=w.drain().filter(e=>e.type==='lightning');assert.equal(hits.length,5);assert.equal(hits[0].endX,boss.x);assert.equal(hits[1].endX,elite.x);
  assert.ok(Math.abs((100000-boss.hp)/(100000-elite.hp)-1.25/1.8)<1e-9);
 });
 test('ice and lightning synergy only boosts chilled targets after recipe completion',()=>{
- const w=new SurvivalWorld();w.skills.lightning=w.skills.ice=10;w.evolutions.lightning='thunder';const chilled=enemy(w,3),normal=enemy(w,4);chilled.slowUntil=10;
+ const w=new SurvivalWorld();w.skills.lightning=w.skills.ice=10;w.evolutions.lightning='judgment';const chilled=enemy(w,3),normal=enemy(w,4);chilled.slowUntil=10;
  w.lightning();assert(100000-chilled.hp>100000-normal.hp);
 });
 test('tide follows player while spring remains at its landing point',()=>{
@@ -46,10 +46,10 @@ test('tide follows player while spring remains at its landing point',()=>{
  }
 });
 test('water poison overlap adds a purification pulse once even with duplicate fields',()=>{
- const damage=(poison)=>{const w=new SurvivalWorld();w.skills.water=w.skills.poison=10;w.evolutions.water='tide';const e=enemy(w,0);w.expansion.cast('water');w.expansion.cast('water');
+ const damage=(poison)=>{const w=new SurvivalWorld();w.skills.water=w.skills.poison=10;w.evolutions.water='spring';const e=enemy(w,0);w.expansion.cast('water');w.expansion.cast('water');
   if(poison){w.expansion.field('poison',w.player,2,4,0);w.expansion.field('poison',w.player,2,4,0);}
   w.time=1;w.expansion.stepFields(0);return 100000-e.hp;};
- assert.ok(Math.abs(damage(true)/damage(false)-2)<1e-8);
+ assert.ok(Math.abs(damage(true)/damage(false)-(1+.8/.65))<1e-8);
 });
 test('fire blade combination reaches enemies outside the original blast radius',()=>{
  const w=new SurvivalWorld();w.skills.fire=w.skills.blade=10;w.evolutions.fire='meteor';const e=enemy(w,3);
@@ -92,7 +92,7 @@ test('hunter form snapshot never splashes even if the selected form changes in f
 });
 
 test('cross scythes sweep opposite arcs, return earlier and boost return damage without extension',()=>{
- const w=new SurvivalWorld();w.skills.scythe=10;w.evolutions.scythe='cross';enemy(w,8,8);
+ const w=new SurvivalWorld();w.skills.scythe=10;w.evolutions.scythe='cross';enemy(w,4,0);
  w.cast('scythe');for(const q of w.scheduled)w.castPart(q);
  assert.equal(w.shots.length,2);const [a,b]=w.shots;
  assert.equal(a.range,5.5);assert(a.vy*b.vy<0);
@@ -100,7 +100,7 @@ test('cross scythes sweep opposite arcs, return earlier and boost return damage 
  w.stepShot(a,.1);w.stepShot(b,.1);
  const delta=(p,old)=>Math.atan2(Math.sin(Math.atan2(p.vy,p.vx)-old),Math.cos(Math.atan2(p.vy,p.vx)-old));
  assert(delta(a,oldA)>0);assert(delta(b,oldB)<0);
- const target=enemy(w,3,0);a.x=3;a.y=0;a.age=1;a.returning=false;a.hit=[];
+ for(const e of w.enemies)e.hp=0;const target=enemy(w,3,0);a.x=3;a.y=0;a.age=1;a.returning=false;a.hit=[];
  w.stepShot(a,0);assert(a.returning);const returnDamage=100000-target.hp;
  target.hp=100000;a.returning=false;a.age=0;a.hit=[];w.stepShot(a,0);
  assert(Math.abs(returnDamage/(100000-target.hp)-1.5)<1e-8);
@@ -115,15 +115,16 @@ test('ice poison and axe automatically choose branches at ten without another up
   w.step(0);assert.equal(w.pendingEvolution,null);
  }
 });
-test('icicles focus the boss, slow without freezing and trade away the domain ring',()=>{
+test('icicles focus the boss, freeze with piercing shots and trade away the domain ring',()=>{
  const w=new SurvivalWorld();w.skills.ice=10;w.evolutions.ice='icicle';enemy(w,1);const boss=enemy(w,6,0,'boss');
- w.cast('ice');assert.equal(w.rings.length,0);assert.equal(w.shots.length,3);assert(w.shots.every(p=>p.target===boss.id));
+ w.cast('ice');assert.equal(w.rings.length,0);assert.equal(w.shots.length,5);assert(w.shots.every(p=>p.target===boss.id&&p.left===2));
  for(const p of w.shots){p.x=boss.x;p.y=boss.y;w.stepShot(p,0);}
  assert(boss.hp<100000);assert(boss.slowUntil>w.time);assert.equal(boss.freezeUntil,0);
+ const minion=enemy(w,8);const p=w.shots[0];p.x=minion.x;p.y=minion.y;w.stepShot(p,0);assert(minion.freezeUntil>w.time);
 });
 test('venom casts while stationary, caps stacks, persists outside the pool and never triggers plague bursts',()=>{
  const w=new SurvivalWorld();w.skills.poison=10;w.evolutions.poison='venom';const boss=enemy(w,4,0,'boss');enemy(w,1);
- w.expansion.step(.01);const f=w.expansion.fields[0];assert(f);assert.equal(f.x,4);assert.equal(f.radius,1.2);assert.equal(f.form,'venom');
+ w.expansion.step(.01);const f=w.expansion.fields[0];assert(f);assert.equal(f.x,4);assert.equal(f.radius,1.5);assert.equal(f.form,'venom');
  for(let i=0;i<8;i++){w.time=i;f.until=20;w.expansion.stepFields(0);}
  assert.equal(w.expansion.venom.get(boss.id).stacks,5);
  const hp=boss.hp;w.expansion.fields=[];w.time=8;w.expansion.stepFields(0);assert(boss.hp<hp);
@@ -131,11 +132,11 @@ test('venom casts while stationary, caps stacks, persists outside the pool and n
  const dead=enemy(w,0);w.expansion.field('poison',dead,2,5,0);w.expansion.onDeath(dead,'blade');assert.equal(w.expansion.poisonBursts.length,0);
  w.removeWeapon('poison');assert.equal(w.expansion.venom.size,0);
 });
-test('overlapping venom pools share one stack interval and preserve water purification',()=>{
- const w=new SurvivalWorld();w.skills.poison=w.skills.water=10;w.evolutions.poison='venom';w.evolutions.water='tide';const e=enemy(w,0);
+test('overlapping venom pools share one stack interval and never trigger water purification',()=>{
+ const w=new SurvivalWorld();w.skills.poison=w.skills.water=10;w.evolutions.poison='venom';w.evolutions.water='spring';const e=enemy(w,0);
  for(let i=0;i<10;i++)w.expansion.field('poison',e,1.2,5,0);
  w.expansion.cast('water');w.time=1;w.expansion.stepFields(0);
- assert.equal(w.expansion.venom.get(e.id).stacks,1);assert(w.drain().some(e=>e.type==='comboPurify'));
+ assert.equal(w.expansion.venom.get(e.id).stacks,2);assert(!w.drain().some(e=>e.type==='comboPurify'));
 });
 test('heavy axe aims at boss, narrows the lane and retains scythe marks and snapshot return damage',()=>{
  const w=new SurvivalWorld();w.skills.axe=w.skills.scythe=10;w.evolutions.scythe='reaper';w.evolutions.axe='execution';enemy(w,1);const boss=enemy(w,0,6,'boss');
@@ -145,8 +146,8 @@ test('heavy axe aims at boss, narrows the lane and retains scythe marks and snap
 });
 test('bone shards bounce between different enemies with decay and do not gain ram knockback',()=>{
  const w=new SurvivalWorld();w.skills.bone=w.skills.mine=10;w.evolutions.bone='ricochet';const a=enemy(w,3),b=enemy(w,3,2),c=enemy(w,3,4),d=enemy(w,3,6),extra=enemy(w,3,8);
- w.expansion.cast('bone');assert.equal(w.shots.length,3);const p=w.shots[1];assert.equal(p.form,'ricochet');assert.equal(p.left,4);
+ w.expansion.cast('bone');assert.equal(w.shots.length,3);const p=w.shots[1];assert.equal(p.form,'ricochet');assert.equal(p.left,5);
  const amount=p.damage;
- for(const e of [a,b,c,d]){p.x=e.x;p.y=e.y;w.stepShot(p,0);assert.equal(e.x,3);}
- assert.equal(p.left,0);assert.equal(new Set(p.hit).size,4);assert(p.damage<amount);assert.equal(extra.hp,100000);
+ for(const e of [a,b,c,d,extra]){p.x=e.x;p.y=e.y;w.stepShot(p,0);assert.equal(e.x,3);}
+ assert.equal(p.left,0);assert.equal(new Set(p.hit).size,5);assert(p.damage<amount);assert(extra.hp<100000);
 });

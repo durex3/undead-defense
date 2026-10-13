@@ -192,7 +192,7 @@ export class ExpansionWeapons {
     w.effects.push({ type: "cast", ...w.player, skill });
     if (skill === "water") {
       if (w.weaponEvolution("water") === "tide") {
-        this.field("water", w.player, 3.2, 4, w.attack * 0.8, 0.35);
+        this.field("water", w.player, 3.6, 4, w.attack * 1, 0.35);
         const f = this.fields[this.fields.length - 1];
         if (f) f.follow = true;
         return;
@@ -250,7 +250,7 @@ export class ExpansionWeapons {
     if (skill === "poison") {
       if(w.weaponEvolution("poison") === "venom") {
         const target=w.near(w.player,8).filter(e=>e.state!=="arriving").sort((a,b)=>Number(b.kind==="boss")-Number(a.kind==="boss") || Number(isLarge(b.kind))-Number(isLarge(a.kind)) || distance(a,w.player)-distance(b,w.player))[0];
-        if(target)this.field("poison",target,1.2,2.8,0);
+        if(target){w.hit(target,w.attack*.6,"poison",false,target);this.field("poison",target,1.5,2.8,0);}
         return;
       }
       this.field(
@@ -323,7 +323,7 @@ export class ExpansionWeapons {
     }
     if (skill === "bat") {
       const hunt=w.weaponEvolution("bat") === "bloodhunt";
-      const count = hunt ? 2 : w.weaponEvolution("bat") ? 6 : level >= 10 ? 10 : level >= 7 ? 8 : level >= 4 ? 6 : level >= 2 ? 4 : 2;
+      const count = hunt ? 3 : w.weaponEvolution("bat") ? 6 : level >= 10 ? 10 : level >= 7 ? 8 : level >= 4 ? 6 : level >= 2 ? 4 : 2;
       const batchId = w.id();
       const batch = {
         remaining: 0,
@@ -348,7 +348,7 @@ export class ExpansionWeapons {
           ttl: 6,
           damage:
             w.attack * (hunt ? 2.2 : .6) * (!hunt && w.weaponEvolution("bat") && w.hp >= w.maxHp * .7 ? 1.2 : 1),
-          maxHits: hunt ? 1 : level >= 10 ? 4 : level >= 7 ? 3 : level >= 4 ? 2 : 1,
+          maxHits: hunt ? 2 : level >= 10 ? 4 : level >= 7 ? 3 : level >= 4 ? 2 : 1,
         });
         batch.remaining++;
       }
@@ -374,7 +374,7 @@ export class ExpansionWeapons {
         vx: Math.cos(a) * 13,
         vy: Math.sin(a) * 13,
         damage: w.attack * (ricochet ? 1.6 : evolved ? 3 : level >= 2 ? 0.8 : 1.2),
-        left: ricochet ? 4 : evolved ? 75 : level >= 3 ? 7 : 4,
+        left: ricochet ? 5 : evolved ? 75 : level >= 3 ? 7 : 4,
         hit: [],
         target: 0,
         ttl: ricochet ? 2 : 10 / 13,
@@ -395,13 +395,13 @@ export class ExpansionWeapons {
       if (f.due > w.time) continue;
       if (f.until <= w.time) {
         if (f.skill === "void") {
-          for (const e of w.near(f, f.radius))
+          for (const e of w.near(f, f.form === "singularity" ? 2.4 : f.radius))
             w.hit(e, f.damage, "void", false, f, false);
           w.effects.push({
             type: "explosion",
             x: f.x,
             y: f.y,
-            radius: f.radius,
+            radius: f.form === "singularity" ? 2.4 : f.radius,
             skill: "void",
           });
         }
@@ -442,7 +442,7 @@ export class ExpansionWeapons {
         this.fieldHits.set(key, w.time + (f.skill === "water" ? 0.5 : 1));
         if(f.skill === "poison" && f.form === "venom") {
           const mark=this.venom.get(e.id) || {stacks:0,until:0,next:w.time};
-          mark.stacks=Math.min(5,mark.stacks+1);mark.until=w.time+4;
+          mark.stacks=Math.min(5,mark.stacks+2);mark.until=w.time+4;
           this.venom.set(e.id,mark);
           continue;
         }
@@ -486,7 +486,7 @@ export class ExpansionWeapons {
   /** A completed bone/mine recipe lets a passing spear remotely arm the queue. */
   queueMinesOnSegment(from: Point, to: Point) {
     const w = this.w;
-    if (!w.evolutions.bone || w.skills.bone < 10 || w.skills.mine < 10) return;
+    if (!w.combinations.ready("bone")) return;
     for (const mine of this.mines)
       if (mine.armed <= w.time && mine.until > w.time && segmentDistance(mine, from, to) <= 0.65) mine.queued = true;
   }
@@ -525,7 +525,7 @@ export class ExpansionWeapons {
         radius,
         skill: "mine",
       });
-      if (w.evolutions.bone && w.skills.bone >= 10 && w.skills.mine >= 10) {
+      if (w.combinations.ready("bone")) {
         const shardRadius = radius + 0.8;
         for (const e of w.near(m, shardRadius)) w.hit(e, w.attack * 0.55, "bone", false, m, true, "bone");
         w.combinations.trigger("bone", "comboBone", m, shardRadius);

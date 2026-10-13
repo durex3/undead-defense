@@ -120,11 +120,11 @@ test("learning ranged skills waits for a target then casts on first active frame
     assert.equal(w.castCounts[skill], 1);
   }
 });
-test("returning weapons throw behind the player to cover retreating threats", () => {
+test("returning weapons acquire enemies behind the player without requiring a facing change", () => {
   const w = isolated();
   w.skills.axe = 1;
   w.setMove(1, 0);
-  enemy(w, "minion", -5, 0);
+  enemy(w, "minion", -4, 0);
   w.step(1 / 60);
   const shot = w.shots.find((p) => p.skill === "axe");
   assert.ok(shot);

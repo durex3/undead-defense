@@ -1,9 +1,12 @@
+import {isFrontier,frontierMap} from "../temp/tests/battle/FrontierMaps.mjs";
+import {MAX_PLAYER_LEVEL} from "../temp/tests/battle/EncounterPacing.mjs";
 import {observatoryHeading} from "../temp/tests/battle/ObservatoryMap.mjs";
 import {arsenalHeading} from "../temp/tests/battle/ArsenalMap.mjs";
 import {harborHeading} from "../temp/tests/battle/HarborMap.mjs";
 import { SurvivalWorld } from "../temp/tests/battle/SurvivalWorld.mjs";
 import { EVOLUTIONS, WEAPONS, SYNTHESIS_RECIPES } from "../temp/tests/battle/SurvivalConfig.mjs";
 const profiles = {
+  icecamp: ["lightning", "ice", "ghost", "fire", "blade", "water"],
   focused: ["blade", "fire"],
   scythes: ["scythe", "axe"],
   bonepair: ["bone", "mine"],
@@ -18,7 +21,8 @@ const locked = process.argv[7] === "locked";
 const alternate = process.argv[6] === "alternate";
 const cautious = process.argv[5] === "cautious";
 const profile = process.argv[2] || "classic";
-for (const mode of profile === "classic"
+// Optional final argument: collector,camp (move for 60s, stand until boss),stationary.
+for (const mode of process.argv[10] ? process.argv[10].split(",") : profile === "classic"
   ? ["stationary", "collector"]
   : ["collector"])
   for (const seed of process.argv[9] ? process.argv[9].split(",").map(Number) : [1, 19, 72]) {
@@ -40,6 +44,7 @@ for (const mode of profile === "classic"
     const recipePair = [recipeMain,SYNTHESIS_RECIPES[recipeMain]];
     if (locked) w.setBuildTarget(recipeMain);
     let firstCombo = null;
+    let firstMaxLevel = null;
     let firstUpgrade = 0,
       firstEvolution = 0,
       next = 30;
@@ -65,7 +70,9 @@ for (const mode of profile === "classic"
         if (!firstEvolution) firstEvolution = w.time;
       }
       if (firstCombo === null && w.combinations.ready(recipeMain)) firstCombo = Math.round(w.time);
-      if (mode === "collector") {
+      const camping = mode === "camp" && w.time >= 60 && w.time < 480;
+      if (camping) { w.setMove(0, 0); w.useUltimate(); }
+      if (mode === "collector" || (mode === "camp" && !camping)) {
         const distance = (p) => Math.hypot(p.x - w.player.x, p.y - w.player.y);
         const near = (list) =>
           list.slice().sort((a, b) => distance(a) - distance(b))[0];
@@ -77,7 +84,7 @@ for (const mode of profile === "classic"
           };
         let dx = (target.x - w.player.x) / Math.max(1, distance(target)),
           dy = (target.y - w.player.y) / Math.max(1, distance(target));
-        if(w.stageId===8||w.stageId===9||w.stageId===10){Object.assign(navigation,w.player);const a=(w.stageId===10?observatoryHeading:w.stageId===9?arsenalHeading:harborHeading)(navigation,target);dx=Math.cos(a);dy=Math.sin(a);}
+        if(isFrontier(w.stageId)||w.stageId===8||w.stageId===9||w.stageId===10){Object.assign(navigation,w.player);const a=(isFrontier(w.stageId)?frontierMap(w.stageId).heading:w.stageId===10?observatoryHeading:w.stageId===9?arsenalHeading:harborHeading)(navigation,target);dx=Math.cos(a);dy=Math.sin(a);}
         for (const e of w.enemies) {
           const d = distance(e),
             r = cautious && profile === "pair:water" && e.kind === "boss" ? 2.1 : cautious && ["executioner","charger","boss"].includes(e.kind) ? 3.4 : e.kind === "boss" ? 2.1 : 1.4;
@@ -88,7 +95,7 @@ for (const mode of profile === "classic"
         }
         for (const h of w.hazards) {
           const d = distance(h);
-          if (["circle", "pool", "starLeap", ...(cautious ? ["flame", "sector"] : [])].includes(h.kind) && d < h.radius + 1) {
+          if (["circle", "pool", "starLeap", "frontierImpact", ...(cautious ? ["flame", "sector"] : [])].includes(h.kind) && d < h.radius + 1) {
             dx += ((w.player.x - h.x) / Math.max(0.1, d)) * 2;
             dy += ((w.player.y - h.y) / Math.max(0.1, d)) * 2;
           }
@@ -98,7 +105,7 @@ for (const mode of profile === "classic"
             dx += sign * ((w.player.x-h.x)/Math.max(.1,d))*3;
             dy += sign * ((w.player.y-h.y)/Math.max(.1,d))*3;
           }
-          if(h.kind === "starTrace") {
+          if(h.kind === "starTrace" || h.kind === "frontierLane") {
             const vx=(h.endX??h.x)-h.x,vy=(h.endY??h.y)-h.y,len=Math.hypot(vx,vy);
             const t=Math.max(0,Math.min(1,((w.player.x-h.x)*vx+(w.player.y-h.y)*vy)/(len*len||1)));
             const rx=w.player.x-h.x-vx*t,ry=w.player.y-h.y-vy*t,d=Math.hypot(rx,ry);
@@ -126,6 +133,7 @@ for (const mode of profile === "classic"
         y: Math.max(-984 / 48, Math.min(984 / 48, w.player.y)),
       };
       w.step(1 / 60);
+      if(firstMaxLevel===null&&w.level>=MAX_PLAYER_LEVEL)firstMaxLevel=Math.round(w.time);
       for (const event of w.drain()) if (event.type.startsWith("combo")) comboTriggers[event.type] = (comboTriggers[event.type] || 0) + 1;
       if (w.time >= next) {
         checkpoints.push({ t: next, level: w.level, hp: w.hp, kills: w.kills });
@@ -152,6 +160,7 @@ for (const mode of profile === "classic"
         kills: w.kills,
         level: w.level,
         firstCombo,
+        firstMaxLevel,
         comboBeforeBoss: firstCombo !== null && firstCombo < 480,
         firstUpgrade: Math.round(firstUpgrade),
         firstEvolution: Math.round(firstEvolution),

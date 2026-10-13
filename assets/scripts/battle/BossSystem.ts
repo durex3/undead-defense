@@ -1,3 +1,5 @@
+import {isFrontier} from "./FrontierMaps";
+import {stepFrontierBoss} from "./FrontierSystem";
 import {stepObservatoryBoss} from "./ObservatorySystem";
 import {stepArsenalBoss} from "./ArsenalSystem";
 import {stepHarborBoss} from "./HarborSystem";
@@ -16,6 +18,7 @@ export function bossExposed(w: SurvivalWorld, e: Enemy) {
   );
 }
 export function stepBoss(w: SurvivalWorld, e: Enemy, dt: number) {
+  if(isFrontier(w.stageId)){stepFrontierBoss(w,e,dt);return;}
   if(w.stageId===10){stepObservatoryBoss(w,e,dt);return;}
   if(w.stageId===9){stepArsenalBoss(w,e,dt);return;}
   if(w.stageId===8){stepHarborBoss(w,e,dt);return;}

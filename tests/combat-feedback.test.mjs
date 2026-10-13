@@ -46,7 +46,7 @@ test('combination sound gate limits crowds and gives final evolution priority',(
 });
 
 test('purification pulses use their own interval and require live overlapping fields',()=>{
-  const w=new SurvivalWorld();w.skills.water=w.skills.poison=10;w.evolutions.water='tide';
+  const w=new SurvivalWorld();w.skills.water=w.skills.poison=10;w.evolutions.water='spring';
   const e=w.addEnemy('minion',0,0);e.state='seek';e.hp=e.maxHp=100000;
   w.expansion.cast('water');w.expansion.cast('water');w.expansion.field('poison',w.player,2,4,0);w.time=1;
   w.expansion.stepFields(0);assert.equal(w.drain().filter(e=>e.type==='comboPurify').length,1);

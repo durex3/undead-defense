@@ -1,3 +1,5 @@
+import {isFrontier} from "../battle/FrontierMaps";
+import {drawFrontierMap} from "./FrontierPainter";
 import {HARBOR_CARGO} from "../battle/HarborMap";
 import {ARSENAL_RACKS} from "../battle/ArsenalMap";
 import {OBSERVATORY_BASES} from "../battle/ObservatoryMap";
@@ -5,6 +7,7 @@ import { FURNACE_STONES } from "../battle/FurnaceEncounters";
 import { Graphics, Color } from 'cc';
 import { CROWN_STONES } from '../battle/CrownSystem';
 export function drawLateStage(g: Graphics, stage: number) {
+  if(isFrontier(stage)){drawFrontierMap(g,stage);return;}
   if(stage===10){
     g.clear();g.fillColor=new Color('#191c30');g.rect(-1152,-1344,2304,2688);g.fill();
     for(let y=-27;y<28;y++)for(let x=-23;x<24;x++){g.fillColor=new Color((x+y)%3?'#292d43':'#30334c');g.rect(x*48+2,y*48+2,44,44);g.fill();}

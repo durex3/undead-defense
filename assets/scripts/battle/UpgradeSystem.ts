@@ -14,6 +14,7 @@ export class UpgradeSystem {
   targetReason(main: Skill): string {
     const partner = SYNTHESIS_RECIPES[main];
     if (!partner) return "没有对应组合";
+    if (!this.world.combinations.eligible(main)) return "已选独立分支，不参与组合";
     if (this.world.skills[main] >= MAX_SKILL_LEVEL && this.world.skills[partner] >= MAX_SKILL_LEVEL) return "组合已达成";
     const missing = Number(!this.world.skills[main]) + Number(!this.world.skills[partner]);
     return missing > this.world.weaponSlots - this.world.weaponCount ? `需要${missing}个空余武器位` : "";
@@ -41,7 +42,7 @@ export class UpgradeSystem {
       if (this.world.skills[main] < MAX_SKILL_LEVEL || this.world.skills[partner] < MAX_SKILL_LEVEL) this.announcedCombinations.delete(main);
     }
     return WEAPONS.filter(s => { const other = SYNTHESIS_RECIPES[s];
-      return !!other && this.world.skills[s] >= MAX_SKILL_LEVEL && this.world.skills[other] >= MAX_SKILL_LEVEL && !this.announcedCombinations.has(s);
+      return !!other && this.world.combinations.eligible(s) && this.world.skills[s] >= MAX_SKILL_LEVEL && this.world.skills[other] >= MAX_SKILL_LEVEL && !this.announcedCombinations.has(s);
     });
   }
   synthesize(skill: Skill) {
@@ -57,14 +58,18 @@ export class UpgradeSystem {
     return this.result("组合超武觉醒，两把武器均保留", true);
   }
   autoSynthesize() {
-    for (const skill of this.synthesisOptions()) this.synthesize(skill);
-    // Partner weapons choose their own attack style at rank ten, without another XP roll.
-    for (const skill of WEAPONS) {
+    // Finish branch choices before announcing a recipe: the player may choose an independent route.
+    const order=[...WEAPONS.filter(s=>!!SYNTHESIS_RECIPES[s]),...WEAPONS.filter(s=>!SYNTHESIS_RECIPES[s])];
+    for (const skill of order) {
       if (EVOLUTIONS[skill].length < 2 || this.world.skills[skill] < MAX_SKILL_LEVEL || this.world.evolutions[skill]) continue;
       this.world.evolutions[skill] = EVOLUTIONS[skill][0].id;
       this.branchQueue.push(skill);
       this.world.cooldowns[skill] = 0;
       this.world.effects.push({type:"evolve",...this.world.player,skill,form:this.world.evolutions[skill],final:false});
+    }
+    for(const main of this.synthesisOptions()){
+      const partner=SYNTHESIS_RECIPES[main]!;
+      if(!this.branchQueue.includes(main)&&!this.branchQueue.includes(partner)&&this.world.pendingEvolution!==main&&this.world.pendingEvolution!==partner)this.synthesize(main);
     }
   }
   openAutomaticBranch() {
@@ -86,7 +91,7 @@ export class UpgradeSystem {
     const pairs = Object.entries(SYNTHESIS_RECIPES).map(([main, partner]) => ({main: main as Skill, partner: partner!}))
       .filter(({main, partner}) => {
         const a = this.world.skills[main], b = this.world.skills[partner];
-        return a + b > 0 && (a < MAX_SKILL_LEVEL || b < MAX_SKILL_LEVEL) &&
+        return this.world.combinations.eligible(main) && a + b > 0 && (a < MAX_SKILL_LEVEL || b < MAX_SKILL_LEVEL) &&
           ((a > 0 && b > 0) || this.world.weaponCount < this.world.weaponSlots);
       })
       .sort((a,b) => (this.world.skills[b.main] + this.world.skills[b.partner]) - (this.world.skills[a.main] + this.world.skills[a.partner]) ||
@@ -199,6 +204,8 @@ export class UpgradeSystem {
     )
       return false;
     this.world.evolutions[s] = id;
+    this.reconcileTarget();
+    this.world.combinations.remove(s);
     this.world.cooldowns[s] = 0;
     this.world.expansion.refresh(s);
     this.world.pendingEvolution = null;

@@ -1,3 +1,4 @@
+import {isFrontier,frontierMap} from "./FrontierMaps";
 import {resolveObservatory} from "./ObservatoryMap";
 import {starAirborne} from "./ObservatorySystem";
 import {resolveArsenal} from "./ArsenalMap";
@@ -32,6 +33,7 @@ export function resolveGarden(p: Point, radius = 0.3, stones = GARDEN_STONES) {
 }
 export function stepGarden(w: SurvivalWorld, dt: number) {
   if (w.stageId === 1) return;
+  if(isFrontier(w.stageId)){const map=frontierMap(w.stageId);map.resolve(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")map.resolve(e,e.kind==="boss"?.65:.35);return;}
   if(w.stageId===10){resolveObservatory(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving"&&!starAirborne(e))resolveObservatory(e,e.kind==="boss"?.65:.35);return;}
   if(w.stageId===9){resolveArsenal(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")resolveArsenal(e,e.kind==="boss"?.65:.35);return;}
   if(w.stageId===8){resolveHarbor(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")resolveHarbor(e,e.kind==="boss"?.65:.35);return;}

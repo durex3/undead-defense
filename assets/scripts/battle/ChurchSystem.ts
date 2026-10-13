@@ -1,3 +1,4 @@
+import { midgameRest } from "./MidgameEncounters";
 import { crownEscape } from "./CrownSystem";
 import type { SurvivalWorld } from './SurvivalWorld';
 import type { Enemy, Hazard, Point } from './SurvivalTypes';
@@ -34,6 +35,7 @@ export class ChurchSystem {
   private bell=0;
   step(w: SurvivalWorld) {
     if(w.stageId!==4)return;
+    if(midgameRest(w.stageId,w.time)){w.hazards=w.hazards.filter(h=>h.source!==0 || h.kind==="pool");return;}
     if(encounterTime(w.time)>=230){w.hazards=w.hazards.filter(h=>!(h.source===0 && h.kind==='bellRing'));return;}
     if(w.time<this.next||encounterBeat(w.time).rest||w.time<w.reinforcementRestUntil||w.enemies.some(e=>e.hp>0&&(isElite(e.kind)||e.kind==='boss')))return;
     // Start environment attacks only when no enemy warning is already active.

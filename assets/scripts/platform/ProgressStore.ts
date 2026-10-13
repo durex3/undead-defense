@@ -5,6 +5,7 @@ import {
   CHARACTERS,
   CharacterId,
   StageId,
+  STAGE_IDS,
 } from "../battle/ProgressionConfig";
 import { WEAPONS } from "../battle/SurvivalConfig";
 export const PROGRESS_KEY = "ashen-survivors-progress-v1";
@@ -51,7 +52,7 @@ export class ProgressStore {
   }
   private readStageBest(raw: any): Record<string, StageBest> {
     const result: Record<string, StageBest> = {};
-    for (const id of [1,2,3,4,5,6,7,8,9,10]) {
+    for (const id of STAGE_IDS) {
       const b=raw?.[id];
       if(b && Number.isFinite(b.time) && b.time>=0 && Number.isInteger(b.phase) && b.phase>=0 && b.phase<=3 && typeof b.won==='boolean' && (b.bossRemaining===null || (Number.isFinite(b.bossRemaining)&&b.bossRemaining>=0&&b.bossRemaining<=100))) result[id]={time:b.time,phase:b.phase,bossRemaining:b.bossRemaining,won:b.won};
     }
@@ -77,7 +78,7 @@ export class ProgressStore {
         ["achievements", ACHIEVEMENTS.map((a) => a.id)],
         ["evolutions", WEAPONS],
         ["winners", Object.keys(CHARACTERS)],
-        ["stages", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
+        ["stages", STAGE_IDS],
       ].every(
         ([key, values]) =>
           Array.isArray(d[key as string]) &&

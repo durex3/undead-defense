@@ -1,3 +1,4 @@
+import { midgameRest } from "./MidgameEncounters";
 import { furnaceRest } from "./FurnaceEncounters";
 import type { SurvivalWorld } from './SurvivalWorld';
 import { Enemy, Hazard, distance } from './SurvivalTypes';
@@ -39,6 +40,7 @@ export class LateStageDirector {
   private readonly times = [60, 78, 132, 150, 205, 218];
   step(w: SurvivalWorld) {
     if (w.stageId !== 6 && w.stageId !== 7) return;
+    if(midgameRest(w.stageId,w.time)){w.hazards=w.hazards.filter(h=>h.source!==0 || h.kind==="pool");return;}
     if (encounterTime(w.time) >= 230 || encounterBeat(w.time).rest || (w.stageId===6 && furnaceRest(w.time)) || w.enemies.some(e=>e.hp>0 && isElite(e.kind))) {
       w.hazards = w.hazards.filter(h=>h.source!==0);
     }

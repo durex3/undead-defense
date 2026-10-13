@@ -425,7 +425,7 @@ export class GameBootstrap extends Component {
     const before = (Object.keys(CHARACTERS) as CharacterId[]).filter((id) =>
       this.progress.unlockedCharacter(id),
     );
-    const stageBefore = [2,3,4,5,6,7,8,9,10].filter(id=>this.progress.unlockedStage(id as StageId));
+    const stageBefore = [2,3,4,5,6,7,8,9,10,11,12,13].filter(id=>this.progress.unlockedStage(id as StageId));
     const earned = this.progress.observe(this.world);
     for (const id of earned)
       if (!this.runEarned.includes(id)) this.runEarned.push(id);
@@ -434,7 +434,7 @@ export class GameBootstrap extends Component {
         (id) => !before.includes(id) && this.progress.unlockedCharacter(id),
       )
       .map((id) => CHARACTERS[id].name);
-    for (const id of [2,3,4,5,6,7,8,9,10] as StageId[])
+    for (const id of [2,3,4,5,6,7,8,9,10,11,12,13] as StageId[])
       if (!stageBefore.includes(id) && this.progress.unlockedStage(id)) unlocks.push(STAGES[id].name);
     this.runUnlocks.push(...unlocks);
     if (unlocks.length)
@@ -722,7 +722,7 @@ export class GameBootstrap extends Component {
           ? new Color(255, 180, 125)
           : e.slowUntil > w.time
             ? new Color(138, 215, 255)
-            : e.kind === "boss" && w.stageId === 3 ? new Color("#ff9865") : e.kind === "boss" && w.stageId === 4 ? new Color("#a4d9ef") : e.kind === "boss" && w.stageId === 5 ? new Color("#ead7ad") : e.kind === "boss" && w.stageId === 6 ? new Color("#efaa70") : e.kind === "boss" && w.stageId === 7 ? new Color("#aab5ff") : e.kind === "boss" && w.stageId === 8 ? new Color("#80c5cb") : e.kind === "sailor" ? new Color("#a6d3ca") : e.kind === "drowned" ? new Color("#79b9d0") : e.kind === "anchorhand" ? new Color("#ccb98a") : e.kind === "boss" && w.stageId === 10 ? new Color("#b6b5e5") : ["starpatrol","starweaver","starpuppet"].includes(e.kind) ? new Color("#c4c4e0") : e.kind === "boss" && w.stageId === 9 ? new Color("#e0b78e") : ["boneguard","standardbearer","crossbowman","warflag"].includes(e.kind) ? new Color("#cfb393") : Color.WHITE;
+            : w.stageId===11 ? new Color("#e7b089") : w.stageId===12 ? new Color("#b7c8e9") : w.stageId===13 ? new Color("#99ceca") : e.kind === "boss" && w.stageId === 3 ? new Color("#ff9865") : e.kind === "boss" && w.stageId === 4 ? new Color("#a4d9ef") : e.kind === "boss" && w.stageId === 5 ? new Color("#ead7ad") : e.kind === "boss" && w.stageId === 6 ? new Color("#efaa70") : e.kind === "boss" && w.stageId === 7 ? new Color("#aab5ff") : e.kind === "boss" && w.stageId === 8 ? new Color("#80c5cb") : e.kind === "sailor" ? new Color("#a6d3ca") : e.kind === "drowned" ? new Color("#79b9d0") : e.kind === "anchorhand" ? new Color("#ccb98a") : e.kind === "boss" && w.stageId === 10 ? new Color("#b6b5e5") : ["starpatrol","starweaver","starpuppet"].includes(e.kind) ? new Color("#c4c4e0") : e.kind === "boss" && w.stageId === 9 ? new Color("#e0b78e") : ["boneguard","standardbearer","crossbowman","warflag"].includes(e.kind) ? new Color("#cfb393") : Color.WHITE;
     }
     const ordered = [this.hero, ...Array.from(this.units.values())].sort(
       (a, b) => b.position.y - a.position.y,
@@ -812,7 +812,7 @@ export class GameBootstrap extends Component {
     this.superBanner.active = this.started && w.active && this.superLife > 0;
     const entrance = Math.min(1, (2.6 - this.superLife) / 0.22);
     this.superBanner.setScale(0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 1);
-    this.painter.draw(w, dt, events);
+    this.painter.draw(w, dt, events, this.preferences.powerSaving);
     const b = this.bars;
     b.clear();
     this.rect(

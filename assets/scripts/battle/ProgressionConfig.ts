@@ -23,7 +23,8 @@ export const CHARACTERS = {
   },
 };
 export type CharacterId = keyof typeof CHARACTERS;
-export type StageId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+export type StageId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13;
+export const STAGE_IDS: readonly StageId[] = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 export const ACHIEVEMENTS = [
   { id: "level", name: "初次觉醒", description: "首次升级" },
   { id: "learn", name: "秘术学徒", description: "首次学习一把新武器" },

@@ -80,21 +80,21 @@ export const EVOLUTIONS: Record<
     {
       id: "ring",
       name: "绞肉之环",
-      description: "5 把高速短刀\n贴身持续收割，单刀伤害降低",
+      description: "满级六把高速短刀，向近敌偏转\n扩大环绕范围，保留贴身持续收割",
     },
     {
       id: "return",
       name: "归巢飞刃",
-      description: "3 把刀周期扩散至半径 4\n去回双重切割，近身有空档",
+      description: "四把飞刃自动瞄准，扇形往返切割\n向远处敌人伸展，近身有攻击空档",
     },
   ],
   fire: [
     {
       id: "meteor",
       name: "熔岩陨星",
-      description: "三连火球化作巨型陨星\n大范围爆炸，留下燃烧地面；飞刀扩散爆破",
+      description: "巨型陨星主击，满级追加两枚副陨星\n覆盖不同敌群，留下燃烧地面；保留飞刀联动",
     },
-    { id: "inferno", name: "焚天火雨", description: "四发火球轰炸不同目标，留下火海\n单发伤害降低，飞刀扩散爆破" },
+    { id: "inferno", name: "焚天火雨", description: "六发火球分散轰炸不同敌群\n爆炸留下持续火海，封锁大片区域" },
   ],
   ice: [
     {
@@ -102,7 +102,7 @@ export const EVOLUTIONS: Record<
       name: "极寒领域",
       description: "随身领域半径 3.5\n持续减速，每 4 秒冻结脉冲\n适合近身控场，冰雷组合效果保留",
     },
-    { id: "icicle", name: "极点冰刺", description: "三枚高速冰刺集中瞄准首领与精英\n命中减速；放弃随身领域与冻结脉冲" },
+    { id: "icicle", name: "极点冰刺", description: "五枚穿透冰刺瞄准首领与精英\n每枚命中两人，冻结小怪、减速首领" },
   ],
   lightning: [
     {
@@ -110,15 +110,15 @@ export const EVOLUTIONS: Record<
       name: "雷霆审判",
       description: "双链末端触发雷爆\n冰环减速目标额外受到碎冰伤害",
     },
-    { id: "thunder", name: "极点天罚", description: "集中轰击最多三个目标，不衰减\n优先精英与首领，对冰环减速目标增伤" },
+    { id: "thunder", name: "极点天罚", description: "五道重雷自动锁敌，无跳跃衰减\n前三道强击，独立压制远程威胁" },
   ],
   scythe: [
     {
       id: "reaper",
       name: "死神收割",
-      description: "巨型宽镰，回程击杀延长最多3单位\n回程追击战斧印记，触发收割冲击",
+      description: "自动索敌，巨型宽镰往返收割\n回程击杀延长最多3单位\n回程追击战斧印记，触发收割冲击",
     },
-    { id: "cross", name: "双月交锋", description: "双镰交叉扫出，回程伤害提升50%\n回程追击战斧印记，触发收割冲击" },
+    { id: "cross", name: "双月交锋", description: "双镰自动索敌，交叉往返切割\n回程伤害提高50%，命中掀起小型刃风" },
   ],
   ghost: [
     {
@@ -126,7 +126,7 @@ export const EVOLUTIONS: Record<
       name: "幽魂军团",
       description: "四个幽灵分别寻找目标，灵弹穿透并溅射\n组合后：标记击杀释放追踪魂弹",
     },
-    { id: "hunters", name: "冥界双猎", description: "两名猎魂集中追击首领与精英，高伤无溅射\n组合后：标记击杀释放追踪魂弹" },
+    { id: "hunters", name: "冥界双猎", description: "双猎魂高速追踪首领与精英\n直接击杀引发魂爆，重新寻找存活目标" },
   ],
   water: [
     {
@@ -134,7 +134,7 @@ export const EVOLUTIONS: Record<
       name: "净化圣泉",
       description: "五重半径 2.8 的圣泉，自动瞄准并减速\n组合后：水毒交叠形成周期爆发法阵",
     },
-    { id: "tide", name: "随身圣潮", description: "圣潮跟随角色，保护近身范围\n组合后：水毒交叠形成周期爆发法阵" },
+    { id: "tide", name: "随身圣潮", description: "半径3.6的圣潮跟随角色\n持续伤害与减速，边移动边清理近敌" },
   ],
   poison: [
     {
@@ -142,7 +142,7 @@ export const EVOLUTIONS: Record<
       name: "瘟疫行者",
       description: "毒雾中的敌人死亡触发毒爆\n每秒最多 4 次，不递归引爆",
     },
-    { id: "venom", name: "蚀骨剧毒", description: "向目标脚下投放小毒池，站定也会施放\n叠毒最多5层，离池后持续4秒；不触发死亡毒爆" },
+    { id: "venom", name: "蚀骨剧毒", description: "主动投毒并立即伤害目标\n每次叠两层，最多五层，离池持续4秒" },
   ],
   bone: [
     {
@@ -150,7 +150,7 @@ export const EVOLUTIONS: Record<
       name: "白骨冲车",
       description: "齐射化作巨型穿透骨矛\n击退普通敌人；穿过已武装地雷时引爆\n雷爆追加骨片冲击",
     },
-    { id: "ricochet", name: "碎骨跳弹", description: "三枚骨片各弹射最多4个不同目标\n弹射伤害逐次衰减，不击退；保留地雷联动" },
+    { id: "ricochet", name: "碎骨跳弹", description: "三枚骨片各跳弹最多五个不同目标\n弹射逐次衰减，追击分散敌人" },
   ],
   mine: [
     {
@@ -158,7 +158,7 @@ export const EVOLUTIONS: Record<
       name: "连环雷阵",
       description: "爆炸引爆附近已武装地雷\n每帧最多连锁 4 枚",
     },
-    {id:"demolition",name:"定点重雷",description:"两枚重雷瞄准首领与精英脚下\n爆炸范围更小、伤害更高，不连锁；保留骨雷联动"},
+    {id:"demolition",name:"定点重雷",description:"两枚重雷投向首领与精英脚下\n独立高伤爆破，附带短暂控制"},
   ],
   void: [
     {
@@ -166,24 +166,28 @@ export const EVOLUTIONS: Record<
       name: "坍缩核心",
       description: "黑洞结束时发生大爆炸\n在聚怪之后集中收割",
     },
-    {id:"singularity",name:"奇点压缩",description:"小范围黑洞集中持续伤害与终结爆破\n牵引较弱，适合集中输出；保留陨石联动"},
+    {id:"singularity",name:"奇点压缩",description:"小范围持续压缩，随后大范围爆破\n牵引较弱，靠自身伤害终结敌群"},
   ],
-  axe: [{ id: "warwheel", name: "战轮回旋", description: "双斧宽幅往返，返回伤害提高70%\n适合清理成群敌人，保留镰刀印记" },
-    { id: "execution", name: "断头重斧", description: "单柄重斧瞄准首领与精英，集中重击\n攻击范围更窄、间隔更长；保留镰刀印记" }],
-  chain: [{ id: "hellchain", name: "地狱锁链", description: "火链持续标记敌人，光柱加速落下\n命中标记触发灼爆，每敌1秒一次" }, {id:"brand",name:"焚魂烙印",description:"单链优先锁定首领与精英，集中灼烧\n不转接新目标；保留光柱加速与灼爆"}],
-  pillar: [{ id: "judgmentsky", name: "审判天穹", description: "连续三次落柱，中心命中额外伤害" }, {id:"sunlance",name:"裁决光矛",description:"单次窄幅重击，优先首领与精英\n替代三连落柱；保留火链标记联动"}],
-  totem: [{ id: "gravegrid", name: "墓园矩阵", description: "三座图腾组成交叉射线\n命中魂链束缚目标追加魂击，每敌0.5秒一次" }, {id:"obelisk",name:"随行骨塔",description:"一座骨塔跟随角色，集中速射\n不再穿透敌群；保留魂链追加魂击"}],
-  soul: [{ id: "reincarnation", name: "轮回枷锁", description: "锁链断裂时爆发" }, {id:"torment",name:"蚀魂独缚",description:"单链锁定首领与精英，持续伤害递增\n不减速、不触发断链爆破；保留图腾魂击"}],
-  meteor: [{ id: "doomsfall", name: "末日星坠", description: "落点形成短时余烬区\n命中黑洞牵引区追加坍缩冲击" }, {id:"impact",name:"灭星重陨",description:"一枚重陨集中轰击首领与精英\n范围较小、不留余烬；保留黑洞坍缩联动"}],
+  axe: [{ id: "warwheel", name: "战轮回旋", description: "双斧自动索敌、宽幅往返\n返回伤害提高70%\n适合清理成群敌人，保留镰刀印记" },
+    { id: "execution", name: "断头重斧", description: "重斧自动瞄准首领与精英\n往返重击，回程命中掀起范围震波" }],
+  chain: [{ id: "hellchain", name: "地狱锁链", description: "火链持续标记敌人，光柱加速落下\n命中标记触发灼爆，每敌1秒一次" }, {id:"brand",name:"焚魂烙印",description:"优先锁定强敌，持续灼烧并波及近敌\n击杀后自动转锁，延续剩余时间"}],
+  pillar: [{ id: "judgmentsky", name: "审判天穹", description: "连续三次落柱，中心命中额外伤害" }, {id:"sunlance",name:"裁决光矛",description:"最多五处光矛同时落下\n主矛优先重击首领，副矛清理其他落点"}],
+  totem: [{ id: "gravegrid", name: "墓园矩阵", description: "三座图腾组成交叉射线\n命中魂链束缚目标追加魂击，每敌0.5秒一次" }, {id:"obelisk",name:"随行骨塔",description:"一座骨塔随身移动，快速双线射击\n主线集中强敌，副线攻击另一目标"}],
+  soul: [{ id: "reincarnation", name: "轮回枷锁", description: "锁链断裂时爆发" }, {id:"torment",name:"蚀魂独缚",description:"独立锁定强敌，伤害随持续时间递增\n击杀自动转锁，继承增伤与剩余时间"}],
+  meteor: [{ id: "doomsfall", name: "末日星坠", description: "落点形成短时余烬区\n命中黑洞牵引区追加坍缩冲击" }, {id:"impact",name:"灭星重陨",description:"主陨重击首领，最多四处碎陨清场\n独立多点爆破，不留余烬"}],
   bat: [
     {
       id: "bloodmoon",
       name: "血月归巢",
       description: "每轮 6 只，生命≥70%时伤害 +20%\n吸血仅至70%，间隔2.5秒，受伤停2秒",
     },
-    {id:"bloodhunt",name:"血影猎杀",description:"两只血蝠集中追击首领与精英\n高伤、不穿梭、不回血；保留幽灵噬魂标记"},
+    {id:"bloodhunt",name:"血影猎杀",description:"三只血蝠优先强敌，每只追击两名敌人\n高伤高速猎杀，完成后返回，不回血"},
   ],
 };
+/** Second branches are self-contained evolutions and never activate recipe effects. */
+export function independentBranch(skill: Skill, form?: string) {
+  return !!form && EVOLUTIONS[skill][1]?.id === form;
+}
 const DESCRIPTIONS: Record<Skill, string[]> = {
   water: [
     "每 4 秒向前投出圣水\n形成持续净化区域",
@@ -247,13 +251,13 @@ const DESCRIPTIONS: Record<Skill, string[]> = {
     "每链目标 5 → 6\n跳跃距离 2.8 → 3.5",
   ],
   scythe: [
-    "朝身后弧线扫出\n飞出与返回各命中一次",
+    "自动瞄准敌人，弧线扫出\n飞出与返回各命中一次",
     "单镰 → 双镰\n两条路线穿透敌群",
     "飞行距离 6 → 8\n刀刃判定加宽 30%",
     "施法间隔 2.5 → 1.8 秒\n更快打通行进路线",
   ],
   axe: [
-    "每 2.8 秒朝身后直线投出\n返回路径重击并穿透敌群",
+    "每 2.8 秒自动瞄准敌人投出\n返回路径重击并穿透敌群",
     "战斧 1 → 2 把\n覆盖两条进攻路线",
     "飞行距离 5 → 7\n斧刃判定加宽",
     "返回路径伤害 +35%\n更快完成一轮攻击",
@@ -317,6 +321,7 @@ export function cardText(card: Card, level: number) {
   );
 }
 export const ENEMY_KINDS = [
+  "forgeguard", "lineworker", "hammerer", "mirrorguard", "prismarcher", "mirrorpriest", "ferryguard", "tidecaller", "echoferryman",
   "minion", "sailor", "drowned", "anchorhand", "boneguard", "standardbearer", "crossbowman", "warflag", "starpatrol", "starweaver", "starpuppet",
   "rogue",
   "shield",
@@ -348,6 +353,16 @@ export interface EnemyConfig {
   elite?: boolean;
 }
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+  forgeguard:{name:"推炉骨兵",health:1,speed:1.5,contact:8,xp:1,threat:0,cap:12,sprite:"skelet_run",scale:3.2},
+  lineworker:{name:"熔线工",health:1,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3.2},
+  hammerer:{name:"落锤匠",health:1.1,speed:1.3,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.2},
+  mirrorguard:{name:"游镜骨兵",health:0.95,speed:1.6,contact:8,xp:1,threat:0,cap:12,sprite:"skelet_run",scale:3.2},
+  prismarcher:{name:"棱光射手",health:0.9,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3.2},
+  mirrorpriest:{name:"分镜祭徒",health:1.05,speed:1.1,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.2},
+  ferryguard:{name:"摆渡骨兵",health:1,speed:1.5,contact:8,xp:1,threat:0,cap:12,sprite:"skelet_run",scale:3.2},
+  tidecaller:{name:"引潮者",health:1.05,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3.2},
+  echoferryman:{name:"回响摆渡人",health:1,speed:1.15,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.2},
+
   starpatrol:{name:"巡星骨兵",health:1,speed:1.4,contact:8,xp:1,threat:0,cap:12,sprite:"skelet_run",scale:3.1},
   starweaver:{name:"刻痕师",health:1.05,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.2},
   starpuppet:{name:"坠星傀儡",health:.9,speed:1.3,contact:8,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3.1},

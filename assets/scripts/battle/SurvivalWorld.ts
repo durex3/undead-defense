@@ -1,3 +1,5 @@
+import {frontierEnemy} from "./FrontierSystem";
+import {experienceRequired} from "./ExperienceCurve";
 import {ObservatoryPath} from "./ObservatoryPath";
 import { furnaceRoute } from "./FurnaceEncounters";
 import { LateStageDirector, lateStageDamage } from "./LateStageSystem";
@@ -30,7 +32,6 @@ import { SpawnDirector } from "./SpawnDirector";
 import { stepEnemies, stepHazards } from "./EnemySystem";
 import { ExpansionWeapons, EXPANSION_SKILLS } from "./ExpansionWeapons";
 export type { Enemy, Shot, Effect } from "./SurvivalTypes";
-const XP = [6, 8, 10, 10, 12, 12, 14, 14, 16, 16, 18, 18, 20, 20, 22, 22, 24, 24, 26, 26, 28, 28, 30, 30];
 export class SurvivalWorld {
   starPath=new ObservatoryPath();
   enemies: Enemy[] = [];
@@ -178,7 +179,7 @@ export class SurvivalWorld {
     return this.state === "battle" && !this.pauses.size;
   }
   get xpNeed() {
-    return XP[this.level - 1] ?? 36;
+    return experienceRequired(this.level);
   }
   get weaponCount() {
     return WEAPONS.filter((s) => this.skills[s]).length;
@@ -301,7 +302,7 @@ export class SurvivalWorld {
           : 1;
   }
   get bladeRadius() {
-    if (this.weaponEvolution("blade") === "ring") return 1.7;
+    if (this.weaponEvolution("blade") === "ring") return this.skills.blade>=10?2.4:2.2;
     if (this.weaponEvolution("blade") === "return") {
       const phase = this.time % 3;
       return phase < 1.2 ? 1.7 + 2.3 * Math.sin((phase / 1.2) * Math.PI) : 1.7;
@@ -309,13 +310,19 @@ export class SurvivalWorld {
     return this.skills.blade >= 3 ? 2.2 : 1.7;
   }
   get blades(): Blade[] {
+    const form=this.weaponEvolution("blade");
+    const target=form ? this.priorityTarget(form==="return"?6:3.8) : undefined;
+    const aim=target?Math.atan2(target.y-this.player.y,target.x-this.player.x):this.orbitAngle;
+    const expansion=form==="return" && this.time%3<1.2;
+    const reach=expansion && target ? 1.7+Math.min(3.6,Math.max(2.3,distance(this.player,target)-1.7))*Math.sin((this.time%3)/1.2*Math.PI) : this.bladeRadius;
+    const offset=form==="ring" && target ? .65 : 0;
     return Array.from({ length: this.bladeCount }, (_, index) => {
-      const angle = this.orbitAngle + (index * Math.PI * 2) / this.bladeCount;
+      const angle = expansion && target ? aim+(index-(this.bladeCount-1)/2)*.16 : this.orbitAngle + (index * Math.PI * 2) / this.bladeCount;
       return {
         index,
         angle,
-        x: this.player.x + Math.cos(angle) * this.bladeRadius,
-        y: this.player.y + Math.sin(angle) * this.bladeRadius,
+        x: this.player.x + Math.cos(aim)*offset + Math.cos(angle) * reach,
+        y: this.player.y + Math.sin(aim)*offset + Math.sin(angle) * reach,
         phase: this.time % 3 < 0.6 ? 0 : 1,
       };
     });
@@ -342,8 +349,10 @@ export class SurvivalWorld {
     const hp =
       kind === "boss"
         ? c.health * STAGES[this.stageId].bossHealth * 8
-        : 30 * (1 + Math.min(this.time, ["minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
-          (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health);
+        : 30 * (1 + Math.min(this.time, ["forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
+          (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health) *
+          (this.stageId <= 2 && ["mage", "archer"].includes(kind)
+            ? 1 + Math.min(2, Math.max(0, this.time - 90) / 90) : 1);
     const e: Enemy = {
       id: this.id(),
       kind,
@@ -530,7 +539,7 @@ export class SurvivalWorld {
     if (freeze && e.kind !== "boss" && e.freezeReady <= this.time) {
       e.freezeUntil = this.time + (isElite(e.kind) ? 0.25 : 0.5);
       e.freezeReady = this.time + 3;
-      if (e.state === "windup" && !["starpatrol","starweaver","starpuppet"].includes(e.kind)) {
+      if (e.state === "windup" && !frontierEnemy(e.kind) && !["starpatrol","starweaver","starpuppet"].includes(e.kind)) {
         this.hazards = this.hazards.filter((h) => h.source !== e.id);
         e.state = "recover";
         e.timer = 0.5;
@@ -668,7 +677,7 @@ export class SurvivalWorld {
               : this.skills.ice >= 2
                 ? 3.2
                 : 2.4
-            : 14,
+            : s === "scythe" || s === "axe" ? this.returningRange(s) : 14,
         )
       ) {
         this.cast(s);
@@ -728,10 +737,10 @@ export class SurvivalWorld {
         const target=this.priorityTarget();
         if (!target) return;
         const angle=Math.atan2(target.y-this.player.y,target.x-this.player.x);
-        for(let i=0;i<3;i++) {
-          const a=angle+(i-1)*.055;
+        for(let i=0;i<5;i++) {
+          const a=angle+(i-2)*.045;
           this.shots.push({id:this.id(),skill:"ice",form:"icicle",...this.player,
-            vx:Math.cos(a)*18,vy:Math.sin(a)*18,damage:this.attack*1.6,left:1,hit:[],target:target.id,
+            vx:Math.cos(a)*18,vy:Math.sin(a)*18,damage:this.attack*1.3,left:2,hit:[],target:target.id,
             ttl:14/18,age:0,range:14,returning:false,width:.22,extra:0,excursion:0});
         }
         return;
@@ -752,8 +761,8 @@ export class SurvivalWorld {
     }
     const count =
       s === "fire"
-        ? this.weaponEvolution("fire") === "inferno" ? 4 : this.weaponEvolution("fire")
-          ? 1
+        ? this.weaponEvolution("fire") === "inferno" ? 6 : this.weaponEvolution("fire")
+          ? this.skills.fire>=10?3:1
           : this.skills.fire >= 10 ? 6 : this.skills.fire >= 7 ? 5 : this.skills.fire >= 4
             ? 3
             : this.skills.fire >= 2
@@ -790,13 +799,13 @@ export class SurvivalWorld {
   private lightning() {
     const used: number[] = [];
     if (this.weaponEvolution("lightning") === "thunder") {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < (this.skills.lightning>=10?5:3); i++) {
         const e = this.near(this.player, 14).filter(e => e.state !== "arriving" && !used.includes(e.id))
           .sort((a,b) => Number(b.kind === "boss") - Number(a.kind === "boss") || Number(isElite(b.kind)) - Number(isElite(a.kind)) || distance(a,this.player) - distance(b,this.player))[0];
         if (!e) break;
         used.push(e.id);
         this.effects.push({type: "lightning", ...this.player, endX: e.x, endY: e.y, skill: "lightning"});
-        this.hit(e, this.attack * 3, "lightning");
+        this.hit(e, this.attack * (i<3?3.5:2.5), "lightning");
         this.iceLightning(e);
       }
       return;
@@ -848,13 +857,17 @@ export class SurvivalWorld {
     }
   }
   private iceLightning(e: Enemy) {
-    if (!this.evolutions.lightning || this.skills.ice < MAX_SKILL_LEVEL ||
+    if (!this.combinations.ready("lightning") ||
         (e.freezeUntil <= this.time && e.slowUntil <= this.time)) return;
     this.hit(e, this.attack * 0.8, "lightning", false, e, true, "lightning");
     this.combinations.trigger("lightning", "comboIce", e, 0.8, "ice");
   }
-  private priorityTarget() {
-    return this.near(this.player,14).filter(e=>e.state!=="arriving")
+  private returningRange(skill: "scythe" | "axe") {
+    return skill === "axe" ? (this.weaponEvolution("axe")==="execution"?6:this.skills.axe>=3?7:5)
+      : this.weaponEvolution("scythe")==="cross"?5.5:this.skills.scythe>=3?8:6;
+  }
+  private priorityTarget(range = 14) {
+    return this.near(this.player,range).filter(e=>e.state!=="arriving")
       .sort((a,b)=>Number(b.kind==="boss")-Number(a.kind==="boss") || Number(isElite(b.kind))-Number(isElite(a.kind)) || distance(a,this.player)-distance(b,this.player))[0];
   }
   private castPart(q: ScheduledCast) {
@@ -892,6 +905,7 @@ export class SurvivalWorld {
               a.hp - b.hp,
           )[0] || target;
     }
+    if (s === "fire" && this.skills.fire>=10 && this.weaponEvolution("fire")==="meteor" && q.index>0 && !this.enemies.some(e=>e.hp>0 && e.state!=="arriving" && distance(e,this.player)<14 && !q.targets.includes(e.id))) return;
     if (s === "fire")
       target =
         this.enemies
@@ -905,17 +919,24 @@ export class SurvivalWorld {
           .sort(
             (a, b) => Number(b.kind === "boss") - Number(a.kind === "boss") || this.near(b, 1.5).length - this.near(a, 1.5).length,
           )[0] || target;
-    if(s === "axe" && this.weaponEvolution("axe") === "execution") target=this.priorityTarget() || target;
+    if(s === "scythe" || s === "axe") {
+      const inRange=this.priorityTarget(this.returningRange(s));
+      if(!inRange)return;
+      target=inRange;
+    }
     q.targets.push(target.id);
     let angle = Math.atan2(target.y - origin.y, target.x - origin.x);
-    if (s === "scythe" || (s === "axe" && this.weaponEvolution("axe") !== "execution"))
-      angle =
-        Math.atan2(-this.lastMove.y, -this.lastMove.x) +
-        (s === "scythe" && this.weaponEvolution("scythe") === "cross" ? (q.index === 0 ? -0.45 : 0.45) :
-        ((s === "axe" ? this.skills.axe >= 2 : this.skills.scythe >= 2 && !this.weaponEvolution("scythe"))
-          ? ((q.index - 0.5) * Math.PI) / 9
-          : 0));
     const speed = s === "fire" ? 10 : s === "scythe" || s === "axe" ? 10 : s === "ghost" && this.weaponEvolution("ghost") === "hunters" ? 17 : 13;
+    if (s === "scythe") {
+      // Aim the curved sweep through the chosen enemy, rather than behind movement.
+      // Opposite cross arcs share a target but travel along distinct paths.
+      const arc=this.weaponEvolution("scythe")==="cross" ? (q.index===0?1.5:-1.5) : 1.15;
+      angle -= Math.asin(Math.min(.8,distance(origin,target)*Math.abs(arc)/(2*speed))) * Math.sign(arc);
+      if(!this.weaponEvolution("scythe") && this.skills.scythe>=2)
+        angle += ((q.index-.5)*Math.PI)/9;
+    } else if(s === "axe" && this.weaponEvolution("axe")!=="execution" && this.skills.axe>=2) {
+      angle += ((q.index-.5)*Math.PI)/9;
+    }
     this.shots.push({
       id: this.id(),
       skill: s,
@@ -927,7 +948,7 @@ export class SurvivalWorld {
         this.attack *
         (s === "fire"
           ? this.weaponEvolution("fire")
-            ? this.weaponEvolution("fire") === "inferno" ? 1.25 : 3
+            ? this.weaponEvolution("fire") === "inferno" ? 1.25 : q.index>0?1.5:3
             : 1.6
           : s === "axe" ? (this.weaponEvolution("axe") === "execution" ? 3 : .95) : s === "scythe"
             ? this.weaponEvolution("scythe") === "cross" ? 1.15 : this.weaponEvolution("scythe")
@@ -940,7 +961,7 @@ export class SurvivalWorld {
       target: target.id,
       ttl: 4,
       age: 0,
-      range: s === "axe" ? (this.weaponEvolution("axe") === "execution" ? 6 : this.skills.axe >= 3 ? 7 : 5) : s === "scythe" ? (this.weaponEvolution("scythe") === "cross" ? 5.5 : this.skills.scythe >= 3 ? 8 : 6) : 0,
+      range: s === "axe" || s === "scythe" ? this.returningRange(s) : 0,
       returning: false,
       width:
         s === "scythe" || s === "axe"
@@ -959,7 +980,12 @@ export class SurvivalWorld {
     p.ttl -= dt;
     p.age += dt;
     if (p.skill === "fire" || p.skill === "ghost") {
-      const t = this.enemies.find((e) => e.id === p.target && e.hp > 0);
+      let t = this.enemies.find((e) => e.id === p.target && e.hp > 0);
+      if(!t && p.skill==='ghost') {
+        t=this.enemies.filter(e=>e.hp>0&&e.state!=='arriving'&&!p.hit.includes(e.id)&&distance(e,p)<14)
+          .sort((a,b)=>Number(b.kind==='boss')-Number(a.kind==='boss')||distance(a,p)-distance(b,p))[0];
+        if(t)p.target=t.id;
+      }
       if (t) {
         const d = distance(t, p);
         const speed=p.skill === "ghost" ? (p.form === "hunters" ? 17 : 13) : 10;
@@ -1015,7 +1041,7 @@ export class SurvivalWorld {
         p.left = 0;
         break;
       }
-      if (p.skill === "ice") this.slow(e, false);
+      if (p.skill === "ice") this.slow(e, p.form === "icicle");
       if (p.skill === "axe") this.combinations.mark("scythe", e);
       if (p.skill === "ghost") this.combinations.strike("ghost", e, old);
       if (p.skill === "scythe" && p.returning) this.combinations.strike("scythe", e, old);
@@ -1024,6 +1050,15 @@ export class SurvivalWorld {
         const push = isLarge(e.kind) ? 0.35 : 0.7;
         e.x = Math.max(-22.7, Math.min(22.7, e.x + (p.vx / 13) * push));
         e.y = Math.max(-26.7, Math.min(26.7, e.y + (p.vy / 13) * push));
+      }
+      if ((p.form === "cross" && p.returning) || (p.form === "execution" && p.returning)) {
+        const radius=p.form==="cross"?1.1:1.5;
+        for(const other of this.near(e,radius))if(other.id!==e.id)this.hit(other,this.attack*(p.form==="cross"?.35:.65),p.skill,false,e);
+        this.effects.push({type:"explosion",x:e.x,y:e.y,radius,skill:p.skill});
+      }
+      if(p.form==="hunters"&&e.hp<=0){
+        for(const other of this.near(e,1.3))this.hit(other,this.attack,"ghost",false,e);
+        this.effects.push({type:"explosion",x:e.x,y:e.y,radius:1.3,skill:"ghost"});
       }
       p.hit.push(e.id);
       p.left--;
@@ -1076,7 +1111,7 @@ export class SurvivalWorld {
         e.burnNext = this.time + 1;
       }
     }
-    if (this.evolutions.fire && this.skills.blade >= MAX_SKILL_LEVEL) {
+    if (this.combinations.ready("fire")) {
       for (const e of this.near(p, radius + 1.2))
         this.hit(e, this.attack * 0.45, "fire", false, p, true, "fire");
       this.combinations.trigger("fire", "comboFire", p, radius + 1.2, "blade");
@@ -1087,7 +1122,7 @@ export class SurvivalWorld {
         y: p.y,
         radius,
         form: p.form || this.weaponEvolution("fire"),
-        until: this.time + (this.weaponEvolution("fire") === "inferno" ? 4 : 2),
+        until: this.time + (this.weaponEvolution("fire") === "inferno" ? 6 : 2),
         next: this.time + 1,
         damage: this.attack * 0.4,
       });

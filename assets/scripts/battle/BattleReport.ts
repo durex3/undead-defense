@@ -11,7 +11,7 @@ export function battleReport(w: SurvivalWorld) {
       damage: w.damage[s] || 0,
       kills: w.weaponKills[s] || 0,
       share: total > 0 ? (w.damage[s] || 0) / total : 0,
-      stage: `${w.skills[s]}级${weaponStatus(w,s).branch ? " ◇"+weaponStatus(w,s).branch : ""}${weaponStatus(w,s).combined ? " ∞" : ""}`,
+      stage: `${w.skills[s]}级${weaponStatus(w,s).branch ? " "+weaponStatus(w,s).icons+weaponStatus(w,s).branch : ""}`,
       status: weaponStatus(w,s),
       tags: WEAPON_TAGS[s],
     }))

@@ -1,0 +1,6034 @@
+{
+  "note": "36 fixed-seed collector runs using new hazard-aware bot. Same navigation and avoidance rules across stages. Bot defeats are preserved; no human win-rate or strict difficulty ordering claim.",
+  "summary": [
+    {
+      "profile": "classic",
+      "stage": 10,
+      "won": 1,
+      "lost": 2,
+      "results": [
+        {
+          "seed": 1,
+          "state": "lost",
+          "time": 16,
+          "level": 1,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "lost",
+          "time": 22,
+          "level": 1,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 567,
+          "level": 53,
+          "firstCombo": 282,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "classic",
+      "stage": 11,
+      "won": 3,
+      "lost": 0,
+      "results": [
+        {
+          "seed": 1,
+          "state": "won",
+          "time": 566,
+          "level": 52,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 591,
+          "level": 50,
+          "firstCombo": 442,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 557,
+          "level": 54,
+          "firstCombo": 313,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "classic",
+      "stage": 12,
+      "won": 3,
+      "lost": 0,
+      "results": [
+        {
+          "seed": 1,
+          "state": "won",
+          "time": 540,
+          "level": 54,
+          "firstCombo": 334,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 594,
+          "level": 52,
+          "firstCombo": 321,
+          "lastDamageSource": "碎镜坠落"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 577,
+          "level": 52,
+          "firstCombo": 308,
+          "lastDamageSource": "碎镜坠落"
+        }
+      ]
+    },
+    {
+      "profile": "classic",
+      "stage": 13,
+      "won": 2,
+      "lost": 1,
+      "results": [
+        {
+          "seed": 1,
+          "state": "lost",
+          "time": 654,
+          "level": 51,
+          "firstCombo": null,
+          "lastDamageSource": "终渡回响"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 582,
+          "level": 51,
+          "firstCombo": 391,
+          "lastDamageSource": "终渡回响"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 568,
+          "level": 53,
+          "firstCombo": 283,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "scythes",
+      "stage": 10,
+      "won": 1,
+      "lost": 2,
+      "results": [
+        {
+          "seed": 1,
+          "state": "lost",
+          "time": 16,
+          "level": 1,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "lost",
+          "time": 22,
+          "level": 1,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 667,
+          "level": 48,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "scythes",
+      "stage": 11,
+      "won": 3,
+      "lost": 0,
+      "results": [
+        {
+          "seed": 1,
+          "state": "won",
+          "time": 605,
+          "level": 50,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 653,
+          "level": 51,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 574,
+          "level": 49,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "scythes",
+      "stage": 12,
+      "won": 1,
+      "lost": 2,
+      "results": [
+        {
+          "seed": 1,
+          "state": "lost",
+          "time": 43,
+          "level": 4,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "lost",
+          "time": 535,
+          "level": 48,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 559,
+          "level": 48,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "scythes",
+      "stage": 13,
+      "won": 3,
+      "lost": 0,
+      "results": [
+        {
+          "seed": 1,
+          "state": "won",
+          "time": 574,
+          "level": 49,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 599,
+          "level": 49,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 676,
+          "level": 47,
+          "firstCombo": null,
+          "lastDamageSource": "终渡回响"
+        }
+      ]
+    },
+    {
+      "profile": "ground",
+      "stage": 10,
+      "won": 3,
+      "lost": 0,
+      "results": [
+        {
+          "seed": 1,
+          "state": "won",
+          "time": 642,
+          "level": 54,
+          "firstCombo": 297,
+          "lastDamageSource": "坠星踏击"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 627,
+          "level": 54,
+          "firstCombo": 294,
+          "lastDamageSource": "坠星踏击"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 577,
+          "level": 53,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "ground",
+      "stage": 11,
+      "won": 3,
+      "lost": 0,
+      "results": [
+        {
+          "seed": 1,
+          "state": "won",
+          "time": 621,
+          "level": 54,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 651,
+          "level": 54,
+          "firstCombo": 298,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 555,
+          "level": 54,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        }
+      ]
+    },
+    {
+      "profile": "ground",
+      "stage": 12,
+      "won": 2,
+      "lost": 1,
+      "results": [
+        {
+          "seed": 1,
+          "state": "lost",
+          "time": 65,
+          "level": 8,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 614,
+          "level": 55,
+          "firstCombo": 253,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 665,
+          "level": 52,
+          "firstCombo": null,
+          "lastDamageSource": "碎镜坠落"
+        }
+      ]
+    },
+    {
+      "profile": "ground",
+      "stage": 13,
+      "won": 3,
+      "lost": 0,
+      "results": [
+        {
+          "seed": 1,
+          "state": "won",
+          "time": 600,
+          "level": 54,
+          "firstCombo": 277,
+          "lastDamageSource": "终渡回响"
+        },
+        {
+          "seed": 19,
+          "state": "won",
+          "time": 673,
+          "level": 52,
+          "firstCombo": null,
+          "lastDamageSource": "minion"
+        },
+        {
+          "seed": 72,
+          "state": "won",
+          "time": 608,
+          "level": 53,
+          "firstCombo": null,
+          "lastDamageSource": "终渡回响"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 99.99999999999999
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "lost",
+      "time": 16,
+      "hp": 0,
+      "kills": 5,
+      "level": 1,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 0,
+      "firstEvolution": 0,
+      "skills": {
+        "blade": 1,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {},
+      "checkpoints": [],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 99.99999999999999
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "lost",
+      "time": 22,
+      "hp": 0,
+      "kills": 7,
+      "level": 1,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 0,
+      "firstEvolution": 0,
+      "skills": {
+        "blade": 1,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {},
+      "checkpoints": [],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 63.36000000000001
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 567,
+      "hp": 100,
+      "kills": 4851,
+      "level": 53,
+      "firstCombo": 282,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 24,
+      "firstEvolution": 238,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 10,
+        "ghost": 10,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 4,
+        "totem": 0,
+        "soul": 5,
+        "meteor": 0
+      },
+      "evolutions": {
+        "blade": "ring",
+        "fire": "meteor",
+        "ghost": "legion",
+        "scythe": "reaper"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 89.44,
+          "kills": 13
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 100,
+          "kills": 104
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 186
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 238
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 296
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 396
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 452
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 667
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 951
+        },
+        {
+          "t": 300,
+          "level": 34,
+          "hp": 100,
+          "kills": 1385
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 1887
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2067
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2277
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2824
+        },
+        {
+          "t": 450,
+          "level": 50,
+          "hp": 100,
+          "kills": 3397
+        },
+        {
+          "t": 480,
+          "level": 53,
+          "hp": 100,
+          "kills": 3914
+        },
+        {
+          "t": 510,
+          "level": 53,
+          "hp": 100,
+          "kills": 4202
+        },
+        {
+          "t": 540,
+          "level": 53,
+          "hp": 100,
+          "kills": 4525
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboFire": 268
+      },
+      "combinationStats": {
+        "fire": {
+          "damage": 30324.688749999656,
+          "triggers": 268
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 53.6
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "won",
+      "time": 566,
+      "hp": 100,
+      "kills": 4560,
+      "level": 52,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 17,
+      "firstEvolution": 249,
+      "skills": {
+        "blade": 10,
+        "fire": 0,
+        "ice": 10,
+        "lightning": 10,
+        "scythe": 7,
+        "ghost": 10,
+        "water": 0,
+        "poison": 0,
+        "bone": 2,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "blade": "ring",
+        "lightning": "judgment",
+        "ghost": "legion",
+        "ice": "domain"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 72.84,
+          "kills": 36
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 110
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 186
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 238
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 299
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 397
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 461
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 670
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 938
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1390
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1805
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 1958
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2204
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2761
+        },
+        {
+          "t": 450,
+          "level": 48,
+          "hp": 100,
+          "kills": 3246
+        },
+        {
+          "t": 480,
+          "level": 52,
+          "hp": 100,
+          "kills": 3676
+        },
+        {
+          "t": 510,
+          "level": 52,
+          "hp": 100,
+          "kills": 3939
+        },
+        {
+          "t": 540,
+          "level": 52,
+          "hp": 100,
+          "kills": 4226
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboIce": 32
+      },
+      "combinationStats": {
+        "lightning": {
+          "damage": 1630.0338331753123,
+          "triggers": 32
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 75.04
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 591,
+      "hp": 100,
+      "kills": 4611,
+      "level": 50,
+      "firstCombo": 442,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 24,
+      "firstEvolution": 249,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 10,
+        "lightning": 10,
+        "scythe": 6,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 2,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "lightning": "judgment",
+        "blade": "ring",
+        "ice": "domain",
+        "fire": "meteor"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 83.56,
+          "kills": 13
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 81.4,
+          "kills": 102
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 184
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 94.28,
+          "kills": 237
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 299
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 400
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 458
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 663
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 930
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1348
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1773
+        },
+        {
+          "t": 360,
+          "level": 39,
+          "hp": 100,
+          "kills": 1922
+        },
+        {
+          "t": 390,
+          "level": 40,
+          "hp": 100,
+          "kills": 2106
+        },
+        {
+          "t": 420,
+          "level": 44,
+          "hp": 100,
+          "kills": 2505
+        },
+        {
+          "t": 450,
+          "level": 47,
+          "hp": 100,
+          "kills": 2966
+        },
+        {
+          "t": 480,
+          "level": 50,
+          "hp": 100,
+          "kills": 3427
+        },
+        {
+          "t": 510,
+          "level": 50,
+          "hp": 100,
+          "kills": 3716
+        },
+        {
+          "t": 540,
+          "level": 50,
+          "hp": 100,
+          "kills": 4031
+        },
+        {
+          "t": 570,
+          "level": 50,
+          "hp": 100,
+          "kills": 4342
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 2,
+        "comboIce": 70,
+        "comboFire": 173
+      },
+      "combinationStats": {
+        "lightning": {
+          "damage": 2524.5,
+          "triggers": 70
+        },
+        "fire": {
+          "damage": 21322.22342698936,
+          "triggers": 173
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 42.88
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 557,
+      "hp": 100,
+      "kills": 4889,
+      "level": 54,
+      "firstCombo": 313,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 26,
+      "firstEvolution": 201,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 0,
+        "lightning": 10,
+        "scythe": 0,
+        "ghost": 10,
+        "water": 4,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 6
+      },
+      "evolutions": {
+        "blade": "ring",
+        "fire": "meteor",
+        "lightning": "judgment",
+        "ghost": "legion"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 83.56,
+          "kills": 15
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 94.28,
+          "kills": 109
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 94.28,
+          "kills": 187
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 241
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 299
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 396
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 464
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 681
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 944
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1367
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1850
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2017
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2204
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2794
+        },
+        {
+          "t": 450,
+          "level": 50,
+          "hp": 100,
+          "kills": 3522
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4015
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 100,
+          "kills": 4314
+        },
+        {
+          "t": 540,
+          "level": 54,
+          "hp": 100,
+          "kills": 4678
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboFire": 245
+      },
+      "combinationStats": {
+        "fire": {
+          "damage": 25560.705060885066,
+          "triggers": 245
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 54.400000000000006
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "won",
+      "time": 540,
+      "hp": 100,
+      "kills": 4719,
+      "level": 54,
+      "firstCombo": 334,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 26,
+      "firstEvolution": 183,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 0,
+        "lightning": 10,
+        "scythe": 10,
+        "ghost": 10,
+        "water": 0,
+        "poison": 0,
+        "bone": 1,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "blade": "ring",
+        "lightning": "judgment",
+        "fire": "meteor",
+        "ghost": "legion",
+        "scythe": "reaper"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 72.36000000000001,
+          "kills": 14
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 108
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 188
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 241
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 296
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 400
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 455
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 700
+        },
+        {
+          "t": 270,
+          "level": 29,
+          "hp": 100,
+          "kills": 1001
+        },
+        {
+          "t": 300,
+          "level": 35,
+          "hp": 100,
+          "kills": 1465
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1858
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2018
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2205
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2840
+        },
+        {
+          "t": 450,
+          "level": 51,
+          "hp": 100,
+          "kills": 3568
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4077
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 100,
+          "kills": 4398
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboFire": 200
+      },
+      "combinationStats": {
+        "fire": {
+          "damage": 19547.787631605814,
+          "triggers": 200
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 32.64,
+        "碎镜坠落": 18
+      },
+      "lastDamageSource": "碎镜坠落",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 594,
+      "hp": 82,
+      "kills": 4990,
+      "level": 52,
+      "firstCombo": 321,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 17,
+      "firstEvolution": 236,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 10,
+        "lightning": 10,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 6,
+        "poison": 0,
+        "bone": 0,
+        "mine": 2,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "lightning": "judgment",
+        "blade": "ring",
+        "fire": "meteor",
+        "ice": "domain"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 100,
+          "kills": 37
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 111
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 185
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 94.12,
+          "kills": 234
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 295
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 403
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 465
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 654
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 905
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1340
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1790
+        },
+        {
+          "t": 360,
+          "level": 39,
+          "hp": 100,
+          "kills": 1972
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2198
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2766
+        },
+        {
+          "t": 450,
+          "level": 50,
+          "hp": 100,
+          "kills": 3318
+        },
+        {
+          "t": 480,
+          "level": 52,
+          "hp": 100,
+          "kills": 3770
+        },
+        {
+          "t": 510,
+          "level": 52,
+          "hp": 100,
+          "kills": 4064
+        },
+        {
+          "t": 540,
+          "level": 52,
+          "hp": 100,
+          "kills": 4429
+        },
+        {
+          "t": 570,
+          "level": 52,
+          "hp": 100,
+          "kills": 4795
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 2,
+        "comboFire": 284,
+        "comboIce": 59
+      },
+      "combinationStats": {
+        "fire": {
+          "damage": 42797.21940359207,
+          "triggers": 284
+        },
+        "lightning": {
+          "damage": 3415.5,
+          "triggers": 59
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 87.03999999999999,
+        "碎镜坠落": 18
+      },
+      "lastDamageSource": "碎镜坠落",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 577,
+      "hp": 71.12,
+      "kills": 4677,
+      "level": 52,
+      "firstCombo": 308,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 26,
+      "firstEvolution": 237,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 10,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 5,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 8,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 5
+      },
+      "evolutions": {
+        "blade": "ring",
+        "fire": "meteor",
+        "scythe": "reaper"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 94.12,
+          "kills": 16
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 89.12,
+          "kills": 99
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 189
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 241
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 296
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 397
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 457
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 680
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 921
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1375
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1838
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2017
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2176
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2706
+        },
+        {
+          "t": 450,
+          "level": 48,
+          "hp": 100,
+          "kills": 3233
+        },
+        {
+          "t": 480,
+          "level": 52,
+          "hp": 100,
+          "kills": 3608
+        },
+        {
+          "t": 510,
+          "level": 52,
+          "hp": 100,
+          "kills": 3897
+        },
+        {
+          "t": 540,
+          "level": 52,
+          "hp": 89.12,
+          "kills": 4230
+        },
+        {
+          "t": 570,
+          "level": 52,
+          "hp": 71.12,
+          "kills": 4571
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboFire": 313
+      },
+      "combinationStats": {
+        "fire": {
+          "damage": 32663.49724999967,
+          "triggers": 313
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 99.35999999999999,
+        "终渡回响": 100
+      },
+      "lastDamageSource": "终渡回响",
+      "bossRemaining": 3,
+      "mode": "collector",
+      "seed": 1,
+      "state": "lost",
+      "time": 654,
+      "hp": 0,
+      "kills": 5248,
+      "level": 51,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 26,
+      "firstEvolution": 233,
+      "skills": {
+        "blade": 10,
+        "fire": 0,
+        "ice": 10,
+        "lightning": 10,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 5,
+        "mine": 5,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 7,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "lightning": "judgment",
+        "blade": "ring",
+        "ice": "domain"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 82.92000000000002,
+          "kills": 16
+        },
+        {
+          "t": 60,
+          "level": 7,
+          "hp": 61.680000000000035,
+          "kills": 86
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 183
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 231
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 294
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 397
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 456
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 673
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 954
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1291
+        },
+        {
+          "t": 330,
+          "level": 37,
+          "hp": 100,
+          "kills": 1728
+        },
+        {
+          "t": 360,
+          "level": 39,
+          "hp": 100,
+          "kills": 1887
+        },
+        {
+          "t": 390,
+          "level": 40,
+          "hp": 100,
+          "kills": 2062
+        },
+        {
+          "t": 420,
+          "level": 44,
+          "hp": 100,
+          "kills": 2568
+        },
+        {
+          "t": 450,
+          "level": 48,
+          "hp": 100,
+          "kills": 3073
+        },
+        {
+          "t": 480,
+          "level": 51,
+          "hp": 100,
+          "kills": 3488
+        },
+        {
+          "t": 510,
+          "level": 51,
+          "hp": 82,
+          "kills": 3721
+        },
+        {
+          "t": 540,
+          "level": 51,
+          "hp": 64,
+          "kills": 4051
+        },
+        {
+          "t": 570,
+          "level": 51,
+          "hp": 46,
+          "kills": 4373
+        },
+        {
+          "t": 600,
+          "level": 51,
+          "hp": 28,
+          "kills": 4732
+        },
+        {
+          "t": 630,
+          "level": 51,
+          "hp": 28,
+          "kills": 5066
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboIce": 97
+      },
+      "combinationStats": {
+        "lightning": {
+          "damage": 3228.9998254101065,
+          "triggers": 97
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 154.55999999999995,
+        "ferryguard": 11.04,
+        "终渡回响": 72
+      },
+      "lastDamageSource": "终渡回响",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 582,
+      "hp": 28,
+      "kills": 4636,
+      "level": 51,
+      "firstCombo": 391,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 23,
+      "firstEvolution": 254,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 10,
+        "lightning": 10,
+        "scythe": 7,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 1,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "blade": "ring",
+        "lightning": "judgment",
+        "fire": "meteor",
+        "ice": "domain"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 3,
+          "hp": 87.92000000000002,
+          "kills": 24
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 75.64000000000006,
+          "kills": 96
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 91.48000000000008,
+          "kills": 186
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 93.96000000000001,
+          "kills": 236
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 298
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 397
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 458
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 667
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 913
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1336
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1742
+        },
+        {
+          "t": 360,
+          "level": 39,
+          "hp": 100,
+          "kills": 1905
+        },
+        {
+          "t": 390,
+          "level": 40,
+          "hp": 100,
+          "kills": 2066
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2634
+        },
+        {
+          "t": 450,
+          "level": 48,
+          "hp": 100,
+          "kills": 3145
+        },
+        {
+          "t": 480,
+          "level": 51,
+          "hp": 100,
+          "kills": 3581
+        },
+        {
+          "t": 510,
+          "level": 51,
+          "hp": 82,
+          "kills": 3875
+        },
+        {
+          "t": 540,
+          "level": 51,
+          "hp": 64,
+          "kills": 4233
+        },
+        {
+          "t": 570,
+          "level": 51,
+          "hp": 28,
+          "kills": 4549
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 2,
+        "comboFire": 206,
+        "comboIce": 40
+      },
+      "combinationStats": {
+        "fire": {
+          "damage": 33932.07495941913,
+          "triggers": 206
+        },
+        "lightning": {
+          "damage": 2432.25,
+          "triggers": 40
+        }
+      }
+    },
+    {
+      "profile": "classic",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "ranger",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 22.08
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 568,
+      "hp": 100,
+      "kills": 4740,
+      "level": 53,
+      "firstCombo": 283,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 25,
+      "firstEvolution": 220,
+      "skills": {
+        "blade": 10,
+        "fire": 10,
+        "ice": 10,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 10,
+        "water": 0,
+        "poison": 3,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 6
+      },
+      "evolutions": {
+        "blade": "ring",
+        "fire": "meteor",
+        "ice": "domain",
+        "ghost": "legion"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 100,
+          "kills": 31
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 110
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 190
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 238
+        },
+        {
+          "t": 150,
+          "level": 15,
+          "hp": 100,
+          "kills": 293
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 396
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 460
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 672
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 921
+        },
+        {
+          "t": 300,
+          "level": 34,
+          "hp": 100,
+          "kills": 1362
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1826
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2004
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2226
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2735
+        },
+        {
+          "t": 450,
+          "level": 50,
+          "hp": 100,
+          "kills": 3310
+        },
+        {
+          "t": 480,
+          "level": 53,
+          "hp": 100,
+          "kills": 3780
+        },
+        {
+          "t": 510,
+          "level": 53,
+          "hp": 100,
+          "kills": 4058
+        },
+        {
+          "t": 540,
+          "level": 53,
+          "hp": 100,
+          "kills": 4396
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboFire": 314
+      },
+      "combinationStats": {
+        "fire": {
+          "damage": 38244.231999999734,
+          "triggers": 314
+        }
+      }
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 99.99999999999999
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "lost",
+      "time": 16,
+      "hp": 0,
+      "kills": 5,
+      "level": 1,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 0,
+      "firstEvolution": 0,
+      "skills": {
+        "blade": 1,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {},
+      "checkpoints": [],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 99.99999999999999
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "lost",
+      "time": 22,
+      "hp": 0,
+      "kills": 7,
+      "level": 1,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 0,
+      "firstEvolution": 0,
+      "skills": {
+        "blade": 1,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {},
+      "checkpoints": [],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 264,
+        "starpatrol": 42.24,
+        "starpuppet": 10.56
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 667,
+      "hp": 78.88,
+      "kills": 4912,
+      "level": 48,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 24,
+      "firstEvolution": 393,
+      "skills": {
+        "blade": 10,
+        "fire": 0,
+        "ice": 4,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 9,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 8,
+        "pillar": 6,
+        "totem": 0,
+        "soul": 7,
+        "meteor": 0
+      },
+      "evolutions": {
+        "blade": "return"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 89.44,
+          "kills": 13
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 87.75999999999999,
+          "kills": 100
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 83.27999999999997,
+          "kills": 181
+        },
+        {
+          "t": 120,
+          "level": 13,
+          "hp": 77.71999999999997,
+          "kills": 228
+        },
+        {
+          "t": 150,
+          "level": 15,
+          "hp": 86.59999999999997,
+          "kills": 287
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 372
+        },
+        {
+          "t": 210,
+          "level": 19,
+          "hp": 93.32,
+          "kills": 440
+        },
+        {
+          "t": 240,
+          "level": 21,
+          "hp": 91.63999999999999,
+          "kills": 519
+        },
+        {
+          "t": 270,
+          "level": 25,
+          "hp": 94.44,
+          "kills": 724
+        },
+        {
+          "t": 300,
+          "level": 31,
+          "hp": 100,
+          "kills": 1101
+        },
+        {
+          "t": 330,
+          "level": 35,
+          "hp": 100,
+          "kills": 1477
+        },
+        {
+          "t": 360,
+          "level": 37,
+          "hp": 100,
+          "kills": 1644
+        },
+        {
+          "t": 390,
+          "level": 38,
+          "hp": 100,
+          "kills": 1798
+        },
+        {
+          "t": 420,
+          "level": 42,
+          "hp": 100,
+          "kills": 2246
+        },
+        {
+          "t": 450,
+          "level": 46,
+          "hp": 100,
+          "kills": 2716
+        },
+        {
+          "t": 480,
+          "level": 48,
+          "hp": 100,
+          "kills": 3106
+        },
+        {
+          "t": 510,
+          "level": 48,
+          "hp": 100,
+          "kills": 3324
+        },
+        {
+          "t": 540,
+          "level": 48,
+          "hp": 100,
+          "kills": 3577
+        },
+        {
+          "t": 570,
+          "level": 48,
+          "hp": 78.88,
+          "kills": 3907
+        },
+        {
+          "t": 600,
+          "level": 48,
+          "hp": 78.88,
+          "kills": 4224
+        },
+        {
+          "t": 630,
+          "level": 48,
+          "hp": 78.88,
+          "kills": 4538
+        },
+        {
+          "t": 660,
+          "level": 48,
+          "hp": 78.88,
+          "kills": 4869
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 64.32000000000001
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "won",
+      "time": 605,
+      "hp": 100,
+      "kills": 4605,
+      "level": 50,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 17,
+      "firstEvolution": 228,
+      "skills": {
+        "blade": 8,
+        "fire": 7,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 10,
+        "ghost": 0,
+        "water": 7,
+        "poison": 0,
+        "bone": 9,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 5,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "scythe": "cross"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 83.56,
+          "kills": 35
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 111
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 188
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 234
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 296
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 393
+        },
+        {
+          "t": 210,
+          "level": 19,
+          "hp": 100,
+          "kills": 438
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 642
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 883
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1305
+        },
+        {
+          "t": 330,
+          "level": 37,
+          "hp": 100,
+          "kills": 1717
+        },
+        {
+          "t": 360,
+          "level": 39,
+          "hp": 100,
+          "kills": 1883
+        },
+        {
+          "t": 390,
+          "level": 40,
+          "hp": 100,
+          "kills": 2069
+        },
+        {
+          "t": 420,
+          "level": 44,
+          "hp": 100,
+          "kills": 2553
+        },
+        {
+          "t": 450,
+          "level": 48,
+          "hp": 100,
+          "kills": 3044
+        },
+        {
+          "t": 480,
+          "level": 50,
+          "hp": 100,
+          "kills": 3390
+        },
+        {
+          "t": 510,
+          "level": 50,
+          "hp": 100,
+          "kills": 3662
+        },
+        {
+          "t": 540,
+          "level": 50,
+          "hp": 100,
+          "kills": 3923
+        },
+        {
+          "t": 570,
+          "level": 50,
+          "hp": 100,
+          "kills": 4215
+        },
+        {
+          "t": 600,
+          "level": 50,
+          "hp": 100,
+          "kills": 4549
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 53.6,
+        "forgeguard": 10.72
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 653,
+      "hp": 89.28,
+      "kills": 5088,
+      "level": 51,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 24,
+      "firstEvolution": 281,
+      "skills": {
+        "blade": 5,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 10,
+        "ghost": 0,
+        "water": 0,
+        "poison": 6,
+        "bone": 0,
+        "mine": 9,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 9,
+        "soul": 0,
+        "meteor": 8
+      },
+      "evolutions": {
+        "scythe": "cross"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 83.56,
+          "kills": 13
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 100,
+          "kills": 105
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 186
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 233
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 300
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 390
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 451
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 640
+        },
+        {
+          "t": 270,
+          "level": 27,
+          "hp": 100,
+          "kills": 877
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1294
+        },
+        {
+          "t": 330,
+          "level": 37,
+          "hp": 100,
+          "kills": 1750
+        },
+        {
+          "t": 360,
+          "level": 39,
+          "hp": 100,
+          "kills": 1905
+        },
+        {
+          "t": 390,
+          "level": 40,
+          "hp": 100,
+          "kills": 2102
+        },
+        {
+          "t": 420,
+          "level": 44,
+          "hp": 100,
+          "kills": 2542
+        },
+        {
+          "t": 450,
+          "level": 48,
+          "hp": 100,
+          "kills": 3049
+        },
+        {
+          "t": 480,
+          "level": 51,
+          "hp": 100,
+          "kills": 3440
+        },
+        {
+          "t": 510,
+          "level": 51,
+          "hp": 100,
+          "kills": 3668
+        },
+        {
+          "t": 540,
+          "level": 51,
+          "hp": 100,
+          "kills": 3940
+        },
+        {
+          "t": 570,
+          "level": 51,
+          "hp": 100,
+          "kills": 4206
+        },
+        {
+          "t": 600,
+          "level": 51,
+          "hp": 100,
+          "kills": 4523
+        },
+        {
+          "t": 630,
+          "level": 51,
+          "hp": 100,
+          "kills": 4853
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 64.32000000000001
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 574,
+      "hp": 89.28,
+      "kills": 3944,
+      "level": 49,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 26,
+      "firstEvolution": 236,
+      "skills": {
+        "blade": 10,
+        "fire": 5,
+        "ice": 5,
+        "lightning": 0,
+        "scythe": 10,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 7,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 8,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "scythe": "cross",
+        "blade": "return"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 83.56,
+          "kills": 13
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 100,
+          "kills": 107
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 182
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 234
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 83.56,
+          "kills": 290
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 394
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 450
+        },
+        {
+          "t": 240,
+          "level": 23,
+          "hp": 100,
+          "kills": 625
+        },
+        {
+          "t": 270,
+          "level": 27,
+          "hp": 100,
+          "kills": 868
+        },
+        {
+          "t": 300,
+          "level": 32,
+          "hp": 100,
+          "kills": 1237
+        },
+        {
+          "t": 330,
+          "level": 36,
+          "hp": 100,
+          "kills": 1622
+        },
+        {
+          "t": 360,
+          "level": 38,
+          "hp": 100,
+          "kills": 1770
+        },
+        {
+          "t": 390,
+          "level": 40,
+          "hp": 100,
+          "kills": 1952
+        },
+        {
+          "t": 420,
+          "level": 43,
+          "hp": 100,
+          "kills": 2353
+        },
+        {
+          "t": 450,
+          "level": 46,
+          "hp": 100,
+          "kills": 2799
+        },
+        {
+          "t": 480,
+          "level": 49,
+          "hp": 100,
+          "kills": 3139
+        },
+        {
+          "t": 510,
+          "level": 49,
+          "hp": 89.28,
+          "kills": 3384
+        },
+        {
+          "t": 540,
+          "level": 49,
+          "hp": 89.28,
+          "kills": 3644
+        },
+        {
+          "t": 570,
+          "level": 49,
+          "hp": 89.28,
+          "kills": 3898
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 114.99999999999999
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "lost",
+      "time": 43,
+      "hp": 0,
+      "kills": 34,
+      "level": 4,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 26,
+      "firstEvolution": 0,
+      "skills": {
+        "blade": 1,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 1,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 1,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {},
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 72.36000000000001,
+          "kills": 14
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 274.0799999999999,
+        "mirrorguard": 32.64
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": 53,
+      "mode": "collector",
+      "seed": 19,
+      "state": "lost",
+      "time": 535,
+      "hp": 0,
+      "kills": 3540,
+      "level": 48,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 17,
+      "firstEvolution": 284,
+      "skills": {
+        "blade": 7,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 6,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 10,
+        "chain": 10,
+        "pillar": 4,
+        "totem": 0,
+        "soul": 6,
+        "meteor": 0
+      },
+      "evolutions": {
+        "axe": "execution",
+        "chain": "brand"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 94.12,
+          "kills": 38
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 43.560000000000045,
+          "kills": 99
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 92.68000000000005,
+          "kills": 185
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 233
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 294
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 383
+        },
+        {
+          "t": 210,
+          "level": 19,
+          "hp": 100,
+          "kills": 435
+        },
+        {
+          "t": 240,
+          "level": 23,
+          "hp": 100,
+          "kills": 623
+        },
+        {
+          "t": 270,
+          "level": 27,
+          "hp": 100,
+          "kills": 838
+        },
+        {
+          "t": 300,
+          "level": 32,
+          "hp": 100,
+          "kills": 1215
+        },
+        {
+          "t": 330,
+          "level": 36,
+          "hp": 89.12,
+          "kills": 1620
+        },
+        {
+          "t": 360,
+          "level": 38,
+          "hp": 100,
+          "kills": 1788
+        },
+        {
+          "t": 390,
+          "level": 39,
+          "hp": 100,
+          "kills": 1938
+        },
+        {
+          "t": 420,
+          "level": 43,
+          "hp": 100,
+          "kills": 2344
+        },
+        {
+          "t": 450,
+          "level": 46,
+          "hp": 100,
+          "kills": 2765
+        },
+        {
+          "t": 480,
+          "level": 48,
+          "hp": 100,
+          "kills": 3110
+        },
+        {
+          "t": 510,
+          "level": 48,
+          "hp": 45.60000000000001,
+          "kills": 3302
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 163.19999999999996,
+        "mirrorguard": 10.88
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 559,
+      "hp": 34.720000000000006,
+      "kills": 3721,
+      "level": 48,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 26,
+      "firstEvolution": 246,
+      "skills": {
+        "blade": 4,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 10,
+        "ghost": 7,
+        "water": 0,
+        "poison": 0,
+        "bone": 5,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 10,
+        "chain": 8,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "axe": "execution",
+        "scythe": "cross"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 61.48000000000001,
+          "kills": 12
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 87.96000000000001,
+          "kills": 106
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 99.12,
+          "kills": 185
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 235
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 293
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 395
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 453
+        },
+        {
+          "t": 240,
+          "level": 23,
+          "hp": 100,
+          "kills": 627
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 888
+        },
+        {
+          "t": 300,
+          "level": 32,
+          "hp": 100,
+          "kills": 1254
+        },
+        {
+          "t": 330,
+          "level": 36,
+          "hp": 100,
+          "kills": 1619
+        },
+        {
+          "t": 360,
+          "level": 38,
+          "hp": 100,
+          "kills": 1778
+        },
+        {
+          "t": 390,
+          "level": 39,
+          "hp": 100,
+          "kills": 1936
+        },
+        {
+          "t": 420,
+          "level": 43,
+          "hp": 100,
+          "kills": 2342
+        },
+        {
+          "t": 450,
+          "level": 46,
+          "hp": 100,
+          "kills": 2763
+        },
+        {
+          "t": 480,
+          "level": 48,
+          "hp": 100,
+          "kills": 3089
+        },
+        {
+          "t": 510,
+          "level": 48,
+          "hp": 67.36000000000001,
+          "kills": 3308
+        },
+        {
+          "t": 540,
+          "level": 48,
+          "hp": 45.60000000000001,
+          "kills": 3580
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 110.39999999999998
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "won",
+      "time": 574,
+      "hp": 58.96,
+      "kills": 4093,
+      "level": 49,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 26,
+      "firstEvolution": 238,
+      "skills": {
+        "blade": 9,
+        "fire": 0,
+        "ice": 6,
+        "lightning": 0,
+        "scythe": 10,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 10,
+        "void": 0,
+        "bat": 5,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 5
+      },
+      "evolutions": {
+        "scythe": "cross",
+        "mine": "demolition"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 60.840000000000025,
+          "kills": 17
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 111
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 183
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 234
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 295
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 396
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 453
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 661
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 905
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1269
+        },
+        {
+          "t": 330,
+          "level": 37,
+          "hp": 100,
+          "kills": 1663
+        },
+        {
+          "t": 360,
+          "level": 38,
+          "hp": 100,
+          "kills": 1834
+        },
+        {
+          "t": 390,
+          "level": 40,
+          "hp": 100,
+          "kills": 1987
+        },
+        {
+          "t": 420,
+          "level": 43,
+          "hp": 100,
+          "kills": 2391
+        },
+        {
+          "t": 450,
+          "level": 46,
+          "hp": 100,
+          "kills": 2822
+        },
+        {
+          "t": 480,
+          "level": 49,
+          "hp": 100,
+          "kills": 3184
+        },
+        {
+          "t": 510,
+          "level": 49,
+          "hp": 88.96000000000001,
+          "kills": 3416
+        },
+        {
+          "t": 540,
+          "level": 49,
+          "hp": 77.92000000000002,
+          "kills": 3699
+        },
+        {
+          "t": 570,
+          "level": 49,
+          "hp": 70,
+          "kills": 4012
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 198.7199999999999,
+        "终渡回响": 18
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 599,
+      "hp": 59.92000000000001,
+      "kills": 4269,
+      "level": 49,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 23,
+      "firstEvolution": 272,
+      "skills": {
+        "blade": 8,
+        "fire": 0,
+        "ice": 6,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 10,
+        "axe": 10,
+        "chain": 5,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 6
+      },
+      "evolutions": {
+        "axe": "execution",
+        "bat": "bloodhunt"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 3,
+          "hp": 76.88000000000002,
+          "kills": 21
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 77.64000000000004,
+          "kills": 99
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 187
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 235
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 295
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 400
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 461
+        },
+        {
+          "t": 240,
+          "level": 23,
+          "hp": 100,
+          "kills": 621
+        },
+        {
+          "t": 270,
+          "level": 27,
+          "hp": 100,
+          "kills": 861
+        },
+        {
+          "t": 300,
+          "level": 32,
+          "hp": 100,
+          "kills": 1213
+        },
+        {
+          "t": 330,
+          "level": 36,
+          "hp": 100,
+          "kills": 1582
+        },
+        {
+          "t": 360,
+          "level": 38,
+          "hp": 100,
+          "kills": 1743
+        },
+        {
+          "t": 390,
+          "level": 39,
+          "hp": 100,
+          "kills": 1895
+        },
+        {
+          "t": 420,
+          "level": 43,
+          "hp": 100,
+          "kills": 2350
+        },
+        {
+          "t": 450,
+          "level": 46,
+          "hp": 100,
+          "kills": 2743
+        },
+        {
+          "t": 480,
+          "level": 49,
+          "hp": 100,
+          "kills": 3132
+        },
+        {
+          "t": 510,
+          "level": 49,
+          "hp": 82,
+          "kills": 3369
+        },
+        {
+          "t": 540,
+          "level": 49,
+          "hp": 59.92000000000001,
+          "kills": 3655
+        },
+        {
+          "t": 570,
+          "level": 49,
+          "hp": 59.92000000000001,
+          "kills": 3937
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "scythes",
+      "cautious": true,
+      "locked": false,
+      "alternate": true,
+      "character": "ranger",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 66.24,
+        "ferryguard": 22.08,
+        "终渡回响": 18
+      },
+      "lastDamageSource": "终渡回响",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 676,
+      "hp": 82,
+      "kills": 4814,
+      "level": 47,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 25,
+      "firstEvolution": 469,
+      "skills": {
+        "blade": 9,
+        "fire": 4,
+        "ice": 9,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 0,
+        "poison": 4,
+        "bone": 7,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 10,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "chain": "brand"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 3,
+          "hp": 98.96000000000001,
+          "kills": 22
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 88.96000000000001,
+          "kills": 102
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 182
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 234
+        },
+        {
+          "t": 150,
+          "level": 15,
+          "hp": 100,
+          "kills": 286
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 375
+        },
+        {
+          "t": 210,
+          "level": 19,
+          "hp": 100,
+          "kills": 442
+        },
+        {
+          "t": 240,
+          "level": 22,
+          "hp": 100,
+          "kills": 561
+        },
+        {
+          "t": 270,
+          "level": 26,
+          "hp": 100,
+          "kills": 794
+        },
+        {
+          "t": 300,
+          "level": 31,
+          "hp": 100,
+          "kills": 1134
+        },
+        {
+          "t": 330,
+          "level": 35,
+          "hp": 100,
+          "kills": 1490
+        },
+        {
+          "t": 360,
+          "level": 37,
+          "hp": 100,
+          "kills": 1656
+        },
+        {
+          "t": 390,
+          "level": 38,
+          "hp": 100,
+          "kills": 1810
+        },
+        {
+          "t": 420,
+          "level": 42,
+          "hp": 100,
+          "kills": 2233
+        },
+        {
+          "t": 450,
+          "level": 45,
+          "hp": 100,
+          "kills": 2603
+        },
+        {
+          "t": 480,
+          "level": 47,
+          "hp": 100,
+          "kills": 2917
+        },
+        {
+          "t": 510,
+          "level": 47,
+          "hp": 82,
+          "kills": 3150
+        },
+        {
+          "t": 540,
+          "level": 47,
+          "hp": 82,
+          "kills": 3422
+        },
+        {
+          "t": 570,
+          "level": 47,
+          "hp": 82,
+          "kills": 3731
+        },
+        {
+          "t": 600,
+          "level": 47,
+          "hp": 82,
+          "kills": 4052
+        },
+        {
+          "t": 630,
+          "level": 47,
+          "hp": 82,
+          "kills": 4326
+        },
+        {
+          "t": 660,
+          "level": 47,
+          "hp": 82,
+          "kills": 4646
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 10.56,
+        "starpatrol": 10.56,
+        "boss": 18,
+        "坠星踏击": 18
+      },
+      "lastDamageSource": "坠星踏击",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "won",
+      "time": 642,
+      "hp": 64,
+      "kills": 5987,
+      "level": 54,
+      "firstCombo": 297,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 25,
+      "firstEvolution": 253,
+      "skills": {
+        "blade": 10,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 5,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 10,
+        "poison": 10,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 5,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 10
+      },
+      "evolutions": {
+        "water": "spring",
+        "poison": "plague",
+        "blade": "ring",
+        "meteor": "doomsfall"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 3,
+          "hp": 99.44,
+          "kills": 28
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 100,
+          "kills": 110
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 188
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 230
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 294
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 395
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 470
+        },
+        {
+          "t": 240,
+          "level": 22,
+          "hp": 100,
+          "kills": 631
+        },
+        {
+          "t": 270,
+          "level": 27,
+          "hp": 100,
+          "kills": 881
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1341
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1869
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2011
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2253
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2911
+        },
+        {
+          "t": 450,
+          "level": 51,
+          "hp": 100,
+          "kills": 3570
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4100
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 82,
+          "kills": 4391
+        },
+        {
+          "t": 540,
+          "level": 54,
+          "hp": 82,
+          "kills": 4758
+        },
+        {
+          "t": 570,
+          "level": 54,
+          "hp": 82,
+          "kills": 5077
+        },
+        {
+          "t": 600,
+          "level": 54,
+          "hp": 64,
+          "kills": 5440
+        },
+        {
+          "t": 630,
+          "level": 54,
+          "hp": 64,
+          "kills": 5800
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboPurify": 814
+      },
+      "combinationStats": {
+        "water": {
+          "damage": 3150,
+          "triggers": 814
+        }
+      }
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 52.800000000000004,
+        "坠星踏击": 18
+      },
+      "lastDamageSource": "坠星踏击",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 627,
+      "hp": 82,
+      "kills": 5760,
+      "level": 54,
+      "firstCombo": 294,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 31,
+      "firstEvolution": 271,
+      "skills": {
+        "blade": 0,
+        "fire": 7,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 10,
+        "poison": 10,
+        "bone": 0,
+        "mine": 10,
+        "void": 0,
+        "bat": 0,
+        "axe": 0,
+        "chain": 9,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 5
+      },
+      "evolutions": {
+        "water": "spring",
+        "poison": "plague",
+        "mine": "network"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 1,
+          "hp": 78.88,
+          "kills": 7
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 114
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 182
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 232
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 295
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 393
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 461
+        },
+        {
+          "t": 240,
+          "level": 23,
+          "hp": 100,
+          "kills": 668
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 947
+        },
+        {
+          "t": 300,
+          "level": 34,
+          "hp": 100,
+          "kills": 1452
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 1987
+        },
+        {
+          "t": 360,
+          "level": 41,
+          "hp": 100,
+          "kills": 2146
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2334
+        },
+        {
+          "t": 420,
+          "level": 47,
+          "hp": 100,
+          "kills": 2933
+        },
+        {
+          "t": 450,
+          "level": 51,
+          "hp": 100,
+          "kills": 3664
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4114
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 100,
+          "kills": 4419
+        },
+        {
+          "t": 540,
+          "level": 54,
+          "hp": 82,
+          "kills": 4758
+        },
+        {
+          "t": 570,
+          "level": 54,
+          "hp": 82,
+          "kills": 5121
+        },
+        {
+          "t": 600,
+          "level": 54,
+          "hp": 82,
+          "kills": 5443
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboPurify": 805
+      },
+      "combinationStats": {
+        "water": {
+          "damage": 3060,
+          "triggers": 805
+        }
+      }
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 10,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 42.24
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 577,
+      "hp": 100,
+      "kills": 4822,
+      "level": 53,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 19,
+      "firstEvolution": 296,
+      "skills": {
+        "blade": 10,
+        "fire": 6,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 10,
+        "poison": 0,
+        "bone": 4,
+        "mine": 10,
+        "void": 0,
+        "bat": 0,
+        "axe": 9,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "mine": "network",
+        "water": "spring",
+        "blade": "ring"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 100,
+          "kills": 38
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 110
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 184
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 237
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 294
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 396
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 451
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 653
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 943
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1372
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1826
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 1998
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2188
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2835
+        },
+        {
+          "t": 450,
+          "level": 50,
+          "hp": 100,
+          "kills": 3455
+        },
+        {
+          "t": 480,
+          "level": 53,
+          "hp": 100,
+          "kills": 3903
+        },
+        {
+          "t": 510,
+          "level": 53,
+          "hp": 100,
+          "kills": 4158
+        },
+        {
+          "t": 540,
+          "level": 53,
+          "hp": 100,
+          "kills": 4463
+        },
+        {
+          "t": 570,
+          "level": 53,
+          "hp": 100,
+          "kills": 4715
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 21.44
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "won",
+      "time": 621,
+      "hp": 100,
+      "kills": 5757,
+      "level": 54,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 22,
+      "firstEvolution": 285,
+      "skills": {
+        "blade": 0,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 7,
+        "scythe": 0,
+        "ghost": 5,
+        "water": 10,
+        "poison": 0,
+        "bone": 0,
+        "mine": 0,
+        "void": 9,
+        "bat": 10,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 9,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "water": "spring",
+        "bat": "bloodmoon"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 100,
+          "kills": 11
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 111
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 186
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 236
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 292
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 399
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 458
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 699
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 966
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1461
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 2005
+        },
+        {
+          "t": 360,
+          "level": 41,
+          "hp": 100,
+          "kills": 2161
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2354
+        },
+        {
+          "t": 420,
+          "level": 47,
+          "hp": 100,
+          "kills": 2998
+        },
+        {
+          "t": 450,
+          "level": 51,
+          "hp": 100,
+          "kills": 3678
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4104
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 100,
+          "kills": 4420
+        },
+        {
+          "t": 540,
+          "level": 54,
+          "hp": 100,
+          "kills": 4790
+        },
+        {
+          "t": 570,
+          "level": 54,
+          "hp": 100,
+          "kills": 5106
+        },
+        {
+          "t": 600,
+          "level": 54,
+          "hp": 100,
+          "kills": 5495
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 96.48,
+        "forgeguard": 10.72
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 651,
+      "hp": 100,
+      "kills": 5972,
+      "level": 54,
+      "firstCombo": 298,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 25,
+      "firstEvolution": 250,
+      "skills": {
+        "blade": 0,
+        "fire": 5,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 6,
+        "water": 10,
+        "poison": 10,
+        "bone": 0,
+        "mine": 10,
+        "void": 0,
+        "bat": 0,
+        "axe": 9,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "water": "spring",
+        "poison": "plague",
+        "mine": "network"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 3,
+          "hp": 67.12,
+          "kills": 25
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 94.28,
+          "kills": 107
+        },
+        {
+          "t": 90,
+          "level": 11,
+          "hp": 100,
+          "kills": 181
+        },
+        {
+          "t": 120,
+          "level": 13,
+          "hp": 89.28,
+          "kills": 233
+        },
+        {
+          "t": 150,
+          "level": 15,
+          "hp": 100,
+          "kills": 293
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 397
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 453
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 678
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 946
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1408
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 1986
+        },
+        {
+          "t": 360,
+          "level": 41,
+          "hp": 100,
+          "kills": 2118
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2344
+        },
+        {
+          "t": 420,
+          "level": 46,
+          "hp": 100,
+          "kills": 2874
+        },
+        {
+          "t": 450,
+          "level": 50,
+          "hp": 100,
+          "kills": 3600
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4069
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 100,
+          "kills": 4351
+        },
+        {
+          "t": 540,
+          "level": 54,
+          "hp": 100,
+          "kills": 4703
+        },
+        {
+          "t": 570,
+          "level": 54,
+          "hp": 100,
+          "kills": 5019
+        },
+        {
+          "t": 600,
+          "level": 54,
+          "hp": 100,
+          "kills": 5360
+        },
+        {
+          "t": 630,
+          "level": 54,
+          "hp": 100,
+          "kills": 5765
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboPurify": 837
+      },
+      "combinationStats": {
+        "water": {
+          "damage": 1190.25,
+          "triggers": 837
+        }
+      }
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 11,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 32.160000000000004
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 555,
+      "hp": 100,
+      "kills": 4754,
+      "level": 54,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 15,
+      "firstEvolution": 278,
+      "skills": {
+        "blade": 10,
+        "fire": 8,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 10,
+        "poison": 0,
+        "bone": 7,
+        "mine": 10,
+        "void": 0,
+        "bat": 0,
+        "axe": 5,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "water": "spring",
+        "mine": "network",
+        "blade": "ring"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 99.28,
+          "kills": 39
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 111
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 187
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 234
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 293
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 392
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 457
+        },
+        {
+          "t": 240,
+          "level": 23,
+          "hp": 100,
+          "kills": 653
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 932
+        },
+        {
+          "t": 300,
+          "level": 34,
+          "hp": 100,
+          "kills": 1436
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 1945
+        },
+        {
+          "t": 360,
+          "level": 41,
+          "hp": 100,
+          "kills": 2094
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2305
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2899
+        },
+        {
+          "t": 450,
+          "level": 51,
+          "hp": 100,
+          "kills": 3570
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4041
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 100,
+          "kills": 4303
+        },
+        {
+          "t": 540,
+          "level": 54,
+          "hp": 100,
+          "kills": 4601
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 142.35999999999996,
+        "mirrorguard": 32.64
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "lost",
+      "time": 65,
+      "hp": 0,
+      "kills": 116,
+      "level": 8,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 27,
+      "firstEvolution": 0,
+      "skills": {
+        "blade": 0,
+        "fire": 0,
+        "ice": 1,
+        "lightning": 2,
+        "scythe": 1,
+        "ghost": 0,
+        "water": 0,
+        "poison": 1,
+        "bone": 0,
+        "mine": 0,
+        "void": 1,
+        "bat": 0,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 2,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {},
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 39.720000000000006,
+          "kills": 14
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 22.679999999999986,
+          "kills": 103
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 97.91999999999999,
+        "mirrorguard": 21.76
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 614,
+      "hp": 78.24000000000001,
+      "kills": 5711,
+      "level": 55,
+      "firstCombo": 253,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 25,
+      "firstEvolution": 229,
+      "skills": {
+        "blade": 0,
+        "fire": 10,
+        "ice": 0,
+        "lightning": 6,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 10,
+        "poison": 10,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 0,
+        "axe": 10,
+        "chain": 5,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "water": "spring",
+        "poison": "plague",
+        "fire": "meteor",
+        "axe": "warwheel"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 94.12,
+          "kills": 13
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 94.12,
+          "kills": 99
+        },
+        {
+          "t": 90,
+          "level": 11,
+          "hp": 77.36000000000001,
+          "kills": 180
+        },
+        {
+          "t": 120,
+          "level": 13,
+          "hp": 87.36000000000001,
+          "kills": 231
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 298
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 402
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 456
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 691
+        },
+        {
+          "t": 270,
+          "level": 29,
+          "hp": 100,
+          "kills": 974
+        },
+        {
+          "t": 300,
+          "level": 35,
+          "hp": 100,
+          "kills": 1487
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 1977
+        },
+        {
+          "t": 360,
+          "level": 41,
+          "hp": 100,
+          "kills": 2151
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2359
+        },
+        {
+          "t": 420,
+          "level": 46,
+          "hp": 100,
+          "kills": 2975
+        },
+        {
+          "t": 450,
+          "level": 52,
+          "hp": 100,
+          "kills": 3709
+        },
+        {
+          "t": 480,
+          "level": 55,
+          "hp": 100,
+          "kills": 4176
+        },
+        {
+          "t": 510,
+          "level": 55,
+          "hp": 89.12,
+          "kills": 4450
+        },
+        {
+          "t": 540,
+          "level": 55,
+          "hp": 78.24000000000001,
+          "kills": 4802
+        },
+        {
+          "t": 570,
+          "level": 55,
+          "hp": 78.24000000000001,
+          "kills": 5131
+        },
+        {
+          "t": 600,
+          "level": 55,
+          "hp": 78.24000000000001,
+          "kills": 5540
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboPurify": 870
+      },
+      "combinationStats": {
+        "water": {
+          "damage": 1314,
+          "triggers": 870
+        }
+      }
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 12,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 32.64,
+        "碎镜坠落": 36
+      },
+      "lastDamageSource": "碎镜坠落",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 665,
+      "hp": 64,
+      "kills": 5798,
+      "level": 52,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 13,
+      "firstEvolution": 250,
+      "skills": {
+        "blade": 10,
+        "fire": 0,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 7,
+        "ghost": 0,
+        "water": 10,
+        "poison": 0,
+        "bone": 5,
+        "mine": 10,
+        "void": 0,
+        "bat": 0,
+        "axe": 6,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "water": "spring",
+        "mine": "network",
+        "blade": "ring"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 100,
+          "kills": 37
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 110
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 185
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 236
+        },
+        {
+          "t": 150,
+          "level": 15,
+          "hp": 100,
+          "kills": 288
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 394
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 451
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 677
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 938
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1408
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 1857
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2022
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2276
+        },
+        {
+          "t": 420,
+          "level": 46,
+          "hp": 100,
+          "kills": 2749
+        },
+        {
+          "t": 450,
+          "level": 49,
+          "hp": 100,
+          "kills": 3289
+        },
+        {
+          "t": 480,
+          "level": 52,
+          "hp": 100,
+          "kills": 3691
+        },
+        {
+          "t": 510,
+          "level": 52,
+          "hp": 100,
+          "kills": 3991
+        },
+        {
+          "t": 540,
+          "level": 52,
+          "hp": 100,
+          "kills": 4369
+        },
+        {
+          "t": 570,
+          "level": 52,
+          "hp": 100,
+          "kills": 4705
+        },
+        {
+          "t": 600,
+          "level": 52,
+          "hp": 100,
+          "kills": 5089
+        },
+        {
+          "t": 630,
+          "level": 52,
+          "hp": 100,
+          "kills": 5483
+        },
+        {
+          "t": 660,
+          "level": 52,
+          "hp": 64,
+          "kills": 5769
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 55.199999999999996,
+        "终渡回响": 36
+      },
+      "lastDamageSource": "终渡回响",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 1,
+      "state": "won",
+      "time": 600,
+      "hp": 69,
+      "kills": 5468,
+      "level": 54,
+      "firstCombo": 277,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": true,
+      "firstUpgrade": 22,
+      "firstEvolution": 271,
+      "skills": {
+        "blade": 10,
+        "fire": 4,
+        "ice": 0,
+        "lightning": 6,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 10,
+        "poison": 10,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 10,
+        "axe": 0,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "water": "spring",
+        "poison": "plague",
+        "blade": "ring",
+        "bat": "bloodmoon"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 2,
+          "hp": 93.96000000000001,
+          "kills": 13
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 100,
+          "kills": 106
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 100,
+          "kills": 180
+        },
+        {
+          "t": 120,
+          "level": 13,
+          "hp": 100,
+          "kills": 227
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 292
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 397
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 460
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 667
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 943
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1429
+        },
+        {
+          "t": 330,
+          "level": 39,
+          "hp": 100,
+          "kills": 1924
+        },
+        {
+          "t": 360,
+          "level": 41,
+          "hp": 100,
+          "kills": 2103
+        },
+        {
+          "t": 390,
+          "level": 42,
+          "hp": 100,
+          "kills": 2318
+        },
+        {
+          "t": 420,
+          "level": 47,
+          "hp": 100,
+          "kills": 2944
+        },
+        {
+          "t": 450,
+          "level": 50,
+          "hp": 100,
+          "kills": 3591
+        },
+        {
+          "t": 480,
+          "level": 54,
+          "hp": 100,
+          "kills": 4083
+        },
+        {
+          "t": 510,
+          "level": 54,
+          "hp": 82,
+          "kills": 4388
+        },
+        {
+          "t": 540,
+          "level": 54,
+          "hp": 82,
+          "kills": 4755
+        },
+        {
+          "t": 570,
+          "level": 54,
+          "hp": 82,
+          "kills": 5069
+        },
+        {
+          "t": 600,
+          "level": 54,
+          "hp": 69,
+          "kills": 5465
+        }
+      ],
+      "comboTriggers": {
+        "comboReady": 1,
+        "comboPurify": 775
+      },
+      "combinationStats": {
+        "water": {
+          "damage": 1643.869124999855,
+          "triggers": 775
+        }
+      }
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 264.95999999999987,
+        "ferryguard": 11.04,
+        "终渡回响": 36
+      },
+      "lastDamageSource": "minion",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 19,
+      "state": "won",
+      "time": 673,
+      "hp": 47.84000000000001,
+      "kills": 5800,
+      "level": 52,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 22,
+      "firstEvolution": 241,
+      "skills": {
+        "blade": 0,
+        "fire": 10,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 6,
+        "ghost": 0,
+        "water": 0,
+        "poison": 10,
+        "bone": 0,
+        "mine": 0,
+        "void": 0,
+        "bat": 8,
+        "axe": 6,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 8,
+        "meteor": 0
+      },
+      "evolutions": {
+        "poison": "plague",
+        "fire": "meteor"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 81.88000000000002,
+          "kills": 32
+        },
+        {
+          "t": 60,
+          "level": 8,
+          "hp": 34.56000000000004,
+          "kills": 103
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 55.40000000000004,
+          "kills": 181
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 77.36000000000004,
+          "kills": 235
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 295
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 382
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 439
+        },
+        {
+          "t": 240,
+          "level": 23,
+          "hp": 100,
+          "kills": 632
+        },
+        {
+          "t": 270,
+          "level": 27,
+          "hp": 100,
+          "kills": 892
+        },
+        {
+          "t": 300,
+          "level": 33,
+          "hp": 100,
+          "kills": 1357
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1824
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 1987
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2190
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2687
+        },
+        {
+          "t": 450,
+          "level": 49,
+          "hp": 100,
+          "kills": 3238
+        },
+        {
+          "t": 480,
+          "level": 52,
+          "hp": 100,
+          "kills": 3679
+        },
+        {
+          "t": 510,
+          "level": 52,
+          "hp": 70.96000000000001,
+          "kills": 3954
+        },
+        {
+          "t": 540,
+          "level": 52,
+          "hp": 70.96000000000001,
+          "kills": 4287
+        },
+        {
+          "t": 570,
+          "level": 52,
+          "hp": 70.96000000000001,
+          "kills": 4630
+        },
+        {
+          "t": 600,
+          "level": 52,
+          "hp": 35.88000000000001,
+          "kills": 4955
+        },
+        {
+          "t": 630,
+          "level": 52,
+          "hp": 45.88000000000001,
+          "kills": 5308
+        },
+        {
+          "t": 660,
+          "level": 52,
+          "hp": 42.84000000000001,
+          "kills": 5627
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    },
+    {
+      "profile": "ground",
+      "cautious": true,
+      "locked": false,
+      "alternate": false,
+      "character": "alchemist",
+      "stage": 13,
+      "furnaceRoute": null,
+      "losses": {
+        "minion": 66.24,
+        "终渡回响": 54
+      },
+      "lastDamageSource": "终渡回响",
+      "bossRemaining": null,
+      "mode": "collector",
+      "seed": 72,
+      "state": "won",
+      "time": 608,
+      "hp": 34.96000000000001,
+      "kills": 5169,
+      "level": 53,
+      "firstCombo": null,
+      "firstMaxLevel": null,
+      "comboBeforeBoss": false,
+      "firstUpgrade": 13,
+      "firstEvolution": 266,
+      "skills": {
+        "blade": 10,
+        "fire": 9,
+        "ice": 0,
+        "lightning": 0,
+        "scythe": 0,
+        "ghost": 0,
+        "water": 10,
+        "poison": 0,
+        "bone": 5,
+        "mine": 10,
+        "void": 0,
+        "bat": 0,
+        "axe": 5,
+        "chain": 0,
+        "pillar": 0,
+        "totem": 0,
+        "soul": 0,
+        "meteor": 0
+      },
+      "evolutions": {
+        "mine": "network",
+        "water": "spring",
+        "blade": "ring"
+      },
+      "checkpoints": [
+        {
+          "t": 30,
+          "level": 4,
+          "hp": 76.88000000000002,
+          "kills": 37
+        },
+        {
+          "t": 60,
+          "level": 9,
+          "hp": 100,
+          "kills": 112
+        },
+        {
+          "t": 90,
+          "level": 12,
+          "hp": 93.96000000000001,
+          "kills": 186
+        },
+        {
+          "t": 120,
+          "level": 14,
+          "hp": 100,
+          "kills": 234
+        },
+        {
+          "t": 150,
+          "level": 16,
+          "hp": 100,
+          "kills": 294
+        },
+        {
+          "t": 180,
+          "level": 18,
+          "hp": 100,
+          "kills": 393
+        },
+        {
+          "t": 210,
+          "level": 20,
+          "hp": 100,
+          "kills": 455
+        },
+        {
+          "t": 240,
+          "level": 24,
+          "hp": 100,
+          "kills": 653
+        },
+        {
+          "t": 270,
+          "level": 28,
+          "hp": 100,
+          "kills": 928
+        },
+        {
+          "t": 300,
+          "level": 34,
+          "hp": 100,
+          "kills": 1359
+        },
+        {
+          "t": 330,
+          "level": 38,
+          "hp": 100,
+          "kills": 1867
+        },
+        {
+          "t": 360,
+          "level": 40,
+          "hp": 100,
+          "kills": 2013
+        },
+        {
+          "t": 390,
+          "level": 41,
+          "hp": 100,
+          "kills": 2196
+        },
+        {
+          "t": 420,
+          "level": 45,
+          "hp": 100,
+          "kills": 2735
+        },
+        {
+          "t": 450,
+          "level": 49,
+          "hp": 100,
+          "kills": 3386
+        },
+        {
+          "t": 480,
+          "level": 53,
+          "hp": 100,
+          "kills": 3884
+        },
+        {
+          "t": 510,
+          "level": 53,
+          "hp": 88.96000000000001,
+          "kills": 4124
+        },
+        {
+          "t": 540,
+          "level": 53,
+          "hp": 88.96000000000001,
+          "kills": 4451
+        },
+        {
+          "t": 570,
+          "level": 53,
+          "hp": 52.96000000000001,
+          "kills": 4760
+        },
+        {
+          "t": 600,
+          "level": 53,
+          "hp": 34.96000000000001,
+          "kills": 5080
+        }
+      ],
+      "comboTriggers": {},
+      "combinationStats": {}
+    }
+  ]
+}

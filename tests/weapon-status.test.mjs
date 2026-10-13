@@ -13,21 +13,21 @@ test('all eighteen weapons choose branches at ten without a partner',()=>{
     assert.equal(w.evolve(EVOLUTIONS[skill][1].id),true);
     assert.equal(weaponStatus(w,skill).branch,EVOLUTIONS[skill][1].name);
     assert.equal(weaponStatus(w,skill).combined,false);
-    assert.equal(weaponStatus(w,skill).icons,'◇');
+    assert.equal(weaponStatus(w,skill).icons,'◆');
   }
 });
 
-test('later partner activates combination exactly once without replacing the chosen branch',()=>{
+test('later partner never activates a combination after an independent branch is chosen',()=>{
   for(const [main,partner] of Object.entries(SYNTHESIS_RECIPES)){
     const w=new SurvivalWorld(1,'ranger',1,6);
     for(const s of WEAPONS)w.skills[s]=0;
     w.skills[main]=9;w.state='upgrade';w.cards=[main];w.choose(main);
     w.evolve(EVOLUTIONS[main][1].id);w.drain();
     w.skills[partner]=9;w.state='upgrade';w.cards=[partner];w.choose(partner);
-    const events=w.drain();assert.equal(events.filter(e=>e.type==='comboReady').length,1);
+    const events=w.drain();assert.equal(events.filter(e=>e.type==='comboReady').length,0);
     assert.equal(w.evolutions[main],EVOLUTIONS[main][1].id);
-    assert.equal(weaponStatus(w,main).icons,'◇∞');
-    assert.equal(weaponStatus(w,partner).combined,true);
+    assert.equal(weaponStatus(w,main).icons,'◆');
+    assert.equal(weaponStatus(w,partner).combined,false);
     while(w.state==='evolution')w.back();w.drain();w.step(1/60);
     assert.equal(w.drain().filter(e=>e.type==='comboReady').length,0);
   }

@@ -1,3 +1,4 @@
+import { midgameRest } from "./MidgameEncounters";
 import { crownEscape } from "./CrownSystem";
 import type { SurvivalWorld } from './SurvivalWorld';
 import type { Enemy } from './SurvivalTypes';
@@ -19,7 +20,9 @@ export class AltarSystem {
   private next = 120;
   private zone = 0;
   step(w: SurvivalWorld) {
-    if(w.stageId!==3 || encounterTime(w.time)>=230 || w.time<this.next) return;
+    if(w.stageId!==3) return;
+    if(midgameRest(w.stageId,w.time)){w.hazards=w.hazards.filter(h=>h.source!==0 || h.kind==="pool");return;}
+    if(encounterTime(w.time)>=230 || w.time<this.next) return;
     if(encounterBeat(w.time).rest || w.enemies.some(e=>e.hp>0 && (isElite(e.kind)||e.kind==='boss'))) return;
     if(altarFlame(w,this.zone)) {this.zone=(this.zone+1)%4;this.next=w.time+32;}
   }

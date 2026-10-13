@@ -1,0 +1,82 @@
+{
+  "note": "Synthetic full-health/full-level-six-weapon stationary boss fights, not normal growth runs; one seed, two branch sets.",
+  "results": [
+    {
+      "stage": 11,
+      "branch": "combination",
+      "state": "lost",
+      "time": 25,
+      "hp": 0,
+      "bossRemaining": 58,
+      "losses": {
+        "锻炉贯线": 36,
+        "横砧锤击": 18,
+        "近身震锤": 18,
+        "boss": 28
+      }
+    },
+    {
+      "stage": 11,
+      "branch": "independent",
+      "state": "won",
+      "time": 28,
+      "hp": 10,
+      "bossRemaining": 0,
+      "losses": {
+        "锻炉贯线": 36,
+        "横砧锤击": 18,
+        "boss": 36
+      }
+    },
+    {
+      "stage": 12,
+      "branch": "combination",
+      "state": "lost",
+      "time": 34,
+      "hp": 0,
+      "bossRemaining": 44,
+      "losses": {
+        "折光十字": 36,
+        "碎镜坠落": 18,
+        "boss": 46
+      }
+    },
+    {
+      "stage": 12,
+      "branch": "independent",
+      "state": "won",
+      "time": 30,
+      "hp": 28,
+      "bossRemaining": 0,
+      "losses": {
+        "折光十字": 36,
+        "boss": 36
+      }
+    },
+    {
+      "stage": 13,
+      "branch": "combination",
+      "state": "lost",
+      "time": 33,
+      "hp": 0,
+      "bossRemaining": 44,
+      "losses": {
+        "终渡回响": 36,
+        "泊岸震击": 18,
+        "boss": 46
+      }
+    },
+    {
+      "stage": 13,
+      "branch": "independent",
+      "state": "won",
+      "time": 28,
+      "hp": 46,
+      "bossRemaining": 0,
+      "losses": {
+        "终渡回响": 36,
+        "boss": 18
+      }
+    }
+  ]
+}

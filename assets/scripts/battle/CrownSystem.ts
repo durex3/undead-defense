@@ -1,3 +1,6 @@
+import {isFrontier,frontierMap} from "./FrontierMaps";
+import {frontierContains} from "./FrontierGeometry";
+import { midgameRest } from "./MidgameEncounters";
 import {arsenalBlocked} from "./ArsenalMap";
 import {observatoryBlocked} from "./ObservatoryMap";
 import {starContains} from "./ObservatoryPath";
@@ -13,6 +16,7 @@ import { ALTAR_ZONES, altarFlame } from './AltarSystem';
 import { CHURCH_BELLS, bellHazard } from './ChurchSystem';
 export const CROWN_STONES=[{x:-12,y:-12},{x:12,y:-12},{x:12,y:12},{x:-12,y:12}];
 export function crownAreaHit(h: Hazard,p: Point) {
+ if(h.kind==='frontierLane'||h.kind==='frontierImpact')return frontierContains(h,p);
  if(h.kind==='starTrace'||h.kind==='starLeap')return starContains(h,p);
  const dx=p.x-h.x,dy=p.y-h.y,d=Math.hypot(dx,dy);
  if(h.kind==='flameLine') return dx*Math.cos(h.angle)+dy*Math.sin(h.angle)>=0 && dx*Math.cos(h.angle)+dy*Math.sin(h.angle)<=h.radius && Math.abs(-dx*Math.sin(h.angle)+dy*Math.cos(h.angle))<h.width;
@@ -34,14 +38,14 @@ function timedHit(h: Hazard,p: Point,time:number) {
 export function crownEscape(w: SurvivalWorld, candidates: Hazard[]) {
  const hazards=[...w.hazards,...candidates];
  const horizon=Math.max(.1, ...candidates.map(h=>h.until-w.time));
- const stones=w.stageId===1||w.stageId===8||w.stageId===9||w.stageId===10?[]:w.stageId===2?GARDEN_STONES:w.stageId===3?ALTAR_STONES:w.stageId===4?CHURCH_STONES:w.stageId===6?FURNACE_STONES:CROWN_STONES;
+ const stones=w.stageId===1||w.stageId===8||w.stageId===9||w.stageId>=10?[]:w.stageId===2?GARDEN_STONES:w.stageId===3?ALTAR_STONES:w.stageId===4?CHURCH_STONES:w.stageId===6?FURNACE_STONES:CROWN_STONES;
  const speed=Math.min(4.2,w.speed);
  for(let direction=-1;direction<32;direction++){
   const angle=direction*Math.PI/16;
   let safe=true;
   for(let t=0;t<=horizon;t+=.05){
    const p={x:w.player.x+(direction<0?0:Math.cos(angle)*speed*t),y:w.player.y+(direction<0?0:Math.sin(angle)*speed*t)};
-   if(Math.abs(p.x)>22 || Math.abs(p.y)>26 || stones.some(s=>Math.hypot(s.x-p.x,s.y-p.y)<1.4) || (w.stageId===8&&harborBlocked(p,.3)) || (w.stageId===9&&arsenalBlocked(p,.3)) || (w.stageId===10&&observatoryBlocked(p,.3))){safe=false;break;}
+   if(Math.abs(p.x)>22 || Math.abs(p.y)>26 || stones.some(s=>Math.hypot(s.x-p.x,s.y-p.y)<1.4) || (w.stageId===8&&harborBlocked(p,.3)) || (w.stageId===9&&arsenalBlocked(p,.3)) || (w.stageId===10&&observatoryBlocked(p,.3)) || (isFrontier(w.stageId)&&frontierMap(w.stageId).blocked(p,.3))){safe=false;break;}
    if(hazards.some(h=>w.time+t>=h.due && w.time+t<h.until && timedHit(h,p,w.time+t))){safe=false;break;}
   }
   if(safe)return true;
@@ -53,6 +57,7 @@ export class CrownDirector {
  private cursor=0;
  step(w: SurvivalWorld){
   if(w.stageId!==5)return;
+    if(midgameRest(w.stageId,w.time)){w.hazards=w.hazards.filter(h=>h.source!==0 || h.kind==="pool");return;}
   if((encounterTime(w.time)>=82&&encounterTime(w.time)<90)||(encounterTime(w.time)>=165&&encounterTime(w.time)<175))w.hazards=w.hazards.filter(h=>h.source!==0);
   if(encounterTime(w.time)>=230){w.hazards=w.hazards.filter(h=>h.source!==0);return;}
   while(this.cursor<EVENTS.length && w.time>=EVENTS[this.cursor].t*2){

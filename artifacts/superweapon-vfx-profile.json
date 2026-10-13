@@ -1,0 +1,15 @@
+{
+  "scene": "100 stationary enemies; 7 cue types x 3 distant impacts every 12 frames; graphics command generation only, excludes game update/GPU; desktop browser, not phone",
+  "full": {
+    "samples": 360,
+    "meanMs": 1.758888888772991,
+    "p95Ms": 2.5999999940395355,
+    "particles": 24
+  },
+  "reduced": {
+    "samples": 360,
+    "meanMs": 1.0191666666004393,
+    "p95Ms": 1.4000000059604645,
+    "particles": 14
+  }
+}

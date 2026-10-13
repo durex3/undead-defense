@@ -1,3 +1,7 @@
+import {isFrontier} from "../battle/FrontierMaps";
+import {frontierEnemy} from "../battle/FrontierSystem";
+import {drawFrontierEnemy,drawFrontierHazard} from "./FrontierPainter";
+import {drawSuperWeaponEffect, SUPER_EFFECT_LIFETIMES} from "./SuperWeaponPainter";
 import { formTier } from "../battle/WeaponForms";
 import {arsenalAura} from "../battle/ArsenalSystem";
 import {starHeight} from "../battle/ObservatorySystem";
@@ -138,14 +142,18 @@ export class BattlePainter {
     this.feedbackClock = 0;
     this.cueUntil.clear();
   }
-  draw(w: SurvivalWorld, dt: number, events: Effect[]) {
+  draw(w: SurvivalWorld, dt: number, events: Effect[], reduced=false) {
     const g = this.g;
     g.clear();
     this.feedbackClock += dt;
+    for(const [key,until] of this.cueUntil)if(until<=this.feedbackClock)this.cueUntil.delete(key);
+    const perType=new Map<string,number>();
     for (const e of events) {
       if (e.type.startsWith("combo")) {
-        if ((this.cueUntil.get(e.type) ?? -Infinity) > this.feedbackClock) continue;
-        this.cueUntil.set(e.type, this.feedbackClock + 0.1);
+        const key=`${e.type}:${Math.floor(e.x/2)}:${Math.floor(e.y/2)}`;
+        if ((this.cueUntil.get(key) ?? -Infinity) > this.feedbackClock || (perType.get(e.type)||0)>=(reduced?2:3)) continue;
+        this.cueUntil.set(key, this.feedbackClock + 0.1);
+        perType.set(e.type,(perType.get(e.type)||0)+1);
       }
       if (
         [
@@ -167,7 +175,7 @@ export class BattlePainter {
         ].includes(e.type)
       ) {
         const max =
-          e.final ? 1.1 : e.type === "fireImpact" ? (e.form === "inferno" ? 0.35 : 0.6) : e.type.startsWith("combo") ? 0.45 : e.type === "lightning"
+          e.final ? 1.1 : e.type === "fireImpact" ? (e.form === "inferno" ? 0.35 : 0.6) : e.type.startsWith("combo") ? (SUPER_EFFECT_LIFETIMES[e.type]??0.45) : e.type === "lightning"
             ? 0.25
             : e.type === "hit"
               ? 0.22
@@ -179,7 +187,7 @@ export class BattlePainter {
     }
     // Reserve room for final evolutions and combination cues before drawing.
     const final = this.particles.filter(p => p.e.final).slice(-6);
-    const accents = this.particles.filter(p => !p.e.final && (p.e.type.startsWith("combo") || p.e.type === "fireImpact")).slice(-30);
+    const accents = this.particles.filter(p => !p.e.final && (p.e.type.startsWith("combo") || p.e.type === "fireImpact")).slice(-(reduced?14:24));
     const ordinary = this.particles.filter(p => !p.e.final && !p.e.type.startsWith("combo") && p.e.type !== "fireImpact").slice(-144);
     this.particles = [...ordinary, ...accents, ...final];
     drawExpansion(g, w);
@@ -224,6 +232,7 @@ export class BattlePainter {
       g.fillColor = color("#040811", 75);
       g.ellipse(x, y - 7, isLarge(e.kind) ? 27 : 17, 6);
       g.fill();
+      if(isFrontier(w.stageId)&&(e.kind==='boss'||frontierEnemy(e.kind)))drawFrontierEnemy(g,e,w.stageId);
       if(e.kind==='sailor'){g.fillColor=color("#bde1db",210);g.rect(x-13,y+24,26,6);g.fill();}
       if(['starpatrol','starweaver','starpuppet'].includes(e.kind)||(e.kind==='boss'&&w.stageId===10)){
         const sy=y+starHeight(e)+(e.kind==='boss'?72:44);
@@ -283,7 +292,7 @@ export class BattlePainter {
         g.fillColor=color("#f3ce79");
         g.moveTo(x-25,y+67);g.lineTo(x-30,y+97);g.lineTo(x-10,y+84);g.lineTo(x,y+108);g.lineTo(x+10,y+84);g.lineTo(x+30,y+97);g.lineTo(x+25,y+67);g.close();g.fill();
       }
-      if (e.kind === "boss" && w.stageId >= 6) {
+      if (e.kind === "boss" && (w.stageId === 6 || w.stageId === 7)) {
         g.strokeColor=color(w.stageId===6?"#ffd19a":"#b9c4ff",230);g.lineWidth=4;
         if(w.stageId===6){
           g.moveTo(x-30,y+52);g.lineTo(x-46,y+84);g.lineTo(x-63,y+73);g.lineTo(x-48,y+42);g.stroke();
@@ -417,11 +426,12 @@ export class BattlePainter {
     for (const gem of w.gems) {
       const x = gem.x * 48,
         y = gem.y * 48;
+      const scale=1+Math.min(.65,Math.log2(1+Math.max(0,gem.value-1))*.12);
       g.fillColor = color("#56dfc2");
-      g.moveTo(x, y + 7);
-      g.lineTo(x + 5, y);
-      g.lineTo(x, y - 7);
-      g.lineTo(x - 5, y);
+      g.moveTo(x, y + 7*scale);
+      g.lineTo(x + 5*scale, y);
+      g.lineTo(x, y - 7*scale);
+      g.lineTo(x - 5*scale, y);
       g.close();
       g.fill();
       g.fillColor = color("#d4ffe9");
@@ -706,24 +716,8 @@ export class BattlePainter {
         }
         g.fillColor = color("#fff5d3", Math.round(a * 230));
         skillGlyph(g, e.skill as Skill, x, y, 15 + a * 12);
-      } else if (e.type === "comboFire") {
-        const radius = (e.radius ?? 2) * 48 * (1 - a * a);
-        g.fillColor = color(COLORS.blade, Math.round(a * 230));
-        for (let i = 0; i < 8; i++) {
-          const angle = i * Math.PI / 4;
-          crystal(g, x + Math.cos(angle) * radius, y + Math.sin(angle) * radius, 7 + a * 8, angle);
-        }
-        g.strokeColor = color("#ffd78b", Math.round(a * 140));
-        g.circle(x, y, radius * 0.75); g.stroke();
-      } else if (e.type === "comboIce") {
-        const radius = 15 + (1 - a) * 28;
-        g.fillColor = color("#b9f8ff", Math.round(a * 230));
-        for (let i = 0; i < 6; i++) {
-          const angle = i * Math.PI / 3;
-          crystal(g, x + Math.cos(angle) * radius, y + Math.sin(angle) * radius, 4 + a * 7, angle);
-        }
-        g.strokeColor = color("#c6a1ff", Math.round(a * 210));
-        g.moveTo(x - 5, y + radius); g.lineTo(x + 5, y + 3); g.lineTo(x - 5, y - 3); g.lineTo(x + 5, y - radius); g.stroke();
+      } else if (drawSuperWeaponEffect(g,e,a,reduced)) {
+        // Dedicated combination effects draw at the exact ground-space damage point.
       } else if (e.type === "comboPurify") {
         const radius = (e.radius || .65) * 48 * (.45 + (1-a)*.55);
         g.strokeColor = color("#a8ffce", Math.round(a * 210)); g.lineWidth = 2;
@@ -738,36 +732,6 @@ export class BattlePainter {
         const r = 8 + (1-a)*23;
         g.fillColor=color("#b4d6ff",Math.round(a*230));
         for(const side of [-1,1])polygon(g,x,y,side*Math.PI/2,[[r,0],[3,8],[-r*.5,3],[-r*.2,0],[-r*.5,-3],[3,-8]]);
-      } else if (e.type === "comboReap") {
-        const r = (e.radius ?? 1.25)*48*(1-a*a);
-        g.strokeColor=color("#b9f8c9",Math.round(a*220));g.lineWidth=3;
-        for(const offset of [0,Math.PI]){g.arc(x,y,r,offset+(1-a),offset+(1-a)+2,false);g.stroke();}
-        g.fillColor=color("#efffe3",Math.round(a*210));crystal(g,x,y,5+8*a,Math.PI/4);
-      } else if (e.type === "comboCollapse") {
-        const r = (e.radius ?? 2)*48*a;
-        g.strokeColor=color("#cbaaff",Math.round(a*210));g.lineWidth=3;g.circle(x,y,r);g.stroke();
-        g.fillColor=color("#f5bd86",Math.round(a*220));
-        for(let i=0;i<5;i++){const angle=i*Math.PI*2/5;crystal(g,x+Math.cos(angle)*r,y+Math.sin(angle)*r,6,angle);}
-      } else if (e.type === "comboBone") {
-        const radius = (e.radius ?? 3) * 48 * (1 - a * a);
-        g.fillColor = color("#f4ead3", Math.round(a * 210));
-        for (let i = 0; i < 7; i++) {
-          const angle = i * Math.PI * 2 / 7;
-          polygon(g,x+Math.cos(angle)*radius,y+Math.sin(angle)*radius,angle,[[12,0],[-7,4],[-4,0],[-7,-4]]);
-        }
-      } else if (e.type === "comboJudgment") {
-        const r = 12 + (1 - a) * 24;
-        g.strokeColor = color("#ffcb89", Math.round(a * 220)); g.lineWidth = 3;
-        g.moveTo(x-r,y);g.lineTo(x+r,y);g.moveTo(x,y-r);g.lineTo(x,y+r*2);g.stroke();
-        g.fillColor = color("#ff9464", Math.round(a * 200));
-        for(let i=0;i<4;i++)crystal(g,x+Math.cos(i*Math.PI/2)*r,y+Math.sin(i*Math.PI/2)*r,5,i*Math.PI/2);
-      } else if (e.type === "comboSoul") {
-        const r = 8 + (1 - a) * 22;
-        g.strokeColor = color("#c9aeff", Math.round(a * 210));g.lineWidth=2;
-        g.ellipse(x,y,r,r*.55);g.stroke();
-        g.fillColor=color("#e9dfff",Math.round(a*220));
-        for(const side of [-1,1])crystal(g,x+side*r,y,6+4*a,side*Math.PI);
-        g.moveTo(x-r,y);g.lineTo(x+r,y);g.stroke();
       } else if (e.type === "fireImpact") {
         const radius = (e.radius ?? 1.5) * 48 * (1 - a * a);
         g.strokeColor = color(e.form === "inferno" ? "#ffb567" : "#ffe6ac", Math.round(a * 210));
@@ -849,6 +813,7 @@ export class BattlePainter {
         h.kind === "pool" ? "#a3bc51" : "#ed6c88",
         h.fired ? 65 : 25 + progress * 35,
       );
+      if(h.kind==='frontierLane'||h.kind==='frontierImpact'){drawFrontierHazard(g,h,w.time);continue;}
       if(h.kind==='starTrace'){
         const bx=(h.endX??h.x)*48,by=(h.endY??h.y)*48,a=Math.atan2(by-y,bx-x),r=h.width*48,dx=-Math.sin(a)*r,dy=Math.cos(a)*r;
         g.fillColor=color('#dc9fc9',w.time>=h.due?120:20+progress*35);g.strokeColor=color('#f7b4d9',240);g.lineWidth=2;
