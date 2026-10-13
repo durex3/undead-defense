@@ -5,6 +5,7 @@ test('preferences persist independently, filter malformed lessons and retry fail
  const data = new Map(); let fail = false;
  const storage = {getItem:k=>data.get(k)??null,setItem:(k,v)=>{if(fail)throw Error('quota');data.set(k,v)}};
  const p = new PlayPreferences(storage); p.toggleMute(); p.mark('move'); p.mark('move');
+ assert.equal(p.powerSaving,true);p.togglePowerSaving();assert.equal(new PlayPreferences(storage).powerSaving,false);
  const r = new PlayPreferences(storage); assert.equal(r.muted,true); assert.deepEqual(r.completed,['move']);
  fail=true; r.mark('nova'); assert.equal(r.pending,true); fail=false; r.flush();
  assert.deepEqual(new PlayPreferences(storage).completed,['move','nova']);

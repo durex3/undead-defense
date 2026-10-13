@@ -9,7 +9,7 @@ test('weapons grow continuously past four; seven awakens without spending anothe
   const w=new SurvivalWorld(8);w.skills[s]=4;
   for(let rank=5;rank<=10;rank++){
    choose(w,s);assert.equal(w.skills[s],rank,s);
-   if(rank===10 && !SYNTHESIS_RECIPES[s]){assert.equal(w.state,'evolution');w.back();}
+   if(rank===10){assert.equal(w.state,'evolution');w.back();}
    assert.equal(w.state,'battle',s);
    assert.equal(w.weaponEvolution(s),rank>=7?EVOLUTIONS[s][0].id:undefined,s);
   }

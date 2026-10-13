@@ -1,9 +1,10 @@
 import type { StoragePort } from './SaveStore';
-export const PLAY_VERSION = '朋友试玩版 0.15.1';
+export const PLAY_VERSION = '朋友试玩版 0.15.2';
 export type Lesson = 'move' | 'xp' | 'upgrade' | 'nova' | 'elite';
 const lessons: Lesson[] = ['move', 'xp', 'upgrade', 'nova', 'elite'];
 export class PlayPreferences {
   muted = false;
+  powerSaving = true;
   completed: Lesson[] = [];
   pending = false;
   private key = 'ashen-survivors-preferences-v1';
@@ -12,6 +13,7 @@ export class PlayPreferences {
       const d = JSON.parse(storage.getItem(this.key) || 'null');
       if (d?.version === 1) {
         this.muted = d.muted === true;
+        this.powerSaving = d.powerSaving !== false;
         this.completed = lessons.filter(k => Array.isArray(d.completed) && d.completed.includes(k));
       }
     } catch { /* Invalid preferences must not block play. */ }
@@ -20,9 +22,10 @@ export class PlayPreferences {
     if (!this.completed.includes(k)) { this.completed.push(k); this.flush(); }
   }
   toggleMute() { this.muted = !this.muted; this.flush(); }
+  togglePowerSaving() { this.powerSaving = !this.powerSaving; this.flush(); }
   flush() {
     try {
-      this.storage.setItem(this.key, JSON.stringify({version: 1, muted: this.muted, completed: this.completed}));
+      this.storage.setItem(this.key, JSON.stringify({version: 1, muted: this.muted, powerSaving: this.powerSaving, completed: this.completed}));
       this.pending = false;
     } catch { this.pending = true; }
   }

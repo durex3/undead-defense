@@ -112,7 +112,9 @@ function polygon(g: Graphics, x: number, y: number, radius: number, sides: numbe
   g.close();
 }
 export function drawExpansion(g: Graphics, w: SurvivalWorld) {
+  const denseFields = w.expansion.fields.length > 4;
   for (const f of w.expansion.fields) {
+    if (Math.abs(f.x-w.camera.x)>w.viewport.x+f.radius+2 || Math.abs(f.y-w.camera.y)>w.viewport.y+f.radius+2) continue;
     const x = f.x * 48, y = f.y * 48, r = f.radius * 48;
     const form = stage(w, f.skill), phase = w.time * 1.5;
     if (w.time < f.due) {
@@ -129,9 +131,16 @@ export function drawExpansion(g: Graphics, w: SurvivalWorld) {
       continue;
     }
     // This outer circle is always the actual damage boundary.
-    g.fillColor = color(COLORS[f.skill], f.skill === "void" ? 28 : 20);
-    g.strokeColor = color(COLORS[f.skill], 90); g.lineWidth = 1.5;
+    g.fillColor = color(COLORS[f.skill], denseFields ? 8 : f.skill === "void" ? 28 : 14);
+    g.strokeColor = color(COLORS[f.skill], denseFields ? 45 : 65); g.lineWidth = 1.5;
     g.circle(x, y, r); g.fill(); g.stroke();
+    if (denseFields && f.skill !== "void") {
+      // Keep every damage boundary, replace overlapping animated seals with a small glyph.
+      g.strokeColor=color(COLORS[f.skill],100);g.lineWidth=2;
+      if(f.skill === "water") {g.moveTo(x-6,y);g.lineTo(x+6,y);g.moveTo(x,y-8);g.lineTo(x,y+8);g.stroke();}
+      else {polygon(g,x,y,9,3,-Math.PI/2);g.stroke();}
+      continue;
+    }
     if (f.skill === "water") {
       g.strokeColor = color("#c4ffff", 115); g.lineWidth = 2;
       if (f.follow) {

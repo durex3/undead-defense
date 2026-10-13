@@ -1,4 +1,5 @@
 import { STAGES } from "./StageRules";
+import { weaponStatus } from "./WeaponStatus";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { WEAPONS, NAMES, ENEMIES, EVOLUTIONS, Kind, WEAPON_TAGS, SYNTHESIS_RECIPES } from "./SurvivalConfig";
 export function battleReport(w: SurvivalWorld) {
@@ -10,9 +11,8 @@ export function battleReport(w: SurvivalWorld) {
       damage: w.damage[s] || 0,
       kills: w.weaponKills[s] || 0,
       share: total > 0 ? (w.damage[s] || 0) / total : 0,
-      stage: w.evolutions[s]
-        ? EVOLUTIONS[s].find((e) => e.id === w.evolutions[s])?.name || "已进化"
-        : `Lv.${w.skills[s]}`,
+      stage: `${w.skills[s]}级${weaponStatus(w,s).branch ? " ◇"+weaponStatus(w,s).branch : ""}${weaponStatus(w,s).combined ? " ∞" : ""}`,
+      status: weaponStatus(w,s),
       tags: WEAPON_TAGS[s],
     }))
     .sort((a, b) => b.damage - a.damage);
@@ -53,7 +53,7 @@ export function battleReport(w: SurvivalWorld) {
       ? "离开亮起的危险区域，持续移动"
       : /箭|mage|archer/.test(w.lastDamageSource)
         ? "横向移动躲开远程攻击，优先清理射手"
-        : "沿怪群边缘绕行，被包围时释放新星",
+        : "沿怪群边缘绕行，利用全收经验补充成长",
     deathSource: losses.find(l=>l.key===w.lastDamageSource)?.name || w.lastDamageSource,
     phase: boss?.bossPhase || 0,
     bossRemaining: boss ? Math.ceil(boss.hp / boss.maxHp * 100) : null,

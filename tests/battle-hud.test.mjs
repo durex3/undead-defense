@@ -8,7 +8,7 @@ test('HUD shows selected final form, rank and cooldown without changing world st
   w.skills.fire = 10; w.evolutions.fire = 'meteor'; w.ultimate = 2.2;
   const seed = w.seed, revision = w.revision;
   const hud = battleHud(w, false, []);
-  assert(hud.weapons.includes('★'));
+  assert(hud.weapons.includes('◇'));assert(!hud.weapons.includes('★'));assert(hud.weapons.includes('10'));
   assert(hud.weapons.includes('1'));
   assert.equal(hud.nova, '全收经验 3s');
   assert.equal(w.seed, seed); assert.equal(w.revision, revision);

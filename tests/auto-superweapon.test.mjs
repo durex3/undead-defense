@@ -5,10 +5,11 @@ import {SYNTHESIS_RECIPES,EVOLUTIONS} from '../temp/tests/battle/SurvivalConfig.
 test('every combination triggers automatically once and retains both weapons',()=>{
  for(const [main,other] of Object.entries(SYNTHESIS_RECIPES)){
   const w=new SurvivalWorld(7);w.skills[main]=10;w.skills[other]=9;w.step(1/60);
-  assert.equal(w.evolutions[main],undefined);
+  assert.equal(w.evolutions[main],EVOLUTIONS[main][0].id);assert.equal(w.combinations.ready(main),false);
+  while(w.state==='evolution')w.back();
   w.state='upgrade';w.cards=[other];assert(w.choose(other));
   assert.equal(w.evolutions[main],EVOLUTIONS[main][0].id);
-  assert.equal(w.skills[main],10);assert.equal(w.skills[other],10);
+  assert.equal(w.skills[main],10);assert.equal(w.skills[other],10);assert.equal(w.combinations.ready(main),true);
   w.drain();w.step(1/60);assert(!w.drain().some(e=>e.type==='evolve'&&e.skill===main));
  }
 });

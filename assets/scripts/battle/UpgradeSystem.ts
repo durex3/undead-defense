@@ -8,6 +8,7 @@ export class UpgradeSystem {
   private target: Skill | null = null;
   private branchQueue: Skill[] = [];
   private automaticBranch = false;
+  private announcedCombinations = new Set<Skill>();
   private specialIndex = 0;
   constructor(private world: SurvivalWorld, private result: (message: string, ok?: boolean) => boolean) {}
   targetReason(main: Skill): string {
@@ -35,25 +36,31 @@ export class UpgradeSystem {
     return pair ? {...pair, remaining: Math.max(0, MAX_SKILL_LEVEL - this.world.skills[pair.main]) + Math.max(0, MAX_SKILL_LEVEL - this.world.skills[pair.partner]), locked: !!this.buildTarget} : null;
   }
   synthesisOptions() {
+    for (const main of this.announcedCombinations) {
+      const partner = SYNTHESIS_RECIPES[main]!;
+      if (this.world.skills[main] < MAX_SKILL_LEVEL || this.world.skills[partner] < MAX_SKILL_LEVEL) this.announcedCombinations.delete(main);
+    }
     return WEAPONS.filter(s => { const other = SYNTHESIS_RECIPES[s];
-      return !!other && this.world.skills[s] >= MAX_SKILL_LEVEL && this.world.skills[other] >= MAX_SKILL_LEVEL && !this.world.evolutions[s];
+      return !!other && this.world.skills[s] >= MAX_SKILL_LEVEL && this.world.skills[other] >= MAX_SKILL_LEVEL && !this.announcedCombinations.has(s);
     });
   }
   synthesize(skill: Skill) {
     if (!this.synthesisOptions().includes(skill)) return this.result("两把配方武器都需要10级，且尚未组合进化");
     // Both weapons remain equipped and keep their independent attacks.
-    this.world.evolutions[skill] = EVOLUTIONS[skill][0].id;
+    const needsBranch = !this.world.evolutions[skill];
+    this.world.evolutions[skill] ||= EVOLUTIONS[skill][0].id;
+    this.announcedCombinations.add(skill);
     if (this.target === skill) this.target = null;
-    if (EVOLUTIONS[skill].length > 1) this.branchQueue.push(skill);
+    if (needsBranch && EVOLUTIONS[skill].length > 1) this.branchQueue.push(skill);
     this.world.cooldowns[skill] = 0; this.world.expansion.refresh(skill);
-    this.world.effects.push({ type: "evolve", ...this.world.player, skill, form: this.world.evolutions[skill], final: EVOLUTIONS[skill].length === 1 });
+    this.world.effects.push({ type: "comboReady", ...this.world.player, skill });
     return this.result("组合超武觉醒，两把武器均保留", true);
   }
   autoSynthesize() {
     for (const skill of this.synthesisOptions()) this.synthesize(skill);
     // Partner weapons choose their own attack style at rank ten, without another XP roll.
     for (const skill of WEAPONS) {
-      if (SYNTHESIS_RECIPES[skill] || EVOLUTIONS[skill].length < 2 || this.world.skills[skill] < MAX_SKILL_LEVEL || this.world.evolutions[skill]) continue;
+      if (EVOLUTIONS[skill].length < 2 || this.world.skills[skill] < MAX_SKILL_LEVEL || this.world.evolutions[skill]) continue;
       this.world.evolutions[skill] = EVOLUTIONS[skill][0].id;
       this.branchQueue.push(skill);
       this.world.cooldowns[skill] = 0;
@@ -62,7 +69,7 @@ export class UpgradeSystem {
   }
   openAutomaticBranch() {
     if (this.world.state !== "battle" || !this.branchQueue.length) return false;
-    this.branchQueue = this.branchQueue.filter(s => this.world.skills[s] >= MAX_SKILL_LEVEL && !!this.world.evolutions[s] && (!SYNTHESIS_RECIPES[s] || this.world.skills[SYNTHESIS_RECIPES[s]!] >= MAX_SKILL_LEVEL));
+    this.branchQueue = this.branchQueue.filter(s => this.world.skills[s] >= MAX_SKILL_LEVEL && !!this.world.evolutions[s]);
     if (!this.branchQueue.length) return false;
     this.world.pendingEvolution = this.branchQueue.shift()!;
     this.automaticBranch = true;
@@ -153,6 +160,7 @@ export class UpgradeSystem {
     if (this.world.state !== "upgrade" || !this.world.cards.includes(c)) return false;
     if (WEAPONS.includes(c as Skill)) {
       const s = c as Skill;
+      if (!this.world.skills[s] && this.world.weaponCount >= this.world.weaponSlots) return false;
       if (this.world.skills[s] >= MAX_SKILL_LEVEL && SYNTHESIS_RECIPES[s]) return false;
       if (this.world.skills[s] >= MAX_SKILL_LEVEL && !this.world.evolutions[s]) {
         this.world.pendingEvolution = s;
@@ -187,7 +195,6 @@ export class UpgradeSystem {
       this.world.state !== "evolution" ||
       !s ||
       this.world.skills[s] < MAX_SKILL_LEVEL ||
-      (!!SYNTHESIS_RECIPES[s] && this.world.skills[SYNTHESIS_RECIPES[s]!] < MAX_SKILL_LEVEL) ||
       !EVOLUTIONS[s].some((e) => e.id === id)
     )
       return false;

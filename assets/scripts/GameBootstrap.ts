@@ -1,4 +1,5 @@
 import {starHeight} from "./battle/ObservatorySystem";
+import { combinationLabel } from "./battle/WeaponStatus";
 import { drawLateStage } from "./presentation/LateStagePainter";
 import { GameMenus } from "./presentation/GameMenus";
 import { MenuWidgets } from "./presentation/MenuWidgets";
@@ -51,7 +52,7 @@ import {
   AudioSource,
   AudioClip,
 } from "cc";
-import { DEBUG } from "cc/env";
+import { DEBUG, WECHAT } from "cc/env";
 import { SurvivalWorld } from "./battle/SurvivalWorld";
 import { SYNTHESIS_RECIPES, MAX_ENEMIES, Card, Skill, NAMES as names, COLORS as colors, EVOLUTIONS, ENEMIES } from "./battle/SurvivalConfig";
 import { BattlePainter } from "./presentation/BattlePainter";
@@ -128,6 +129,7 @@ export class GameBootstrap extends Component {
   private sounds = new Map<string, AudioClip>();
   private lastSound = 0;
   async start() {
+    this.applyFrameRate();
     profiler.hideStats();
     view.setDesignResolutionSize(1280, 720, ResolutionPolicy.SHOW_ALL);
     this.ui = this.make("Canvas", this.node);
@@ -221,8 +223,8 @@ export class GameBootstrap extends Component {
         this.hud,
         "",
         0,
-        -this.screenH / 2 + 66,
-        18,
+        -this.screenH / 2 + 92,
+        16,
         "#e8cc92",
         860,
       );
@@ -544,6 +546,7 @@ export class GameBootstrap extends Component {
       get pendingShopAction() { return owner.pendingShopAction; },
       set pendingShopAction(value) { owner.pendingShopAction = value; },
       get preferences() { return owner.preferences; },
+      applyFrameRate: owner.applyFrameRate.bind(owner),
       get progress() { return owner.progress; },
       restart: owner.restart.bind(owner),
       get runEarned() { return owner.runEarned; },
@@ -583,6 +586,9 @@ export class GameBootstrap extends Component {
     if (this.preferences.muted) return;
     const c = this.sounds.get(key);
     if (c) this.audio.playOneShot(c, volume ?? (key === "impact" ? 0.12 : 0.25));
+  }
+  private applyFrameRate() {
+    game.frameRate = (sys.isMobile || WECHAT) && this.preferences.powerSaving ? 30 : 60;
   }
   update(dt: number) {
     if (!this.ready) return;
@@ -746,11 +752,16 @@ export class GameBootstrap extends Component {
       if (e.type === "evolve" && e.final) {
         const skill = e.skill as Skill;
         const form = EVOLUTIONS[skill].find(v => v.id === e.form);
-        this.superTitle.string = `${SYNTHESIS_RECIPES[skill] ? "超武觉醒" : "终极进化"} · ${form?.name || names[skill]}`;
+        this.superTitle.string = `◇ 分支已选择 · ${form?.name || names[skill]}`;
         this.superTitle.color = new Color().fromHEX(colors[skill]);
         const partner = SYNTHESIS_RECIPES[skill];
-        this.superSubtitle.string = partner ? `${names[skill]} + ${names[partner]} · 双武器保留` : "终极分支已生效 · 保留原武器槽位";
+        this.superSubtitle.string = "本武器攻击形态已改变 · 组合联动另需配方双方10级";
         this.superLife = 2.6;
+      }
+      if (e.type === "comboReady") {
+        const skill = e.skill as Skill, partner = SYNTHESIS_RECIPES[skill]!;
+        this.announcement.string = `∞ 超武联动已激活 · ${combinationLabel(skill)}`;
+        this.announcementLife = 3;
       }
       if (e.type === "hit" && this.feedback.routineAllowed(this.feedbackClock) && w.time - this.lastSound > 0.1) {
         this.sound("impact");

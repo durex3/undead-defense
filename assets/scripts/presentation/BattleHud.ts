@@ -1,4 +1,5 @@
 import {observatoryHint} from "../battle/ObservatorySystem";
+import { weaponStatus } from "../battle/WeaponStatus";
 import {arsenalHint} from "../battle/ArsenalSystem";
 import {harborHint} from "../battle/HarborSystem";
 import { furnaceForecast } from "../battle/FurnaceEncounters";
@@ -16,9 +17,9 @@ export function clock(t: number) {
 /** Pure HUD content, independent of Cocos nodes and input handling. */
 export function battleHud(w: SurvivalWorld, touchMode: boolean, visiblePotions: readonly {x: number; y: number}[]) {
     const stats = `Lv.${w.level}                 ${w.time >= BOSS_TIME ? "首领战 " + clock(w.time - BOSS_TIME) : clock(w.time) + " / 08:00"}                 击败 ${w.kills}                 生命 ${Math.ceil(w.hp)}`;
-    const weapons = SKILLS.filter((k) => w.skills[k])
-      .map((k) => `${w.evolutions[k] ? EVOLUTIONS[k].find(e => e.id === w.evolutions[k])?.name || names[k] : names[k]} ${w.evolutions[k] ? "★" : w.skills[k]}`)
-      .join("    ");
+    const equipped = SKILLS.filter(k=>w.skills[k]);
+    const entries = equipped.map(k=>`${names[k]} ${w.skills[k]}级${weaponStatus(w,k).icons}`);
+    const weapons = `武器 ${equipped.length}/${w.weaponSlots} · ◇已选分支 · ∞超武联动\n${entries.slice(0,3).join("    ")}${entries.length>3 ? "\n"+entries.slice(3).join("    ") : ""}`;
     const boss = w.enemies.find((e) => e.kind === "boss" && e.hp > 0);
     const lateHazard = w.stageId >= 6 ? w.hazards.find(h=>h.damageLabel) : undefined;
     const furnaceHint=w.stageId===6 ? furnaceForecast(w.time,w.furnaceRoute) : null;

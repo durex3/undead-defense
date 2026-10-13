@@ -1,4 +1,5 @@
 import { FURNACE_WINDOWS, furnaceEncounter } from "../battle/FurnaceEncounters";
+import { weaponStatus, combinationRecipes } from "../battle/WeaponStatus";
 import { WEAPON_ROLES } from "../battle/BuildProgression";
 
 import { STAGES, STAGE_GUIDES } from "../battle/StageRules";
@@ -271,10 +272,10 @@ export class GameMenus {
       this.host.text(this.host.overlay, "正在整理战斗报告…", 0, -85, 19, "#adbccc");
     } else if (w.state === "evolution" && w.pendingEvolution) {
       const skill = w.pendingEvolution;
-      this.host.text(this.host.overlay, "秘术进化", 0, 208, 36);
+      this.host.text(this.host.overlay, "◇ 选择武器分支", 0, 208, 36);
       this.host.text(
         this.host.overlay,
-        SYNTHESIS_RECIPES[skill] ? "组合条件已达成 · 选择玩法 · 两把武器均保留" : "选择攻击形态 · 保留原武器槽位",
+        `${names[skill]} 10级 · 改变本武器玩法 · ${weaponStatus(w,skill).condition}`,
         0,
         159,
         18,
@@ -398,7 +399,7 @@ export class GameMenus {
         167,
         21,
       );
-      this.host.text(this.host.overlay, "武器 / 成长", -315, 120, 19, "#adbccc", 300);
+      this.host.text(this.host.overlay, "武器 · ◇分支 · ∞超武联动", -285, 120, 16, "#adbccc", 365);
       this.host.text(this.host.overlay, "有效伤害 / 占比", 60, 120, 19, "#adbccc", 280);
       this.host.text(this.host.overlay, "击杀", 370, 120, 19, "#adbccc", 100);
       report.rows.forEach((row, i) => {
@@ -409,7 +410,7 @@ export class GameMenus {
           `${row.name} · ${row.stage}`,
           -285,
           y,
-          18,
+          15,
           colors[row.skill],
           365,
         );
@@ -468,7 +469,7 @@ export class GameMenus {
       if (w.shopOpen) {
         this.host.text(this.host.overlay, `补给商店 · 金币 ${w.gold} · 装备 ${w.weaponCount}/${w.weaponSlots}`, 0, 225, 26, "#e8cc92");
         (["buy", "sell", "fusion"] as const).forEach((tab, i) => {
-          this.host.button(this.host.overlay, ({buy:"购买补给",sell:"回收装备",fusion:"终阶融合"})[tab] + (this.host.shopTab === tab ? " ·" : ""), (i-1)*300, 155, 270, 52, () => { this.host.shopTab=tab; this.host.pendingShopAction=null; this.host.shown=""; });
+          this.host.button(this.host.overlay, ({buy:"购买补给",sell:"回收装备",fusion:"∞ 组合图鉴"})[tab] + (this.host.shopTab === tab ? " ·" : ""), (i-1)*300, 155, 270, 52, () => { this.host.shopTab=tab; this.host.pendingShopAction=null; this.host.shown=""; });
         });
         const pending = this.host.pendingShopAction;
         if (pending) {
@@ -498,13 +499,12 @@ export class GameMenus {
           });
         } else {
           this.host.text(this.host.overlay,"两把配方武器都满 10 级 → 自动组合超武",0,94,20,"#c7d2dc");
-          this.host.text(this.host.overlay,"两把武器均保留 · 清群伤害 +80% · 对首领 +25%",0,52,18,"#e8cc92");
-          Object.entries(SYNTHESIS_RECIPES).forEach(([main, other], i) => {
-            const skill = main as Skill, partner = other as Skill;
-            this.host.text(this.host.overlay,`${names[skill]} ${w.skills[skill]}/10 + ${names[partner]} ${w.skills[partner]}/10  →  ${w.evolutions[skill] ? EVOLUTIONS[skill].find(e => e.id === w.evolutions[skill])?.name || "已觉醒" : EVOLUTIONS[skill].map(e => e.name).join(" / ")}`,0,10-i*32,18,colors[skill],1000);
+          this.host.text(this.host.overlay,"◇ 单武器10级选分支 · ∞ 配方双方10级自动激活联动",0,52,18,"#e8cc92");
+          combinationRecipes(w).forEach((recipe,i)=>{
+            this.host.text(this.host.overlay,`${recipe.ready?"∞ 已激活":"未达成"} · ${recipe.label} · ${recipe.progress}`,0,10-i*24,16,recipe.ready?"#e8cc92":"#a7b8c5",1000);
           });
         }
-        this.host.text(this.host.overlay,w.shopMessage,0,-190,17,"#e8cc92",1020);
+        if(this.host.shopTab!=="fusion")this.host.text(this.host.overlay,w.shopMessage,0,-190,17,"#e8cc92",1020);
         this.host.button(this.host.overlay,"返回暂停菜单",-230,-247,400,54,()=>{w.closeShop();this.host.pendingShopAction=null;this.host.shown="";});
         this.host.button(this.host.overlay,"继续冒险",230,-247,400,54,()=>this.host.togglePause());
         return;
@@ -517,7 +517,7 @@ export class GameMenus {
         SKILLS.filter((k) => w.skills[k])
           .map(
             (k) =>
-              `${weaponFormName(k, w.skills[k], !!w.evolutions[k])}  ${w.evolutions[k] ? "已进化" : "Lv." + w.skills[k]}  ·  伤害 ${Math.round(w.damage[k] || 0)}`,
+              `${names[k]} ${w.skills[k]}级 · ${weaponStatus(w,k).branch ? "◇ "+weaponStatus(w,k).branch : "未选分支"}${weaponStatus(w,k).combined?" ∞":""}`,
           )
           .join("\n"),
         -230,
@@ -526,8 +526,8 @@ export class GameMenus {
         "#c7d2dc",
         440,
       );
-      const bonus = Object.entries(w.tagBonus).filter(([, v]) => v > 0).map(([k, v]) => `${k} +${Math.round(v * 100)}%`).join(" · ");
-      if (bonus) this.host.text(this.host.overlay, `流派加成：${bonus}`, -230, -75, 16, "#e8cc92", 440);
+      const combos=combinationRecipes(w).filter(r=>r.ready);
+      this.host.text(this.host.overlay,combos.length?combos.map(r=>`∞ ${r.label}`).join("\n"):"∞ 尚未组合：配方双方10级自动激活",-230,-75,14,"#e8cc92",470);
       this.host.button(this.host.overlay, "继续冒险", 280, 88, 270, 48, () =>
         this.host.togglePause(),
       );
@@ -546,6 +546,10 @@ export class GameMenus {
     }
   }
   muteButton(x: number, y: number, start: boolean) {
+    this.host.button(this.host.overlay,this.host.preferences.powerSaving ? "省电优先" : "流畅优先",x-180,y,160,40,()=>{
+      this.host.preferences.togglePowerSaving();this.host.applyFrameRate();
+      if(start)this.host.showStart();else{this.host.shown="";this.host.menus();}
+    });
     this.host.button(this.host.overlay, this.host.preferences.muted ? "声音：关" : "声音：开", x, y, 160, 40, () => {
       this.host.preferences.toggleMute();
       if (start) this.host.showStart();
