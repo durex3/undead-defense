@@ -70,6 +70,7 @@ export class ExpansionWeapons {
     this.lastPosition = { ...w.player };
   }
   remove(skill: Skill) {
+    this.w.combinations.superWeapons.remove(skill);
     this.fields = this.fields.filter(f => f.skill !== skill);
     if (skill === "mine") this.mines = [];
     if (skill === "bat") { this.bats = []; this.batBatches.clear(); }
@@ -445,13 +446,11 @@ export class ExpansionWeapons {
           this.venom.set(e.id,mark);
           continue;
         }
-        const purified = f.skill === "water" && !!w.evolutions.water && w.skills.poison >= 10 &&
-          this.fields.some(p => p.skill === "poison" && p.due <= w.time && p.until > w.time && distance(e, p) <= p.radius);
-        w.hit(e, f.damage * (purified ? 1.5 : 1), f.skill, false, f, false, purified ? "water" : undefined, purified ? 1 / 3 : 1);
-        if (purified) w.combinations.trigger("water", "comboPurify", e, 0.65);
+        w.hit(e, f.damage, f.skill, false, f, false);
       }
     }
     this.fields = this.fields.filter((f) => f.until > w.time);
+    w.combinations.superWeapons.stepPurification();
     for(const [id,mark] of this.venom) {
       const e=w.enemies.find(e=>e.id===id&&e.hp>0);
       if(!e || mark.until<=w.time){this.venom.delete(id);continue;}

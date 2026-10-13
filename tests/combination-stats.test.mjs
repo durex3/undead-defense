@@ -65,11 +65,11 @@ test('meteor collapse needs a live overlapping void field and only triggers on i
  }
 });
 
-test('water overlap records only the fifty-percent extra portion, not the whole water tick',()=>{
+test('water overlap records the independent purification pulse separately from the base water tick',()=>{
  const w=prepare('water','poison','tide');const e=enemy(w,0);
  w.expansion.cast('water');w.expansion.field('poison',w.player,2,4,0);w.time=1;w.expansion.stepFields(0);
  assert.equal(w.combinations.stats.water.triggers,1);
- assert(Math.abs(w.combinations.stats.water.damage-w.damage.water/3)<1e-8);
+ assert(Math.abs(w.combinations.stats.water.damage-w.damage.water/2)<1e-8);
  assert(w.combinations.stats.water.damage<=w.damage.water);
 });
 

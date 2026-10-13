@@ -131,10 +131,11 @@ export function drawExpansion(g: Graphics, w: SurvivalWorld) {
       continue;
     }
     // This outer circle is always the actual damage boundary.
-    g.fillColor = color(COLORS[f.skill], denseFields ? 8 : f.skill === "void" ? 28 : 14);
+    const purified = w.combinations.ready("water") && (f.skill==="water"||f.skill==="poison");
+    g.fillColor = color(COLORS[f.skill], purified ? 4 : denseFields ? 8 : f.skill === "void" ? 28 : 14);
     g.strokeColor = color(COLORS[f.skill], denseFields ? 45 : 65); g.lineWidth = 1.5;
     g.circle(x, y, r); g.fill(); g.stroke();
-    if (denseFields && f.skill !== "void") {
+    if ((denseFields || purified) && f.skill !== "void") {
       // Keep every damage boundary, replace overlapping animated seals with a small glyph.
       g.strokeColor=color(COLORS[f.skill],100);g.lineWidth=2;
       if(f.skill === "water") {g.moveTo(x-6,y);g.lineTo(x+6,y);g.moveTo(x,y-8);g.lineTo(x,y+8);g.stroke();}
@@ -208,6 +209,19 @@ export function drawExpansion(g: Graphics, w: SurvivalWorld) {
         if (w.evolutions[f.skill]) { g.moveTo(x - r * .12, y + r * .1); g.lineTo(x + r * .12, y + r * .1); g.moveTo(x, y); g.lineTo(x, y - r * .18); g.stroke(); }
       }
     }
+  }
+  for(const seal of w.combinations.superWeapons.seals){
+    const x=seal.x*48,y=seal.y*48,r=seal.radius*48;
+    g.fillColor=color("#6effc1",18);g.strokeColor=color("#a8ffce",135);g.lineWidth=2;
+    g.circle(x,y,r);g.fill();g.stroke();
+    polygon(g,x,y,Math.min(16,r*.3),4,Math.PI/4);g.stroke();
+  }
+  for(const soul of w.combinations.superWeapons.souls){
+    const x=soul.x*48,y=soul.y*48;
+    g.strokeColor=color("#a9cfff",140);g.lineWidth=2;
+    g.moveTo(x-soul.vx*18,y-soul.vy*18);g.lineTo(x,y);g.stroke();
+    g.fillColor=color("#e0eaff",225);g.circle(x,y,5);g.fill();
+    g.strokeColor=color("#bd9cff",150);g.circle(x,y,8);g.stroke();
   }
   for (const m of w.expansion.mines) {
     const x = m.x * 48, y = m.y * 48, form = stage(w, "mine");

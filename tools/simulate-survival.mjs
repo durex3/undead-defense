@@ -64,7 +64,7 @@ for (const mode of profile === "classic"
         w.evolve(forms[alternate ? forms.length - 1 : 0].id);
         if (!firstEvolution) firstEvolution = w.time;
       }
-      if (firstCombo === null && w.evolutions[recipeMain]) firstCombo = Math.round(w.time);
+      if (firstCombo === null && w.combinations.ready(recipeMain)) firstCombo = Math.round(w.time);
       if (mode === "collector") {
         const distance = (p) => Math.hypot(p.x - w.player.x, p.y - w.player.y);
         const near = (list) =>

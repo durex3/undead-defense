@@ -124,17 +124,17 @@ export const EVOLUTIONS: Record<
     {
       id: "legion",
       name: "幽魂军团",
-      description: "四个幽灵分别寻找目标\n灵弹穿透并溅射；蝙蝠标记触发噬魂",
+      description: "四个幽灵分别寻找目标，灵弹穿透并溅射\n组合后：标记击杀释放追踪魂弹",
     },
-    { id: "hunters", name: "冥界双猎", description: "两名猎魂集中追击首领与精英\n高伤灵矛，无穿透溅射；蝙蝠标记触发噬魂" },
+    { id: "hunters", name: "冥界双猎", description: "两名猎魂集中追击首领与精英，高伤无溅射\n组合后：标记击杀释放追踪魂弹" },
   ],
   water: [
     {
       id: "spring",
       name: "净化圣泉",
-      description: "五重半径 2.8 的圣泉\n自动瞄准并减速；水毒重叠增伤50%",
+      description: "五重半径 2.8 的圣泉，自动瞄准并减速\n组合后：水毒交叠形成周期爆发法阵",
     },
-    { id: "tide", name: "随身圣潮", description: "圣潮跟随角色，保护近身范围\n覆盖较小，水毒重叠伤害提升50%" },
+    { id: "tide", name: "随身圣潮", description: "圣潮跟随角色，保护近身范围\n组合后：水毒交叠形成周期爆发法阵" },
   ],
   poison: [
     {

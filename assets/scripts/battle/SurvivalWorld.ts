@@ -461,6 +461,7 @@ export class SurvivalWorld {
       this.gold += e.summoned ? 0 : 1;
       this.weaponKills[attribution] = (this.weaponKills[attribution] || 0) + 1;
       this.expansion.onDeath(e, source);
+      this.combinations.onDeath(e);
       if (e.kind === "slime")
         for (let i = 0; i < 2; i++) {
           const child = this.addEnemy(
@@ -542,7 +543,8 @@ export class SurvivalWorld {
     this.autoSynthesize();
     if (this.openAutomaticBranch()) return;
     this.time += dt;
-    this.combinations.step();
+    this.combinations.step(dt);
+    if (!this.active) return;
     this.ultimate = Math.max(0, this.ultimate - dt);
     this.invulnerable = Math.max(0, this.invulnerable - dt);
     this.player.x = Math.max(

@@ -45,11 +45,11 @@ test('tide follows player while spring remains at its landing point',()=>{
   assert.equal(f.x,form==='tide'?8:x);assert.equal(w.expansion.fields.length,form==='tide'?1:5);
  }
 });
-test('water poison overlap adds fifty percent once even with overlapping fields',()=>{
+test('water poison overlap adds a purification pulse once even with duplicate fields',()=>{
  const damage=(poison)=>{const w=new SurvivalWorld();w.skills.water=w.skills.poison=10;w.evolutions.water='tide';const e=enemy(w,0);w.expansion.cast('water');w.expansion.cast('water');
   if(poison){w.expansion.field('poison',w.player,2,4,0);w.expansion.field('poison',w.player,2,4,0);}
   w.time=1;w.expansion.stepFields(0);return 100000-e.hp;};
- assert.ok(Math.abs(damage(true)/damage(false)-1.5)<1e-8);
+ assert.ok(Math.abs(damage(true)/damage(false)-2)<1e-8);
 });
 test('fire blade combination reaches enemies outside the original blast radius',()=>{
  const w=new SurvivalWorld();w.skills.fire=w.skills.blade=10;w.evolutions.fire='meteor';const e=enemy(w,3);

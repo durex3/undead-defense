@@ -1,13 +1,15 @@
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { MAX_SKILL_LEVEL, SYNTHESIS_RECIPES, Skill } from "./SurvivalConfig";
 import type { Effect, Enemy, Point } from "./SurvivalTypes";
+import { SuperWeaponSystem } from "./SuperWeaponSystem";
 
 export interface CombinationStats { damage: number; triggers: number; }
 /** Records only actual extra damage; normal weapon damage keeps its original attribution. */
 export class CombinationSystem {
   readonly stats: Partial<Record<Skill, CombinationStats>> = {};
-  private marks = new Map<string, { until: number; next: number; enemy: number }>();
-  constructor(private world: SurvivalWorld) {}
+  private marks = new Map<string, { until: number; deathUntil:number; next: number; enemy: number }>();
+  readonly superWeapons: SuperWeaponSystem;
+  constructor(private world: SurvivalWorld) {this.superWeapons=new SuperWeaponSystem(world);}
   ready(main: Skill) {
     const partner = SYNTHESIS_RECIPES[main];
     return !!partner && !!this.world.evolutions[main] && this.world.skills[main] >= MAX_SKILL_LEVEL && this.world.skills[partner] >= MAX_SKILL_LEVEL;
@@ -26,7 +28,7 @@ export class CombinationSystem {
     if (!this.ready(main) || enemy.hp <= 0 || enemy.state === "arriving") return;
     const key = main + ":" + enemy.id;
     const existing = this.marks.get(key);
-    this.marks.set(key, {enemy: enemy.id, until: this.world.time + 2, next: existing?.next ?? -Infinity});
+    this.marks.set(key, {enemy: enemy.id, until: this.world.time + 2, deathUntil:this.world.time+2, next: existing?.next ?? -Infinity});
   }
   marked(main: "ghost" | "scythe", enemy: Enemy) {
     return this.ready(main) && enemy.hp > 0 && (this.marks.get(main + ":" + enemy.id)?.until ?? -Infinity) > this.world.time;
@@ -44,12 +46,18 @@ export class CombinationSystem {
       this.trigger("scythe", "comboReap", enemy, 1.25);
     }
   }
-  step() {
+  onDeath(enemy:Enemy) {
+    const mark=this.marks.get("ghost:"+enemy.id);
+    if(mark && mark.deathUntil>this.world.time){this.marks.delete("ghost:"+enemy.id);this.superWeapons.releaseSouls(enemy);}
+  }
+  step(dt=0) {
+    this.superWeapons.stepSouls(dt);
     for (const [key, mark] of this.marks) {
-      if ((mark.until <= this.world.time && mark.next <= this.world.time) || !this.world.enemies.some(e=>e.id===mark.enemy && e.hp>0)) this.marks.delete(key);
+      if ((Math.max(mark.until,mark.deathUntil) <= this.world.time && mark.next <= this.world.time) || !this.world.enemies.some(e=>e.id===mark.enemy && e.hp>0)) this.marks.delete(key);
     }
   }
   remove(skill: Skill) {
+    this.superWeapons.remove(skill);
     if (["ghost", "bat", "scythe", "axe"].includes(skill)) {
       const main = skill === "ghost" || skill === "bat" ? "ghost" : "scythe";
       for (const key of this.marks.keys()) if (key.startsWith(main + ":")) this.marks.delete(key);

@@ -15,6 +15,18 @@ export function combinationRecipes(w: SurvivalWorld) {
     progress:`${w.skills[main]}/10＋${w.skills[SYNTHESIS_RECIPES[main]!]}/10`,
   }));
 }
+export function combatWeaponEntries(w:SurvivalWorld) {
+  const used=new Set<Skill>(),entries:string[]=[];
+  for(const skill of WEAPONS){
+    if(!w.skills[skill]||used.has(skill))continue;
+    const main=SYNTHESIS_RECIPES[skill]?skill:WEAPONS.find(s=>SYNTHESIS_RECIPES[s]===skill);
+    if(main&&w.combinations.ready(main)){
+      used.add(main);used.add(SYNTHESIS_RECIPES[main]!);
+      entries.push(`${COMBINATION_NAMES[main]} ∞`);
+    }else{used.add(skill);entries.push(`${NAMES[skill]} ${w.skills[skill]}级${weaponStatus(w,skill).icons}`);}
+  }
+  return entries;
+}
 
 /** Branch selection and two-weapon synergy are independent facts. */
 export function weaponStatus(w: SurvivalWorld, skill: Skill) {

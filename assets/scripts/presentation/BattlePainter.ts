@@ -725,7 +725,7 @@ export class BattlePainter {
         g.strokeColor = color("#c6a1ff", Math.round(a * 210));
         g.moveTo(x - 5, y + radius); g.lineTo(x + 5, y + 3); g.lineTo(x - 5, y - 3); g.lineTo(x + 5, y - radius); g.stroke();
       } else if (e.type === "comboPurify") {
-        const radius = 8 + (1 - a) * 26;
+        const radius = (e.radius || .65) * 48 * (.45 + (1-a)*.55);
         g.strokeColor = color("#a8ffce", Math.round(a * 210)); g.lineWidth = 2;
         for (let i = 0; i < 3; i++) {
           const angle = i * Math.PI * 2 / 3 + (1 - a);

@@ -45,14 +45,15 @@ test('combination sound gate limits crowds and gives final evolution priority',(
   assert.equal(feedbackCue({type:'hit'}),null);assert.equal(feedbackCue({type:'evolve',value:10}),null);
 });
 
-test('water poison cues honor the existing shared damage interval and real overlap',()=>{
+test('purification pulses use their own interval and require live overlapping fields',()=>{
   const w=new SurvivalWorld();w.skills.water=w.skills.poison=10;w.evolutions.water='tide';
   const e=w.addEnemy('minion',0,0);e.state='seek';e.hp=e.maxHp=100000;
   w.expansion.cast('water');w.expansion.cast('water');w.expansion.field('poison',w.player,2,4,0);w.time=1;
   w.expansion.stepFields(0);assert.equal(w.drain().filter(e=>e.type==='comboPurify').length,1);
   const hp=e.hp;w.expansion.stepFields(0);assert.equal(e.hp,hp);assert(!w.drain().some(e=>e.type==='comboPurify'));
-  w.time=1.5;w.expansion.stepFields(0);assert.equal(w.drain().filter(e=>e.type==='comboPurify').length,1);
-  w.expansion.remove('poison');w.time=2;w.expansion.stepFields(0);assert(!w.drain().some(e=>e.type==='comboPurify'));
+  w.time=1.5;w.expansion.stepFields(0);assert.equal(w.drain().filter(e=>e.type==='comboPurify').length,0);
+  w.time=2.2;w.expansion.stepFields(0);assert.equal(w.drain().filter(e=>e.type==='comboPurify').length,1);
+  w.expansion.remove('poison');w.time=3.4;w.expansion.stepFields(0);assert(!w.drain().some(e=>e.type==='comboPurify'));
 });
 
 test('new original audio clips are short, distinct PCM files with headroom and fading tails',()=>{
