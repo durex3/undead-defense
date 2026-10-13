@@ -91,13 +91,23 @@ export class UpgradeSystem {
     return WEAPONS.filter(s => this.world.skills[s] > 0).sort((a,b) => this.world.skills[b]-this.world.skills[a] || Number(b===starter)-Number(a===starter));
   }
   checkUpgrade() {
-    if (this.world.level < MAX_PLAYER_LEVEL && this.world.xp >= this.world.xpNeed) {
+    while (this.world.level < MAX_PLAYER_LEVEL && this.world.xp >= this.world.xpNeed) {
       this.world.xp -= this.world.xpNeed;
       this.world.level++;
       this.world.hp = Math.min(this.world.maxHp, this.world.hp + 5);
+      if (!this.legal().some(c => c !== "repair")) {
+        this.world.gold += 10;
+        const healing = Math.min(20, this.world.maxHp - this.world.hp);
+        this.world.hp += healing;
+        this.world.healing.repair += healing;
+        this.world.effects.push({ type: "supply", ...this.world.player, value: 10 });
+        this.world.touch();
+        continue;
+      }
       this.world.state = "upgrade";
       this.world.setMove(0, 0);
       this.roll();
+      return;
     }
   }
   legal(): Card[] {

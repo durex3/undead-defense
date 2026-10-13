@@ -69,7 +69,7 @@ export interface Effect extends Point {
   type: "boss" | "elite" | "bossPhase" | "summon" | "block" | "cast"
     | "comboGhost" | "comboReap" | "comboCollapse" | "comboBone" | "comboJudgment" | "comboSoul" | "comboPurify" | "comboFire" | "comboIce" | "fireImpact"
     | "death" | "eliteDown" | "evolve" | "explosion" | "heal" | "hit"
-    | "poison" | "hazard" | "learn" | "lightning" | "pickup" | "playerHit" | "ultimate";
+    | "poison" | "hazard" | "learn" | "lightning" | "pickup" | "playerHit" | "ultimate" | "supply";
   endX?: number;
   endY?: number;
   value?: number;

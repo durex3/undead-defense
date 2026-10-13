@@ -40,7 +40,7 @@ test('midgame fodder health stops inflating while special enemies retain progres
 });
 test('a completed main/support build clears the identical fifty-enemy wave substantially faster',()=>{
  function clearTime(blade,fire){
-  const w=new SurvivalWorld(22);w.time=120;w.level=60;w.invulnerable=999;w.skills.blade=blade;w.skills.fire=fire;
+  const w=new SurvivalWorld(22);w.time=120;w.level=64;w.invulnerable=999;w.skills.blade=blade;w.skills.fire=fire;
   w.director.nextGroup=1e9;w.director.nextSpecial=1e9;w.director.elites=[true,true];
   for(let i=0;i<50;i++){const a=i*Math.PI*2/50;w.addEnemy('minion',Math.cos(a)*3.5,Math.sin(a)*3.5);}
   for(let i=0;i<300;i++){if(w.state==='evolution')w.back();w.step(1/60);w.drain();if(w.kills===50)return (i+1)/60;}

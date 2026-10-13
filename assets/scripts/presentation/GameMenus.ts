@@ -79,7 +79,7 @@ export class GameMenus {
     const count = this.host.progress.data.achievements.length;
     this.host.text(
       this.host.overlay,
-      `成就 ${count}/${ACHIEVEMENTS.length} · 武器槽 ${this.host.progress.weaponSlots}/6 · 5槽：8成就+第三关；6槽：14成就+第五关`,
+      `成就 ${count}/${ACHIEVEMENTS.length} · 六个武器槽已开放 · 组合伙伴仍占槽位`,
       0,
       174,
       20,
@@ -145,7 +145,7 @@ export class GameMenus {
       this.host.overlay,
       this.host.progress.pending
         ? "进度暂未保存，将自动重试"
-        : this.host.touchMode ? "左侧拖动移动 · 右下角全收经验 · 8 分钟迎战首领 · 上限60级" : "WASD 移动 · 空格全收经验 · 8 分钟迎战首领 · 上限60级",
+        : this.host.touchMode ? "左侧拖动移动 · 右下角全收经验 · 8 分钟迎战首领 · 上限64级" : "WASD 移动 · 空格全收经验 · 8 分钟迎战首领 · 上限64级",
       0,
       guide ? -220 : -194,
       16,
@@ -306,7 +306,7 @@ export class GameMenus {
         this.host.overlay,
         progress
           ? `${progress.locked ? "已锁定" : "推荐组合"} · ${names[progress.main]} ${w.skills[progress.main]}/10 + ${names[progress.partner]} ${w.skills[progress.partner]}/10 · 还需 ${progress.remaining} 次武器升级`
-          : `主修 ${names[w.buildWeapons[0]]} · 4级小成 / 7级觉醒 / 10级终式`,
+          : `武器 ${w.weaponCount}/${w.weaponSlots} · 组合伙伴仍占槽位 · 满槽可在暂停商店回收换装`,
         0,
         162,
         18,

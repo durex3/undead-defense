@@ -87,8 +87,7 @@ export class ProgressStore {
     );
   }
   get weaponSlots(): number {
-    const n = this.data.achievements.length;
-    return n >= 14 && this.data.stages.includes(5) ? 6 : n >= 8 && this.data.stages.includes(3) ? 5 : 4;
+    return 6;
   }
   unlockedCharacter(id: CharacterId) {
     const c = CHARACTERS[id];

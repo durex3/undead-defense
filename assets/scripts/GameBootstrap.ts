@@ -733,6 +733,10 @@ export class GameBootstrap extends Component {
     }
     for (const e of events) {
       if (e.type === "hit" && e.id) this.flashes.set(e.id, w.time + 0.09);
+      if (e.type === "supply") {
+        this.announcement.string = "装备已满级 · 金币 +10 · 自动恢复生命";
+        this.announcementLife = 2.2;
+      }
       if (e.type === "playerHit") {
         this.shake = Math.max(this.shake, 5);
         this.announcement.string = `受伤 −${Math.round(e.value || 0)} · ${battleReport(w).deathSource}`;

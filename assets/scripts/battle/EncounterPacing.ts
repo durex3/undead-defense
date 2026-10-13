@@ -1,5 +1,5 @@
 export const BOSS_TIME = 480;
-export const MAX_PLAYER_LEVEL = 60;
+export const MAX_PLAYER_LEVEL = 64;
 /** Authored encounter beats use a four-minute score stretched over eight minutes. */
 export const encounterTime = (time: number) => time / 2;
 export function encounterBeat(time: number): {

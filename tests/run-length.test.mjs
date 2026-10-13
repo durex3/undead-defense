@@ -16,16 +16,16 @@ test('opening offers three distinct roles, freezes the world, chooses exactly on
  assert(seen.size>=3);
 });
 test('all ten stages summon at eight minutes, not four, and keep the pre-boss respite',()=>{
- assert.equal(BOSS_TIME,480);assert.equal(MAX_PLAYER_LEVEL,60);
+ assert.equal(BOSS_TIME,480);assert.equal(MAX_PLAYER_LEVEL,64);
  for(let stage=1;stage<=10;stage++){
   const w=new SurvivalWorld(19,'ranger',stage);w.time=240;w.director.step(w,0);assert(!w.enemies.some(e=>e.kind==='boss'));
   w.enemies=[];w.time=470;assert(encounterBeat(w.time).rest);w.director.step(w,0);assert.equal(w.enemies.length,0);
   w.time=480;w.director.step(w,0);assert.equal(w.enemies.filter(e=>e.kind==='boss').length,1);
  }
 });
-test('level sixty is attainable and excess XP cannot open a sixty-first upgrade',()=>{
- const w=new SurvivalWorld();w.level=59;w.xp=w.xpNeed;w.checkUpgrade();assert.equal(w.level,60);assert.equal(w.state,'upgrade');
- w.choose(w.cards[0]);w.xp=10000;w.checkUpgrade();assert.equal(w.level,60);assert.equal(w.state,'battle');
+test('level sixty-four is attainable and excess XP cannot open a sixty-fifth upgrade',()=>{
+ const w=new SurvivalWorld();w.level=63;w.xp=w.xpNeed;w.checkUpgrade();assert.equal(w.level,64);assert.equal(w.state,'upgrade');
+ w.choose(w.cards[0]);w.xp=10000;w.checkUpgrade();assert.equal(w.level,64);assert.equal(w.state,'battle');
 });
 test('full six-weapon combinations cannot safely stand still against later bosses',()=>{
  for(const stage of [5,6,7,8,9,10]){
