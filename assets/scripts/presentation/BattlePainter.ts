@@ -891,7 +891,7 @@ export class BattlePainter {
           g.circle(x + 31, y + 23, 2 + flash * 2);
           g.fill();
         } else {
-          const d = (w.time - h.due) * 4.5 * 48,
+          const d = (w.time - h.due) * (h.projectileSpeed ?? 4.5) * 48,
             ax = x + dx * d,
             ay = y + dy * d;
           g.lineWidth = 4;

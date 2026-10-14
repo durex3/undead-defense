@@ -3,17 +3,17 @@ import assert from "node:assert/strict";
 import {SurvivalWorld} from "../temp/tests/battle/SurvivalWorld.mjs";
 import {stepEnemies, stepHazards} from "../temp/tests/battle/EnemySystem.mjs";
 
-test("early-stage ranged pressure preserves opening and fodder, and stops growing", () => {
+test("early-stage ranged pressure doubles ranged health and preserves fodder, and stops growing", () => {
   const hp = (time, kind, stage=2) => {
     const w=new SurvivalWorld(19,"ranger",stage);w.time=time;
     return w.addEnemy(kind,6,0).hp;
   };
-  assert.equal(hp(0,"mage"),30*.9*1.2);
-  assert.equal(hp(90,"mage"),30*1.3*.9*1.2);
+  assert.equal(hp(0,"mage"),30*1.8*1.2);
+  assert.equal(hp(90,"mage"),30*1.3*1.8*1.2);
   assert.equal(hp(90,"minion"),hp(450,"minion"));
   assert.equal(hp(270,"mage"),hp(450,"mage"));
-  assert.equal(hp(450,"mage",3),30*1.8*.9*1.32);
-  assert.equal(hp(450,"executioner"),30*1.8*10*1.25);
+  assert.equal(hp(450,"mage",3),30*1.8*1.8*1.32);
+  assert.equal(hp(450,"executioner"),30*1.8*20*1.25);
 });
 
 function directorWorld(time) {
@@ -44,11 +44,11 @@ test("mage warning locks its target, permits escape and can be cancelled by kill
     const w=new SurvivalWorld(19,"ranger",2);w.time=270;
     const e=w.addEnemy("mage",6,0);e.attack=0;e.visibleSince=268;
     stepEnemies(w,0);assert.equal(w.hazards.length,1);
-    const h=w.hazards[0];assert.ok(Math.abs(h.due-w.time-1.1)<1e-9);
+    const h=w.hazards[0];assert.ok(Math.abs(h.due-w.time-.55)<1e-9);
     if(response==="move") w.player.y=2;
     if(response==="kill") w.hit(e,10000,"lightning");
     w.time=h.due+.01;stepHazards(w);
-    assert.equal(w.hp,response==="stand"?86.8:100);
+    assert.equal(w.hp,response==="stand"?73.6:100);
     assert.equal(h.x,0);assert.equal(h.y,0);
   }
 });

@@ -1,5 +1,5 @@
 import type { StoragePort } from './SaveStore';
-export const PLAY_VERSION = '朋友试玩版 0.17.2';
+export const PLAY_VERSION = '朋友试玩版 0.17.3';
 export type Lesson = 'move' | 'xp' | 'upgrade' | 'nova' | 'elite';
 const lessons: Lesson[] = ['move', 'xp', 'upgrade', 'nova', 'elite'];
 export class PlayPreferences {

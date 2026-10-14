@@ -1,3 +1,4 @@
+import { enemyAttackRate, enemyDamage, enemyRecoveryRate } from "./SurvivalConfig";
 import type { SurvivalWorld } from './SurvivalWorld';
 import { Enemy, Hazard, Point, distance } from './SurvivalTypes';
 import { Kind, ENEMIES, isElite } from './SurvivalConfig';
@@ -69,7 +70,8 @@ export class FrontierDirector {
   }
 }
 function base(w:SurvivalWorld,e:Enemy,delay:number):Hazard {
-  return {id:w.id(),source:e.id,kind:'frontierImpact',x:0,y:0,angle:0,radius:0,width:0,created:w.time,due:w.time+delay,until:w.time+delay+.3,damage:e.kind==='boss'?18:10,fixedDamage:true,fired:false,next:0};
+  delay /= enemyAttackRate(e.kind);
+  return {id:w.id(),source:e.id,kind:'frontierImpact',x:0,y:0,angle:0,radius:0,width:0,created:w.time,due:w.time+delay,until:w.time+delay+.3/enemyAttackRate(e.kind),damage:enemyDamage(e.kind,e.kind==='boss'?18:10),fixedDamage:true,fired:false,next:0};
 }
 function circle(w:SurvivalWorld,e:Enemy,p:Point,radius:number,delay:number,label:string):Hazard {
   return {...base(w,e,delay),x:p.x,y:p.y,radius,damageLabel:label};
@@ -131,13 +133,13 @@ export function stepFrontierEnemy(w:SurvivalWorld,e:Enemy,dt:number) {
   const d=distance(e,w.player),roles=FRONTIER_ROLES[w.stageId],guard=e.kind===roles[0],map=frontierMap(w.stageId);
   if(e.state==='windup'){
     if(d<1.5||!w.visible(e,.3)){w.hazards=w.hazards.filter(h=>h.source!==e.id||h.fired);recover(e,1.8);return;}
-    e.timer-=dt;if(e.timer<=1e-6)recover(e,e.frontierRecovery||1.8);return;
+    e.timer-=dt*enemyRecoveryRate(e.kind,e.state);if(e.timer<=1e-6)recover(e,e.frontierRecovery||1.8);return;
   }
-  if(e.state==='recover'){e.timer-=dt;if(e.timer<=0){e.state='seek';e.attack=6;}return;}
-  e.attack-=dt;e.facing=Math.atan2(w.player.y-e.y,w.player.x-e.x);
+  if(e.state==='recover'){e.timer-=dt*enemyRecoveryRate(e.kind,e.state);if(e.timer<=0){e.state='seek';e.attack=6;}return;}
+  e.attack-=dt*enemyAttackRate(e.kind);e.facing=Math.atan2(w.player.y-e.y,w.player.x-e.x);
   const target=guard&&e.frontierTarget&&(e.frontierUntil||0)>w.time?e.frontierTarget:w.player;
   if(d>(guard?.6:5.5)&&distance(e,target)>.15){const a=map.heading(e,target),s=ENEMIES[e.kind].speed*(e.slowUntil>w.time?1-e.slow:1);e.x+=Math.cos(a)*s*dt;e.y+=Math.sin(a)*s*dt;}
-  if(d<.65)w.hurt(8,e.kind);
+  if(d<.65)w.hurt(enemyDamage(e.kind,8),e.kind);
   if(guard||e.attack>0||e.visibleSince<0||w.time-e.visibleSince<1||!w.visible(e,.3)||d<1.5||d>8)return;
   if(!castFrontier(w,e))e.attack=.5;
 }

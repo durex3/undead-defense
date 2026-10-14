@@ -27,7 +27,7 @@ export function crownAreaHit(h: Hazard,p: Point) {
 function timedHit(h: Hazard,p: Point,time:number) {
  const age=Math.max(0,time-h.due), dx=Math.cos(h.angle),dy=Math.sin(h.angle);
  if(h.kind==='arrow'||h.kind==='line'){
-  const speed=h.kind==='arrow'?4.5:h.radius/(h.until-h.due);
+  const speed=h.kind==='arrow'?(h.projectileSpeed??4.5):h.radius/(h.until-h.due);
   const a=Math.max(0,age-.05)*speed,b=Math.min(h.radius,age*speed);
   return segmentDistance(p,{x:h.x+dx*a,y:h.y+dy*a},{x:h.x+dx*b,y:h.y+dy*b})<(h.kind==='arrow'?(h.fixedDamage?h.width:.4):h.damageLabel==='拖锚冲锋'?.95:.75);
  }

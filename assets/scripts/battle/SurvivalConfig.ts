@@ -559,3 +559,21 @@ export function isElite(kind: Kind) {
 export function isLarge(kind: Kind) {
   return kind === "boss" || isElite(kind);
 }
+
+/** Ranged attackers include projectile shooters and ranged ground/beam casters. */
+export const RANGED_ENEMIES: readonly Kind[] = [
+  "mage", "archer", "anchorhand", "crossbowman", "starweaver",
+  "lineworker", "hammerer", "prismarcher", "mirrorpriest", "tidecaller", "echoferryman",
+];
+export function enemyAttackRate(kind: Kind) { return RANGED_ENEMIES.includes(kind) ? 2 : 1; }
+export function enemyDamage(kind: Kind, amount: number) {
+  return amount * (isElite(kind) || RANGED_ENEMIES.includes(kind) ? 2 : 1);
+}
+// Apply once to the shared spawn/contact config; overlap never compounds to four times.
+for (const kind of ENEMY_KINDS) {
+  if (!isElite(kind) && !RANGED_ENEMIES.includes(kind)) continue;
+  ENEMIES[kind].health *= 2;
+  ENEMIES[kind].contact *= 2;
+}
+
+export function enemyRecoveryRate(kind: Kind, state: string) { return state === "recover" ? enemyAttackRate(kind) : 1; }

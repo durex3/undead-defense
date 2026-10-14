@@ -1,3 +1,4 @@
+import { enemyAttackRate, enemyDamage, enemyRecoveryRate } from "./SurvivalConfig";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import {
   Enemy,
@@ -166,9 +167,9 @@ function anchor(w: SurvivalWorld, e: Enemy, radius: number, damage: number) {
     width: 0,
     angle: 0,
     created: w.time,
-    due: w.time + 1.4,
-    until: w.time + 1.65,
-    damage,
+    due: w.time + 1.4 / enemyAttackRate(e.kind),
+    until: w.time + 1.65 / enemyAttackRate(e.kind),
+    damage: enemyDamage(e.kind,damage),
     fixedDamage: true,
     damageLabel: e.kind === "boss" ? "船长抛锚" : "投锚落击",
     fired: false,
@@ -177,7 +178,7 @@ function anchor(w: SurvivalWorld, e: Enemy, radius: number, damage: number) {
   if (!crownEscape(w, [h])) return false;
   w.hazards.push(h);
   e.state = "windup";
-  e.timer = 1.65;
+  e.timer = 1.65 / enemyAttackRate(e.kind);
   e.bossAction = "anchor";
   return true;
 }
@@ -188,7 +189,7 @@ export function stepHarborEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
       e.state = "recover";
       e.timer = 1.2;
     } else {
-      e.timer -= dt;
+      e.timer -= dt * enemyRecoveryRate(e.kind,e.state);
       if (e.timer <= 0) {
         if (e.state === "windup") {
           e.state = "recover";
@@ -202,7 +203,7 @@ export function stepHarborEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
     return;
   }
   const d = distance(e, w.player);
-  e.attack -= dt;
+  e.attack -= dt * enemyAttackRate(e.kind);
   const target =
     e.harborTarget && (e.harborUntil || 0) > w.time ? e.harborTarget : w.player;
   const a = harborHeading(e, target),
@@ -212,7 +213,7 @@ export function stepHarborEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
     e.x += Math.cos(a) * ENEMIES[e.kind].speed * slow * dt;
     e.y += Math.sin(a) * ENEMIES[e.kind].speed * slow * dt;
   }
-  if (d < 0.7) w.hurt(8, e.kind);
+  if (d < 0.7) w.hurt(enemyDamage(e.kind,8), e.kind);
   if (
     e.kind === "anchorhand" &&
     d > 1.5 &&

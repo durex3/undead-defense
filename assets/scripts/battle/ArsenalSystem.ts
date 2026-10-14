@@ -1,3 +1,4 @@
+import { enemyAttackRate, enemyDamage, enemyRecoveryRate } from "./SurvivalConfig";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Enemy, Hazard, Point, distance } from "./SurvivalTypes";
 import { ENEMIES, isElite } from "./SurvivalConfig";
@@ -161,7 +162,7 @@ export class ArsenalDirector {
 function attack(w: SurvivalWorld, e: Enemy, sweep = false) {
   if (w.hazards.length >= 2) return false;
   const boss = e.kind === "boss",
-    delay = sweep ? 1.3 : boss ? 1.4 : 1.35;
+    delay = (sweep ? 1.3 : boss ? 1.4 : 1.35) / enemyAttackRate(e.kind);
   const h: Hazard = {
     id: w.id(),
     source: e.id,
@@ -173,8 +174,9 @@ function attack(w: SurvivalWorld, e: Enemy, sweep = false) {
     width: sweep ? (Math.PI * 100) / 180 : boss ? 0.55 : 0.4,
     created: w.time,
     due: w.time + delay,
-    until: w.time + delay + (sweep ? 0.2 : 2),
-    damage: boss ? 18 : 10,
+    until: w.time + delay + (sweep ? 0.2 : 2) / enemyAttackRate(e.kind),
+    damage: enemyDamage(e.kind,boss ? 18 : 10),
+    projectileSpeed: sweep ? undefined : 4.5 * enemyAttackRate(e.kind),
     fixedDamage: true,
     damageLabel: sweep ? "统领破阵横扫" : boss ? "统领贯阵弩击" : "裂甲弩矢",
     fired: false,
@@ -203,7 +205,7 @@ export function stepArsenalEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
       e.state = "recover";
       e.timer = 1.2;
     } else {
-      e.timer -= dt;
+      e.timer -= dt * enemyRecoveryRate(e.kind,e.state);
       if (e.timer <= 0) {
         if (e.state === "windup") {
           e.state = "recover";
@@ -219,7 +221,7 @@ export function stepArsenalEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
       move(w, e, w.player, dt, 1);
     return;
   }
-  e.attack -= dt;
+  e.attack -= dt * enemyAttackRate(e.kind);
   e.facing = Math.atan2(w.player.y - e.y, w.player.x - e.x);
   const target =
     e.arsenalTarget && (e.arsenalUntil || 0) > w.time
@@ -229,7 +231,7 @@ export function stepArsenalEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
     e.kind === "crossbowman" ? 7 : e.kind === "standardbearer" ? 5 : 0.6;
   if (d > stop && distance(e, target) > 0.15)
     move(w, e, target, dt, arsenalAura(w, e));
-  if (d < 0.65) w.hurt(8, e.kind);
+  if (d < 0.65) w.hurt(ENEMIES[e.kind].contact, e.kind);
   if (
     e.visibleSince < 0 ||
     w.time - e.visibleSince < 1 ||

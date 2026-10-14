@@ -36,8 +36,8 @@ test('formation and sidecut targets lock, expire and remain controllable without
  w.pause('test',true);const t=w.time;w.step(2);assert.equal(w.time,t);
 });
 test('anchor locks its circle, warns fully, damages once and cancels when approached or killed',()=>{
- const w=world();w.time=10;const e=enemy(w,'anchorhand',5);e.attack=0;stepEnemies(w,0);assert.equal(w.hazards.length,1);const h=w.hazards[0];assert.equal(h.due,11.4);assert.equal(h.radius,1.1);
- w.time=11.39;stepHazards(w);assert.equal(w.hp,100);w.time=11.4;stepHazards(w);assert.equal(w.hp,90);w.invulnerable=0;stepHazards(w);assert.equal(w.hp,90);
+ const w=world();w.time=10;const e=enemy(w,'anchorhand',5);e.attack=0;stepEnemies(w,0);assert.equal(w.hazards.length,1);const h=w.hazards[0];assert.equal(h.due,10.7);assert.equal(h.radius,1.1);
+ w.time=10.69;stepHazards(w);assert.equal(w.hp,100);w.time=10.7;stepHazards(w);assert.equal(w.hp,80);w.invulnerable=0;stepHazards(w);assert.equal(w.hp,80);
  const q=world();q.time=10;const a=enemy(q,'anchorhand',5);a.attack=0;stepEnemies(q,0);q.player.x=4;stepEnemies(q,0);assert.equal(q.hazards.length,0);assert.equal(a.state,'recover');
  const r=world();r.time=10;const b=enemy(r,'anchorhand',5);b.attack=0;stepEnemies(r,0);b.hp=0;stepHazards(r);assert.equal(r.hazards.length,0);
 });

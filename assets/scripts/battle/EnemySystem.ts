@@ -19,7 +19,7 @@ import {
   angleDelta,
   segmentDistance,
 } from "./SurvivalTypes";
-import { ENEMIES, isLarge } from "./SurvivalConfig";
+import { ENEMIES, isLarge, enemyAttackRate, enemyDamage } from "./SurvivalConfig";
 function hazard(
   w: SurvivalWorld,
   e: Enemy,
@@ -34,6 +34,9 @@ function hazard(
     (kind === "line" && w.hazards.some((h) => h.kind === "line"))
   )
     return false;
+  const rate = enemyAttackRate(e.kind);
+  delay /= rate;
+  if(kind === "arrow") duration /= rate;
   const id = w.id();
   w.hazards.push({
     id,
@@ -52,7 +55,8 @@ function hazard(
     created: w.time,
     due: w.time + delay,
     until: w.time + delay + duration,
-    damage,
+    damage: enemyDamage(e.kind,damage),
+    projectileSpeed: kind === "arrow" ? 4.5 * rate : undefined,
     fired: false,
     next: 0,
   });
@@ -138,7 +142,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       );
       if (segmentDistance(w.player, old, e) < 0.7)
         w.hurt(
-          e.kind === "charger" ? 16 : e.kind === "wisp" ? 8 : 14,
+          enemyDamage(e.kind,e.kind === "charger" ? 16 : e.kind === "wisp" ? 8 : 14),
           e.kind + "冲锋",
         );
       e.timer -= dt;
@@ -149,7 +153,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
         e.combo++;
       }
     } else if (e.state === "recover") {
-      e.timer -= dt;
+      e.timer -= dt * enemyAttackRate(e.kind);
       if (e.timer <= 0) {
         e.state = "seek";
         e.attack =
@@ -164,7 +168,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
                   : 2.2;
       }
     } else {
-      e.attack -= dt;
+      e.attack -= dt * enemyAttackRate(e.kind);
       let speed = ENEMIES[e.kind].speed * (w.stageId===9?arsenalAura(w,e):1);
       if (e.kind === "rogue") {
         const phase = (w.time - e.born) % 2;
@@ -341,8 +345,9 @@ export function stepHazards(w: SurvivalWorld) {
     }
     if (h.kind === "line") continue;
     if (h.kind === "arrow") {
-      const previous = Math.max(0, h.next - h.due) * 4.5;
-      const current = Math.min(h.radius, (w.time - h.due) * 4.5);
+      const speed = h.projectileSpeed ?? 4.5;
+      const previous = Math.max(0, h.next - h.due) * speed;
+      const current = Math.min(h.radius, (w.time - h.due) * speed);
       const a = {
         x: h.x + Math.cos(h.angle) * previous,
         y: h.y + Math.sin(h.angle) * previous,

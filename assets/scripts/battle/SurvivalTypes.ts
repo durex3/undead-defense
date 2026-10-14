@@ -98,6 +98,7 @@ export interface Ring extends Point {
   freeze: boolean;
 }
 export interface Hazard extends Point {
+  projectileSpeed?: number;
   sequence?: number;
   endX?: number;
   endY?: number;

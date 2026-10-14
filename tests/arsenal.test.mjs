@@ -153,9 +153,9 @@ test("crossbow locks its line, fixed damage hits once, fired projectile survives
   stepEnemies(w, 0);
   const h = w.hazards[0];
   assert(h);
-  assert.equal(h.due, 11.35);
+  assert.equal(h.due, 10.675);
   assert.equal(h.angle, Math.PI);
-  assert.equal(h.damage, 10);
+  assert.equal(h.damage, 20);
   w.player.y = 2;
   stepEnemies(w, 0.1);
   assert.equal(h.angle, Math.PI);
@@ -164,12 +164,12 @@ test("crossbow locks its line, fixed damage hits once, fired projectile survives
   stepHazards(w);
   assert(h.fired);
   e.hp = 0;
-  w.time = h.due + 1.12;
+  w.time = h.due + 0.57;
   stepHazards(w);
-  assert.equal(w.hp, 90);
+  assert.equal(w.hp, 80);
   w.invulnerable = 0;
   stepHazards(w);
-  assert.equal(w.hp, 90);
+  assert.equal(w.hp, 80);
 });
 test("crossbow cancellation, full freeze delay and pause retain fair warning", () => {
   const w = world();

@@ -190,7 +190,7 @@ test("archer locks a telegraphed arrow and moving sideways dodges it", () => {
   stepEnemies(w, 1 / 60);
   const h = w.hazards[0];
   assert.equal(h.kind, "arrow");
-  assert.ok(Math.abs(h.due - w.time - 0.65) < 1e-6);
+  assert.ok(Math.abs(h.due - w.time - 0.325) < 1e-6);
   stepHazards(w);
   assert.equal(w.hp, 100);
   w.player.y = 2;
@@ -208,7 +208,7 @@ test("archer locks a telegraphed arrow and moving sideways dodges it", () => {
     hit.time += 1 / 60;
     stepHazards(hit);
   }
-  assert.equal(hit.hp, 90);
+  assert.equal(hit.hp, 80);
 });
 test("banshee uses a fixed 70-degree cone and wisp shares the single charge permit", () => {
   const w = make();

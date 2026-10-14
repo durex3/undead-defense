@@ -237,7 +237,7 @@ test("telegraphed mage hazard can be dodged and is cancelled on caster death", (
   stepEnemies(w, 1 / 60);
   assert.equal(w.hazards.length, 1);
   w.player = { x: 0, y: 4 };
-  w.time += 1.2;
+  w.time += 0.56;
   stepHazards(w);
   assert.equal(w.hp, 100);
   w.hazards[0].until = w.time + 2;

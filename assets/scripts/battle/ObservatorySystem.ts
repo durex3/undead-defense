@@ -1,3 +1,4 @@
+import { enemyAttackRate, enemyDamage, enemyRecoveryRate } from "./SurvivalConfig";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Enemy, Hazard, Point, distance } from "./SurvivalTypes";
 import { ENEMIES, isElite } from "./SurvivalConfig";
@@ -173,6 +174,8 @@ function baseHazard(
   duration: number,
 ): Hazard {
   const boss = e.kind === "boss";
+  delay /= enemyAttackRate(e.kind);
+  duration /= enemyAttackRate(e.kind);
   return {
     id: w.id(),
     source: e.id,
@@ -185,7 +188,7 @@ function baseHazard(
     created: w.time,
     due: w.time + delay,
     until: w.time + delay + duration,
-    damage: boss ? 18 : 10,
+    damage: enemyDamage(e.kind,boss ? 18 : 10),
     fixedDamage: true,
     fired: false,
     next: 0,
@@ -210,7 +213,7 @@ export function castStarTrace(w: SurvivalWorld, e: Enemy, count = 1) {
   if (!crownEscape(w, hazards)) return "blocked";
   w.hazards.push(...hazards);
   e.state = "windup";
-  e.timer = delay + 0.6;
+  e.timer = (delay + 0.6) / enemyAttackRate(e.kind);
   if (boss) e.bossAction = "starTrace";
   return "cast";
 }
@@ -303,7 +306,7 @@ export function stepObservatoryEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
       recover(e, 1.5);
       return;
     }
-    e.timer -= dt;
+    e.timer -= dt * enemyRecoveryRate(e.kind,e.state);
     if (e.timer <= 1e-6) {
       if (e.kind === "starpuppet") {
         e.state = "charge";
@@ -314,7 +317,7 @@ export function stepObservatoryEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
     return;
   }
   if (e.state === "recover") {
-    e.timer -= dt;
+    e.timer -= dt * enemyRecoveryRate(e.kind,e.state);
     if (e.timer <= 0) {
       e.state = "seek";
       e.attack = e.kind === "starweaver" ? 6 : 3;
@@ -324,14 +327,14 @@ export function stepObservatoryEnemy(w: SurvivalWorld, e: Enemy, dt: number) {
   const target =
     e.starTarget && (e.starUntil || 0) > w.time ? e.starTarget : w.player;
   e.facing = Math.atan2(w.player.y - e.y, w.player.x - e.x);
-  e.attack -= dt;
+  e.attack -= dt * enemyAttackRate(e.kind);
   if (d > (e.kind === "starweaver" ? 6 : 0.6) && distance(e, target) > 0.15) {
     const a = observatoryHeading(e, target),
       s = ENEMIES[e.kind].speed * (e.slowUntil > w.time ? 1 - e.slow : 1);
     e.x += Math.cos(a) * s * dt;
     e.y += Math.sin(a) * s * dt;
   }
-  if (d < 0.65) w.hurt(8, e.kind);
+  if (d < 0.65) w.hurt(enemyDamage(e.kind,8), e.kind);
   if (
     e.kind === "starpatrol" ||
     e.attack > 0 ||
