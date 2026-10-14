@@ -188,11 +188,11 @@ export const EVOLUTIONS: Record<
 export function independentBranch(skill: Skill, form?: string) {
   return !!form && EVOLUTIONS[skill][1]?.id === form;
 }
-const DESCRIPTIONS: Record<Skill, string[]> = {
+export const DESCRIPTIONS: Record<Skill, string[]> = {
   water: [
-    "每 4 秒向前投出圣水\n形成持续净化区域",
+    "每 3 秒向前投出圣水\n形成持续净化区域",
     "圣水瓶 1 → 2 瓶\n左右落点打开通路",
-    "半径 1.3 → 1.6\n持续 3 → 4 秒",
+    "半径 1.6 → 1.9\n持续 4 → 5 秒",
     "圣水瓶 2 → 3 瓶\n形成短走廊，重叠不叠伤",
   ],
   poison: [
