@@ -1,3 +1,5 @@
+import { SandSystem, sandEnemy } from "./SandSystem";
+import { SiegeSystem, siegeEnemy, siegeProjectileFactor } from "./SiegeSystem";
 import {BOSS_REINFORCEMENT_XP} from "./HordePressure";
 import {frontierEnemy} from "./FrontierSystem";
 import {experienceRequired} from "./ExperienceCurve";
@@ -34,6 +36,8 @@ import { stepEnemies, stepHazards } from "./EnemySystem";
 import { ExpansionWeapons, EXPANSION_SKILLS } from "./ExpansionWeapons";
 export type { Enemy, Shot, Effect } from "./SurvivalTypes";
 export class SurvivalWorld {
+  siege=new SiegeSystem(this);
+  sand=new SandSystem(this);
   starPath=new ObservatoryPath();
   enemies: Enemy[] = [];
   shots: Shot[] = [];
@@ -133,6 +137,7 @@ export class SurvivalWorld {
     public stageId: StageId = 1,
     public weaponSlots = 4,
   ) {
+    if(stageId===15)this.player={x:0,y:-8};
     this.furnaceRoute = furnaceRoute(seed);
     this.seed = seed;
     this.skills.blade = 0;
@@ -350,7 +355,7 @@ export class SurvivalWorld {
     const hp =
       kind === "boss"
         ? c.health * STAGES[this.stageId].bossHealth * 8
-        : 30 * (1 + Math.min(this.time, ["forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
+        : 30 * (1 + Math.min(this.time, ["sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health) *
           (this.stageId <= 2 && ["mage", "archer"].includes(kind)
             ? 1 + Math.min(2, Math.max(0, this.time - 90) / 90) : 1);
@@ -392,6 +397,7 @@ export class SurvivalWorld {
         (e) =>
           e.hp > 0 &&
           e.state !== "arriving" &&
+          !e.sand?.buried &&
           distance(e, origin) < range &&
           !exclude.includes(e.id),
       )
@@ -401,7 +407,7 @@ export class SurvivalWorld {
       )[0];
   }
   near(p: Point, r: number) {
-    return this.enemies.filter((e) => e.hp > 0 && distance(e, p) <= r);
+    return this.enemies.filter((e) => e.hp > 0 && !e.sand?.buried && distance(e, p) <= r);
   }
   hurt(amount: number, source: string, scale = true) {
     if (this.invulnerable > 0 || this.hp <= 0) return;
@@ -427,9 +433,11 @@ export class SurvivalWorld {
     direct = true,
     combination?: Skill,
     extraFraction = 1,
+    projectile = false,
+    ongoing = false,
   ) {
-    if (e.hp <= 0 || e.state === "arriving") return;
-    let amount = base * (bossExposed(this, e) ? 1.25 : 1);
+    if (e.hp <= 0 || e.state === "arriving" || (e.sand?.buried && !ongoing)) return;
+    let amount = base * (bossExposed(this, e)&&!(this.stageId===14&&e.siegeWall) ? 1.25 : 1);
     if (WEAPONS.includes(source as Skill)) {
       const rank = this.skills[source as Skill];
       amount *= rankDamage(rank);
@@ -451,7 +459,18 @@ export class SurvivalWorld {
         this.effects.push({ type: "block", x: e.x, y: e.y });
       }
     }
+    if(projectile) {
+      const factor=siegeProjectileFactor(this,e,origin);
+      amount*=factor;if(factor<1)this.effects.push({type:"block",...e});
+    }
     amount *= lateStageDamage(this, e, direct);
+    if(this.stageId===14){
+      if(e.siegeWall&&e.state==='recover'&&isLarge(e.kind))amount*=1.25;
+      if((e.siegeShield??0)>0&&(e.siegeShieldUntil??0)>this.time&&this.enemies.some(o=>o.id===e.siegeShieldOwner&&o.hp>0)){
+        const absorbed=Math.min(amount,e.siegeShield!);e.siegeShield!-=absorbed;amount-=absorbed;
+      }
+    }
+    if(this.stageId===15&&e.sand?.vulnerable&&e.state==='recover'&&!bossExposed(this,e))amount*=1.25;
     const dealt = Math.min(e.hp, amount);
     e.hp -= amount;
     if (combination) this.combinations.recordDamage(combination, Math.max(0, dealt - amount * (1 - extraFraction)));
@@ -467,6 +486,7 @@ export class SurvivalWorld {
     });
     if (e.hp <= 0) {
       if(e.kind === "warflag"){this.effects.push({type:"death",x:e.x,y:e.y});this.touch();return;}
+      if(this.stageId===15)this.sand.onDeath(e);
       this.kills++;
       this.gold += e.summoned ? 0 : 1;
       this.weaponKills[attribution] = (this.weaponKills[attribution] || 0) + 1;
@@ -516,8 +536,8 @@ export class SurvivalWorld {
         this.dropPotion(e.x, e.y);
         this.director.restUntil = this.time + 6;
         this.effects.push({ type: "eliteDown", x: e.x, y: e.y });
-      } else if (!e.summoned || e.bossReinforcement) {
-        const value = ENEMIES[e.kind].xp * STAGES[this.stageId].xp * (e.bossReinforcement ? BOSS_REINFORCEMENT_XP : 1);
+      } else if (!e.summoned || e.bossReinforcement || (e.sandXp??0)>0) {
+        const value = (e.sandXp??ENEMIES[e.kind].xp) * STAGES[this.stageId].xp * (e.bossReinforcement ? BOSS_REINFORCEMENT_XP : 1);
         const g = this.gems.find((g) => distance(g, e) < 0.9);
         if (g) g.value += value;
         else
@@ -537,10 +557,16 @@ export class SurvivalWorld {
   slow(e: Enemy, freeze = false) {
     e.slow = isLarge(e.kind) ? 0.2 : 0.4;
     e.slowUntil = this.time + 1.5;
-    if (freeze && e.kind !== "boss" && e.freezeReady <= this.time) {
+    if(e.sand?.buried)return;
+    if(freeze&&this.stageId>=14&&isLarge(e.kind)){
+      if(e.freezeUntil<=this.time&&e.freezeReady<=this.time){
+        const duration=(e.kind==='boss'?.5:.25)*((e.siegeFreezeResist??0)>this.time?.35:1);
+        e.freezeUntil=this.time+Math.max(.15,duration);e.freezeReady=e.freezeUntil+.05;e.siegeFreezeResist=e.freezeUntil+2;
+      }
+    }else if (freeze && e.kind !== "boss" && e.freezeReady <= this.time) {
       e.freezeUntil = this.time + (isElite(e.kind) ? 0.25 : 0.5);
       e.freezeReady = this.time + 3;
-      if (e.state === "windup" && !frontierEnemy(e.kind) && !["starpatrol","starweaver","starpuppet"].includes(e.kind)) {
+      if (e.state === "windup" && !frontierEnemy(e.kind) && !siegeEnemy(e.kind) && !sandEnemy(e.kind) && !["starpatrol","starweaver","starpuppet"].includes(e.kind)) {
         this.hazards = this.hazards.filter((h) => h.source !== e.id);
         e.state = "recover";
         e.timer = 0.5;
@@ -572,6 +598,8 @@ export class SurvivalWorld {
         : this.skills.blade >= 4
           ? 2
           : 2.4);
+    this.siege.sample();
+    if(this.stageId===15)this.sand.clean();
     this.director.step(this, dt);
     stepGarden(this, 0);
     if(this.stageId===10)this.starPath.sample(this.time,this.player);
@@ -727,7 +755,7 @@ export class SurvivalWorld {
     for (const e of this.enemies)
       if (e.hp > 0 && e.burnUntil > this.time && e.burnNext <= this.time) {
         e.burnNext = this.time + 1;
-        this.hit(e, e.burn, "fire", false, e, false);
+        this.hit(e, e.burn, "fire", false, e, false, undefined, 1, false, true);
       }
   }
   private cast(s: Skill) {
@@ -1046,7 +1074,7 @@ export class SurvivalWorld {
       if (p.skill === "axe") this.combinations.mark("scythe", e);
       if (p.skill === "ghost") this.combinations.strike("ghost", e, old);
       if (p.skill === "scythe" && p.returning) this.combinations.strike("scythe", e, old);
-      this.hit(e, p.damage * (p.skill === "axe" && p.returning ? (p.form === "execution" ? 1.15 : p.form ? 1.7 : this.skills.axe >= 4 ? 1.35 : 1) : p.skill === "scythe" && p.form === "cross" && p.returning ? 1.5 : 1), p.skill, false, old);
+      this.hit(e, p.damage * (p.skill === "axe" && p.returning ? (p.form === "execution" ? 1.15 : p.form ? 1.7 : this.skills.axe >= 4 ? 1.35 : 1) : p.skill === "scythe" && p.form === "cross" && p.returning ? 1.5 : 1), p.skill, false, old, true, undefined, 1, true);
       if (p.skill === "bone" && p.form === "ram" && e.kind !== "boss" && e.kind !== "warflag") {
         const push = isLarge(e.kind) ? 0.35 : 0.7;
         e.x = Math.max(-22.7, Math.min(22.7, e.x + (p.vx / 13) * push));

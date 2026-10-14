@@ -13,9 +13,13 @@ export const STAGES = {
   11: {name:"灰烬铸造厂",boss:"灰烬大铸师",health:1.54,elite:1.72,bossHealth:2.26,damage:1.34,xp:.85,medicine:40},
   12: {name:"暮镜回廊",boss:"千面镜守",health:1.56,elite:1.74,bossHealth:2.30,damage:1.36,xp:.85,medicine:40},
   13: {name:"终焉渡口",boss:"终渡领航者",health:1.58,elite:1.76,bossHealth:2.34,damage:1.38,xp:.85,medicine:40},
+  15: {name:"赤砂虫巢",boss:"赤砂巢皇",health:1.72,elite:1.95,bossHealth:2.65,damage:1.46,xp:.85,medicine:42},
+  14: {name:"铁棘围城",boss:"铁棘围城督军",health:1.65,elite:1.85,bossHealth:2.45,damage:1.42,xp:.85,medicine:42},
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Partial<Record<StageId, {threat: string; builds: string}>> = {
+  15: {threat:"赤砂虫群：分裂、折返、连喷与潜沙 · 岩岛不挡攻击",builds:"先清幼虫与虫卵，躲第一击后准备换向；引暴君撞岩，巢皇出土后留意钳击"},
+  14: {threat:"铁棘军团：盾弩阵型、钉地逼位、战犬突袭 · 断墙不挡攻击",builds:"先拆旗官与弩兵，侧移避骑将；督军连续钉位与内外圈交替，换位后反击"},
   11: {threat:"有限熔线与落锤 · 冷却砧不挡攻击",builds:"横移清路、绕砧换侧；大铸师停步恢复时贴近反击"},
   12: {threat:"交叉光线与双镜夹道 · 镜座不挡光线",builds:"看清交点，向夹角空区移动；搭配清群与追踪后排"},
   13: {threat:"两处潮印提前锁定 · 留意先后顺序",builds:"侧向换位、持续引怪；第二击结束后切入反击"},

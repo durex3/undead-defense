@@ -1,3 +1,7 @@
+import { sandEnemy } from "./SandSystem";
+import { sandMap } from "./SandMap";
+import { siegeMap } from "./SiegeMap";
+import { siegeEnemy } from "./SiegeSystem";
 import {isFrontier,frontierMap} from "./FrontierMaps";
 import {frontierEnemy,stepFrontierEnemy} from "./FrontierSystem";
 import {frontierContains} from "./FrontierGeometry";
@@ -83,21 +87,24 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       stepBoss(w, e, dt);
       continue;
     }
+    if(w.stageId===15&&sandEnemy(e.kind)){w.sand.stepEnemy(e,dt);continue;}
     if(e.kind==="warflag"){stepArsenalEnemy(w,e,dt);continue;}
     if (e.freezeUntil > w.time) {
       if(e.frontierUntil!==undefined)e.frontierUntil+=dt;
       if(e.starUntil!==undefined)e.starUntil+=dt;
       if(e.arsenalUntil!==undefined)e.arsenalUntil+=dt;
-      for (const h of w.hazards) if (h.source === e.id && !h.fired) {
+      if(e.siegeNext!==undefined)e.siegeNext+=dt;
+      for (const h of w.hazards) if (h.source === e.id && !h.fired && !h.siegeLaunched) {
         h.created += dt; h.due += dt; h.until += dt;
       }
       continue;
     }
+    if(w.stageId===14&&siegeEnemy(e.kind)){w.siege.stepEnemy(e,dt);continue;}
     if(isFrontier(w.stageId)&&frontierEnemy(e.kind)){stepFrontierEnemy(w,e,dt);continue;}
     if(isStarEnemy(e)){stepObservatoryEnemy(w,e,dt);continue;}
     if(["boneguard","standardbearer","crossbowman"].includes(e.kind)){stepArsenalEnemy(w,e,dt);continue;}
     if(["sailor","drowned","anchorhand"].includes(e.kind)){stepHarborEnemy(w,e,dt);continue;}
-    const moveAngle=isFrontier(w.stageId)?frontierMap(w.stageId).heading(e,w.player):w.stageId===10?observatoryHeading(e,w.player):w.stageId===9?arsenalHeading(e,w.player):w.stageId===8?harborHeading(e,w.player):Math.atan2(w.player.y-e.y,w.player.x-e.x);
+    const moveAngle=w.stageId===15?sandMap.heading(e,w.player):w.stageId===14?siegeMap.heading(e,w.player):isFrontier(w.stageId)?frontierMap(w.stageId).heading(e,w.player):w.stageId===10?observatoryHeading(e,w.player):w.stageId===9?arsenalHeading(e,w.player):w.stageId===8?harborHeading(e,w.player):Math.atan2(w.player.y-e.y,w.player.x-e.x);
     const d = distance(e, w.player),
       angle = Math.atan2(w.player.y - e.y, w.player.x - e.x),
       slow = e.slowUntil > w.time ? 1 - e.slow : 1;
@@ -297,14 +304,21 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
   }
 }
 export function stepHazards(w: SurvivalWorld) {
+  for(const h of w.hazards)if(h.siegeBallistic&&!h.siegeLaunched&&w.time>=h.created+(h.sandLaunchDelay??.2)&&w.enemies.some(e=>e.id===h.source&&e.hp>0&&e.freezeUntil<=w.time))h.siegeLaunched=true;
   w.hazards = w.hazards.filter(
     (h) =>
       h.until > w.time &&
-      (h.source === 0 || (h.kind === "arrow" && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
+      (h.source === 0 || h.siegeLaunched || ((h.kind === "arrow" || h.siegeGround) && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
   );
   for (const h of w.hazards) {
     if (h.due > w.time) continue;
     const d = distance(h, w.player);
+    if(h.siegeGround){
+      if(!h.fired){h.fired=true;h.next=w.time+.7;if(d<h.radius)w.hurt(h.damage,h.damageLabel||'钉地',false);}
+      else if(h.siegeTick&&w.time>=h.next){h.next=w.time+.7;if(d<h.radius)w.hurt(h.siegeTick,h.damageLabel||'钉地',false);}
+      continue;
+    }
+    if(h.sandRift&&h.fired&&w.time>=h.next){h.next=w.time+.6;if(frontierContains(h,w.player))w.hurt(6,h.damageLabel||"沙裂",false);}
     if(h.kind==="frontierLane"||h.kind==="frontierImpact"){
       if(!h.fired){h.fired=true;if(!h.groupHit&&frontierContains(h,w.player)){w.hurt(h.damage,h.damageLabel||"铸潮攻击",false);for(const other of w.hazards)if(other.id===h.id||(h.group!==undefined&&other.group===h.group))other.groupHit=true;}}
       continue;

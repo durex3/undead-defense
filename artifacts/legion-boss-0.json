@@ -1,0 +1,1508 @@
+[
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 90,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "moving",
+    "state": "won",
+    "time": 558,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 0,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 1,
+      "blockedBoss": 0,
+      "sequence": 12,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {
+        "slots": 28
+      }
+    },
+    "maxHazards": 1,
+    "maxEnemies": 96,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 76
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 62
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 50
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 38
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 24
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 11
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 90,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "moving",
+    "state": "won",
+    "time": 558,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 0,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 1,
+      "blockedBoss": 0,
+      "sequence": 12,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {
+        "slots": 28
+      }
+    },
+    "maxHazards": 1,
+    "maxEnemies": 96,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 76
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 62
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 50
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 38
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 24
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 11
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 90,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "moving",
+    "state": "won",
+    "time": 558,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 0,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 1,
+      "blockedBoss": 0,
+      "sequence": 12,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {
+        "slots": 28
+      }
+    },
+    "maxHazards": 1,
+    "maxEnemies": 96,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 76
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 62
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 50
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 38
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 24
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 11
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 1,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 94,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 1,
+    "mode": "moving",
+    "state": "won",
+    "time": 554,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 0,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 5,
+      "blockedBoss": 0,
+      "sequence": 12,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {
+        "slots": 5
+      }
+    },
+    "maxHazards": 1,
+    "maxEnemies": 97,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 75
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 60
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 48
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 35
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 19
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 5
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 19,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 94,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 19,
+    "mode": "moving",
+    "state": "won",
+    "time": 554,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 0,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 5,
+      "blockedBoss": 0,
+      "sequence": 12,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {
+        "slots": 5
+      }
+    },
+    "maxHazards": 1,
+    "maxEnemies": 97,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 75
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 60
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 48
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 35
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 19
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 5
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 72,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 94,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 72,
+    "mode": "moving",
+    "state": "won",
+    "time": 554,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 0,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 5,
+      "blockedBoss": 0,
+      "sequence": 12,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {
+        "slots": 5
+      }
+    },
+    "maxHazards": 1,
+    "maxEnemies": 97,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 75
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 60
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 48
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 35
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 19
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 5
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 53,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "moving",
+    "state": "won",
+    "time": 556,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 1,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 11,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 94,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 78
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 63
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 48
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 36
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 21
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 9
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 53,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "moving",
+    "state": "won",
+    "time": 556,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 1,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 11,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 94,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 78
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 63
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 48
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 36
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 21
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 9
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 497,
+    "hp": 0,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 78,
+    "losses": {
+      "督军钉位": 26,
+      "督军追击钉位": 26,
+      "棘甲内扫": 48
+    },
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "ground": 2,
+      "boss": 3,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 2,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 53,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 48,
+        "boss": 87
+      }
+    ]
+  },
+  {
+    "stage": 14,
+    "scenario": "boss",
+    "build": 0,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "moving",
+    "state": "won",
+    "time": 556,
+    "hp": 100,
+    "skills": {
+      "blade": 10,
+      "fire": 10,
+      "ice": 10,
+      "lightning": 10,
+      "scythe": 10,
+      "ghost": 10,
+      "water": 0,
+      "poison": 0,
+      "bone": 0,
+      "mine": 0,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 0,
+      "meteor": 0
+    },
+    "forms": {
+      "blade": "ring",
+      "lightning": "judgment",
+      "fire": "meteor",
+      "ghost": "legion",
+      "ice": "domain",
+      "scythe": "reaper"
+    },
+    "bossRemaining": 0,
+    "losses": {},
+    "stats": {
+      "packs": 3,
+      "bow": 1,
+      "ground": 8,
+      "boss": 12,
+      "blockedBow": 0,
+      "blockedBoss": 0,
+      "sequence": 11,
+      "degraded": 0,
+      "dog": 0,
+      "elite": 0,
+      "rejections": {}
+    },
+    "maxHazards": 1,
+    "maxEnemies": 94,
+    "milestones": [
+      {
+        "time": 490,
+        "hp": 100,
+        "boss": 89
+      },
+      {
+        "time": 500,
+        "hp": 100,
+        "boss": 78
+      },
+      {
+        "time": 510,
+        "hp": 100,
+        "boss": 63
+      },
+      {
+        "time": 520,
+        "hp": 100,
+        "boss": 48
+      },
+      {
+        "time": 530,
+        "hp": 100,
+        "boss": 36
+      },
+      {
+        "time": 540,
+        "hp": 100,
+        "boss": 21
+      },
+      {
+        "time": 550,
+        "hp": 100,
+        "boss": 9
+      }
+    ]
+  }
+]

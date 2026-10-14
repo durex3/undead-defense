@@ -1,3 +1,5 @@
+import { sandMap } from "../temp/tests/battle/SandMap.mjs";
+import { siegeMap } from "../temp/tests/battle/SiegeMap.mjs";
 import {isFrontier,frontierMap} from "../temp/tests/battle/FrontierMaps.mjs";
 import {MAX_PLAYER_LEVEL} from "../temp/tests/battle/EncounterPacing.mjs";
 import {observatoryHeading} from "../temp/tests/battle/ObservatoryMap.mjs";
@@ -20,6 +22,7 @@ const profiles = {
 const locked = process.argv[7] === "locked";
 const alternate = process.argv[6] === "alternate";
 const cautious = process.argv[5] === "cautious";
+const campStart = Number(process.argv[11] || 60);
 const profile = process.argv[2] || "classic";
 // Optional final argument: collector,camp (move for 60s, stand until boss),stationary.
 for (const mode of process.argv[10] ? process.argv[10].split(",") : profile === "classic"
@@ -70,7 +73,7 @@ for (const mode of process.argv[10] ? process.argv[10].split(",") : profile === 
         if (!firstEvolution) firstEvolution = w.time;
       }
       if (firstCombo === null && w.combinations.ready(recipeMain)) firstCombo = Math.round(w.time);
-      const camping = mode === "camp" && w.time >= 60 && w.time < 480;
+      const camping = mode === "camp" && w.time >= campStart && w.time < 480;
       if (camping) { w.setMove(0, 0); w.useUltimate(); }
       if (mode === "collector" || (mode === "camp" && !camping)) {
         const distance = (p) => Math.hypot(p.x - w.player.x, p.y - w.player.y);
@@ -84,7 +87,7 @@ for (const mode of process.argv[10] ? process.argv[10].split(",") : profile === 
           };
         let dx = (target.x - w.player.x) / Math.max(1, distance(target)),
           dy = (target.y - w.player.y) / Math.max(1, distance(target));
-        if(isFrontier(w.stageId)||w.stageId===8||w.stageId===9||w.stageId===10){Object.assign(navigation,w.player);const a=(isFrontier(w.stageId)?frontierMap(w.stageId).heading:w.stageId===10?observatoryHeading:w.stageId===9?arsenalHeading:harborHeading)(navigation,target);dx=Math.cos(a);dy=Math.sin(a);}
+        if(w.stageId>=14||isFrontier(w.stageId)||w.stageId===8||w.stageId===9||w.stageId===10){Object.assign(navigation,w.player);const a=(w.stageId===15?sandMap.heading:w.stageId===14?siegeMap.heading:isFrontier(w.stageId)?frontierMap(w.stageId).heading:w.stageId===10?observatoryHeading:w.stageId===9?arsenalHeading:harborHeading)(navigation,target);dx=Math.cos(a);dy=Math.sin(a);}
         for (const e of w.enemies) {
           const d = distance(e),
             r = cautious && profile === "pair:water" && e.kind === "boss" ? 2.1 : cautious && ["executioner","charger","boss"].includes(e.kind) ? 3.4 : e.kind === "boss" ? 2.1 : 1.4;
@@ -111,7 +114,7 @@ for (const mode of process.argv[10] ? process.argv[10].split(",") : profile === 
             const rx=w.player.x-h.x-vx*t,ry=w.player.y-h.y-vy*t,d=Math.hypot(rx,ry);
             if(d<h.width+.8){const nx=d>.05?rx/d:-vy/(len||1),ny=d>.05?ry/d:vx/(len||1);dx+=nx*3;dy+=ny*3;}
           }
-          if (h.kind === "line" || (cautious && h.kind === "flameLine")) {
+          if (h.kind === "arrow" || h.kind === "line" || (cautious && h.kind === "flameLine")) {
             const rx = w.player.x - h.x,
               ry = w.player.y - h.y,
               side = -rx * Math.sin(h.angle) + ry * Math.cos(h.angle),
@@ -148,11 +151,14 @@ for (const mode of process.argv[10] ? process.argv[10].split(",") : profile === 
         alternate,
         character: w.character,
         stage: w.stageId,
+        siegeStats: w.stageId===14 ? w.siege.stats : null,
+        sandStats:w.stageId===15?w.sand.stats:null,
         furnaceRoute: w.stageId===6 ? w.furnaceRoute : null,
         losses: w.losses,
         lastDamageSource: w.lastDamageSource,
         bossRemaining: (()=>{const b=w.enemies.find(e=>e.kind==="boss"&&e.hp>0);return b?Math.ceil(b.hp/b.maxHp*100):null;})(),
         mode,
+        campStart: mode === "camp" ? campStart : null,
         seed,
         state: w.state,
         time: Math.round(w.time),

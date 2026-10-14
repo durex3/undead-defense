@@ -18,6 +18,8 @@ export function bossExposed(w: SurvivalWorld, e: Enemy) {
   );
 }
 export function stepBoss(w: SurvivalWorld, e: Enemy, dt: number) {
+  if(w.stageId===15){w.sand.stepEnemy(e,dt);return;}
+  if(w.stageId===14){w.siege.stepBoss(e,dt);return;}
   if(isFrontier(w.stageId)){stepFrontierBoss(w,e,dt);return;}
   if(w.stageId===10){stepObservatoryBoss(w,e,dt);return;}
   if(w.stageId===9){stepArsenalBoss(w,e,dt);return;}

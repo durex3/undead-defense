@@ -145,11 +145,11 @@ export class ArsenalWeapons {
       if(!target)continue;
       const bolt=this.acquire(this.bolts,'totem');if(!bolt)continue;
       p.next=w.time+(p.form==='obelisk'?.6:p.level>=3?.75:1);bolt.x=p.x;bolt.y=p.y;bolt.endX=target.x;bolt.endY=target.y;bolt.until=w.time+.16;
-      if(p.evolved&&p.form!=='obelisk') {for(const e of this.enemies())if(segmentDistance(e,p,target)<.35){this.soulStrike(e,p);w.hit(e,p.damage,'totem',false,p);}}
-      else {this.soulStrike(target,p);w.hit(target,p.damage,'totem',false,p);
+      if(p.evolved&&p.form!=='obelisk') {for(const e of this.enemies())if(segmentDistance(e,p,target)<.35){this.soulStrike(e,p);w.hit(e,p.damage,'totem',false,p,true,undefined,1,true);}}
+      else {this.soulStrike(target,p);w.hit(target,p.damage,'totem',false,p,true,undefined,1,true);
         if(p.form==='obelisk'){
           const other=w.target(p,8,[target.id]);
-          if(other){const side=this.acquire(this.bolts,'totem');if(side){side.x=p.x;side.y=p.y;side.endX=other.x;side.endY=other.y;side.until=w.time+.16;w.hit(other,p.damage*.5,'totem',false,p);}}
+          if(other){const side=this.acquire(this.bolts,'totem');if(side){side.x=p.x;side.y=p.y;side.endX=other.x;side.endY=other.y;side.until=w.time+.16;w.hit(other,p.damage*.5,'totem',false,p,true,undefined,1,true);}}
         }
       }
     }

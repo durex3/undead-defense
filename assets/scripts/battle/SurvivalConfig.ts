@@ -321,6 +321,9 @@ export function cardText(card: Card, level: number) {
   );
 }
 export const ENEMY_KINDS = [
+  "sandworker", "sandlarva", "sandegg", "shellroller", "sandspitter", "sandstalker", "broodelite", "breakerelite",
+  "siegeflag", "siegerider",
+  "siegebone", "thornshield", "siegebow", "flanker",
   "forgeguard", "lineworker", "hammerer", "mirrorguard", "prismarcher", "mirrorpriest", "ferryguard", "tidecaller", "echoferryman",
   "minion", "sailor", "drowned", "anchorhand", "boneguard", "standardbearer", "crossbowman", "warflag", "starpatrol", "starweaver", "starpuppet",
   "rogue",
@@ -353,6 +356,22 @@ export interface EnemyConfig {
   elite?: boolean;
 }
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+  sandworker:{name:"镰足工虫",health:1.05,speed:1.65,contact:8,xp:1,threat:0,cap:100,sprite:"skelet_run",scale:3},
+  sandlarva:{name:"赤砂幼虫",health:.25,speed:2.2,contact:4,xp:0,threat:0,cap:20,sprite:"skelet_run",scale:2},
+  sandegg:{name:"孵巢虫卵",health:.525,speed:0,contact:0,xp:0,threat:0,cap:3,sprite:"skelet_run",scale:2},
+  shellroller:{name:"裂甲滚虫",health:2.1,speed:1.4,contact:10,xp:2,threat:1,cap:3,sprite:"skelet_run",scale:3},
+  sandspitter:{name:"喷砂囊虫",health:1.8,speed:1.1,contact:12,xp:2,threat:2,cap:2,sprite:"skelet_run",scale:3},
+  sandstalker:{name:"潜沙猎虫",health:1.3,speed:2,contact:10,xp:2,threat:1,cap:2,sprite:"skelet_run",scale:3},
+  // Elite health/contact below receive the shared elite x2 baseline exactly once.
+  broodelite:{name:"孵巢监母",health:10,speed:1.3,contact:9,xp:8,threat:3,cap:1,sprite:"orc_warrior_run",scale:4,elite:true},
+  breakerelite:{name:"裂地暴君",health:12,speed:1.6,contact:10,xp:8,threat:3,cap:1,sprite:"orc_warrior_run",scale:4,elite:true},
+  siegeflag:{name:"军团旗官",health:10,speed:1.45,contact:9,xp:8,threat:3,cap:1,sprite:"orc_warrior_run",scale:4.2,elite:true},
+  siegerider:{name:"破阵骑将",health:12,speed:1.7,contact:10,xp:8,threat:3,cap:1,sprite:"orc_warrior_run",scale:4.6,elite:true},
+  siegebone:{name:"铁棘步卒",health:1.05,speed:1.55,contact:8,xp:1,threat:0,cap:100,sprite:"skelet_run",scale:3.2},
+  thornshield:{name:"棘盾禁卫",health:2.2,speed:1.25,contact:12,xp:2,threat:1,cap:4,sprite:"orc_warrior_run",scale:3.4},
+  // Post-0.17.3 values: do not add this role to the legacy double multiplier list.
+  siegebow:{name:"钉地弩兵",health:1.8,speed:1.2,contact:16,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3.2},
+  flanker:{name:"猎袭战犬",health:.9,speed:2.2,contact:10,xp:1,threat:1,cap:4,sprite:"skelet_run",scale:3},
   forgeguard:{name:"推炉骨兵",health:1,speed:1.5,contact:8,xp:1,threat:0,cap:12,sprite:"skelet_run",scale:3.2},
   lineworker:{name:"熔线工",health:1,speed:1.2,contact:8,xp:2,threat:2,cap:2,sprite:"goblin_run",scale:3.2},
   hammerer:{name:"落锤匠",health:1.1,speed:1.3,contact:8,xp:2,threat:2,cap:2,sprite:"orc_warrior_run",scale:3.2},

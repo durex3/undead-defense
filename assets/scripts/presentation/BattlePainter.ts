@@ -1,3 +1,7 @@
+import { drawSandEnemy } from "./SandPainter";
+import { sandEnemy } from "../battle/SandSystem";
+import { drawSiegeEnemy, drawSiegeCharge } from "./SiegePainter";
+import { siegeEnemy } from "../battle/SiegeSystem";
 import {isFrontier} from "../battle/FrontierMaps";
 import {frontierEnemy} from "../battle/FrontierSystem";
 import {drawFrontierEnemy,drawFrontierHazard} from "./FrontierPainter";
@@ -232,6 +236,8 @@ export class BattlePainter {
       g.fillColor = color("#040811", 75);
       g.ellipse(x, y - 7, isLarge(e.kind) ? 27 : 17, 6);
       g.fill();
+      if(w.stageId===15&&(e.kind==='boss'||sandEnemy(e.kind)))drawSandEnemy(g,w,e);
+      if(w.stageId===14&&(e.kind==='boss'||siegeEnemy(e.kind)))drawSiegeEnemy(g,w,e);
       if(isFrontier(w.stageId)&&(e.kind==='boss'||frontierEnemy(e.kind)))drawFrontierEnemy(g,e,w.stageId);
       if(e.kind==='sailor'){g.fillColor=color("#bde1db",210);g.rect(x-13,y+24,26,6);g.fill();}
       if(['starpatrol','starweaver','starpuppet'].includes(e.kind)||(e.kind==='boss'&&w.stageId===10)){
@@ -813,6 +819,13 @@ export class BattlePainter {
         h.kind === "pool" ? "#a3bc51" : "#ed6c88",
         h.fired ? 65 : 25 + progress * 35,
       );
+      if(h.siegeCharge){drawSiegeCharge(g,h,w.time);continue;}
+      if(h.siegeGround){
+        g.lineWidth=3;g.strokeColor=color('#e3a1ff',245);g.fillColor=color('#a454ba',h.fired?85:20+progress*35);
+        g.circle(x,y,r);g.fill();g.stroke();if(!h.fired){g.circle(x,y,r*progress);g.stroke();}
+        if(h.siegeLaunched&&!h.fired){const u=Math.max(0,Math.min(1,(w.time-h.created-(h.sandLaunchDelay??.2))/(h.due-h.created-(h.sandLaunchDelay??.2)))),sx=(h.endX??h.x)*48,sy=(h.endY??h.y)*48;g.fillColor=color('#ffe0a3');g.circle(sx+(x-sx)*u,sy+(y-sy)*u+Math.sin(u*Math.PI)*40,5);g.fill();}
+        else{g.moveTo(x-10,y-10);g.lineTo(x+10,y+10);g.moveTo(x+10,y-10);g.lineTo(x-10,y+10);g.stroke();}continue;
+      }
       if(h.kind==='frontierLane'||h.kind==='frontierImpact'){drawFrontierHazard(g,h,w.time);continue;}
       if(h.kind==='starTrace'){
         const bx=(h.endX??h.x)*48,by=(h.endY??h.y)*48,a=Math.atan2(by-y,bx-x),r=h.width*48,dx=-Math.sin(a)*r,dy=Math.cos(a)*r;

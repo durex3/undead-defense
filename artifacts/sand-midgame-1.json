@@ -1,0 +1,1911 @@
+[
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 354,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "连续喷砂": 16,
+      "虫群震地": 24,
+      "暴君扑进": 26,
+      "breakerelite": 32
+    },
+    "stats": {
+      "packs": 8,
+      "split": 2372,
+      "hatch": 0,
+      "roll": 4,
+      "spit": 1,
+      "burrow": 1,
+      "elite": 2,
+      "boss": 0,
+      "follow": 5,
+      "degraded": 1,
+      "rejected": 1,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 82,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 58,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "moving",
+    "state": "lost",
+    "time": 281,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 111.67999999999998
+    },
+    "stats": {
+      "packs": 4,
+      "split": 506,
+      "hatch": 0,
+      "roll": 0,
+      "spit": 0,
+      "burrow": 1,
+      "elite": 2,
+      "boss": 0,
+      "follow": 2,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 64.95999999999998,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 6.559999999999981,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 439,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "连续喷砂": 54,
+      "虫群震地": 24,
+      "breakerelite": 20
+    },
+    "stats": {
+      "packs": 16,
+      "split": 4614,
+      "hatch": 0,
+      "roll": 8,
+      "spit": 6,
+      "burrow": 3,
+      "elite": 2,
+      "boss": 0,
+      "follow": 7,
+      "degraded": 3,
+      "rejected": 3,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 22,
+        "boss": null
+      },
+      {
+        "time": 360,
+        "hp": 22,
+        "boss": null
+      },
+      {
+        "time": 370,
+        "hp": 22,
+        "boss": null
+      },
+      {
+        "time": 380,
+        "hp": 22,
+        "boss": null
+      },
+      {
+        "time": 390,
+        "hp": 22,
+        "boss": null
+      },
+      {
+        "time": 400,
+        "hp": 6,
+        "boss": null
+      },
+      {
+        "time": 410,
+        "hp": 6,
+        "boss": null
+      },
+      {
+        "time": 420,
+        "hp": 6,
+        "boss": null
+      },
+      {
+        "time": 430,
+        "hp": 6,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "moving",
+    "state": "lost",
+    "time": 286,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 114.15999999999998,
+      "sandlarva": 5.84
+    },
+    "stats": {
+      "packs": 3,
+      "split": 789,
+      "hatch": 0,
+      "roll": 0,
+      "spit": 0,
+      "burrow": 0,
+      "elite": 2,
+      "boss": 0,
+      "follow": 2,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 76.63999999999999,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 84.95999999999998,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 38.239999999999974,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 351,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "连续喷砂": 48,
+      "虫群震地": 24,
+      "暴君扑进": 6
+    },
+    "stats": {
+      "packs": 9,
+      "split": 2293,
+      "hatch": 0,
+      "roll": 4,
+      "spit": 4,
+      "burrow": 0,
+      "elite": 2,
+      "boss": 0,
+      "follow": 6,
+      "degraded": 3,
+      "rejected": 4,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 30,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 30,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 6,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "moving",
+    "state": "lost",
+    "time": 307,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 131.68
+    },
+    "stats": {
+      "packs": 6,
+      "split": 927,
+      "hatch": 0,
+      "roll": 0,
+      "spit": 0,
+      "burrow": 2,
+      "elite": 4,
+      "boss": 0,
+      "follow": 4,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 96.63999999999999,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 26.559999999999974,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 1,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 353,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "连续喷砂": 16,
+      "虫群震地": 24,
+      "暴君扑进": 26,
+      "breakerelite": 12
+    },
+    "stats": {
+      "packs": 8,
+      "split": 2315,
+      "hatch": 0,
+      "roll": 4,
+      "spit": 2,
+      "burrow": 0,
+      "elite": 2,
+      "boss": 0,
+      "follow": 6,
+      "degraded": 1,
+      "rejected": 1,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 38,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 1,
+    "mode": "moving",
+    "state": "lost",
+    "time": 280,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 114.15999999999998,
+      "sandlarva": 5.84
+    },
+    "stats": {
+      "packs": 4,
+      "split": 449,
+      "hatch": 0,
+      "roll": 0,
+      "spit": 1,
+      "burrow": 1,
+      "elite": 2,
+      "boss": 0,
+      "follow": 2,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 76.63999999999999,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 53.27999999999998,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 19,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 351,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "连续喷砂": 32,
+      "虫群震地": 24,
+      "暴君扑进": 22
+    },
+    "stats": {
+      "packs": 8,
+      "split": 2246,
+      "hatch": 0,
+      "roll": 4,
+      "spit": 3,
+      "burrow": 0,
+      "elite": 2,
+      "boss": 0,
+      "follow": 7,
+      "degraded": 2,
+      "rejected": 2,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 22,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 19,
+    "mode": "moving",
+    "state": "lost",
+    "time": 292,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 88.31999999999998,
+      "sandlarva": 11.68
+    },
+    "stats": {
+      "packs": 4,
+      "split": 617,
+      "hatch": 1,
+      "roll": 1,
+      "spit": 0,
+      "burrow": 0,
+      "elite": 4,
+      "boss": 0,
+      "follow": 5,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 96,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 35.759999999999984,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 18.239999999999984,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 72,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 351,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "连续喷砂": 32,
+      "虫群震地": 24,
+      "暴君扑进": 22
+    },
+    "stats": {
+      "packs": 8,
+      "split": 2207,
+      "hatch": 0,
+      "roll": 4,
+      "spit": 3,
+      "burrow": 0,
+      "elite": 2,
+      "boss": 0,
+      "follow": 6,
+      "degraded": 2,
+      "rejected": 2,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 62,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 46,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 22,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 0,
+      "y": 8
+    },
+    "seed": 72,
+    "mode": "moving",
+    "state": "lost",
+    "time": 303,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 140
+    },
+    "stats": {
+      "packs": 5,
+      "split": 970,
+      "hatch": 0,
+      "roll": 1,
+      "spit": 0,
+      "burrow": 1,
+      "elite": 2,
+      "boss": 0,
+      "follow": 2,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 73.27999999999997,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 49.91999999999997,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 23.199999999999974,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 348,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "虫群震地": 22,
+      "连续喷砂": 56
+    },
+    "stats": {
+      "packs": 7,
+      "split": 1964,
+      "hatch": 0,
+      "roll": 3,
+      "spit": 4,
+      "burrow": 3,
+      "elite": 1,
+      "boss": 0,
+      "follow": 4,
+      "degraded": 3,
+      "rejected": 3,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 40,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 24,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 24,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 8,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 8,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 8,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 8,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 8,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 1,
+    "mode": "moving",
+    "state": "lost",
+    "time": 279,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 114.15999999999998,
+      "sandlarva": 5.84
+    },
+    "stats": {
+      "packs": 4,
+      "split": 645,
+      "hatch": 0,
+      "roll": 0,
+      "spit": 1,
+      "burrow": 0,
+      "elite": 1,
+      "boss": 0,
+      "follow": 0,
+      "degraded": 0,
+      "rejected": 4,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 96.63999999999999,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 55.75999999999998,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 354,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "虫群震地": 24,
+      "暴君扑进": 26,
+      "breakerelite": 28
+    },
+    "stats": {
+      "packs": 8,
+      "split": 1963,
+      "hatch": 0,
+      "roll": 1,
+      "spit": 0,
+      "burrow": 1,
+      "elite": 2,
+      "boss": 0,
+      "follow": 1,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 54,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 19,
+    "mode": "moving",
+    "state": "lost",
+    "time": 276,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 111.67999999999998
+    },
+    "stats": {
+      "packs": 3,
+      "split": 552,
+      "hatch": 0,
+      "roll": 0,
+      "spit": 1,
+      "burrow": 0,
+      "elite": 1,
+      "boss": 0,
+      "follow": 3,
+      "degraded": 0,
+      "rejected": 4,
+      "peakHazards": 2
+    },
+    "maxHazards": 2,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 53.27999999999998,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "stationary",
+    "state": "lost",
+    "time": 352,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "虫群砂线": 22,
+      "虫群震地": 46,
+      "暴君扑进": 26,
+      "连续喷砂": 6
+    },
+    "stats": {
+      "packs": 8,
+      "split": 1967,
+      "hatch": 0,
+      "roll": 3,
+      "spit": 3,
+      "burrow": 1,
+      "elite": 2,
+      "boss": 0,
+      "follow": 4,
+      "degraded": 0,
+      "rejected": 0,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 100,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 78,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 56,
+        "boss": null
+      },
+      {
+        "time": 300,
+        "hp": 56,
+        "boss": null
+      },
+      {
+        "time": 310,
+        "hp": 56,
+        "boss": null
+      },
+      {
+        "time": 320,
+        "hp": 56,
+        "boss": null
+      },
+      {
+        "time": 330,
+        "hp": 56,
+        "boss": null
+      },
+      {
+        "time": 340,
+        "hp": 56,
+        "boss": null
+      },
+      {
+        "time": 350,
+        "hp": 32,
+        "boss": null
+      }
+    ]
+  },
+  {
+    "stage": 15,
+    "scenario": "midgame",
+    "build": 1,
+    "start": {
+      "x": 18,
+      "y": 0
+    },
+    "seed": 72,
+    "mode": "moving",
+    "state": "lost",
+    "time": 297,
+    "hp": 0,
+    "skills": {
+      "blade": 0,
+      "fire": 0,
+      "ice": 0,
+      "lightning": 0,
+      "scythe": 0,
+      "ghost": 0,
+      "water": 10,
+      "poison": 10,
+      "bone": 10,
+      "mine": 10,
+      "void": 0,
+      "bat": 0,
+      "axe": 0,
+      "chain": 0,
+      "pillar": 0,
+      "totem": 0,
+      "soul": 10,
+      "meteor": 10
+    },
+    "forms": {
+      "water": "spring",
+      "poison": "plague",
+      "bone": "ram",
+      "mine": "network",
+      "meteor": "doomsfall",
+      "soul": "reincarnation"
+    },
+    "bossRemaining": null,
+    "losses": {
+      "sandworker": 119.99999999999999
+    },
+    "stats": {
+      "packs": 5,
+      "split": 1079,
+      "hatch": 0,
+      "roll": 0,
+      "spit": 0,
+      "burrow": 1,
+      "elite": 0,
+      "boss": 0,
+      "follow": 0,
+      "degraded": 0,
+      "rejected": 4,
+      "peakHazards": 1
+    },
+    "maxHazards": 1,
+    "maxEnemies": 98,
+    "milestones": [
+      {
+        "time": 250,
+        "hp": 100,
+        "boss": null
+      },
+      {
+        "time": 260,
+        "hp": 88.32,
+        "boss": null
+      },
+      {
+        "time": 270,
+        "hp": 73.27999999999997,
+        "boss": null
+      },
+      {
+        "time": 280,
+        "hp": 14.879999999999974,
+        "boss": null
+      },
+      {
+        "time": 290,
+        "hp": 3.1999999999999744,
+        "boss": null
+      }
+    ]
+  }
+]

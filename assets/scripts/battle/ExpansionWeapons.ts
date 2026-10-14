@@ -454,7 +454,7 @@ export class ExpansionWeapons {
     for(const [id,mark] of this.venom) {
       const e=w.enemies.find(e=>e.id===id&&e.hp>0);
       if(!e || mark.until<=w.time){this.venom.delete(id);continue;}
-      if(mark.next<=w.time){mark.next=w.time+1;w.hit(e,w.attack*(.35+.25*mark.stacks),"poison",false,e,false);}
+      if(mark.next<=w.time){mark.next=w.time+1;w.hit(e,w.attack*(.35+.25*mark.stacks),"poison",false,e,false,undefined,1,false,true);}
     }
     const bursts = this.poisonBursts;
     this.poisonBursts = [];
@@ -562,7 +562,7 @@ export class ExpansionWeapons {
             b.y += ((target.y - b.y) / Math.max(0.01, d)) * move;
             if (segmentDistance(target, old, b) < 0.45) {
               w.combinations.mark("ghost", target);
-              w.hit(target, b.damage, "bat", false, old);
+              w.hit(target, b.damage, "bat", false, old, true, undefined, 1, true);
               b.hit.push(target.id);
               const next =
                 b.hit.length < b.maxHits ? w.target(b, 3, b.hit) : undefined;

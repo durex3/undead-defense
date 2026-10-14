@@ -1,0 +1,113 @@
+[
+  {
+    "seed": 1,
+    "alternate": false,
+    "state": "lost",
+    "time": 506,
+    "hp": 0,
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "boss": 6,
+      "blockedBow": 0,
+      "blockedBoss": 0
+    },
+    "losses": {
+      "棘轮横扫": 82,
+      "boss": 18
+    }
+  },
+  {
+    "seed": 19,
+    "alternate": false,
+    "state": "lost",
+    "time": 506,
+    "hp": 0,
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "boss": 6,
+      "blockedBow": 0,
+      "blockedBoss": 0
+    },
+    "losses": {
+      "棘轮横扫": 82,
+      "boss": 18
+    }
+  },
+  {
+    "seed": 72,
+    "alternate": false,
+    "state": "lost",
+    "time": 506,
+    "hp": 0,
+    "stats": {
+      "packs": 1,
+      "bow": 0,
+      "boss": 6,
+      "blockedBow": 0,
+      "blockedBoss": 0
+    },
+    "losses": {
+      "棘轮横扫": 82,
+      "boss": 18
+    }
+  },
+  {
+    "seed": 1,
+    "alternate": true,
+    "state": "won",
+    "time": 509,
+    "hp": 16.64,
+    "stats": {
+      "packs": 2,
+      "bow": 0,
+      "boss": 6,
+      "blockedBow": 0,
+      "blockedBoss": 0
+    },
+    "losses": {
+      "督军贯阵冲锋": 24,
+      "棘轮横扫": 48,
+      "minion": 11.36
+    }
+  },
+  {
+    "seed": 19,
+    "alternate": true,
+    "state": "won",
+    "time": 509,
+    "hp": 16.64,
+    "stats": {
+      "packs": 2,
+      "bow": 0,
+      "boss": 6,
+      "blockedBow": 0,
+      "blockedBoss": 0
+    },
+    "losses": {
+      "督军贯阵冲锋": 24,
+      "棘轮横扫": 48,
+      "minion": 11.36
+    }
+  },
+  {
+    "seed": 72,
+    "alternate": true,
+    "state": "won",
+    "time": 509,
+    "hp": 16.64,
+    "stats": {
+      "packs": 2,
+      "bow": 0,
+      "boss": 6,
+      "blockedBow": 0,
+      "blockedBoss": 0
+    },
+    "losses": {
+      "督军贯阵冲锋": 24,
+      "棘轮横扫": 48,
+      "minion": 11.36
+    }
+  }
+]

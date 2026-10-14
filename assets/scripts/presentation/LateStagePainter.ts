@@ -1,3 +1,5 @@
+import { drawSandMap } from "./SandPainter";
+import { drawSiegeMap } from "./SiegePainter";
 import {isFrontier} from "../battle/FrontierMaps";
 import {drawFrontierMap} from "./FrontierPainter";
 import {HARBOR_CARGO} from "../battle/HarborMap";
@@ -7,6 +9,8 @@ import { FURNACE_STONES } from "../battle/FurnaceEncounters";
 import { Graphics, Color } from 'cc';
 import { CROWN_STONES } from '../battle/CrownSystem';
 export function drawLateStage(g: Graphics, stage: number) {
+  if(stage===15){drawSandMap(g);return;}
+  if(stage===14){drawSiegeMap(g);return;}
   if(isFrontier(stage)){drawFrontierMap(g,stage);return;}
   if(stage===10){
     g.clear();g.fillColor=new Color('#191c30');g.rect(-1152,-1344,2304,2688);g.fill();

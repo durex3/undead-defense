@@ -1,25 +1,27 @@
 import type { Point, Enemy } from "./SurvivalTypes";
 export function rectArena(
-  boxes: readonly Point[],
+  boxes: readonly (Point & { halfWidth?: number; halfHeight?: number })[],
   boxWidth: number,
   boxHeight: number,
 ) {
   function blocked(p: Point, r = 0.3) {
     return boxes.some(
       (b) =>
-        Math.abs(p.x - b.x) < boxWidth + r &&
-        Math.abs(p.y - b.y) < boxHeight + r,
+        Math.abs(p.x - b.x) < (b.halfWidth ?? boxWidth) + r &&
+        Math.abs(p.y - b.y) < (b.halfHeight ?? boxHeight) + r,
     );
   }
   function resolve(p: Point, r = 0.3) {
     for (const b of boxes) {
       const dx = p.x - b.x,
         dy = p.y - b.y,
-        px = boxWidth + r - Math.abs(dx),
-        py = boxHeight + r - Math.abs(dy);
+        px = (b.halfWidth ?? boxWidth) + r - Math.abs(dx),
+        py = (b.halfHeight ?? boxHeight) + r - Math.abs(dy);
       if (px > 0 && py > 0) {
-        if (px < py) p.x = b.x + (Math.sign(dx) || 1) * (boxWidth + r);
-        else p.y = b.y + (Math.sign(dy) || 1) * (boxHeight + r);
+        if (px < py)
+          p.x = b.x + (Math.sign(dx) || 1) * ((b.halfWidth ?? boxWidth) + r);
+        else
+          p.y = b.y + (Math.sign(dy) || 1) * ((b.halfHeight ?? boxHeight) + r);
       }
     }
   }
@@ -28,8 +30,8 @@ export function rectArena(
       let lo = 0,
         hi = 1;
       for (const [start, delta, center, half] of [
-        [a.x, b.x - a.x, box.x, boxWidth + r],
-        [a.y, b.y - a.y, box.y, boxHeight + r],
+        [a.x, b.x - a.x, box.x, (box.halfWidth ?? boxWidth) + r],
+        [a.y, b.y - a.y, box.y, (box.halfHeight ?? boxHeight) + r],
       ]) {
         if (Math.abs(delta) < 1e-8) {
           if (Math.abs(start - center) >= half) return false;
@@ -47,8 +49,8 @@ export function rectArena(
   const corners = boxes.flatMap((b) =>
     [-1, 1].flatMap((x) =>
       [-1, 1].map((y) => ({
-        x: b.x + x * (boxWidth + 0.8),
-        y: b.y + y * (boxHeight + 0.8),
+        x: b.x + x * ((b.halfWidth ?? boxWidth) + 0.8),
+        y: b.y + y * ((b.halfHeight ?? boxHeight) + 0.8),
       })),
     ),
   );

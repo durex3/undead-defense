@@ -1,3 +1,5 @@
+import { sandMap } from "./SandMap";
+import { siegeMap } from "./SiegeMap";
 import {FrontierDirector} from "./FrontierSystem";
 import {isFrontier,frontierMap} from "./FrontierMaps";
 import {ObservatoryDirector} from "./ObservatorySystem";
@@ -36,7 +38,7 @@ export class SpawnDirector {
       w.hazards = [];
       let kept = 0;
       w.enemies = w.enemies.filter(
-        (e) => e.kind === "minion" && e.hp > 0 && kept++ < bossCrowdRules(w.stageId).target,
+        (e) => (e.kind === "minion" || (w.stageId===14&&e.kind==="siegebone") || (w.stageId===15&&e.kind==="sandworker")) && e.hp > 0 && kept++ < bossCrowdRules(w.stageId).target,
       );
       const p = this.position(w, Math.atan2(-w.player.y, -w.player.x), 6.5);
       w.addEnemy("boss", p.x, p.y);
@@ -47,7 +49,8 @@ export class SpawnDirector {
     if (this.boss) { this.bossHorde(w); return; }
     for (let i = 0; i < 2; i++) {
       if(w.time>=BOSS_TIME-20)break;
-      const due = i ? 350 : 180;
+      const due = w.stageId===15?(i?345:175):i?350:w.stageId===14?178:180;
+      if(w.stageId>=14&&w.time<w.reinforcementRestUntil)continue;
       if (!this.elites[i] && w.time >= due) {
         const special = w.enemies.filter(
           (e) => ENEMIES[e.kind].threat > 0,
@@ -55,7 +58,9 @@ export class SpawnDirector {
         if (special > 2 && w.time < due + 20) continue;
         if (w.enemies.some((e) => isElite(e.kind) && e.hp > 0)) continue;
         const p = this.position(w, this.lastAngle + Math.PI, 7);
-        const e = w.addEnemy(i ? "charger" : "executioner", p.x, p.y);
+        const kind=w.stageId===15?(i?'breakerelite':'broodelite'):w.stageId===14?(i?'siegerider':'siegeflag'):(i?'charger':'executioner');
+        if(w.stageId>=14&&w.enemies.reduce((n,o)=>n+(o.hp>0?ENEMIES[o.kind].threat:0),0)+ENEMIES[kind].threat>6)continue;
+        const e = w.addEnemy(kind, p.x, p.y);
         if (e) {
           if (w.stageId >= 5) w.hazards=w.hazards.filter(h=>h.source!==0);
           if (w.stageId >= 2) { e.hp *= i === 0 ? .9 : 1.1; e.maxHp = e.hp; }
@@ -63,6 +68,7 @@ export class SpawnDirector {
           if (w.stageId === 3) w.hazards = w.hazards.filter(h => h.kind !== "flame");
           e.state = "arriving";
           e.timer = 1.5;
+          if(w.stageId>=14)e.attack=i?1:4;
           this.elites[i] = true;
           w.effects.push({ type: "elite", ...p });
         }
@@ -70,6 +76,8 @@ export class SpawnDirector {
       }
     }
     if (w.stageId === 3 && t >= 230) w.hazards = w.hazards.filter(h => h.kind !== "flame");
+    if(w.stageId===15){w.sand.director(dt,a=>this.position(w,a),(!this.elites[0]&&w.time>=175)||(!this.elites[1]&&w.time>=345));return;}
+    if(w.stageId===14){w.siege.director(dt,(a,r)=>this.position(w,a,r),(!this.elites[0]&&w.time>=178)||(!this.elites[1]&&w.time>=350));return;}
     if(isFrontier(w.stageId)){this.frontier.step(w,dt,(a,r)=>this.position(w,a,r));return;}
     if(w.stageId===10){this.observatory.step(w,dt,(a,r)=>this.position(w,a,r));return;}
     if(w.stageId===9){this.arsenal.step(w,dt,(a,r)=>this.position(w,a,r));return;}
@@ -214,6 +222,7 @@ export class SpawnDirector {
       return;
     }
     if(boss.state==='windup'&&boss.bossAction==='harborSummon'){this.nextBossWave=Math.max(this.nextBossWave,w.time+1.5);return;}
+    if(w.stageId===14)w.siege.bossReinforcements();
     if(w.time<this.nextBossWave)return;
     const rules=bossCrowdRules(w.stageId,boss.bossPhase);
     this.nextBossWave=w.time+rules.interval;
@@ -227,7 +236,7 @@ export class SpawnDirector {
       if(Math.hypot(p.x-w.player.x,p.y-w.player.y)<4)continue;
       const actual=Math.atan2(p.y-w.player.y,p.x-w.player.x);
       if(Math.abs(Math.atan2(Math.sin(actual-gap),Math.cos(actual-gap)))<.6)continue;
-      const e=w.addEnemy('minion',p.x,p.y,true);
+      const e=w.addEnemy(w.stageId===15?'sandworker':w.stageId===14?'siegebone':'minion',p.x,p.y,true);
       if(!e)break;
       // Reinforcements are distinct from the boss's own capped summon skill.
       e.state='arriving';e.timer=1; e.owner=0;
@@ -249,6 +258,8 @@ export class SpawnDirector {
       const x = center.x + dx * r,
         y = center.y + dy * r;
       if (
+        !(w.stageId===15 && sandMap.blocked({x,y},.65)) &&
+        !(w.stageId===14 && siegeMap.blocked({x,y},.4)) &&
         !(isFrontier(w.stageId) && frontierMap(w.stageId).blocked({x,y},.4)) &&
         !(w.stageId===10 && observatoryBlocked({x,y},.4)) &&
         !(w.stageId===9 && arsenalBlocked({x,y},.4)) &&

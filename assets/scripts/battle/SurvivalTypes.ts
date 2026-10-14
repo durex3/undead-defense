@@ -4,6 +4,24 @@ export interface Point {
   y: number;
 }
 export interface Enemy extends Point {
+  sand?: { action: 'roll'|'spit'|'burrow'|'brood'|'break'|'cross'|'scatter'|'transition'; step:number; angle:number; target?:Point; end?:Point; buried?:boolean; hit?:boolean; next?:number; hatch?:number; vulnerable?:boolean; pendingPhase?:boolean; cooldown?:number; transition?:boolean };
+  sandXp?: number;
+
+  siegeStep?: number;
+  siegeNext?: number;
+  siegeWall?: boolean;
+  siegeShield?: number;
+  siegeShieldUntil?: number;
+  siegeShieldReady?: number;
+  siegeShieldOwner?: number;
+  siegeDodgeReady?: number;
+  siegeGroundTime?: number;
+  siegeFreezeResist?: number;
+  siegeRetry?: number;
+  siegeTarget?: Point;
+  siegeRouteTime?: number;
+  shieldClock?: number;
+  shieldPartner?: number;
   bossReinforcement?: boolean;
   frontierTarget?: Point;
   frontierUntil?: number;
@@ -47,7 +65,7 @@ export interface Enemy extends Point {
   owner: number;
   bossPhase: 1 | 2 | 3;
   bossAction:
-    "frontier" | "none" | "sweep" | "burst" | "summon" | "tombstone" | "transition" | "lance" | "altar" | "bellRing" | "bellPulse" | "anchor" | "harborCharge" | "harborSummon" | "arsenalSweep" | "arsenalBolt" | "arsenalFlag" | "starTrace" | "starBlade" | "starLeap";
+    "siegeCharge" | "siegePincer" | "siegeSweep" | "siegeShot" | "frontier" | "none" | "sweep" | "burst" | "summon" | "tombstone" | "transition" | "lance" | "altar" | "bellRing" | "bellPulse" | "anchor" | "harborCharge" | "harborSummon" | "arsenalSweep" | "arsenalBolt" | "arsenalFlag" | "starTrace" | "starBlade" | "starLeap";
 }
 export interface Shot extends Point {
   form?: string;
@@ -98,6 +116,14 @@ export interface Ring extends Point {
   freeze: boolean;
 }
 export interface Hazard extends Point {
+  sandRift?: boolean;
+  sandLaunchDelay?: number;
+  siegeLaunched?: boolean;
+  siegeBallistic?: boolean;
+  siegeGround?: boolean;
+  siegeRing?: boolean;
+  siegeTick?: number;
+  siegeCharge?: boolean;
   projectileSpeed?: number;
   sequence?: number;
   endX?: number;

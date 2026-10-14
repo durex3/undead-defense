@@ -16,11 +16,11 @@ function enemy(w,kind='boss'){const e=w.addEnemy(kind,-4,0);e.state='seek';e.vis
 
 test('stages 11–13 unlock sequentially and preserve old and new saves and bests',()=>{
  const data=new Map(),storage={getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v)};
- let p=new ProgressStore(storage);assert.equal(STAGE_IDS.length,13);
+ let p=new ProgressStore(storage);assert.equal(STAGE_IDS.length,15);
  for(const stage of stages){assert(!p.unlockedStage(stage));const w=world(stage-1);w.state='won';p.observe(w);assert(p.unlockedStage(stage));assert(!p.data.stages.includes(stage));}
  const w=world(13);w.state='won';p.observe(w);p=new ProgressStore(storage);
  for(const stage of [10,11,12,13])assert(p.data.stageBest[stage].won&&p.data.stages.includes(stage));
- assert.equal(p.data.revision,4);assert.equal(Object.keys(STAGES).length,13);
+ assert.equal(p.data.revision,4);assert.equal(Object.keys(STAGES).length,15);
  for(const stage of stages)assert(STAGE_GUIDES[stage].threat.length&&STAGE_GUIDES[stage].builds.length);
 });
 for(const stage of stages){

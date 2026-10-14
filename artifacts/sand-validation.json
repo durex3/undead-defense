@@ -1,0 +1,171 @@
+{
+  "version": "0.19.0",
+  "date": "2026-10-14",
+  "tests": 385,
+  "typecheck": "passed",
+  "webBuild": "passed",
+  "wechatBuild": "passed",
+  "mobileBrowser": "844x390 DPR2; enemy silhouettes, burrow warning, spawn camera; no console errors",
+  "limitations": "Bot results are not human win rates or WeChat device performance; midgame horizon means survival, not victory.",
+  "sourceSha256": {
+    "assets/scripts/battle/SandSystem.ts": "0c4a6c6a537d174e4e4b266d82fd8a1d4b524f72ea5e4afb1287c986c5c50129",
+    "assets/scripts/battle/SiegeSystem.ts": "93dfdacdf97dd11adb93610ebd0f9b8f688028b098203fc9e834fc5bd3ecaef5",
+    "tools/simulate-legion.mjs": "82e7aea071306f2b2ce8ba87f65483225501bfeb731d5b9252e1a5a35d6fd054"
+  },
+  "boss": {
+    "14": {
+      "stationary": {
+        "lost": 54
+      },
+      "moving": {
+        "won": 30,
+        "lost": 24
+      },
+      "byBuild": {
+        "0": {
+          "lost": 9,
+          "won": 9
+        },
+        "1": {
+          "lost": 15,
+          "won": 3
+        },
+        "2": {
+          "lost": 18
+        },
+        "3": {
+          "lost": 9,
+          "won": 9
+        },
+        "4": {
+          "lost": 9,
+          "won": 9
+        },
+        "5": {
+          "lost": 18
+        }
+      }
+    },
+    "15": {
+      "stationary": {
+        "lost": 54
+      },
+      "moving": {
+        "won": 25,
+        "lost": 29
+      },
+      "byBuild": {
+        "0": {
+          "lost": 9,
+          "won": 9
+        },
+        "1": {
+          "lost": 17,
+          "won": 1
+        },
+        "2": {
+          "lost": 18
+        },
+        "3": {
+          "lost": 9,
+          "won": 9
+        },
+        "4": {
+          "lost": 12,
+          "won": 6
+        },
+        "5": {
+          "lost": 18
+        }
+      }
+    }
+  },
+  "midgame": {
+    "14": {
+      "stationary": {
+        "lost": 54
+      },
+      "moving": {
+        "battle": 31,
+        "lost": 23
+      },
+      "byBuild": {
+        "0": {
+          "lost": 9,
+          "battle": 9
+        },
+        "1": {
+          "lost": 18
+        },
+        "2": {
+          "lost": 18
+        },
+        "3": {
+          "lost": 9,
+          "battle": 9
+        },
+        "4": {
+          "lost": 9,
+          "battle": 9
+        },
+        "5": {
+          "lost": 14,
+          "battle": 4
+        }
+      }
+    },
+    "15": {
+      "stationary": {
+        "lost": 48,
+        "battle": 6
+      },
+      "moving": {
+        "battle": 27,
+        "lost": 27
+      },
+      "byBuild": {
+        "0": {
+          "lost": 7,
+          "battle": 11
+        },
+        "1": {
+          "lost": 18
+        },
+        "2": {
+          "lost": 18
+        },
+        "3": {
+          "lost": 5,
+          "battle": 13
+        },
+        "4": {
+          "lost": 9,
+          "battle": 9
+        },
+        "5": {
+          "lost": 18
+        }
+      }
+    }
+  },
+  "growth": {
+    "14": {
+      "collector": {
+        "won": 6,
+        "lost": 9,
+        "battle": 3
+      },
+      "camp": {}
+    },
+    "15": {
+      "collector": {
+        "lost": 7,
+        "won": 4,
+        "battle": 7
+      },
+      "camp": {
+        "lost": 12
+      }
+    }
+  }
+}
