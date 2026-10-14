@@ -1,3 +1,4 @@
+import {BOSS_REINFORCEMENT_XP} from "./HordePressure";
 import {frontierEnemy} from "./FrontierSystem";
 import {experienceRequired} from "./ExperienceCurve";
 import {ObservatoryPath} from "./ObservatoryPath";
@@ -515,8 +516,8 @@ export class SurvivalWorld {
         this.dropPotion(e.x, e.y);
         this.director.restUntil = this.time + 6;
         this.effects.push({ type: "eliteDown", x: e.x, y: e.y });
-      } else if (!e.summoned || source === "ultimate") {
-        const value = ENEMIES[e.kind].xp * STAGES[this.stageId].xp * (e.summoned ? 0.5 : 1);
+      } else if (!e.summoned || e.bossReinforcement) {
+        const value = ENEMIES[e.kind].xp * STAGES[this.stageId].xp * (e.bossReinforcement ? BOSS_REINFORCEMENT_XP : 1);
         const g = this.gems.find((g) => distance(g, e) < 0.9);
         if (g) g.value += value;
         else
@@ -526,7 +527,7 @@ export class SurvivalWorld {
             y: e.y,
             value,
           });
-        if (this.kills % STAGES[this.stageId].medicine === 0)
+        if (!e.summoned && this.kills % STAGES[this.stageId].medicine === 0)
           this.dropPotion(e.x, e.y);
       }
       this.effects.push({ type: "death", x: e.x, y: e.y, skill: e.kind });

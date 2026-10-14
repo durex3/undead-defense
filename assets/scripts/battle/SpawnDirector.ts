@@ -231,6 +231,7 @@ export class SpawnDirector {
       if(!e)break;
       // Reinforcements are distinct from the boss's own capped summon skill.
       e.state='arriving';e.timer=1; e.owner=0;
+      e.bossReinforcement=true;
     }
   }
   private position(w: SurvivalWorld, angle: number, radius?: number) {

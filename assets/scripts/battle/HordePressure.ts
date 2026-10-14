@@ -1,4 +1,5 @@
 import type { SurvivalWorld } from './SurvivalWorld';
+export const BOSS_REINFORCEMENT_XP = .5;
 /** More fodder for developed builds, without scaling enemy health or special attacks. */
 export function hordePressure(w: Pick<SurvivalWorld, 'time' | 'skills' | 'evolutions'>) {
   const power = Object.values(w.skills).reduce((n, level) => n + Math.max(0, level - 1), 0)

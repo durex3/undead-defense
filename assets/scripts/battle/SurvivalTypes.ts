@@ -4,6 +4,7 @@ export interface Point {
   y: number;
 }
 export interface Enemy extends Point {
+  bossReinforcement?: boolean;
   frontierTarget?: Point;
   frontierUntil?: number;
   frontierRecovery?: number;
