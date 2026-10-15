@@ -1,9 +1,18 @@
+import type { MoonMotion } from "./MoonGeometry";
 import { Kind, Skill } from "./SurvivalConfig";
 export interface Point {
   x: number;
   y: number;
 }
+export interface ThunderState {
+ action: 'anchor'|'arc'|'saw'|'grid'|'reap'|'beats'|'walls'|'court'|'transition';
+ step:number; next:number; points:Point[]; devices:number[]; angle:number;
+ launched?:boolean; vulnerable?:boolean; flankUntil?:number; expires?:number;
+}
+export interface MoonState { direction?:number; action:"blades"|"leaps"|"sweeps"|"transition"; step:number; next:number; recovery:number; cooldown:number; flank?:Point; flankUntil?:number; jumpStart?:Point; jumpEnd?:Point; jumpAt?:number; jumpDue?:number; vulnerable?:boolean; }
 export interface Enemy extends Point {
+ moon?:MoonState;
+ thunder?: ThunderState;
   sand?: { action: 'roll'|'spit'|'burrow'|'brood'|'break'|'cross'|'scatter'|'transition'; step:number; angle:number; target?:Point; end?:Point; buried?:boolean; hit?:boolean; next?:number; hatch?:number; vulnerable?:boolean; pendingPhase?:boolean; cooldown?:number; transition?:boolean };
   sandXp?: number;
 
@@ -83,6 +92,8 @@ export interface Effect extends Point {
   angle?: number;
 }
 export interface Hazard extends Point {
+ moon?:{motion:MoonMotion; launched:boolean; hits:number; last:number; player:Point; order:number};
+ thunder?: {shape:'zone'|'line'|'wall'|'sector'; devices:number[]; speed?:number; travel?:number; gap?:number; tick?:number; residue?:number; launch?:number; hit?:boolean; order?:number; preview?:boolean};
   sandRift?: boolean;
   sandLaunchDelay?: number;
   siegeLaunched?: boolean;

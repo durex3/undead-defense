@@ -31,6 +31,8 @@ export class SpawnDirector {
   private lastAngle = 0;
   step(w: SurvivalWorld, dt: number) {
     if (!w.active) return;
+    if(w.stageId===17){w.moon.director(dt);return;}
+    if(w.stageId===16){w.thunder.director(dt);return;}
     const t = encounterTime(w.time);
     if (w.time >= BOSS_TIME && !this.boss) {
       this.boss = true;

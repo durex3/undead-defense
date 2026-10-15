@@ -1,0 +1,3107 @@
+{
+  "generated": "2026-10-15T11:10:08.629Z",
+  "scope": "Deterministic Node simulations, six legal full builds × three positions × three seeds × stationary/moving; simple predictive controller, no human difficulty or phone thermal claims.",
+  "boss": [
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 79.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 75.6,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 78.1,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 72.9,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 78.6,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 75.6,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 80.9,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 73.4,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 80.3,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 72.6,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 80.5,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 75.5,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 80.3,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.37,
+      "hp": 0,
+      "bossRemaining": 70.7,
+      "losses": {
+        "蚀月角王": 24,
+        "月兽跃扑": 56,
+        "旋转角刃": 20
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 19,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 80.8,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 74.2,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 78.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 75.9,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 92.8,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 78.3,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 92.8,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 80.8,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 93.2,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 80.9,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 93.2,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 80.5,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 93.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 79.1,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 92.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 80.4,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 91.6,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.23,
+      "hp": 0,
+      "bossRemaining": 76.2,
+      "losses": {
+        "蚀月角王": 24,
+        "月兽跃扑": 56,
+        "旋转角刃": 20
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 91.8,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.43,
+      "hp": 0,
+      "bossRemaining": 75.8,
+      "losses": {
+        "蚀月角王": 24,
+        "月兽跃扑": 56,
+        "旋转角刃": 20
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 92.2,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 80.4,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 85.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 80.5,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 85,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 77.4,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 86.1,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 78,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 86.9,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 77.7,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 85.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 81.1,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 85,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 77.6,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 86,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 79.3,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 85.1,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 80.5,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 84.3,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 76.9,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 81.8,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.2,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 81.8,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 82.5,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 89.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 84.7,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 89.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 82,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.6,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 82.2,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.1,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 82.1,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 89.9,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.38,
+      "hp": 0,
+      "bossRemaining": 79,
+      "losses": {
+        "蚀月角王": 24,
+        "月兽跃扑": 56,
+        "旋转角刃": 20
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 82.1,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 82.8,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 81,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 82.8,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 80.1,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 82.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 80.7,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 82.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 82.9,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 11,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 82.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 82.6,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 12,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 83,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 82.6,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 10,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 82.1,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 13,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 80.7,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 82.1,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 13,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 80.4,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 81.7,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 80.4,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.9,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 85.5,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 91.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 85.7,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 89.9,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 85.6,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.3,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.27,
+      "hp": 0,
+      "bossRemaining": 85.7,
+      "losses": {
+        "月刃折返": 52,
+        "蚀月角王": 24,
+        "月兽跃扑": 24
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 83.2,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.4,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 83.5,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90.3,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 83.2,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 89.9,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 83.4,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 16.35,
+      "hp": 0,
+      "bossRemaining": 90,
+      "losses": {
+        "月刃折返": 78,
+        "月兽跃扑": 22
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.55,
+      "hp": 0,
+      "bossRemaining": 83.4,
+      "losses": {
+        "月刃折返": 26,
+        "蚀月角王": 24,
+        "月兽跃扑": 50
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 0,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "blades",
+        "leaps"
+      ]
+    }
+  ],
+  "growth": [
+    {
+      "seed": 19,
+      "formed": false,
+      "state": "lost",
+      "time": 10.35,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "棘背群兽": 100
+      },
+      "peakEnemies": 22
+    },
+    {
+      "seed": 19,
+      "formed": true,
+      "state": "battle",
+      "time": 480,
+      "level": 64,
+      "hp": 10,
+      "losses": {
+        "月刃折返": 66,
+        "旋转角刃": 24
+      },
+      "peakEnemies": 32
+    },
+    {
+      "seed": 19,
+      "formed": "moving",
+      "state": "lost",
+      "time": 17,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "棘背群兽": 100
+      },
+      "peakEnemies": 34
+    },
+    {
+      "seed": 73,
+      "formed": false,
+      "state": "lost",
+      "time": 10.37,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "棘背群兽": 100
+      },
+      "peakEnemies": 22
+    },
+    {
+      "seed": 73,
+      "formed": true,
+      "state": "battle",
+      "time": 480,
+      "level": 64,
+      "hp": 10,
+      "losses": {
+        "月刃折返": 66,
+        "旋转角刃": 24
+      },
+      "peakEnemies": 32
+    },
+    {
+      "seed": 73,
+      "formed": "moving",
+      "state": "lost",
+      "time": 17.37,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "棘背群兽": 100
+      },
+      "peakEnemies": 39
+    },
+    {
+      "seed": 217,
+      "formed": false,
+      "state": "lost",
+      "time": 10.7,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "棘背群兽": 100
+      },
+      "peakEnemies": 22
+    },
+    {
+      "seed": 217,
+      "formed": true,
+      "state": "battle",
+      "time": 480,
+      "level": 64,
+      "hp": 10,
+      "losses": {
+        "月刃折返": 66,
+        "旋转角刃": 24
+      },
+      "peakEnemies": 32
+    },
+    {
+      "seed": 217,
+      "formed": "moving",
+      "state": "lost",
+      "time": 13.77,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "棘背群兽": 100
+      },
+      "peakEnemies": 28
+    }
+  ],
+  "stationaryIssues": [],
+  "perf": [
+    {
+      "multiplier": 1,
+      "frames": 600,
+      "medianMs": 0.47341600000072503,
+      "p95Ms": 3.0483339999991586,
+      "peakEntities": 98
+    },
+    {
+      "multiplier": 3,
+      "frames": 600,
+      "medianMs": 2.0334579999998823,
+      "p95Ms": 12.301125000001775,
+      "peakEntities": 98
+    }
+  ],
+  "elapsedMs": 13660
+}

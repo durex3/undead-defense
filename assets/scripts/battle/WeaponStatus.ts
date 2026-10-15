@@ -1,3 +1,4 @@
+import { EXTRA_RULES, ExtraSkill } from "./ExtraArmoryConfig";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import {
   Skill,
@@ -35,7 +36,7 @@ export function weaponDetails(w: SurvivalWorld, s: Skill) {
   return [
     WEAPON_ROLES[s],
     `${w.skills[s]}/8级 · ${a.count}次主攻击 · 周期 ${n(a.cooldown)}秒`,
-    `${s === "water" ? "每跳伤害" : "单次伤害"} ${n(a.damage)} · 范围 ${n(a.radius)}${s === "water" ? ` · 持续 ${n(a.duration)}秒` : ""}`,
+    `${s === "water" ? "每跳伤害" : "单次伤害"} ${n(a.damage)} · 范围 ${n(a.radius)}${["water", "mine", "void", "frost", "bone"].includes(s) ? ` · 持续 ${n(a.duration)}秒` : ""}`,
     ...w.mods[s].map((id) => {
       const m = modInfo(s, id)!;
       return `${m.glyph} ${m.name}：${m.effect}\n代价：${m.cost}`;
@@ -45,7 +46,9 @@ export function weaponDetails(w: SurvivalWorld, s: Skill) {
       ? "飞刀数量增加主刀；碎刃每轮固定2把。"
       : s === "fire"
         ? "数量增加本轮主球总数；碎焰每主球2枚；火海同源重叠不叠伤。"
-        : "每0.4秒一跳；水爆改为每秒×2.5伤害；同源重叠不叠伤。",
+        : s === "water"
+          ? "每0.4秒一跳；水爆改为每秒×2.5伤害；同源重叠不叠伤。"
+          : EXTRA_RULES[s as ExtraSkill],
     "被动仅增加通用属性，不与武器组成配方。",
   ].join("\n");
 }

@@ -1,0 +1,35 @@
+{
+  "version": "0.25.0",
+  "viewport": {
+    "width": 844,
+    "height": 390,
+    "deviceScaleFactor": 2
+  },
+  "stage17": {
+    "simulatedSeconds": 150,
+    "actions": [
+      "blades",
+      "leaps",
+      "sweeps"
+    ],
+    "phase": 2,
+    "peakHazards": 2,
+    "peakSlots": 2,
+    "slotType": "number",
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "testStorageWrites": 0,
+    "sixWeaponStatusInspected": true
+  },
+  "speed3": {
+    "animationFrames": 60,
+    "wallSeconds": 0.9862,
+    "simulationSeconds": 2.98333333333,
+    "peakSlots": 2
+  },
+  "limits": [
+    "Controlled high-health observation, not a win-rate test.",
+    "Desktop browser and CPU samples do not verify phone thermals.",
+    "Human difficulty remains unverified."
+  ]
+}

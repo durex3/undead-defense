@@ -1,3 +1,4 @@
+import { thunderMap } from "./ThunderMap";
 import { sandMap } from "./SandMap";
 import { siegeMap } from "./SiegeMap";
 import {isFrontier,frontierMap} from "./FrontierMaps";
@@ -48,7 +49,7 @@ export function crownEscape(w: SurvivalWorld, candidates: Hazard[], avoidCrowd =
   let safe=true;
   for(let t=0;t<=horizon;t+=.05){
    const p={x:w.player.x+(direction<0?0:Math.cos(angle)*speed*t),y:w.player.y+(direction<0?0:Math.sin(angle)*speed*t)};
-   if(Math.abs(p.x)>22 || Math.abs(p.y)>26 || stones.some(s=>Math.hypot(s.x-p.x,s.y-p.y)<1.4) || (w.stageId===8&&harborBlocked(p,.3)) || (w.stageId===9&&arsenalBlocked(p,.3)) || (w.stageId===10&&observatoryBlocked(p,.3)) || (w.stageId===14&&siegeMap.blocked(p,.3)) || (w.stageId===15&&sandMap.blocked(p,.3)) || (isFrontier(w.stageId)&&frontierMap(w.stageId).blocked(p,.3))){safe=false;break;}
+   if(Math.abs(p.x)>22 || Math.abs(p.y)>26 || stones.some(s=>Math.hypot(s.x-p.x,s.y-p.y)<1.4) || (w.stageId===8&&harborBlocked(p,.3)) || (w.stageId===9&&arsenalBlocked(p,.3)) || (w.stageId===10&&observatoryBlocked(p,.3)) || (w.stageId===14&&siegeMap.blocked(p,.3)) || (w.stageId===15&&sandMap.blocked(p,.3)) || (w.stageId===16&&thunderMap.blocked(p,.3)) || (isFrontier(w.stageId)&&frontierMap(w.stageId).blocked(p,.3))){safe=false;break;}
    if(t>.2&&t<1.5&&Math.round(t/.05)%4===0&&blockers.some(e=>Math.hypot(e.x-p.x,e.y-p.y)<(w.stageId>=14?1:.6))){safe=false;break;}
    if(hazards.some(h=>w.time+t>=h.due && w.time+t<h.until && timedHit(h,p,w.time+t))){safe=false;break;}
   }

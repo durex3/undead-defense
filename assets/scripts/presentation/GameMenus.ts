@@ -67,14 +67,16 @@ export class GameMenus {
   private inventory() {
     const h = this.host,
       w = h.world;
-    WEAPONS.forEach((s, i) => {
-      const x = (i - 1) * 350;
-      h.panel(h.overlay, x, 148, 330, 62, "#25323e");
+    const equipped = WEAPONS.filter((s) => w.skills[s]);
+    equipped.forEach((s, i) => {
+      const x = ((i % 3) - 1) * 350,
+        y = 164 - Math.floor(i / 3) * 56;
+      h.panel(h.overlay, x, y, 330, 50, "#25323e");
       h.text(
         h.overlay,
         w.skills[s] ? `${NAMES[s]} ${w.skills[s]}/8级` : `${NAMES[s]} · 未持有`,
         x,
-        161,
+        y + 10,
         17,
         w.skills[s] ? COLORS[s] : "#85929e",
         316,
@@ -83,7 +85,7 @@ export class GameMenus {
         h.overlay,
         w.skills[s] ? modSummary(w, s) : "可从升级中学习",
         x,
-        136,
+        y - 12,
         14,
         "#b9c8d5",
         316,
@@ -95,7 +97,7 @@ export class GameMenus {
       `被动 ${ps.length}/4：` +
         (ps.map((p) => `${NAMES[p]} ${w.passives[p]}级`).join(" · ") || "暂无"),
       0,
-      99,
+      64,
       15,
       "#a9cdbc",
       1050,
@@ -217,15 +219,15 @@ export class GameMenus {
             : PASSIVES.includes(c as Passive)
               ? w.passives[c as Passive]
               : 0;
-        h.panel(h.overlay, x, -65, 330, 280, "#293443");
-        h.text(h.overlay, `${i + 1}  ${NAMES[c]}`, x, 43, 26, COLORS[c], 310);
+        h.panel(h.overlay, x, -80, 330, 260, "#293443");
+        h.text(h.overlay, `${i + 1}  ${NAMES[c]}`, x, 25, 26, COLORS[c], 310);
         h.text(
           h.overlay,
           skill
             ? `${lv ? "强化" : "新武器"} · ${lv} → ${lv + 1}级`
             : "通用成长",
           x,
-          7,
+          -7,
           17,
           "#e8cc92",
           306,
@@ -265,8 +267,8 @@ export class GameMenus {
         1000,
       );
       r.rows.forEach((row, i) => {
-        const y = 80 - i * 53;
-        h.panel(h.overlay, 0, y, 1020, 46, "#26323f");
+        const y = 82 - i * 34;
+        h.panel(h.overlay, 0, y, 1020, 30, "#26323f");
         h.text(
           h.overlay,
           `${row.name} ${w.skills[row.skill]}级 · ${modSummary(w, row.skill)}`,
@@ -357,9 +359,9 @@ export class GameMenus {
         h.overlay,
         `${NAMES[s]} ${w.skills[s]}/8级 · ${modSummary(w, s)}`,
         -235,
-        87 - i * 53,
+        92 - i * 34,
         555,
-        42,
+        30,
         () => {
           this.detailSkill = s;
           this.redraw();
@@ -376,8 +378,8 @@ export class GameMenus {
         )
         .join("\n") || "暂无被动",
       -235,
-      -129,
-      18,
+      -166,
+      16,
       "#a9cdbc",
       550,
     );
@@ -537,7 +539,7 @@ export class GameMenus {
     const page = Math.floor(stages.indexOf(preview) / 8),
       pages = Math.ceil(stages.length / 8);
     for (const [i, stage] of stages.slice(page * 8, page * 8 + 8).entries()) {
-      const x = (i - (stages.length - 1) / 2) * 350,
+      const x = (i % 4 - (Math.min(stages.length-page*8,4) - 1) / 2) * (stages.length > 3 ? 280 : 350),
         y = 100 - Math.floor(i / 4) * 135,
         unlocked = this.host.progress.unlockedStage(stage);
       const label = this.host.button(

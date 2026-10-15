@@ -1,3 +1,6 @@
+import { drawMoonEnemy, drawMoonHazard } from "./MoonPainter";
+import { drawThunderEnemy, drawThunderHazard, drawThunderPreviews } from "./ThunderPainter";
+import {drawExtraArmory} from "./ExtraArmoryPainter";
 import { drawSandEnemy } from "./SandPainter";
 import { sandEnemy } from "../battle/SandSystem";
 import { drawSiegeEnemy, drawSiegeCharge } from "./SiegePainter";
@@ -36,12 +39,15 @@ export class BattlePainter {
  for(const e of events)if(['hit','death','playerHit','explosion','block','modify','ultimate','heal'].includes(e.type)){const max=e.type==='explosion'?.35:e.type==='modify'?.8:.18;this.particles.push({e,life:max,max});}
  this.particles=this.particles.slice(-(reduced?64:120));
  this.ground(w,reduced);
+ drawExtraArmory(g,w,true,reduced);
     for (const e of w.enemies) {
       const x = e.x * 48,
         y = e.y * 48;
       g.fillColor = color("#040811", 75);
       g.ellipse(x, y - 7, isLarge(e.kind) ? 27 : 17, 6);
       g.fill();
+      if(w.stageId===17)drawMoonEnemy(g,w,e);
+      else if(w.stageId===16)drawThunderEnemy(g,w,e);
       if(w.stageId===15&&(e.kind==='boss'||sandEnemy(e.kind)))drawSandEnemy(g,w,e);
       if(w.stageId===14&&(e.kind==='boss'||siegeEnemy(e.kind)))drawSiegeEnemy(g,w,e);
       if(isFrontier(w.stageId)&&(e.kind==='boss'||frontierEnemy(e.kind)))drawFrontierEnemy(g,e,w.stageId);
@@ -241,11 +247,15 @@ export class BattlePainter {
       g.fill();
     }
     this.projectiles(w);
+    drawExtraArmory(g,w,false,reduced);
     for(const p of this.particles){p.life-=dt;if(p.life<=0)continue;const e=p.e,a=p.life/p.max,x=e.x*48,y=e.y*48;g.strokeColor=color(e.type==='playerHit'?'#ff6666':e.skill==='water'?'#9aefff':e.skill==='fire'?'#ffad55':'#fff1bd',Math.round(a*230));g.lineWidth=e.type==='explosion'?4:2;
      const radius=(e.radius||.4)*48;if(e.type==='explosion'){g.circle(x,y,radius);g.stroke();g.circle(x,y,radius*(1-a));g.stroke();if(e.form==='heavy'){g.circle(x,y,radius*.55);g.stroke();}}else {g.circle(x,y,(e.type==='modify'?60:14)*(1-a)+5);g.stroke();}
     }
     this.particles=this.particles.filter(p=>p.life>0);
+    if(w.stageId===16)drawThunderPreviews(g,w);
     for (const h of w.hazards) {
+      if(h.moon){drawMoonHazard(g,h,w.time);continue;}
+      if(h.thunder){drawThunderHazard(g,h,w.time);continue;}
       const x = h.x * 48,
         y = h.y * 48,
         r = h.radius * 48,

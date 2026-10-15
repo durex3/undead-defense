@@ -1,3 +1,5 @@
+import { moonMap } from "./MoonMap";
+import { thunderMap } from "./ThunderMap";
 import { sandMap } from "./SandMap";
 import { siegeMap } from "./SiegeMap";
 import {isFrontier,frontierMap} from "./FrontierMaps";
@@ -35,6 +37,8 @@ export function resolveGarden(p: Point, radius = 0.3, stones = GARDEN_STONES) {
 }
 export function stepGarden(w: SurvivalWorld, dt: number) {
   if (w.stageId === 1) return;
+  if(w.stageId===17){moonMap.resolve(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")moonMap.resolve(e,e.kind==="boss"?.65:.35);return;}
+  if(w.stageId===16){thunderMap.resolve(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")thunderMap.resolve(e,e.kind==="boss"?.65:.35);return;}
   if(w.stageId===15){sandMap.resolve(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")sandMap.resolve(e,e.kind==="boss"?.65:.35);return;}
   if(w.stageId===14){siegeMap.resolve(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")siegeMap.resolve(e,e.kind==="boss"?.65:.35);return;}
   if(isFrontier(w.stageId)){const map=frontierMap(w.stageId);map.resolve(w.player);for(const e of w.enemies)if(e.hp>0&&e.state!=="arriving")map.resolve(e,e.kind==="boss"?.65:.35);return;}

@@ -85,6 +85,7 @@ export class GameBootstrap extends Component {
   private overlay!: Node;
   private fx!: Graphics;
   private bars!: Graphics;
+  private bossHealthLabel!: Label;
   private joy!: Graphics;
   private stats!: Label;
   private hint!: Label;
@@ -207,6 +208,7 @@ export class GameBootstrap extends Component {
         "#151923",
       );
       this.stats = this.text(this.hud, "", 0, this.screenH / 2 - 42, 23);
+      this.bossHealthLabel = this.text(this.hud, "", 0, this.screenH / 2 - 91, 17, "#ffe3dc", Math.max(200, this.screenW - 320));
       this.hint = this.text(
         this.hud,
         "",
@@ -772,6 +774,15 @@ export class GameBootstrap extends Component {
     this.rect(b, hx - 25, hy, 50, 6, "#371f32");
     this.rect(b, hx - 25, hy, (50 * w.hp) / w.maxHp, 6, "#f18787");
     const hud = battleHud(w, this.touchMode, visiblePotions);
+    this.bossHealthLabel.node.active = !!hud.bossHealth;
+    if (hud.bossHealth) {
+      this.bossHealthLabel.string = hud.bossHealth.label;
+      const width = Math.max(200, this.screenW - 320);
+      const y = this.screenH / 2 - 120;
+      this.rect(b, -width / 2 - 2, y - 2, width + 4, 16, "#e8c6bc");
+      this.rect(b, -width / 2, y, width, 12, "#381f2b");
+      this.rect(b, -width / 2, y, width * hud.bossHealth.ratio, 12, "#ee697c");
+    }
     this.stats.string = hud.stats;
     this.weapons.string = hud.weapons;
     this.hint.string = hud.hint;

@@ -1,0 +1,1200 @@
+{
+  "generated": "2026-10-15T08:18:56.898Z",
+  "scope": "Desktop Node armory simulation only; static immortal enemies, no enemy AI, renderer, human win rate or phone thermals.",
+  "weapons": [
+    {
+      "skill": "blade",
+      "name": "飞刀",
+      "levels": [
+        {
+          "damage": 16,
+          "count": 2,
+          "cooldown": 1.6,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 20,
+          "count": 2,
+          "cooldown": 1.6,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 20,
+          "count": 3,
+          "cooldown": 1.6,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 20,
+          "count": 3,
+          "cooldown": 1.4,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 26,
+          "count": 3,
+          "cooldown": 1.4,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 26,
+          "count": 4,
+          "cooldown": 1.4,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 32,
+          "count": 4,
+          "cooldown": 1.4,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 32,
+          "count": 4,
+          "cooldown": 1.2,
+          "radius": 0.21,
+          "duration": 1.1,
+          "range": 7,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "orbit",
+          "name": "环绕护身",
+          "short": "环绕",
+          "effect": "短暂绕身刀阵，清理贴身敌人",
+          "cost": "失去远程攻击；每轮刀阵有空档",
+          "excludes": "hunt",
+          "glyph": "◎"
+        },
+        {
+          "id": "hunt",
+          "name": "追猎穿刺",
+          "short": "追猎",
+          "effect": "追踪精英与远程，最多穿过2人",
+          "cost": "单次伤害−15%；转向速度有限",
+          "excludes": "orbit",
+          "glyph": "➤"
+        },
+        {
+          "id": "return",
+          "name": "往返切线",
+          "short": "往返",
+          "effect": "刀刃折返；刀阵向外扩张后回收",
+          "cost": "单次伤害−20%；回程需安排走位",
+          "glyph": "↶"
+        },
+        {
+          "id": "shards",
+          "name": "碎刃散射",
+          "short": "碎刃",
+          "effect": "终结时向前散出2把短程碎刃",
+          "cost": "主刀伤害−15%；碎刃每轮只出一组",
+          "glyph": "⋔"
+        }
+      ]
+    },
+    {
+      "skill": "fire",
+      "name": "烈焰火球",
+      "levels": [
+        {
+          "damage": 30,
+          "count": 1,
+          "cooldown": 2.6,
+          "radius": 1.4,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        },
+        {
+          "damage": 38,
+          "count": 1,
+          "cooldown": 2.6,
+          "radius": 1.4,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        },
+        {
+          "damage": 38,
+          "count": 2,
+          "cooldown": 2.6,
+          "radius": 1.4,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        },
+        {
+          "damage": 38,
+          "count": 2,
+          "cooldown": 2.2,
+          "radius": 1.5999999999999999,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        },
+        {
+          "damage": 48,
+          "count": 2,
+          "cooldown": 2.2,
+          "radius": 1.5999999999999999,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        },
+        {
+          "damage": 48,
+          "count": 3,
+          "cooldown": 2.2,
+          "radius": 1.5999999999999999,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        },
+        {
+          "damage": 60,
+          "count": 3,
+          "cooldown": 2.2,
+          "radius": 1.5999999999999999,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        },
+        {
+          "damage": 60,
+          "count": 3,
+          "cooldown": 1.8,
+          "radius": 1.7999999999999998,
+          "duration": 2.6,
+          "range": 13,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "heavy",
+          "name": "蓄能重爆",
+          "short": "重爆",
+          "effect": "内圈伤害×1.8，外圈×1.25，半径×1.5",
+          "cost": "攻击周期×1.3；先蓄能再发射",
+          "excludes": "salvo",
+          "glyph": "◉"
+        },
+        {
+          "id": "salvo",
+          "name": "连珠轰击",
+          "short": "连珠",
+          "effect": "一轮分三段连发，主火球数+2",
+          "cost": "每发伤害−48%，半径−15%",
+          "excludes": "heavy",
+          "glyph": "≋"
+        },
+        {
+          "id": "embers",
+          "name": "碎焰散射",
+          "short": "碎焰",
+          "effect": "主爆炸向外散出2枚燃烧碎片",
+          "cost": "主爆炸伤害−20%；碎片不再散射",
+          "glyph": "✹"
+        },
+        {
+          "id": "flame",
+          "name": "落地火海",
+          "short": "火海",
+          "effect": "主爆炸留2.6秒火区，敌人停留才受伤",
+          "cost": "即时爆炸伤害−25%；同源重叠不叠伤",
+          "glyph": "♨"
+        }
+      ]
+    },
+    {
+      "skill": "water",
+      "name": "圣水瓶",
+      "levels": [
+        {
+          "damage": 7,
+          "count": 1,
+          "cooldown": 3.2,
+          "radius": 1.5,
+          "duration": 4,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 9,
+          "count": 1,
+          "cooldown": 3.2,
+          "radius": 1.5,
+          "duration": 4,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 9,
+          "count": 2,
+          "cooldown": 3.2,
+          "radius": 1.5,
+          "duration": 4,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 9,
+          "count": 2,
+          "cooldown": 2.8,
+          "radius": 1.7,
+          "duration": 4,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 12,
+          "count": 2,
+          "cooldown": 2.8,
+          "radius": 1.7,
+          "duration": 4,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 12,
+          "count": 3,
+          "cooldown": 2.8,
+          "radius": 1.7,
+          "duration": 5,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 15,
+          "count": 3,
+          "cooldown": 2.8,
+          "radius": 1.7,
+          "duration": 5,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 15,
+          "count": 3,
+          "cooldown": 2.4,
+          "radius": 1.9,
+          "duration": 5,
+          "range": 10,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "spring",
+          "name": "圣泉扩张",
+          "short": "圣泉",
+          "effect": "固定水区由45%扩大到165%半径",
+          "cost": "起始范围小；转场后需重新铺设",
+          "excludes": "wave",
+          "glyph": "◌"
+        },
+        {
+          "id": "wave",
+          "name": "奔流推进",
+          "short": "奔流",
+          "effect": "水区变为向前推进的宽水波",
+          "cost": "每跳伤害−20%；不留在原落点",
+          "excludes": "spring",
+          "glyph": "≈"
+        },
+        {
+          "id": "recall",
+          "name": "潮汐回涌",
+          "short": "回涌",
+          "effect": "后半段锁定玩家位置并沿路线回流",
+          "cost": "持续时间−15%；不会一直跟随玩家",
+          "glyph": "↩"
+        },
+        {
+          "id": "pulse",
+          "name": "水爆脉冲",
+          "short": "水爆",
+          "effect": "连续伤害改为每秒一次可见水爆",
+          "cost": "爆发之间没有伤害；不附加控制",
+          "glyph": "✧"
+        }
+      ]
+    },
+    {
+      "skill": "frost",
+      "name": "寒霜脉环",
+      "levels": [
+        {
+          "damage": 16,
+          "count": 1,
+          "cooldown": 4.2,
+          "radius": 3.2,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 20,
+          "count": 1,
+          "cooldown": 4.2,
+          "radius": 3.2,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 20,
+          "count": 2,
+          "cooldown": 4.2,
+          "radius": 3.2,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 20,
+          "count": 2,
+          "cooldown": 3.696,
+          "radius": 3.5840000000000005,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 25.6,
+          "count": 2,
+          "cooldown": 3.696,
+          "radius": 3.5840000000000005,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 25.6,
+          "count": 3,
+          "cooldown": 3.696,
+          "radius": 3.5840000000000005,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 32,
+          "count": 3,
+          "cooldown": 3.696,
+          "radius": 3.5840000000000005,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        },
+        {
+          "damage": 32,
+          "count": 3,
+          "cooldown": 3.1500000000000004,
+          "radius": 3.942400000000001,
+          "duration": 1.2,
+          "range": 7,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "outward",
+          "name": "逐浪寒潮",
+          "short": "寒潮",
+          "glyph": "◯",
+          "effect": "脉环向外扩散，半径×1.4，沿途逐个命中",
+          "cost": "伤害−20%；外缘延迟到达",
+          "excludes": "sectors"
+        },
+        {
+          "id": "sectors",
+          "name": "三相霜扇",
+          "short": "霜扇",
+          "glyph": "❄",
+          "effect": "三个错时扇区依次扫过，伤害×1.4",
+          "cost": "三个方向有时间空档；周期×1.2",
+          "excludes": "outward"
+        },
+        {
+          "id": "aftershock",
+          "name": "霜痕复震",
+          "short": "复震",
+          "glyph": "〰",
+          "effect": "原中心0.8秒后再震一次，伤害为主击45%",
+          "cost": "主击伤害−15%；复震不冻结"
+        },
+        {
+          "id": "brittle",
+          "name": "碎冰裂响",
+          "short": "碎冰",
+          "glyph": "✳",
+          "effect": "命中已减速目标时追加35%直接伤害",
+          "cost": "不再冻结普通怪，只减速；不触发递归爆炸"
+        }
+      ]
+    },
+    {
+      "skill": "lightning",
+      "name": "连锁闪电",
+      "levels": [
+        {
+          "damage": 23,
+          "count": 2,
+          "cooldown": 2.7,
+          "radius": 0.9,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 28.75,
+          "count": 2,
+          "cooldown": 2.7,
+          "radius": 0.9,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 28.75,
+          "count": 3,
+          "cooldown": 2.7,
+          "radius": 0.9,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 28.75,
+          "count": 3,
+          "cooldown": 2.3760000000000003,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 36.800000000000004,
+          "count": 3,
+          "cooldown": 2.3760000000000003,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 36.800000000000004,
+          "count": 4,
+          "cooldown": 2.3760000000000003,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 46,
+          "count": 4,
+          "cooldown": 2.3760000000000003,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 46,
+          "count": 4,
+          "cooldown": 2.0250000000000004,
+          "radius": 1.1088000000000005,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "relay",
+          "name": "远距接力",
+          "short": "接力",
+          "glyph": "ϟ",
+          "effect": "跳跃距离从3.5增至5.5，追加2次跳跃",
+          "cost": "每击伤害−20%",
+          "excludes": "storm"
+        },
+        {
+          "id": "storm",
+          "name": "三重雷暴",
+          "short": "雷暴",
+          "glyph": "≋",
+          "effect": "链式跳跃改为依次定点落雷，每点半径0.9",
+          "cost": "每击伤害−45%；锁定后不追踪",
+          "excludes": "relay"
+        },
+        {
+          "id": "echo",
+          "name": "余电回击",
+          "short": "回击",
+          "glyph": "↯",
+          "effect": "0.45秒后原落点追加一次65%雷击",
+          "cost": "主击伤害−15%；回击锁定位置"
+        },
+        {
+          "id": "bridge",
+          "name": "电弧连桥",
+          "short": "连桥",
+          "glyph": "⌁",
+          "effect": "相邻落点之间电弧对沿线敌人造成45%伤害",
+          "cost": "主击伤害−20%；每轮沿线同目标只结算一次"
+        }
+      ]
+    },
+    {
+      "skill": "ghost",
+      "name": "幽灵伙伴",
+      "levels": [
+        {
+          "damage": 24,
+          "count": 2,
+          "cooldown": 3.4,
+          "radius": 0.3,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 30,
+          "count": 2,
+          "cooldown": 3.4,
+          "radius": 0.3,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 30,
+          "count": 3,
+          "cooldown": 3.4,
+          "radius": 0.3,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 30,
+          "count": 3,
+          "cooldown": 2.992,
+          "radius": 0.336,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 38.400000000000006,
+          "count": 3,
+          "cooldown": 2.992,
+          "radius": 0.336,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 38.400000000000006,
+          "count": 4,
+          "cooldown": 2.992,
+          "radius": 0.336,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 48,
+          "count": 4,
+          "cooldown": 2.992,
+          "radius": 0.336,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 48,
+          "count": 4,
+          "cooldown": 2.55,
+          "radius": 0.36960000000000004,
+          "duration": 3,
+          "range": 12,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "execution",
+          "name": "缚魂猎手",
+          "short": "猎手",
+          "glyph": "➤",
+          "effect": "优先精英与远程，单次伤害×1.7",
+          "cost": "伙伴数−1，至少1；周期×1.2",
+          "excludes": "swarm"
+        },
+        {
+          "id": "swarm",
+          "name": "群灵出巡",
+          "short": "群灵",
+          "glyph": "♧",
+          "effect": "额外召唤2只幽灵，分配不同目标",
+          "cost": "单次伤害−40%",
+          "excludes": "execution"
+        },
+        {
+          "id": "haunt",
+          "name": "盘魂追击",
+          "short": "盘魂",
+          "glyph": "◎",
+          "effect": "命中后围绕锁定点盘旋0.9秒，追加3次35%伤害",
+          "cost": "主击伤害−20%；盘旋不追随目标"
+        },
+        {
+          "id": "reap",
+          "name": "归途收割",
+          "short": "归途",
+          "glyph": "↶",
+          "effect": "归途沿锁定回收路线造成65%伤害",
+          "cost": "主击伤害−15%；每目标每回程只受伤一次"
+        }
+      ]
+    },
+    {
+      "skill": "bone",
+      "name": "贯阵骨矛",
+      "levels": [
+        {
+          "damage": 26,
+          "count": 1,
+          "cooldown": 2.3,
+          "radius": 0.24,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 32.5,
+          "count": 1,
+          "cooldown": 2.3,
+          "radius": 0.24,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 32.5,
+          "count": 2,
+          "cooldown": 2.3,
+          "radius": 0.24,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 32.5,
+          "count": 2,
+          "cooldown": 2.024,
+          "radius": 0.26880000000000004,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 41.6,
+          "count": 2,
+          "cooldown": 2.024,
+          "radius": 0.26880000000000004,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 41.6,
+          "count": 3,
+          "cooldown": 2.024,
+          "radius": 0.26880000000000004,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 52,
+          "count": 3,
+          "cooldown": 2.024,
+          "radius": 0.26880000000000004,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 52,
+          "count": 3,
+          "cooldown": 1.7249999999999999,
+          "radius": 0.29568000000000005,
+          "duration": 1.2,
+          "range": 11,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "lance",
+          "name": "破阵重矛",
+          "short": "重矛",
+          "glyph": "➤",
+          "effect": "直线穿透，射程×1.35，伤害×1.5",
+          "cost": "周期×1.25；仍只覆盖窄射线",
+          "excludes": "fan"
+        },
+        {
+          "id": "fan",
+          "name": "扇骨齐射",
+          "short": "齐射",
+          "glyph": "⋔",
+          "effect": "追加2根骨矛，向宽扇面发射",
+          "cost": "每矛伤害−35%",
+          "excludes": "lance"
+        },
+        {
+          "id": "marrow",
+          "name": "贯骨加速",
+          "short": "贯骨",
+          "glyph": "»",
+          "effect": "每穿过1人，速度与伤害+15%，最多3层",
+          "cost": "初始伤害−15%；必须排列敌人"
+        },
+        {
+          "id": "ridge",
+          "name": "骨棘留阵",
+          "short": "骨棘",
+          "glyph": "╪",
+          "effect": "矛终点留1.2秒横向骨棘，触碰造成50%伤害",
+          "cost": "主矛伤害−15%；每条骨棘同目标只命中一次"
+        }
+      ]
+    },
+    {
+      "skill": "mine",
+      "name": "符印地雷",
+      "levels": [
+        {
+          "damage": 35,
+          "count": 2,
+          "cooldown": 3.8,
+          "radius": 1.8,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        },
+        {
+          "damage": 43.75,
+          "count": 2,
+          "cooldown": 3.8,
+          "radius": 1.8,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        },
+        {
+          "damage": 43.75,
+          "count": 3,
+          "cooldown": 3.8,
+          "radius": 1.8,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        },
+        {
+          "damage": 43.75,
+          "count": 3,
+          "cooldown": 3.344,
+          "radius": 2.0160000000000005,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        },
+        {
+          "damage": 56,
+          "count": 3,
+          "cooldown": 3.344,
+          "radius": 2.0160000000000005,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        },
+        {
+          "damage": 56,
+          "count": 4,
+          "cooldown": 3.344,
+          "radius": 2.0160000000000005,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        },
+        {
+          "damage": 70,
+          "count": 4,
+          "cooldown": 3.344,
+          "radius": 2.0160000000000005,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        },
+        {
+          "damage": 70,
+          "count": 4,
+          "cooldown": 2.8499999999999996,
+          "radius": 2.217600000000001,
+          "duration": 6,
+          "range": 8,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "trip",
+          "name": "绊线符雷",
+          "short": "绊线",
+          "glyph": "⌁",
+          "effect": "相邻地雷之间连绊线，穿线可引爆两端",
+          "cost": "爆炸伤害−20%；至少两个雷才能连线",
+          "excludes": "burrow"
+        },
+        {
+          "id": "burrow",
+          "name": "伏击重雷",
+          "short": "重雷",
+          "glyph": "◉",
+          "effect": "延迟1.2秒武装，伤害×1.7，爆炸半径×1.3",
+          "cost": "触发半径−25%；不主动索敌",
+          "excludes": "trip"
+        },
+        {
+          "id": "scatter",
+          "name": "散布雷阵",
+          "short": "雷阵",
+          "glyph": "⁙",
+          "effect": "额外布设2雷，沿角色周围宽圈分散",
+          "cost": "每雷伤害−35%；需要引怪踩雷"
+        },
+        {
+          "id": "fuse",
+          "name": "延时追爆",
+          "short": "追爆",
+          "glyph": "✹",
+          "effect": "触发0.6秒后在原地再爆一次，伤害65%",
+          "cost": "主爆伤害−20%；敌人可能离开复爆区"
+        }
+      ]
+    },
+    {
+      "skill": "void",
+      "name": "坍缩黑洞",
+      "levels": [
+        {
+          "damage": 6,
+          "count": 1,
+          "cooldown": 5.4,
+          "radius": 2.2,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        },
+        {
+          "damage": 7.5,
+          "count": 1,
+          "cooldown": 5.4,
+          "radius": 2.2,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        },
+        {
+          "damage": 7.5,
+          "count": 2,
+          "cooldown": 5.4,
+          "radius": 2.2,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        },
+        {
+          "damage": 7.5,
+          "count": 2,
+          "cooldown": 4.752000000000001,
+          "radius": 2.4640000000000004,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        },
+        {
+          "damage": 9.600000000000001,
+          "count": 2,
+          "cooldown": 4.752000000000001,
+          "radius": 2.4640000000000004,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        },
+        {
+          "damage": 9.600000000000001,
+          "count": 3,
+          "cooldown": 4.752000000000001,
+          "radius": 2.4640000000000004,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        },
+        {
+          "damage": 12,
+          "count": 3,
+          "cooldown": 4.752000000000001,
+          "radius": 2.4640000000000004,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        },
+        {
+          "damage": 12,
+          "count": 3,
+          "cooldown": 4.050000000000001,
+          "radius": 2.710400000000001,
+          "duration": 2.4,
+          "range": 9,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "drift",
+          "name": "迁移涡心",
+          "short": "迁移",
+          "glyph": "↝",
+          "effect": "黑洞缓慢向施放方向移动，速度1.3",
+          "cost": "每跳伤害−20%；原落点不会持续聚怪",
+          "excludes": "collapse"
+        },
+        {
+          "id": "collapse",
+          "name": "瞬息坍缩",
+          "short": "坍缩",
+          "glyph": "◉",
+          "effect": "寿命减半，结束爆发由3跳伤害变为6跳",
+          "cost": "聚怪时间短；最终爆发需要敌人仍在圈内",
+          "excludes": "drift"
+        },
+        {
+          "id": "binary",
+          "name": "双核引力",
+          "short": "双核",
+          "glyph": "☍",
+          "effect": "额外形成1个侧向涡心，覆盖不同区域",
+          "cost": "每核伤害−30%；同源重叠不叠伤"
+        },
+        {
+          "id": "repel",
+          "name": "反冲星环",
+          "short": "反冲",
+          "glyph": "◌",
+          "effect": "结束时爆发改为空心环，外半径×1.6",
+          "cost": "中心55%半径无终结伤害；终结伤害×1.5"
+        }
+      ]
+    },
+    {
+      "skill": "holy",
+      "name": "裁决圣剑",
+      "levels": [
+        {
+          "damage": 40,
+          "count": 1,
+          "cooldown": 3.6,
+          "radius": 1.2,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 50,
+          "count": 1,
+          "cooldown": 3.6,
+          "radius": 1.2,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 50,
+          "count": 2,
+          "cooldown": 3.6,
+          "radius": 1.2,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 50,
+          "count": 2,
+          "cooldown": 3.168,
+          "radius": 1.344,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 64,
+          "count": 2,
+          "cooldown": 3.168,
+          "radius": 1.344,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 64,
+          "count": 3,
+          "cooldown": 3.168,
+          "radius": 1.344,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 80,
+          "count": 3,
+          "cooldown": 3.168,
+          "radius": 1.344,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        },
+        {
+          "damage": 80,
+          "count": 3,
+          "cooldown": 2.7,
+          "radius": 1.4784000000000002,
+          "duration": 0.55,
+          "range": 12,
+          "mods": []
+        }
+      ],
+      "mods": [
+        {
+          "id": "execution",
+          "name": "斩首巨剑",
+          "short": "巨剑",
+          "glyph": "†",
+          "effect": "落剑延迟0.8秒，中央伤害×1.8",
+          "cost": "落点半径−20%，数量−1至少1",
+          "excludes": "rain"
+        },
+        {
+          "id": "rain",
+          "name": "巡行剑雨",
+          "short": "剑雨",
+          "glyph": "⁝",
+          "effect": "额外2把圣剑，间隔0.18秒依次落下",
+          "cost": "每剑伤害−40%，半径−15%",
+          "excludes": "execution"
+        },
+        {
+          "id": "cross",
+          "name": "十字圣裁",
+          "short": "十字",
+          "glyph": "✚",
+          "effect": "圆形落点改为两条交叉圣刃，长度为半径×2",
+          "cost": "伤害−15%；四角没有伤害"
+        },
+        {
+          "id": "brand",
+          "name": "裁痕重落",
+          "short": "重落",
+          "glyph": "⇣",
+          "effect": "0.7秒后原落点第二次落剑，伤害65%",
+          "cost": "首击伤害−15%；第二剑不会追踪"
+        }
+      ]
+    }
+  ],
+  "pressure": [
+    {
+      "skills": [
+        "blade",
+        "fire",
+        "water",
+        "frost",
+        "lightning",
+        "ghost"
+      ],
+      "frames": 3600,
+      "simulationSeconds": 60,
+      "medianMs": 0.023875000000032287,
+      "p95Ms": 0.4967079999999555,
+      "peakExtraActive": 14,
+      "extraAllocated": 14,
+      "shotsAllocated": 18,
+      "fieldsAllocated": 20,
+      "damage": {
+        "frost": 504398.16000005126,
+        "lightning": 36986.44949999994,
+        "ghost": 43443.647999999455,
+        "blade": 51701.75999999926,
+        "fire": 216627.8400000014,
+        "water": 185778
+      }
+    },
+    {
+      "skills": [
+        "bone",
+        "mine",
+        "void",
+        "holy",
+        "frost",
+        "ghost"
+      ],
+      "frames": 3600,
+      "simulationSeconds": 60,
+      "medianMs": 0.057916999999974905,
+      "p95Ms": 0.1961670000000595,
+      "peakExtraActive": 48,
+      "extraAllocated": 48,
+      "shotsAllocated": 0,
+      "fieldsAllocated": 0,
+      "damage": {
+        "frost": 546998.2560000621,
+        "ghost": 66897.79199999619,
+        "bone": 102551.01675000066,
+        "void": 141485.40000001588,
+        "holy": 220075.20000001253,
+        "mine": 693597.4500000773
+      }
+    }
+  ]
+}

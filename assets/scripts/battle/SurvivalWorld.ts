@@ -1,3 +1,5 @@
+import { MoonSystem, moonEnemy } from "./MoonSystem";
+import { ThunderSystem, thunderDevice, thunderEnemy } from "./ThunderSystem";
 import { Armory } from "./Armory";
 import { weaponStats, playerAttributes } from "./ArmoryConfig";
 import { SandSystem, sandEnemy } from "./SandSystem";
@@ -29,6 +31,8 @@ import { SpawnDirector } from "./SpawnDirector";
 import { stepEnemies, stepHazards } from "./EnemySystem";
 export type { Enemy, Effect } from "./SurvivalTypes";
 export class SurvivalWorld {
+  moon=new MoonSystem(this);
+  thunder=new ThunderSystem(this);
   siege=new SiegeSystem(this);
   sand=new SandSystem(this);
   starPath=new ObservatoryPath();
@@ -67,10 +71,10 @@ export class SurvivalWorld {
   lastMove = { x: 1, y: 0 };
   camera = { x: 0, y: 0 };
   viewport = { x: 13.3, y: 7.5 };
-  skills:Record<Skill,number>={blade:0,fire:0,water:0};
-  cooldowns:Record<Skill,number>={blade:0,fire:0,water:0};
+  skills:Record<Skill,number>=Object.fromEntries(WEAPONS.map(s=>[s,0])) as Record<Skill,number>;
+  cooldowns:Record<Skill,number>=Object.fromEntries(WEAPONS.map(s=>[s,0])) as Record<Skill,number>;
   passives:Record<Passive,number>={power:0,hourglass:0,area:0,duration:0,amount:0,boots:0,vitality:0,magnet:0};
-  mods:Record<Skill,string[]>={blade:[],fire:[],water:[]};
+  mods:Record<Skill,string[]>=Object.fromEntries(WEAPONS.map(s=>[s,[] as string[]])) as Record<Skill,string[]>;
   cards: Card[] = [];
   pendingModification: Skill | null = null;
   refreshes = 3;
@@ -87,7 +91,7 @@ export class SurvivalWorld {
     public stageId: StageId = 14,
     public weaponSlots = 6,
   ) {
-    if(stageId===15)this.player={x:0,y:-8};
+    if(stageId===15||stageId===16||stageId===17)this.player={x:0,y:-8};
     this.furnaceRoute = furnaceRoute(seed);
     this.seed = seed;
     this.skills.blade = 0;
@@ -97,7 +101,7 @@ export class SurvivalWorld {
   offerStartingWeapons() {
     if(this.time!==0 || this.state!=="battle")return false;
     for(const skill of WEAPONS)this.skills[skill]=0;
-    this.startingWeapons=[...WEAPONS];
+    const pool=[...WEAPONS];this.startingWeapons=[];while(this.startingWeapons.length<3)this.startingWeapons.push(pool.splice(Math.floor(this.random()*pool.length),1)[0]);
     this.state="starting";this.setMove(0,0);this.touch();return true;
   }
   chooseStartingWeapon(skill: Skill) {
@@ -155,7 +159,7 @@ export class SurvivalWorld {
     const hp =
       kind === "boss"
         ? c.health * STAGES[this.stageId].bossHealth * 8
-        : 30 * (1 + Math.min(this.time, ["sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
+        : 30 * (1 + Math.min(this.time, ["thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health) *
           (this.stageId <= 2 && ["mage", "archer"].includes(kind)
             ? 1 + Math.min(2, Math.max(0, this.time - 90) / 90) : 1);
@@ -262,6 +266,8 @@ export class SurvivalWorld {
       }
     }
     if(this.stageId===15&&e.sand?.vulnerable&&e.state==='recover'&&!bossExposed(this,e))amount*=1.25;
+    if(this.stageId===17&&isElite(e.kind)&&e.state==='recover'&&e.moon?.vulnerable)amount*=1.25;
+    if(this.stageId===16&&isElite(e.kind)&&e.state==='recover'&&e.thunder?.vulnerable)amount*=1.25;
     const dealt = Math.min(e.hp, amount);
     e.hp -= amount;
     const attribution = source === "poisonBurst" ? "poison" : source;
@@ -275,6 +281,8 @@ export class SurvivalWorld {
       skill: source,
     });
     if (e.hp <= 0) {
+      if(this.stageId===17)this.moon.onDeath(e);
+      if(this.stageId===16){this.thunder.onDeath(e);if(thunderDevice(e.kind)){this.effects.push({type:"death",x:e.x,y:e.y});this.touch();return;}}
       if(e.kind === "warflag"){this.effects.push({type:"death",x:e.x,y:e.y});this.touch();return;}
       if(this.stageId===15)this.sand.onDeath(e);
       this.kills++;
@@ -354,7 +362,7 @@ export class SurvivalWorld {
     }else if (freeze && e.kind !== "boss" && e.freezeReady <= this.time) {
       e.freezeUntil = this.time + (isElite(e.kind) ? 0.25 : 0.5);
       e.freezeReady = this.time + 3;
-      if (e.state === "windup" && !frontierEnemy(e.kind) && !siegeEnemy(e.kind) && !sandEnemy(e.kind) && !["starpatrol","starweaver","starpuppet"].includes(e.kind)) {
+      if (e.state === "windup" && !frontierEnemy(e.kind) && !siegeEnemy(e.kind) && !sandEnemy(e.kind) && !thunderEnemy(e.kind) && !moonEnemy(e.kind) && !["starpatrol","starweaver","starpuppet"].includes(e.kind)) {
         this.hazards = this.hazards.filter((h) => h.source !== e.id);
         e.state = "recover";
         e.timer = 0.5;
@@ -378,6 +386,8 @@ export class SurvivalWorld {
       Math.min(26, this.player.y + this.move.y * this.speed * dt),
     );
     this.siege.sample();
+    if(this.stageId===17)this.moon.clean();
+    if(this.stageId===16)this.thunder.clean();
     if(this.stageId===15)this.sand.clean();
     this.director.step(this, dt);
     stepGarden(this, 0);

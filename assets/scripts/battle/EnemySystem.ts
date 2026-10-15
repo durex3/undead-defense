@@ -1,3 +1,5 @@
+import { moonEnemy } from "./MoonSystem";
+import { thunderDevice, thunderEnemy } from "./ThunderSystem";
 import { sandEnemy } from "./SandSystem";
 import { sandMap } from "./SandMap";
 import { siegeMap } from "./SiegeMap";
@@ -87,6 +89,8 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       stepBoss(w, e, dt);
       continue;
     }
+    if(w.stageId===17&&moonEnemy(e.kind)){w.moon.stepEnemy(e,dt);continue;}
+    if(w.stageId===16&&thunderEnemy(e.kind)){w.thunder.stepEnemy(e,dt);continue;}
     if(w.stageId===15&&sandEnemy(e.kind)){w.sand.stepEnemy(e,dt);continue;}
     if(e.kind==="warflag"){stepArsenalEnemy(w,e,dt);continue;}
     if (e.freezeUntil > w.time) {
@@ -276,20 +280,20 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
   }
   const grid = new Map<string, Enemy[]>();
   for (const e of w.enemies) {
-    if (e.hp <= 0) continue;
+    if (e.hp <= 0 || thunderDevice(e.kind)) continue;
     const key = Math.floor(e.x) + "," + Math.floor(e.y);
     const list = grid.get(key) || [];
     list.push(e);
     grid.set(key, list);
   }
   for (const e of w.enemies) {
-    if (e.hp <= 0 || e.kind === "warflag" || e.state !== "seek") continue;
+    if (e.hp <= 0 || (e.kind === "warflag" || thunderDevice(e.kind)) || e.state !== "seek") continue;
     const x = Math.floor(e.x),
       y = Math.floor(e.y);
     for (let a = x - 1; a <= x + 1; a++)
       for (let b = y - 1; b <= y + 1; b++)
         for (const o of grid.get(a + "," + b) || []) {
-          if (o.id <= e.id || o.kind === "warflag" || o.state !== "seek") continue;
+          if (o.id <= e.id || (o.kind === "warflag" || thunderDevice(o.kind)) || o.state !== "seek") continue;
           const dx = e.x - o.x,
             dy = e.y - o.y,
             d = Math.hypot(dx, dy);
@@ -304,13 +308,17 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
   }
 }
 export function stepHazards(w: SurvivalWorld) {
+  if(w.stageId===17)w.moon.clean();
+  if(w.stageId===16)w.thunder.clean();
   for(const h of w.hazards)if(h.siegeBallistic&&!h.siegeLaunched&&w.time>=h.created+(h.sandLaunchDelay??.2)&&w.enemies.some(e=>e.id===h.source&&e.hp>0&&e.freezeUntil<=w.time))h.siegeLaunched=true;
   w.hazards = w.hazards.filter(
     (h) =>
       h.until > w.time &&
-      (h.source === 0 || h.siegeLaunched || ((h.kind === "arrow" || h.siegeGround) && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
+      (!!h.moon || !!h.thunder || h.source === 0 || h.siegeLaunched || ((h.kind === "arrow" || h.siegeGround) && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
   );
   for (const h of w.hazards) {
+    if(h.moon){w.moon.stepHazard(h);continue;}
+    if(h.thunder){w.thunder.stepHazard(h);continue;}
     if (h.due > w.time) continue;
     const d = distance(h, w.player);
     if(h.siegeGround){

@@ -1,0 +1,3046 @@
+{
+  "generated": "2026-10-15T09:44:22.609Z",
+  "scope": "Deterministic Node simulations, six legal full builds × three positions × three seeds × stationary/moving; simple predictive controller, no human difficulty or phone thermal claims.",
+  "boss": [
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 52.3,
+      "hp": 0,
+      "bossRemaining": 21,
+      "losses": {
+        "断轨电弧": 44,
+        "推进电栅": 56
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 11,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.9,
+      "hp": 0,
+      "bossRemaining": 70.6,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 36.4,
+      "hp": 0,
+      "bossRemaining": 44.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.45,
+      "hp": 0,
+      "bossRemaining": 65.8,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 36.62,
+      "hp": 0,
+      "bossRemaining": 44.8,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.9,
+      "hp": 0,
+      "bossRemaining": 70.4,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 36.62,
+      "hp": 0,
+      "bossRemaining": 44,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.9,
+      "hp": 0,
+      "bossRemaining": 70.6,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 36.62,
+      "hp": 0,
+      "bossRemaining": 43.5,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 34.48,
+      "hp": 0,
+      "bossRemaining": 45.3,
+      "losses": {
+        "推进电栅": 28,
+        "天穹铸雷机": 64,
+        "轨道余电": 8
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.73,
+      "hp": 0,
+      "bossRemaining": 44.8,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 41.6,
+      "hp": 0,
+      "bossRemaining": 33.1,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 64,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.55,
+      "hp": 0,
+      "bossRemaining": 54.4,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 61.23,
+      "hp": 6,
+      "bossRemaining": 0,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 9,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32.07,
+      "hp": 0,
+      "bossRemaining": 53.1,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 49.62,
+      "hp": 0,
+      "bossRemaining": 15.2,
+      "losses": {
+        "天穹铸雷机": 72,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.97,
+      "hp": 0,
+      "bossRemaining": 54.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵追猎",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 47.28,
+      "hp": 0,
+      "bossRemaining": 18.3,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 28,
+        "断轨电弧": 6
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 8,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 78.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.4,
+      "hp": 0,
+      "bossRemaining": 72.2,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 78.5,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.52,
+      "hp": 0,
+      "bossRemaining": 74.3,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 78.9,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.03,
+      "hp": 0,
+      "bossRemaining": 73.1,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 78.4,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.33,
+      "hp": 0,
+      "bossRemaining": 71.6,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 78,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.5,
+      "hp": 0,
+      "bossRemaining": 72.6,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 77.6,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.83,
+      "hp": 0,
+      "bossRemaining": 79.2,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 64,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.5,
+      "hp": 0,
+      "bossRemaining": 80.5,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 29.7,
+      "hp": 0,
+      "bossRemaining": 62.2,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 34
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 4,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 33.08,
+      "hp": 0,
+      "bossRemaining": 81.1,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 64.33,
+      "hp": 0,
+      "bossRemaining": 15.8,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 34
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 10,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 33.12,
+      "hp": 0,
+      "bossRemaining": 80.8,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "拆阵往返",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 33.18,
+      "hp": 0,
+      "bossRemaining": 56.4,
+      "losses": {
+        "天穹铸雷机": 72,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 4,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 59.7,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.82,
+      "hp": 0,
+      "bossRemaining": 76.4,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 60.2,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.03,
+      "hp": 0,
+      "bossRemaining": 73.4,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 59,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.82,
+      "hp": 0,
+      "bossRemaining": 76.4,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 58.5,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.03,
+      "hp": 0,
+      "bossRemaining": 73.6,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 57,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 17.82,
+      "hp": 0,
+      "bossRemaining": 76.8,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 58,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.83,
+      "hp": 0,
+      "bossRemaining": 79.3,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 64,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32.2,
+      "hp": 0,
+      "bossRemaining": 62.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 58.15,
+      "hp": 0,
+      "bossRemaining": 22.8,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 28,
+        "断轨电弧": 6
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 9,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32.2,
+      "hp": 0,
+      "bossRemaining": 60.9,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 35.98,
+      "hp": 0,
+      "bossRemaining": 54.1,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 34
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32,
+      "hp": 0,
+      "bossRemaining": 62.6,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线经营",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 28.68,
+      "hp": 0,
+      "bossRemaining": 61.4,
+      "losses": {
+        "天穹铸雷机": 44,
+        "推进电栅": 56
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 4,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 75.4,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.4,
+      "hp": 0,
+      "bossRemaining": 76.4,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 13,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 75.6,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 18.52,
+      "hp": 0,
+      "bossRemaining": 78.2,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 12,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 76.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 31.53,
+      "hp": 0,
+      "bossRemaining": 66.9,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 44,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 6,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 76.1,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.4,
+      "hp": 0,
+      "bossRemaining": 76.8,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 75.9,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.5,
+      "hp": 0,
+      "bossRemaining": 77,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 12,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 76.4,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 2,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.83,
+      "hp": 0,
+      "bossRemaining": 83.4,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 64,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.5,
+      "hp": 0,
+      "bossRemaining": 79.5,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 50.62,
+      "hp": 0,
+      "bossRemaining": 46.1,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 34
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32.53,
+      "hp": 0,
+      "bossRemaining": 78.6,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 67.72,
+      "hp": 0,
+      "bossRemaining": 29.5,
+      "losses": {
+        "断轨电弧": 26,
+        "天穹铸雷机": 46,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 12,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32.53,
+      "hp": 0,
+      "bossRemaining": 78.4,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "路线爆破",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 25.85,
+      "hp": 0,
+      "bossRemaining": 70.4,
+      "losses": {
+        "天穹铸雷机": 46,
+        "推进电栅": 28,
+        "断轨电弧": 26
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 13,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 57.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.37,
+      "hp": 0,
+      "bossRemaining": 75.9,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 11,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 57.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 18.88,
+      "hp": 0,
+      "bossRemaining": 77.2,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 12,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 57.5,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 18,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.83,
+      "hp": 0,
+      "bossRemaining": 81.5,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 64,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 12,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 57.2,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 28.55,
+      "hp": 0,
+      "bossRemaining": 65.2,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 12,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 56.8,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 26.43,
+      "hp": 0,
+      "bossRemaining": 67.7,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 13,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 4,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 57,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 23.3,
+      "hp": 0,
+      "bossRemaining": 72.5,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 11,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.88,
+      "hp": 0,
+      "bossRemaining": 62.7,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 13,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 66.07,
+      "hp": 0,
+      "bossRemaining": 18.2,
+      "losses": {
+        "天穹铸雷机": 44,
+        "推进电栅": 56
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 11,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.88,
+      "hp": 0,
+      "bossRemaining": 63.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 13,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 63.28,
+      "hp": 0,
+      "bossRemaining": 19.8,
+      "losses": {
+        "天穹铸雷机": 72,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 10,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.6,
+      "hp": 0,
+      "bossRemaining": 63.7,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 12,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动清群",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 79.92,
+      "hp": 0,
+      "bossRemaining": 0.4,
+      "losses": {
+        "天穹铸雷机": 72,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 12,
+      "actions": [
+        "beats",
+        "walls",
+        "transition"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 70.5,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.23,
+      "hp": 0,
+      "bossRemaining": 77.7,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 70.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.52,
+      "hp": 0,
+      "bossRemaining": 78.6,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 69.9,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 0,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 23.6,
+      "hp": 0,
+      "bossRemaining": 74.4,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 92
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 70.6,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 17,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 20.22,
+      "hp": 0,
+      "bossRemaining": 77.7,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 68.8,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 19.52,
+      "hp": 0,
+      "bossRemaining": 78.6,
+      "losses": {
+        "天穹铸雷机": 100
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 15,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 1,
+      "actions": [
+        "beats"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 35.32,
+      "hp": 0,
+      "bossRemaining": 71,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 3,
+      "publishedHazards": 7,
+      "actions": [
+        "beats",
+        "walls",
+        "court"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 1,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 15.83,
+      "hp": 0,
+      "bossRemaining": 84.3,
+      "losses": {
+        "轨道余电": 8,
+        "天穹铸雷机": 64,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 2,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 19,
+      "moving": false,
+      "state": "lost",
+      "seconds": 31.5,
+      "hp": 0,
+      "bossRemaining": 74,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 19,
+      "moving": true,
+      "state": "lost",
+      "seconds": 28.97,
+      "hp": 0,
+      "bossRemaining": 68.1,
+      "losses": {
+        "天穹铸雷机": 66,
+        "推进电栅": 34
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 4,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 73,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32.5,
+      "hp": 0,
+      "bossRemaining": 73.3,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 73,
+      "moving": true,
+      "state": "lost",
+      "seconds": 24.68,
+      "hp": 0,
+      "bossRemaining": 73.3,
+      "losses": {
+        "天穹铸雷机": 46,
+        "推进电栅": 28,
+        "断轨电弧": 26
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 1,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 3,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 217,
+      "moving": false,
+      "state": "lost",
+      "seconds": 32.13,
+      "hp": 0,
+      "bossRemaining": 72.6,
+      "losses": {
+        "断轨电弧": 52,
+        "推进电栅": 48
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 14,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    },
+    {
+      "build": "移动换道",
+      "position": 2,
+      "seed": 217,
+      "moving": true,
+      "state": "lost",
+      "seconds": 35.18,
+      "hp": 0,
+      "bossRemaining": 62.7,
+      "losses": {
+        "天穹铸雷机": 72,
+        "推进电栅": 28
+      },
+      "healing": {
+        "potion": 0,
+        "repair": 0
+      },
+      "peakEnemies": 16,
+      "peakHazards": 2,
+      "peakThreat": 2,
+      "peakDevices": 0,
+      "publishedHazards": 5,
+      "actions": [
+        "beats",
+        "walls"
+      ]
+    }
+  ],
+  "growth": [
+    {
+      "seed": 19,
+      "formed": false,
+      "state": "lost",
+      "time": 10.45,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "铆齿行机": 100
+      },
+      "peakEnemies": 22
+    },
+    {
+      "seed": 19,
+      "formed": true,
+      "state": "battle",
+      "time": 480,
+      "level": 64,
+      "hp": 48,
+      "losses": {
+        "推进电栅": 52
+      },
+      "peakEnemies": 36
+    },
+    {
+      "seed": 73,
+      "formed": false,
+      "state": "lost",
+      "time": 10.45,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "铆齿行机": 100
+      },
+      "peakEnemies": 22
+    },
+    {
+      "seed": 73,
+      "formed": true,
+      "state": "battle",
+      "time": 480,
+      "level": 64,
+      "hp": 74,
+      "losses": {
+        "推进电栅": 26
+      },
+      "peakEnemies": 32
+    },
+    {
+      "seed": 217,
+      "formed": false,
+      "state": "lost",
+      "time": 10.8,
+      "level": 1,
+      "hp": 0,
+      "losses": {
+        "铆齿行机": 100
+      },
+      "peakEnemies": 22
+    },
+    {
+      "seed": 217,
+      "formed": true,
+      "state": "battle",
+      "time": 480,
+      "level": 64,
+      "hp": 48,
+      "losses": {
+        "推进电栅": 52
+      },
+      "peakEnemies": 34
+    }
+  ],
+  "stationaryIssues": [],
+  "perf": [
+    {
+      "multiplier": 1,
+      "frames": 600,
+      "medianMs": 0.22862499999973807,
+      "p95Ms": 0.5398329999998168,
+      "peakEntities": 96
+    },
+    {
+      "multiplier": 3,
+      "frames": 600,
+      "medianMs": 0.7354589999995369,
+      "p95Ms": 1.4782079999995403,
+      "peakEntities": 96
+    }
+  ],
+  "elapsedMs": 7181
+}

@@ -1,3 +1,9 @@
+import {
+  EXTRA_MODS,
+  extraBase,
+  applyExtraMods,
+  ExtraSkill,
+} from "./ExtraArmoryConfig";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Skill, Passive, NAMES } from "./SurvivalConfig";
 export interface WeaponMod {
@@ -10,6 +16,7 @@ export interface WeaponMod {
   glyph: string;
 }
 export const MODS: Record<Skill, readonly WeaponMod[]> = {
+  ...EXTRA_MODS,
   blade: [
     {
       id: "orbit",
@@ -198,6 +205,13 @@ export function weaponStats(
       range: 10,
       duration: 4 + (l >= 5 ? 1 : 0),
     },
+    frost: extraBase("frost", l),
+    lightning: extraBase("lightning", l),
+    ghost: extraBase("ghost", l),
+    bone: extraBase("bone", l),
+    mine: extraBase("mine", l),
+    void: extraBase("void", l),
+    holy: extraBase("holy", l),
   }[skill];
   const s: WeaponStats = {
     damage: data.damage[l] * (1 + a.damage),
@@ -206,7 +220,8 @@ export function weaponStats(
     radius: data.radius * a.area,
     duration:
       data.duration *
-      (skill === "water" || skill === "fire" || m.includes("orbit")
+      (["water", "fire", "mine", "void", "frost", "bone"].includes(skill) ||
+      m.includes("orbit")
         ? a.duration
         : 1),
     range: data.range,
@@ -237,6 +252,8 @@ export function weaponStats(
     if (m.includes("wave")) s.damage *= 0.8;
     if (m.includes("recall")) s.duration *= 0.85;
   }
+  if (!["blade", "fire", "water"].includes(skill))
+    applyExtraMods(skill as ExtraSkill, s);
   return s;
 }
 export const PASSIVE_LABELS: Record<Passive, string> = {
@@ -265,7 +282,7 @@ export function modSummary(w: SurvivalWorld, s: Skill) {
   );
 }
 export function stageBuildHint(stage: number) {
-  return stage === 14
+  return stage === 17 ? "猎原：去回程之外换道，躲跃扑后绕背；落剑、重爆抓收招，贯阵清出退路" : stage === 16 ? "机庭：拆电极断线，向电栅缺口换道；贯阵清路、追猎拆点、落剑抓恢复" : stage === 14
     ? "围城：短墙侧路切后排；追猎/往返穿阵，火海引敌封路"
     : "虫巢：斜向沙道转场；碎焰清虫、奔流清路，重爆抓出土";
 }

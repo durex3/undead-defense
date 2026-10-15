@@ -1,3 +1,4 @@
+import { ExtraArmory } from "./ExtraArmory";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Skill, WEAPONS, isElite } from "./SurvivalConfig";
 import {
@@ -67,7 +68,10 @@ export class Armory {
       end: Point;
     }
   >();
-  constructor(private w: SurvivalWorld) {}
+  readonly extra: ExtraArmory;
+  constructor(private w: SurvivalWorld) {
+    this.extra = new ExtraArmory(w);
+  }
   private enemies(origin: Point, range: number) {
     return this.w.enemies.filter(
       (e) =>
@@ -85,7 +89,7 @@ export class Armory {
       let value = -distance(e, this.w.player) * 0.01;
       if (skill === "blade")
         value +=
-          isElite(e.kind) || /bow|spitter|mage|archer/.test(e.kind) ? 100 : 0;
+          isElite(e.kind) || /bow|spitter|mage|archer|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind) ? 100 : 0;
       else
         for (const other of list)
           if (distance(other, e) <= s.radius * 1.3) value++;
@@ -117,7 +121,7 @@ export class Armory {
           p.skill === "fire" && !p.child && p.stats.mods.includes("embers"),
       ).length *
         2 +
-      [...this.groups.values()].filter((g) => g.shards).length * 2;
+      Array.from(this.groups.values()).filter((g) => g.shards).length * 2;
     const fieldReserved =
       live.filter(
         (p) =>
@@ -142,7 +146,9 @@ export class Armory {
   }
   step(dt: number) {
     const w = this.w;
+    this.extra.step(dt);
     for (const skill of WEAPONS) {
+      if (!["blade", "fire", "water"].includes(skill)) continue;
       if (!w.skills[skill]) continue;
       w.cooldowns[skill] = Math.max(0, w.cooldowns[skill] - dt);
       if (w.cooldowns[skill] > 0) continue;

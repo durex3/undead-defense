@@ -1,5 +1,5 @@
 import type { StoragePort } from './StoragePort';
-export const PLAY_VERSION = '朋友试玩版 0.22.1 · 双地图改版';
+export const PLAY_VERSION = '朋友试玩版 0.25.0 · 苍棘猎原';
 export type Lesson = 'move' | 'xp' | 'upgrade' | 'nova' | 'elite';
 const lessons: Lesson[] = ['move', 'xp', 'upgrade', 'nova', 'elite'];
 export class PlayPreferences {

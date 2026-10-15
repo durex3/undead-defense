@@ -1,3 +1,5 @@
+import { drawMoonMap } from "./MoonPainter";
+import { drawThunderMap } from "./ThunderPainter";
 import { drawSandMap } from "./SandPainter";
 import { drawSiegeMap } from "./SiegePainter";
 import {isFrontier} from "../battle/FrontierMaps";
@@ -9,6 +11,8 @@ import { FURNACE_STONES } from "../battle/FurnaceEncounters";
 import { Graphics, Color } from 'cc';
 import { CROWN_STONES } from '../battle/CrownSystem';
 export function drawLateStage(g: Graphics, stage: number) {
+  if(stage===17){drawMoonMap(g);return;}
+  if(stage===16){drawThunderMap(g);return;}
   if(stage===15){drawSandMap(g);return;}
   if(stage===14){drawSiegeMap(g);return;}
   if(isFrontier(stage)){drawFrontierMap(g,stage);return;}
