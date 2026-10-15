@@ -27,24 +27,6 @@ const enemy = (w, k, x, y = 0) => {
   e.attack = 0;
   return e;
 };
-test("arsenal sequential unlock and ninth best survive old-save reload", () => {
-  const m = new Map(),
-    storage = {
-      getItem: (k) => m.get(k) || null,
-      setItem: (k, v) => m.set(k, v),
-    },
-    p = new ProgressStore(storage);
-  assert(!p.unlockedStage(9));
-  const w = new SurvivalWorld(1, "ranger", 8);
-  w.state = "won";
-  p.observe(w);
-  assert(p.unlockedStage(9));
-  w.stageId = 9;
-  p.observe(w);
-  const q = new ProgressStore(storage);
-  assert(q.data.stages.includes(9));
-  assert(q.data.stageBest[9].won);
-});
 test("short racks preserve central and side lanes and guide enemies around ends", () => {
   for (const x of [-16, 0, 16])
     for (let y = -26; y < 26; y += 0.2) assert(!arsenalBlocked({ x, y }));

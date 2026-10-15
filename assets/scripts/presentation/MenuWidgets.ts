@@ -14,7 +14,7 @@ export class MenuWidgets {
   ) {
     const n = this.make("Text", parent);
     n.setPosition(x, y);
-    n.getComponent(UITransform)!.setContentSize(width, size * 3);
+    n.getComponent(UITransform)!.setContentSize(width, Math.max(size * 3, value.split("\n").length * size * 1.5));
     const l = n.addComponent(Label);
     l.string = value;
     l.fontSize = size;

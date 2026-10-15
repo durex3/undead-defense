@@ -1,9 +1,9 @@
 import type { SurvivalWorld } from './SurvivalWorld';
 export const BOSS_REINFORCEMENT_XP = .5;
 /** More fodder for developed builds, without scaling enemy health or special attacks. */
-export function hordePressure(w: Pick<SurvivalWorld, 'time' | 'skills' | 'evolutions'>) {
+export function hordePressure(w: Pick<SurvivalWorld, 'time' | 'skills' | 'mods'>) {
   const power = Object.values(w.skills).reduce((n, level) => n + Math.max(0, level - 1), 0)
-    + Object.values(w.evolutions).filter(Boolean).length * 2;
+    + Object.values(w.mods).reduce((n,mods)=>n+mods.length,0) * 2;
   const tier = Math.min(4, Math.floor(power / 4), Math.floor(Math.max(0, w.time - 45) / 30));
   return { extra: tier + (w.time>=240?3:0), rate: w.time < 30 ? 1 : 1.15 + tier * 0.07 + (w.time>=240?.15:0) };
 }

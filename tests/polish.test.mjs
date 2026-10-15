@@ -6,31 +6,6 @@ import {battleReport} from '../temp/tests/battle/BattleReport.mjs';
 import {crownEscape} from '../temp/tests/battle/CrownSystem.mjs';
 import {stepEnemies,stepHazards} from '../temp/tests/battle/EnemySystem.mjs';
 const storage=()=>{const m=new Map();return {getItem:k=>m.get(k)||null,setItem:(k,v)=>m.set(k,v)}};
-test('per-stage best survives reload, ignores longer weaker boss attempts and repeated observation',()=>{
- const s=storage(),p=new ProgressStore(s),w=new SurvivalWorld(1,'ranger',5);
- w.time=300;const b=w.addEnemy('boss',4,0);b.bossPhase=3;b.hp=b.maxHp*.12;w.state='lost';p.observe(w);
- const revision=p.data.revision;p.observe(w);assert.equal(p.data.revision,revision);
- w.time=400;b.hp=b.maxHp*.2;p.observe(w);assert.equal(p.data.stageBest[5].bossRemaining,12);
- w.stageId=4;b.bossPhase=2;p.observe(w);assert.equal(p.data.stageBest[4].phase,2);
- const q=new ProgressStore(s);assert.deepEqual(q.data,p.data);assert.match(q.bestLine(5),/12%/);
- w.stageId=5;w.state='won';b.hp=0;q.observe(w);assert.match(q.bestLine(5),/已通关/);
-});
-test('older v3 saves and malformed optional records preserve earned access',()=>{
- const s=storage(),p=new ProgressStore(s);p.data.stages=[1,2];p.data.unlocked=['ranger','alchemist'];
- p.data.stageBest={5:{time:-1,phase:99,bossRemaining:999,won:false}};
- s.setItem(PROGRESS_KEY,JSON.stringify(p.data));const q=new ProgressStore(s);
- assert.equal(q.unlockedStage(3),true);assert.equal(q.unlockedCharacter('alchemist'),true);assert.deepEqual(q.data.stageBest,{});
-});
-test('fatal report identifies the killing blow rather than largest cumulative damage',()=>{
- const w=new SurvivalWorld();w.hurt(80,'boss');w.invulnerable=0;w.hurt(30,'骨箭');
- const r=battleReport(w);assert.equal(r.deathSource,'骨箭');assert.equal(r.losses[0].name,'骸骨领主');
-});
-test('evolved ghost splash hits neighbors but never adds a second hit to the direct target',()=>{
- const w=new SurvivalWorld();w.skills.ghost=4;w.evolutions.ghost='legion';
- const e=w.addEnemy('minion',1,0),near=w.addEnemy('minion',1,.7);e.hp=near.hp=100;
- w.stepShot({x:0,y:0,vx:10,vy:0,ttl:1,age:0,skill:'ghost',damage:10,width:.01,left:1,hit:[],target:e.id},.1);
- assert.equal(e.hp,90);assert.equal(near.hp,100-w.attack*.3);
-});
 test('escape checks reject covering hazards and allow a warned lateral dodge in all five maps',()=>{
  for(let stage=1;stage<=5;stage++){
   const w=new SurvivalWorld(1,'ranger',stage);

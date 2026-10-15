@@ -1,5 +1,6 @@
+import { modInfo } from './battle/ArmoryConfig';
+import { nextPlaySpeed, PlaySpeed } from "./battle/PlaySpeed";
 import {starHeight} from "./battle/ObservatorySystem";
-import { combinationLabel } from "./battle/WeaponStatus";
 import { drawLateStage } from "./presentation/LateStagePainter";
 import { GameMenus } from "./presentation/GameMenus";
 import { MenuWidgets } from "./presentation/MenuWidgets";
@@ -15,7 +16,7 @@ import { drawGarden } from "./presentation/GardenPainter";
 import { ProgressStore } from "./platform/ProgressStore";
 import {
   CHARACTERS,
-  ACHIEVEMENTS,
+  STAGE_IDS,
   CharacterId,
   StageId,
 } from "./battle/ProgressionConfig";
@@ -54,27 +55,22 @@ import {
 } from "cc";
 import { DEBUG, WECHAT } from "cc/env";
 import { SurvivalWorld } from "./battle/SurvivalWorld";
-import { SYNTHESIS_RECIPES, MAX_ENEMIES, Card, Skill, NAMES as names, COLORS as colors, EVOLUTIONS, ENEMIES } from "./battle/SurvivalConfig";
+import { MAX_ENEMIES, Card, Skill, NAMES as names, COLORS as colors, ENEMIES } from "./battle/SurvivalConfig";
 import { BattlePainter } from "./presentation/BattlePainter";
 import { CombatFeedback, FEEDBACK_SOUNDS } from "./presentation/CombatFeedback";
-import { weaponFormName } from "./battle/WeaponForms";
-import { drawBladeForm, drawGhostForm } from "./presentation/CompanionForms";
 import { PIXELS } from "./presentation/PixelAtlas";
 const { ccclass } = _decorator;
 @ccclass("GameBootstrap")
 export class GameBootstrap extends Component {
-  world = new SurvivalWorld(Date.now());
+  world = new SurvivalWorld(Date.now(), "ranger", 14);
   private progress = new ProgressStore(sys.localStorage);
   private preferences = new PlayPreferences(sys.localStorage);
   private touchMode = sys.isMobile;
-  private shopTab: "buy" | "sell" | "fusion" = "buy";
-  private pendingShopAction: { type: "sell"; skill: Skill } | null = null;
   private victoryTime = 0;
   private victorySeen = false;
   private confirmation: "restart" | "selection" | null = null;
   private selectedCharacter: CharacterId = "ranger";
-  private selectedStage: StageId = 1;
-  private runEarned: string[] = [];
+  private selectedStage: StageId = 14;
   private runUnlocks: string[] = [];
   private progressNotice = "";
   private saveRetry = 0;
@@ -100,15 +96,13 @@ export class GameBootstrap extends Component {
   private potions = new Map<number, Node>();
   private potionPool: Node[] = [];
   private hero!: Node;
-  private blades: Node[] = [];
-  private ghosts: Node[] = [];
   private painter!: BattlePainter;
   private announcement!: Label;
   private announcementLife = 0;
-  private superBanner!: Node;
-  private superTitle!: Label;
-  private superSubtitle!: Label;
-  private superLife = 0;
+  private modBanner!: Node;
+  private modTitle!: Label;
+  private modSubtitle!: Label;
+  private modLife = 0;
   private feedbackClock = 0;
   private feedback = new CombatFeedback();
   private reveal = 0;
@@ -116,6 +110,8 @@ export class GameBootstrap extends Component {
   private finger: number | null = null;
   private origin = { x: 0, y: 0 };
   private stick = { x: 0, y: 0 };
+  private playSpeed: PlaySpeed = 1;
+  private speedLabel!: Label;
   private camera = { x: 0, y: 0 };
   private acc = 0;
   private shown = "";
@@ -237,6 +233,7 @@ export class GameBootstrap extends Component {
         this.touchMode ? 80 : 40,
         () => this.togglePause(),
       );
+      this.speedLabel = this.button(this.hud, "倍速 ×1", -this.screenW / 2 + 86, this.screenH / 2 - 107, 110, this.touchMode ? 80 : 40, () => this.cycleSpeed());
       this.novaLabel = this.button(
         this.hud,
         "全收经验 [空格]",
@@ -249,14 +246,14 @@ export class GameBootstrap extends Component {
         },
       );
       this.announcement = this.text(this.hud, "", 0, 227, 26, "#f5da9e");
-      this.superBanner = this.make("SuperweaponBanner", this.hud);
-      this.superBanner.setPosition(0, this.screenH / 2 - 210);
-      const banner = this.superBanner.addComponent(Graphics);
+      this.modBanner = this.make("ModificationBanner", this.hud);
+      this.modBanner.setPosition(0, this.screenH / 2 - 210);
+      const banner = this.modBanner.addComponent(Graphics);
       banner.fillColor = new Color(18, 25, 38, 190);
       banner.roundRect(-320, -38, 640, 76, 10); banner.fill();
-      this.superTitle = this.text(this.superBanner, "", 0, 13, 24, "#fff2c3", 620);
-      this.superSubtitle = this.text(this.superBanner, "", 0, -19, 16, "#c4e8e0", 620);
-      this.superBanner.active = false;
+      this.modTitle = this.text(this.modBanner, "", 0, 13, 24, "#fff2c3", 620);
+      this.modSubtitle = this.text(this.modBanner, "", 0, -19, 16, "#c4e8e0", 620);
+      this.modBanner.active = false;
       this.prewarmEnemies();
       for(let i=0;i<3;i++) {
         const n=this.make("Health potion",this.stage);
@@ -340,7 +337,6 @@ export class GameBootstrap extends Component {
     if (!this.started) {
       if (e.keyCode === KeyCode.ENTER) this.restart();
       else if (e.keyCode === KeyCode.ESCAPE) this.showStart();
-      else if (e.keyCode === KeyCode.KEY_C) this.showAchievements();
       else {
         const i = [KeyCode.DIGIT_1, KeyCode.DIGIT_2, KeyCode.DIGIT_3].indexOf(
           e.keyCode,
@@ -359,19 +355,19 @@ export class GameBootstrap extends Component {
       return;
     }
     if (e.keyCode === KeyCode.ESCAPE) {
-      if (this.world.state === "evolution") {
-        this.world.back();
+      if (this.world.state === "modification") {
+        /* Modification choices require an explicit selection. */
         this.shown = "";
       } else this.togglePause();
     }
     if (e.keyCode === KeyCode.SPACE && this.world.active && this.started) {
       if (this.world.useUltimate()) this.sound("choose");
     }
-    if (this.world.state === "evolution") {
-      const i = [KeyCode.DIGIT_1, KeyCode.DIGIT_2].indexOf(e.keyCode);
-      const skill = this.world.pendingEvolution;
-      const evo = skill ? EVOLUTIONS[skill][i] : undefined;
-      if (evo) this.evolve(evo.id);
+    if (this.world.state === "modification") {
+      const i = [KeyCode.DIGIT_1, KeyCode.DIGIT_2, KeyCode.DIGIT_3, KeyCode.DIGIT_4].indexOf(e.keyCode);
+      const skill = this.world.pendingModification;
+      const evo = skill ? this.world.modOptions()[i] : undefined;
+      if (evo) this.chooseMod(evo.id);
     } else if (this.world.state === "upgrade") {
       const index = [KeyCode.DIGIT_1, KeyCode.DIGIT_2, KeyCode.DIGIT_3].indexOf(
         e.keyCode,
@@ -415,8 +411,6 @@ export class GameBootstrap extends Component {
   private togglePause() {
     if (this.confirmation) return;
     if (!this.started || this.world.state !== "battle") return;
-    if (this.world.shopOpen) this.world.closeShop();
-    this.pendingShopAction = null;
     this.world.pause("menu", !this.world.pauses.has("menu"));
     this.clearInput();
     this.shown = "";
@@ -425,26 +419,19 @@ export class GameBootstrap extends Component {
     const before = (Object.keys(CHARACTERS) as CharacterId[]).filter((id) =>
       this.progress.unlockedCharacter(id),
     );
-    const stageBefore = [2,3,4,5,6,7,8,9,10,11,12,13,14,15].filter(id=>this.progress.unlockedStage(id as StageId));
-    const earned = this.progress.observe(this.world);
-    for (const id of earned)
-      if (!this.runEarned.includes(id)) this.runEarned.push(id);
+    const stageBefore = STAGE_IDS.filter(id=>this.progress.unlockedStage(id));
+    this.progress.observe(this.world);
     const unlocks = (Object.keys(CHARACTERS) as CharacterId[])
       .filter(
         (id) => !before.includes(id) && this.progress.unlockedCharacter(id),
       )
       .map((id) => CHARACTERS[id].name);
-    for (const id of [2,3,4,5,6,7,8,9,10,11,12,13,14,15] as StageId[])
+    for (const id of STAGE_IDS)
       if (!stageBefore.includes(id) && this.progress.unlockedStage(id)) unlocks.push(STAGES[id].name);
     this.runUnlocks.push(...unlocks);
     if (unlocks.length)
       this.progressNotice = "解锁成功 · " + unlocks.join(" / ");
-    else if (earned.length)
-      this.progressNotice =
-        "成就达成 · " +
-        earned
-          .map((id) => ACHIEVEMENTS.find((a) => a.id === id)!.name)
-          .join(" / ");
+
   }
   private prewarmEnemies() {
     while(this.pool.length+this.units.size<MAX_ENEMIES) {
@@ -472,7 +459,7 @@ export class GameBootstrap extends Component {
     if (!this.progress.unlockedCharacter(this.selectedCharacter))
       this.selectedCharacter = "ranger";
     if (!this.progress.unlockedStage(this.selectedStage))
-      this.selectedStage = 1;
+      this.selectedStage = 14;
     this.world = new SurvivalWorld(
       Date.now(),
       this.selectedCharacter,
@@ -480,7 +467,6 @@ export class GameBootstrap extends Component {
       this.progress.weaponSlots,
     );
     this.world.offerStartingWeapons();
-    this.runEarned = [];
     this.runUnlocks = [];
     this.progressNotice = "";
     this.started = true;
@@ -494,11 +480,12 @@ export class GameBootstrap extends Component {
       if(this.selectedStage===5)drawCrown(graphics);else drawLateStage(graphics,this.selectedStage);
     }
     this.camera = { x: this.world.player.x*48, y: this.world.player.y*48 };
+    this.playSpeed=1;if(this.speedLabel)this.speedLabel.string="倍速 ×1";
     this.painter.reset();
     this.announcementLife = 0;
     this.announcement.string = "";
-    this.superLife = 0;
-    this.superBanner.active = false;
+    this.modLife = 0;
+    this.modBanner.active = false;
     this.feedbackClock = 0;
     this.feedback.reset();
     this.reveal = 0;
@@ -513,12 +500,12 @@ export class GameBootstrap extends Component {
     if (this.world.choose(c)) {
       this.clearInput();
       this.sound("choose");
-      if (this.world.state !== "evolution") this.reveal = 0.3;
+      if (this.world.state !== "modification") this.reveal = 0.3;
       this.shown = "";
     }
   }
-  private evolve(id: string) {
-    if (this.world.evolve(id)) {
+  private chooseMod(id: string) {
+    if (this.world.chooseMod(id)) {
       this.syncProgress();
       this.clearInput();
       this.reveal = 0.3;
@@ -537,27 +524,21 @@ export class GameBootstrap extends Component {
       confirmAbandon: owner.confirmAbandon.bind(owner),
       get confirmation() { return owner.confirmation; },
       set confirmation(value) { owner.confirmation = value; },
-      evolve: owner.evolve.bind(owner),
+      chooseMod: owner.chooseMod.bind(owner),
       make: owner.make.bind(owner),
       menus: owner.menus.bind(owner),
       muteButton: owner.muteButton.bind(owner),
       get overlay() { return owner.overlay; },
       panel: owner.panel.bind(owner),
-      get pendingShopAction() { return owner.pendingShopAction; },
-      set pendingShopAction(value) { owner.pendingShopAction = value; },
       get preferences() { return owner.preferences; },
       applyFrameRate: owner.applyFrameRate.bind(owner),
       get progress() { return owner.progress; },
       restart: owner.restart.bind(owner),
-      get runEarned() { return owner.runEarned; },
       get runUnlocks() { return owner.runUnlocks; },
       get selectedCharacter() { return owner.selectedCharacter; },
       set selectedCharacter(value) { owner.selectedCharacter = value; },
       get selectedStage() { return owner.selectedStage; },
       set selectedStage(value) { owner.selectedStage = value; },
-      get shopTab() { return owner.shopTab; },
-      set shopTab(value) { owner.shopTab = value; },
-      showAchievements: owner.showAchievements.bind(owner),
       showStart: owner.showStart.bind(owner),
       get shown() { return owner.shown; },
       set shown(value) { owner.shown = value; },
@@ -576,7 +557,6 @@ export class GameBootstrap extends Component {
     };
   }
   private showStart() { return this.menuScreens.showStart(); }
-  private showAchievements(page = 0) { return this.menuScreens.showAchievements(page); }
   private menus() { return this.menuScreens.menus(); }
   private muteButton(x: number, y: number, start: boolean) { return this.menuScreens.muteButton(x, y, start); }
   private cancelConfirmation(): void { return this.menuScreens.cancelConfirmation(); }
@@ -586,6 +566,10 @@ export class GameBootstrap extends Component {
     if (this.preferences.muted) return;
     const c = this.sounds.get(key);
     if (c) this.audio.playOneShot(c, volume ?? (key === "impact" ? 0.12 : 0.25));
+  }
+  private cycleSpeed() {
+    if(!this.started || !this.world.active)return;
+    this.playSpeed=nextPlaySpeed(this.playSpeed);this.speedLabel.string=`倍速 ×${this.playSpeed}`;
   }
   private applyFrameRate() {
     game.frameRate = (sys.isMobile || WECHAT) && this.preferences.powerSaving ? 30 : 60;
@@ -614,7 +598,8 @@ export class GameBootstrap extends Component {
       );
       if (this.reveal > 0) {
         this.reveal -= dt;
-      } else this.acc += dt;
+      } else if(w.active) this.acc += dt*this.playSpeed;
+      else this.acc=0;
       while (this.acc >= 1 / 60) {
         w.step(1 / 60);
         this.acc -= 1 / 60;
@@ -622,7 +607,7 @@ export class GameBootstrap extends Component {
       this.syncProgress();
       this.menus();
     }
-    const f = 1 - Math.exp(-dt * 11);
+    const f = 1 - Math.exp(-dt * 11 * (w.active?this.playSpeed:1));
     this.camera.x +=
       (Math.max(-512, Math.min(512, w.player.x * 48)) - this.camera.x) * f;
     this.camera.y +=
@@ -638,42 +623,6 @@ export class GameBootstrap extends Component {
       `wizzard_m_${Math.hypot(w.move.x, w.move.y) > 0.1 ? "run" : "idle"}_anim_f${anim}`,
     );
     this.hero.setPosition(w.player.x * 48, w.player.y * 48 + 22);
-    while (this.blades.length < w.bladeCount) {
-      const n = this.make("Orbiting blade", this.stage);
-      this.pixel(n, "weapon_rusty_sword", 3);
-      this.make("WeaponForm", n).addComponent(Graphics);
-      this.blades.push(n);
-    }
-    this.blades.forEach((n, i) => {
-      const b = w.blades[i];
-      n.active = !!b;
-      if (b) {
-        n.setPosition(b.x * 48, b.y * 48 + 12);
-        n.angle = (b.angle * 180) / Math.PI - 90;
-        n.getComponent(Sprite)!.enabled = w.skills.blade < 4 && !w.evolutions.blade;
-        drawBladeForm(n.getChildByName("WeaponForm")!.getComponent(Graphics)!, w.skills.blade, w.evolutions.blade);
-        n.getComponent(Sprite)!.color = w.evolutions.blade
-          ? new Color(255, 226, 134)
-          : Color.WHITE;
-      }
-    });
-    while (this.ghosts.length < w.ghostCount) {
-      const n = this.make("Spirit companion", this.stage);
-      this.pixel(n, "ghost", 2.4);
-      this.make("WeaponForm", n).addComponent(Graphics);
-      this.ghosts.push(n);
-    }
-    this.ghosts.forEach((n, i) => {
-      n.active = i < w.ghostCount;
-      drawGhostForm(n.getChildByName("WeaponForm")!.getComponent(Graphics)!, w.skills.ghost, !!w.evolutions.ghost, w.time, w.evolutions.ghost);
-      const a = (i * Math.PI * 2) / Math.max(1, w.ghostCount) + w.time * 0.7;
-      n.setPosition(
-        (w.player.x + Math.cos(a) * 0.85) * 48,
-        (w.player.y + Math.sin(a) * 0.85) * 48 +
-          36 +
-          Math.sin(w.time * 4 + i) * 4,
-      );
-    });
     if (w.move.x) this.hero.setScale(w.move.x < 0 ? -1 : 1, 1, 1);
     this.hero.getComponent(Sprite)!.color =
       w.invulnerable > 0 && Math.floor(w.time * 18) % 2
@@ -731,7 +680,7 @@ export class GameBootstrap extends Component {
     );
     ordered.forEach((n, i) => n.setSiblingIndex(i));
     const events = w.drain();
-    // Final evolution takes priority over routine shots/hits in the same frame.
+    // Modification feedback takes priority over routine shots/hits.
     for (const e of events.slice().sort((a,b) => Number(!!b.final) - Number(!!a.final))) {
       const cue = this.feedback.claim(e, this.feedbackClock);
       if (cue) {
@@ -750,39 +699,24 @@ export class GameBootstrap extends Component {
         this.announcement.string = `受伤 −${Math.round(e.value || 0)} · ${battleReport(w).deathSource}`;
         this.announcementLife = 1.3;
       }
-      if (e.type === "evolve" && !e.final) this.shake = Math.max(this.shake, e.value === 10 ? 6 : e.value === 7 ? 5 : 3);
-      if (e.type === "evolve" && e.final) {
+      if (e.type === "modify" && !e.final) this.shake = Math.max(this.shake, e.value === 10 ? 6 : e.value === 7 ? 5 : 3);
+      if (e.type === "modify" && e.final) {
         const skill = e.skill as Skill;
-        const form = EVOLUTIONS[skill].find(v => v.id === e.form);
-        this.superTitle.string = `◇ 分支已选择 · ${form?.name || names[skill]}`;
-        this.superTitle.color = new Color().fromHEX(colors[skill]);
-        const partner = SYNTHESIS_RECIPES[skill];
-        this.superSubtitle.string = "本武器攻击形态已改变 · 组合联动另需配方双方10级";
-        this.superLife = 2.6;
-      }
-      if (e.type === "comboReady") {
-        const skill = e.skill as Skill, partner = SYNTHESIS_RECIPES[skill]!;
-        this.announcement.string = `∞ 超武联动已激活 · ${combinationLabel(skill)}`;
-        this.announcementLife = 3;
+        const form = modInfo(skill,e.form||'');
+        this.modTitle.string = `改造已安装 · ${form?.name || names[skill]}`;
+        this.modTitle.color = new Color().fromHEX(colors[skill]);
+        this.modSubtitle.string = form?.effect || '本武器攻击形态已改变';
+        this.modLife=2.2;
       }
       if (e.type === "hit" && this.feedback.routineAllowed(this.feedbackClock) && w.time - this.lastSound > 0.1) {
         this.sound("impact");
         this.lastSound = w.time;
       }
       if (e.type === "cast" && this.feedback.routineAllowed(this.feedbackClock)) this.sound("shot");
-      if (e.type === "learn" || (e.type === "evolve" && e.value !== undefined)) {
-        const skill = e.skill as Skill;
-        const title =
-          e.type === "evolve"
-            ? EVOLUTIONS[skill].find((v) => v.id === (e.form || w.evolutions[skill]))?.name || weaponFormName(skill, w.skills[skill], !!w.evolutions[skill])
-            : weaponFormName(skill, w.skills[skill], !!w.evolutions[skill]);
-        this.announcement.string =
-          (e.type === "evolve"
-            ? (e.value === 4 ? "小成 4级 · " : e.value === 7 ? "觉醒 7级 · " : e.value === 10 ? "终式 10级 · " : "进化完成 · ")
-            : w.skills[skill] === 1
-              ? "习得 · "
-              : "强化 · ") + title;
-        this.announcementLife = 2.2;
+      if (e.type === "learn") {
+        const skill=e.skill as Skill;
+        this.announcement.string=`${w.skills[skill]===1?'习得':'强化'} · ${names[skill]} ${w.skills[skill]}级`;
+        this.announcementLife=1.6;
       }
       if (e.type === "bossPhase") {
         this.announcement.string =
@@ -810,10 +744,10 @@ export class GameBootstrap extends Component {
     }
     this.announcementLife -= dt;
     if (this.announcementLife <= 0) this.announcement.string = "";
-    if (w.active) this.superLife = Math.max(0, this.superLife - dt);
-    this.superBanner.active = this.started && w.active && this.superLife > 0;
-    const entrance = Math.min(1, (2.6 - this.superLife) / 0.22);
-    this.superBanner.setScale(0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 1);
+    if (w.active) this.modLife = Math.max(0, this.modLife - dt);
+    this.modBanner.active = this.started && w.active && this.modLife > 0;
+    const entrance = Math.min(1, (2.6 - this.modLife) / 0.22);
+    this.modBanner.setScale(0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 1);
     this.painter.draw(w, dt, events, this.preferences.powerSaving);
     const b = this.bars;
     b.clear();

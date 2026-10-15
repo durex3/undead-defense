@@ -1,5 +1,5 @@
 import { Graphics, Color } from "cc";
-import { SAND_ROCKS } from "../battle/SandMap";
+import { SAND_ROCKS, SAND_NESTS, SAND_TRAIL } from "../battle/SandMap";
 import { Enemy } from "../battle/SurvivalTypes";
 import type { SurvivalWorld } from "../battle/SurvivalWorld";
 const palette = new Map<string, Color>();
@@ -31,6 +31,13 @@ export function drawSandMap(g: Graphics) {
         g.stroke();
       }
     }
+  g.strokeColor=ink('#b88e59',100);g.lineWidth=18;
+  SAND_TRAIL.forEach((p,i)=>{if(i===0)g.moveTo(p.x*48,p.y*48);else g.lineTo(p.x*48,p.y*48);});g.stroke();
+  for(const p of SAND_NESTS){const x=p.x*48,y=p.y*48;
+    g.fillColor=ink('#392d35',120);g.ellipse(x,y,100,65);g.fill();
+    g.strokeColor=ink('#b89b66',150);g.lineWidth=3;g.ellipse(x,y,100,65);g.stroke();
+    for(let i=0;i<5;i++){const a=i*Math.PI*2/5;g.moveTo(x+Math.cos(a)*85,y+Math.sin(a)*50);g.lineTo(x+Math.cos(a)*115,y+Math.sin(a)*75);}g.stroke();
+  }
   for (const p of SAND_ROCKS) {
     const x = (p.x - p.halfWidth) * 48,
       y = (p.y - p.halfHeight) * 48,

@@ -69,11 +69,6 @@ test('landed ground persists after caster death while expired ground releases it
  w.player.y=4;w.time=h.due;stepHazards(w);e.hp=0;stepHazards(w);assert(w.hazards.includes(h));
  w.time=h.until;stepHazards(w);assert.equal(w.hazards.length,0);
 });
-test('shield guard steps out of expansion ground without teleport or ground immunity',()=>{
- const w=world(),e=enemy(w,'thornshield');w.expansion.fields.push({id:1,skill:'water',x:e.x,y:e.y,radius:2,created:w.time,due:w.time,until:w.time+5,damage:2,origin:{...w.player}});
- const old={...e};for(let i=0;i<7;i++)w.siege.stepEnemy(e,.1);assert(e.siegeDodgeReady>w.time);assert(e.siegeTarget);assert(Math.hypot(e.x-old.x,e.y-old.y)<=1.2);
- const hp=e.hp;w.hit(e,10,'water',false,undefined,false);assert.equal(hp-e.hp,10);
-});
 test('bow fires from outside common eight-unit weapon range instead of walking into it',()=>{
  const w=world(),e=enemy(w,'siegebow',9);const x=e.x;w.siege.stepEnemy(e,.1);assert.equal(e.state,'windup');
  assert.equal(e.x,x);assert.equal(w.hazards[0].radius,18);assert.equal(w.hazards[0].until-w.hazards[0].due,2);
@@ -82,4 +77,10 @@ test('a launched explosive bolt retains its full landing warning after death or 
  const w=world(),e=enemy(w,'siegebow');e.pattern=2;assert(w.siege.castBow(e));const h=w.hazards[0],due=h.due;
  w.time=h.created+.21;stepHazards(w);assert(h.siegeLaunched);w.slow(e,true);stepEnemies(w,.1);assert.equal(h.due,due);
  e.hp=0;stepHazards(w);assert(w.hazards.includes(h));assert(!h.fired);w.time=due;stepHazards(w);assert.equal(w.hp,86);
+});
+
+test('shield guard steps out of weapon ground without teleport or ground immunity',()=>{
+ const w=world(),e=enemy(w,'thornshield');w.armory.fields.push({active:true,skill:'water',x:e.x,y:e.y,radius:2,created:w.time,until:w.time+5,stats:{damage:2,mods:[]},returning:false,next:w.time+.4,interval:.4});
+ const old={...e};for(let i=0;i<7;i++)w.siege.stepEnemy(e,.1);assert(e.siegeDodgeReady>w.time);assert(e.siegeTarget);assert(Math.hypot(e.x-old.x,e.y-old.y)<=1.2);
+ const hp=e.hp;w.hit(e,10,'water',false,undefined,false);assert.equal(hp-e.hp,10);
 });

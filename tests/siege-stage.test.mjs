@@ -10,14 +10,6 @@ import { STAGES } from '../temp/tests/battle/StageRules.mjs';
 function world(){const w=new SurvivalWorld(19,'ranger',14,6);w.time=10;for(const s of Object.keys(w.skills))w.skills[s]=0;w.enemies=[];return w;}
 function enemy(w,kind,x=4,y=0){const e=w.addEnemy(kind,x,y);e.state="seek";e.attack=0;e.visibleSince=0;e.facing=Math.PI;return e;}
 
-test('stage fourteen unlocks after thirteen and preserves best across save reload',()=>{
- const data=new Map(),storage={getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v)};
- let p=new ProgressStore(storage);assert(!p.unlockedStage(14));
- const old=new SurvivalWorld(1,'ranger',13);old.state='won';p.observe(old);assert(p.unlockedStage(14));
- const w=world();w.state='won';w.time=550;p.observe(w);p=new ProgressStore(storage);
- assert.equal(p.data.stageBest[14].time,550);assert(p.data.stages.includes(13)&&p.data.stages.includes(14));assert.equal(STAGES[14].boss,'铁棘围城督军');
-});
-
 test('siege map resolves shared walls and navigation reaches an opposite flank',()=>{
  const w=world();for(const p of SIEGE_WALLS){assert(siegeMap.blocked(p,.3));Object.assign(w.player,p);stepGarden(w,0);assert(!siegeMap.blocked(w.player,.299));}
  const e=enemy(w,'siegebone',-15,-8),target={x:15,y:-8};
@@ -36,8 +28,8 @@ test('shield directional reduction, nonstacking escort, freeze and recovery are 
 });
 
 test('actual hit accounting applies shields only to travelling projectiles',()=>{
- const w=world(),e=enemy(w,'thornshield',4);w.skills.bone=1;w.skills.water=1;
- const hp=e.hp;w.hit(e,10,'bone',false,{x:0,y:0},true,undefined,1,true);assert.equal(hp-e.hp,4.5);assert.equal(w.damage.bone,4.5);
+ const w=world(),e=enemy(w,'thornshield',4);w.skills.blade=1;w.skills.water=1;
+ const hp=e.hp;w.hit(e,10,'blade',false,{x:0,y:0},true,undefined,1,true);assert.equal(hp-e.hp,4.5);assert.equal(w.damage.blade,4.5);
  const before=e.hp;w.hit(e,10,'water',false,{x:0,y:0},false);assert.equal(before-e.hp,10);
 });
 

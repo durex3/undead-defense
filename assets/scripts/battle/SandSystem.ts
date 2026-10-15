@@ -1,3 +1,4 @@
+import {mapApproach,mapPackOffset} from './MapEncounters';
 import type { SurvivalWorld } from "./SurvivalWorld";
 import {
   Enemy,
@@ -55,6 +56,7 @@ export class SandSystem {
     peakHazards: 0,
   };
   private reservations = new Map<number, number>();
+  private mapWave=0;
   private nextGroup = 0;
   private special = 25;
   private bossCycle = 0;
@@ -246,15 +248,16 @@ export class SandSystem {
                 22,
                 5 + Math.floor(t / 50) + (elite ? 0 : pressure.extra),
               ),
-        a = w.random() * Math.PI * 2;
+        a = mapApproach(15,t,this.mapWave,w.random());
       for (let i = 0; i < n; i++) {
-        const p = position(a + i * 0.15 + (i >= n / 2 ? Math.PI : 0));
+        const p = position(a + mapPackOffset(15,t,this.mapWave,i,n));
         if (!this.legal(p) || distance(p, w.player) < 3) continue;
         const e = w.addEnemy("sandworker", p.x, p.y);
         if (!e) break;
         e.state = "arriving";
         e.timer = 1;
       }
+      this.mapWave++;
       this.nextGroup =
         Math.max(0.9, 2.6 - t / 250) / (elite ? 0.6 : pressure.rate);
     }

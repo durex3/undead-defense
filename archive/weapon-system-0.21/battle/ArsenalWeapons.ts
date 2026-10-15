@@ -10,7 +10,7 @@ export interface ArsenalEntity extends Point {
 // Simulation and drawing share preallocated records; no Cocos node is created per cast.
 const entity = (): ArsenalEntity => ({active:false,skill:'chain',x:0,y:0,a:0,b:0,until:0,next:0,due:0,created:0,radius:0,damage:0,remaining:0,evolved:false,level:0,endX:0,endY:0});
 export class ArsenalWeapons {
-  readonly links = Array.from({length:12}, entity);
+  readonly links = Array.from({length:48}, entity);
   readonly markers = Array.from({length:12}, entity);
   readonly totems = Array.from({length:6}, entity);
   readonly bolts = Array.from({length:48}, entity);
@@ -45,16 +45,17 @@ export class ArsenalWeapons {
     let made=0;
     if(skill==='chain'||skill==='soul') {
       if(focused) {
-        const p=this.acquire(this.links,skill);
-        if(!p)return false;
-        p.a=p.b=target.id;p.x=target.x;p.y=target.y;p.endX=target.x;p.endY=target.y;
-        p.radius=14;p.until=w.time+3.6;p.damage=w.attack*(skill==='chain'?.65:.4);
+        const targets=[target,...this.enemies().filter(e=>e.id!==target.id&&distance(e,w.player)<14)].slice(0,2);
+        if(this.links.filter(p=>!p.active).length<targets.length)return false;
+        for(const t of targets){const p=this.acquire(this.links,skill);if(!p)break;
+        p.a=p.b=t.id;p.x=t.x;p.y=t.y;p.endX=t.x;p.endY=t.y;
+        p.radius=14;p.until=w.time+3.6;p.damage=w.attack*(skill==='chain'?.65:.4);}
         w.castCounts[skill]=(w.castCounts[skill]||0)+1;w.effects.push({type:'cast',...w.player,skill});
         return true;
       }
       const used:number[]=[];
       let a=target;
-      const count=skill==='chain'?(level>=2?3:2):(level>=2?2:1);
+      const count=2*((skill==='chain'?(level>=2?3:2):(level>=2?2:1))+1)-1;
       for(let i=0;i<count;i++) {
         if(!used.includes(a.id))used.push(a.id);
         const b=w.target(a,level>=3?4:3,used);
@@ -65,7 +66,7 @@ export class ArsenalWeapons {
         used.push(b.id);a=b;
       }
       // Keep a tether on lone targets; a completed totem recipe also enables a solo soul tether.
-      if(!made && (skill==='chain' || (skill==='soul' && w.combinations.ready('totem')))) {
+      if(!made) {
         const p=this.acquire(this.links,skill);if(p){p.a=target.id;p.b=target.id;p.until=w.time+2.4;p.damage=w.attack*(skill==='chain'?.22:.15);p.radius=6;made++;}
       }
     } else if(skill==='totem') {
@@ -81,12 +82,14 @@ export class ArsenalWeapons {
       const targets=this.enemies().filter(e=>distance(e,w.player)<14).sort((a,b)=>w.near(b,2).length-w.near(a,2).length);
       const chosen:Point[]=[];
       for(let i=0;i<count;i++) {
-        const t=focused && i===0?target:targets.find(e=>chosen.every(p=>distance(p,e)>2)) || (i===0?target:undefined);if(!t)break;
+        const angle=form==='impact'&&i>0?w.random()*Math.PI*2:0,scatter=form==='impact'&&i>0?6*Math.sqrt(w.random()):0;
+        const t=form==='impact'&&i>0?{x:Math.max(-22,Math.min(22,target.x+Math.cos(angle)*scatter)),y:Math.max(-26,Math.min(26,target.y+Math.sin(angle)*scatter))}:focused && i===0?target:targets.find(e=>chosen.every(p=>distance(p,e)>2)) || (i===0?target:undefined);if(!t)break;
         const p=this.acquire(this.markers,skill);if(!p)break;
         chosen.push(t);p.x=t.x;p.y=t.y;p.due=w.time+(skill==='meteor'?1.2:skill==='pillar'&&w.combinations.ready('chain')?.35:.8);p.next=p.due;
         p.radius=(skill==='meteor'?2:1.5)*(level>=3?1.25:1);p.damage=w.attack*(skill==='meteor'?2.8:1.8);
         if(form==='sunlance'){p.radius=1.05;p.damage=w.attack*(i===0?5.5:3);}
-        if(form==='impact'){p.radius=i===0?1.8:1.4;p.damage=w.attack*(i===0?7:2.5);}
+        if(form==='impact'){p.radius=i===0?5.4:2.8;p.damage=w.attack*(i===0?7:2.5);p.due+=i*.08;p.next=p.due;}
+        if(skill==='pillar')p.radius*=2;
         p.remaining=skill==='pillar'&&evolved&&!focused?3:1;p.until=p.due+(evolved&&skill==='meteor'?2:.8);made++;
       }
     }
@@ -102,7 +105,7 @@ export class ArsenalWeapons {
       w.cooldowns[skill]=Math.max(0,w.cooldowns[skill]-dt);
       if(w.skills[skill] && w.cooldowns[skill]<=0 && this.cast(skill)) {
         const base=skill==='chain'?4:skill==='soul'?4.5:skill==='totem'?6:skill==='pillar'?4.2:6;
-        w.cooldowns[skill]=base*(w.skills[skill]>=4 && (skill==='pillar'||skill==='meteor')?.8:1)*w.cooldownFactor(skill);
+        w.cooldowns[skill]=base*(skill==='chain'||skill==='soul'?.5:1)*(w.skills[skill]>=4 && (skill==='pillar'||skill==='meteor')?.8:1)*w.cooldownFactor(skill);
       }
     }
     for(const p of this.links)if(p.active) {

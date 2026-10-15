@@ -5,12 +5,9 @@ import { siegeEnemy } from "../battle/SiegeSystem";
 import {isFrontier} from "../battle/FrontierMaps";
 import {frontierEnemy} from "../battle/FrontierSystem";
 import {drawFrontierEnemy,drawFrontierHazard} from "./FrontierPainter";
-import {drawSuperWeaponEffect, SUPER_EFFECT_LIFETIMES} from "./SuperWeaponPainter";
-import { formTier } from "../battle/WeaponForms";
 import {arsenalAura} from "../battle/ArsenalSystem";
 import {starHeight} from "../battle/ObservatorySystem";
 import { bossExposed } from "../battle/BossSystem";
-import { expansionGlyph, drawExpansion } from "./ExpansionPainter";
 import { Graphics, Color } from "cc";
 import { SurvivalWorld, Effect } from "../battle/SurvivalWorld";
 import { Card, COLORS, isElite, isLarge, WEAPONS, Skill } from "../battle/SurvivalConfig";
@@ -19,7 +16,6 @@ function color(hex: string, alpha = 255) {
   c.a = alpha;
   return c;
 }
-// Local oriented geometry keeps form silhouettes attached to the actual shot center.
 function polygon(g: Graphics, x: number, y: number, angle: number, points: number[][]) {
   const dx = Math.cos(angle), dy = Math.sin(angle);
   points.forEach(([u,v], i) => {
@@ -31,205 +27,15 @@ function polygon(g: Graphics, x: number, y: number, angle: number, points: numbe
 function crystal(g: Graphics,x:number,y:number,r:number,angle=0) {
   polygon(g,x,y,angle,[[r,0],[0,r*.38],[-r,0],[0,-r*.38]]);
 }
-export function skillGlyph(
-  g: Graphics,
-  key: Card,
-  x: number,
-  y: number,
-  size = 32,
-) {
-  const c = COLORS[key] || "#f0d292";
-  g.strokeColor = color(c);
-  g.fillColor = color(c);
-  g.lineWidth = 3;
-  if (expansionGlyph(g, key, x, y, size)) return;
-  if (key === "blade") {
-    g.moveTo(x - size * 0.7, y - size * 0.7);
-    g.lineTo(x + size * 0.4, y + size * 0.5);
-    g.lineTo(x + size * 0.7, y + size);
-    g.lineTo(x + size * 0.1, y + size * 0.6);
-    g.lineTo(x - size * 0.7, y - size * 0.7);
-    g.fill();
-    g.moveTo(x - size * 0.55, y - size * 0.15);
-    g.lineTo(x - size * 0.1, y - size * 0.6);
-    g.stroke();
-  } else if (key === "scythe") {
-    g.lineWidth = Math.max(3, size * .16);
-    g.arc(x, y, size * .85, -.9, 1.7, false);
-    g.stroke();
-    g.moveTo(x - size * .1, y + size * .65);
-    g.lineTo(x + size * .5, y - size * .6);
-    g.stroke();
-  } else if (key === "ice") {
-    for (let i = 0; i < 6; i++) {
-      const a = (i * Math.PI) / 3,
-        dx = Math.cos(a),
-        dy = Math.sin(a);
-      g.moveTo(x, y);
-      g.lineTo(x + dx * size, y + dy * size);
-      g.stroke();
-      for (const b of [-0.5, 0.5]) {
-        g.moveTo(x + dx * size * 0.6, y + dy * size * 0.6);
-        g.lineTo(
-          x + Math.cos(a + b) * size * 0.82,
-          y + Math.sin(a + b) * size * 0.82,
-        );
-        g.stroke();
-      }
-    }
-  } else if (key === "lightning") {
-    g.moveTo(x + size * 0.3, y + size);
-    g.lineTo(x - size * 0.5, y);
-    g.lineTo(x + size * 0.1, y);
-    g.lineTo(x - size * 0.3, y - size);
-    g.lineTo(x + size * 0.65, y + size * 0.15);
-    g.lineTo(x + size * 0.1, y + size * 0.15);
-    g.close();
-    g.fill();
-  } else if (key === "fire") {
-    g.moveTo(x, y + size);
-    g.bezierCurveTo(
-      x - size * 0.1,
-      y + size * 0.2,
-      x - size,
-      y,
-      x - size * 0.6,
-      y - size * 0.6,
-    );
-    g.bezierCurveTo(
-      x,
-      y - size * 1.2,
-      x + size,
-      y - size * 0.6,
-      x + size * 0.45,
-      y + size * 0.25,
-    );
-    g.lineTo(x + size * 0.1, y);
-    g.close();
-    g.fill();
-    g.fillColor = color("#fff2c1");
-    g.circle(x, y - size * 0.35, size * 0.25);
-    g.fill();
-  } else if (key === "ghost") {
-    g.roundRect(
-      x - size * 0.6,
-      y - size * 0.7,
-      size * 1.2,
-      size * 1.6,
-      size * 0.5,
-    );
-    g.fill();
-    g.fillColor = color("#223447");
-    g.circle(x - size * 0.22, y + size * 0.2, size * 0.1);
-    g.circle(x + size * 0.22, y + size * 0.2, size * 0.1);
-    g.fill();
-  } else if (key === "repair") {
-    g.fillColor = color("#f19b9d");
-    g.rect(x - size * 0.2, y - size * 0.7, size * 0.4, size * 1.4);
-    g.rect(x - size * 0.7, y - size * 0.2, size * 1.4, size * 0.4);
-    g.fill();
-  } else {
-    g.circle(x, y, size * 0.7);
-    g.stroke();
-    g.moveTo(x - size * 0.45, y - size * 0.45);
-    g.lineTo(x + size * 0.45, y + size * 0.45);
-    g.stroke();
-  }
-}
+export function skillGlyph(g:Graphics,key:Card,x:number,y:number,size=32){g.fillColor=color(COLORS[key]||'#d9ceaa');g.strokeColor=g.fillColor;g.lineWidth=3;if(key==='blade')crystal(g,x,y,size,Math.PI/4);else if(key==='fire'){g.circle(x,y,size*.7);g.fill();g.moveTo(x-size*.5,y);g.lineTo(x,y+size);g.lineTo(x+size*.5,y);g.fill();}else if(key==='water'){g.roundRect(x-size*.5,y-size*.7,size,size*1.3,6);g.fill();g.rect(x-size*.2,y+size*.5,size*.4,size*.4);g.fill();}else {g.circle(x,y,size*.75);g.stroke();g.moveTo(x-size*.4,y);g.lineTo(x+size*.4,y);g.moveTo(x,y-size*.4);g.lineTo(x,y+size*.4);g.stroke();}}
 export class BattlePainter {
-  private particles: { e: Effect; life: number; max: number }[] = [];
-  private feedbackClock = 0;
-  private cueUntil = new Map<string, number>();
-  constructor(private g: Graphics) {}
-  reset() {
-    this.particles = [];
-    this.feedbackClock = 0;
-    this.cueUntil.clear();
-  }
-  draw(w: SurvivalWorld, dt: number, events: Effect[], reduced=false) {
-    const g = this.g;
-    g.clear();
-    this.feedbackClock += dt;
-    for(const [key,until] of this.cueUntil)if(until<=this.feedbackClock)this.cueUntil.delete(key);
-    const perType=new Map<string,number>();
-    for (const e of events) {
-      if (e.type.startsWith("combo")) {
-        const key=`${e.type}:${Math.floor(e.x/2)}:${Math.floor(e.y/2)}`;
-        if ((this.cueUntil.get(key) ?? -Infinity) > this.feedbackClock || (perType.get(e.type)||0)>=(reduced?2:3)) continue;
-        this.cueUntil.set(key, this.feedbackClock + 0.1);
-        perType.set(e.type,(perType.get(e.type)||0)+1);
-      }
-      if (
-        [
-          "playerHit",
-          "hit",
-          "death",
-          "block",
-          "explosion",
-          "lightning",
-          "ultimate",
-          "hazard",
-          "learn",
-          "evolve",
-          "heal",
-          "fireImpact",
-          "comboFire",
-          "comboIce",
-          "comboPurify", "comboBone", "comboJudgment", "comboSoul", "comboGhost", "comboReap", "comboCollapse",
-        ].includes(e.type)
-      ) {
-        const max =
-          e.final ? 1.1 : e.type === "fireImpact" ? (e.form === "inferno" ? 0.35 : 0.6) : e.type.startsWith("combo") ? (SUPER_EFFECT_LIFETIMES[e.type]??0.45) : e.type === "lightning"
-            ? 0.25
-            : e.type === "hit"
-              ? 0.22
-              : e.type === "evolve"
-                ? 1
-                : 0.5;
-        this.particles.push({ e, life: max, max });
-      }
-    }
-    // Reserve room for final evolutions and combination cues before drawing.
-    const final = this.particles.filter(p => p.e.final).slice(-6);
-    const accents = this.particles.filter(p => !p.e.final && (p.e.type.startsWith("combo") || p.e.type === "fireImpact")).slice(-(reduced?14:24));
-    const ordinary = this.particles.filter(p => !p.e.final && !p.e.type.startsWith("combo") && p.e.type !== "fireImpact").slice(-144);
-    this.particles = [...ordinary, ...accents, ...final];
-    drawExpansion(g, w);
-    for (const z of w.zones) {
-      g.fillColor = color("#e9823f", 45);
-      g.circle(z.x * 48, z.y * 48, z.radius * 48);
-      g.fill();
-      g.strokeColor = color("#efa657", 130);
-      g.lineWidth = 2;
-      g.circle(z.x * 48, z.y * 48, z.radius * 44);
-      g.stroke();
-      if (z.form === "inferno") {
-        g.fillColor = color("#ffbf62", 100);
-        for (let i = 0; i < 5; i++) {
-          const angle = i * Math.PI * 2 / 5 + w.time * 0.4;
-          const x = (z.x + Math.cos(angle) * z.radius * 0.5) * 48;
-          const y = (z.y + Math.sin(angle) * z.radius * 0.5) * 48;
-          polygon(g, x, y, Math.PI / 2, [[14 + Math.sin(w.time * 9 + i) * 4, 0], [-5, 5], [-3, -5]]);
-        }
-      } else if (z.form === "meteor") {
-        g.strokeColor = color("#ffd18a", 110);
-        for (let i = 0; i < 6; i++) {
-          const angle = i * Math.PI / 3;
-          g.moveTo(z.x * 48, z.y * 48);
-          g.lineTo((z.x + Math.cos(angle + 0.15) * z.radius * 0.4) * 48, (z.y + Math.sin(angle + 0.15) * z.radius * 0.4) * 48);
-          g.lineTo((z.x + Math.cos(angle) * z.radius * 0.75) * 48, (z.y + Math.sin(angle) * z.radius * 0.75) * 48);
-        }
-        g.stroke();
-      }
-    }
-    if (w.weaponEvolution("ice") === "domain") {
-      g.fillColor = color("#7ad9f2", 18);
-      g.circle(w.player.x * 48, w.player.y * 48, 3.5 * 48);
-      g.fill();
-      g.strokeColor = color("#82d9ee", 65);
-      g.circle(w.player.x * 48, w.player.y * 48, 3.5 * 48);
-      g.stroke();
-    }
+ private particles:{e:Effect;life:number;max:number}[]=[];
+ constructor(private g:Graphics){}
+ reset(){this.particles=[];}
+ draw(w:SurvivalWorld,dt:number,events:Effect[],reduced=false){const g=this.g;g.clear();
+ for(const e of events)if(['hit','death','playerHit','explosion','block','modify','ultimate','heal'].includes(e.type)){const max=e.type==='explosion'?.35:e.type==='modify'?.8:.18;this.particles.push({e,life:max,max});}
+ this.particles=this.particles.slice(-(reduced?64:120));
+ this.ground(w,reduced);
     for (const e of w.enemies) {
       const x = e.x * 48,
         y = e.y * 48;
@@ -268,12 +74,6 @@ export class BattlePainter {
       if(w.stageId===9&&arsenalAura(w,e)>1){g.fillColor=color('#e8c06c',200);g.moveTo(x-5,y+42);g.lineTo(x,y+49);g.lineTo(x+5,y+42);g.close();g.fill();}
       if(e.kind==='drowned'){g.strokeColor=color("#81c8df",180);g.lineWidth=2;g.moveTo(x-18,y-8);g.lineTo(x+18,y-8);g.stroke();}
       if(e.kind==='anchorhand'||(e.kind==='boss'&&w.stageId===8)){g.strokeColor=color("#d9c597",230);g.lineWidth=3;const sy=y+(e.kind==='boss'?55:28);g.circle(x,sy+12,4);g.moveTo(x,sy+8);g.lineTo(x,sy-10);g.moveTo(x-12,sy);g.quadraticCurveTo(x,sy-20,x+12,sy);g.stroke();}
-      const venomStacks=w.expansion.venomStacks(e.id);
-      if(venomStacks && e.hp>0){
-        g.fillColor=color("#c8ef75",225);
-        for(let i=0;i<venomStacks;i++)g.circle(x+(i-(venomStacks-1)/2)*6,y+(isLarge(e.kind)?79:62),2);
-        g.fill();
-      }
       if (e.hp < e.maxHp || isLarge(e.kind)) {
         g.fillColor = color("#351f2f");
         g.rect(x - 20, y + (isLarge(e.kind) ? 70 : 53), 40, 4);
@@ -286,10 +86,6 @@ export class BattlePainter {
           4,
         );
         g.fill();
-      }
-      for (const main of ["ghost", "scythe"] as const) if (w.combinations.marked(main,e)) {
-        g.strokeColor=color(main === "ghost" ? "#b4d6ff" : "#a8eac0",170);g.lineWidth=2;
-        g.arc(x,y+14,18,main === "ghost" ? 0 : Math.PI,main === "ghost" ? Math.PI : Math.PI*2,false);g.stroke();
       }
       if (e.kind === "boss" && w.stageId === 5) {
         g.fillColor=color("#693044",210);
@@ -444,368 +240,11 @@ export class BattlePainter {
       g.rect(x - 1, y, 2, 4);
       g.fill();
     }
-    for (const r of w.rings) {
-      const tier=formTier(w.skills.ice,!!w.evolutions.ice);
-      const cx=r.x*48,cy=r.y*48,rr=r.radius*48;
-      g.fillColor=color("#bcefff",Math.max(0,190-r.age*190));
-      if(tier>0)for(let i=0;i<6;i++) {
-        const a=i*Math.PI/3+w.time*.15;
-        crystal(g,cx+Math.cos(a)*rr*.87,cy+Math.sin(a)*rr*.87,Math.min(15,rr*.12),a);
-      }
-      if(tier>=2) {
-        g.strokeColor=color("#bcefff",Math.max(0,150-r.age*150));g.lineWidth=2;
-        for(let i=0;i<6;i++) {
-          const a=i*Math.PI/3+w.time*.15,b=a+Math.PI*2/3;
-          g.moveTo(cx+Math.cos(a)*rr*.7,cy+Math.sin(a)*rr*.7);
-          g.lineTo(cx+Math.cos(b)*rr*.7,cy+Math.sin(b)*rr*.7);g.stroke();
-        }
-      }
-      if(tier===3)for(let i=0;i<6;i++) {
-        const a=i*Math.PI/3;crystal(g,cx+Math.cos(a)*rr*.5,cy+Math.sin(a)*rr*.5,Math.min(22,rr*.16),a+Math.PI/2);
-      }
-      g.strokeColor = color("#91e9ff", Math.max(0, 255 - r.age * 260));
-      g.lineWidth = 5;
-      g.circle(r.x * 48, r.y * 48, r.radius * 48);
-      g.stroke();
-      g.strokeColor = color("#dbffff", 110);
-      g.lineWidth = 2;
-      g.circle(r.x * 48, r.y * 48, Math.max(0, r.radius * 48 - 7));
-      g.stroke();
+    this.projectiles(w);
+    for(const p of this.particles){p.life-=dt;if(p.life<=0)continue;const e=p.e,a=p.life/p.max,x=e.x*48,y=e.y*48;g.strokeColor=color(e.type==='playerHit'?'#ff6666':e.skill==='water'?'#9aefff':e.skill==='fire'?'#ffad55':'#fff1bd',Math.round(a*230));g.lineWidth=e.type==='explosion'?4:2;
+     const radius=(e.radius||.4)*48;if(e.type==='explosion'){g.circle(x,y,radius);g.stroke();g.circle(x,y,radius*(1-a));g.stroke();if(e.form==='heavy'){g.circle(x,y,radius*.55);g.stroke();}}else {g.circle(x,y,(e.type==='modify'?60:14)*(1-a)+5);g.stroke();}
     }
-    for (const p of w.shots) {
-      const x = p.x * 48,
-        y = p.y * 48 + 12;
-      g.fillColor = color(COLORS[p.skill]);
-      g.strokeColor = color(COLORS[p.skill]);
-      const tier=formTier(w.skills[p.skill],!!w.evolutions[p.skill]);
-      const direction=Math.atan2(p.vy,p.vx);
-      if (p.skill === "fire") {
-        const fireForm = p.form || w.weaponEvolution("fire");
-        if (fireForm === "inferno") {
-          g.fillColor = color("#ff7148", 160);
-          polygon(g, x, y, direction, [[13, 0], [-28, 9], [-17, 0], [-28, -9]]);
-          g.fillColor = color("#ffcc6c", 235);
-          polygon(g, x, y, direction, [[12, 0], [-16, 5], [-10, 0], [-16, -5]]);
-          g.fillColor = color("#fff7d4", 245);
-          g.circle(x, y, 5); g.fill();
-          continue;
-        }
-        const r = tier>=2 ? (fireForm === "meteor" ? 19 : 14) : 8;
-        for(let i=1;i<=5;i++){
-          g.fillColor=color("#ec7448",110-i*15);
-          g.circle(x-p.vx*i*.4,y-p.vy*i*.4,r*(1-i*.14));g.fill();
-        }
-        if(tier>=1) {
-          g.fillColor=color("#ff9e4c",190);
-          polygon(g,x,y,direction,[[-r*3,0],[-r*.7,r*.8],[r,0],[-r*.7,-r*.8]]);
-        }
-        g.fillColor=color(COLORS.fire);
-        g.circle(x, y, r);
-        g.fill();
-        g.fillColor = color("#fff0b0");
-        g.circle(x + 2, y + 2, r * 0.5);
-        g.fill();
-        if(tier>=2) {
-          g.fillColor=color("#7f372f");
-          for(let i=0;i<3;i++)crystal(g,x+Math.cos(i*2.1+p.age)*r*.65,y+Math.sin(i*2.1+p.age)*r*.65,r*.65,i*2.1+p.age);
-        }
-        if(tier===3) {
-          g.strokeColor=color("#ffe9a7",220);g.lineWidth=2;g.circle(x,y,r+5);g.stroke();
-          g.fillColor=color("#ffbf67");for(let i=0;i<4;i++)crystal(g,x,y,21,p.age*5+i*Math.PI/2);
-          g.fillColor=color("#fff3bc");g.circle(x,y,6);g.fill();
-        }
-      } else if (p.skill === "ice") {
-        g.strokeColor=color("#a3f4ff",240);g.fillColor=color("#dcfcff",235);g.lineWidth=2;
-        polygon(g,x,y,direction,[[23,0],[-7,7],[-3,0],[-7,-7]]);
-        g.moveTo(x-Math.cos(direction)*25,y-Math.sin(direction)*25);g.lineTo(x,y);g.stroke();
-      } else if (p.skill === "bone" && p.form === "ricochet") {
-        g.fillColor=color("#fff0cf",235);g.strokeColor=color("#b9a890",200);g.lineWidth=2;
-        polygon(g,x,y,p.age*15,[[11,0],[3,6],[-5,8],[-3,0],[-5,-8],[3,-6]]);
-      } else if (p.skill === "bone") {
-        const dx = p.vx / 13,
-          dy = p.vy / 13,
-          wide = tier>=2 ? 6 : 3;
-        g.lineWidth = wide;
-        g.moveTo(x - dx * 30, y - dy * 30);
-        g.lineTo(x + dx * 12, y + dy * 12);
-        g.stroke();
-        g.circle(x + dx * 12 - dy * wide, y + dy * 12 + dx * wide, wide * 0.65);
-        g.circle(x + dx * 12 + dy * wide, y + dy * 12 - dx * wide, wide * 0.65);
-        g.fill();
-        if(tier>=1)for(let i=0;i<(tier===3?4:2);i++) {
-          const u=-i*7;
-          polygon(g,x,y,direction,[[u+6,0],[u-7,9],[u-4,0],[u-7,-9]]);
-        }
-        if(tier>=2)polygon(g,x,y,direction,[[20,0],[2,10],[-5,0],[2,-10]]);
-      } else if (p.skill === "scythe") {
-        const r = p.form === "cross" ? 19 : tier>=2 ? 25 : 16;
-        g.lineWidth = tier>=2 ? 7 : 5;
-        g.arc(x, y, r, p.age * 16, p.age * 16 + Math.PI * 1.3, false);
-        g.stroke();
-        g.lineWidth = 3;
-        g.moveTo(x, y);
-        g.lineTo(x + Math.cos(p.age * 16) * r, y + Math.sin(p.age * 16) * r);
-        g.stroke();
-        if(tier>=1) {
-          g.arc(x,y,r,p.age*16+Math.PI,p.age*16+Math.PI*2.3,false);g.stroke();
-        }
-        if(tier>=2)polygon(g,x,y,p.age*16,[[r,0],[r*.2,r*.8],[-r*.6,r*.65],[0,r*.3]]);
-        if(p.form === "cross") {
-          polygon(g,x,y,direction,[[28,0],[8,8],[-16,3],[-20,0],[-16,-3],[8,-8]]);
-        } else if(tier===3) {
-          g.circle(x,y,r*.65);g.stroke();
-          for(let i=0;i<4;i++)polygon(g,x,y,p.age*16+i*Math.PI/2,[[r,0],[r*.6,r*.5],[r*.3,r*.2],[r*.5,-r*.3]]);
-        }
-      } else if (p.skill === "axe") {
-        const r = p.form === "execution" ? 27 : tier>=2 ? 20 : 14;
-        const a = p.form === "execution" ? direction : p.age * 14;
-        g.strokeColor = color(COLORS.axe, 235);
-        g.fillColor = color(COLORS.axe, 235);
-        g.lineWidth = 4;
-        const dx = Math.cos(a), dy = Math.sin(a), nx = -dy, ny = dx;
-        g.moveTo(x - dx * r * .75, y - dy * r * .75); g.lineTo(x + dx * r * .75, y + dy * r * .75); g.stroke();
-        g.moveTo(x + dx * r * .1 - nx * r * .75, y + dy * r * .1 - ny * r * .75);
-        g.lineTo(x + dx * r * .8 - nx * r * .35, y + dy * r * .8 - ny * r * .35);
-        g.lineTo(x + dx * r * .55 + nx * r * .35, y + dy * r * .55 + ny * r * .35);
-        g.lineTo(x + dx * r * .1 + nx * r * .75, y + dy * r * .1 + ny * r * .75);
-        g.close();
-        g.fill();
-        if(tier===1)polygon(g,x,y,a+Math.PI,[[r*.1,-r*.75],[r*.8,-r*.35],[r*.55,r*.35],[r*.1,r*.75]]);
-        if(tier>=2 && p.form !== "execution") {
-          g.circle(x,y,r*.65);g.stroke();
-          for(let i=0;i<(tier===3?4:8);i++)polygon(g,x,y,a+i*Math.PI*2/(tier===3?4:8),[[r*.5,-3],[r+3,-5],[r*.8,6],[r*.5,3]]);
-        }
-      } else if (p.skill === "lightning") {
-        const dx = p.vx / Math.max(1, Math.hypot(p.vx, p.vy));
-        const dy = p.vy / Math.max(1, Math.hypot(p.vx, p.vy));
-        const nx = -dy, ny = dx;
-        g.strokeColor = color("#e5c8ff", 240);
-        g.lineWidth = 4;
-        g.moveTo(x - dx * 22, y - dy * 22);
-        g.lineTo(x - dx * 8 + nx * 7, y - dy * 8 + ny * 7);
-        g.lineTo(x + dx * 2 - nx * 5, y + dy * 2 - ny * 5);
-        g.lineTo(x + dx * 22, y + dy * 22);
-        g.stroke();
-        g.fillColor = color("#fff5ff", 230);
-        g.circle(x, y, 4); g.fill();
-        if(tier>=1)for(const side of [-1,1]) {
-          g.moveTo(x-dx*8,y-dy*8);g.lineTo(x+dx*4+nx*side*14,y+dy*4+ny*side*14);g.lineTo(x+dx*17+nx*side*10,y+dy*17+ny*side*10);g.stroke();
-        }
-        if(tier>=2){g.fillColor=color("#eedcff",210);crystal(g,x,y,13,direction);}
-        if(tier===3){g.circle(x,y,18);g.stroke();for(let i=0;i<4;i++){const a=i*Math.PI/2+p.age*4;crystal(g,x+Math.cos(a)*18,y+Math.sin(a)*18,6,a);}}
-      } else if (p.skill === "ghost") {
-        const pulse = 5 + Math.sin(p.age * 18) * 1.5;
-        g.fillColor = color("#b4d6ff", 210);
-        if(p.form === "hunters") {
-          polygon(g,x,y,direction,[[28,0],[8,8],[-18,4],[-28,0],[-18,-4],[8,-8]]);
-          g.fillColor=color("#f2fbff",235);
-          polygon(g,x,y,direction,[[21,0],[4,3],[-17,0],[4,-3]]);
-        } else if(tier===0){g.circle(x, y, pulse + 3); g.fill();}
-        else {
-          polygon(g,x,y,0,[[0,14],[-10,6],[-9,-9],[-3,-5],[0,-12],[4,-5],[10,-9],[9,6]]);
-          g.fillColor=color("#344365");polygon(g,x,y,0,[[0,8],[-6,3],[-5,-4],[5,-4],[6,3]]);
-          g.fillColor=color("#b4d6ff",210);
-          if(tier>=2)for(const side of [-1,1])polygon(g,x,y,0,[[side*4,9],[side*12,18],[side*10,2]]);
-          if(tier===3)for(const side of [-1,1])polygon(g,x,y,0,[[side*8,3],[side*24,12],[side*19,-3],[side*9,-7]]);
-        }
-        g.fillColor = color("#f2fbff", 235);
-        g.circle(x - 2, y - 1, 2); g.circle(x + 2, y - 1, 2); g.fill();
-      } else {
-        g.lineWidth = 5;
-        g.moveTo(x - p.vx, y - p.vy);
-        g.lineTo(x, y);
-        g.stroke();
-        g.fillColor = color("#e9f8ff");
-        g.circle(x, y, 4);
-        g.fill();
-      }
-    }
-    // Arsenal weapons use fixed-capacity simulation entities; draw their
-    // telegraphs and persistent links without allocating scene nodes.
-    for (const p of w.arsenal.links) if (p.active) {
-      const tier=formTier(w.skills[p.skill],!!w.evolutions[p.skill]);
-      const x=p.x*48,y=p.y*48,ex=p.endX*48,ey=p.endY*48;
-      const angle=Math.atan2(ey-y,ex-x),length=Math.hypot(ex-x,ey-y);
-      g.strokeColor=color(COLORS[p.skill],190);g.fillColor=color(COLORS[p.skill],190);
-      if(p.form==='brand'||p.form==='torment'){
-        g.lineWidth=3;polygon(g,x,y,angle,[[0,23],[17,0],[0,-23],[-17,0]]);g.circle(x,y,12);g.stroke();
-      }
-      g.lineWidth=2;g.moveTo(x,y);g.lineTo(ex,ey);g.stroke();
-      if(tier>=1)for(let d=8;d<length;d+=20) {
-        const cx=x+Math.cos(angle)*d,cy=y+Math.sin(angle)*d;
-        if(p.skill==="chain") {
-          g.ellipse(cx,cy,7,4);g.stroke();
-          if(tier>=2)crystal(g,cx,cy,9,angle+Math.PI/2);
-        } else {
-          g.circle(cx,cy,4);g.fill();
-          if(tier>=2)polygon(g,cx,cy,angle,[[0,8],[-5,1],[-3,-8],[0,-4],[3,-8],[5,1]]);
-        }
-      }
-      for(const [cx,cy] of [[x,y],[ex,ey]]) {
-        if(tier>=2){g.circle(cx,cy,10);g.stroke();}
-        if(tier===3) {
-          for(let i=0;i<4;i++)crystal(g,cx,cy,14,angle+i*Math.PI/2);
-          g.circle(cx,cy,17);g.stroke();
-        }
-        g.circle(cx,cy,4);g.fill();
-      }
-      if(tier===3){g.moveTo(x-Math.sin(angle)*8,y+Math.cos(angle)*8);g.lineTo(ex-Math.sin(angle)*8,ey+Math.cos(angle)*8);g.stroke();}
-    }
-    for (const p of w.arsenal.markers) if (p.active) {
-      const x=p.x*48,y=p.y*48,r=p.radius*48;
-      const tier=formTier(w.skills[p.skill],!!w.evolutions[p.skill]);
-      const warning=Math.max(0,Math.min(1,(p.due-w.time)/Math.max(.01,p.due-p.created)));
-      g.strokeColor=color(COLORS[p.skill],Math.round(90+warning*130));
-      g.fillColor=color(COLORS[p.skill],warning>0?35:100);g.lineWidth=2;
-      g.circle(x,y,r);g.stroke();
-      // Inner motifs stay inside the simulation radius; the outer boundary is unchanged.
-      if(p.form==='sunlance'){
-        polygon(g,x,y,0,[[0,-r*.85],[-r*.18,0],[0,r*.85],[r*.18,0]]);g.rect(x-r*.4,y+r*.25,r*.8,4);g.fill();
-      } else if(p.form==='impact'){
-        polygon(g,x,y,warning,[[0,r*.8],[r*.65,0],[0,-r*.8],[-r*.65,0]]);g.circle(x,y,r*.35);g.fill();
-      } else if(p.skill==="pillar") {
-        if(tier<=1){g.rect(x-3,y-r*.55,6,r*1.1);g.fill();if(tier===1){g.rect(x-r*.35,y+r*.15,r*.7,6);g.fill();}}
-        else {
-          const sword=(cx:number,cy:number,rr:number)=>{
-            polygon(g,cx,cy,0,[[0,-rr],[-rr*.17,-rr*.5],[-rr*.1,rr*.3],[rr*.1,rr*.3],[rr*.17,-rr*.5]]);
-            g.rect(cx-rr*.35,cy+rr*.3,rr*.7,4);g.fill();g.rect(cx-2,cy+rr*.3,4,rr*.3);g.fill();
-          };
-          sword(x,y,r*.7);
-          if(tier===3){sword(x-r*.45,y,r*.4);sword(x+r*.45,y,r*.4);g.circle(x,y,r*.82);g.stroke();}
-        }
-      } else {
-        const rr=r*.45;
-        polygon(g,x,y,warning*.8,[[rr,0],[rr*.5,rr*.8],[-rr*.5,rr*.9],[-rr,0],[-rr*.6,-rr*.8],[rr*.6,-rr*.7]]);
-        if(tier>=1){g.strokeColor=color("#fff0bd",200);g.moveTo(x-rr*.6,y+rr*.4);g.lineTo(x,y);g.lineTo(x+rr*.2,y-rr*.7);g.moveTo(x,y);g.lineTo(x+rr*.7,y+rr*.3);g.stroke();}
-        if(tier>=2){g.fillColor=color("#ffe3a0",220);crystal(g,x,y,rr*.6);}
-        if(tier===3){g.strokeColor=color(COLORS[p.skill],180);g.ellipse(x,y,r*.8,r*.3);g.stroke();g.fillColor=color(COLORS[p.skill],180);for(let i=0;i<4;i++)crystal(g,x+Math.cos(i*Math.PI/2)*r*.7,y+Math.sin(i*Math.PI/2)*r*.7,r*.18,i*Math.PI/2);}
-      }
-    }
-    for (const p of w.arsenal.totems) if (p.active) {
-      const x=p.x*48,y=p.y*48,tier=formTier(w.skills.totem,!!w.evolutions.totem);
-      g.fillColor=color(COLORS.totem,210);g.strokeColor=color(COLORS.totem,220);g.lineWidth=2;
-      if(p.form==='obelisk'){g.circle(x,y,30);g.stroke();polygon(g,x,y,0,[[0,42],[-11,25],[11,25]]);}
-      if(tier===3){polygon(g,x,y,0,[[-23,-18],[23,-18],[17,-9],[-17,-9]]);g.rect(x-16,y-9,32,5);g.fill();}
-      g.rect(x-7,y-18,14,36);g.fill();
-      if(tier>=1) {
-        g.roundRect(x-11,y+5,22,19,7);g.fill();g.fillColor=color("#263647");g.circle(x-4,y+15,3);g.circle(x+4,y+15,3);g.fill();
-        g.fillColor=color(COLORS.totem,210);polygon(g,x,y,0,[[-5,6],[0,1],[5,6]]);
-      }
-      if(tier>=2)for(const side of [-1,1])polygon(g,x,y,0,[[side*7,20],[side*17,33],[side*14,12]]);
-      if(tier===3){g.circle(x,y,25);g.stroke();for(const side of [-1,1]){g.rect(x+side*22-3,y-12,6,21);g.fill();}}
-    }
-    for (const p of w.arsenal.bolts) if (p.active) {
-      g.strokeColor = color(COLORS.totem, 180); g.lineWidth = 2;
-      g.moveTo(p.x * 48, p.y * 48); g.lineTo(p.endX * 48, p.endY * 48); g.stroke();
-    }
-    for (const p of this.particles) {
-      if (w.active || p.e.final) p.life -= dt;
-      if (p.life <= 0) continue;
-      const e = p.e,
-        a = Math.max(0, p.life / p.max),
-        x = e.x * 48,
-        y = e.y * 48 + 12;
-      const c = e.type === "playerHit" ? "#ff8e98" : COLORS[e.skill || "blade"] || "#efa783";
-      g.strokeColor = color(c, Math.round(a * 255));
-      g.fillColor = color(c, Math.round(a * 50));
-      g.lineWidth = e.type === "lightning" ? 4 : 3;
-      if (e.type === "evolve" && e.final) {
-        const radius = 145 * (1 - a * a * a);
-        g.fillColor = color(c, Math.round(a * 18));
-        g.circle(x, y, radius); g.fill();
-        g.strokeColor = color(c, Math.round(a * 195)); g.lineWidth = 2 + a * 2;
-        g.circle(x, y, radius); g.stroke();
-        g.circle(x, y, radius * 0.7); g.stroke();
-        for (let i = 0; i < 8; i++) {
-          const angle = i * Math.PI / 4 + (1 - a) * 0.3;
-          crystal(g, x + Math.cos(angle) * radius * 0.85, y + Math.sin(angle) * radius * 0.85, 5 + a * 8, angle);
-        }
-        g.fillColor = color("#fff5d3", Math.round(a * 230));
-        skillGlyph(g, e.skill as Skill, x, y, 15 + a * 12);
-      } else if (drawSuperWeaponEffect(g,e,a,reduced)) {
-        // Dedicated combination effects draw at the exact ground-space damage point.
-      } else if (e.type === "comboPurify") {
-        const radius = (e.radius || .65) * 48 * (.45 + (1-a)*.55);
-        g.strokeColor = color("#a8ffce", Math.round(a * 210)); g.lineWidth = 2;
-        for (let i = 0; i < 3; i++) {
-          const angle = i * Math.PI * 2 / 3 + (1 - a);
-          g.arc(x, y, radius, angle, angle + 1.2, false); g.stroke();
-          g.fillColor = color("#e5ffd2", Math.round(a * 210));
-          crystal(g, x + Math.cos(angle) * radius, y + Math.sin(angle) * radius, 5 + a * 3, angle + Math.PI / 2);
-        }
-        g.moveTo(x - 6 * a, y); g.lineTo(x + 6 * a, y); g.moveTo(x, y - 6 * a); g.lineTo(x, y + 6 * a); g.stroke();
-      } else if (e.type === "comboGhost") {
-        const r = 8 + (1-a)*23;
-        g.fillColor=color("#b4d6ff",Math.round(a*230));
-        for(const side of [-1,1])polygon(g,x,y,side*Math.PI/2,[[r,0],[3,8],[-r*.5,3],[-r*.2,0],[-r*.5,-3],[3,-8]]);
-      } else if (e.type === "fireImpact") {
-        const radius = (e.radius ?? 1.5) * 48 * (1 - a * a);
-        g.strokeColor = color(e.form === "inferno" ? "#ffb567" : "#ffe6ac", Math.round(a * 210));
-        g.lineWidth = e.form === "inferno" ? 2 : 5 * a + 1;
-        g.circle(x, y, radius); g.stroke();
-        g.circle(x, y, radius * 0.55); g.stroke();
-        g.fillColor = color(e.form === "inferno" ? "#ff9154" : "#e9bd8b", Math.round(a * 190));
-        for (let i = 0; i < (e.form === "inferno" ? 5 : 8); i++) {
-          const angle = i * Math.PI * 2 / (e.form === "inferno" ? 5 : 8);
-          crystal(g, x + Math.cos(angle) * radius * 0.7, y + Math.sin(angle) * radius * 0.7, (e.form === "inferno" ? 8 : 13) * a, angle);
-        }
-      } else if (e.type === "playerHit") {
-        g.lineWidth = 3;
-        const angle = Math.atan2((e.endY ?? e.y+1)-e.y, (e.endX ?? e.x)-e.x);
-        const dx=Math.cos(angle),dy=Math.sin(angle),r=24+(1-a)*12;
-        g.moveTo(x+dx*r-dy*9,y+dy*r+dx*9);
-        g.lineTo(x+dx*(r+9),y+dy*(r+9));
-        g.lineTo(x+dx*r+dy*9,y+dy*r-dx*9);g.stroke();
-      } else if (e.type === "lightning") {
-        const ex = (e.endX ?? e.x) * 48,
-          ey = (e.endY ?? e.y) * 48 + 12;
-        g.moveTo(x, y);
-        for (let i = 1; i < 5; i++) {
-          const t = i / 4;
-          g.lineTo(
-            x + (ex - x) * t + (i < 4 ? (i % 2 ? 10 : -10) : 0),
-            y + (ey - y) * t,
-          );
-        }
-        g.stroke();
-      } else if (e.type === "hit" || e.type === "death" || e.type === "block") {
-        const skill = e.skill as Skill;
-        const tier = WEAPONS.includes(skill) ? formTier(w.skills[skill], !!w.evolutions[skill]) : 0;
-        if(tier>=1 && e.type==="hit") {
-          g.fillColor=color(c,Math.round(a*200));
-          for(let i=0;i<4;i++) {
-            const angle=i*Math.PI/2+(1-a),r=(1-a)*16;
-            crystal(g,x+Math.cos(angle)*r,y+Math.sin(angle)*r,4+a*4,angle);
-          }
-          if(tier>=2){g.lineWidth=2;g.circle(x,y,(1-a)*22+4);g.stroke();}
-          if(tier===3){g.moveTo(x-16*a,y);g.lineTo(x+16*a,y);g.moveTo(x,y-16*a);g.lineTo(x,y+16*a);g.stroke();}
-        }
-        for (let i = 0; i < 5; i++) {
-          const angle = (i * Math.PI * 2) / 5,
-            r = (1 - a) * 22;
-          g.moveTo(x + Math.cos(angle) * r, y + Math.sin(angle) * r);
-          g.lineTo(
-            x + Math.cos(angle) * (r + 7 * a),
-            y + Math.sin(angle) * (r + 7 * a),
-          );
-          g.stroke();
-        }
-      } else {
-        const max =
-          (e.radius ?? (e.type === "learn" || e.type === "evolve" ? 2 : 1)) *
-          48;
-        g.circle(x, y, max * (1 - a * 0.55));
-        g.fill();
-        g.stroke();
-        if (e.type === "explosion") {
-          g.strokeColor = color("#fff0c8", Math.round(a * 200));
-          g.circle(x, y, max * (1 - a * 0.7) * 0.7);
-          g.stroke();
-        }
-      }
-    }
-    this.particles = this.particles.filter((p) => p.life > 0);
-    // Enemy telegraphs render last so player VFX never conceals a danger boundary.
+    this.particles=this.particles.filter(p=>p.life>0);
     for (const h of w.hazards) {
       const x = h.x * 48,
         y = h.y * 48,
@@ -985,4 +424,19 @@ export class BattlePainter {
       }
     }
   }
+
+ private ground(w:SurvivalWorld,reduced:boolean){const g=this.g;for(const f of w.armory.fields){if(!f.active)continue;const x=f.x*48,y=f.y*48,r=f.radius*48,water=f.skill==='water';g.fillColor=color(water?'#4ac4eb':'#ff752f',water?38:45);g.circle(x,y,r);g.fill();g.strokeColor=color(water?'#8be8ff':'#ffb35d',135);g.lineWidth=2;g.circle(x,y,r);g.stroke();
+  if(water&&f.stats.mods.includes('wave')){g.lineWidth=4;g.arc(x,y,r,f.angle-1.1,f.angle+1.1,false);g.stroke();}
+  if(water&&f.returning&&f.returnTarget){g.moveTo(x,y);g.lineTo(f.returnTarget.x*48,f.returnTarget.y*48);g.stroke();}
+  if(water&&f.stats.mods.includes('pulse')){const q=w.time%1;g.circle(x,y,r*(.25+.75*q));g.stroke();}else if(!reduced){g.circle(x,y,r*(.45+.15*Math.sin(w.time*4)));g.stroke();}
+  if(!water)for(let i=0;i<3;i++){const a=i*2.1+w.time;g.moveTo(x+Math.cos(a)*r*.5,y+Math.sin(a)*r*.5);g.lineTo(x+Math.cos(a)*r*.5+5,y+Math.sin(a)*r*.5+18);g.stroke();}
+ }}
+ private projectiles(w:SurvivalWorld){const g=this.g;
+  for(const c of w.armory.pending)if(c.skill==='fire'&&c.stats.mods.includes('heavy')){const q=1-Math.max(0,c.due-w.time)/.35;g.strokeColor=color('#ffb363',220);g.lineWidth=3;g.circle(c.origin.x*48,c.origin.y*48+30,8+18*q);g.stroke();}
+  for(const p of w.armory.shots){if(!p.active)continue;const x=p.x*48,y=p.y*48;g.lineWidth=3;g.strokeColor=color(COLORS[p.skill],235);g.fillColor=color(COLORS[p.skill],255);
+   if(p.skill==='blade'){const size=p.child?10:19;g.moveTo(x-Math.cos(p.angle)*size*1.6,y-Math.sin(p.angle)*size*1.6);g.lineTo(x,y);g.stroke();crystal(g,x,y,size,p.angle);if(p.stats.mods.includes('hunt')){g.strokeColor=color('#ef9d80');g.circle(x,y,10);g.stroke();}if(p.returning){g.strokeColor=color('#98eacb');g.arc(x,y,15,0,Math.PI*1.5,false);g.stroke();}}
+   else if(p.skill==='fire'){const r=p.child?6:p.stats.mods.includes('heavy')?17:10;g.circle(x,y,r);g.fill();g.strokeColor=color('#ef6544',180);g.lineWidth=r;g.moveTo(x,y);g.lineTo(x-Math.cos(p.angle)*r*2,y-Math.sin(p.angle)*r*2);g.stroke();g.fillColor=color('#fff2c9');g.circle(x,y,r*.45);g.fill();}
+   else {const q=Math.min(1,p.age/.45),arc=Math.sin(q*Math.PI)*60;g.roundRect(x-7,y+arc-8,14,21,3);g.fill();g.fillColor=color('#e9feff');g.rect(x-3,y+arc+12,6,5);g.fill();}
+  }
+ }
 }

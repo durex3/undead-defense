@@ -1,5 +1,5 @@
-import type { StoragePort } from './SaveStore';
-export const PLAY_VERSION = '朋友试玩版 0.19.0';
+import type { StoragePort } from './StoragePort';
+export const PLAY_VERSION = '朋友试玩版 0.22.1 · 双地图改版';
 export type Lesson = 'move' | 'xp' | 'upgrade' | 'nova' | 'elite';
 const lessons: Lesson[] = ['move', 'xp', 'upgrade', 'nova', 'elite'];
 export class PlayPreferences {
@@ -7,7 +7,7 @@ export class PlayPreferences {
   powerSaving = true;
   completed: Lesson[] = [];
   pending = false;
-  private key = 'ashen-survivors-preferences-v1';
+  private key = 'ashen-survivors-armory-preferences-v1';
   constructor(private storage: StoragePort) {
     try {
       const d = JSON.parse(storage.getItem(this.key) || 'null');

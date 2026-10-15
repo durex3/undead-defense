@@ -67,53 +67,20 @@ export interface Enemy extends Point {
   bossAction:
     "siegeCharge" | "siegePincer" | "siegeSweep" | "siegeShot" | "frontier" | "none" | "sweep" | "burst" | "summon" | "tombstone" | "transition" | "lance" | "altar" | "bellRing" | "bellPulse" | "anchor" | "harborCharge" | "harborSummon" | "arsenalSweep" | "arsenalBolt" | "arsenalFlag" | "starTrace" | "starBlade" | "starLeap";
 }
-export interface Shot extends Point {
-  form?: string;
-  id: number;
-  skill: Skill;
-  vx: number;
-  vy: number;
-  damage: number;
-  left: number;
-  hit: number[];
-  target: number;
-  ttl: number;
-  age: number;
-  range: number;
-  returning: boolean;
-  width: number;
-  extra: number;
-  excursion: number;
-}
 export interface Effect extends Point {
   form?: string;
   final?: boolean;
   id?: number;
   type: "boss" | "elite" | "bossPhase" | "summon" | "block" | "cast"
-    | "comboGhost" | "comboReap" | "comboCollapse" | "comboBone" | "comboJudgment" | "comboSoul" | "comboPurify" | "comboFire" | "comboIce" | "fireImpact"
-    | "death" | "eliteDown" | "evolve" | "explosion" | "heal" | "hit"
-    | "poison" | "hazard" | "learn" | "lightning" | "pickup" | "playerHit" | "ultimate" | "supply" | "comboReady";
+
+    | "death" | "eliteDown" | "modify" | "explosion" | "heal" | "hit"
+    | "poison" | "hazard" | "learn" | "lightning" | "pickup" | "playerHit" | "ultimate" | "supply";
   endX?: number;
   endY?: number;
   value?: number;
   skill?: string;
   radius?: number;
   angle?: number;
-}
-export interface Zone extends Point {
-  form?: string;
-  until: number;
-  next: number;
-  damage: number;
-  radius: number;
-}
-export interface Ring extends Point {
-  id: number;
-  age: number;
-  radius: number;
-  maxRadius: number;
-  hit: number[];
-  freeze: boolean;
 }
 export interface Hazard extends Point {
   sandRift?: boolean;
@@ -144,17 +111,6 @@ export interface Hazard extends Point {
   damage: number;
   fired: boolean;
   next: number;
-}
-export interface Blade extends Point {
-  angle: number;
-  index: number;
-  phase: number;
-}
-export interface ScheduledCast {
-  skill: Skill;
-  due: number;
-  index: number;
-  targets: number[];
 }
 export const distance = (a: Point, b: Point) =>
   Math.hypot(a.x - b.x, a.y - b.y);

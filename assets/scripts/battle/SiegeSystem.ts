@@ -1,3 +1,4 @@
+import {mapApproach,mapPackOffset} from './MapEncounters';
 import type { SurvivalWorld } from './SurvivalWorld';
 import { Enemy, Hazard, Point, distance, angleDelta, segmentDistance } from './SurvivalTypes';
 import { ENEMIES, Kind, isElite } from './SurvivalConfig';
@@ -59,6 +60,7 @@ export class SiegeSystem {
     for(const e of w.enemies)if(e.siegeShieldOwner&&(!w.enemies.some(o=>o.id===e.siegeShieldOwner&&o.hp>0)||w.time>=(e.siegeShieldUntil??0)))e.siegeShield=0;
   }
   private group=0;
+  private mapWave=0;
   private special=30;
   private flank=100;
   private bossCycle=-1;
@@ -120,9 +122,9 @@ export class SiegeSystem {
     const elite=w.enemies.some(e=>e.hp>0&&isElite(e.kind));
     this.group-=dt;
     if(this.group<=0){
-      const pressure=hordePressure(w),count=t<.1?6:Math.min(22,5+Math.floor(t/55)+(elite?0:pressure.extra)),a=w.random()*Math.PI*2;
+      const pressure=hordePressure(w),count=t<.1?6:Math.min(22,5+Math.floor(t/55)+(elite?0:pressure.extra)),a=mapApproach(14,t,this.mapWave,w.random());
       for(let i=0;i<count;i++){
-        const p=position(a+(i>=count/2?Math.PI*.85:0)+i*.12);
+        const p=position(a+mapPackOffset(14,t,this.mapWave,i,count));
         if(siegeMap.blocked(p,.4)||distance(p,w.player)<3)continue;
         const e=w.addEnemy('siegebone',p.x,p.y);if(!e)break;e.state='arriving';e.timer=1;
         if(t>=30&&i%3===0&&w.enemies.filter(o=>o.kind==='siegebone'&&(o.siegeRouteTime??0)>0).length<8){
@@ -130,6 +132,7 @@ export class SiegeSystem {
           e.siegeTarget={x:Math.max(-21,Math.min(21,w.player.x+Math.cos(a)*3)),y:Math.max(-25,Math.min(25,w.player.y+Math.sin(a)*3))};siegeMap.resolve(e.siegeTarget,.35);e.siegeRouteTime=2;
         }
       }
+      this.mapWave++;
       this.group=Math.max(.9,2.7-t/250)/(elite?.6:pressure.rate)/(t>=395&&t<460?1.1:1);
     }
     if(t>=472||suppressSpecial)return;
@@ -216,7 +219,7 @@ export class SiegeSystem {
     }
     if((e.kind==='flanker'||e.kind==='siegebone')&&e.siegeTarget&&(e.siegeRouteTime??0)>0){target=e.siegeTarget;e.siegeRouteTime!-=dt;if(distance(e,target)<.4)e.siegeRouteTime=0;}
     if(e.kind==='thornshield'){
-      const ground=w.zones.some(z=>z.until>w.time&&distance(z,e)<z.radius)||w.expansion.fields.some(f=>f.due<=w.time&&f.until>w.time&&distance(f,e)<f.radius);
+      const ground=w.armory.fields.some(f=>f.active&&f.until>w.time&&distance(f,e)<f.radius);
       e.siegeGroundTime=ground?(e.siegeGroundTime??0)+dt:0;
       if((e.siegeGroundTime??0)>=.6&&w.time>=(e.siegeDodgeReady??0)){
         e.siegeDodgeReady=w.time+5;e.siegeRouteTime=1;const a=e.facing+Math.PI/2*(e.id%2?1:-1);e.siegeTarget={x:e.x+Math.cos(a)*2,y:e.y+Math.sin(a)*2};siegeMap.resolve(e.siegeTarget,.35);

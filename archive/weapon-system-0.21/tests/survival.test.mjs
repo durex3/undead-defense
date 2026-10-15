@@ -189,11 +189,11 @@ test("shield halves front direct hits but allows rear and periodic damage", () =
   e.hp = 1000;
   e.facing = 0;
   w.hit(e, 20, "blade", false, { x: 2, y: 0 });
-  assert.equal(e.hp, 990);
+  assert.equal(e.hp, 988.5);
   w.hit(e, 20, "blade", false, { x: -2, y: 0 });
-  assert.equal(e.hp, 970);
+  assert.equal(e.hp, 965.5);
   w.hit(e, 20, "fire", false, { x: 2, y: 0 }, false);
-  assert.equal(e.hp, 950);
+  assert.equal(e.hp, 945.5);
 });
 test("boar telegraph locks direction; only one charge may be scheduled", () => {
   const w = isolated();

@@ -40,7 +40,7 @@ test('collecting boss reinforcement XP opens a normal upgrade, preserves excess 
  assert.equal(w.level,51);assert.equal(w.state,'upgrade');assert(Math.abs(w.xp-.225)<1e-8);
  const {w:c}=battle(13);c.level=63;c.xp=c.xpNeed-.2;c.time=483;c.director.step(c,3);
  const last=c.enemies.find(e=>e.bossReinforcement);last.state='seek';c.hit(last,1e6,'blade');assert(c.useUltimate());assert.equal(c.level,64);
- while(c.state==='upgrade'||c.state==='evolution'){if(c.state==='upgrade')c.choose(c.cards[0]);else c.back();}
+ while(c.state==='upgrade'||c.state==='modification'){if(c.state==='upgrade')c.choose(c.cards[0]);else c.chooseMod(c.modOptions().find(m=>!c.mods[c.pendingModification].includes(m.excludes)).id);}
  c.xp+=1000;c.checkUpgrade();assert.equal(c.level,64);assert.equal(c.state,'battle');
 });
 test('boss transition and pause defer waves; kills are replenished; victory stops spawns',()=>{

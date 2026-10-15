@@ -71,13 +71,13 @@ test('focused tethers transfer after a kill without extending lifetime or resett
   w.time=until;w.arsenal.step(0);assert.equal(link.active,false);
  }
 });
-test('brand scorches neighbors and impact adds distinct fragments without multiplying a lone boss hit',()=>{
+test('brand scorches neighbors and impact scatters four overlapping fragments around the main star',()=>{
  const w=world();w.skills.chain=10;w.evolutions.chain='brand';const boss=enemy(w,4,0,'boss'),near=enemy(w,4,.7);
  w.arsenal.cast('chain');w.cooldowns.chain=10;w.arsenal.step(0);assert(boss.hp<boss.maxHp);assert(near.hp<near.maxHp);
  for(const multiple of [false,true]){
   const q=world();q.skills.meteor=10;q.evolutions.meteor='impact';enemy(q,5,0,'boss');if(multiple){enemy(q,-4,0);enemy(q,0,5);}
   q.arsenal.cast('meteor');const markers=q.arsenal.markers.filter(p=>p.active);
-  assert.equal(markers.length,multiple?3:1);assert.equal(markers[0].damage,q.attack*7);
+  assert.equal(markers.length,5);assert.equal(markers[0].damage,q.attack*7);
   assert(markers.slice(1).every(p=>p.damage===q.attack*2.5));
  }
 });

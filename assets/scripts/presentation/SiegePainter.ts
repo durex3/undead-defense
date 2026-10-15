@@ -1,5 +1,5 @@
 import { Graphics, Color } from 'cc';
-import { SIEGE_WALLS } from '../battle/SiegeMap';
+import { SIEGE_WALLS, SIEGE_ROUTES } from '../battle/SiegeMap';
 import { Enemy, Hazard } from '../battle/SurvivalTypes';
 import type { SurvivalWorld } from '../battle/SurvivalWorld';
 import { shieldRaised } from '../battle/SiegeSystem';
@@ -12,10 +12,15 @@ export function drawSiegeMap(g:Graphics) {
   for(let y=-27;y<28;y++)for(let x=-23;x<24;x++){
     g.fillColor=ink((x+y)%3?'#39353a':'#423a3d');g.rect(x*48+2,y*48+2,44,44);g.fill();
   }
+  // Worn stone routes connect every flank; these marks do not block movement or attacks.
+  for(const p of SIEGE_ROUTES){g.fillColor=ink('#9d8868',45);g.roundRect(p.x*48-95,p.y*48-65,190,130,14);g.fill();}
+  g.strokeColor=ink('#b6a17d',65);g.lineWidth=7;
+  for(const p of SIEGE_ROUTES.slice(1)){g.moveTo(0,0);g.lineTo(p.x*48,p.y*48);g.stroke();}
   for(const p of SIEGE_WALLS){
-    const x=(p.x-2)*48,y=(p.y-3)*48;g.fillColor=ink('#64514b');g.rect(x,y,192,288);g.fill();g.strokeColor=ink('#cc9b6f');g.lineWidth=3;g.rect(x,y,192,288);g.stroke();
-    for(let i=1;i<6;i++){g.moveTo(x,y+i*48);g.lineTo(x+192,y+i*48);}g.stroke();
-    for(let i=0;i<4;i++){g.fillColor=ink('#b89478');g.rect(x+i*48+6,y+276,26,18);g.fill();}
+    const x=(p.x-p.halfWidth)*48,y=(p.y-p.halfHeight)*48,ww=p.halfWidth*96,hh=p.halfHeight*96;
+    g.fillColor=ink('#64514b');g.rect(x,y,ww,hh);g.fill();g.strokeColor=ink('#cc9b6f');g.lineWidth=3;g.rect(x,y,ww,hh);g.stroke();
+    for(let i=1;i<hh/48;i++){g.moveTo(x,y+i*48);g.lineTo(x+ww,y+i*48);}g.stroke();
+    for(let i=0;i<Math.floor(ww/48);i++){g.fillColor=ink('#b89478');g.rect(x+i*48+6,y+hh-12,26,18);g.fill();}
   }
 }
 export function drawSiegeEnemy(g:Graphics,w:SurvivalWorld,e:Enemy) {

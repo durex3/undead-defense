@@ -155,8 +155,9 @@ test("roller shows second warning, keeps predetermined turn, and can hit only on
 });
 test("roller wall impact cancels second attack and exposes armor", () => {
   const w = world();
-  w.player = { x: 6, y: 0 };
-  const e = enemy(w, "shellroller", 4, 0);
+  const rock=SAND_ROCKS.find(p=>p.x===10);
+  w.player = { x: 6, y: rock.y };
+  const e = enemy(w, "shellroller", 4, rock.y);
   assert(w.sand.startRoll(e));
   advance(w, 1.8);
   assert.equal(e.state, "recover");

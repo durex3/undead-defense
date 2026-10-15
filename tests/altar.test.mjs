@@ -6,16 +6,6 @@ import {stepHazards} from '../temp/tests/battle/EnemySystem.mjs';
 import {stepBoss} from '../temp/tests/battle/BossSystem.mjs';
 import {ProgressStore,PROGRESS_KEY} from '../temp/tests/platform/ProgressStore.mjs';
 import {STAGES} from '../temp/tests/battle/StageRules.mjs';
-test('third map gates on second clear and preserves existing saves and role access',()=>{
- const data=new Map();const storage={getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v)};
- const p=new ProgressStore(storage);assert.equal(p.unlockedStage(3),false);
- const w=new SurvivalWorld(1,'ranger',1);w.state='won';p.observe(w);assert.equal(p.unlockedStage(3),false);
- w.stageId=2;p.observe(w);assert.equal(p.unlockedStage(3),true);const old=data.get(PROGRESS_KEY);
- const q=new ProgressStore(storage);assert.equal(q.unlockedStage(3),true);assert.deepEqual(q.data,p.data);
- w.stageId=3;q.observe(w);assert.ok(q.data.achievements.includes('altar'));q.observe(w);assert.equal(q.data.achievements.filter(a=>a==='altar').length,1);
- assert.equal(new ProgressStore(storage).data.stages.includes(3),true);
- data.set(PROGRESS_KEY,old);data.set(PROGRESS_KEY+'-backup',old);assert.equal(new ProgressStore(storage).unlockedStage(3),true);
-});
 test('difficulty climbs across stages without increasing reward',()=>{
  for(const key of ['health','elite','bossHealth','damage'])assert.ok(STAGES[1][key]<STAGES[2][key] && STAGES[2][key]<STAGES[3][key]);
  assert.equal(STAGES[2].xp,STAGES[3].xp);

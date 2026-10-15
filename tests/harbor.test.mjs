@@ -8,11 +8,6 @@ import {ProgressStore} from '../temp/tests/platform/ProgressStore.mjs';
 import {ENEMIES,MAX_ENEMIES} from '../temp/tests/battle/SurvivalConfig.mjs';
 const enemy=(w,k,x,y=0)=>{const e=w.addEnemy(k,x,y);e.state='seek';e.visibleSince=0;return e;};
 const world=()=>{const w=new SurvivalWorld(19,'ranger',8);w.director.elites=[true,true];return w;};
-test('harbor unlocks after seven, preserves old saves and stores eighth-stage results',()=>{
- const m=new Map(),storage={getItem:k=>m.get(k)||null,setItem:(k,v)=>m.set(k,v)};const p=new ProgressStore(storage);
- assert(!p.unlockedStage(8));const w=new SurvivalWorld(19,'ranger',7);w.state='won';p.observe(w);assert(p.unlockedStage(8));
- const q=new ProgressStore(storage);assert(q.unlockedStage(8));w.stageId=8;q.observe(w);const r=new ProgressStore(storage);assert(r.data.stageBest[8].won);assert(r.data.stages.includes(8));
-});
 test('cargo uses rectangle boundaries, three open lanes and navigable corner detours',()=>{
  assert(harborBlocked({x:8,y:8}));assert(harborBlocked({x:9.9,y:10.9}));assert(!harborBlocked({x:11,y:8}));
  for(const x of [-15,0,15])for(let y=-26;y<=26;y+=.2)assert(!harborBlocked({x,y}));

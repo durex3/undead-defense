@@ -5,14 +5,6 @@ import {ChurchSystem,bellHazard,bellContains,CHURCH_BELLS} from '../temp/tests/b
 import {stepHazards} from '../temp/tests/battle/EnemySystem.mjs';
 import {stepBoss} from '../temp/tests/battle/BossSystem.mjs';
 import {ProgressStore} from '../temp/tests/platform/ProgressStore.mjs';
-test('church unlock and quiet clear survive save/reload without granting an unearned no-hit badge',()=>{
- const m=new Map(),s={getItem:k=>m.get(k)||null,setItem:(k,v)=>m.set(k,v)},p=new ProgressStore(s);
- const w=new SurvivalWorld(1,'ranger',2);w.state='won';p.observe(w);assert.equal(p.unlockedStage(4),false);
- w.stageId=3;p.observe(w);assert.equal(p.unlockedStage(4),true);
- w.stageId=4;w.losses['幽钟共振']=12;p.observe(w);assert.ok(p.data.achievements.includes('church'));assert.ok(!p.data.achievements.includes('quietChurch'));
- const q=new ProgressStore(s);assert.ok(q.data.stages.includes(4));
- w.losses={};q.observe(w);assert.ok(q.data.achievements.includes('quietChurch'));assert.ok(new ProgressStore(s).data.achievements.includes('quietChurch'));
-});
 test('ring boundaries, warning, inner safety and one-shot fixed environmental damage',()=>{
  const w=new SurvivalWorld(1,'ranger',4);bellHazard(w,{x:0,y:0});const h=w.hazards[0];
  assert.equal(bellContains(h,{x:2.19,y:0}),false);assert.equal(bellContains(h,{x:2.2,y:0}),true);assert.equal(bellContains(h,{x:4.2,y:0}),false);

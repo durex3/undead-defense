@@ -26,11 +26,11 @@ test('late bulk pickup pays each new level cost without losing leftover XP or ex
  const w=new SurvivalWorld();w.level=40;for(const c of Object.keys(w.skills))w.skills[c]=0;
  const amount=experienceRequired(40)+experienceRequired(41)+7;w.gems=[{id:w.id(),x:5,y:5,value:amount}];
  assert(w.useUltimate());assert.equal(w.level,41);
- while(w.state==='upgrade'||w.state==='evolution'){
-  if(w.state==='evolution')w.back();else w.choose(w.cards[0]);
+ while(w.state==='upgrade'||w.state==='modification'){
+  if(w.state==='modification')w.chooseMod(w.modOptions().find(m=>!w.mods[w.pendingModification].includes(m.excludes)).id);else w.choose(w.cards[0]);
  }
  assert.equal(w.level,42);assert.equal(w.xp,7);assert.equal(w.gems.length,0);
  w.level=63;w.xp=experienceRequired(63)+11;w.checkUpgrade();assert.equal(w.level,64);
- while(w.state==='upgrade'||w.state==='evolution'){if(w.state==='evolution')w.back();else w.choose(w.cards[0]);}
+ while(w.state==='upgrade'||w.state==='modification'){if(w.state==='modification')w.chooseMod(w.modOptions().find(m=>!w.mods[w.pendingModification].includes(m.excludes)).id);else w.choose(w.cards[0]);}
  assert.equal(w.xp,11);w.checkUpgrade();assert.equal(w.level,64);assert.equal(w.state,'battle');
 });

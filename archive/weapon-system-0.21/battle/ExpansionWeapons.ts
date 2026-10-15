@@ -146,7 +146,7 @@ export class ExpansionWeapons {
                   : w.skills.bat >= 3
                     ? 3
                     : 4;
-        w.cooldowns[skill] = base * w.cooldownFactor(skill);
+        w.cooldowns[skill] = base * (skill === "void" ? .5 : 1) * w.cooldownFactor(skill);
       }
     }
     const due = this.volleys.filter((v) => v.due <= w.time);

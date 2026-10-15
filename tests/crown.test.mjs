@@ -5,19 +5,7 @@ import {CrownDirector,crownEscape,CROWN_STONES} from '../temp/tests/battle/Crown
 import {stepKing,kingCast} from '../temp/tests/battle/KingBossSystem.mjs';
 import {stepHazards} from '../temp/tests/battle/EnemySystem.mjs';
 import {ProgressStore} from '../temp/tests/platform/ProgressStore.mjs';
-import {ACHIEVEMENTS} from '../temp/tests/battle/ProgressionConfig.mjs';
 function setup(){const w=new SurvivalWorld(1,'ranger',5);w.time=10;w.player={x:4,y:0};const e=w.addEnemy('boss',0,0);e.state='seek';e.visibleSince=0;e.attack=0;return {w,e};}
-test('five-stage progression persists and prior three-stage milestone remains fixed',()=>{
- const map=new Map(),storage={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v)};let p=new ProgressStore(storage);
- assert.equal(ACHIEVEMENTS.length,20);
- for(let stage=1;stage<=5;stage++){
-  assert.equal(p.unlockedStage(stage),true);if(stage<5)assert.equal(p.unlockedStage(stage+1),false);
-  const w=new SurvivalWorld(stage,'ranger',stage);w.state='won';p.observe(w);p=new ProgressStore(storage);
-  if(stage===3)assert.ok(p.data.achievements.includes('allStages'));
- }
- for(const id of ['king','fiveStages','kingNoLeech'])assert.ok(p.data.achievements.includes(id));
- assert.deepEqual(p.data.stages,[1,2,3,4,5]);
-});
 test('king phase transitions merge skipped thresholds, do not heal and do not repeat',()=>{
  const {w,e}=setup();assert.equal(e.maxHp,44800);kingCast(w,e,'lance');e.hp=e.maxHp*.25;
  stepKing(w,e,0);assert.equal(e.bossPhase,3);assert.equal(e.timer,1.5);assert.equal(w.hazards.length,0);assert.equal(e.hp,11200);

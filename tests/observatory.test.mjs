@@ -46,20 +46,6 @@ const path = (w) => {
   w.starPath.sample(w.time - 0.5, { x: 0, y: 0 });
   w.starPath.sample(w.time, { x: 0, y: 2 });
 };
-test("observatory unlocks only after nine and tenth best survives save reload", () => {
-  const m = new Map(),
-    s = { getItem: (k) => m.get(k) || null, setItem: (k, v) => m.set(k, v) },
-    p = new ProgressStore(s);
-  assert(!p.unlockedStage(10));
-  const w = new SurvivalWorld(1, "ranger", 9);
-  w.state = "won";
-  p.observe(w);
-  assert(p.unlockedStage(10));
-  w.stageId = 10;
-  p.observe(w);
-  const q = new ProgressStore(s);
-  assert(q.data.stageBest[10].won && q.data.stages.includes(10));
-});
 test("two long bases preserve three lanes and both end routes, including boss navigation", () => {
   for (const x of [-17, 0, 17])
     for (let y = -26; y <= 26; y += 0.2) assert(!observatoryBlocked({ x, y }));

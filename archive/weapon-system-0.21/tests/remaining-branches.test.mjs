@@ -34,11 +34,11 @@ test('hunting bats concentrate on boss, disable ghost marks and hunt a second en
  for(const p of w.expansion.bats){const t=w.enemies.find(e=>e.id===p.target);p.x=t.x;p.y=t.y;}w.expansion.stepBats(0);
  for(const p of w.expansion.bats){p.x=w.player.x;p.y=w.player.y;}w.expansion.stepBats(0);assert.equal(w.hp,20);assert.equal(w.expansion.bats.length,0);
 });
-test('focused fire and soul links lock a single boss and produce no recipe marks',()=>{
+test('focused fire and soul links each lock two priority targets and produce no recipe marks',()=>{
  const w=new SurvivalWorld();Object.assign(w.skills,{chain:10,pillar:10,soul:10,totem:10});Object.assign(w.evolutions,{chain:'brand',soul:'torment',totem:'obelisk'});
  const b=enemy(w,4,0,'boss');enemy(w,1);stop(w);
  assert(w.arsenal.cast('chain'));assert(w.arsenal.cast('soul'));w.arsenal.step(0);
- const links=w.arsenal.links.filter(p=>p.active);assert.equal(links.length,2);assert(links.every(p=>p.a===b.id&&p.b===b.id));assert.equal(b.slowUntil,0);
+ const links=w.arsenal.links.filter(p=>p.active);assert.equal(links.length,4);assert(links.every(p=>p.a===p.b));assert.equal(links.filter(p=>p.a===b.id).length,2);assert.equal(b.slowUntil,0);
  assert(!w.arsenal.chainMarks.has(b.id));assert(!w.arsenal.soulMarks.has(b.id));
  const hp=b.hp;w.time=2;w.arsenal.step(0);assert(b.hp<hp);
  w.time=4;w.arsenal.step(0);assert.equal(w.arsenal.links.filter(p=>p.active).length,0);assert(!w.drain().some(e=>e.type==='explosion'&&e.skill==='soul'));
@@ -47,7 +47,7 @@ test('light spear makes one focused impact while meteor impact leaves no afterbu
  for(const [skill,form]of [['pillar','sunlance'],['meteor','impact']]){
   const w=new SurvivalWorld();w.skills[skill]=10;w.evolutions[skill]=form;const b=enemy(w,4,0,'boss');for(let i=0;i<5;i++)enemy(w,1,i*.1);stop(w);
   assert(w.arsenal.cast(skill));const p=w.arsenal.markers.find(p=>p.active);assert.equal(p.x,4);assert.equal(p.remaining,1);
-  w.time=p.due;w.arsenal.step(0);assert(b.hp<100000);const hp=b.hp;
+  w.time=Math.max(...w.arsenal.markers.filter(p=>p.active).map(p=>p.due));w.arsenal.step(0);assert(b.hp<100000);const hp=b.hp;
   w.time+=.6;w.arsenal.step(0);assert.equal(b.hp,hp);assert.equal(p.active,false);
  }
 });
@@ -60,7 +60,7 @@ test('moving bone tower follows the player and its primary and secondary shots h
 test('new persistent branches obey entity pools, pause time and recycling cleanup',()=>{
  const w=new SurvivalWorld();Object.assign(w.skills,{chain:10,soul:10,totem:10,pillar:10,meteor:10});Object.assign(w.evolutions,{chain:'brand',soul:'torment',totem:'obelisk',pillar:'sunlance',meteor:'impact'});enemy(w,4);
  for(let i=0;i<100;i++)for(const s of ['chain','soul','totem','pillar','meteor'])w.arsenal.cast(s);
- assert.equal(w.arsenal.links.length,12);assert.equal(w.arsenal.markers.length,12);assert.equal(w.arsenal.totems.length,6);
+ assert.equal(w.arsenal.links.length,48);assert.equal(w.arsenal.markers.length,12);assert.equal(w.arsenal.totems.length,6);
  w.pause('test',true);w.step(1);assert.equal(w.time,0);
  for(const s of ['chain','soul','totem','pillar','meteor'])w.removeWeapon(s);
  assert(w.arsenal.links.every(p=>!p.active));assert(w.arsenal.markers.every(p=>!p.active));assert(w.arsenal.totems.every(p=>!p.active));

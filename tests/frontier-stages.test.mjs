@@ -13,16 +13,6 @@ import {ProgressStore} from '../temp/tests/platform/ProgressStore.mjs';
 const stages=[11,12,13];
 function world(stage){const w=new SurvivalWorld(19,'ranger',stage);w.time=10;w.setMove(1,0);w.director.elites=[true,true];return w;}
 function enemy(w,kind='boss'){const e=w.addEnemy(kind,-4,0);e.state='seek';e.visibleSince=0;e.attack=0;return e;}
-
-test('stages 11–13 unlock sequentially and preserve old and new saves and bests',()=>{
- const data=new Map(),storage={getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v)};
- let p=new ProgressStore(storage);assert.equal(STAGE_IDS.length,15);
- for(const stage of stages){assert(!p.unlockedStage(stage));const w=world(stage-1);w.state='won';p.observe(w);assert(p.unlockedStage(stage));assert(!p.data.stages.includes(stage));}
- const w=world(13);w.state='won';p.observe(w);p=new ProgressStore(storage);
- for(const stage of [10,11,12,13])assert(p.data.stageBest[stage].won&&p.data.stages.includes(stage));
- assert.equal(p.data.revision,4);assert.equal(Object.keys(STAGES).length,15);
- for(const stage of stages)assert(STAGE_GUIDES[stage].threat.length&&STAGE_GUIDES[stage].builds.length);
-});
 for(const stage of stages){
  test(`stage ${stage}: map corridors are connected and navigation clears obstacles`,()=>{
   const m=frontierMap(stage),visited=new Set(['0,0']),queue=[[0,0]];

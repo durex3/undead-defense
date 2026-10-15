@@ -22,9 +22,9 @@ test('upgrade copy covers every weapon and rank in at most three lines',()=>{
 
 test('synergy hints distinguish owned partners, missing partners and independent routes',()=>{
   const w=new SurvivalWorld();for(const s of WEAPONS)w.skills[s]=0;
-  assert.equal(compactSynergy(w,'lightning'),'搭配冰霜新环 → 冰雷碎击');
+  assert.equal(compactSynergy(w,'lightning'),'搭配冰霜新环 · 可组合冰雷碎击（未激活）');
   w.skills.ice=7;
-  assert.equal(compactSynergy(w,'lightning'),'已拥有冰霜新环 → 冰雷碎击');
+  assert.equal(compactSynergy(w,'lightning'),'已拥有冰霜新环 · 可组合冰雷碎击（未激活）');
   w.skills.ice=10;w.evolutions.ice=EVOLUTIONS.ice[1].id;
   assert.match(compactSynergy(w,'lightning'),/独立路线/);
   assert.match(weaponDetails(w,'ice'),/极点冰刺/);
