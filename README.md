@@ -30,4 +30,4 @@ python3 -m http.server 8128 --directory build/web-mobile
 node tools/build.mjs wechatgame
 ```
 
-构建脚本使用本机Creator路径，微信输出为 `build/wechatgame`。本次仅更新文档，未重新运行测试或构建；历史上传记录与截图保留在 `artifacts/`，不表示重构后版本已上传或完成真人、真机验收。
+构建脚本使用本机Creator路径，微信输出为 `build/wechatgame`。2026-10-19：200项测试和TypeScript检查通过，微信构建通过；0.26.0已上传后台开发版本，包大小2,556,155字节，见[上传记录](artifacts/wechat-upload-0.26.0.json)。未提审或正式发布，真人平衡及真机性能待验收。
