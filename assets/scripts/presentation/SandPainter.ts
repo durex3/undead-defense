@@ -2,17 +2,7 @@ import { Graphics, Color } from "cc";
 import { SAND_ROCKS, SAND_NESTS, SAND_TRAIL } from "../battle/SandMap";
 import { Enemy } from "../battle/SurvivalTypes";
 import type { SurvivalWorld } from "../battle/SurvivalWorld";
-const palette = new Map<string, Color>();
-const ink = (hex: string, a = 255) => {
-  const key = hex + ":" + a;
-  let c = palette.get(key);
-  if (!c) {
-    c = new Color().fromHEX(hex);
-    c.a = a;
-    palette.set(key, c);
-  }
-  return c;
-};
+import { ink } from "./StagePalette";
 export function drawSandMap(g: Graphics) {
   g.clear();
   g.fillColor = ink("#594034");

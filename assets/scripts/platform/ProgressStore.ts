@@ -94,7 +94,8 @@ export class ProgressStore {
     return !stage || this.data.stages.includes(stage);
   }
   unlockedStage(stage: StageId) {
-    return (stage === 17 && this.data.stages.includes(16)) || stage === 14 || (stage === 15 && this.data.stages.includes(14)) || (stage === 16 && this.data.stages.includes(15));
+    if (stage === 1) return true;
+    return this.data.stages.includes((stage - 1) as StageId);
   }
   bestLine(stage: StageId) {
     const b = this.data.stageBest[stage];

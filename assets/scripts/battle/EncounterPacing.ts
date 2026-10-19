@@ -1,4 +1,7 @@
 export const BOSS_TIME = 480;
+/** The first playable siege stage is paced for a tighter six-minute run. */
+export const bossTimeForStage = (stageId: number) =>
+  stageId === 1 ? 360 : BOSS_TIME;
 export const MAX_PLAYER_LEVEL = 64;
 /** Authored encounter beats use a four-minute score stretched over eight minutes. */
 export const encounterTime = (time: number) => time / 2;

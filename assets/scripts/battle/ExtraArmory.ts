@@ -142,7 +142,7 @@ export class ExtraArmory {
           x: w.player.x + Math.cos(theta) * r,
           y: w.player.y + Math.sin(theta) * r,
         };
-        (w.stageId === 17 ? moonMap : w.stageId === 16 ? thunderMap : w.stageId === 15 ? sandMap : siegeMap).resolve(origin, 0.2);
+        (w.stageId === 4 ? moonMap : w.stageId === 3 ? thunderMap : w.stageId === 2 ? sandMap : siegeMap).resolve(origin, 0.2);
         target = { ...origin };
       }
       if (skill === "void") {
@@ -542,7 +542,7 @@ export class ExtraArmory {
         if (d > 0) {
           e.x += ((a.x - e.x) * step) / d;
           e.y += ((a.y - e.y) * step) / d;
-          (w.stageId === 17 ? moonMap : w.stageId === 16 ? thunderMap : w.stageId === 15 ? sandMap : siegeMap).resolve(e, 0.35);
+          (w.stageId === 4 ? moonMap : w.stageId === 3 ? thunderMap : w.stageId === 2 ? sandMap : siegeMap).resolve(e, 0.35);
         }
       }
     if (w.time + 1e-7 >= a.next) {

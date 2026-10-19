@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { SurvivalWorld } from "../temp/tests/battle/SurvivalWorld.mjs";
 import { battleHud } from "../temp/tests/presentation/BattleHud.mjs";
-for (const stage of [14, 15, 16, 17])
+for (const stage of [1, 2, 3, 4])
   test(`stage ${stage}: fixed boss health survives danger hints and disappears on death`, () => {
     const w = new SurvivalWorld(19, "ranger", stage);
     assert.equal(battleHud(w, true, []).bossHealth, null);
@@ -17,7 +17,7 @@ for (const stage of [14, 15, 16, 17])
     w.enemies.push(boss);
     w.hazards.push({ damageLabel: "危险预警", kind: "starLeap" });
     const hud = battleHud(w, true, []);
-    assert.match(hud.hint, stage===17 ? /去程/ : stage===16 ? /拆电锚/ : /危险预警/);
+    assert.match(hud.hint, stage===4 ? /去程/ : stage===3 ? /拆电锚/ : /危险预警/);
     assert.equal(hud.bossHealth.ratio, 0.25);
     assert.match(hud.bossHealth.label, /狂怒 · 250 \/ 1000/);
     boss.hp = 0;

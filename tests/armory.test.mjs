@@ -7,7 +7,7 @@ import {ARMORY_LIMITS} from '../temp/tests/battle/Armory.mjs';
 import {upgradeChanges,weaponDetails,combatWeaponEntries} from '../temp/tests/battle/WeaponStatus.mjs';
 import {battleReport} from '../temp/tests/battle/BattleReport.mjs';
 import {ProgressStore,PROGRESS_KEY} from '../temp/tests/platform/ProgressStore.mjs';
-const world=()=>{const w=new SurvivalWorld(19,'ranger',14);w.player={x:0,y:0};w.enemies=[];for(const s of WEAPONS)w.skills[s]=0;return w;};
+const world=()=>{const w=new SurvivalWorld(19,'ranger', 1);w.player={x:0,y:0};w.enemies=[];for(const s of WEAPONS)w.skills[s]=0;return w;};
 const enemy=(w,x=4,y=0,k='siegebone')=>{const e=w.addEnemy(k,x,y);e.hp=e.maxHp=100000;e.state='seek';e.attack=100;return e;};
 function advance(w,t,dt=1/60){for(let n=0;n<Math.round(t/dt);n++){w.time+=dt;w.armory.step(dt);}}
 function oneCast(w,t=1,dt=1/60){w.armory.step(0);for(const s of WEAPONS)w.cooldowns[s]=100;advance(w,t,dt);}

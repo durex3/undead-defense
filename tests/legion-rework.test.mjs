@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
 import {ENEMIES,isElite} from '../temp/tests/battle/SurvivalConfig.mjs';
 import {stepEnemies,stepHazards} from '../temp/tests/battle/EnemySystem.mjs';
-const world=()=>{const w=new SurvivalWorld(19,'ranger',14,6);w.time=140;w.skills.blade=0;return w;};
+const world=()=>{const w=new SurvivalWorld(19,'ranger', 1,6);w.time=140;w.skills.blade=0;return w;};
 function enemy(w,kind,x=4,y=0){const e=w.addEnemy(kind,x,y);e.state='seek';e.visibleSince=0;e.attack=0;return e;}
 test('legion roles have dedicated elites and final contact values are doubled exactly once',()=>{
  assert(isElite('siegeflag')&&isElite('siegerider'));assert.equal(ENEMIES.siegeflag.contact,18);assert.equal(ENEMIES.siegerider.contact,20);
@@ -47,7 +47,7 @@ test('second rider rush cannot consume a third danger slot and has separated imp
 test('boss finite freeze resistance leaves control effective and resets after its window',()=>{
  const w=world(),b=enemy(w,'boss');w.slow(b,true);assert.equal(b.freezeUntil-w.time,.5);
  w.time+=.6;w.slow(b,true);assert(Math.abs(b.freezeUntil-w.time-.175)<1e-9);w.time+=3;w.slow(b,true);assert.equal(b.freezeUntil-w.time,.5);
- const q=new SurvivalWorld(1,'ranger',13),old=enemy(q,'boss');q.slow(old,true);assert.equal(old.freezeUntil,0);
+ const q=new SurvivalWorld(1,'ranger',4),old=enemy(q,'boss');q.slow(old,true);assert.ok(old.freezeUntil>q.time);
 });
 test('boss phase transition releases a pending sequence without healing or touching player',()=>{
  const w=world(),b=enemy(w,'boss',-4);assert(w.siege.castBoss(b,0));assert.equal(w.siege.reserved(),2);

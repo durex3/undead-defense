@@ -157,6 +157,18 @@ export class GameMenus {
       this.pause();
       return;
     }
+    if(w.state==="tactical"){
+      h.text(h.overlay,"精英战利 · 选择一项战术祝福",0,210,30,"#e8cc92");
+      h.text(h.overlay,"精英击破后暂停选择；效果持续到本局结束",0,170,17,"#b9c8d5",900);
+      w.tacticalChoices.forEach((choice,i)=>{
+        const x=(i-(w.tacticalChoices.length-1)/2)*350;
+        h.panel(h.overlay,x,0,320,220,"#293a47");
+        h.text(h.overlay,`${i+1} · ${choice.name}`,x,55,24,"#e8cc92",295);
+        h.text(h.overlay,choice.effect,x,-5,18,"#d5e0e5",280);
+        h.button(h.overlay,"选择祝福",x,-72,270,42,()=>{h.clearInput();w.chooseTacticalBlessing(choice.id);this.redraw();});
+      });
+      return;
+    }
     if (w.state === "modification" && w.pendingModification) {
       const s = w.pendingModification,
         options = w.modOptions();
@@ -406,7 +418,6 @@ export class GameMenus {
     this.host.confirmation = null;
     setupWechatShare();
     this.host.started = false;
-    this.host.world.starPath.clear();
     this.host.clearInput();
     this.host.progress.flush();
     this.host.overlay.destroyAllChildren();

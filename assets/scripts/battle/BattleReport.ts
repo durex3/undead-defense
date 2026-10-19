@@ -37,7 +37,7 @@ export function battleReport(w: SurvivalWorld) {
     .sort((a, b) => b.damage - a.damage);
   const boss = w.enemies.find(e=>e.kind === "boss" && e.hp > 0);
   return {
-    retryTip: w.stageId===17?'看回程双箭头，躲落点后准备换向；绕开正在旋转的角刃，猎王收招时反击':w.stageId===16?'电栅缺口提前锁定；拆电极断线，连续锁线逐拍横移，恢复时靠近反击':w.stageId===14?'弩线锁定后横移；绕盾侧面，利用骑将冲撞后的空档反击':'潜沙时换线；清理虫卵，抓住虫后出土的反击空档',
+    retryTip: w.stageId===4?'看回程双箭头，躲落点后准备换向；绕开正在旋转的角刃，猎王收招时反击':w.stageId===3?'电栅缺口提前锁定；拆电极断线，连续锁线逐拍横移，恢复时靠近反击':w.stageId===1?'弩线锁定后横移；绕盾侧面，利用骑将冲撞后的空档反击':'潜沙时换线；清理虫卵，抓住虫后出土的反击空档',
     deathSource: losses.find(l=>l.key===w.lastDamageSource)?.name || w.lastDamageSource,
     phase: boss?.bossPhase || 0,
     bossRemaining: boss ? Math.ceil(boss.hp / boss.maxHp * 100) : null,

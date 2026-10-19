@@ -3,14 +3,20 @@ import type { SurvivalWorld } from './SurvivalWorld';
 import { Enemy, Hazard, Point, distance, angleDelta, segmentDistance } from './SurvivalTypes';
 import { ENEMIES, Kind, isElite } from './SurvivalConfig';
 import { siegeMap } from './SiegeMap';
-import { crownEscape } from './CrownSystem';
+import { crownEscape } from './Escape';
 import { hordePressure } from './HordePressure';
+import { bossTimeForStage } from './EncounterPacing';
 
 export const SIEGE_KINDS: readonly Kind[] = ['siegebone','thornshield','siegebow','flanker','siegeflag','siegerider'];
 export const siegeEnemy = (kind:Kind) => SIEGE_KINDS.includes(kind);
-export const siegeRest = (t:number) => (t>=170&&t<178)||(t>=285&&t<293)||(t>=472&&t<480);
+const siegeScoreTime = (stageId:number,t:number) => stageId===1 ? t*4/3 : t;
+export const siegeRest = (t:number,stageId=1) => {
+  t=siegeScoreTime(stageId,t);
+  return (t>=170&&t<178)||(t>=285&&t<293)||(t>=472&&t<480);
+};
 export function siegeHint(t:number) {
-  return siegeRest(t)?'暂歇 · 清理后排、回收经验':t<60?'盾卫正面减伤 · 绕侧或等收盾':t<100?'弩手预判方向 · 看预警后变向':t<130?'侧翼截击点已锁定 · 换方向突破':'先拆盾弩后排 · 留意两侧猎手';
+  t=siegeScoreTime(1,t);
+  return siegeRest(t,1)?'暂歇 · 清理后排、回收经验':t<60?'盾卫正面减伤 · 绕侧或等收盾':t<100?'弩手预判方向 · 看预警后变向':t<130?'侧翼截击点已锁定 · 换方向突破':'先拆盾弩后排 · 留意两侧猎手';
 }
 function move(w:SurvivalWorld,e:Enemy,p:Point,dt:number,speed=ENEMIES[e.kind].speed) {
   if(distance(e,p)<.15)return;
@@ -24,7 +30,7 @@ export function shieldRaised(w:SurvivalWorld,e:Enemy) {
 function inFront(e:Enemy,p:Point){return Math.abs(angleDelta(Math.atan2(p.y-e.y,p.x-e.x),e.facing))<Math.PI/3;}
 /** Only actual travelling projectiles call this; area/chain/melee attacks bypass it. */
 export function siegeProjectileFactor(w:SurvivalWorld,e:Enemy,origin:Point) {
-  if(w.stageId!==14)return 1;
+  if(w.stageId!==1)return 1;
   if(shieldRaised(w,e)&&inFront(e,origin))return .45;
   if(e.kind!=='siegebow')return 1;
   const guard=w.enemies.find(g=>shieldRaised(w,g)&&g.shieldPartner===e.id&&distance(g,e)<=2&& !inFront(g,e)&&inFront(g,origin));
@@ -68,7 +74,7 @@ export class SiegeSystem {
   private history:{x:number;y:number;t:number}[]=[];
   constructor(private w:SurvivalWorld){}
   sample() {
-    const w=this.w;if(w.stageId!==14)return;
+    const w=this.w;if(w.stageId!==1)return;
     this.clean();
     this.history.push({...w.player,t:w.time});
     while(this.history.length>1&&this.history[1].t<=w.time-.35)this.history.shift();
@@ -118,7 +124,7 @@ export class SiegeSystem {
     return true;
   }
   director(dt:number,position:(a:number,r?:number)=>Point,suppressSpecial=false) {
-    const w=this.w,t=w.time;if(siegeRest(t)||t<w.reinforcementRestUntil)return;
+    const w=this.w,t=siegeScoreTime(1,w.time);if(siegeRest(w.time,1)||t<w.reinforcementRestUntil*4/3)return;
     const elite=w.enemies.some(e=>e.hp>0&&isElite(e.kind));
     this.group-=dt;
     if(this.group<=0){
@@ -151,8 +157,8 @@ export class SiegeSystem {
     }
   }
   bossReinforcements() {
-    const w=this.w,b=w.enemies.find(e=>e.kind==='boss'&&e.hp>0),cycle=Math.floor((w.time-480)/14);
-    if(!b||b.state==='arriving'||(b.state==='windup'&&b.bossAction==='transition')||(w.time-480)%14>=9||cycle%2||cycle===this.bossCycle||w.enemies.some(e=>e.hp>0&&siegeEnemy(e.kind)&&e.kind!=='siegebone'))return;
+    const w=this.w,b=w.enemies.find(e=>e.kind==='boss'&&e.hp>0),bossTime=bossTimeForStage(w.stageId),cycle=Math.floor((w.time-bossTime)/14);
+    if(!b||b.state==='arriving'||(b.state==='windup'&&b.bossAction==='transition')||(w.time-bossTime)%14>=9||cycle%2||cycle===this.bossCycle||w.enemies.some(e=>e.hp>0&&siegeEnemy(e.kind)&&e.kind!=='siegebone'))return;
     this.bossCycle=cycle;
     this.spawnPack(b.bossPhase===2?['thornshield','siegebow']:['flanker','flanker'],Math.atan2(w.lastMove.y,w.lastMove.x)+Math.PI/2,true);
   }

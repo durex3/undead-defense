@@ -21,16 +21,18 @@ function tick(w, n) {
     stepHazards(w);
   }
 }
-test('mid-run collection breaks are shorter and late harvest alternates pure fodder with special roles',()=>{
+test('mid-run collection breaks are shorter and harvest beats keep spawning packs',()=>{
  assert.equal(encounterBeat(170).rest,true);
  assert.equal(encounterBeat(174).rest,false);
  assert.equal(encounterBeat(338).rest,true);
  assert.equal(encounterBeat(342).rest,false);
  assert.equal(encounterBeat(462).rest,false);
  assert.equal(encounterBeat(470).rest,true);
- for(const [time,hasSpecial] of [[240,false],[260,true]]){
+ // Stage one delegates to the siege director, which always mixes a shield/bow pack.
+ for(const time of [240,260]){
   const w=new SurvivalWorld(19,'ranger',1);w.time=time;w.director.elites=[true,true];
   w.director.step(w,1/60);
-  assert.equal(w.enemies.some(e=>e.kind!=='minion'),hasSpecial);
+  assert.ok(w.enemies.length>0,`time ${time}`);
+  assert.ok(w.enemies.every(e=>e.state==='arriving'||e.state==='seek'));
  }
 });

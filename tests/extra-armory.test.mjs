@@ -19,7 +19,7 @@ import {
 } from "../temp/tests/battle/WeaponStatus.mjs";
 import { battleReport } from "../temp/tests/battle/BattleReport.mjs";
 const world = () => {
-  const w = new SurvivalWorld(22, "ranger", 14);
+  const w = new SurvivalWorld(22, "ranger", 1);
   for (const s of WEAPONS) w.skills[s] = 0;
   w.enemies = [];
   return w;
@@ -110,7 +110,7 @@ for (const s of EXTRA_WEAPONS) {
 test("opening offers exactly three distinct weapons with all ten reachable across seeded games", () => {
   const seen = new Set();
   for (let seed = 1; seed <= 120; seed++) {
-    const w = new SurvivalWorld(seed, "ranger", 14);
+    const w = new SurvivalWorld(seed, "ranger", 1);
     assert(w.offerStartingWeapons());
     assert.equal(w.startingWeapons.length, 3);
     assert.equal(new Set(w.startingWeapons).size, 3);

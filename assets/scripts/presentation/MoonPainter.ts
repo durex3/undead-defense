@@ -4,17 +4,7 @@ import { moonCurve, moonPose } from "../battle/MoonGeometry";
 import type { MoonMotion } from "../battle/MoonGeometry";
 import type { SurvivalWorld } from "../battle/SurvivalWorld";
 import type { Enemy, Hazard, Point } from "../battle/SurvivalTypes";
-const inks = new Map<string, Color>();
-function ink(hex: string, a = 255) {
-  const key = hex + a;
-  let c = inks.get(key);
-  if (!c) {
-    c = new Color().fromHEX(hex);
-    c.a = a;
-    inks.set(key, c);
-  }
-  return c;
-}
+import { ink } from "./StagePalette";
 function line(g: Graphics, a: Point, b: Point) {
   g.moveTo(a.x * 48, a.y * 48);
   g.lineTo(b.x * 48, b.y * 48);

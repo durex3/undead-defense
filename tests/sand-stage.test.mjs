@@ -4,11 +4,10 @@ import { SurvivalWorld } from "../temp/tests/battle/SurvivalWorld.mjs";
 import { ENEMIES, isElite } from "../temp/tests/battle/SurvivalConfig.mjs";
 import { sandMap, SAND_ROCKS } from "../temp/tests/battle/SandMap.mjs";
 import { stepEnemies, stepHazards } from "../temp/tests/battle/EnemySystem.mjs";
-import { stepGarden } from "../temp/tests/battle/GardenMap.mjs";
 import { STAGES } from "../temp/tests/battle/StageRules.mjs";
 import { ProgressStore } from "../temp/tests/platform/ProgressStore.mjs";
 const world = () => {
-  const w = new SurvivalWorld(19, "ranger", 15, 6);
+  const w = new SurvivalWorld(19, "ranger", 2, 6);
   w.time = 140;
   w.player = { x: 0, y: 0 };
   w.camera = { x: 0, y: 0 };
@@ -37,25 +36,25 @@ test("sand stage unlocks after fourteen and has new elite roles and stronger bas
       setItem: (k, v) => store.set(k, v),
     };
   let p = new ProgressStore(storage);
-  assert(!p.unlockedStage(15));
+  assert(!p.unlockedStage(2));
   const w = world();
-  w.stageId = 14;
+  w.stageId = 1;
   w.state = "won";
   p.observe(w);
   p = new ProgressStore(storage);
-  assert(p.unlockedStage(15));
+  assert(p.unlockedStage(2));
   assert(isElite("broodelite") && isElite("breakerelite"));
   assert.equal(ENEMIES.broodelite.health, 20);
   assert.equal(ENEMIES.breakerelite.contact, 20);
   assert.equal(ENEMIES.sandspitter.health, 1.8);
-  assert(STAGES[15].bossHealth > STAGES[14].bossHealth);
-  assert.deepEqual(new SurvivalWorld(1, "ranger", 15).player, { x: 0, y: -8 });
+  assert(STAGES[2].bossHealth > STAGES[1].bossHealth);
+  assert.deepEqual(new SurvivalWorld(1, "ranger", 2).player, { x: 0, y: -8 });
 });
 test("sand variable rock geometry is shared by collision and navigation", () => {
   const w = world();
   for (const p of SAND_ROCKS) {
     Object.assign(w.player, p);
-    stepGarden(w, 0);
+    sandMap.resolve(w.player, 0.3);
     assert(!sandMap.blocked(w.player, 0.299));
   }
   assert(!sandMap.blocked({ x: 0, y: 0 }, 6));

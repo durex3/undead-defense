@@ -14,7 +14,7 @@ import {
   PROGRESS_KEY,
 } from "../temp/tests/platform/ProgressStore.mjs";
 const world = () => {
-  const w = new SurvivalWorld(19, "ranger", 16);
+  const w = new SurvivalWorld(19, "ranger", 3);
   w.time = 160;
   w.player = { x: 0, y: 0 };
   w.camera = { ...w.player };
@@ -48,25 +48,25 @@ test("stage three preserves two-stage saves and unlocks only after stage two, in
       removeItem: (k) => m.delete(k),
     };
   let p = new ProgressStore(storage);
-  assert(!p.unlockedStage(16));
+  assert(!p.unlockedStage(3));
   const w = world();
-  w.stageId = 14;
+  w.stageId = 1;
   w.state = "won";
   p.observe(w);
-  assert(!p.unlockedStage(16));
-  w.stageId = 15;
+  assert(!p.unlockedStage(3));
+  w.stageId = 2;
   p.observe(w);
   const prior = JSON.parse(m.get(PROGRESS_KEY));
   p = new ProgressStore(storage);
-  assert(p.unlockedStage(16));
-  assert.deepEqual(p.data.stages, [14, 15]);
+  assert(p.unlockedStage(3));
+  assert.deepEqual(p.data.stages, [1, 2]);
   assert.deepEqual(p.data.stageBest, prior.stageBest);
-  w.stageId = 16;
+  w.stageId = 3;
   p.observe(w);
   m.set(PROGRESS_KEY, "broken");
   const q = new ProgressStore(storage);
-  assert(q.data.stageBest[16].won);
-  assert.deepEqual(q.data.stages, [14, 15, 16]);
+  assert(q.data.stageBest[3].won);
+  assert.deepEqual(q.data.stages, [1, 2, 3]);
   assert.equal(ENEMIES.gridwarden.health, 20);
   assert.equal(ENEMIES.railreaper.contact, 22);
 });

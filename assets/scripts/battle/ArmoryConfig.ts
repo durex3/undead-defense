@@ -282,7 +282,8 @@ export function modSummary(w: SurvivalWorld, s: Skill) {
   );
 }
 export function stageBuildHint(stage: number) {
-  return stage === 17 ? "猎原：去回程之外换道，躲跃扑后绕背；落剑、重爆抓收招，贯阵清出退路" : stage === 16 ? "机庭：拆电极断线，向电栅缺口换道；贯阵清路、追猎拆点、落剑抓恢复" : stage === 14
-    ? "围城：短墙侧路切后排；追猎/往返穿阵，火海引敌封路"
-    : "虫巢：斜向沙道转场；碎焰清虫、奔流清路，重爆抓出土";
+  if (stage === 4) return "猎原：去回程之外换道，躲跃扑后绕背；落剑、重爆抓收招，贯阵清出退路";
+  if (stage === 3) return "机庭：拆电极断线，向电栅缺口换道；贯阵清路、追猎拆点、落剑抓恢复";
+  if (stage === 1) return "围城：短墙侧路切后排；追猎/往返穿阵，火海引敌封路";
+  return "虫巢：斜向沙道转场；碎焰清虫、奔流清路，重爆抓出土";
 }

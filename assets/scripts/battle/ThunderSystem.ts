@@ -576,7 +576,7 @@ export class ThunderSystem {
     if (distance(e, w.player) < (e.kind === "boss" ? 1 : 0.65))
       w.hurt(
         e.kind === "boss" ? 22 : ENEMIES[e.kind].contact,
-        e.kind === "boss" ? STAGES[16].boss : ENEMIES[e.kind].name,
+        e.kind === "boss" ? STAGES[3].boss : ENEMIES[e.kind].name,
         e.kind !== "boss" && !isElite(e.kind),
       );
     if (

@@ -16,7 +16,7 @@ import {
   PROGRESS_KEY,
 } from "../temp/tests/platform/ProgressStore.mjs";
 const world = () => {
-  const w = new SurvivalWorld(19, "ranger", 17);
+  const w = new SurvivalWorld(19, "ranger", 4);
   w.time = 160;
   w.level = 64;
   w.player = { x: 0, y: 0 };
@@ -112,22 +112,22 @@ test("stage four unlock preserves prior records, backs up and retries writes", (
     removeItem: (k) => data.delete(k),
   };
   let p = new ProgressStore(storage);
-  assert(!p.unlockedStage(17));
+  assert(!p.unlockedStage(4));
   const w = world();
   w.state = "won";
-  for (const id of [14, 15, 16]) {
+  for (const id of [1, 2, 3]) {
     w.stageId = id;
     p.observe(w);
   }
   p = new ProgressStore(storage);
-  assert(p.unlockedStage(17));
+  assert(p.unlockedStage(4));
   const before = { ...p.data.stageBest };
-  w.stageId = 17;
+  w.stageId = 4;
   p.observe(w);
   data.set(PROGRESS_KEY, "broken");
   p = new ProgressStore(storage);
-  assert(p.data.stageBest[17].won);
-  for (const id of [14, 15, 16])
+  assert(p.data.stageBest[4].won);
+  for (const id of [1, 2, 3])
     assert.deepEqual(p.data.stageBest[id], before[id]);
   fail = true;
   w.time = 170;
@@ -135,7 +135,7 @@ test("stage four unlock preserves prior records, backs up and retries writes", (
   fail = false;
   p.observe(w);
   p = new ProgressStore(storage);
-  assert(p.data.stageBest[17].won);
+  assert(p.data.stageBest[4].won);
 });
 test("elite base multiplier applies once and ordinary growth stays capped", () => {
   assert.equal(ENEMIES.moonreaver.health, 20);

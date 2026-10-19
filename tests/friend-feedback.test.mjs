@@ -22,6 +22,6 @@ test('third altar boundary remains movable at the right edge',()=>{
  const w=new SurvivalWorld(1,'ranger',3);w.player={x:22,y:0};w.setMove(1,0);for(let i=0;i<60;i++)w.step(1/60);assert.ok(w.player.x<=22);assert.ok(w.player.x>=21);w.setMove(-1,0);for(let i=0;i<120;i++)w.step(1/60);assert.ok(w.player.x<21);
 });
 test('elite boss-like kills drop a visible high-value experience gem',()=>{
- const w=new SurvivalWorld(1,'ranger',3);w.time=175;const e=w.addEnemy('charger',0,0);e.hp=1;w.hit(e,1000,'blade');
+ const w=new SurvivalWorld(1,'ranger',1);w.time=175;const e=w.addEnemy('siegerider',0,0);e.hp=1;w.hit(e,1000,'blade');
  assert.equal(w.gems.length,1);assert.equal(w.gems[0].value,8*.85);assert.equal(w.xp,0);
 });

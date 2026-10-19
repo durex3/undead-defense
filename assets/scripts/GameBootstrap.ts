@@ -1,18 +1,11 @@
 import { modInfo } from './battle/ArmoryConfig';
 import { nextPlaySpeed, PlaySpeed } from "./battle/PlaySpeed";
-import {starHeight} from "./battle/ObservatorySystem";
-import { drawLateStage } from "./presentation/LateStagePainter";
 import { GameMenus } from "./presentation/GameMenus";
 import { MenuWidgets } from "./presentation/MenuWidgets";
 import { battleHud, clock } from "./presentation/BattleHud";
 
-import { drawCrown } from "./presentation/CrownPainter";
-import { KING_PHASES } from "./battle/KingBossSystem";
-import { drawChurch } from "./presentation/ChurchPainter";
-import { drawAltar } from "./presentation/AltarPainter";
 import { STAGES } from "./battle/StageRules";
 import { PlayPreferences } from "./platform/PlayPreferences";
-import { drawGarden } from "./presentation/GardenPainter";
 import { ProgressStore } from "./platform/ProgressStore";
 import {
   CHARACTERS,
@@ -57,12 +50,13 @@ import { DEBUG, WECHAT } from "cc/env";
 import { SurvivalWorld } from "./battle/SurvivalWorld";
 import { MAX_ENEMIES, Card, Skill, NAMES as names, COLORS as colors, ENEMIES } from "./battle/SurvivalConfig";
 import { BattlePainter } from "./presentation/BattlePainter";
+import { drawStageMap } from "./presentation/StageMapPainter";
 import { CombatFeedback, FEEDBACK_SOUNDS } from "./presentation/CombatFeedback";
 import { PIXELS } from "./presentation/PixelAtlas";
 const { ccclass } = _decorator;
 @ccclass("GameBootstrap")
 export class GameBootstrap extends Component {
-  world = new SurvivalWorld(Date.now(), "ranger", 14);
+  world = new SurvivalWorld(Date.now(), "ranger", 1);
   private progress = new ProgressStore(sys.localStorage);
   private preferences = new PlayPreferences(sys.localStorage);
   private touchMode = sys.isMobile;
@@ -70,16 +64,14 @@ export class GameBootstrap extends Component {
   private victorySeen = false;
   private confirmation: "restart" | "selection" | null = null;
   private selectedCharacter: CharacterId = "ranger";
-  private selectedStage: StageId = 14;
+  private selectedStage: StageId = 1;
   private runUnlocks: string[] = [];
   private progressNotice = "";
   private saveRetry = 0;
   private ui!: Node;
   private stage!: Node;
-  private garden!: Node;
-  private altarMap!: Node;
-  private churchMap!: Node;
-  private crownMap!: Node;
+  private mapLayer!: Node;
+  private mapGraphics!: Graphics;
   private actors!: Node;
   private hud!: Node;
   private overlay!: Node;
@@ -165,34 +157,10 @@ export class GameBootstrap extends Component {
         sf.rect = new Rect(r[0], r[1], r[2], r[3]);
         this.frames.set(key, sf);
       }
-      const floor = this.make("Floor", this.stage);
-      floor.setSiblingIndex(0);
-      const sf = new SpriteFrame();
-      sf.texture = ground;
-      this.sprite(floor, sf, 2304, 2688);
-      floor.getComponent(Sprite)!.color = new Color(175, 181, 193, 255);
-      for (let i = 0; i < 24; i++) {
-        const n = this.make("Pillar", this.stage);
-        const side = i % 2 ? 1 : -1;
-        n.setPosition(side * 1095, (Math.floor(i / 2) - 5.5) * 210);
-        this.pixel(n, "column", 3);
-      }
-      this.garden = this.make("Garden", this.stage);
-      this.garden.setSiblingIndex(1);
-      drawGarden(this.garden.addComponent(Graphics));
-      this.garden.active = false;
-      this.altarMap = this.make("Altar", this.stage);
-      this.altarMap.setSiblingIndex(2);
-      drawAltar(this.altarMap.addComponent(Graphics));
-      this.altarMap.active = false;
-      this.churchMap = this.make("Church", this.stage);
-      this.churchMap.setSiblingIndex(3);
-      drawChurch(this.churchMap.addComponent(Graphics));
-      this.churchMap.active = false;
-      this.crownMap=this.make("Crown",this.stage);
-      this.crownMap.setSiblingIndex(4);
-      drawCrown(this.crownMap.addComponent(Graphics));
-      this.crownMap.active=false;
+      // Each stage paints its own floor and landmarks; no shared dungeon backdrop.
+      this.mapLayer = this.make("StageMap", this.stage);
+      this.mapLayer.setSiblingIndex(0);
+      this.mapGraphics = this.mapLayer.addComponent(Graphics);
       this.hero = this.make("Hero", this.actors);
       this.pixel(this.hero, "wizzard_m_idle_anim_f0", 3);
       this.fx = this.make("Effects", this.stage).addComponent(Graphics);
@@ -356,6 +324,12 @@ export class GameBootstrap extends Component {
       if(index>=0 && this.world.startingWeapons[index])this.world.chooseStartingWeapon(this.world.startingWeapons[index]);
       return;
     }
+    if(this.world.state === "tactical") {
+      const index=[KeyCode.DIGIT_1,KeyCode.DIGIT_2,KeyCode.DIGIT_3].indexOf(e.keyCode);
+      const choice=this.world.tacticalChoices[index];
+      if(choice)this.world.chooseTacticalBlessing(choice.id);
+      return;
+    }
     if (e.keyCode === KeyCode.ESCAPE) {
       if (this.world.state === "modification") {
         /* Modification choices require an explicit selection. */
@@ -461,7 +435,7 @@ export class GameBootstrap extends Component {
     if (!this.progress.unlockedCharacter(this.selectedCharacter))
       this.selectedCharacter = "ranger";
     if (!this.progress.unlockedStage(this.selectedStage))
-      this.selectedStage = 14;
+      this.selectedStage = 1;
     this.world = new SurvivalWorld(
       Date.now(),
       this.selectedCharacter,
@@ -472,15 +446,7 @@ export class GameBootstrap extends Component {
     this.runUnlocks = [];
     this.progressNotice = "";
     this.started = true;
-    this.garden.active = this.selectedStage === 2;
-    this.altarMap.active = this.selectedStage === 3;
-    this.churchMap.active = this.selectedStage === 4;
-    this.crownMap.active = this.selectedStage >= 5;
-    if(this.selectedStage>=5) {
-      const graphics=this.crownMap.getComponent(Graphics)!;
-      graphics.clear();
-      if(this.selectedStage===5)drawCrown(graphics);else drawLateStage(graphics,this.selectedStage);
-    }
+    drawStageMap(this.mapGraphics, this.selectedStage);
     this.camera = { x: this.world.player.x*48, y: this.world.player.y*48 };
     this.playSpeed=1;if(this.speedLabel)this.speedLabel.string="倍速 ×1";
     this.painter.reset();
@@ -661,21 +627,10 @@ export class GameBootstrap extends Component {
         n.active = true;
         this.units.set(e.id, n);
       }
-      const config =
-        e.kind === "boss" && w.stageId >= 2
-          ? { ...ENEMIES.boss, sprite: "necromancer", scale: 5.5 }
-          : ENEMIES[e.kind];
-      if(w.stageId<14)this.pixel(n, `${config.sprite}_anim_f${anim}`, config.scale);
-      // Stage fourteen uses original procedural legion silhouettes instead of reused undead sprites.
-      n.getComponent(Sprite)!.enabled=w.stageId<14;
-      n.setPosition(e.x * 48, e.y * 48 + 20 + starHeight(e));
-      n.setScale(Math.cos(e.facing) < 0 ? -1 : 1, 1, 1);
-      n.getComponent(Sprite)!.color =
-        (this.flashes.get(e.id) || 0) > w.time
-          ? new Color(255, 180, 125)
-          : e.slowUntil > w.time
-            ? new Color(138, 215, 255)
-            : w.stageId===14 ? new Color("#dcb58f") : w.stageId===11 ? new Color("#e7b089") : w.stageId===12 ? new Color("#b7c8e9") : w.stageId===13 ? new Color("#99ceca") : e.kind === "boss" && w.stageId === 3 ? new Color("#ff9865") : e.kind === "boss" && w.stageId === 4 ? new Color("#a4d9ef") : e.kind === "boss" && w.stageId === 5 ? new Color("#ead7ad") : e.kind === "boss" && w.stageId === 6 ? new Color("#efaa70") : e.kind === "boss" && w.stageId === 7 ? new Color("#aab5ff") : e.kind === "boss" && w.stageId === 8 ? new Color("#80c5cb") : e.kind === "sailor" ? new Color("#a6d3ca") : e.kind === "drowned" ? new Color("#79b9d0") : e.kind === "anchorhand" ? new Color("#ccb98a") : e.kind === "boss" && w.stageId === 10 ? new Color("#b6b5e5") : ["starpatrol","starweaver","starpuppet"].includes(e.kind) ? new Color("#c4c4e0") : e.kind === "boss" && w.stageId === 9 ? new Color("#e0b78e") : ["boneguard","standardbearer","crossbowman","warflag"].includes(e.kind) ? new Color("#cfb393") : Color.WHITE;
+      // Every stage draws enemies procedurally in BattlePainter; the sprite node stays empty.
+      n.getComponent(Sprite)!.enabled = false;
+      n.setPosition(e.x * 48, e.y * 48 + 20);
+      n.setScale(1, 1, 1);
     }
     const ordered = [this.hero, ...Array.from(this.units.values())].sort(
       (a, b) => b.position.y - a.position.y,
@@ -721,8 +676,7 @@ export class GameBootstrap extends Component {
         this.announcementLife=1.6;
       }
       if (e.type === "bossPhase") {
-        this.announcement.string =
-          w.stageId===5 ? `亡者君王 · ${KING_PHASES[e.value || 1]}` : `${STAGES[w.stageId].boss}狂怒 · 第二阶段`;
+        this.announcement.string = `${STAGES[w.stageId].boss}狂怒 · 第二阶段`;
         this.announcementLife = 2.5;
       }
       if (e.type === "elite" || e.type === "boss") {

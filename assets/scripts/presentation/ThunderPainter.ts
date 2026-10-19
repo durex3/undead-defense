@@ -3,17 +3,7 @@ import { THUNDER_BASES } from "../battle/ThunderMap";
 import { thunderDevice } from "../battle/ThunderSystem";
 import type { SurvivalWorld } from "../battle/SurvivalWorld";
 import type { Enemy, Hazard } from "../battle/SurvivalTypes";
-const colors = new Map<string, Color>();
-function ink(hex: string, a = 255) {
-  const key = hex + ":" + a;
-  let c = colors.get(key);
-  if (!c) {
-    c = new Color().fromHEX(hex);
-    c.a = a;
-    colors.set(key, c);
-  }
-  return c;
-}
+import { ink } from "./StagePalette";
 export function drawThunderMap(g: Graphics) {
   g.clear();
   g.fillColor = ink("#18272d");

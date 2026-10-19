@@ -4,14 +4,13 @@ import { SurvivalWorld } from '../temp/tests/battle/SurvivalWorld.mjs';
 import { siegeMap,SIEGE_WALLS } from '../temp/tests/battle/SiegeMap.mjs';
 import { siegeProjectileFactor,shieldRaised,siegeRest } from '../temp/tests/battle/SiegeSystem.mjs';
 import { stepEnemies,stepHazards } from '../temp/tests/battle/EnemySystem.mjs';
-import { stepGarden } from '../temp/tests/battle/GardenMap.mjs';
 import { ProgressStore } from '../temp/tests/platform/ProgressStore.mjs';
 import { STAGES } from '../temp/tests/battle/StageRules.mjs';
-function world(){const w=new SurvivalWorld(19,'ranger',14,6);w.time=10;for(const s of Object.keys(w.skills))w.skills[s]=0;w.enemies=[];return w;}
+function world(){const w=new SurvivalWorld(19,'ranger', 1,6);w.time=10;for(const s of Object.keys(w.skills))w.skills[s]=0;w.enemies=[];return w;}
 function enemy(w,kind,x=4,y=0){const e=w.addEnemy(kind,x,y);e.state="seek";e.attack=0;e.visibleSince=0;e.facing=Math.PI;return e;}
 
 test('siege map resolves shared walls and navigation reaches an opposite flank',()=>{
- const w=world();for(const p of SIEGE_WALLS){assert(siegeMap.blocked(p,.3));Object.assign(w.player,p);stepGarden(w,0);assert(!siegeMap.blocked(w.player,.299));}
+ const w=world();for(const p of SIEGE_WALLS){assert(siegeMap.blocked(p,.3));Object.assign(w.player,p);siegeMap.resolve(w.player,.3);assert(!siegeMap.blocked(w.player,.299));}
  const e=enemy(w,'siegebone',-15,-8),target={x:15,y:-8};
  for(let i=0;i<1600&&Math.hypot(e.x-target.x,e.y-target.y)>.2;i++){const a=siegeMap.heading(e,target);e.x+=Math.cos(a)*.05;e.y+=Math.sin(a)*.05;siegeMap.resolve(e,.35);}
  assert(Math.hypot(e.x-target.x,e.y-target.y)<.3);assert(!siegeMap.blocked({x:0,y:0},6));
@@ -67,7 +66,7 @@ test('pack spawn is atomic, caps threat and does not replay skipped pressure win
  const shield=w.enemies.find(e=>e.kind==='thornshield'),bow=w.enemies.find(e=>e.kind==='siegebow');assert.equal(shield.shieldPartner,bow.id);assert(Math.hypot(shield.x-bow.x,shield.y-bow.y)<=2);assert(w.enemies.every(e=>e.state==='arriving'&&e.timer===1));
  assert(w.siege.spawnPack(['flanker','flanker'],Math.PI/2));const before=w.enemies.length;
  assert(!w.siege.spawnPack(['thornshield','siegebow'],Math.PI));assert.equal(w.enemies.length,before);
- for(const t of [172,289,477]){w.time=t;assert(siegeRest(t));w.siege.director(1,()=>({x:10,y:0}));assert.equal(w.enemies.length,before);}
+ for(const t of [128,214,355]){w.time=t;assert(siegeRest(t));w.siege.director(1,()=>({x:10,y:0}));assert.equal(w.enemies.length,before);}
 });
 
 test('boss locks the occupied position and reserves both danger slots for a fresh second lock',()=>{
@@ -92,8 +91,8 @@ test('boss phase transition clears own hazards, does not heal and recovery is co
 });
 
 test('boss tactical reinforcements occur once per two cycles, grant half xp and respect rests',()=>{
- const w=world(),b=enemy(w,'boss',4);w.time=482;w.siege.bossReinforcements();assert.equal(w.enemies.length,3);w.siege.bossReinforcements();assert.equal(w.enemies.length,3);
+ const w=world(),b=enemy(w,'boss',4);w.time=388;w.siege.bossReinforcements();assert.equal(w.enemies.length,3);w.siege.bossReinforcements();assert.equal(w.enemies.length,3);
  const e=w.enemies.find(e=>e.kind==='flanker');assert(e.bossReinforcement&&e.summoned);e.state='seek';w.hit(e,10000,'lightning');assert.equal(w.gems[0].value,.425);assert.equal(w.gold,0);
- for(const o of w.enemies)if(o.kind==='flanker')o.hp=0;b.bossPhase=2;w.time=510;w.siege.bossReinforcements();assert(w.enemies.some(e=>e.kind==='thornshield')&&w.enemies.some(e=>e.kind==='siegebow'));
- const count=w.enemies.length;w.time=519;w.siege.bossReinforcements();assert.equal(w.enemies.length,count);
+ for(const o of w.enemies)if(o.kind==='flanker')o.hp=0;b.bossPhase=2;w.time=416;w.siege.bossReinforcements();assert(w.enemies.some(e=>e.kind==='thornshield')&&w.enemies.some(e=>e.kind==='siegebow'));
+ const count=w.enemies.length;w.time=421;w.siege.bossReinforcements();assert.equal(w.enemies.length,count);
 });

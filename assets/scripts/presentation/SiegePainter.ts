@@ -3,10 +3,8 @@ import { SIEGE_WALLS, SIEGE_ROUTES } from '../battle/SiegeMap';
 import { Enemy, Hazard } from '../battle/SurvivalTypes';
 import type { SurvivalWorld } from '../battle/SurvivalWorld';
 import { shieldRaised } from '../battle/SiegeSystem';
-import { drawFrontierHazard } from './FrontierPainter';
 // Shared immutable palette avoids thousands of Color allocations per crowd frame.
-const palette=new Map<string,Color>();
-const ink=(hex:string,a=255)=>{const key=hex+':'+a;let c=palette.get(key);if(!c){c=new Color().fromHEX(hex);c.a=a;palette.set(key,c);}return c;};
+import { ink } from './StagePalette';
 export function drawSiegeMap(g:Graphics) {
   g.clear();g.fillColor=ink('#28272b');g.rect(-1152,-1344,2304,2688);g.fill();
   for(let y=-27;y<28;y++)for(let x=-23;x<24;x++){
@@ -84,5 +82,13 @@ function drawLegionBody(g:Graphics,w:SurvivalWorld,e:Enemy) {
   if(e.siegeWall&&e.state==='recover'){g.strokeColor=ink('#ffe2a3');g.lineWidth=3;g.moveTo(x-12,y+75*scale);g.lineTo(x+12,y+64*scale);g.moveTo(x+12,y+75*scale);g.lineTo(x-12,y+64*scale);g.stroke();}
 }
 export function drawSiegeCharge(g:Graphics,h:Hazard,time:number) {
-  drawFrontierHazard(g,{...h,kind:'frontierLane',endX:h.x+Math.cos(h.angle)*h.radius,endY:h.y+Math.sin(h.angle)*h.radius},time);
+  const x=h.x*48,y=h.y*48,progress=Math.max(0,Math.min(1,(time-h.created)/(h.due-h.created||1)));
+  const active=time>=h.due;
+  g.strokeColor=ink(active?'#fff0bd':'#ffbc91',250);g.fillColor=ink('#ed7656',active?130:18+progress*35);g.lineWidth=active?4:2;
+  const bx=(h.x+Math.cos(h.angle)*h.radius)*48,by=(h.y+Math.sin(h.angle)*h.radius)*48,a=Math.atan2(by-y,bx-x),r=h.width*48;
+  g.moveTo(x-Math.sin(a)*r,y+Math.cos(a)*r);
+  for(let i=0;i<=12;i++){const t=a+Math.PI/2-i*Math.PI/12;g.lineTo(bx+Math.cos(t)*r,by+Math.sin(t)*r);}
+  for(let i=0;i<=12;i++){const t=a-Math.PI/2-i*Math.PI/12;g.lineTo(x+Math.cos(t)*r,y+Math.sin(t)*r);}g.close();g.fill();g.stroke();
+  g.moveTo(x,y);g.lineTo(x+(bx-x)*progress,y+(by-y)*progress);g.stroke();
+  g.fillColor=ink('#fff2cf',240);const count=h.sequence||0;for(let i=0;i<count;i++){g.circle(x+(i-(count-1)/2)*8,y+8,3);g.fill();}
 }

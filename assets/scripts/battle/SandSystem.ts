@@ -9,7 +9,7 @@ import {
 } from "./SurvivalTypes";
 import { ENEMIES, Kind, isElite } from "./SurvivalConfig";
 import { sandMap } from "./SandMap";
-import { crownEscape } from "./CrownSystem";
+import { crownEscape } from "./Escape";
 import { hordePressure } from "./HordePressure";
 export const SAND_KINDS: readonly Kind[] = [
   "sandworker",
