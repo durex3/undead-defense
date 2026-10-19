@@ -267,6 +267,7 @@ test("all ten weapons can hit devices, frost/black-hole never shift their visibl
       d = w.thunder.device(owner, { x: 1, y: 0 }, 100);
     owner.hp = owner.maxHp = 1e9;
     w.skills[skill] = 8;
+    if(skill === "blade") w.player.x = -.9; // Put the device on the new ring circumference.
     w.cooldowns[skill] = 0;
     const x = d.x,
       y = d.y,

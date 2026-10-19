@@ -3,11 +3,11 @@ import type { MoonSystem } from "./MoonSystem";
 import { ENEMIES, Kind, isElite } from "./SurvivalConfig";
 import { Point, distance } from "./SurvivalTypes";
 import { moonMap } from "./MoonMap";
-import { BOSS_TIME } from "./EncounterPacing";
+import { BOSS_TIME, encounterScoreTime, encounterRealTime } from "./EncounterPacing";
 const TAU = Math.PI * 2;
 export class MoonDirector {
   private nextGroup = 0;
-  private nextSpecial = 35;
+  private nextSpecial = encounterRealTime(35);
   private specialWave = 0;
   private elites = [false, false];
   private boss = false;
@@ -22,7 +22,7 @@ export class MoonDirector {
     );
   }
   ordinaryRest() {
-    const t = this.w.time;
+    const t = encounterScoreTime(this.w.time);
     return (
       (t >= 175 && t < 185) ||
       (t >= 290 && t < 300) ||
@@ -37,12 +37,12 @@ export class MoonDirector {
       this.ordinaryRest() ||
       w.time < Math.max(this.system.rest, w.reinforcementRestUntil) ||
       w.enemies.some((e) => isElite(e.kind) && e.hp > 0) ||
-      (t >= 480 &&
+      (t >= BOSS_TIME &&
         w.enemies.some((e) => e.kind === "boss" && e.state !== "seek"))
     );
   }
   private allowed(): Kind[] {
-    const t = this.w.time;
+    const t = encounterScoreTime(this.w.time);
     if (t < 35 || this.ordinaryRest() || t >= 472) return [];
     if (t < 75) return ["crescentmantis"];
     if (t < 115) return ["vaultlynx"];
@@ -121,7 +121,7 @@ export class MoonDirector {
     return undefined;
   }
   director(dt: number) {
-    const w = this.w;
+    const w = this.w, score = encounterScoreTime(w.time);
     this.system.clean();
     if (w.time >= BOSS_TIME && !this.boss) {
       const e = this.spawn("boss", Math.atan2(-w.player.y, -w.player.x));
@@ -135,8 +135,8 @@ export class MoonDirector {
     }
     if (!this.boss) {
       for (let i = 0; i < 2; i++)
-        if (!this.elites[i] && w.time >= [185, 355][i]) {
-          if (w.time >= 460) {
+        if (!this.elites[i] && score >= [185, 355][i]) {
+          if (score >= 460) {
             this.elites[i] = true;
             continue;
           }
@@ -160,7 +160,7 @@ export class MoonDirector {
     const boss = w.enemies.find((e) => e.kind === "boss" && e.hp > 0);
     this.nextGroup -= dt;
     if (this.nextGroup <= 0) {
-      this.nextGroup = this.boss ? 2 : Math.max(1.1, 2.9 - w.time / 300);
+      this.nextGroup = this.boss ? 2 : Math.max(1.1, 2.9 - score / 300);
       const rest =
           this.ordinaryRest() ||
           w.time < Math.max(this.system.rest, w.reinforcementRestUntil),
@@ -178,7 +178,7 @@ export class MoonDirector {
         : Math.max(
             0,
             Math.min(
-              rest ? 3 : elite ? 5 : 6 + Math.floor(w.time / 70),
+              rest ? 3 : elite ? 5 : 6 + Math.floor(score / 70),
               82 - ordinary,
             ),
           );
@@ -220,8 +220,8 @@ export class MoonDirector {
       return;
     }
     if (
-      w.time >= 235 &&
-      w.time < 290 &&
+      score >= 235 &&
+      score < 290 &&
       w.enemies.some((e) => e.hp > 0 && ENEMIES[e.kind].threat > 0)
     )
       return;
@@ -232,7 +232,7 @@ export class MoonDirector {
     this.nextSpecial = w.time + 12;
     const kind = allowed[this.specialWave++ % allowed.length];
     if (
-      w.time < 150 &&
+      score < 150 &&
       w.enemies.some((e) => e.hp > 0 && ENEMIES[e.kind].threat > 0)
     )
       return;

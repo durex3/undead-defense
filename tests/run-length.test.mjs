@@ -4,7 +4,7 @@ import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
 import {BOSS_TIME,MAX_PLAYER_LEVEL,encounterBeat,bossTimeForStage} from '../temp/tests/battle/EncounterPacing.mjs';
 import {MAX_ENEMIES,WEAPONS} from '../temp/tests/battle/SurvivalConfig.mjs';
 test('all four stages summon at their boss time; stages 1 and 2 keep a pre-boss respite',()=>{
- assert.equal(BOSS_TIME,480);assert.equal(MAX_PLAYER_LEVEL,64);
+ assert.equal(BOSS_TIME,360);assert.equal(MAX_PLAYER_LEVEL,64);
  for(let stage=1;stage<=4;stage++){
   const w=new SurvivalWorld(19,'ranger',stage);w.time=240;w.director.step(w,0);assert(!w.enemies.some(e=>e.kind==='boss'));
   const bossTime=bossTimeForStage(stage);

@@ -8,7 +8,7 @@ import {
   segmentDistance,
   angleDelta,
 } from "./SurvivalTypes";
-import { weaponStats, WeaponStats, playerAttributes } from "./ArmoryConfig";
+import { weaponStats, WeaponStats, playerAttributes, orbitProgress } from "./ArmoryConfig";
 export const ARMORY_LIMITS = { shots: 256, fields: 64, pending: 64 };
 export interface ArmoryShot extends Point {
   active: boolean;
@@ -43,6 +43,7 @@ export interface ArmoryField extends Point {
   returning: boolean;
   next: number;
   interval: number;
+  lastTick?: number;
 }
 interface Cast {
   skill: Skill;
@@ -153,7 +154,8 @@ export class Armory {
       w.cooldowns[skill] = Math.max(0, w.cooldowns[skill] - dt);
       if (w.cooldowns[skill] > 0) continue;
       const s = weaponStats(w, skill),
-        t = this.target(skill, s);
+        t = this.target(skill, s) || (skill==="blade"&&!s.mods.includes("hunt")?w.player:undefined);
+      if(skill==="blade" && this.shots.some(p=>p.active&&p.orbit))continue;
       if (!t || !this.room(s, skill)) continue;
       this.cast(skill, s, t);
       w.cooldowns[skill] = s.cooldown;
@@ -166,6 +168,20 @@ export class Armory {
         this.launch(c);
       }
     for (const p of this.shots) if (p.active) this.stepShot(p, dt);
+    // Replace the completed orbit as a whole in the same frame: four/six
+    // separate knives remain present, with new upgrades applied at the seam.
+    if(w.skills.blade && !w.mods.blade.includes("hunt") && w.cooldowns.blade<=1e-7 &&
+      !this.shots.some(p=>p.active&&p.orbit)) {
+      const s=weaponStats(w,"blade");
+      if(this.room(s,"blade")) {
+        this.cast("blade",s,w.player);w.cooldowns.blade=s.cooldown;
+        w.castCounts.blade=(w.castCounts.blade||0)+1;
+        for(let i=this.pending.length-1;i>=0;i--)if(this.pending[i].skill==="blade"&&this.pending[i].due<=w.time) {
+          const c=this.pending.splice(i,1)[0];this.launch(c);
+        }
+        for(const p of this.shots)if(p.active&&p.orbit&&p.age===0)this.stepShot(p,0);
+      }
+    }
     for (const f of this.fields) if (f.active) this.stepField(f, dt);
     this.tickFields();
   }
@@ -234,7 +250,7 @@ export class Armory {
       x: o.x,
       y: o.y,
       angle,
-      speed: skill === "blade" ? 11 : 7,
+      speed: skill === "blade" ? 15 : 7,
       travel: 0,
       range: skill === "fire" ? Math.max(0.4, distance(o, t)) : s.range,
       hit: new Set(),
@@ -245,7 +261,7 @@ export class Armory {
       until: this.w.time + (skill === "blade" ? s.duration : 3),
       start: { ...o },
       target: { ...t },
-      orbit: skill === "blade" && !child && s.mods.includes("orbit"),
+      orbit: skill === "blade" && !child && !s.mods.includes("hunt"),
       index: c.index,
     };
     const slot = this.shots.find((p) => !p.active);
@@ -289,22 +305,31 @@ export class Armory {
       return;
     }
     if (p.orbit) {
-      const q = Math.min(1, p.age / s.duration),
+      const oldQ=Math.max(0,Math.min(1,(p.age-dt)/s.duration));
+      const q = p.age+1e-8>=s.duration?1:Math.min(1, p.age / s.duration),
         radius =
-          (m.includes("return") ? 1.3 + 2 * Math.sin(q * Math.PI) : 2.2) *
+          ((m.includes("orbit") ? 2.7 : 1.9) + (m.includes("return") ? 1.1 * Math.sin(q * Math.PI) : 0)) *
           playerAttributesFrom(s);
-      p.angle = (p.index * Math.PI * 2) / s.count + q * Math.PI * 2;
+      // Start on the circumference: never sweep a phantom damage line through the hero.
+      if (p.age === dt) {
+        old.x = w.player.x + Math.cos(p.index * Math.PI * 2 / s.count) * radius;
+        old.y = w.player.y + Math.sin(p.index * Math.PI * 2 / s.count) * radius;
+      }
+      p.angle = (p.index * Math.PI * 2) / s.count + orbitProgress(q) * Math.PI * 2;
       p.x = w.player.x + Math.cos(p.angle) * radius;
       p.y = w.player.y + Math.sin(p.angle) * radius;
-      if (m.includes("return") && q >= 0.5 && !p.returning) {
-        p.returning = true;
-        p.hit.clear();
-      }
-      for (const e of this.enemies(p, 2))
-        if (!p.hit.has(e.id) && segmentDistance(e, old, p) < s.radius + 0.45) {
-          p.hit.add(e.id);
-          this.hit(e, s.damage, p, "blade", true);
+      // Sample the actual circular sweep, not a chord through its empty centre.
+      const slices=Math.max(1,Math.ceil((orbitProgress(q)-orbitProgress(oldQ))*48));
+      for(let i=0;i<=slices;i++) {
+        const t=oldQ+(q-oldQ)*i/slices;
+        if(m.includes("return") && t>=.5 && !p.returning) {p.returning=true;p.hit.clear();}
+        const rr=((m.includes("orbit")?2.7:1.9)+(m.includes("return")?1.1*Math.sin(t*Math.PI):0))*playerAttributesFrom(s);
+        const angle=p.index*Math.PI*2/s.count+orbitProgress(t)*Math.PI*2;
+        const sample={x:w.player.x+Math.cos(angle)*rr,y:w.player.y+Math.sin(angle)*rr};
+        for(const e of this.enemies(sample,s.radius+.45))if(!p.hit.has(e.id)) {
+          p.hit.add(e.id);this.hit(e,s.damage,sample,"blade",true);
         }
+      }
       if (q >= 1) this.finish(p);
       return;
     }
@@ -342,6 +367,7 @@ export class Armory {
     const collisions = w.enemies
       .filter(
         (e) =>
+          !(p.child && p.travel<(p.skill==="fire"?.5:.3)) &&
           e.hp > 0 &&
           e.state !== "arriving" &&
           !e.sand?.buried &&
@@ -484,6 +510,7 @@ export class Armory {
       returning: false,
       next: (Math.floor((w.time + 1e-7) / interval) + 1) * interval,
       interval,
+      lastTick: -Infinity,
     };
     if (skill === "water" && s.mods.includes("spring")) f.radius *= 0.45;
     const slot = this.fields.find((v) => !v.active);
@@ -527,6 +554,7 @@ export class Armory {
       { f: ArmoryField; damage: number; e: Enemy }
     >();
     for (const f of due) {
+      f.lastTick=w.time;
       f.next = (Math.floor((w.time + 1e-7) / f.interval) + 1) * f.interval;
       const damage =
         f.skill === "fire"

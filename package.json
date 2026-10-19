@@ -6,7 +6,19 @@
   },
   "uuid": "0cfaf6ee-6a0b-4adc-a9bf-692b33a0cdb2",
   "scripts": {
+    "dev": "npm run build:web && npm run serve:web",
+    "build:web": "node tools/build.mjs web-mobile",
+    "serve:web": "python -m http.server 8128 --bind 127.0.0.1 --directory build/web-mobile",
     "test": "node tools/test-build.mjs && node --test tests/*.test.mjs",
+    "art:preview": "node tools/art-preview.mjs",
+    "art:review": "node tools/art-review.mjs",
+    "art:motion": "node tools/art-motion.mjs",
+    "art:builds": "node tools/art-builds.mjs",
+    "art:combat": "node tools/art-combat.mjs",
+    "art:feedback": "node tools/art-feedback.mjs",
+    "art:weapons": "node tools/weapon-showcase.mjs",
+    "weapons:benchmark": "node tools/weapon-benchmark.mjs",
+    "weapons:guide": "node tools/test-build.mjs && node tools/write-modification-guide.mjs",
     "browser-smoke": "node tools/browser-smoke.mjs"
   },
   "devDependencies": {

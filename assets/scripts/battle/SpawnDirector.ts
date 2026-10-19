@@ -2,7 +2,7 @@ import { sandMap } from "./SandMap";
 import { siegeMap } from "./SiegeMap";
 import { thunderMap } from "./ThunderMap";
 import { hordePressure, bossCrowdRules } from "./HordePressure";
-import { bossTimeForStage } from "./EncounterPacing";
+import { bossTimeForStage, encounterRealTime } from "./EncounterPacing";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Kind, ENEMIES, isElite } from "./SurvivalConfig";
 
@@ -56,7 +56,7 @@ export class SpawnDirector {
       w.sand.director(
         dt,
         (a) => this.position(w, a),
-        (!this.elites[0] && w.time >= 175) || (!this.elites[1] && w.time >= 345),
+        (!this.elites[0] && w.time >= encounterRealTime(175)) || (!this.elites[1] && w.time >= encounterRealTime(345)),
       );
       return;
     }
@@ -70,7 +70,7 @@ export class SpawnDirector {
   private elitesAt(w: SurvivalWorld, bossTime: number) {
     for (let i = 0; i < 2; i++) {
       if (w.time >= bossTime - 20) break;
-      const due = w.stageId === 2 ? (i ? 345 : 175) : i ? 263 : 134;
+      const due = w.stageId === 2 ? encounterRealTime(i ? 345 : 175) : i ? 263 : 134;
       if (w.time < w.reinforcementRestUntil) continue;
       if (this.elites[i] || w.time < due) continue;
       const special = w.enemies.filter((e) => ENEMIES[e.kind].threat > 0).length;

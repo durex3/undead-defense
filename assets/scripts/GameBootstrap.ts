@@ -28,10 +28,6 @@ import {
   Graphics,
   Layers,
   resources,
-  Sprite,
-  SpriteFrame,
-  Texture2D,
-  Rect,
   input,
   Input,
   EventTouch,
@@ -48,11 +44,11 @@ import {
 } from "cc";
 import { DEBUG, WECHAT } from "cc/env";
 import { SurvivalWorld } from "./battle/SurvivalWorld";
-import { MAX_ENEMIES, Card, Skill, NAMES as names, COLORS as colors, ENEMIES } from "./battle/SurvivalConfig";
+import { Card, Skill, NAMES as names, COLORS as colors } from "./battle/SurvivalConfig";
 import { BattlePainter } from "./presentation/BattlePainter";
+import { ink } from "./presentation/art/Ink";
 import { drawStageMap } from "./presentation/StageMapPainter";
 import { CombatFeedback, FEEDBACK_SOUNDS } from "./presentation/CombatFeedback";
-import { PIXELS } from "./presentation/PixelAtlas";
 const { ccclass } = _decorator;
 @ccclass("GameBootstrap")
 export class GameBootstrap extends Component {
@@ -72,7 +68,6 @@ export class GameBootstrap extends Component {
   private stage!: Node;
   private mapLayer!: Node;
   private mapGraphics!: Graphics;
-  private actors!: Node;
   private hud!: Node;
   private overlay!: Node;
   private fx!: Graphics;
@@ -83,12 +78,6 @@ export class GameBootstrap extends Component {
   private hint!: Label;
   private weapons!: Label;
   private novaLabel!: Label;
-  private frames = new Map<string, SpriteFrame>();
-  private units = new Map<number, Node>();
-  private pool: Node[] = [];
-  private potions = new Map<number, Node>();
-  private potionPool: Node[] = [];
-  private hero!: Node;
   private painter!: BattlePainter;
   private announcement!: Label;
   private announcementLife = 0;
@@ -113,7 +102,6 @@ export class GameBootstrap extends Component {
   private shake = 0;
   private screenW = 1280;
   private screenH = 720;
-  private flashes = new Map<number, number>();
   private audio!: AudioSource;
   private sounds = new Map<string, AudioClip>();
   private lastSound = 0;
@@ -137,7 +125,6 @@ export class GameBootstrap extends Component {
     this.screenW = view.getVisibleSize().width;
     this.screenH = view.getVisibleSize().height;
     this.stage = this.make("World", this.ui);
-    this.actors = this.make("Actors", this.stage);
     this.hud = this.make("HUD", this.ui);
     this.overlay = this.make("Overlay", this.ui);
     this.text(this.overlay, "正在点亮地牢…", 0, 0, 26);
@@ -147,22 +134,10 @@ export class GameBootstrap extends Component {
         if (!err) this.sounds.set(key, a);
       });
     try {
-      const [atlas, ground] = await Promise.all([
-        this.texture("atlas"),
-        this.texture("ground"),
-      ]);
-      for (const [key, r] of Object.entries(PIXELS)) {
-        const sf = new SpriteFrame();
-        sf.texture = atlas;
-        sf.rect = new Rect(r[0], r[1], r[2], r[3]);
-        this.frames.set(key, sf);
-      }
       // Each stage paints its own floor and landmarks; no shared dungeon backdrop.
       this.mapLayer = this.make("StageMap", this.stage);
       this.mapLayer.setSiblingIndex(0);
       this.mapGraphics = this.mapLayer.addComponent(Graphics);
-      this.hero = this.make("Hero", this.actors);
-      this.pixel(this.hero, "wizzard_m_idle_anim_f0", 3);
       this.fx = this.make("Effects", this.stage).addComponent(Graphics);
       this.painter = new BattlePainter(this.fx);
       this.bars = this.make("Bars", this.hud).addComponent(Graphics);
@@ -224,11 +199,6 @@ export class GameBootstrap extends Component {
       this.modTitle = this.text(this.modBanner, "", 0, 13, 24, "#fff2c3", 620);
       this.modSubtitle = this.text(this.modBanner, "", 0, -19, 16, "#c4e8e0", 620);
       this.modBanner.active = false;
-      this.prewarmEnemies();
-      for(let i=0;i<3;i++) {
-        const n=this.make("Health potion",this.stage);
-        this.pixel(n,"flask_red",3);n.active=false;this.potionPool.push(n);
-      }
       this.ready = true;
       this.showStart();
     } catch (e) {
@@ -247,33 +217,12 @@ export class GameBootstrap extends Component {
       window.addEventListener("blur", this.hide);
     if (DEBUG) (globalThis as any).__undead = this;
   }
-  private texture(key: string) {
-    return new Promise<Texture2D>((resolve, reject) =>
-      resources.load("pixel/" + key + "/texture", Texture2D, (err, t) => {
-        if (err) reject(err);
-        else {
-          t.setFilters(Texture2D.Filter.NEAREST, Texture2D.Filter.NEAREST);
-          resolve(t);
-        }
-      }),
-    );
-  }
   private make(name: string, parent: Node) {
     const n = new Node(name);
     n.layer = Layers.Enum.UI_2D;
     parent.addChild(n);
     n.addComponent(UITransform);
     return n;
-  }
-  private sprite(n: Node, sf: SpriteFrame, w: number, h: number) {
-    const s = n.getComponent(Sprite) || n.addComponent(Sprite);
-    s.spriteFrame = sf;
-    s.sizeMode = Sprite.SizeMode.CUSTOM;
-    n.getComponent(UITransform)!.setContentSize(w, h);
-  }
-  private pixel(n: Node, key: string, scale = 3) {
-    const sf = this.frames.get(key);
-    if (sf) this.sprite(n, sf, sf.rect.width * scale, sf.rect.height * scale);
   }
   private widgets = new MenuWidgets((name, parent) => this.make(name, parent));
   private text(...args: Parameters<MenuWidgets["text"]>) { return this.widgets.text(...args); }
@@ -409,26 +358,7 @@ export class GameBootstrap extends Component {
       this.progressNotice = "解锁成功 · " + unlocks.join(" / ");
 
   }
-  private prewarmEnemies() {
-    while(this.pool.length+this.units.size<MAX_ENEMIES) {
-      const n=this.make("Enemy",this.actors);
-      this.pixel(n,`${ENEMIES.minion.sprite}_anim_f0`,ENEMIES.minion.scale);
-      n.active=false;this.pool.push(n);
-    }
-  }
-  private releaseEnemy(id: number, n: Node) {
-    n.active=false;n.setPosition(0,0,0);n.setScale(1,1,1);n.angle=0;
-    const sprite=n.getComponent(Sprite);if(sprite)sprite.color=Color.WHITE;
-    this.units.delete(id);this.flashes.delete(id);this.pool.push(n);
-  }
-  private releasePotion(id: number, n: Node) {
-    n.active=false;n.setPosition(0,0,0);
-    n.getComponent(Sprite)!.color=Color.WHITE;
-    this.potions.delete(id);this.potionPool.push(n);
-  }
   restart() {
-    for(const [id,n] of this.units)this.releaseEnemy(id,n);
-    for(const [id,n] of this.potions)this.releasePotion(id,n);
     this.victoryTime = 0;
     this.victorySeen = false;
     this.confirmation = null;
@@ -458,7 +388,6 @@ export class GameBootstrap extends Component {
     this.feedback.reset();
     this.reveal = 0;
     this.lastSound = 0;
-    this.flashes.clear();
     this.shown = "";
     this.acc = 0;
     this.clearInput();
@@ -585,57 +514,7 @@ export class GameBootstrap extends Component {
       -this.camera.x + Math.sin(w.time * 73) * this.shake,
       -this.camera.y + Math.cos(w.time * 59) * this.shake,
     );
-    const anim = Math.floor(w.time * 9) % 4;
-    this.pixel(
-      this.hero,
-      `wizzard_m_${Math.hypot(w.move.x, w.move.y) > 0.1 ? "run" : "idle"}_anim_f${anim}`,
-    );
-    this.hero.setPosition(w.player.x * 48, w.player.y * 48 + 22);
-    if (w.move.x) this.hero.setScale(w.move.x < 0 ? -1 : 1, 1, 1);
-    this.hero.getComponent(Sprite)!.color =
-      w.invulnerable > 0 && Math.floor(w.time * 18) % 2
-        ? new Color(255, 130, 130)
-        : w.character === "alchemist"
-          ? new Color(166, 235, 202)
-          : w.character === "necromancer"
-            ? new Color(205, 178, 244)
-            : Color.WHITE;
-    const live = new Set(w.enemies.filter(e=>e.hp>0).map(e=>e.id));
-    // Recycle old wave first: a 75-enemy replacement must not allocate a second 75 nodes.
-    for(const [id,n] of this.units)if(!live.has(id))this.releaseEnemy(id,n);
-    const visiblePotions = w.potions.filter(p=>p.expires === undefined || p.expires > w.time);
-    for(const [id,n] of this.potions)
-      if(!visiblePotions.some(p=>p.id===id))this.releasePotion(id,n);
-    for (const p of visiblePotions) {
-      let n = this.potions.get(p.id);
-      if (!n) {
-        n = this.potionPool.pop()!;
-        if(!n)continue;
-        n.active=true;
-        this.potions.set(p.id, n);
-      }
-      n.setPosition(p.x * 48, p.y * 48 + 8);
-      const fading = p.expires !== undefined && p.expires - w.time < 5;
-      n.getComponent(Sprite)!.color = new Color(255,255,255,fading && Math.floor(w.time*6)%2 ? 100 : 255);
-    }
-    for (const e of w.enemies) {
-      if(e.hp<=0)continue;
-      let n = this.units.get(e.id);
-      if (!n) {
-        n = this.pool.pop()!;
-        if(!n)continue;
-        n.active = true;
-        this.units.set(e.id, n);
-      }
-      // Every stage draws enemies procedurally in BattlePainter; the sprite node stays empty.
-      n.getComponent(Sprite)!.enabled = false;
-      n.setPosition(e.x * 48, e.y * 48 + 20);
-      n.setScale(1, 1, 1);
-    }
-    const ordered = [this.hero, ...Array.from(this.units.values())].sort(
-      (a, b) => b.position.y - a.position.y,
-    );
-    ordered.forEach((n, i) => n.setSiblingIndex(i));
+    const visiblePotions = w.potions.filter(p => p.expires === undefined || p.expires > w.time);
     const events = w.drain();
     // Modification feedback takes priority over routine shots/hits.
     for (const e of events.slice().sort((a,b) => Number(!!b.final) - Number(!!a.final))) {
@@ -646,7 +525,6 @@ export class GameBootstrap extends Component {
       }
     }
     for (const e of events) {
-      if (e.type === "hit" && e.id) this.flashes.set(e.id, w.time + 0.09);
       if (e.type === "supply") {
         this.announcement.string = "装备已满级 · 金币 +10 · 自动恢复生命";
         this.announcementLife = 2.2;
@@ -704,7 +582,9 @@ export class GameBootstrap extends Component {
     this.modBanner.active = this.started && w.active && this.modLife > 0;
     const entrance = Math.min(1, (2.6 - this.modLife) / 0.22);
     this.modBanner.setScale(0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 0.92 + 0.08 * (1 - Math.pow(1 - entrance, 3)), 1);
-    this.painter.draw(w, dt, events, this.preferences.powerSaving);
+    // Keep the last frame while paused/menus are open instead of repainting an
+    // unchanged battlefield every frame.
+    if (w.active) this.painter.draw(w, dt, events, this.preferences.powerSaving);
     const b = this.bars;
     b.clear();
     this.rect(
@@ -741,14 +621,14 @@ export class GameBootstrap extends Component {
     this.weapons.string = hud.weapons;
     this.hint.string = hud.hint;
     this.novaLabel.string = hud.nova;
-    this.novaLabel.color = new Color(w.ultimate > 0 ? "#adbccc" : "#9df5d5");
+    this.novaLabel.color = ink(w.ultimate > 0 ? "#adbccc" : "#9df5d5");
     this.joy.clear();
     if (this.finger !== null) {
-      this.joy.strokeColor = new Color(220, 235, 240, 100);
+      this.joy.strokeColor = ink("#dcebf0", 100);
       this.joy.lineWidth = 3;
       this.joy.circle(this.origin.x, this.origin.y, 55);
       this.joy.stroke();
-      this.joy.fillColor = new Color(220, 235, 240, 100);
+      this.joy.fillColor = ink("#dcebf0", 100);
       this.joy.circle(
         this.origin.x + this.stick.x * 55,
         this.origin.y + this.stick.y * 55,
@@ -765,7 +645,7 @@ export class GameBootstrap extends Component {
     h: number,
     color: string,
   ) {
-    g.fillColor = new Color().fromHEX(color);
+    g.fillColor = ink(color);
     g.rect(x, y, w, h);
     g.fill();
   }

@@ -11,6 +11,7 @@ import {
 } from "./MoonGeometry";
 import { moonMap } from "./MoonMap";
 import { MoonDirector } from "./MoonDirector";
+import { encounterScoreTime } from "./EncounterPacing";
 export const moonEnemy = (k: Kind) =>
   [
     "thornrunner",
@@ -619,11 +620,11 @@ export class MoonSystem {
       if (this.encounter.suppressSpecial() || w.time - this.lastStart < 3)
         return;
       if (
-        w.time < 150 &&
+        encounterScoreTime(w.time) < 150 &&
         e.kind !==
-          (w.time < 75
+          (encounterScoreTime(w.time) < 75
             ? "crescentmantis"
-            : w.time < 115
+            : encounterScoreTime(w.time) < 115
               ? "vaultlynx"
               : "antlerprowler")
       )

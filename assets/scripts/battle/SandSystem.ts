@@ -11,6 +11,7 @@ import { ENEMIES, Kind, isElite } from "./SurvivalConfig";
 import { sandMap } from "./SandMap";
 import { crownEscape } from "./Escape";
 import { hordePressure } from "./HordePressure";
+import { encounterScoreTime } from "./EncounterPacing";
 export const SAND_KINDS: readonly Kind[] = [
   "sandworker",
   "sandlarva",
@@ -22,13 +23,17 @@ export const SAND_KINDS: readonly Kind[] = [
   "breakerelite",
 ];
 export const sandEnemy = (kind: Kind) => SAND_KINDS.includes(kind);
-export const sandRest = (t: number) =>
-  (t >= 167 && t < 175) ||
+export const sandRest = (time: number) => {
+  const t = encounterScoreTime(time);
+  return (t >= 167 && t < 175) ||
   (t >= 285 && t < 293) ||
   (t >= 337 && t < 345) ||
   (t >= 472 && t < 480);
+};
 export function sandHint(t: number) {
-  return sandRest(t)
+  const rest = sandRest(t);
+  t = encounterScoreTime(t);
+  return rest
     ? "暂歇 · 清理虫卵、回收经验"
     : t < 25
       ? "工虫死亡会分裂 · 清掉幼虫再回收"
@@ -234,9 +239,9 @@ export class SandSystem {
   }
   director(dt: number, position: (a: number) => Point, suppress = false) {
     const w = this.w,
-      t = w.time;
+      t = encounterScoreTime(w.time);
     this.clean();
-    if (sandRest(t) || t < w.reinforcementRestUntil) return;
+    if (sandRest(w.time) || w.time < w.reinforcementRestUntil) return;
     const elite = w.enemies.some((e) => e.hp > 0 && isElite(e.kind));
     this.nextGroup -= dt;
     if (this.nextGroup <= 0) {
@@ -248,9 +253,9 @@ export class SandSystem {
                 22,
                 5 + Math.floor(t / 50) + (elite ? 0 : pressure.extra),
               ),
-        a = mapApproach(15,t,this.mapWave,w.random());
+        a = mapApproach(2,w.time,this.mapWave,w.random());
       for (let i = 0; i < n; i++) {
-        const p = position(a + mapPackOffset(15,t,this.mapWave,i,n));
+        const p = position(a + mapPackOffset(2,w.time,this.mapWave,i,n));
         if (!this.legal(p) || distance(p, w.player) < 3) continue;
         const e = w.addEnemy("sandworker", p.x, p.y);
         if (!e) break;

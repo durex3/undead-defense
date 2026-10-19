@@ -1,0 +1,324 @@
+{
+  "scenes": [
+    {
+      "stage": 1,
+      "reduced": false,
+      "frame": 0,
+      "weapons": [
+        "blade",
+        "fire",
+        "water",
+        "lightning"
+      ],
+      "submissions": 293,
+      "vertices": 13609
+    },
+    {
+      "stage": 1,
+      "reduced": false,
+      "frame": 1,
+      "weapons": [
+        "blade",
+        "fire",
+        "water",
+        "lightning"
+      ],
+      "submissions": 291,
+      "vertices": 13673
+    },
+    {
+      "stage": 1,
+      "reduced": false,
+      "frame": 2,
+      "weapons": [
+        "blade",
+        "fire",
+        "water",
+        "lightning"
+      ],
+      "submissions": 291,
+      "vertices": 13650
+    },
+    {
+      "stage": 1,
+      "reduced": true,
+      "frame": 0,
+      "weapons": [
+        "blade",
+        "fire",
+        "water",
+        "lightning"
+      ],
+      "submissions": 286,
+      "vertices": 13264
+    },
+    {
+      "stage": 1,
+      "reduced": true,
+      "frame": 1,
+      "weapons": [
+        "blade",
+        "fire",
+        "water",
+        "lightning"
+      ],
+      "submissions": 284,
+      "vertices": 13328
+    },
+    {
+      "stage": 1,
+      "reduced": true,
+      "frame": 2,
+      "weapons": [
+        "blade",
+        "fire",
+        "water",
+        "lightning"
+      ],
+      "submissions": 284,
+      "vertices": 13305
+    },
+    {
+      "stage": 2,
+      "reduced": false,
+      "frame": 0,
+      "weapons": [
+        "frost",
+        "mine",
+        "bone",
+        "fire"
+      ],
+      "submissions": 235,
+      "vertices": 12716
+    },
+    {
+      "stage": 2,
+      "reduced": false,
+      "frame": 1,
+      "weapons": [
+        "frost",
+        "mine",
+        "bone",
+        "fire"
+      ],
+      "submissions": 233,
+      "vertices": 12773
+    },
+    {
+      "stage": 2,
+      "reduced": false,
+      "frame": 2,
+      "weapons": [
+        "frost",
+        "mine",
+        "bone",
+        "fire"
+      ],
+      "submissions": 233,
+      "vertices": 12760
+    },
+    {
+      "stage": 2,
+      "reduced": true,
+      "frame": 0,
+      "weapons": [
+        "frost",
+        "mine",
+        "bone",
+        "fire"
+      ],
+      "submissions": 232,
+      "vertices": 12354
+    },
+    {
+      "stage": 2,
+      "reduced": true,
+      "frame": 1,
+      "weapons": [
+        "frost",
+        "mine",
+        "bone",
+        "fire"
+      ],
+      "submissions": 230,
+      "vertices": 12411
+    },
+    {
+      "stage": 2,
+      "reduced": true,
+      "frame": 2,
+      "weapons": [
+        "frost",
+        "mine",
+        "bone",
+        "fire"
+      ],
+      "submissions": 230,
+      "vertices": 12398
+    },
+    {
+      "stage": 3,
+      "reduced": false,
+      "frame": 0,
+      "weapons": [
+        "lightning",
+        "void",
+        "blade",
+        "holy"
+      ],
+      "submissions": 248,
+      "vertices": 12329
+    },
+    {
+      "stage": 3,
+      "reduced": false,
+      "frame": 1,
+      "weapons": [
+        "lightning",
+        "void",
+        "blade",
+        "holy"
+      ],
+      "submissions": 238,
+      "vertices": 12011
+    },
+    {
+      "stage": 3,
+      "reduced": false,
+      "frame": 2,
+      "weapons": [
+        "lightning",
+        "void",
+        "blade",
+        "holy"
+      ],
+      "submissions": 240,
+      "vertices": 11988
+    },
+    {
+      "stage": 3,
+      "reduced": true,
+      "frame": 0,
+      "weapons": [
+        "lightning",
+        "void",
+        "blade",
+        "holy"
+      ],
+      "submissions": 241,
+      "vertices": 12197
+    },
+    {
+      "stage": 3,
+      "reduced": true,
+      "frame": 1,
+      "weapons": [
+        "lightning",
+        "void",
+        "blade",
+        "holy"
+      ],
+      "submissions": 231,
+      "vertices": 11879
+    },
+    {
+      "stage": 3,
+      "reduced": true,
+      "frame": 2,
+      "weapons": [
+        "lightning",
+        "void",
+        "blade",
+        "holy"
+      ],
+      "submissions": 233,
+      "vertices": 11856
+    },
+    {
+      "stage": 4,
+      "reduced": false,
+      "frame": 0,
+      "weapons": [
+        "ghost",
+        "frost",
+        "holy",
+        "water"
+      ],
+      "submissions": 251,
+      "vertices": 12111
+    },
+    {
+      "stage": 4,
+      "reduced": false,
+      "frame": 1,
+      "weapons": [
+        "ghost",
+        "frost",
+        "holy",
+        "water"
+      ],
+      "submissions": 253,
+      "vertices": 12186
+    },
+    {
+      "stage": 4,
+      "reduced": false,
+      "frame": 2,
+      "weapons": [
+        "ghost",
+        "frost",
+        "holy",
+        "water"
+      ],
+      "submissions": 255,
+      "vertices": 12178
+    },
+    {
+      "stage": 4,
+      "reduced": true,
+      "frame": 0,
+      "weapons": [
+        "ghost",
+        "frost",
+        "holy",
+        "water"
+      ],
+      "submissions": 247,
+      "vertices": 11934
+    },
+    {
+      "stage": 4,
+      "reduced": true,
+      "frame": 1,
+      "weapons": [
+        "ghost",
+        "frost",
+        "holy",
+        "water"
+      ],
+      "submissions": 249,
+      "vertices": 12009
+    },
+    {
+      "stage": 4,
+      "reduced": true,
+      "frame": 2,
+      "weapons": [
+        "ghost",
+        "frost",
+        "holy",
+        "water"
+      ],
+      "submissions": 251,
+      "vertices": 12001
+    }
+  ],
+  "stress": {
+    "enemies": 100,
+    "weapons": 4,
+    "hazards": 2,
+    "vertices": 24983,
+    "submissions": 744
+  },
+  "violations": []
+}

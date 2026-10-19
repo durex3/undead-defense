@@ -6,6 +6,7 @@ import { SandSystem, sandEnemy } from "./SandSystem";
 import { SiegeSystem, siegeEnemy, siegeProjectileFactor } from "./SiegeSystem";
 import {BOSS_REINFORCEMENT_XP} from "./HordePressure";
 import {experienceRequired} from "./ExperienceCurve";
+import {MAX_WEAPON_SLOTS} from "./EncounterPacing";
 import { UpgradeSystem } from "./UpgradeSystem";
 import { STAGES } from "./StageRules";
 import { CHARACTERS, CharacterId, StageId } from "./ProgressionConfig";
@@ -83,8 +84,9 @@ export class SurvivalWorld {
     seed = 12345,
     public character: CharacterId = "ranger",
     public stageId: StageId = 1,
-    public weaponSlots = 6,
+    public weaponSlots = MAX_WEAPON_SLOTS,
   ) {
+    this.weaponSlots = Math.max(1, Math.min(MAX_WEAPON_SLOTS, Math.floor(weaponSlots) || MAX_WEAPON_SLOTS));
     if(stageId===2||stageId===3||stageId===4)this.player={x:0,y:-8};
     this.seed = seed;
     this.skills.blade = 0;

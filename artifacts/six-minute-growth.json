@@ -1,0 +1,909 @@
+{
+  "scope": "Invulnerable automated XP collector. No claims about human survival, real win rate, rendering or phone performance.",
+  "result": [
+    {
+      "stage": 1,
+      "seed": 19,
+      "primary": "blade",
+      "firstEight": 110,
+      "peak": 100,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 3,
+          "skills": {
+            "blade": 3,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 22
+        },
+        {
+          "seconds": 120,
+          "level": 10,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 2,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 148
+        },
+        {
+          "seconds": 180,
+          "level": 19,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 3,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 466
+        },
+        {
+          "seconds": 240,
+          "level": 29,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 5
+          },
+          "kills": 1070
+        },
+        {
+          "seconds": 300,
+          "level": 37,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 1828
+        },
+        {
+          "seconds": 360,
+          "level": 49,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 3241
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    },
+    {
+      "stage": 1,
+      "seed": 73,
+      "primary": "water",
+      "firstEight": 47,
+      "peak": 100,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 9,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 1
+          },
+          "kills": 123
+        },
+        {
+          "seconds": 120,
+          "level": 18,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 2,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 368
+        },
+        {
+          "seconds": 180,
+          "level": 23,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 1,
+            "lightning": 6,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 642
+        },
+        {
+          "seconds": 240,
+          "level": 32,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 8,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 1292
+        },
+        {
+          "seconds": 300,
+          "level": 40,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 8,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 2124
+        },
+        {
+          "seconds": 360,
+          "level": 50,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 8,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 3452
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    },
+    {
+      "stage": 2,
+      "seed": 19,
+      "primary": "blade",
+      "firstEight": 242,
+      "peak": 100,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 2,
+          "skills": {
+            "blade": 1,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 1,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 22
+        },
+        {
+          "seconds": 120,
+          "level": 3,
+          "skills": {
+            "blade": 2,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 1,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 59
+        },
+        {
+          "seconds": 180,
+          "level": 6,
+          "skills": {
+            "blade": 4,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 2,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 147
+        },
+        {
+          "seconds": 240,
+          "level": 10,
+          "skills": {
+            "blade": 7,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 3,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 346
+        },
+        {
+          "seconds": 300,
+          "level": 15,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 7,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 729
+        },
+        {
+          "seconds": 360,
+          "level": 26,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 8,
+            "bone": 0,
+            "mine": 0,
+            "void": 2,
+            "holy": 0
+          },
+          "kills": 2065
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    },
+    {
+      "stage": 2,
+      "seed": 73,
+      "primary": "water",
+      "firstEight": 61,
+      "peak": 100,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 9,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 7,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 2,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 374
+        },
+        {
+          "seconds": 120,
+          "level": 18,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 2,
+            "ghost": 8,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 1066
+        },
+        {
+          "seconds": 180,
+          "level": 24,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 8,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 1946
+        },
+        {
+          "seconds": 240,
+          "level": 33,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 8,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 3527
+        },
+        {
+          "seconds": 300,
+          "level": 40,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 8,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 5009
+        },
+        {
+          "seconds": 360,
+          "level": 46,
+          "skills": {
+            "blade": 0,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 8,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 8
+          },
+          "kills": 6806
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    },
+    {
+      "stage": 3,
+      "seed": 19,
+      "primary": "blade",
+      "firstEight": 53,
+      "peak": 40,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 11,
+          "skills": {
+            "blade": 8,
+            "fire": 1,
+            "water": 0,
+            "frost": 0,
+            "lightning": 2,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 124
+        },
+        {
+          "seconds": 120,
+          "level": 18,
+          "skills": {
+            "blade": 8,
+            "fire": 2,
+            "water": 0,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 270
+        },
+        {
+          "seconds": 180,
+          "level": 23,
+          "skills": {
+            "blade": 8,
+            "fire": 7,
+            "water": 0,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 444
+        },
+        {
+          "seconds": 240,
+          "level": 28,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 0,
+            "frost": 4,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 647
+        },
+        {
+          "seconds": 300,
+          "level": 32,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 0,
+            "frost": 8,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 862
+        },
+        {
+          "seconds": 360,
+          "level": 38,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 0,
+            "frost": 8,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 1268
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    },
+    {
+      "stage": 3,
+      "seed": 73,
+      "primary": "water",
+      "firstEight": 33,
+      "peak": 37,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 11,
+          "skills": {
+            "blade": 0,
+            "fire": 3,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 121
+        },
+        {
+          "seconds": 120,
+          "level": 18,
+          "skills": {
+            "blade": 0,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 2,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 274
+        },
+        {
+          "seconds": 180,
+          "level": 23,
+          "skills": {
+            "blade": 0,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 6,
+            "ghost": 0,
+            "bone": 1,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 446
+        },
+        {
+          "seconds": 240,
+          "level": 28,
+          "skills": {
+            "blade": 0,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 4,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 657
+        },
+        {
+          "seconds": 300,
+          "level": 32,
+          "skills": {
+            "blade": 0,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 889
+        },
+        {
+          "seconds": 360,
+          "level": 38,
+          "skills": {
+            "blade": 0,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 1292
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    },
+    {
+      "stage": 4,
+      "seed": 19,
+      "primary": "blade",
+      "firstEight": 39,
+      "peak": 36,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 12,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 4,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 122
+        },
+        {
+          "seconds": 120,
+          "level": 19,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 3,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 276
+        },
+        {
+          "seconds": 180,
+          "level": 24,
+          "skills": {
+            "blade": 8,
+            "fire": 0,
+            "water": 0,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 418
+        },
+        {
+          "seconds": 240,
+          "level": 29,
+          "skills": {
+            "blade": 8,
+            "fire": 5,
+            "water": 0,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 652
+        },
+        {
+          "seconds": 300,
+          "level": 33,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 0,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 885
+        },
+        {
+          "seconds": 360,
+          "level": 39,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 0,
+            "frost": 0,
+            "lightning": 8,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 1283
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    },
+    {
+      "stage": 4,
+      "seed": 73,
+      "primary": "water",
+      "firstEight": 31,
+      "peak": 34,
+      "snapshots": [
+        {
+          "seconds": 60,
+          "level": 12,
+          "skills": {
+            "blade": 4,
+            "fire": 0,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 123
+        },
+        {
+          "seconds": 120,
+          "level": 19,
+          "skills": {
+            "blade": 8,
+            "fire": 3,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 276
+        },
+        {
+          "seconds": 180,
+          "level": 24,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 0,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 438
+        },
+        {
+          "seconds": 240,
+          "level": 29,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 5,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 647
+        },
+        {
+          "seconds": 300,
+          "level": 34,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 906
+        },
+        {
+          "seconds": 360,
+          "level": 40,
+          "skills": {
+            "blade": 8,
+            "fire": 8,
+            "water": 8,
+            "frost": 0,
+            "lightning": 0,
+            "ghost": 0,
+            "bone": 8,
+            "mine": 0,
+            "void": 0,
+            "holy": 0
+          },
+          "kills": 1287
+        }
+      ],
+      "bossPresent": true,
+      "weapons": 4
+    }
+  ]
+}

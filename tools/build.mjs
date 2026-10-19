@@ -4,8 +4,15 @@ import path from "node:path";
 const platform = process.argv[2] || "web-mobile";
 if (!["web-mobile", "wechatgame"].includes(platform))
   throw Error("Unsupported platform");
-const creator =
-  "/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator";
+const candidates = [
+  process.env.COCOS_CREATOR,
+  path.resolve("..", ".local-tools", "CocosCreator", "3.8.8", "CocosCreator.exe"),
+  "C:/ProgramData/cocos/editors/Creator/3.8.8/CocosCreator.exe",
+  "C:/Cocos/Creator/3.8.8/CocosCreator.exe",
+  "/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator",
+].filter(Boolean);
+const creator = candidates.find((file) => fs.existsSync(file));
+if (!creator) throw Error("Cocos Creator 3.8.8 not found. Set COCOS_CREATOR to the executable path.");
 const scene = JSON.parse(
   fs.readFileSync("assets/scenes/Main.scene.meta", "utf8"),
 ).uuid;
@@ -19,15 +26,25 @@ const child = spawn(
     "--build",
     `platform=${platform};debug=${platform === "web-mobile"};startScene=${scene};scenes=${scene};packages=${JSON.stringify({ [platform]: { orientation: platform === "wechatgame" ? "landscape" : "auto" } })}`,
   ],
-  { stdio: ["ignore", "pipe", "pipe"] },
+  { stdio: ["ignore", "pipe", "pipe"], windowsHide: true },
 );
-child.stdout.pipe(log);
-child.stderr.pipe(log);
-child.on("exit", (code) => {
+child.stdout.pipe(log, { end: false });
+child.stderr.pipe(log, { end: false });
+child.on("error", (error) => {
+  log.end(String(error));
+  console.error(`Cannot launch Creator: ${error.message}`);
+  process.exitCode = 1;
+});
+child.on("close", (code) => {
   log.end();
   const output = path.resolve("build", platform);
   if ((code === 36 || code === 0) && platform === "web-mobile") {
     const index = path.join(output, "index.html");
+    if (!fs.existsSync(index)) {
+      console.error(`Web build is missing ${index}; inspect temp/build-logs/${platform}.log`);
+      process.exitCode = 1;
+      return;
+    }
     const html = fs
       .readFileSync(index, "utf8")
       .replace(/<title>[^<]*<\/title>/, "<title>余烬幸存者</title>")

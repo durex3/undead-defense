@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { SurvivalWorld } from "../temp/tests/battle/SurvivalWorld.mjs";
+import { STAGES } from "../temp/tests/battle/StageRules.mjs";
 import { stepEnemies, stepHazards } from "../temp/tests/battle/EnemySystem.mjs";
 import { moonMap, MOON_BASES } from "../temp/tests/battle/MoonMap.mjs";
 import {
@@ -384,7 +385,7 @@ test("boss reinforcements give half experience, no gold or potion; elite recover
   w.hit(e, 1e9, "blade");
   assert.equal(w.gold, 0);
   assert.equal(w.potions.length, 0);
-  assert.equal(w.gems[0].value, ENEMIES.thornrunner.xp * 0.85 * 0.5);
+  assert.equal(w.gems[0].value, ENEMIES.thornrunner.xp * STAGES[4].xp * 0.5);
   const z = world(),
     v = enemy(z, "moonreaver");
   v.state = "recover";

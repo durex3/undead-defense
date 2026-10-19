@@ -20,10 +20,10 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
   blade: [
     {
       id: "orbit",
-      name: "环绕护身",
-      short: "环绕",
-      effect: "短暂绕身刀阵，清理贴身敌人",
-      cost: "失去远程攻击；每轮刀阵有空档",
+      name: "扩阵巡刃",
+      short: "扩阵",
+      effect: "环绕半径从1.9扩大到2.7，覆盖更外侧追兵",
+      cost: "单刀伤害−20%；脚边仍需走位",
       excludes: "hunt",
       glyph: "◎",
     },
@@ -31,8 +31,8 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
       id: "hunt",
       name: "追猎穿刺",
       short: "追猎",
-      effect: "追踪精英与远程，最多穿过2人",
-      cost: "单次伤害−15%；转向速度有限",
+      effect: "刀刃离阵远射，追踪精英与远程，最多穿过2人",
+      cost: "失去绕身刀阵；伤害−15%；转向速度有限",
       excludes: "orbit",
       glyph: "➤",
     },
@@ -40,7 +40,7 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
       id: "return",
       name: "往返切线",
       short: "往返",
-      effect: "刀刃折返；刀阵向外扩张后回收",
+      effect: "刀阵先扩张再收拢；追猎刀则沿锁定路线折返",
       cost: "单次伤害−20%；回程需安排走位",
       glyph: "↶",
     },
@@ -172,6 +172,11 @@ export interface WeaponStats {
   range: number;
   mods: readonly string[];
 }
+/** Evenly spaced independent knives maintain a steady orbit. */
+export function orbitProgress(q: number) {
+  const t=Math.max(0,Math.min(1,q));
+  return t;
+}
 export function weaponStats(
   w: SurvivalWorld,
   skill: Skill,
@@ -182,12 +187,12 @@ export function weaponStats(
     m = [...w.mods[skill]];
   const data = {
     blade: {
-      damage: [16, 20, 20, 20, 26, 26, 32, 32],
-      count: [2, 2, 3, 3, 3, 4, 4, 4],
+      damage: [8, 10, 10, 10, 13, 13, 16, 16],
+      count: [4, 4, 5, 5, 5, 6, 6, 6],
       cooldown: [1.6, 1.6, 1.6, 1.4, 1.4, 1.4, 1.4, 1.2],
       radius: 0.21,
       range: 7,
-      duration: 1.1,
+      duration: 0.95,
     },
     fire: {
       damage: [30, 38, 38, 38, 48, 48, 60, 60],
@@ -221,15 +226,15 @@ export function weaponStats(
     duration:
       data.duration *
       (["water", "fire", "mine", "void", "frost", "bone"].includes(skill) ||
-      m.includes("orbit")
+      (skill === "blade" && !m.includes("hunt"))
         ? a.duration
         : 1),
     range: data.range,
     mods: m,
   };
   if (skill === "blade") {
-    if (m.includes("orbit"))
-      s.duration = Math.min(s.duration, s.cooldown * 0.9);
+    if (!m.includes("hunt")) s.duration = s.cooldown;
+    if (m.includes("orbit")) s.damage *= 0.8;
     if (m.includes("hunt")) s.damage *= 0.85;
     if (m.includes("return")) s.damage *= 0.8;
     if (m.includes("shards")) s.damage *= 0.85;

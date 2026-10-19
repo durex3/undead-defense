@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { SurvivalWorld } from "../temp/tests/battle/SurvivalWorld.mjs";
 import { stepEnemies, stepHazards } from "../temp/tests/battle/EnemySystem.mjs";
 import { bossExposed } from "../temp/tests/battle/BossSystem.mjs";
-import { encounterBeat } from "../temp/tests/battle/EncounterPacing.mjs";
+import { encounterBeat, encounterRealTime } from "../temp/tests/battle/EncounterPacing.mjs";
 function setup(x = 3) {
   const w = new SurvivalWorld();
   w.time = 250;
@@ -22,12 +22,12 @@ function tick(w, n) {
   }
 }
 test('mid-run collection breaks are shorter and harvest beats keep spawning packs',()=>{
- assert.equal(encounterBeat(170).rest,true);
- assert.equal(encounterBeat(174).rest,false);
- assert.equal(encounterBeat(338).rest,true);
- assert.equal(encounterBeat(342).rest,false);
- assert.equal(encounterBeat(462).rest,false);
- assert.equal(encounterBeat(470).rest,true);
+ assert.equal(encounterBeat(encounterRealTime(170)).rest,true);
+ assert.equal(encounterBeat(encounterRealTime(174)).rest,false);
+ assert.equal(encounterBeat(encounterRealTime(338)).rest,true);
+ assert.equal(encounterBeat(encounterRealTime(342)).rest,false);
+ assert.equal(encounterBeat(encounterRealTime(462)).rest,false);
+ assert.equal(encounterBeat(encounterRealTime(470)).rest,true);
  // Stage one delegates to the siege director, which always mixes a shield/bow pack.
  for(const time of [240,260]){
   const w=new SurvivalWorld(19,'ranger',1);w.time=time;w.director.elites=[true,true];

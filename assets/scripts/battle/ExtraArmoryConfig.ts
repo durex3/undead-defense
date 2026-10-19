@@ -71,7 +71,7 @@ export const EXTRA_MODS: Record<ExtraSkill, readonly WeaponMod[]> = {
       "雷暴",
       "≋",
       "链式跳跃改为依次定点落雷，每点半径0.9",
-      "每击伤害−45%；锁定后不追踪",
+      "每击伤害−30%；锁定后不追踪",
       "relay",
     ),
     mod(
@@ -115,8 +115,8 @@ export const EXTRA_MODS: Record<ExtraSkill, readonly WeaponMod[]> = {
       "盘魂追击",
       "盘魂",
       "◎",
-      "命中后围绕锁定点盘旋0.9秒，追加3次35%伤害",
-      "主击伤害−20%；盘旋不追随目标",
+      "第二爪改为锁点盘旋0.9秒，追加3次单爪70%伤害",
+      "首次爪击与盘旋伤害−20%；盘旋不追随目标",
     ),
     mod(
       "reap",
@@ -288,10 +288,10 @@ export function extraBase(skill: ExtraSkill, l: number) {
     cached = baseCache.get(key);
   if (cached) return cached;
   const bases = {
-    frost: [16, 4.2, 3.2, 1, 7, 1.2],
-    lightning: [23, 2.7, 0.9, 2, 11, 0.4],
-    ghost: [24, 3.4, 0.3, 2, 12, 3],
-    bone: [26, 2.3, 0.24, 1, 11, 1.2],
+    frost: [24, 3.6, 3.2, 1, 7, 1.2],
+    lightning: [30, 2.3, 0.9, 3, 11, 0.4],
+    ghost: [16, 3.0, 0.3, 2, 12, 3],
+    bone: [32, 2.6, 0.24, 1, 11, 1.2],
     mine: [35, 3.8, 1.8, 2, 8, 6],
     void: [6, 5.4, 2.2, 1, 9, 2.4],
     holy: [40, 3.6, 1.2, 1, 12, 0.55],
@@ -335,7 +335,7 @@ export function applyExtraMods(skill: ExtraSkill, s: WeaponStats) {
       s.damage *= 0.8;
       s.count += 2;
     }
-    scale("storm", 0.55);
+    scale("storm", 0.7);
     scale("echo", 0.85);
     scale("bridge", 0.8);
   }
@@ -402,12 +402,12 @@ export function applyExtraMods(skill: ExtraSkill, s: WeaponStats) {
 }
 export const EXTRA_RULES: Record<ExtraSkill, string> = {
   frost:
-    "冰环每目标每段一次；普通怪冻结0.5秒，精英0.25秒且间隔3秒，首领与冲锋不冻结。持续只影响减速时长。",
+    "结霜0.1秒后爆冰一次，残纹不补伤；普通冻结0.75秒、精英0.25秒，间隔3秒；首领与冲锋不受控。持续只延长减速。",
   lightning:
     "数量增加每轮落雷/链节总数；每轮链不重复命中；回击与连桥不递归传导。范围强化跳距与雷击范围。持续属性不适用。",
   ghost:
-    "数量增加伙伴；出击与回收合计最多3秒，盘旋最多0.9秒；归途锁定一次终点。持续属性不延长追踪时间。",
-  bone: "每矛同目标只命中一次；数量增加主矛；范围增加矛宽与骨棘宽；持续只延长骨棘，不延长射程。",
+    "伙伴驻队、出击两爪后回收；目标失效最多重索敌一次，任务最多3秒。盘魂替换第二爪；归途锁定一次终点。",
+  bone: "选密集直线蓄力0.2秒后贯穿，每矛同目标一次；数量增加射线，范围增加矛宽；持续只延长骨棘。",
   mine: "地雷武装后等待敌人触发；未触发到期消失，不免费爆炸。数量增加雷数；持续增加等待寿命。复爆不递归。",
   void: "每0.4秒一跳，同源重叠只取最高伤害；终结爆发同源同拍不叠伤。只拉普通追兵，不拉精英、首领或冲锋怪。",
   holy: "先预示固定落点再落剑；数量增加本轮圣剑总数；十字交叉处只命中一次。持续属性不延长预警或增加落剑次数。",

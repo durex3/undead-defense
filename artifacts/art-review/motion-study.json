@@ -1,0 +1,7 @@
+{
+  "frames": 36,
+  "width": 900,
+  "frameHeight": 410,
+  "mode": "controlled offline poses; no simulation recording",
+  "source": "runtime TypeScript Graphics painters"
+}

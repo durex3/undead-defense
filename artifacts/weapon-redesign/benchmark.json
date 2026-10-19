@@ -1,0 +1,3245 @@
+{
+  "scope": "30 seconds isolated armory, static high-HP minions except moving scene, ranger, no passives/mods, no enemy AI/contact. No survival/boss/balance certification.",
+  "rows": [
+    {
+      "skill": "blade",
+      "level": 1,
+      "scene": "single",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 8.8,
+        "count": 4,
+        "cooldown": 1.6,
+        "radius": 0.21,
+        "duration": 1.6,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 1,
+      "scene": "moving",
+      "damage": 105.59999999999998,
+      "dps": 3.519999999999999,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 8.8,
+        "count": 4,
+        "cooldown": 1.6,
+        "radius": 0.21,
+        "duration": 1.6,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 1,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 8.8,
+        "count": 4,
+        "cooldown": 1.6,
+        "radius": 0.21,
+        "duration": 1.6,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 1,
+      "scene": "line",
+      "damage": 1337.5999999999963,
+      "dps": 44.586666666666545,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 8.8,
+        "count": 4,
+        "cooldown": 1.6,
+        "radius": 0.21,
+        "duration": 1.6,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 8.8,
+        "count": 4,
+        "cooldown": 1.6,
+        "radius": 0.21,
+        "duration": 1.6,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 5315.20000000006,
+      "dps": 177.17333333333534,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 8.8,
+        "count": 4,
+        "cooldown": 1.6,
+        "radius": 0.21,
+        "duration": 1.6,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 1,
+      "scene": "single",
+      "damage": 396,
+      "dps": 13.2,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 1.4,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 1,
+      "scene": "moving",
+      "damage": 396,
+      "dps": 13.2,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 1.4,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 1,
+      "scene": "spread",
+      "damage": 396,
+      "dps": 13.2,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 1.4,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 1,
+      "scene": "line",
+      "damage": 792,
+      "dps": 26.4,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 1.4,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 3168,
+      "dps": 105.6,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 1.4,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 1188,
+      "dps": 39.6,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 1.4,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 1,
+      "scene": "single",
+      "damage": 569.7999999999998,
+      "dps": 18.99333333333333,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 7.700000000000001,
+        "count": 1,
+        "cooldown": 3.2,
+        "radius": 1.5,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 1,
+      "scene": "moving",
+      "damage": 77.00000000000001,
+      "dps": 2.5666666666666673,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 7.700000000000001,
+        "count": 1,
+        "cooldown": 3.2,
+        "radius": 1.5,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 1,
+      "scene": "spread",
+      "damage": 569.7999999999998,
+      "dps": 18.99333333333333,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 7.700000000000001,
+        "count": 1,
+        "cooldown": 3.2,
+        "radius": 1.5,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 1,
+      "scene": "line",
+      "damage": 2848.9999999999895,
+      "dps": 94.96666666666631,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 7.700000000000001,
+        "count": 1,
+        "cooldown": 3.2,
+        "radius": 1.5,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 4558.39999999995,
+      "dps": 151.94666666666498,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 7.700000000000001,
+        "count": 1,
+        "cooldown": 3.2,
+        "radius": 1.5,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 1709.4000000000065,
+      "dps": 56.98000000000022,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 7.700000000000001,
+        "count": 1,
+        "cooldown": 3.2,
+        "radius": 1.5,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 1,
+      "scene": "single",
+      "damage": 237.60000000000002,
+      "dps": 7.920000000000001,
+      "freezeSeconds": 6.833333333333314,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 26.400000000000002,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 3.2,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 1,
+      "scene": "moving",
+      "damage": 105.60000000000001,
+      "dps": 3.5200000000000005,
+      "freezeSeconds": 3.049999999999994,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 26.400000000000002,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 3.2,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 1,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 26.400000000000002,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 3.2,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 1,
+      "scene": "line",
+      "damage": 712.7999999999996,
+      "dps": 23.759999999999987,
+      "freezeSeconds": 20.500000000000156,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 26.400000000000002,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 3.2,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 1900.8000000000025,
+      "dps": 63.360000000000085,
+      "freezeSeconds": 54.666666666666515,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 26.400000000000002,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 3.2,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 1900.8000000000025,
+      "dps": 63.360000000000085,
+      "freezeSeconds": 54.666666666666515,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 26.400000000000002,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 3.2,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 1,
+      "scene": "single",
+      "damage": 429,
+      "dps": 14.3,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 3,
+        "cooldown": 2.3,
+        "radius": 0.9,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 1,
+      "scene": "moving",
+      "damage": 429,
+      "dps": 14.3,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 3,
+        "cooldown": 2.3,
+        "radius": 0.9,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 1,
+      "scene": "spread",
+      "damage": 429,
+      "dps": 14.3,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 3,
+        "cooldown": 2.3,
+        "radius": 0.9,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 1,
+      "scene": "line",
+      "damage": 1716,
+      "dps": 57.2,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 3,
+        "cooldown": 2.3,
+        "radius": 0.9,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 3432,
+      "dps": 114.4,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 3,
+        "cooldown": 2.3,
+        "radius": 0.9,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 1287,
+      "dps": 42.9,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 33,
+        "count": 3,
+        "cooldown": 2.3,
+        "radius": 0.9,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 1,
+      "scene": "single",
+      "damage": 704.0000000000005,
+      "dps": 23.466666666666683,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 17.6,
+        "count": 2,
+        "cooldown": 3,
+        "radius": 0.3,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 1,
+      "scene": "moving",
+      "damage": 704.0000000000005,
+      "dps": 23.466666666666683,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 17.6,
+        "count": 2,
+        "cooldown": 3,
+        "radius": 0.3,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 1,
+      "scene": "spread",
+      "damage": 704.0000000000005,
+      "dps": 23.466666666666683,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 17.6,
+        "count": 2,
+        "cooldown": 3,
+        "radius": 0.3,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 1,
+      "scene": "line",
+      "damage": 704.0000000000005,
+      "dps": 23.466666666666683,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 17.6,
+        "count": 2,
+        "cooldown": 3,
+        "radius": 0.3,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 704.0000000000005,
+      "dps": 23.466666666666683,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 17.6,
+        "count": 2,
+        "cooldown": 3,
+        "radius": 0.3,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 704.0000000000005,
+      "dps": 23.466666666666683,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 17.6,
+        "count": 2,
+        "cooldown": 3,
+        "radius": 0.3,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 1,
+      "scene": "single",
+      "damage": 422.3999999999999,
+      "dps": 14.079999999999997,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 35.2,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 0.24,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 1,
+      "scene": "moving",
+      "damage": 211.2,
+      "dps": 7.04,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 35.2,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 0.24,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 1,
+      "scene": "spread",
+      "damage": 422.3999999999999,
+      "dps": 14.079999999999997,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 35.2,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 0.24,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 1,
+      "scene": "line",
+      "damage": 3379.199999999995,
+      "dps": 112.63999999999983,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 35.2,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 0.24,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 3379.199999999995,
+      "dps": 112.63999999999983,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 35.2,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 0.24,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 422.3999999999999,
+      "dps": 14.079999999999997,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 35.2,
+        "count": 1,
+        "cooldown": 2.6,
+        "radius": 0.24,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 1,
+      "scene": "single",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 38.5,
+        "count": 2,
+        "cooldown": 3.8,
+        "radius": 1.8,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 1,
+      "scene": "moving",
+      "damage": 308,
+      "dps": 10.266666666666667,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 38.5,
+        "count": 2,
+        "cooldown": 3.8,
+        "radius": 1.8,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 1,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 38.5,
+        "count": 2,
+        "cooldown": 3.8,
+        "radius": 1.8,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 1,
+      "scene": "line",
+      "damage": 924,
+      "dps": 30.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 38.5,
+        "count": 2,
+        "cooldown": 3.8,
+        "radius": 1.8,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 38.5,
+        "count": 2,
+        "cooldown": 3.8,
+        "radius": 1.8,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 1848,
+      "dps": 61.6,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 38.5,
+        "count": 2,
+        "cooldown": 3.8,
+        "radius": 1.8,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 1,
+      "scene": "single",
+      "damage": 356.40000000000015,
+      "dps": 11.880000000000004,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 6.6000000000000005,
+        "count": 1,
+        "cooldown": 5.4,
+        "radius": 2.2,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 1,
+      "scene": "moving",
+      "damage": 112.19999999999996,
+      "dps": 3.739999999999999,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 6.6000000000000005,
+        "count": 1,
+        "cooldown": 5.4,
+        "radius": 2.2,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 1,
+      "scene": "spread",
+      "damage": 356.40000000000015,
+      "dps": 11.880000000000004,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 6.6000000000000005,
+        "count": 1,
+        "cooldown": 5.4,
+        "radius": 2.2,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 1,
+      "scene": "line",
+      "damage": 1425.5999999999979,
+      "dps": 47.51999999999993,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 6.6000000000000005,
+        "count": 1,
+        "cooldown": 5.4,
+        "radius": 2.2,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 2851.199999999987,
+      "dps": 95.03999999999957,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 6.6000000000000005,
+        "count": 1,
+        "cooldown": 5.4,
+        "radius": 2.2,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 1366.1999999999985,
+      "dps": 45.53999999999995,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 6.6000000000000005,
+        "count": 1,
+        "cooldown": 5.4,
+        "radius": 2.2,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 1,
+      "scene": "single",
+      "damage": 396,
+      "dps": 13.2,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 44,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 1.2,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 1,
+      "scene": "moving",
+      "damage": 396,
+      "dps": 13.2,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 44,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 1.2,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 1,
+      "scene": "spread",
+      "damage": 396,
+      "dps": 13.2,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 44,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 1.2,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 1,
+      "scene": "line",
+      "damage": 792,
+      "dps": 26.4,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 44,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 1.2,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 1,
+      "scene": "cluster",
+      "damage": 3168,
+      "dps": 105.6,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 44,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 1.2,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 1,
+      "scene": "surrounded",
+      "damage": 1188,
+      "dps": 39.6,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 44,
+        "count": 1,
+        "cooldown": 3.6,
+        "radius": 1.2,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 4,
+      "scene": "single",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 5,
+      "stats": {
+        "damage": 11,
+        "count": 5,
+        "cooldown": 1.4,
+        "radius": 0.21,
+        "duration": 1.4,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 4,
+      "scene": "moving",
+      "damage": 242,
+      "dps": 8.066666666666666,
+      "freezeSeconds": 0,
+      "maxEntities": 5,
+      "stats": {
+        "damage": 11,
+        "count": 5,
+        "cooldown": 1.4,
+        "radius": 0.21,
+        "duration": 1.4,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 4,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 5,
+      "stats": {
+        "damage": 11,
+        "count": 5,
+        "cooldown": 1.4,
+        "radius": 0.21,
+        "duration": 1.4,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 4,
+      "scene": "line",
+      "damage": 2376,
+      "dps": 79.2,
+      "freezeSeconds": 0,
+      "maxEntities": 5,
+      "stats": {
+        "damage": 11,
+        "count": 5,
+        "cooldown": 1.4,
+        "radius": 0.21,
+        "duration": 1.4,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 5,
+      "stats": {
+        "damage": 11,
+        "count": 5,
+        "cooldown": 1.4,
+        "radius": 0.21,
+        "duration": 1.4,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 9482,
+      "dps": 316.06666666666666,
+      "freezeSeconds": 0,
+      "maxEntities": 5,
+      "stats": {
+        "damage": 11,
+        "count": 5,
+        "cooldown": 1.4,
+        "radius": 0.21,
+        "duration": 1.4,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 4,
+      "scene": "single",
+      "damage": 1170.3999999999994,
+      "dps": 39.013333333333314,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 41.800000000000004,
+        "count": 2,
+        "cooldown": 2.2,
+        "radius": 1.5999999999999999,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 4,
+      "scene": "moving",
+      "damage": 1170.3999999999994,
+      "dps": 39.013333333333314,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 41.800000000000004,
+        "count": 2,
+        "cooldown": 2.2,
+        "radius": 1.5999999999999999,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 4,
+      "scene": "spread",
+      "damage": 1170.3999999999994,
+      "dps": 39.013333333333314,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 41.800000000000004,
+        "count": 2,
+        "cooldown": 2.2,
+        "radius": 1.5999999999999999,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 4,
+      "scene": "line",
+      "damage": 2340.7999999999997,
+      "dps": 78.02666666666666,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 41.800000000000004,
+        "count": 2,
+        "cooldown": 2.2,
+        "radius": 1.5999999999999999,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 9363.200000000004,
+      "dps": 312.1066666666668,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 41.800000000000004,
+        "count": 2,
+        "cooldown": 2.2,
+        "radius": 1.5999999999999999,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 3511.200000000005,
+      "dps": 117.04000000000016,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 41.800000000000004,
+        "count": 2,
+        "cooldown": 2.2,
+        "radius": 1.5999999999999999,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 4,
+      "scene": "single",
+      "damage": 732.599999999999,
+      "dps": 24.419999999999966,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 9.9,
+        "count": 2,
+        "cooldown": 2.8,
+        "radius": 1.7,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 4,
+      "scene": "moving",
+      "damage": 227.70000000000007,
+      "dps": 7.5900000000000025,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 9.9,
+        "count": 2,
+        "cooldown": 2.8,
+        "radius": 1.7,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 4,
+      "scene": "spread",
+      "damage": 1465.2000000000023,
+      "dps": 48.840000000000074,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 9.9,
+        "count": 2,
+        "cooldown": 2.8,
+        "radius": 1.7,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 4,
+      "scene": "line",
+      "damage": 5860.799999999961,
+      "dps": 195.3599999999987,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 9.9,
+        "count": 2,
+        "cooldown": 2.8,
+        "radius": 1.7,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 5860.799999999961,
+      "dps": 195.3599999999987,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 9.9,
+        "count": 2,
+        "cooldown": 2.8,
+        "radius": 1.7,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 3663.0000000000223,
+      "dps": 122.10000000000075,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 9.9,
+        "count": 2,
+        "cooldown": 2.8,
+        "radius": 1.7,
+        "duration": 4,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 4,
+      "scene": "single",
+      "damage": 660,
+      "dps": 22,
+      "freezeSeconds": 7.616666666666645,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 33,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 3.5840000000000005,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 4,
+      "scene": "moving",
+      "damage": 396,
+      "dps": 13.2,
+      "freezeSeconds": 5.316666666666653,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 33,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 3.5840000000000005,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 4,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 33,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 3.5840000000000005,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 4,
+      "scene": "line",
+      "damage": 2640,
+      "dps": 88,
+      "freezeSeconds": 30.46666666666658,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 33,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 3.5840000000000005,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 5280,
+      "dps": 176,
+      "freezeSeconds": 60.93333333333316,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 33,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 3.5840000000000005,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 5280,
+      "dps": 176,
+      "freezeSeconds": 60.93333333333316,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 33,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 3.5840000000000005,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 4,
+      "scene": "single",
+      "damage": 618.75,
+      "dps": 20.625,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 41.25,
+        "count": 4,
+        "cooldown": 2.024,
+        "radius": 1.0080000000000002,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 4,
+      "scene": "moving",
+      "damage": 618.75,
+      "dps": 20.625,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 41.25,
+        "count": 4,
+        "cooldown": 2.024,
+        "radius": 1.0080000000000002,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 4,
+      "scene": "spread",
+      "damage": 2475,
+      "dps": 82.5,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 41.25,
+        "count": 4,
+        "cooldown": 2.024,
+        "radius": 1.0080000000000002,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 4,
+      "scene": "line",
+      "damage": 3093.75,
+      "dps": 103.125,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 41.25,
+        "count": 4,
+        "cooldown": 2.024,
+        "radius": 1.0080000000000002,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 4950,
+      "dps": 165,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 41.25,
+        "count": 4,
+        "cooldown": 2.024,
+        "radius": 1.0080000000000002,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 2475,
+      "dps": 82.5,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 41.25,
+        "count": 4,
+        "cooldown": 2.024,
+        "radius": 1.0080000000000002,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 4,
+      "scene": "single",
+      "damage": 1584,
+      "dps": 52.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 22,
+        "count": 3,
+        "cooldown": 2.64,
+        "radius": 0.336,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 4,
+      "scene": "moving",
+      "damage": 1584,
+      "dps": 52.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 22,
+        "count": 3,
+        "cooldown": 2.64,
+        "radius": 0.336,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 4,
+      "scene": "spread",
+      "damage": 1584,
+      "dps": 52.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 22,
+        "count": 3,
+        "cooldown": 2.64,
+        "radius": 0.336,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 4,
+      "scene": "line",
+      "damage": 1584,
+      "dps": 52.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 22,
+        "count": 3,
+        "cooldown": 2.64,
+        "radius": 0.336,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 1584,
+      "dps": 52.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 22,
+        "count": 3,
+        "cooldown": 2.64,
+        "radius": 0.336,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 1584,
+      "dps": 52.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 22,
+        "count": 3,
+        "cooldown": 2.64,
+        "radius": 0.336,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 4,
+      "scene": "single",
+      "damage": 1144,
+      "dps": 38.13333333333333,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 44,
+        "count": 2,
+        "cooldown": 2.2880000000000003,
+        "radius": 0.26880000000000004,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 4,
+      "scene": "moving",
+      "damage": 616,
+      "dps": 20.533333333333335,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 44,
+        "count": 2,
+        "cooldown": 2.2880000000000003,
+        "radius": 0.26880000000000004,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 4,
+      "scene": "spread",
+      "damage": 1144,
+      "dps": 38.13333333333333,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 44,
+        "count": 2,
+        "cooldown": 2.2880000000000003,
+        "radius": 0.26880000000000004,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 4,
+      "scene": "line",
+      "damage": 9152,
+      "dps": 305.06666666666666,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 44,
+        "count": 2,
+        "cooldown": 2.2880000000000003,
+        "radius": 0.26880000000000004,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 9152,
+      "dps": 305.06666666666666,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 44,
+        "count": 2,
+        "cooldown": 2.2880000000000003,
+        "radius": 0.26880000000000004,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 1144,
+      "dps": 38.13333333333333,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 44,
+        "count": 2,
+        "cooldown": 2.2880000000000003,
+        "radius": 0.26880000000000004,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 4,
+      "scene": "single",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 48.12500000000001,
+        "count": 3,
+        "cooldown": 3.344,
+        "radius": 2.0160000000000005,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 4,
+      "scene": "moving",
+      "damage": 529.3750000000001,
+      "dps": 17.645833333333336,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 48.12500000000001,
+        "count": 3,
+        "cooldown": 3.344,
+        "radius": 2.0160000000000005,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 4,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 48.12500000000001,
+        "count": 3,
+        "cooldown": 3.344,
+        "radius": 2.0160000000000005,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 4,
+      "scene": "line",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 48.12500000000001,
+        "count": 3,
+        "cooldown": 3.344,
+        "radius": 2.0160000000000005,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 48.12500000000001,
+        "count": 3,
+        "cooldown": 3.344,
+        "radius": 2.0160000000000005,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 5630.625000000001,
+      "dps": 187.68750000000003,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 48.12500000000001,
+        "count": 3,
+        "cooldown": 3.344,
+        "radius": 2.0160000000000005,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 4,
+      "scene": "single",
+      "damage": 478.5,
+      "dps": 15.95,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 8.25,
+        "count": 2,
+        "cooldown": 4.752000000000001,
+        "radius": 2.4640000000000004,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 4,
+      "scene": "moving",
+      "damage": 412.5,
+      "dps": 13.75,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 8.25,
+        "count": 2,
+        "cooldown": 4.752000000000001,
+        "radius": 2.4640000000000004,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 4,
+      "scene": "spread",
+      "damage": 1435.5,
+      "dps": 47.85,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 8.25,
+        "count": 2,
+        "cooldown": 4.752000000000001,
+        "radius": 2.4640000000000004,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 4,
+      "scene": "line",
+      "damage": 1435.5,
+      "dps": 47.85,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 8.25,
+        "count": 2,
+        "cooldown": 4.752000000000001,
+        "radius": 2.4640000000000004,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 3828,
+      "dps": 127.6,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 8.25,
+        "count": 2,
+        "cooldown": 4.752000000000001,
+        "radius": 2.4640000000000004,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 2392.5,
+      "dps": 79.75,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 8.25,
+        "count": 2,
+        "cooldown": 4.752000000000001,
+        "radius": 2.4640000000000004,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 4,
+      "scene": "single",
+      "damage": 1100.0000000000002,
+      "dps": 36.66666666666667,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 55.00000000000001,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 1.344,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 4,
+      "scene": "moving",
+      "damage": 1100.0000000000002,
+      "dps": 36.66666666666667,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 55.00000000000001,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 1.344,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 4,
+      "scene": "spread",
+      "damage": 1100.0000000000002,
+      "dps": 36.66666666666667,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 55.00000000000001,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 1.344,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 4,
+      "scene": "line",
+      "damage": 3850.0000000000005,
+      "dps": 128.33333333333334,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 55.00000000000001,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 1.344,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 4,
+      "scene": "cluster",
+      "damage": 8800.000000000002,
+      "dps": 293.33333333333337,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 55.00000000000001,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 1.344,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 4,
+      "scene": "surrounded",
+      "damage": 3300.0000000000005,
+      "dps": 110.00000000000001,
+      "freezeSeconds": 0,
+      "maxEntities": 2,
+      "stats": {
+        "damage": 55.00000000000001,
+        "count": 2,
+        "cooldown": 3.168,
+        "radius": 1.344,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 8,
+      "scene": "single",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 17.6,
+        "count": 6,
+        "cooldown": 1.2,
+        "radius": 0.21,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 8,
+      "scene": "moving",
+      "damage": 563.2000000000003,
+      "dps": 18.773333333333344,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 17.6,
+        "count": 6,
+        "cooldown": 1.2,
+        "radius": 0.21,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 8,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 17.6,
+        "count": 6,
+        "cooldown": 1.2,
+        "radius": 0.21,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 8,
+      "scene": "line",
+      "damage": 5280.00000000001,
+      "dps": 176.00000000000034,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 17.6,
+        "count": 6,
+        "cooldown": 1.2,
+        "radius": 0.21,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 17.6,
+        "count": 6,
+        "cooldown": 1.2,
+        "radius": 0.21,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "blade",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 21119.999999999847,
+      "dps": 703.9999999999949,
+      "freezeSeconds": 0,
+      "maxEntities": 6,
+      "stats": {
+        "damage": 17.6,
+        "count": 6,
+        "cooldown": 1.2,
+        "radius": 0.21,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 8,
+      "scene": "single",
+      "damage": 3366,
+      "dps": 112.2,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 66,
+        "count": 3,
+        "cooldown": 1.8,
+        "radius": 1.7999999999999998,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 8,
+      "scene": "moving",
+      "damage": 3366,
+      "dps": 112.2,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 66,
+        "count": 3,
+        "cooldown": 1.8,
+        "radius": 1.7999999999999998,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 8,
+      "scene": "spread",
+      "damage": 3366,
+      "dps": 112.2,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 66,
+        "count": 3,
+        "cooldown": 1.8,
+        "radius": 1.7999999999999998,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 8,
+      "scene": "line",
+      "damage": 6732,
+      "dps": 224.4,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 66,
+        "count": 3,
+        "cooldown": 1.8,
+        "radius": 1.7999999999999998,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 26928,
+      "dps": 897.6,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 66,
+        "count": 3,
+        "cooldown": 1.8,
+        "radius": 1.7999999999999998,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "fire",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 10098,
+      "dps": 336.6,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 66,
+        "count": 3,
+        "cooldown": 1.8,
+        "radius": 1.7999999999999998,
+        "duration": 2.6,
+        "range": 13,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 8,
+      "scene": "single",
+      "damage": 1221,
+      "dps": 40.7,
+      "freezeSeconds": 0,
+      "maxEntities": 9,
+      "stats": {
+        "damage": 16.5,
+        "count": 3,
+        "cooldown": 2.4,
+        "radius": 1.9,
+        "duration": 5,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 8,
+      "scene": "moving",
+      "damage": 1155,
+      "dps": 38.5,
+      "freezeSeconds": 0,
+      "maxEntities": 9,
+      "stats": {
+        "damage": 16.5,
+        "count": 3,
+        "cooldown": 2.4,
+        "radius": 1.9,
+        "duration": 5,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 8,
+      "scene": "spread",
+      "damage": 3663,
+      "dps": 122.1,
+      "freezeSeconds": 0,
+      "maxEntities": 9,
+      "stats": {
+        "damage": 16.5,
+        "count": 3,
+        "cooldown": 2.4,
+        "radius": 1.9,
+        "duration": 5,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 8,
+      "scene": "line",
+      "damage": 9768,
+      "dps": 325.6,
+      "freezeSeconds": 0,
+      "maxEntities": 9,
+      "stats": {
+        "damage": 16.5,
+        "count": 3,
+        "cooldown": 2.4,
+        "radius": 1.9,
+        "duration": 5,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 9768,
+      "dps": 325.6,
+      "freezeSeconds": 0,
+      "maxEntities": 9,
+      "stats": {
+        "damage": 16.5,
+        "count": 3,
+        "cooldown": 2.4,
+        "radius": 1.9,
+        "duration": 5,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "water",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 8547,
+      "dps": 284.9,
+      "freezeSeconds": 0,
+      "maxEntities": 9,
+      "stats": {
+        "damage": 16.5,
+        "count": 3,
+        "cooldown": 2.4,
+        "radius": 1.9,
+        "duration": 5,
+        "range": 10,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 8,
+      "scene": "single",
+      "damage": 1795.199999999999,
+      "dps": 59.83999999999996,
+      "freezeSeconds": 6.083333333333317,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 52.800000000000004,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 3.942400000000001,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 8,
+      "scene": "moving",
+      "damage": 1003.1999999999996,
+      "dps": 33.43999999999998,
+      "freezeSeconds": 4.566666666666656,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 52.800000000000004,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 3.942400000000001,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 8,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 52.800000000000004,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 3.942400000000001,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 8,
+      "scene": "line",
+      "damage": 7180.800000000017,
+      "dps": 239.36000000000055,
+      "freezeSeconds": 24.333333333333268,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 52.800000000000004,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 3.942400000000001,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 14361.599999999935,
+      "dps": 478.7199999999978,
+      "freezeSeconds": 48.666666666666536,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 52.800000000000004,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 3.942400000000001,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "frost",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 14361.599999999935,
+      "dps": 478.7199999999978,
+      "freezeSeconds": 48.666666666666536,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 52.800000000000004,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 3.942400000000001,
+        "duration": 1.2,
+        "range": 7,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 8,
+      "scene": "single",
+      "damage": 1188,
+      "dps": 39.6,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 66,
+        "count": 5,
+        "cooldown": 1.7249999999999999,
+        "radius": 1.1088000000000005,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 8,
+      "scene": "moving",
+      "damage": 1188,
+      "dps": 39.6,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 66,
+        "count": 5,
+        "cooldown": 1.7249999999999999,
+        "radius": 1.1088000000000005,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 8,
+      "scene": "spread",
+      "damage": 5940,
+      "dps": 198,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 66,
+        "count": 5,
+        "cooldown": 1.7249999999999999,
+        "radius": 1.1088000000000005,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 8,
+      "scene": "line",
+      "damage": 7128,
+      "dps": 237.6,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 66,
+        "count": 5,
+        "cooldown": 1.7249999999999999,
+        "radius": 1.1088000000000005,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 9504,
+      "dps": 316.8,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 66,
+        "count": 5,
+        "cooldown": 1.7249999999999999,
+        "radius": 1.1088000000000005,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "lightning",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 5940,
+      "dps": 198,
+      "freezeSeconds": 0,
+      "maxEntities": 1,
+      "stats": {
+        "damage": 66,
+        "count": 5,
+        "cooldown": 1.7249999999999999,
+        "radius": 1.1088000000000005,
+        "duration": 0.4,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 8,
+      "scene": "single",
+      "damage": 3942.399999999992,
+      "dps": 131.41333333333307,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 35.2,
+        "count": 4,
+        "cooldown": 2.25,
+        "radius": 0.36960000000000004,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 8,
+      "scene": "moving",
+      "damage": 3942.399999999992,
+      "dps": 131.41333333333307,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 35.2,
+        "count": 4,
+        "cooldown": 2.25,
+        "radius": 0.36960000000000004,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 8,
+      "scene": "spread",
+      "damage": 3801.5999999999926,
+      "dps": 126.71999999999976,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 35.2,
+        "count": 4,
+        "cooldown": 2.25,
+        "radius": 0.36960000000000004,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 8,
+      "scene": "line",
+      "damage": 3907.199999999992,
+      "dps": 130.23999999999972,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 35.2,
+        "count": 4,
+        "cooldown": 2.25,
+        "radius": 0.36960000000000004,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 3942.399999999992,
+      "dps": 131.41333333333307,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 35.2,
+        "count": 4,
+        "cooldown": 2.25,
+        "radius": 0.36960000000000004,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "ghost",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 3942.399999999992,
+      "dps": 131.41333333333307,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 35.2,
+        "count": 4,
+        "cooldown": 2.25,
+        "radius": 0.36960000000000004,
+        "duration": 3,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 8,
+      "scene": "single",
+      "damage": 3379.2000000000025,
+      "dps": 112.64000000000009,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 70.4,
+        "count": 3,
+        "cooldown": 1.9500000000000002,
+        "radius": 0.29568000000000005,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 8,
+      "scene": "moving",
+      "damage": 1971.200000000001,
+      "dps": 65.70666666666669,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 70.4,
+        "count": 3,
+        "cooldown": 1.9500000000000002,
+        "radius": 0.29568000000000005,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 8,
+      "scene": "spread",
+      "damage": 3379.2000000000025,
+      "dps": 112.64000000000009,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 70.4,
+        "count": 3,
+        "cooldown": 1.9500000000000002,
+        "radius": 0.29568000000000005,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 8,
+      "scene": "line",
+      "damage": 26611.200000000154,
+      "dps": 887.0400000000051,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 70.4,
+        "count": 3,
+        "cooldown": 1.9500000000000002,
+        "radius": 0.29568000000000005,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 27033.600000000162,
+      "dps": 901.1200000000055,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 70.4,
+        "count": 3,
+        "cooldown": 1.9500000000000002,
+        "radius": 0.29568000000000005,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "bone",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 3379.2000000000025,
+      "dps": 112.64000000000009,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 70.4,
+        "count": 3,
+        "cooldown": 1.9500000000000002,
+        "radius": 0.29568000000000005,
+        "duration": 1.2,
+        "range": 11,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 8,
+      "scene": "single",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 12,
+      "stats": {
+        "damage": 77,
+        "count": 4,
+        "cooldown": 2.8499999999999996,
+        "radius": 2.217600000000001,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 8,
+      "scene": "moving",
+      "damage": 1617,
+      "dps": 53.9,
+      "freezeSeconds": 0,
+      "maxEntities": 10,
+      "stats": {
+        "damage": 77,
+        "count": 4,
+        "cooldown": 2.8499999999999996,
+        "radius": 2.217600000000001,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 8,
+      "scene": "spread",
+      "damage": 0,
+      "dps": 0,
+      "freezeSeconds": 0,
+      "maxEntities": 12,
+      "stats": {
+        "damage": 77,
+        "count": 4,
+        "cooldown": 2.8499999999999996,
+        "radius": 2.217600000000001,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 8,
+      "scene": "line",
+      "damage": 2541,
+      "dps": 84.7,
+      "freezeSeconds": 0,
+      "maxEntities": 10,
+      "stats": {
+        "damage": 77,
+        "count": 4,
+        "cooldown": 2.8499999999999996,
+        "radius": 2.217600000000001,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 6776,
+      "dps": 225.86666666666667,
+      "freezeSeconds": 0,
+      "maxEntities": 10,
+      "stats": {
+        "damage": 77,
+        "count": 4,
+        "cooldown": 2.8499999999999996,
+        "radius": 2.217600000000001,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "mine",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 16940,
+      "dps": 564.6666666666666,
+      "freezeSeconds": 0,
+      "maxEntities": 4,
+      "stats": {
+        "damage": 77,
+        "count": 4,
+        "cooldown": 2.8499999999999996,
+        "radius": 2.217600000000001,
+        "duration": 6,
+        "range": 8,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 8,
+      "scene": "single",
+      "damage": 884.4000000000008,
+      "dps": 29.480000000000025,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 13.200000000000001,
+        "count": 3,
+        "cooldown": 4.050000000000001,
+        "radius": 2.710400000000001,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 8,
+      "scene": "moving",
+      "damage": 686.4000000000002,
+      "dps": 22.880000000000006,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 13.200000000000001,
+        "count": 3,
+        "cooldown": 4.050000000000001,
+        "radius": 2.710400000000001,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 8,
+      "scene": "spread",
+      "damage": 2653.199999999997,
+      "dps": 88.4399999999999,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 13.200000000000001,
+        "count": 3,
+        "cooldown": 4.050000000000001,
+        "radius": 2.710400000000001,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 8,
+      "scene": "line",
+      "damage": 3537.599999999988,
+      "dps": 117.9199999999996,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 13.200000000000001,
+        "count": 3,
+        "cooldown": 4.050000000000001,
+        "radius": 2.710400000000001,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 7075.1999999999625,
+      "dps": 235.83999999999875,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 13.200000000000001,
+        "count": 3,
+        "cooldown": 4.050000000000001,
+        "radius": 2.710400000000001,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "void",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 4421.99999999998,
+      "dps": 147.39999999999932,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 13.200000000000001,
+        "count": 3,
+        "cooldown": 4.050000000000001,
+        "radius": 2.710400000000001,
+        "duration": 2.4,
+        "range": 9,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 8,
+      "scene": "single",
+      "damage": 2904,
+      "dps": 96.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 88,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 1.4784000000000002,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 8,
+      "scene": "moving",
+      "damage": 2904,
+      "dps": 96.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 88,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 1.4784000000000002,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 8,
+      "scene": "spread",
+      "damage": 2904,
+      "dps": 96.8,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 88,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 1.4784000000000002,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 8,
+      "scene": "line",
+      "damage": 11616,
+      "dps": 387.2,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 88,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 1.4784000000000002,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 8,
+      "scene": "cluster",
+      "damage": 23232,
+      "dps": 774.4,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 88,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 1.4784000000000002,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    },
+    {
+      "skill": "holy",
+      "level": 8,
+      "scene": "surrounded",
+      "damage": 8712,
+      "dps": 290.4,
+      "freezeSeconds": 0,
+      "maxEntities": 3,
+      "stats": {
+        "damage": 88,
+        "count": 3,
+        "cooldown": 2.7,
+        "radius": 1.4784000000000002,
+        "duration": 0.55,
+        "range": 12,
+        "mods": []
+      }
+    }
+  ]
+}

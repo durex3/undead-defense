@@ -1,0 +1,407 @@
+{
+  "scope": "Configuration-order audit, not player readability or balance approval",
+  "weapons": 10,
+  "modifications": 40,
+  "pairs": [
+    {
+      "skill": "blade",
+      "mods": [
+        "orbit",
+        "return"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "blade",
+      "mods": [
+        "orbit",
+        "shards"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "blade",
+      "mods": [
+        "hunt",
+        "return"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "blade",
+      "mods": [
+        "hunt",
+        "shards"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "blade",
+      "mods": [
+        "return",
+        "shards"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "fire",
+      "mods": [
+        "heavy",
+        "embers"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "fire",
+      "mods": [
+        "heavy",
+        "flame"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "fire",
+      "mods": [
+        "salvo",
+        "embers"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "fire",
+      "mods": [
+        "salvo",
+        "flame"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "fire",
+      "mods": [
+        "embers",
+        "flame"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "water",
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "water",
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "water",
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "water",
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "water",
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "frost",
+      "mods": [
+        "outward",
+        "aftershock"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "frost",
+      "mods": [
+        "outward",
+        "brittle"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "frost",
+      "mods": [
+        "sectors",
+        "aftershock"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "frost",
+      "mods": [
+        "sectors",
+        "brittle"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "frost",
+      "mods": [
+        "aftershock",
+        "brittle"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "lightning",
+      "mods": [
+        "relay",
+        "echo"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "lightning",
+      "mods": [
+        "relay",
+        "bridge"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "lightning",
+      "mods": [
+        "storm",
+        "echo"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "lightning",
+      "mods": [
+        "storm",
+        "bridge"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "lightning",
+      "mods": [
+        "echo",
+        "bridge"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "ghost",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "ghost",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "ghost",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "ghost",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "ghost",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "bone",
+      "mods": [
+        "lance",
+        "marrow"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "bone",
+      "mods": [
+        "lance",
+        "ridge"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "bone",
+      "mods": [
+        "fan",
+        "marrow"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "bone",
+      "mods": [
+        "fan",
+        "ridge"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "bone",
+      "mods": [
+        "marrow",
+        "ridge"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "mine",
+      "mods": [
+        "trip",
+        "scatter"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "mine",
+      "mods": [
+        "trip",
+        "fuse"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "mine",
+      "mods": [
+        "burrow",
+        "scatter"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "mine",
+      "mods": [
+        "burrow",
+        "fuse"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "mine",
+      "mods": [
+        "scatter",
+        "fuse"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "void",
+      "mods": [
+        "drift",
+        "binary"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "void",
+      "mods": [
+        "drift",
+        "repel"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "void",
+      "mods": [
+        "collapse",
+        "binary"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "void",
+      "mods": [
+        "collapse",
+        "repel"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "void",
+      "mods": [
+        "binary",
+        "repel"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "holy",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "holy",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "holy",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "holy",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "orderIndependent": true
+    },
+    {
+      "skill": "holy",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "orderIndependent": true
+    }
+  ]
+}

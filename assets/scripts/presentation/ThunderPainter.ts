@@ -1,8 +1,8 @@
-import { Graphics, Color } from "cc";
+import { Graphics } from "cc";
+import { warningGlyph } from "./art/VfxBrush";
 import { THUNDER_BASES } from "../battle/ThunderMap";
-import { thunderDevice } from "../battle/ThunderSystem";
 import type { SurvivalWorld } from "../battle/SurvivalWorld";
-import type { Enemy, Hazard } from "../battle/SurvivalTypes";
+import type { Hazard } from "../battle/SurvivalTypes";
 import { ink } from "./StagePalette";
 export function drawThunderMap(g: Graphics) {
   g.clear();
@@ -55,188 +55,6 @@ export function drawThunderMap(g: Graphics) {
     }
   }
 }
-export function drawThunderEnemy(g: Graphics, w: SurvivalWorld, e: Enemy) {
-  const x = e.x * 48,
-    y = e.y * 48,
-    device = thunderDevice(e.kind),
-    boss = e.kind === "boss",
-    elite = e.kind === "gridwarden" || e.kind === "railreaper",
-    scale = boss ? 1.65 : elite ? 1.3 : 1;
-  const a = e.state === "arriving" ? 140 : 255,
-    metal =
-      e.freezeUntil > w.time
-        ? "#9ad9f3"
-        : (e.state === "recover" && elite) || (e.state === "recover" && boss)
-          ? "#e0c888"
-          : "#91acae",
-    pulse = e.state === "windup" ? "#ffb271" : "#b4eee5";
-  const rect = (u: number, v: number, ww: number, hh: number, c: string) => {
-    g.fillColor = ink(c, a);
-    g.rect(x + u * scale, y + v * scale, ww * scale, hh * scale);
-    g.fill();
-  };
-  const circle = (u: number, v: number, r: number, c: string) => {
-    g.fillColor = ink(c, a);
-    g.circle(x + u * scale, y + v * scale, r * scale);
-    g.fill();
-  };
-  const line = (
-    u: number,
-    v: number,
-    uu: number,
-    vv: number,
-    c: string,
-    width = 4,
-  ) => {
-    g.strokeColor = ink(c, a);
-    g.lineWidth = width * scale;
-    g.moveTo(x + u * scale, y + v * scale);
-    g.lineTo(x + uu * scale, y + vv * scale);
-    g.stroke();
-  };
-  const stride = e.state === "seek" ? Math.sin(w.time * 12 + e.id) * 4 : 0;
-  if (device) {
-    rect(-12, 0, 24, 8, "#101f29");
-    rect(-7, 8, 14, 25, "#d0b17c");
-    rect(-12, 21, 24, 7, metal);
-    circle(0, 36, 7, pulse);
-    if (e.kind === "thunderanchor") {
-      line(-16, 4, 0, 17, metal);
-      line(16, 4, 0, 17, metal);
-    } else {
-      line(-13, 33, -13, 46, metal);
-      line(13, 33, 13, 46, metal);
-      line(-13, 46, 13, 46, metal);
-    }
-    g.fillColor = ink("#10212a");
-    g.rect(x - 18, y + 56, 36, 5);
-    g.fill();
-    g.fillColor = ink("#f6ca7d");
-    g.rect(x - 18, y + 56, 36 * Math.max(0, e.hp / e.maxHp), 5);
-    g.fill();
-    const remain = Math.max(
-      0,
-      Math.ceil((e.thunder?.expires ?? w.time) - w.time),
-    );
-    for (let i = 0; i < Math.min(8, remain); i++) {
-      g.fillColor = ink("#c8d6cf", 190);
-      g.rect(x - 17 + i * 5, y + 65, 3, 3);
-      g.fill();
-    }
-    return;
-  }
-  if (boss) {
-    // Four articulated arms and broad electric wings, visibly unlike previous bosses.
-    for (const side of [-1, 1])
-      for (const row of [0, 1]) {
-        const spread = e.state === "windup" ? 8 : 0;
-        line(
-          side * 16,
-          28 + row * 25,
-          side * (38 + spread),
-          15 + row * 48,
-          metal,
-          7,
-        );
-        line(
-          side * (38 + spread),
-          15 + row * 48,
-          side * 60,
-          34 + row * 28,
-          "#bcd2c7",
-          5,
-        );
-        rect(side > 0 ? 52 : -66, 28 + row * 28, 14, 26, "#243c49");
-        rect(side > 0 ? 58 : -62, 32 + row * 28, 4, 18, pulse);
-      }
-    circle(0, 43, 26, "#102331");
-    circle(0, 43, 21, metal);
-    circle(0, 43, 12, pulse);
-    rect(-8, 2, 16, 24, "#d7bb82");
-    line(-14, 9, 0, -2, metal);
-    line(14, 9, 0, -2, metal);
-    rect(-12, 70, 24, 8, "#e2c695");
-  } else if (e.kind === "arclantern") {
-    const bob = Math.sin(w.time * 3 + e.id) * 3;
-    circle(0, 32 + bob, 17, "#122735");
-    circle(0, 32 + bob, 11, pulse);
-    line(-22, 16 + bob, -22, 53 + bob, metal, 5);
-    line(22, 16 + bob, 22, 53 + bob, metal, 5);
-    line(-22, 16 + bob, 22, 16 + bob, metal, 4);
-    line(-22, 53 + bob, -10, 58 + bob, "#d6c18d");
-    line(22, 53 + bob, 10, 58 + bob, "#d6c18d");
-    line(0, 12, 0, 3, "#78999b", 2);
-  } else if (e.kind === "railsaw" || e.kind === "railreaper") {
-    const wide = e.kind === "railreaper";
-    rect(wide ? -32 : -24, 4, wide ? 64 : 48, 18, "#122430");
-    for (const side of [-1, 1]) {
-      circle(side * (wide ? 25 : 18), 9, 10, "#102029");
-      circle(side * (wide ? 25 : 18), 9, 5, metal);
-    }
-    rect(wide ? -28 : -20, 19, wide ? 56 : 40, 18, metal);
-    rect(-10, 25, 20, 5, pulse);
-    if (wide) {
-      for (const side of [-1, 1]) {
-        line(side * 24, 33, side * 38, 51, metal, 6);
-        line(side * 38, 51, side * 52, 33, "#e5c991", 6);
-      }
-    } else {
-      circle(25, 28, 15, "#e5c991");
-      circle(25, 28, 10, "#314b54");
-      for (let i = 0; i < 8; i++) {
-        const t = (i * Math.PI) / 4 + w.time * 4;
-        line(
-          25 + Math.cos(t) * 9,
-          28 + Math.sin(t) * 9,
-          25 + Math.cos(t) * 18,
-          28 + Math.sin(t) * 18,
-          "#ead7b0",
-          3,
-        );
-      }
-    }
-  } else if (e.kind === "anchorweaver" || e.kind === "gridwarden") {
-    const grid = e.kind === "gridwarden";
-    for (const side of [-1, 1])
-      for (const row of [0, 1]) {
-        line(side * 10, 35, side * (22 + row * 8), 20, metal, 5);
-        line(
-          side * (22 + row * 8),
-          20,
-          side * (24 + row * 9),
-          stride,
-          "#c1d0bd",
-          4,
-        );
-      }
-    rect(-15, 31, 30, 18, "#17303c");
-    rect(-11, 35, 22, 10, metal);
-    circle(0, 22, 9, "#d7ba83");
-    line(0, 17, 0, 6, "#d7ba83");
-    if (grid) {
-      for (const side of [-1, 1]) {
-        circle(side * 20, 52, 12, "#172b35");
-        circle(side * 20, 52, 8, "#d0bd8a");
-        circle(side * 20, 52, 4, "#4a7378");
-      }
-    } else rect(-5, 51, 10, 7, pulse);
-  } else {
-    for (const side of [-1, 1])
-      for (const u of [-15, 0, 15]) {
-        line(u, 17, u + side * 8, 8, metal, 4);
-        line(u + side * 8, 8, u + side * 11, side * stride, "#c2c8ac", 3);
-      }
-    rect(-21, 13, 42, 18, "#122731");
-    rect(-17, 18, 34, 12, metal);
-    rect(16, 13, 15, 8, "#d6c494");
-    for (const u of [-11, 0, 11]) rect(u - 2, 24, 4, 4, "#e1d0a0");
-    rect(18, 25, 7, 4, pulse);
-  }
-  if (e.state === "recover" && (elite || boss)) {
-    line(-9, 88, 9, 76, "#ffe1a2", 3);
-    line(9, 88, -9, 76, "#ffe1a2", 3);
-  }
-}
 function digit(g: Graphics, n: number, x: number, y: number) {
   const segments = [
       [0, 10, 7, 10],
@@ -270,9 +88,10 @@ export function drawThunderHazard(
     s = Math.sin(h.angle),
     x = h.x * 48,
     y = h.y * 48;
-  g.strokeColor = ink(active ? "#ffe0a8" : "#ffac7a", preview ? 100 : 245);
-  g.fillColor = ink("#ed674a", active ? 100 : preview ? 10 : 28);
-  g.lineWidth = active ? 4 : 2;
+  const contact = active ? Math.max(0, 1 - (time - h.due) / .16) : 0;
+  g.strokeColor = ink(active ? contact > 0 ? "#fff2d1" : "#ffe0a8" : "#ffac7a", preview ? 100 : 245);
+  g.fillColor = ink("#ed674a", active ? 100 + Math.round(contact * 45) : preview ? 10 : 28);
+  g.lineWidth = active ? 4 + contact * 2 : 2;
   const at = (u: number, v: number) => ({
     x: x + (u * c - v * s) * 48,
     y: y + (u * s + v * c) * 48,
@@ -381,6 +200,7 @@ export function drawThunderHazard(
     g.circle(p.x, p.y, 4);
     g.stroke();
   }
+  warningGlyph(g, x, y, t.shape === "wall" ? "wall" : t.shape === "line" ? "line" : t.shape === "sector" ? "sector" : "landing", active ? "#fff0ce" : "#ffb38c", active);
 }
 /** Future route previews are informational only and have no damage/collision. */
 export function drawThunderPreviews(g: Graphics, w: SurvivalWorld) {

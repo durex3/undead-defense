@@ -4,10 +4,10 @@ import {experienceRequired} from '../temp/tests/battle/ExperienceCurve.mjs';
 import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
 import {MAX_PLAYER_LEVEL,BOSS_TIME} from '../temp/tests/battle/EncounterPacing.mjs';
 const old=[6,8,10,10,12,12,14,14,16,16,18,18,20,20,22,22,24,24,26,26,28,28,30,30];
-test('XP costs rise at every level from the opening and keep the same boss time and cap',()=>{
+test('XP costs rise at every level with a six-minute boss time and the existing level cap',()=>{
  assert.deepEqual([1,2,3,4,5].map(experienceRequired),[6,8,10,11,12]);
  for(let level=2;level<MAX_PLAYER_LEVEL;level++)assert(experienceRequired(level)>experienceRequired(level-1));
- assert.equal(BOSS_TIME,480);assert.equal(MAX_PLAYER_LEVEL,64);
+ assert.equal(BOSS_TIME,360);assert.equal(MAX_PLAYER_LEVEL,64);
 });
 test('late harvest levels have increasing costs and cannot buy a full build on the old flat budget',()=>{
  let total=0;

@@ -36,10 +36,14 @@ export interface ExtraAttack extends Point {
   index: number;
   travel: number;
   speed: number;
+  companion?: number;
+  retargeted?: boolean;
+  impactAt?: number;
 }
 /** One bounded slot owns an attack's entire lifecycle, including echoes and terminal effects. */
 export class ExtraArmory {
   attacks: ExtraAttack[] = [];
+  ghostCount = 0;
   constructor(private w: SurvivalWorld) {}
   private enemies(p: Point, r: number) {
     return this.w.enemies.filter(
@@ -93,10 +97,11 @@ export class ExtraArmory {
       if (!w.skills[skill]) continue;
       w.cooldowns[skill] = Math.max(0, w.cooldowns[skill] - dt);
       if (w.cooldowns[skill] > 0) continue;
+      if (skill === "ghost" && this.attacks.some(a => a.active && a.skill === "ghost")) continue;
       const s = weaponStats(w, skill),
         t = this.target(skill, s);
       if (!t) continue;
-      const count = skill === "lightning" ? 1 : s.count;
+      const count = skill === "lightning" ? 1 : skill === "ghost" ? Math.min(8,s.count) : s.count;
       if (this.attacks.filter((a) => a.active).length + count > EXTRA_LIMIT)
         continue;
       this.cast(skill, s, t, count);
@@ -111,7 +116,7 @@ export class ExtraArmory {
       if (a.active) {
         a.age += dt;
         if (a.age < 0) continue;
-        if (a.skill === "frost") this.frost(a);
+        if (a.skill === "frost") this.frost(a, dt);
         else if (a.skill === "lightning") this.lightning(a);
         else if (a.skill === "ghost") this.ghost(a, dt);
         else if (a.skill === "bone") this.bone(a, dt);
@@ -126,9 +131,10 @@ export class ExtraArmory {
       }
   }
   private cast(skill: ExtraSkill, s: WeaponStats, t: Enemy, count: number) {
+    if(skill==="ghost")this.ghostCount=count;
     const w = this.w,
       group = w.id(),
-      angle = Math.atan2(t.y - w.player.y, t.x - w.player.x),
+      angle = skill === "bone" ? this.boneDirection(s, t) : Math.atan2(t.y - w.player.y, t.x - w.player.x),
       targets = this.enemies(w.player, s.range).sort(
         (a, b) => distance(a, t) - distance(b, t),
       );
@@ -176,9 +182,12 @@ export class ExtraArmory {
         group,
         index: i,
         travel: 0,
-        speed: skill === "ghost" ? 9 : 12,
+        speed: skill === "ghost" ? 10 : 18,
+        companion: skill === "ghost" ? i : undefined,
       };
       if (skill === "bone") {
+        a.phase = -1;
+        a.next = .2;
         a.angle =
           angle +
           (i - (count - 1) / 2) * (s.mods.includes("fan") ? 0.25 : 0.055);
@@ -218,33 +227,50 @@ export class ExtraArmory {
       this.put(a);
     }
   }
+  private boneDirection(s: WeaponStats, fallback: Enemy) {
+    const origin = this.w.player, list = this.enemies(origin, s.range);
+    let best = Math.atan2(fallback.y-origin.y, fallback.x-origin.x), score = -1, nearest = Infinity;
+    for (const candidate of list) {
+      const angle = Math.atan2(candidate.y-origin.y,candidate.x-origin.x);
+      const end = {x:origin.x+Math.cos(angle)*s.range,y:origin.y+Math.sin(angle)*s.range};
+      const count = list.filter(e=>segmentDistance(e,origin,end)<=s.radius+.35).length;
+      const d = distance(origin,candidate);
+      if(count>score || (count===score && d<nearest)) {best=angle;score=count;nearest=d;}
+    }
+    return best;
+  }
   private freeze(e: Enemy, a: ExtraAttack) {
     const w = this.w;
     if (e.kind === "boss" || thunderDevice(e.kind) || e.state === "charge") return;
     e.slow = 0.4;
     e.slowUntil = Math.max(e.slowUntil, w.time + a.stats.duration);
     if (this.has(a, "brittle") || e.freezeReady > w.time) return;
-    e.freezeUntil = w.time + (isElite(e.kind) ? 0.25 : 0.5);
+    e.freezeUntil = w.time + (isElite(e.kind) ? 0.25 : 0.75);
     e.freezeReady = w.time + 3;
   }
-  private frost(a: ExtraAttack) {
+  private frost(a: ExtraAttack, dt: number) {
     const w = this.w,
       s = a.stats,
       r = s.radius;
     if (a.phase === 0) {
-      const edge = this.has(a, "outward") ? r * Math.min(1, a.age / 0.6) : r;
+      const outward=this.has(a,"outward"), sectors=this.has(a,"sectors");
+      const previous=a.age-dt;
+      const edge = outward ? r * Math.min(1, Math.max(0,(a.age-.1)/.5)) : r;
       for (const e of this.enemies(a, r + 0.35)) {
+        if (a.age < .1) continue;
+        if (!outward && !sectors && previous >= .1) continue;
         if (a.hit.has(e.id)) continue;
         const d = distance(e, a);
         if (d > edge + 0.35) continue;
-        if (this.has(a, "sectors")) {
-          const angle = Math.atan2(e.y - a.y, e.x - a.x),
-            sector = Math.min(2, Math.floor(a.age / 0.22));
-          if (
-            Math.abs(angleDelta(angle, a.angle + (sector * Math.PI * 2) / 3)) >
-            Math.PI / 3
-          )
-            continue;
+        if(outward && previous>=.1 && d < r*Math.min(1,(previous-.1)/.5)-.35) continue;
+        if (sectors) {
+          const angle = Math.atan2(e.y - a.y, e.x - a.x);
+          let crossed=false;
+          for(let sector=0;sector<3;sector++) {
+            const at=.1+sector*.22;
+            if(previous<at && a.age>=at && Math.abs(angleDelta(angle,a.angle+sector*Math.PI*2/3))<=Math.PI/3) crossed=true;
+          }
+          if(!crossed)continue;
         }
         a.hit.add(e.id);
         const brittle = this.has(a, "brittle") && e.slowUntil > w.time;
@@ -321,23 +347,32 @@ export class ExtraArmory {
       return;
     }
     if (a.phase === 0) {
-      const e = w.enemies.find(
+      let e = w.enemies.find(
         (e) =>
           e.id === a.targetId &&
           e.hp > 0 &&
           e.state !== "arriving" &&
           !e.sand?.buried,
       );
+      if(e && distance(e,w.player)>s.range)e=undefined;
+      if (!e && !a.retargeted) {
+        a.retargeted=true;
+        const reserved=new Set(this.attacks.filter(b=>b!==a&&b.active&&b.skill==="ghost").map(b=>b.targetId));
+        e=this.enemies(a,s.range).sort((l,r)=>Number(reserved.has(l.id))-Number(reserved.has(r.id)) || distance(l,a)-distance(r,a))[0];
+        if(e)a.targetId=e.id;
+      }
+      if(!e) {a.phase=2;a.end={...w.player};return;}
       if (e) a.target = { x: e.x, y: e.y };
+      a.angle=Math.atan2(a.target.y-a.y,a.target.x-a.x);
       this.move(a, a.target, a.speed * dt);
       const touched =
-        this.enemies(a, 0.6 + s.radius).find((e) => e.id === a.targetId) ||
-        this.enemies(a, 0.6 + s.radius)[0];
-      if (touched || distance(a, a.target) < 0.15 || a.age > 1.5) {
+        this.enemies(a, 0.45 + s.radius).find((e) => e.id === a.targetId);
+      if (touched || a.age >= 1.4) {
         if (touched) this.damage(touched, s.damage, a);
         a.start = { x: a.x, y: a.y };
-        a.phase = this.has(a, "haunt") ? 1 : 2;
-        a.next = a.age + 0.3;
+        a.phase = !touched ? 2 : this.has(a, "haunt") ? 1 : 3;
+        a.next = a.age + (a.phase===3 ? .22 : .3);
+        a.travel=a.age+.45;
         a.index = 0;
         if (a.phase === 2) a.end = { ...w.player };
       }
@@ -345,9 +380,10 @@ export class ExtraArmory {
       const q = a.age - (a.next - 0.3);
       a.x = a.start.x + Math.cos(q * 10) * 0.6;
       a.y = a.start.y + Math.sin(q * 10) * 0.6;
+      a.angle=Math.atan2(a.y-old.y,a.x-old.x);
       if (a.age >= a.next) {
         for (const e of this.enemies(a.start, 1 + s.radius))
-          this.damage(e, s.damage * 0.35, a, a.start);
+          this.damage(e, s.damage * 0.7, a, a.start);
         a.index++;
         a.next += 0.3;
         if (a.index >= 3) {
@@ -355,7 +391,18 @@ export class ExtraArmory {
           a.end = { ...w.player };
         }
       }
+    } else if(a.phase===3) {
+      const e=w.enemies.find(e=>e.id===a.targetId && e.hp>0 && e.state!=="arriving" && !e.sand?.buried);
+      if(e) {
+        a.angle=Math.atan2(e.y-a.y,e.x-a.x);
+        this.move(a,e,a.speed*dt);
+      }
+      if(!e || a.age>=a.travel || (a.age>=a.next && distance(e,a)<=s.radius+.45)) {
+        if(e && a.age>=a.next && distance(e,a)<=s.radius+.45) this.damage(e,s.damage,a);
+        a.phase=2;a.end={...w.player};a.next=a.age;
+      }
     } else {
+      a.angle=Math.atan2(a.end!.y-a.y,a.end!.x-a.x);
       this.move(a, a.end!, 12 * dt);
       if (this.has(a, "reap"))
         for (const e of this.enemies(a, 1 + 12 * dt))
@@ -379,6 +426,12 @@ export class ExtraArmory {
   private bone(a: ExtraAttack, dt: number) {
     const s = a.stats,
       w = this.w;
+    if(a.phase===-1) {
+      a.x=w.player.x;a.y=w.player.y;
+      if(a.age<.2)return;
+      a.phase=0;
+      dt=Math.min(dt,Math.max(0,a.age-.2));
+    }
     if (a.phase === 1) {
       const end = a.end!;
       for (const e of this.enemies(a, s.radius + 1.6))
@@ -572,10 +625,11 @@ export class ExtraArmory {
     };
     if (a.phase === 0 && a.age >= a.next) {
       impact(1);
+      a.impactAt=a.age;
       a.phase = 1;
       a.next = a.age + (this.has(a, "brand") ? 0.7 : 0.25);
     } else if (a.phase === 1 && a.age >= a.next) {
-      if (this.has(a, "brand")) impact(0.65);
+      if (this.has(a, "brand")) {impact(0.65);a.impactAt=a.age;}
       a.phase = 2;
       a.next = a.age + 0.25;
     }

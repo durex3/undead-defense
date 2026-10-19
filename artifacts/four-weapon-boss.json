@@ -1,0 +1,101 @@
+{
+  "scope": "Four max-level weapons, fixed passives and mods, one seed, invulnerable orbit controller. Output-window diagnostic, not human win rate.",
+  "result": [
+    {
+      "stage": 1,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 79,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 1,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 99,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 1,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 82,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 2,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 95,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 2,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 109,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 2,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 118,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 3,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 55,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 3,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 94,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 3,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 67,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 4,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 58,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 4,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 99,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 4,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 65,
+      "state": "won",
+      "bossRemaining": 0
+    }
+  ]
+}

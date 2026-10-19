@@ -4,6 +4,7 @@ import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
 import {stepBoss} from '../temp/tests/battle/BossSystem.mjs';
 import {STAGES} from '../temp/tests/battle/StageRules.mjs';
 import {ENEMIES} from '../temp/tests/battle/SurvivalConfig.mjs';
+import {encounterRealTime} from '../temp/tests/battle/EncounterPacing.mjs';
 
 test('each stage scales threats monotonically from stage one to four',()=>{
  const rows=[1,2,3,4].map(id=>STAGES[id]);
@@ -13,8 +14,10 @@ test('each stage scales threats monotonically from stage one to four',()=>{
   assert.ok(rows[i].bossHealth>rows[i-1].bossHealth,`boss ${i}`);
   assert.ok(rows[i].damage>rows[i-1].damage,`damage ${i}`);
  }
- // Every stage uses the same experience rate and medicine cadence.
- assert.ok(rows.every(r=>r.xp===rows[0].xp));
+ // Later maps compensate their tougher fodder with stronger XP drops.
+ assert.equal(rows[0].xp,rows[1].xp);
+ assert.ok(rows[2].xp>rows[1].xp);
+ assert.ok(rows[3].xp>rows[2].xp);
  assert.ok(rows.every(r=>r.medicine===rows[0].medicine));
 });
 
@@ -68,7 +71,7 @@ test('later elite out-pressures the first elite on every stage',()=>{
   const base=new SurvivalWorld(1,'ranger',stage);base.time=180;
   const f=base.addEnemy(firstKind);
   assert.ok(Math.abs(first.maxHp/f.maxHp-.9)<1e-9,`stage ${stage} first elite scale`);
-  const secondDue=stage===1?300:400;
+  const secondDue=stage===1?300:encounterRealTime(400);
   w.enemies=[];w.time=secondDue;w.director.step(w,0);
   const secondKind=stage===1?'siegerider':'breakerelite';
   const second=w.enemies.find(e=>e.kind===secondKind);

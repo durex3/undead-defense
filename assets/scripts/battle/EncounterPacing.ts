@@ -1,10 +1,12 @@
-export const BOSS_TIME = 480;
-/** The first playable siege stage is paced for a tighter six-minute run. */
-export const bossTimeForStage = (stageId: number) =>
-  stageId === 1 ? 360 : BOSS_TIME;
+export const BOSS_TIME = 360;
+export const MAX_WEAPON_SLOTS = 4;
+export const bossTimeForStage = (_stageId: number) => BOSS_TIME;
+/** Map real seconds to the existing 480-beat encounter score, never to attack clocks. */
+export const encounterScoreTime = (time: number) => time * 480 / BOSS_TIME;
+export const encounterRealTime = (score: number) => score * BOSS_TIME / 480;
 export const MAX_PLAYER_LEVEL = 64;
-/** Authored encounter beats use a four-minute score stretched over eight minutes. */
-export const encounterTime = (time: number) => time / 2;
+/** The four-minute shared score now spans a six-minute approach to the boss. */
+export const encounterTime = (time: number) => encounterScoreTime(time) / 2;
 export function encounterBeat(time: number): {
   name: string;
   rest: boolean;

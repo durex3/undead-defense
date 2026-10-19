@@ -4,8 +4,8 @@ import type { StageId } from './ProgressionConfig';
 export const STAGES = {
   1: {name:'铁棘围城', boss:'铁棘围城督军', health:1.65, elite:1.85, bossHealth:2.45, damage:1.42, xp:.85, medicine:42},
   2: {name:'赤砂虫巢', boss:'赤砂巢皇', health:1.72, elite:1.95, bossHealth:2.65, damage:1.46, xp:.85, medicine:42},
-  3: {name:'雷铸机庭', boss:'天穹铸雷机', health:1.82, elite:2.08, bossHealth:2.86, damage:1.50, xp:.85, medicine:42},
-  4: {name:'苍棘猎原', boss:'蚀月角王', health:1.86, elite:2.12, bossHealth:2.90, damage:1.52, xp:.85, medicine:42},
+  3: {name:'雷铸机庭', boss:'天穹铸雷机', health:1.82, elite:2.08, bossHealth:2.86, damage:1.50, xp:1.2, medicine:42},
+  4: {name:'苍棘猎原', boss:'蚀月角王', health:1.86, elite:2.12, bossHealth:2.90, damage:1.52, xp:1.3, medicine:42},
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Record<StageId, {threat: string; builds: string}> = {

@@ -120,12 +120,12 @@ test("opening offers exactly three distinct weapons with all ten reachable acros
   }
   assert.equal(seen.size, 10);
 });
-test("six weapon slots prevent seventh learning while owned weapons remain upgradeable", () => {
+test("four weapon slots prevent fifth learning while owned weapons remain upgradeable", () => {
   const w = world();
-  for (const s of WEAPONS.slice(0, 6)) w.skills[s] = 1;
-  assert.equal(w.weaponCount, 6);
-  assert(WEAPONS.slice(0, 6).every((s) => w.legal().includes(s)));
-  assert(WEAPONS.slice(6).every((s) => !w.legal().includes(s)));
+  for (const s of WEAPONS.slice(0, 4)) w.skills[s] = 1;
+  assert.equal(w.weaponCount, 4);
+  assert(WEAPONS.slice(0, 4).every((s) => w.legal().includes(s)));
+  assert(WEAPONS.slice(4).every((s) => !w.legal().includes(s)));
 });
 test("ice cannot freeze or slow bosses or cancel charges; elite control has a three second gate", () => {
   const w = world();
@@ -135,14 +135,15 @@ test("ice cannot freeze or slow bosses or cancel charges; elite control has a th
     e = enemy(w, 2, 0, "siegeflag");
   c.state = "charge";
   cast(w);
+  step(w, .12);
   assert.equal(b.freezeUntil, 0);
   assert.equal(b.slowUntil, 0);
   assert.equal(c.freezeUntil, 0);
   assert.equal(c.slowUntil, 0);
-  assert.equal(e.freezeUntil, 0.25);
+  assert.ok(Math.abs(e.freezeUntil - (0.25 + 7/60)) < 1e-8);
   step(w, 0.6);
-  assert.equal(e.freezeUntil, 0.25);
-  assert.equal(e.freezeReady, 3);
+  assert.ok(Math.abs(e.freezeUntil - (0.25 + 7/60)) < 1e-8);
+  assert.ok(Math.abs(e.freezeReady - (3 + 7/60)) < 1e-8);
 });
 test("ice aftershock fires once rather than every frame until expiration", () => {
   const w = world();
@@ -150,6 +151,7 @@ test("ice aftershock fires once rather than every frame until expiration", () =>
   w.mods.frost = ["aftershock"];
   enemy(w, 1);
   cast(w);
+  step(w, .12);
   const d = w.damage.frost;
   step(w, 0.85);
   assert(Math.abs(w.damage.frost - d * 1.45) < 1e-6);
@@ -263,7 +265,7 @@ test("all legal max-mod builds remain finite and six-weapon pressure stays bound
   assert(EXTRA_WEAPONS.slice(0, 6).every((s) => w.castCounts[s] > 1));
 });
 test('bone segment collision pierces different enemies once each even when resting inside width',()=>{const w=world();w.skills.bone=1;const a=enemy(w,2),b=enemy(w,4),d=weaponStats(w,'bone').damage;cast(w);step(w,2);assert(Math.abs(a.maxHp-a.hp-d)<1e-5);assert(Math.abs(b.maxHp-b.hp-d)<1e-5);});
-test('ghost return endpoint locks once and a moving player cannot extend its lifetime',()=>{const w=world();w.skills.ghost=1;w.mods.ghost=['reap'];enemy(w,8);cast(w);step(w,.85);const a=w.armory.extra.attacks.find(a=>a.active);assert.equal(a.phase,2);const end={...a.end};w.player={x:20,y:20};step(w,.05);assert.deepEqual(a.end,end);step(w,4);assert(!a.active);});
+test('ghost return endpoint locks once and a moving player cannot extend its lifetime',()=>{const w=world();w.skills.ghost=1;w.mods.ghost=['reap'];enemy(w,8);cast(w);step(w,1.05);const a=w.armory.extra.attacks.find(a=>a.active);assert.equal(a.phase,2);const end={...a.end};w.player={x:20,y:20};step(w,.05);assert.deepEqual(a.end,end);step(w,4);assert(!a.active);});
 test('full extra pool postpones a complete cast without overwriting and then reuses released slots',()=>{const w=world();w.skills.mine=1;enemy(w,7);cast(w);const original=w.armory.extra.attacks[0];while(w.armory.extra.attacks.length<EXTRA_LIMIT)w.armory.extra.attacks.push({...original,hit:new Set(),secondary:new Set()});const count=w.castCounts.mine;w.cooldowns.mine=0;w.armory.step(0);assert.equal(w.castCounts.mine,count);assert.equal(w.cooldowns.mine,0);for(let i=0;i<2;i++)w.armory.extra.attacks[i].active=false;w.armory.step(0);assert.equal(w.castCounts.mine,count+1);assert.equal(w.armory.extra.attacks.length,EXTRA_LIMIT);assert(w.armory.extra.attacks.slice(0,2).every(a=>a.active));});
 test('black hole has a synchronized first tick and cannot add immediate off-beat overlap damage',()=>{const w=world();w.skills.void=1;enemy(w,3);w.time=.13;cast(w);assert.equal(w.damage.void||0,0);assert.equal(w.armory.extra.attacks[0].next,.4);step(w,.2);assert.equal(w.damage.void||0,0);step(w,.1);assert(w.damage.void>0);});
 test('ghost hunter changes priority from nearby enemies to dangerous distant targets',()=>{for(const hunt of [false,true]){const w=world();w.skills.ghost=1;w.mods.ghost=hunt?['execution']:[];const near=enemy(w,2),elite=enemy(w,8,0,'siegeflag');cast(w);assert.equal(w.armory.extra.attacks[0].targetId,hunt?elite.id:near.id);}});

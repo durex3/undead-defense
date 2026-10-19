@@ -58,7 +58,7 @@ test('only marked ordinary boss reinforcements drop XP; skill summons do not',()
 test('collecting boss reinforcement XP opens a normal upgrade, preserves excess and respects level 64',()=>{
  const {w}=battle(4);w.level=50;w.xp=w.xpNeed-.2;w.time=bossTimeForStage(4)+3;w.director.step(w,3);
  const add=w.enemies.find(e=>e.bossReinforcement);add.state='seek';w.hit(add,1e6,'blade');assert(w.useUltimate());
- assert.equal(w.level,51);assert.equal(w.state,'upgrade');assert(Math.abs(w.xp-.225)<1e-8);
+ assert.equal(w.level,51);assert.equal(w.state,'upgrade');assert(Math.abs(w.xp-(ENEMIES[fodder(4)].xp*STAGES[4].xp*BOSS_REINFORCEMENT_XP-.2))<1e-8);
  const {w:c}=battle(4);c.level=63;c.xp=c.xpNeed-.2;c.time=bossTimeForStage(4)+3;c.director.step(c,3);
  const last=c.enemies.find(e=>e.bossReinforcement);last.state='seek';c.hit(last,1e6,'blade');assert(c.useUltimate());assert.equal(c.level,64);
  while(c.state==='upgrade'||c.state==='modification'){if(c.state==='upgrade')c.choose(c.cards[0]);else c.chooseMod(c.modOptions().find(m=>!c.mods[c.pendingModification].includes(m.excludes)).id);}

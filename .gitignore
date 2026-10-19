@@ -8,3 +8,17 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Reproducible local art studies; retain compact verification reports.
+artifacts/art-builds/*
+!artifacts/art-builds/*.json
+artifacts/art-combat/*
+!artifacts/art-combat/*.json
+artifacts/art-feedback/*
+!artifacts/art-feedback/*.json
+artifacts/art-preview/*
+!artifacts/art-preview/*.json
+artifacts/art-review/*
+!artifacts/art-review/*.json
+artifacts/weapon-redesign/showcase/
+artifacts/weapon-redesign-tests.log

@@ -1,0 +1,2999 @@
+{
+  "generated": "2026-10-19T16:09:22.788Z",
+  "sheets": [
+    "artifacts\\art-preview\\enemies-siege.svg",
+    "artifacts\\art-preview\\enemies-siege.svg",
+    "artifacts\\art-preview\\enemies-sand.svg",
+    "artifacts\\art-preview\\enemies-sand.svg",
+    "artifacts\\art-preview\\enemies-thunder.svg",
+    "artifacts\\art-preview\\enemies-thunder.svg",
+    "artifacts\\art-preview\\enemies-moon.svg",
+    "artifacts\\art-preview\\enemies-moon.svg",
+    "artifacts\\art-preview\\spells.svg",
+    "artifacts\\art-preview\\heroes.svg",
+    "artifacts\\art-preview\\hazards.svg"
+  ],
+  "budget": [
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · seek",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 199,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · windup",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 12,
+      "vertices": 205,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · recover",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 205,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · frozen",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 13,
+      "vertices": 218,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · seek",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 265,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · windup",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 17,
+      "vertices": 270,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · recover",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 266,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · frozen",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 20,
+      "vertices": 288,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · seek",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 13,
+      "vertices": 228,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · windup",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 232,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · recover",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 13,
+      "vertices": 228,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · frozen",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 18,
+      "vertices": 253,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · seek",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 151,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · windup",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 147,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · recover",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 138,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · frozen",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 8,
+      "vertices": 158,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · seek",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 316,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · windup",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 322,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · recover",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 285,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · frozen",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 339,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · vulnerable",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 285,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · seek",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 334,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · windup",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 335,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · recover",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 322,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · frozen",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 25,
+      "vertices": 357,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · vulnerable",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 322,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 31,
+      "vertices": 550,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 34,
+      "vertices": 556,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 33,
+      "vertices": 555,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 38,
+      "vertices": 585,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 33,
+      "vertices": 555,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 33,
+      "vertices": 544,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · seek",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 199,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · windup",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 12,
+      "vertices": 205,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · recover",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 205,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebone · frozen",
+      "kind": "siegebone",
+      "tier": "fodder",
+      "ops": 13,
+      "vertices": 218,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · seek",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 265,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · windup",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 17,
+      "vertices": 270,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · recover",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 266,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "thornshield · frozen",
+      "kind": "thornshield",
+      "tier": "special",
+      "ops": 20,
+      "vertices": 288,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · seek",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 13,
+      "vertices": 228,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · windup",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 232,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · recover",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 13,
+      "vertices": 228,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegebow · frozen",
+      "kind": "siegebow",
+      "tier": "special",
+      "ops": 18,
+      "vertices": 253,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · seek",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 151,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · windup",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 147,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · recover",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 138,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "flanker · frozen",
+      "kind": "flanker",
+      "tier": "fodder",
+      "ops": 8,
+      "vertices": 158,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · seek",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 316,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · windup",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 322,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · recover",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 285,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · frozen",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 339,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegeflag · vulnerable",
+      "kind": "siegeflag",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 285,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · seek",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 334,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · windup",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 335,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · recover",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 322,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · frozen",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 25,
+      "vertices": 357,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "siegerider · vulnerable",
+      "kind": "siegerider",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 322,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 31,
+      "vertices": 550,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 34,
+      "vertices": 556,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 33,
+      "vertices": 555,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 38,
+      "vertices": 585,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 33,
+      "vertices": 555,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-siege",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 33,
+      "vertices": 544,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · seek",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 168,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · windup",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 188,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · recover",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 166,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · frozen",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 8,
+      "vertices": 181,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · seek",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 4,
+      "vertices": 138,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · windup",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 9,
+      "vertices": 67,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · recover",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 4,
+      "vertices": 138,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · frozen",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 155,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · seek",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 55,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · windup",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 67,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · recover",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 55,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · frozen",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 80,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · seek",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 91,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · windup",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 8,
+      "vertices": 103,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · recover",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 91,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · frozen",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 11,
+      "vertices": 116,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · seek",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 213,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · windup",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 220,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · recover",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 212,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · frozen",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 236,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · seek",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 271,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · windup",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 289,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · recover",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 277,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · frozen",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 295,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · buried",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 98,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · seek",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 368,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · windup",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 21,
+      "vertices": 375,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · recover",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 363,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · frozen",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 24,
+      "vertices": 393,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · vulnerable",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 366,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · seek",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 296,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · windup",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 18,
+      "vertices": 307,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · recover",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 295,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · frozen",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 21,
+      "vertices": 319,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · vulnerable",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 298,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 21,
+      "vertices": 493,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 24,
+      "vertices": 518,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 507,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 28,
+      "vertices": 513,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 507,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 525,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · seek",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 168,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · windup",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 188,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · recover",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 166,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandworker · frozen",
+      "kind": "sandworker",
+      "tier": "fodder",
+      "ops": 8,
+      "vertices": 181,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · seek",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 4,
+      "vertices": 138,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · windup",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 9,
+      "vertices": 67,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · recover",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 4,
+      "vertices": 138,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandlarva · frozen",
+      "kind": "sandlarva",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 155,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · seek",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 55,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · windup",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 67,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · recover",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 55,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandegg · frozen",
+      "kind": "sandegg",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 80,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · seek",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 91,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · windup",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 8,
+      "vertices": 103,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · recover",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 91,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "shellroller · frozen",
+      "kind": "shellroller",
+      "tier": "special",
+      "ops": 11,
+      "vertices": 116,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · seek",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 213,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · windup",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 220,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · recover",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 212,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandspitter · frozen",
+      "kind": "sandspitter",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 236,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · seek",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 271,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · windup",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 289,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · recover",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 277,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · frozen",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 295,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "sandstalker · buried",
+      "kind": "sandstalker",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 98,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · seek",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 368,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · windup",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 21,
+      "vertices": 375,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · recover",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 363,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · frozen",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 24,
+      "vertices": 393,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "broodelite · vulnerable",
+      "kind": "broodelite",
+      "tier": "elite",
+      "ops": 20,
+      "vertices": 366,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · seek",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 296,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · windup",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 18,
+      "vertices": 307,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · recover",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 295,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · frozen",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 21,
+      "vertices": 319,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "breakerelite · vulnerable",
+      "kind": "breakerelite",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 298,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 21,
+      "vertices": 493,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 24,
+      "vertices": 518,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 507,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 28,
+      "vertices": 513,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 507,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-sand",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 525,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · seek",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 143,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · windup",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 153,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · recover",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 141,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · frozen",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 8,
+      "vertices": 160,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · seek",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 187,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · windup",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 200,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · recover",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 172,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · frozen",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 221,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · seek",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 155,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · windup",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 167,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · recover",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 155,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · frozen",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 180,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · seek",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 10,
+      "vertices": 197,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · windup",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 207,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · recover",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 10,
+      "vertices": 195,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · frozen",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 222,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · seek",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 397,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · windup",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 406,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · recover",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 390,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · frozen",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 431,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · vulnerable",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 390,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · seek",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 440,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · windup",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 18,
+      "vertices": 448,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · recover",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 438,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · frozen",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 21,
+      "vertices": 465,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · vulnerable",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 438,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · seek",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 8,
+      "vertices": 147,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · windup",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 10,
+      "vertices": 159,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · recover",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 8,
+      "vertices": 147,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · frozen",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 13,
+      "vertices": 172,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · device",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 12,
+      "vertices": 167,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · seek",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 7,
+      "vertices": 131,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · windup",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 9,
+      "vertices": 143,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · recover",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 7,
+      "vertices": 131,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · frozen",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 12,
+      "vertices": 156,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · device",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 11,
+      "vertices": 151,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 20,
+      "vertices": 411,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 426,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 22,
+      "vertices": 417,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 27,
+      "vertices": 447,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 22,
+      "vertices": 417,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 22,
+      "vertices": 427,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · seek",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 143,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · windup",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 7,
+      "vertices": 153,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · recover",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 5,
+      "vertices": 141,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "rivetwalker · frozen",
+      "kind": "rivetwalker",
+      "tier": "fodder",
+      "ops": 8,
+      "vertices": 160,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · seek",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 187,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · windup",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 200,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · recover",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 172,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "anchorweaver · frozen",
+      "kind": "anchorweaver",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 221,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · seek",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 155,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · windup",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 167,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · recover",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 155,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "arclantern · frozen",
+      "kind": "arclantern",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 180,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · seek",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 10,
+      "vertices": 197,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · windup",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 207,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · recover",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 10,
+      "vertices": 195,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railsaw · frozen",
+      "kind": "railsaw",
+      "tier": "special",
+      "ops": 15,
+      "vertices": 222,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · seek",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 397,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · windup",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 406,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · recover",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 390,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · frozen",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 431,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridwarden · vulnerable",
+      "kind": "gridwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 390,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · seek",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 440,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · windup",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 18,
+      "vertices": 448,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · recover",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 438,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · frozen",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 21,
+      "vertices": 465,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "railreaper · vulnerable",
+      "kind": "railreaper",
+      "tier": "elite",
+      "ops": 16,
+      "vertices": 438,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · seek",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 8,
+      "vertices": 147,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · windup",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 10,
+      "vertices": 159,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · recover",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 8,
+      "vertices": 147,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · frozen",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 13,
+      "vertices": 172,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "thunderanchor · device",
+      "kind": "thunderanchor",
+      "tier": "device",
+      "ops": 12,
+      "vertices": 167,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · seek",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 7,
+      "vertices": 131,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · windup",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 9,
+      "vertices": 143,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · recover",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 7,
+      "vertices": 131,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · frozen",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 12,
+      "vertices": 156,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "gridelectrode · device",
+      "kind": "gridelectrode",
+      "tier": "device",
+      "ops": 11,
+      "vertices": 151,
+      "limitOps": 16,
+      "limitVerts": 260
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 20,
+      "vertices": 411,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 23,
+      "vertices": 426,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 22,
+      "vertices": 417,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 27,
+      "vertices": 447,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 22,
+      "vertices": 417,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-thunder",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 22,
+      "vertices": 427,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · seek",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 206,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · windup",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 12,
+      "vertices": 208,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · recover",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 196,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · frozen",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 15,
+      "vertices": 230,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · seek",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 217,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · windup",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 231,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · recover",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 207,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · frozen",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 243,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · seek",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 170,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · windup",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 8,
+      "vertices": 172,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · recover",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 160,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · frozen",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 11,
+      "vertices": 194,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · jump",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 170,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · seek",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 315,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · windup",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 8,
+      "vertices": 326,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · recover",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 317,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · frozen",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 11,
+      "vertices": 346,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · seek",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 328,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · windup",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 339,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · recover",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 328,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · frozen",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 354,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · vulnerable",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 328,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · seek",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 12,
+      "vertices": 330,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · windup",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 14,
+      "vertices": 333,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · recover",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 12,
+      "vertices": 321,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · frozen",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 360,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · vulnerable",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 12,
+      "vertices": 321,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 17,
+      "vertices": 580,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 20,
+      "vertices": 571,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 19,
+      "vertices": 563,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 24,
+      "vertices": 604,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · jump",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 17,
+      "vertices": 579,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 19,
+      "vertices": 563,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 20,
+      "vertices": 629,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · seek",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 206,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · windup",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 12,
+      "vertices": 208,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · recover",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 10,
+      "vertices": 196,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "thornrunner · frozen",
+      "kind": "thornrunner",
+      "tier": "fodder",
+      "ops": 15,
+      "vertices": 230,
+      "limitOps": 15,
+      "limitVerts": 240
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · seek",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 217,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · windup",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 9,
+      "vertices": 231,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · recover",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 7,
+      "vertices": 207,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "crescentmantis · frozen",
+      "kind": "crescentmantis",
+      "tier": "special",
+      "ops": 12,
+      "vertices": 243,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · seek",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 170,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · windup",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 8,
+      "vertices": 172,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · recover",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 160,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · frozen",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 11,
+      "vertices": 194,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "vaultlynx · jump",
+      "kind": "vaultlynx",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 170,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · seek",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 315,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · windup",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 8,
+      "vertices": 326,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · recover",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 6,
+      "vertices": 317,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "antlerprowler · frozen",
+      "kind": "antlerprowler",
+      "tier": "special",
+      "ops": 11,
+      "vertices": 346,
+      "limitOps": 22,
+      "limitVerts": 360
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · seek",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 328,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · windup",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 19,
+      "vertices": 339,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · recover",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 328,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · frozen",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 22,
+      "vertices": 354,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "moonreaver · vulnerable",
+      "kind": "moonreaver",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 328,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · seek",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 12,
+      "vertices": 330,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · windup",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 14,
+      "vertices": 333,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · recover",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 12,
+      "vertices": 321,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · frozen",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 17,
+      "vertices": 360,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "hornwarden · vulnerable",
+      "kind": "hornwarden",
+      "tier": "elite",
+      "ops": 12,
+      "vertices": 321,
+      "limitOps": 27,
+      "limitVerts": 540
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · seek",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 17,
+      "vertices": 580,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · windup",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 20,
+      "vertices": 571,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · recover",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 19,
+      "vertices": 563,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · frozen",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 24,
+      "vertices": 604,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · jump",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 17,
+      "vertices": 579,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · vulnerable",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 19,
+      "vertices": 563,
+      "limitOps": 38,
+      "limitVerts": 950
+    },
+    {
+      "sheet": "enemies-moon",
+      "label": "boss · phase2",
+      "kind": "boss",
+      "tier": "boss",
+      "ops": 20,
+      "vertices": 629,
+      "limitOps": 38,
+      "limitVerts": 950
+    }
+  ],
+  "violations": []
+}

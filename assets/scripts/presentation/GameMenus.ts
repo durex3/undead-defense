@@ -629,7 +629,7 @@ export class GameMenus {
     );
     this.host.text(
       this.host.overlay,
-      guide?.threat || "清理尸潮、积累武器，八分钟后迎战首领",
+      guide?.threat || "清理尸潮、积累武器，六分钟后迎战首领",
       0,
       -165,
       16,

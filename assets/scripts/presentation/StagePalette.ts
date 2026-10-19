@@ -1,18 +1,5 @@
-import { Color } from "cc";
-
 /**
- * Four stage painters share one immutable palette cache.
- * Colours are keyed by hex + alpha so a crowd frame allocates nothing after warm-up.
+ * Backwards-compatible entry point for the stage map painters.
+ * The single colour cache now lives in presentation/art/Ink.ts.
  */
-const inks = new Map<string, Color>();
-
-export function ink(hex: string, alpha = 255) {
-  const key = hex + ":" + alpha;
-  let c = inks.get(key);
-  if (!c) {
-    c = new Color().fromHEX(hex);
-    c.a = alpha;
-    inks.set(key, c);
-  }
-  return c;
-}
+export { ink } from "./art/Ink";

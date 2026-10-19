@@ -33,17 +33,21 @@ export function combatWeaponEntries(w: SurvivalWorld) {
 }
 export function weaponDetails(w: SurvivalWorld, s: Skill) {
   const a = weaponStats(w, s);
+  const countLabel=s==="ghost"?"名伙伴":s==="blade"?"把飞刀":"次主攻击";
+  const damageLabel=s==="ghost"?"单爪伤害":s==="blade"?"单刀伤害":s==="water"?"每跳伤害":"单次伤害";
+  const rangeLabel=s==="blade"&&!a.mods.includes("hunt")?`环绕半径 ${n((a.mods.includes("orbit")?2.7:1.9)*a.radius/.21)}`:
+    s==="ghost"?`爪击半径 ${n(a.radius+.45)}`:`范围 ${n(a.radius)}`;
   return [
     WEAPON_ROLES[s],
-    `${w.skills[s]}/8级 · ${a.count}次主攻击 · 周期 ${n(a.cooldown)}秒`,
-    `${s === "water" ? "每跳伤害" : "单次伤害"} ${n(a.damage)} · 范围 ${n(a.radius)}${["water", "mine", "void", "frost", "bone"].includes(s) ? ` · 持续 ${n(a.duration)}秒` : ""}`,
+    `${w.skills[s]}/8级 · ${a.count}${countLabel} · ${s==="blade"&&!a.mods.includes("hunt")?"旋转一周":"周期"} ${n(a.cooldown)}秒`,
+    `${damageLabel} ${n(a.damage)} · ${rangeLabel}${["water", "mine", "void", "frost", "bone"].includes(s) ? ` · 持续 ${n(a.duration)}秒` : ""}`,
     ...w.mods[s].map((id) => {
       const m = modInfo(s, id)!;
       return `${m.glyph} ${m.name}：${m.effect}\n代价：${m.cost}`;
     }),
     "4级、8级各一次改造；两个改造共同改变攻击形态。",
     s === "blade"
-      ? "飞刀数量增加主刀；碎刃每轮固定2把。"
+      ? "数把实体飞刀持续等距环绕，每刀每目标每周一次；扩阵覆盖外圈，追猎替换为远射；往返每周多一个命中段，碎刃每周固定2把。持续属性不改变转速。"
       : s === "fire"
         ? "数量增加本轮主球总数；碎焰每主球2枚；火海同源重叠不叠伤。"
         : s === "water"
@@ -64,13 +68,13 @@ export function upgradeChanges(w: SurvivalWorld, c: Card) {
     if (!l)
       return `${WEAPON_ROLES[s]}\n伤害 ${n(b.damage)} · 数量 ${b.count}\n周期 ${n(b.cooldown)}秒`;
     const changes = [
-      a.damage !== b.damage ? `伤害 ${n(a.damage)} → ${n(b.damage)}` : "",
-      a.count !== b.count ? `数量 ${a.count} → ${b.count}` : "",
+      a.damage !== b.damage ? `${s==="ghost"?"单爪伤害":s==="blade"?"单刀伤害":"伤害"} ${n(a.damage)} → ${n(b.damage)}` : "",
+      a.count !== b.count ? `${s==="ghost"?"伙伴数":s==="blade"?"飞刀数":"数量"} ${a.count} → ${b.count}` : "",
       a.cooldown !== b.cooldown
         ? `周期 ${n(a.cooldown)} → ${n(b.cooldown)}秒`
         : "",
       a.radius !== b.radius ? `范围 ${n(a.radius)} → ${n(b.radius)}` : "",
-      a.duration !== b.duration
+      a.duration !== b.duration && s !== "blade"
         ? `持续 ${n(a.duration)} → ${n(b.duration)}秒`
         : "",
     ];

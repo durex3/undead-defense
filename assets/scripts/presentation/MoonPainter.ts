@@ -1,10 +1,10 @@
-import { Color, Graphics } from "cc";
+import { Graphics } from "cc";
 import { MOON_BASES } from "../battle/MoonMap";
 import { moonCurve, moonPose } from "../battle/MoonGeometry";
 import type { MoonMotion } from "../battle/MoonGeometry";
-import type { SurvivalWorld } from "../battle/SurvivalWorld";
-import type { Enemy, Hazard, Point } from "../battle/SurvivalTypes";
+import type { Hazard, Point } from "../battle/SurvivalTypes";
 import { ink } from "./StagePalette";
+import { warningGlyph } from "./art/VfxBrush";
 function line(g: Graphics, a: Point, b: Point) {
   g.moveTo(a.x * 48, a.y * 48);
   g.lineTo(b.x * 48, b.y * 48);
@@ -79,128 +79,6 @@ export function drawMoonMap(g: Graphics) {
     g.fill();
   }
 }
-/** Distinct silhouettes: low quilled pack beast, two-legged mantis, long-tail cat, antler quadrupeds. */
-export function drawMoonEnemy(g: Graphics, w: SurvivalWorld, e: Enemy) {
-  const boss = e.kind === "boss",
-    elite = e.kind === "moonreaver" || e.kind === "hornwarden";
-  const scale = boss ? 2.25 : elite ? 1.5 : 1,
-    x = e.x * 48;
-  const s = e.moon;
-  let height = 0;
-  if (
-    s?.jumpAt !== undefined &&
-    s.jumpDue !== undefined &&
-    w.time >= s.jumpAt &&
-    w.time < s.jumpDue
-  )
-    height = Math.sin(((w.time - s.jumpAt) / 0.45) * Math.PI) * 50;
-  const y = e.y * 48 + height,
-    pulse =
-      e.state === "windup"
-        ? Math.sin(w.time * 12) * 2
-        : Math.sin(w.time * 7 + e.id) * 2;
-  const fill = (c: string) => (g.fillColor = ink(c)),
-    stroke = (c: string) => {
-      g.strokeColor = ink(c);
-      g.lineWidth = 3 * scale;
-    };
-  const rect = (a: number, b: number, c: number, d: number) => {
-    g.rect(x + a * scale, y + b * scale, c * scale, d * scale);
-    g.fill();
-  };
-  const seg = (a: number, b: number, c: number, d: number) => {
-    g.moveTo(x + a * scale, y + b * scale);
-    g.lineTo(x + c * scale, y + d * scale);
-    g.stroke();
-  };
-  if (e.kind === "crescentmantis" || e.kind === "moonreaver") {
-    fill(elite ? "#817395" : "#829570");
-    rect(-8, -12, 16, 34);
-    rect(-11, 20, 22, 12);
-    stroke("#b5c3a3");
-    seg(-5, -10, -17, -25);
-    seg(5, -10, 17, -25);
-    seg(-7, 15, -24, 31 + pulse);
-    seg(7, 15, 24, 31 + pulse);
-    stroke("#f4e5b8");
-    for (const side of [-1, 1]) {
-      g.arc(
-        x + side * 25 * scale,
-        y + (36 + pulse) * scale,
-        13 * scale,
-        side > 0 ? -1.6 : 0.2,
-        side > 0 ? 1.5 : 3.1,
-        false,
-      );
-      g.stroke();
-    }
-    fill("#ffcb78");
-    rect(-7, 25, 4, 4);
-    rect(3, 25, 4, 4);
-    if (elite) {
-      stroke("#b39ccb");
-      seg(0, -10, 23, -16);
-      seg(23, -16, 29, -9);
-    }
-  } else {
-    const lynx = e.kind === "vaultlynx",
-      fodder = e.kind === "thornrunner";
-    fill(fodder ? "#8e9271" : lynx ? "#998277" : boss ? "#b3a8aa" : "#8b8697");
-    g.ellipse(x, y + 4 * scale, (fodder ? 21 : 24) * scale, 13 * scale);
-    g.fill();
-    rect(11, 7, 17, 16);
-    for (const side of [-1, 1]) {
-      rect(side < 0 ? -19 : 9, -17 - pulse, 7, 20);
-      rect(side < 0 ? -14 : 17, -19 + pulse, 6, 19);
-    }
-    stroke(lynx ? "#bca292" : "#a0a298");
-    seg(-18, 7, -31, lynx ? 22 : 13);
-    if (lynx) seg(-31, 22, -36, 35);
-    fill("#f9cd89");
-    rect(21, 17, 4, 4);
-    if (fodder) {
-      fill("#d2c6a0");
-      for (const a of [-13, -2, 9]) {
-        g.moveTo(x + (a - 5) * scale, y + 12 * scale);
-        g.lineTo(x + a * scale, y + (26 + pulse) * scale);
-        g.lineTo(x + (a + 4) * scale, y + 12 * scale);
-        g.close();
-        g.fill();
-      }
-    } else if (lynx) {
-      fill("#c8ab96");
-      rect(14, 22, 5, 9);
-      rect(25, 22, 5, 9);
-      rect(12, -19, 14, 5);
-    } else {
-      stroke(boss ? "#f3e4cb" : "#d3c7c4");
-      for (const side of [-1, 1]) {
-        seg(19, 24, 19 + side * 17, 42);
-        seg(19 + side * 17, 42, 19 + side * 28, 40);
-        seg(19 + side * 17, 42, 19 + side * 18, 57);
-        seg(19 + side * 12, 36, 19 + side * 27, 53);
-      }
-      if (boss) {
-        g.strokeColor = ink("#d2c1ed", 150);
-        g.lineWidth = 3;
-        g.circle(x - 29 * scale, y + 18 * scale, 11 * scale);
-        g.stroke();
-      }
-    }
-  }
-  if (e.state === "recover") {
-    g.strokeColor = ink("#a6dfb6");
-    g.lineWidth = 2;
-    g.ellipse(x, e.y * 48 - 6, 27 * scale, 11 * scale);
-    g.stroke();
-  }
-  if (height > 0 && s?.jumpStart && s.jumpEnd) {
-    g.strokeColor = ink("#e9bba0", 160);
-    g.lineWidth = 2;
-    line(g, s.jumpStart, s.jumpEnd);
-    g.stroke();
-  }
-}
 function sweepPreview(g: Graphics, m: MoonMotion) {
   for (const u of [0, 1]) {
     const o = moonCurve(m.start, m.control, m.end, u),
@@ -223,6 +101,7 @@ function sweepPreview(g: Graphics, m: MoonMotion) {
     line(g, m.start, m.end);
     g.stroke();
     arrow(g, m.end, Math.atan2(m.end.y - m.start.y, m.end.x - m.start.x));
+
   }
 }
 export function drawMoonHazard(g: Graphics, h: Hazard, time: number) {
@@ -231,6 +110,12 @@ export function drawMoonHazard(g: Graphics, h: Hazard, time: number) {
     waiting = time < m.due;
   g.strokeColor = ink("#ffa97e", waiting ? 230 : 170);
   g.lineWidth = 2;
+  if (m.shape !== "blade") {
+    const anchor = m.shape === "landing" ? m.end : m.start;
+    warningGlyph(g, anchor.x * 48, anchor.y * 48, m.shape === "claw" ? "claw" : m.shape === "landing" ? "landing" : "sweep", waiting ? "#ffb38c" : "#fff0ce", !waiting);
+    g.strokeColor = ink("#ffa97e", waiting ? 230 : 130);
+    g.lineWidth = 2;
+  }
   if (m.shape === "blade") {
     // Both immutable legs are shown from the initial warning; double chevrons identify return.
     curve(g, m.start, m.control, m.end, true);
@@ -286,10 +171,42 @@ export function drawMoonHazard(g: Graphics, h: Hazard, time: number) {
     line(g, m.start, m.end);
     g.stroke();
     arrow(g, m.end, Math.atan2(m.end.y - m.start.y, m.end.x - m.start.x));
+    const impact = !waiting ? Math.max(0, 1 - (time - m.due) / .2) : 0;
+    if (impact > 0) {
+      // Short angular chips inside the true landing radius; no expanding danger ring.
+      g.fillColor = ink("#efd5aa", Math.round(impact * 235));
+      for (let i = 0; i < 6; i++) {
+        const a = i * Math.PI / 3 + .2;
+        const distance = m.radius * 48 * (.45 + (1 - impact) * .3);
+        const px = x + Math.cos(a) * distance, py = y + Math.sin(a) * distance;
+        g.moveTo(px - 3, py); g.lineTo(px, py + 5 * impact);
+        g.lineTo(px + 3, py - 2); g.close();
+      }
+      g.fill();
+    }
   } else {
-    sweepPreview(g, m);
+    // Claws advertise a fan, sweeps advertise the moving blade envelope.
+    if (m.shape === "claw") {
+      const x = m.start.x * 48, y = m.start.y * 48;
+      for (const t of [0, .5, 1]) {
+        const angle = m.angle + m.turn * t;
+        g.moveTo(x,y);
+        g.lineTo(x+Math.cos(angle)*m.radius*48,y+Math.sin(angle)*m.radius*48);
+      }
+      g.stroke();
+      if (Math.hypot(m.end.x-m.start.x,m.end.y-m.start.y)>.1 || Math.hypot(m.control.x-m.start.x,m.control.y-m.start.y)>.1)
+        curve(g,m.start,m.control,m.end,true);
+      for (let i=0;i<18;i++) {
+        if(i%3===2) continue;
+        const lo=m.angle+m.turn*i/18, hi=m.angle+m.turn*(i+1)/18;
+        g.moveTo(x+Math.cos(lo)*m.radius*48,y+Math.sin(lo)*m.radius*48);
+        g.lineTo(x+Math.cos(hi)*m.radius*48,y+Math.sin(hi)*m.radius*48);
+      }
+      g.stroke();
+    } else sweepPreview(g, m);
     if (m.shape === "claw" && v.leg) {
-      g.fillColor = ink("#ffbe91", 120);
+      const contact = Math.max(0, 1 - (time - m.due) / .16);
+      g.fillColor = ink("#ffbe91", 85 + Math.round(contact * 65));
       g.moveTo(v.point.x * 48, v.point.y * 48);
       for (let i = 0; i <= 16; i++) {
         const a = m.angle + (m.turn * i) / 16;
@@ -300,6 +217,7 @@ export function drawMoonHazard(g: Graphics, h: Hazard, time: number) {
       }
       g.close();
       g.fill();
+      g.strokeColor = ink("#fff0ce",240); g.lineWidth = 3 + contact * 2; g.stroke();
       return;
     }
     if (v.leg) {

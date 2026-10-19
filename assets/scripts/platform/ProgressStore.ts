@@ -1,5 +1,6 @@
 import type { StoragePort } from "./StoragePort";
 import type { SurvivalWorld } from "../battle/SurvivalWorld";
+import { MAX_WEAPON_SLOTS } from "../battle/EncounterPacing";
 import {
   CHARACTERS,
   CharacterId,
@@ -87,7 +88,7 @@ export class ProgressStore {
     );
   }
   get weaponSlots() {
-    return 6;
+    return MAX_WEAPON_SLOTS;
   }
   unlockedCharacter(id: CharacterId) {
     const stage = CHARACTERS[id].stage;
