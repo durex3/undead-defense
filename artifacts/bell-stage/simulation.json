@@ -1,0 +1,773 @@
+{
+  "scope": "18 full-level boss output-window diagnostics with huge HP, 12 random-growth huge-HP collectors, 4 offline painter samples. No human win rate or phone GPU/temperature claim.",
+  "boss": [
+    {
+      "build": "base",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 99.9,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "build": "base",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 106,
+      "bossRemaining": 0,
+      "damageTaken": 306,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "wax": 9,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 10
+      }
+    },
+    {
+      "build": "base",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 98.4,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "build": "base",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 99.9,
+      "bossRemaining": 0,
+      "damageTaken": 302,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "build": "base",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 99.8,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "build": "base",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 110.7,
+      "bossRemaining": 0,
+      "damageTaken": 330,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 10
+      }
+    },
+    {
+      "build": "hammer",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 49.4,
+      "bossRemaining": 0,
+      "damageTaken": 128,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "hammer",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 55.2,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "hammer",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 49.4,
+      "bossRemaining": 0,
+      "damageTaken": 128,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "hammer",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 54.8,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "hammer",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 48.3,
+      "bossRemaining": 0,
+      "damageTaken": 128,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "hammer",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 52.4,
+      "bossRemaining": 0,
+      "damageTaken": 152,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "wheel",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 46.2,
+      "bossRemaining": 0,
+      "damageTaken": 102,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "wheel",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 49.5,
+      "bossRemaining": 0,
+      "damageTaken": 152,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "wheel",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 45.8,
+      "bossRemaining": 0,
+      "damageTaken": 102,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "wheel",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 49.4,
+      "bossRemaining": 0,
+      "damageTaken": 154,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "wheel",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 45.9,
+      "bossRemaining": 0,
+      "damageTaken": 102,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "build": "wheel",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 46.2,
+      "bossRemaining": 0,
+      "damageTaken": 126,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "wax": 5,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 4
+      }
+    }
+  ],
+  "growth": [
+    {
+      "unlocked": [],
+      "seed": 19,
+      "firstNew": null,
+      "firstEight": 48.7,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 8,
+        "wax": 8,
+        "charges": 5,
+        "rejected": 1,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [],
+      "seed": 73,
+      "firstNew": null,
+      "firstEight": 30.6,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "void",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 12,
+        "wax": 8,
+        "charges": 6,
+        "rejected": 1,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [],
+      "seed": 131,
+      "firstNew": null,
+      "firstEight": 47.9,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "peak": 37,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 15,
+        "wax": 9,
+        "charges": 3,
+        "rejected": 6,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 19,
+      "firstNew": 16.5,
+      "firstEight": 50.9,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "bone",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 1,
+        "rejected": 5,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 73,
+      "firstNew": 43.3,
+      "firstEight": 30.6,
+      "level": 39,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 29,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 8,
+        "charges": 4,
+        "rejected": 7,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 131,
+      "firstNew": 23.2,
+      "firstEight": 67.3,
+      "level": 39,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "holy",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 39,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 12,
+        "wax": 4,
+        "charges": 2,
+        "rejected": 0,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 19,
+      "firstNew": 16.5,
+      "firstEight": 43,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 37,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 10,
+        "wax": 7,
+        "charges": 4,
+        "rejected": 2,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 73,
+      "firstNew": 43.3,
+      "firstEight": 30.6,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 34,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 8,
+        "charges": 2,
+        "rejected": 3,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 131,
+      "firstNew": 23.2,
+      "firstEight": 72.8,
+      "level": 39,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 36,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 8,
+        "wax": 5,
+        "charges": 1,
+        "rejected": 1,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 19,
+      "firstNew": 16.5,
+      "firstEight": 43,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 6,
+        "charges": 1,
+        "rejected": 3,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 73,
+      "firstNew": 19.3,
+      "firstEight": 48.1,
+      "level": 39,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 39,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 4,
+        "charges": 1,
+        "rejected": 3,
+        "boss": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 131,
+      "firstNew": 19.3,
+      "firstEight": 83.7,
+      "level": 39,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "holy",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 45,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 11,
+        "wax": 8,
+        "charges": 2,
+        "rejected": 5,
+        "boss": 0
+      },
+      "bossPresent": true
+    }
+  ],
+  "maxVertices": 2802
+}

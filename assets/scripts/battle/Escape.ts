@@ -77,9 +77,7 @@ export function crownEscape(w: SurvivalWorld, candidates: Hazard[], avoidCrowd =
       if (
         Math.abs(p.x) > 22 ||
         Math.abs(p.y) > 26 ||
-        (w.stageId === 1 && siegeMap.blocked(p, 0.3)) ||
-        (w.stageId === 2 && sandMap.blocked(p, 0.3)) ||
-        (w.stageId === 3 && thunderMap.blocked(p, 0.3))
+        w.stageStrategy.map.blocked(p, 0.3)
       ) {
         safe = false;
         break;

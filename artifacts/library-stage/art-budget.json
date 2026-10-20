@@ -1,0 +1,84 @@
+{
+  "scope": "Offline body/state draw budgets; 844x390 mock HUD footprints are illustrative, actual Cocos UI tested separately. No GPU or phone heat claim.",
+  "actors": [
+    {
+      "kind": "paperbonegrub",
+      "commands": 7,
+      "vertices": 87,
+      "limits": [
+        15,
+        240
+      ],
+      "over": false
+    },
+    {
+      "kind": "sealclerk",
+      "commands": 11,
+      "vertices": 108,
+      "limits": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "folioray",
+      "commands": 10,
+      "vertices": 87,
+      "limits": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "spineclasp",
+      "commands": 11,
+      "vertices": 93,
+      "limits": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "sealprovost",
+      "commands": 15,
+      "vertices": 240,
+      "limits": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "claspjailer",
+      "commands": 13,
+      "vertices": 119,
+      "limits": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "boss",
+      "commands": 22,
+      "vertices": 209,
+      "limits": [
+        38,
+        950
+      ],
+      "over": false
+    }
+  ],
+  "stress": {
+    "enemies": 100,
+    "elites": 2,
+    "weapons": 4,
+    "signs": 2,
+    "vertices": 18362,
+    "commands": 1209,
+    "over": false
+  }
+}

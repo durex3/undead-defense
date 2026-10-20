@@ -1,0 +1,91 @@
+{
+  "version": "0.29.0",
+  "scope": "Isolated 844x390 controlled fixtures, not a normal encounter or human playtest",
+  "core": {
+    "before": {
+      "slots": 2,
+      "cores": 2,
+      "hazards": 2
+    },
+    "after": {
+      "slots": 2,
+      "cores": [
+        {
+          "id": 19,
+          "hp": 75,
+          "x": -3.731808640141409,
+          "y": -9.119542592042421
+        },
+        {
+          "id": 20,
+          "hp": 75,
+          "x": -3.731808640141409,
+          "y": -6.880457407957577
+        }
+      ],
+      "hazards": [
+        {
+          "shape": "core",
+          "fired": true
+        },
+        {
+          "shape": "core",
+          "fired": true
+        }
+      ]
+    },
+    "broken": {
+      "before": {
+        "kills": 0,
+        "gold": 0,
+        "xp": 0,
+        "slots": 2
+      },
+      "after": {
+        "kills": 0,
+        "gold": 0,
+        "xp": 0,
+        "slots": 2,
+        "aliveCores": 0
+      },
+      "nextStepSlots": 2,
+      "afterRecoverySlots": 0
+    },
+    "consoleErrors": 0
+  },
+  "phaseTwo": {
+    "plannedSecond": "core",
+    "earlyCoreEntities": 0,
+    "warningSlots": 2
+  },
+  "resources": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/style.css",
+      "status": 200
+    },
+    {
+      "path": "/src/polyfills.bundle.js",
+      "status": 200
+    },
+    {
+      "path": "/src/system.bundle.js",
+      "status": 200
+    },
+    {
+      "path": "/src/import-map.json",
+      "status": 200
+    },
+    {
+      "path": "/index.js",
+      "status": 200
+    },
+    {
+      "path": "/src/settings.json",
+      "status": 200
+    }
+  ]
+}

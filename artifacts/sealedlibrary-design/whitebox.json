@@ -1,0 +1,319 @@
+{
+  "status": "design-only; stage 10 not registered",
+  "scope": "0.5-grid static connectivity with .05 edge sampling, two inner routes, fixed rectangle toy scenarios with .35 reaction/4.2 speed, .025 steps, relative rectangular sweep and swept foot/sign events. Empty court only: no live AI, moving crowd, HUD projection, real battle or human difficulty claim.",
+  "boxes": [
+    [
+      -9,
+      -10,
+      3,
+      0.9
+    ],
+    [
+      -12,
+      -7.5,
+      0.9,
+      2.5
+    ],
+    [
+      9,
+      10,
+      3,
+      0.9
+    ],
+    [
+      12,
+      7.5,
+      0.9,
+      2.5
+    ],
+    [
+      -13,
+      13,
+      1.7,
+      3.5
+    ],
+    [
+      13,
+      -13,
+      1.7,
+      3.5
+    ],
+    [
+      -4,
+      20,
+      3.2,
+      1.1
+    ],
+    [
+      4,
+      -20,
+      3.2,
+      1.1
+    ]
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "grid": 0.5,
+      "edgeSampling": 0.05,
+      "walkable": 8399,
+      "reachable": 8399,
+      "references": [
+        {
+          "x": 0,
+          "y": -8,
+          "connected": true
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "connected": true
+        },
+        {
+          "x": -17,
+          "y": 0,
+          "connected": true
+        },
+        {
+          "x": -17,
+          "y": 18,
+          "connected": true
+        },
+        {
+          "x": 0,
+          "y": 16,
+          "connected": true
+        },
+        {
+          "x": 17,
+          "y": 18,
+          "connected": true
+        },
+        {
+          "x": 17,
+          "y": 0,
+          "connected": true
+        },
+        {
+          "x": 0,
+          "y": -15,
+          "connected": true
+        }
+      ],
+      "inner": [
+        {
+          "x": -4,
+          "clear": true
+        },
+        {
+          "x": 4,
+          "clear": true
+        }
+      ],
+      "goldenPathClear": true,
+      "passed": true
+    },
+    {
+      "radius": 0.7,
+      "grid": 0.5,
+      "edgeSampling": 0.05,
+      "walkable": 7727,
+      "reachable": 7727,
+      "references": [
+        {
+          "x": 0,
+          "y": -8,
+          "connected": true
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "connected": true
+        },
+        {
+          "x": -17,
+          "y": 0,
+          "connected": true
+        },
+        {
+          "x": -17,
+          "y": 18,
+          "connected": true
+        },
+        {
+          "x": 0,
+          "y": 16,
+          "connected": true
+        },
+        {
+          "x": 17,
+          "y": 18,
+          "connected": true
+        },
+        {
+          "x": 17,
+          "y": 0,
+          "connected": true
+        },
+        {
+          "x": 0,
+          "y": -15,
+          "connected": true
+        }
+      ],
+      "inner": [
+        {
+          "x": -4,
+          "clear": true
+        },
+        {
+          "x": 4,
+          "clear": true
+        }
+      ],
+      "goldenPathClear": true,
+      "passed": true
+    }
+  ],
+  "examples": [
+    {
+      "name": "single-imprint",
+      "seals": [
+        {
+          "id": 1,
+          "distance": 2.1,
+          "fullOwnSweepGap": 0.6,
+          "clear": true
+        }
+      ],
+      "pureSafeRoutes": 120,
+      "counterSafeRoutes": 5,
+      "routeCount": 121,
+      "passed": true,
+      "cancelledBySample": [
+        1
+      ]
+    },
+    {
+      "name": "imprint-plus-page",
+      "seals": [
+        {
+          "id": 1,
+          "distance": 2.1,
+          "fullOwnSweepGap": 0.6,
+          "clear": true
+        },
+        {
+          "id": 2,
+          "distance": 2.1,
+          "fullOwnSweepGap": 0.7,
+          "clear": true
+        }
+      ],
+      "pureSafeRoutes": 101,
+      "counterSafeRoutes": 10,
+      "routeCount": 121,
+      "passed": true,
+      "cancelledBySample": [
+        1
+      ]
+    },
+    {
+      "name": "two-closing-pages",
+      "seals": [
+        {
+          "id": 1,
+          "distance": 2.786,
+          "fullOwnSweepGap": 0.5,
+          "clear": true
+        },
+        {
+          "id": 2,
+          "distance": 2.786,
+          "fullOwnSweepGap": 0.5,
+          "clear": true
+        }
+      ],
+      "pureSafeRoutes": 115,
+      "counterSafeRoutes": 18,
+      "routeCount": 121,
+      "passed": true,
+      "cancelledBySample": [
+        2
+      ]
+    },
+    {
+      "name": "two-offset-imprints",
+      "seals": [
+        {
+          "id": 1,
+          "distance": 2.524,
+          "fullOwnSweepGap": 0.6,
+          "clear": true
+        },
+        {
+          "id": 2,
+          "distance": 2.309,
+          "fullOwnSweepGap": 0.6,
+          "clear": true
+        }
+      ],
+      "pureSafeRoutes": 115,
+      "counterSafeRoutes": 20,
+      "routeCount": 121,
+      "passed": true,
+      "cancelledBySample": [
+        2
+      ]
+    },
+    {
+      "name": "phase-three-early-page",
+      "seals": [
+        {
+          "id": 1,
+          "distance": 2.1,
+          "fullOwnSweepGap": 0.6,
+          "clear": true
+        },
+        {
+          "id": 2,
+          "distance": 2.1,
+          "fullOwnSweepGap": 0.7,
+          "clear": true
+        }
+      ],
+      "pureSafeRoutes": 107,
+      "counterSafeRoutes": 10,
+      "routeCount": 121,
+      "passed": true,
+      "cancelledBySample": [
+        1
+      ]
+    },
+    {
+      "name": "phase-three-offset-clamp",
+      "seals": [
+        {
+          "id": 1,
+          "distance": 2.631,
+          "fullOwnSweepGap": 0.5,
+          "clear": true
+        },
+        {
+          "id": 2,
+          "distance": 3.053,
+          "fullOwnSweepGap": 0.5,
+          "clear": true
+        }
+      ],
+      "pureSafeRoutes": 114,
+      "counterSafeRoutes": 14,
+      "routeCount": 121,
+      "passed": true,
+      "cancelledBySample": [
+        2
+      ]
+    }
+  ],
+  "passed": true
+}

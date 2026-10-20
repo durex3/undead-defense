@@ -4,7 +4,7 @@ import {
   Card,
   Skill,
   Passive,
-  WEAPONS,
+  ALL_WEAPONS as WEAPONS,
   MAX_SKILL_LEVEL,
   PASSIVES,
   PASSIVE_MAX,
@@ -44,7 +44,7 @@ export class UpgradeSystem {
   }
   legal(): Card[] {
     const w = this.w;
-    const cards: Card[] = WEAPONS.filter(
+    const cards: Card[] = w.availableWeapons.filter(
       (s) =>
         w.skills[s] < MAX_SKILL_LEVEL &&
         (w.skills[s] > 0 || w.weaponCount < w.weaponSlots),

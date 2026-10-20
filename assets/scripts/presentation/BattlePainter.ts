@@ -1,3 +1,5 @@
+import { drawSupportSpells } from "./art/SupportSpellArt";
+import { drawUnlockedSpells } from "./art/UnlockedSpellArt";
 import { drawExtraArmory } from "./ExtraArmoryPainter";
 import { Graphics } from "cc";
 import { SurvivalWorld, Effect } from "../battle/SurvivalWorld";
@@ -25,6 +27,8 @@ export class BattlePainter {
     drawPickups(g, w);
     drawProjectiles(g, w, reduced,crowded);
     drawExtraArmory(g,w,false,reduced,crowded);
+    drawUnlockedSpells(g,w,reduced,crowded);
+    drawSupportSpells(g,w);
     updateParticles(g, dt, reduced);
     if (crowded && !this.options.noHero) drawHeroReadability(g, w);
     drawEnemyWarnings(g, w, reduced);

@@ -1,3 +1,6 @@
+import { SUPPORT_MODS, supportBase, applySupportMods } from "./SupportConfig";
+import { gradeMultiplier } from "./WeaponGrade";
+import { UNLOCK_MODS, unlockBase, applyUnlockMods } from "./UnlockConfig";
 import {
   EXTRA_MODS,
   extraBase,
@@ -17,6 +20,8 @@ export interface WeaponMod {
 }
 export const MODS: Record<Skill, readonly WeaponMod[]> = {
   ...EXTRA_MODS,
+  ...SUPPORT_MODS,
+  ...UNLOCK_MODS,
   blade: [
     {
       id: "orbit",
@@ -217,15 +222,19 @@ export function weaponStats(
     mine: extraBase("mine", l),
     void: extraBase("void", l),
     holy: extraBase("holy", l),
+    hammer: unlockBase("hammer",l),
+    wheel: unlockBase("wheel",l),
+    lamp: supportBase("lamp",l),
+    needle: supportBase("needle",l),
   }[skill];
   const s: WeaponStats = {
-    damage: data.damage[l] * (1 + a.damage),
-    count: data.count[l] + a.amount,
+    damage: data.damage[l] * (1 + a.damage) * gradeMultiplier(skill, w.weaponGrades),
+    count: data.count[l] + (skill === "lamp" || skill === "needle" ? 0 : a.amount),
     cooldown: data.cooldown[l] * (1 - a.cooldown),
     radius: data.radius * a.area,
     duration:
       data.duration *
-      (["water", "fire", "mine", "void", "frost", "bone"].includes(skill) ||
+      (["water", "fire", "mine", "void", "frost", "bone", "lamp", "needle"].includes(skill) ||
       (skill === "blade" && !m.includes("hunt"))
         ? a.duration
         : 1),
@@ -257,7 +266,9 @@ export function weaponStats(
     if (m.includes("wave")) s.damage *= 0.8;
     if (m.includes("recall")) s.duration *= 0.85;
   }
-  if (!["blade", "fire", "water"].includes(skill))
+  if(skill==="hammer"||skill==="wheel")applyUnlockMods(skill,s);
+  if (skill === "lamp" || skill === "needle") applySupportMods(skill,s);
+  if (!["blade", "fire", "water", "hammer", "wheel", "lamp", "needle"].includes(skill))
     applyExtraMods(skill as ExtraSkill, s);
   return s;
 }
@@ -287,6 +298,12 @@ export function modSummary(w: SurvivalWorld, s: Skill) {
   );
 }
 export function stageBuildHint(stage: number) {
+  if(stage===10)return "禁库：直接躲开或提前踩签撤一招；两夹页保留中缝与端头，三阶段仍有收招窗口";
+  if(stage===9)return "风廊：先看风向借风换位，沿曲羽侧移；击破一名精英减压，收招时反击";
+  if (stage === 8) return "温室：看摆向绕端换侧；空心可进，实心须出；收招开缝时反击";
+  if (stage === 7) return "矿窟：看完整折线与折点；晶核可击碎或绕过，收招时甲缝暴露";
+  if (stage === 6) return "船坞：货垛截潮截锚，绳无伤；厚蜡甲可裂解，收舷时甲缝暴露";
+  if (stage === 5) return "钟庭：钟台挡声浪不挡蜡印，换侧后抓甲缝；新武器裂甲，全配装受益";
   if (stage === 4) return "猎原：去回程之外换道，躲跃扑后绕背；落剑、重爆抓收招，贯阵清出退路";
   if (stage === 3) return "机庭：拆电极断线，向电栅缺口换道；贯阵清路、追猎拆点、落剑抓恢复";
   if (stage === 1) return "围城：短墙侧路切后排；追猎/往返穿阵，火海引敌封路";

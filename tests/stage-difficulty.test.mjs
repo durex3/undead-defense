@@ -62,7 +62,7 @@ test('potions expire, cap at three, and count only effective healing',()=>{
  const a=new SurvivalWorld(1,'ranger',1);a.dropPotion(a.player.x,a.player.y);a.time=100;a.collect(0);assert.equal(a.potions.length,0);
 });
 
-test('later elite out-pressures the first elite on every stage',()=>{
+test('first and later elites both use 100% normal health',()=>{
  for(const stage of [1,2]){
   const w=new SurvivalWorld(1,'ranger',stage);w.time=180;w.director.step(w,0);
   const firstKind=stage===1?'siegeflag':'broodelite';
@@ -70,13 +70,13 @@ test('later elite out-pressures the first elite on every stage',()=>{
   assert.ok(first,`stage ${stage} first elite`);
   const base=new SurvivalWorld(1,'ranger',stage);base.time=180;
   const f=base.addEnemy(firstKind);
-  assert.ok(Math.abs(first.maxHp/f.maxHp-.9)<1e-9,`stage ${stage} first elite scale`);
+  assert.ok(Math.abs(first.maxHp/f.maxHp-1)<1e-9,`stage ${stage} first elite scale`);
   const secondDue=stage===1?300:encounterRealTime(400);
   w.enemies=[];w.time=secondDue;w.director.step(w,0);
   const secondKind=stage===1?'siegerider':'breakerelite';
   const second=w.enemies.find(e=>e.kind===secondKind);
   assert.ok(second,`stage ${stage} second elite`);
   base.time=secondDue;const s=base.addEnemy(secondKind);
-  assert.ok(Math.abs(second.maxHp/s.maxHp-1.1)<1e-9,`stage ${stage} second elite scale`);
+  assert.ok(Math.abs(second.maxHp/s.maxHp-1)<1e-9,`stage ${stage} second elite scale`);
  }
 });

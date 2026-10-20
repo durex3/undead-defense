@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-20",
+  "version": "0.27.0",
+  "tests": {
+    "total": 287,
+    "passed": 286,
+    "skipped": 1,
+    "failed": 0
+  },
+  "typecheck": "pass",
+  "builds": {
+    "web-mobile": "pass (Creator 36 normalized)",
+    "wechatgame": "pass (Creator 36 normalized)"
+  },
+  "httpSmoke": {
+    "passed": 7,
+    "failed": 0
+  },
+  "browser": {
+    "viewport": [
+      844,
+      390
+    ],
+    "dpr": 2,
+    "isolatedAccount": true,
+    "checked": [
+      "weapon catalogue and filtering",
+      "keyboard focus and Enter",
+      "purchase confirmation and no double debit",
+      "achievement reward routing and back",
+      "stage5 entry without weapon gate",
+      "four-weapon battle and boss bar"
+    ],
+    "consoleErrors": 0,
+    "consoleWarnings": 0
+  },
+  "uploaded": false,
+  "limitations": [
+    "Bot output/growth diagnostics use high HP and are not human win rates",
+    "Offline vertex budgets do not measure mobile GPU or temperature",
+    "Human difficulty and WeChat device acceptance pending"
+  ]
+}

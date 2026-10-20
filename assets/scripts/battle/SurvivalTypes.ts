@@ -11,6 +11,14 @@ export interface ThunderState {
 }
 export interface MoonState { direction?:number; action:"blades"|"leaps"|"sweeps"|"transition"; step:number; next:number; recovery:number; cooldown:number; flank?:Point; flankUntil?:number; jumpStart?:Point; jumpEnd?:Point; jumpAt?:number; jumpDue?:number; vulnerable?:boolean; }
 export interface Enemy extends Point {
+ library?:import("./LibrarySystem").LibraryState;
+ wind?:import("./WindSystem").WindState;
+ root?:import("./RootSystem").RootState;
+ prism?:import("./PrismSystem").PrismState;
+ immovable?:boolean;
+ tide?:import("./TideSystem").TideState;
+ bell?:import("./BellSystem").BellState;
+ fracture?:number;fractureUntil?:number;
  moon?:MoonState;
  thunder?: ThunderState;
   sand?: { action: 'roll'|'spit'|'burrow'|'brood'|'break'|'cross'|'scatter'|'transition'; step:number; angle:number; target?:Point; end?:Point; buried?:boolean; hit?:boolean; next?:number; hatch?:number; vulnerable?:boolean; pendingPhase?:boolean; cooldown?:number; transition?:boolean };
@@ -80,7 +88,7 @@ export interface Effect extends Point {
   form?: string;
   final?: boolean;
   id?: number;
-  type: "boss" | "elite" | "bossPhase" | "summon" | "block" | "cast"
+  type: "sealBreak" | "boss" | "elite" | "bossPhase" | "summon" | "block" | "cast"
 
     | "death" | "eliteDown" | "modify" | "explosion" | "heal" | "hit"
     | "poison" | "hazard" | "learn" | "lightning" | "pickup" | "playerHit" | "ultimate" | "supply";
@@ -92,6 +100,13 @@ export interface Effect extends Point {
   angle?: number;
 }
 export interface Hazard extends Point {
+ library?:import("./LibraryGeometry").LibraryHazard;
+ wind?:import("./WindGeometry").WindHazard;
+ root?:import("./RootGeometry").RootHazard;
+ prism?:import("./PrismGeometry").PrismHazard;
+ tide?:import("./TideGeometry").TideHazard;
+ bell?:import("./BellGeometry").BellHazard;
+ widthAngle?:number;
  moon?:{motion:MoonMotion; launched:boolean; hits:number; last:number; player:Point; order:number};
  thunder?: {shape:'zone'|'line'|'wall'|'sector'; devices:number[]; speed?:number; travel?:number; gap?:number; tick?:number; residue?:number; launch?:number; hit?:boolean; order?:number; preview?:boolean};
   sandRift?: boolean;

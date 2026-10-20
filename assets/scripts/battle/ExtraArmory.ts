@@ -1,5 +1,3 @@
-import { moonMap } from "./MoonMap";
-import { thunderMap } from "./ThunderMap";
 import { thunderDevice } from "./ThunderSystem";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { isElite, isLarge } from "./SurvivalConfig";
@@ -12,8 +10,6 @@ import {
 } from "./SurvivalTypes";
 import { weaponStats, WeaponStats } from "./ArmoryConfig";
 import { EXTRA_WEAPONS, ExtraSkill } from "./ExtraArmoryConfig";
-import { siegeMap } from "./SiegeMap";
-import { sandMap } from "./SandMap";
 export const EXTRA_LIMIT = 192;
 export interface ExtraAttack extends Point {
   active: boolean;
@@ -84,7 +80,7 @@ export class ExtraArmory {
     return list.sort((a, b) => {
       if (skill === "holy" || (skill === "ghost" && s.mods.includes("execution"))) {
         const rank = (e: Enemy) =>
-          Number(isLarge(e.kind) || /bow|spitter|mage|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind));
+          Number(isLarge(e.kind) || /bow|spitter|mage|sealclerk|folioray|spineclasp|reedwhistler|sickleplumer|foldedskimmer|vinecantor|wreathpod|bulbmaw|facetgastropod|prismmason|corebrood|prismcore|sluiceray|sailharpooner|winchbeast|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind));
         const d = rank(b) - rank(a);
         if (d) return d;
       }
@@ -148,7 +144,7 @@ export class ExtraArmory {
           x: w.player.x + Math.cos(theta) * r,
           y: w.player.y + Math.sin(theta) * r,
         };
-        (w.stageId === 4 ? moonMap : w.stageId === 3 ? thunderMap : w.stageId === 2 ? sandMap : siegeMap).resolve(origin, 0.2);
+        w.stageStrategy.map.resolve(origin, 0.2);
         target = { ...origin };
       }
       if (skill === "void") {
@@ -241,7 +237,8 @@ export class ExtraArmory {
   }
   private freeze(e: Enemy, a: ExtraAttack) {
     const w = this.w;
-    if (e.kind === "boss" || thunderDevice(e.kind) || e.state === "charge") return;
+    if(e.kind==="prismcore"){if(!this.has(a,"brittle"))w.slow(e,true);return;}
+    if (e.kind === "boss" || (e.immovable && !e.root && !e.wind && !e.library) || thunderDevice(e.kind) || (e.state === "charge" && !e.wind)) return;
     e.slow = 0.4;
     e.slowUntil = Math.max(e.slowUntil, w.time + a.stats.duration);
     if (this.has(a, "brittle") || e.freezeReady > w.time) return;
@@ -586,7 +583,7 @@ export class ExtraArmory {
     }
     for (const e of this.enemies(a, r + 0.35))
       if (
-        !isLarge(e.kind) &&
+        !e.immovable && !isLarge(e.kind) &&
         e.state === "seek" &&
         !thunderDevice(e.kind) && !["sandegg", "warflag"].includes(e.kind)
       ) {
@@ -595,7 +592,7 @@ export class ExtraArmory {
         if (d > 0) {
           e.x += ((a.x - e.x) * step) / d;
           e.y += ((a.y - e.y) * step) / d;
-          (w.stageId === 4 ? moonMap : w.stageId === 3 ? thunderMap : w.stageId === 2 ? sandMap : siegeMap).resolve(e, 0.35);
+          w.stageStrategy.map.resolve(e, 0.35);
         }
       }
     if (w.time + 1e-7 >= a.next) {

@@ -1,3 +1,9 @@
+import {drawLibraryBody} from "./enemies/LibraryArt";
+import {drawWindBody} from "./enemies/WindArt";
+import {drawRootBody} from "./enemies/RootArt";
+import {drawPrismBody} from "./enemies/PrismArt";
+import { drawTideBody } from "./enemies/TideArt";
+import { drawBellBody } from "./enemies/BellArt";
 import { Graphics } from "cc";
 import type { SurvivalWorld } from "../../battle/SurvivalWorld";
 import type { Enemy } from "../../battle/SurvivalTypes";
@@ -15,7 +21,7 @@ import { drawHeroBody, drawHeroShadow } from "./HeroPainter";
 import { warningGlyph } from "./VfxBrush";
 
 /** Stages whose bodies/overlays are fully owned by the new art layer. */
-const CONVERTED = new Set<number>([1, 2, 3, 4]);
+const CONVERTED = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 const visible: Enemy[] = [];
 const pose = createPose();
@@ -30,6 +36,12 @@ function collect(w: SurvivalWorld) {
 
 function bodyFor(g: Graphics, w: SurvivalWorld, enemy: Enemy, art: EnemyArt) {
   switch (w.stageId) {
+    case 10: drawLibraryBody(g,w,enemy,art,pose); break;
+    case 9: drawWindBody(g,w,enemy,art,pose); break;
+    case 8: drawRootBody(g,w,enemy,art,pose); break;
+    case 7: drawPrismBody(g,w,enemy,art,pose); break;
+    case 6: drawTideBody(g,w,enemy,art,pose); break;
+    case 5: drawBellBody(g,w,enemy,art,pose); break;
     case 2:
       drawSandBody(g, w, enemy, art, pose);
       break;
@@ -213,6 +225,11 @@ function bossOverlay(g: Graphics, w: SurvivalWorld, enemy: Enemy, pose: Pose, ar
   if (enemy.kind !== "boss") return;
   const exposed = bossExposed(w, enemy);
   const phase = enemy.bossPhase;
+  if(w.stageId===10){
+    const y=pose.y+(art.height+22)*pose.scale;
+    g.strokeColor=inkColor("#f2dfb6");g.lineWidth=3;
+    for(let i=0;i<phase;i++){const x=pose.x+(i-(phase-1)/2)*9;g.moveTo(x,y);g.lineTo(x,y+13);}g.stroke();
+  }
   const r = (art.halfWidth + 9) * pose.scale + (enemy.state === "windup" ? Math.sin(w.time * 8) * 4 : 0);
   g.strokeColor = inkColor(exposed ? "#f6d886" : phase >= 2 ? "#ef8096" : "#b8a3db", 210);
   g.lineWidth = exposed ? 4 : 2;
@@ -291,7 +308,7 @@ export function drawEnemyWarnings(g: Graphics, w: SurvivalWorld, reduced: boolea
     }
     if (enemy.burnUntil > w.time) burnRing(g, pose, art, w.time);
     if (enemy.slowUntil > w.time && enemy.freezeUntil <= w.time) slowRing(g, pose, art);
-    if (converted && enemy.state === "recover" && (enemy.sand?.vulnerable || enemy.thunder?.vulnerable || enemy.moon?.vulnerable || bossExposed(w, enemy))) {
+    if (converted && enemy.state === "recover" && (enemy.library?.vulnerable || enemy.wind?.vulnerable || enemy.root?.vulnerable || enemy.prism?.vulnerable || enemy.tide?.vulnerable || enemy.sand?.vulnerable || enemy.thunder?.vulnerable || enemy.moon?.vulnerable || bossExposed(w, enemy))) {
       g.strokeColor = inkColor("#ffe0a5", 235);
       g.lineWidth = 2.5;
       const y = top + 11 * pose.scale;

@@ -1,0 +1,34 @@
+{
+  "stage": 8,
+  "version": "0.30.1",
+  "engine": "Cocos Creator 3.8.8, Graphics vectors",
+  "source": "Project-authored RootArt.ts and RootHazardArt.ts; no external raster or generated image assets",
+  "runtimePixelsPerWorldUnit": 48,
+  "targetViewport": [
+    844,
+    390
+  ],
+  "paletteSource": "EnemyCatalog.ts ROOT",
+  "collisionPivot": "world ground at feet, hazards use shared RootGeometry",
+  "states": [
+    "seek",
+    "windup",
+    "active",
+    "recover",
+    "fracture-one",
+    "fracture-two",
+    "frozen"
+  ],
+  "actors": [
+    "rootshuffler",
+    "vinecantor",
+    "wreathpod",
+    "bulbmaw",
+    "biforktangler",
+    "migratorycorolla",
+    "pairedcalyx",
+    "boss"
+  ],
+  "previews": "artifacts/root-stage/*.png are offline QA only, not imported runtime assets",
+  "validation": "art-budget.json, browser-qa.json; mobile GPU and human play pending"
+}

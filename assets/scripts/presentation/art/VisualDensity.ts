@@ -6,6 +6,7 @@ export function crowdedEffects(w: SurvivalWorld) {
   for (const p of w.armory.shots) if (p.active) load++;
   for (const f of w.armory.fields) if (f.active) load += 3;
   for (const a of w.armory.extra.attacks) if (a.active && a.age >= 0) load += 2;
+  for(const a of w.armory.unlocked.attacks)if(a.active&&a.created<=w.time)load+=2;
   return load > 16;
 }
 

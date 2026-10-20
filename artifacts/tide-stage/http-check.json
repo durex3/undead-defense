@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/",
+    "status": 200
+  },
+  {
+    "path": "style.css",
+    "status": 200
+  },
+  {
+    "path": "src/polyfills.bundle.js",
+    "status": 200
+  },
+  {
+    "path": "src/system.bundle.js",
+    "status": 200
+  },
+  {
+    "path": "src/import-map.json",
+    "status": 200
+  },
+  {
+    "path": "index.js",
+    "status": 200
+  },
+  {
+    "path": "src/settings.json",
+    "status": 200
+  }
+]

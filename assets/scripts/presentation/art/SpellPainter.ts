@@ -1,3 +1,5 @@
+import { drawBladeForm } from "./WeaponFormArt";
+import { gradeOf } from "../../battle/WeaponGrade";
 import { Graphics } from "cc";
 import type { SurvivalWorld } from "../../battle/SurvivalWorld";
 import type { Effect } from "../../battle/SurvivalTypes";
@@ -185,7 +187,8 @@ function crescent(g: Graphics, x: number, y: number, angle: number, r: number, c
   g.stroke();
 }
 
-function drawBlade(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false) {
+function drawBlade(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false, grade=1) {
+  if(grade>1){drawBladeForm(g,x,y,angle,grade,p.child,quiet);return;}
   const c = SPELL.blade;
   const size = p.child ? 10 : 16;
   if(p.child) {
@@ -340,7 +343,7 @@ export function drawProjectiles(g: Graphics, w: SurvivalWorld, reduced: boolean,
     const x = p.x * 48,
       y = p.y * 48;
     if (!w.visible(p, 1)) continue;
-    if (p.skill === "blade") drawBlade(g, x, y, p.angle, p,reduced||crowded);
+    if (p.skill === "blade") drawBlade(g, x, y, p.angle, p,reduced||crowded,gradeOf("blade",w.weaponGrades));
     else if (p.skill === "fire") drawFire(g, x, y, p.angle, p,reduced||crowded);
     else drawWater(g, x, y, p.angle, p,reduced||crowded);
   }
@@ -348,7 +351,7 @@ export function drawProjectiles(g: Graphics, w: SurvivalWorld, reduced: boolean,
 
 /* ---------------- particles ---------------- */
 
-type ParticleKind = "spark" | "ember" | "shard" | "smoke" | "ring" | "rune" | "fracture" | "crest" | "claw";
+type ParticleKind = "paper" | "spark" | "ember" | "shard" | "smoke" | "ring" | "rune" | "fracture" | "crest" | "claw";
 interface Particle {
   active: boolean;
   kind: ParticleKind;
@@ -462,6 +465,8 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
         const a = Math.atan2(y - ay, x - ax);
         spawn("spark", x - Math.cos(a) * 12, y - Math.sin(a) * 12, "#ff9a9a", 0, 0.24, 2.6);
       }
+    } else if (e.type === "sealBreak") {
+      for(let i=0;i<(reduced?3:5);i++)spawn("paper",x,y,i%2?"#c9b88c":"#f1e5c7",65,.28,5,45);
     } else if (e.type === "block") {
       for (let i = 0; i < 3; i++) spawn("spark", x, y, "#a9d8e8", 80, 0.16, 2);
     } else if (e.type === "modify") {
@@ -525,6 +530,11 @@ function drawParticle(g: Graphics, p: Particle) {
     g.fillColor = ink(p.color, alpha);
     g.circle(p.x, p.y, Math.max(0.8, p.size * a));
     g.fill();
+  } else if(p.kind==="paper") {
+    const size=p.size*a,c=Math.cos(p.rot),s=Math.sin(p.rot);
+    const local=(x:number,y:number)=>[p.x+x*c-y*s,p.y+x*s+y*c];
+    const pts=[local(-size,-size*.6),local(size,-size*.5),local(size*.8,size*.6),local(-size*.7,size*.45)];
+    g.fillColor=ink(p.color,alpha);g.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)g.lineTo(pts[i][0],pts[i][1]);g.close();g.fill();
   } else if (p.kind === "shard") {
     const s = p.size * a;
     const c = Math.cos(p.rot),

@@ -1,3 +1,4 @@
+import {eliteQuiet} from "./EncounterPacing";
 import {mapApproach,mapPackOffset} from './MapEncounters';
 import type { SurvivalWorld } from "./SurvivalWorld";
 import {
@@ -241,7 +242,7 @@ export class SandSystem {
     const w = this.w,
       t = encounterScoreTime(w.time);
     this.clean();
-    if (sandRest(w.time) || w.time < w.reinforcementRestUntil) return;
+    if (eliteQuiet(w.time) || sandRest(w.time) || w.time < w.reinforcementRestUntil) return;
     const elite = w.enemies.some((e) => e.hp > 0 && isElite(e.kind));
     this.nextGroup -= dt;
     if (this.nextGroup <= 0) {

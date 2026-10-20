@@ -1,3 +1,9 @@
+import {drawLibraryHazard} from "./LibraryHazardArt";
+import {drawWindHazard} from "./WindHazardArt";
+import {drawRootHazard} from "./RootHazardArt";
+import {drawPrismHazard,drawPrismPreviews} from "./PrismHazardArt";
+import { drawTideHazard,drawTidePreviews } from "./TideHazardArt";
+import { drawBellHazard } from "./BellHazardArt";
 import { Graphics } from "cc";
 import type { SurvivalWorld } from "../../battle/SurvivalWorld";
 import type { Hazard } from "../../battle/SurvivalTypes";
@@ -46,8 +52,16 @@ function hazardColors(h: Hazard) {
 }
 
 export function drawHazards(g: Graphics, w: SurvivalWorld, reduced: boolean) {
+  if (w.stageId === 7) drawPrismPreviews(g,w);
+  if (w.stageId === 6) drawTidePreviews(g,w);
   if (w.stageId === 3) drawThunderPreviews(g, w);
   for (const h of w.hazards) {
+    if(h.library){drawLibraryHazard(g,h,w.time);continue;}
+    if(h.wind){drawWindHazard(g,h,w.time);continue;}
+    if(h.root){drawRootHazard(g,h,w.time);continue;}
+    if(h.prism){drawPrismHazard(g,h,w.time);continue;}
+    if(h.tide){drawTideHazard(g,h,w.time);continue;}
+    if(h.bell){drawBellHazard(g,h,w.time);continue;}
     if (h.moon) {
       drawMoonHazard(g, h, w.time);
       continue;

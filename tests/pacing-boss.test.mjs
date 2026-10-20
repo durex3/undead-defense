@@ -23,14 +23,15 @@ function tick(w, n) {
 }
 test('mid-run collection breaks are shorter and harvest beats keep spawning packs',()=>{
  assert.equal(encounterBeat(encounterRealTime(170)).rest,true);
- assert.equal(encounterBeat(encounterRealTime(174)).rest,false);
+ assert.equal(encounterBeat(encounterRealTime(174)).rest,true); // now the first elite preparation window
+ assert.equal(encounterBeat(encounterRealTime(190)).rest,false);
  assert.equal(encounterBeat(encounterRealTime(338)).rest,true);
  assert.equal(encounterBeat(encounterRealTime(342)).rest,false);
  assert.equal(encounterBeat(encounterRealTime(462)).rest,false);
  assert.equal(encounterBeat(encounterRealTime(470)).rest,true);
  // Stage one delegates to the siege director, which always mixes a shield/bow pack.
  for(const time of [240,260]){
-  const w=new SurvivalWorld(19,'ranger',1);w.time=time;w.director.elites=[true,true];
+  const w=new SurvivalWorld(19,'ranger',1);w.time=time;w.director.elites=[true,true,true];
   w.director.step(w,1/60);
   assert.ok(w.enemies.length>0,`time ${time}`);
   assert.ok(w.enemies.every(e=>e.state==='arriving'||e.state==='seek'));

@@ -1,3 +1,12 @@
+import { initialGrades } from "./WeaponGrade";
+import {LibrarySystem,libraryEnemy} from "./LibrarySystem";
+import {WindSystem,windEnemy} from "./WindSystem";
+import {windMove} from "./WindGeometry";
+import {RootSystem,rootEnemy} from "./RootSystem";
+import {PrismSystem,prismEnemy,prismDevice} from "./PrismSystem";
+import { TideSystem, tideEnemy } from "./TideSystem";
+import { createStageStrategy, StageStrategy } from "./StageStrategy";
+import { BellSystem, bellEnemy } from "./BellSystem";
 import { MoonSystem, moonEnemy } from "./MoonSystem";
 import { ThunderSystem, thunderDevice, thunderEnemy } from "./ThunderSystem";
 import { Armory } from "./Armory";
@@ -11,7 +20,7 @@ import { UpgradeSystem } from "./UpgradeSystem";
 import { STAGES } from "./StageRules";
 import { CHARACTERS, CharacterId, StageId } from "./ProgressionConfig";
 import { bossExposed } from "./BossSystem";
-import { MAX_ENEMIES, Card, Skill, Passive, WEAPONS, MAX_SKILL_LEVEL, Kind, ENEMIES, isElite, isLarge } from "./SurvivalConfig";
+import { MAX_ENEMIES, Card, Skill, Passive, ALL_WEAPONS as WEAPONS, MAX_SKILL_LEVEL, Kind, ENEMIES, isElite, isLarge } from "./SurvivalConfig";
 import {
   Enemy,
   Effect,
@@ -30,6 +39,14 @@ const TACTICAL_BLESSINGS = [
 ] as const;
 type TacticalBlessing = (typeof TACTICAL_BLESSINGS)[number]["id"];
 export class SurvivalWorld {
+  private strategy?:StageStrategy;
+  get stageStrategy(){return this.strategy??(this.strategy=createStageStrategy(this));}
+  library=new LibrarySystem(this);
+  wind=new WindSystem(this);
+  root=new RootSystem(this);
+  prism=new PrismSystem(this);
+  tide=new TideSystem(this);
+  bell=new BellSystem(this);
   moon=new MoonSystem(this);
   thunder=new ThunderSystem(this);
   siege=new SiegeSystem(this);
@@ -55,6 +72,7 @@ export class SurvivalWorld {
   kills = 0;
   gold = 0;
   eliteKills = 0;
+  bossEliteRestUntil=0;
   ultimate = 0;
   invulnerable = 0;
   revision = 0;
@@ -87,21 +105,26 @@ export class SurvivalWorld {
     public weaponSlots = MAX_WEAPON_SLOTS,
   ) {
     this.weaponSlots = Math.max(1, Math.min(MAX_WEAPON_SLOTS, Math.floor(weaponSlots) || MAX_WEAPON_SLOTS));
-    if(stageId===2||stageId===3||stageId===4)this.player={x:0,y:-8};
+    if(stageId!==1)this.player={x:0,y:-8};
     this.seed = seed;
     this.skills.blade = 0;
     this.skills[CHARACTERS[character].weapon] = 1;
   }
+  availableWeapons: readonly Skill[] = ["blade","fire","water","frost","lightning","ghost","bone","mine","void","holy"];
+  readonly runId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  weaponGrades = initialGrades();
+  startingWeapon: Skill | null = null;
+  challenge = { devices: new Set<number>(), seals: new Set<number>(), bossSealPhases: new Set<number>(), bossHits: 0 };
   startingWeapons: Skill[] = [];
   offerStartingWeapons() {
     if(this.time!==0 || this.state!=="battle")return false;
     for(const skill of WEAPONS)this.skills[skill]=0;
-    const pool=[...WEAPONS];this.startingWeapons=[];while(this.startingWeapons.length<3)this.startingWeapons.push(pool.splice(Math.floor(this.random()*pool.length),1)[0]);
+    const pool=[...this.availableWeapons];this.startingWeapons=[];while(this.startingWeapons.length<3)this.startingWeapons.push(pool.splice(Math.floor(this.random()*pool.length),1)[0]);
     this.state="starting";this.setMove(0,0);this.touch();return true;
   }
   chooseStartingWeapon(skill: Skill) {
     if(this.state!=="starting" || !this.startingWeapons.includes(skill))return false;
-    this.skills[skill]=1;this.startingWeapons=[];this.state="battle";
+    this.skills[skill]=1;this.startingWeapon=skill;this.startingWeapons=[];this.state="battle";
     this.effects.push({type:"learn",...this.player,skill});this.touch();return true;
   }
   chooseTacticalBlessing(id: TacticalBlessing) {
@@ -158,7 +181,7 @@ export class SurvivalWorld {
     const hp =
       kind === "boss"
         ? c.health * STAGES[this.stageId].bossHealth * 8
-        : 30 * (1 + Math.min(this.time, ["thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
+        : 30 * (1 + Math.min(this.time, ["paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health);
     const e: Enemy = {
       id: this.id(),
@@ -210,10 +233,11 @@ export class SurvivalWorld {
   near(p: Point, r: number) {
     return this.enemies.filter((e) => e.hp > 0 && !e.sand?.buried && distance(e, p) <= r);
   }
-  hurt(amount: number, source: string, scale = true) {
+  hurt(amount: number, source: string, scale = true, ownerId?: number) {
     if (this.invulnerable > 0 || this.hp <= 0) return;
     amount *= scale ? STAGES[this.stageId].damage : 1;
     const lost = Math.min(this.hp, amount);
+    if (lost > 0 && (source === "boss" || this.enemies.some(e => e.id === ownerId && e.kind === "boss"))) this.challenge.bossHits++;
     this.hp = Math.max(0, this.hp - amount);
     this.invulnerable = 0.7;
     this.lastHurt = this.time;
@@ -238,7 +262,8 @@ export class SurvivalWorld {
     ongoing = false,
   ) {
     if (e.hp <= 0 || e.state === "arriving" || (e.sand?.buried && !ongoing)) return;
-    let amount = base * (bossExposed(this, e)&&!(this.stageId===1&&e.siegeWall) ? 1.25 : 1);
+    const soulFactor = source === "needleEcho" ? 1 : this.armory.support.amplification(e);
+    let amount = base * soulFactor * (bossExposed(this, e)&&!(this.stageId===1&&e.siegeWall) ? 1.25 : 1);
     if(this.stageId===1&&this.tacticalBlessings.includes("skirmisher")&&Math.hypot(this.move.x,this.move.y)>.1)amount*=1.25;
     if(this.stageId===1&&this.tacticalBlessings.includes("slayer")&&(e.kind==="boss"||isElite(e.kind)))amount*=1.3;
     if(projectile) {
@@ -254,9 +279,19 @@ export class SurvivalWorld {
     if(this.stageId===2&&e.sand?.vulnerable&&e.state==='recover'&&!bossExposed(this,e))amount*=1.25;
     if(this.stageId===4&&isElite(e.kind)&&e.state==='recover'&&e.moon?.vulnerable)amount*=1.25;
     if(this.stageId===3&&isElite(e.kind)&&e.state==='recover'&&e.thunder?.vulnerable)amount*=1.25;
+    if(this.stageId===5||this.stageId===6||this.stageId===7||this.stageId===8||this.stageId===9||this.stageId===10){
+      const waxKind=this.stageId===5?bellEnemy(e.kind):this.stageId===6?tideEnemy(e.kind):this.stageId===7?prismEnemy(e.kind)&&!prismDevice(e.kind):this.stageId===8?rootEnemy(e.kind):this.stageId===9?windEnemy(e.kind):libraryEnemy(e.kind);
+      const exposed=this.stageId===5?e.bell?.vulnerable:this.stageId===6?e.tide?.vulnerable:this.stageId===7?e.prism?.vulnerable:this.stageId===8?e.root?.vulnerable:this.stageId===9?e.wind?.vulnerable:e.library?.vulnerable;
+      const baseArmor=e.kind==='boss'?.55:isElite(e.kind)?.5:(e.kind==='waxbearer'||e.kind==='brineporter'||e.kind==='shardhermit'||e.kind==='rootshuffler'||e.kind==='fledglingeffigy'||e.kind==='paperbonegrub')?.2:waxKind?.35:0;
+      const fracture=(e.fractureUntil??0)>this.time?(e.fracture??0):0;
+      const armor=Math.max(0,baseArmor-fracture*.35);
+      amount*=1-Math.min(armor,e.state==='recover'&&exposed?(e.kind==='boss'?.15:.2):1);
+      if(this.stageId===5&&isElite(e.kind)&&exposed&&e.state==='recover')amount*=1.25;
+    }
+    if(isElite(e.kind)&&this.stageStrategy.vulnerable?.(e))amount*=1.25;
     const dealt = Math.min(e.hp, amount);
     e.hp -= amount;
-    const attribution = source === "poisonBurst" ? "poison" : source;
+    const attribution = source === "needleEcho" ? "needle" : source === "poisonBurst" ? "poison" : source;
     this.damage[attribution] = (this.damage[attribution] || 0) + dealt;
     this.effects.push({
       type: "hit",
@@ -267,9 +302,8 @@ export class SurvivalWorld {
       skill: source,
     });
     if (e.hp <= 0) {
-      if(this.stageId===4)this.moon.onDeath(e);
-      if(this.stageId===3){this.thunder.onDeath(e);if(thunderDevice(e.kind)){this.effects.push({type:"death",x:e.x,y:e.y});this.touch();return;}}
-      if(this.stageId===2)this.sand.onDeath(e);
+      if(this.stageId === 3 && thunderDevice(e.kind)) this.challenge.devices.add(e.id);
+      if(this.stageStrategy.onDeath(e)){this.effects.push({type:'death',x:e.x,y:e.y});this.touch();return;}
       this.kills++;
       this.gold += e.summoned ? 0 : 1;
       this.weaponKills[attribution] = (this.weaponKills[attribution] || 0) + 1;
@@ -306,9 +340,19 @@ export class SurvivalWorld {
       }
       this.effects.push({ type: "death", x: e.x, y: e.y, skill: e.kind });
     }
+    if(source !== "needleEcho") this.armory.support.transfer(e, dealt);
     this.touch();
   }
+  fracture(e:Enemy,layers=1){
+    if(e.hp<=0||e.state==='arriving')return;
+    e.fracture=Math.min(2,((e.fractureUntil??0)>this.time?(e.fracture??0):0)+layers);
+    e.fractureUntil=this.time+3;
+  }
   slow(e: Enemy, freeze = false) {
+    if(e.kind==='prismmirror')return;
+    if(e.kind==='prismcore'){
+      if(freeze&&e.freezeReady<=this.time){e.freezeUntil=this.time+.35;e.freezeReady=this.time+2;}return;
+    }
     e.slow = isLarge(e.kind) ? 0.2 : 0.4;
     e.slowUntil = this.time + 1.5;
     if(e.sand?.buried)return;
@@ -320,7 +364,7 @@ export class SurvivalWorld {
     }else if (freeze && e.kind !== "boss" && e.freezeReady <= this.time) {
       e.freezeUntil = this.time + (isElite(e.kind) ? 0.25 : 0.5);
       e.freezeReady = this.time + 3;
-      if (e.state === "windup" && !siegeEnemy(e.kind) && !sandEnemy(e.kind) && !thunderEnemy(e.kind) && !moonEnemy(e.kind)) {
+      if (e.state === "windup" && !siegeEnemy(e.kind) && !sandEnemy(e.kind) && !thunderEnemy(e.kind) && !moonEnemy(e.kind) && !bellEnemy(e.kind) && !tideEnemy(e.kind) && !prismEnemy(e.kind) && !rootEnemy(e.kind) && !windEnemy(e.kind) && !libraryEnemy(e.kind)) {
         this.hazards = this.hazards.filter((h) => h.source !== e.id);
         e.state = "recover";
         e.timer = 0.5;
@@ -335,18 +379,20 @@ export class SurvivalWorld {
     if (!this.active) return;
     this.ultimate = Math.max(0, this.ultimate - dt);
     this.invulnerable = Math.max(0, this.invulnerable - dt);
-    this.player.x = Math.max(
-      -22,
-      Math.min(22, this.player.x + this.move.x * this.speed * dt),
-    );
-    this.player.y = Math.max(
-      -26,
-      Math.min(26, this.player.y + this.move.y * this.speed * dt),
-    );
+    const arena = this.stageStrategy.map;
+    const dx = this.move.x * this.speed * dt, dy = this.move.y * this.speed * dt;
+    // Small axis-separated moves prevent tunnelling and allow sliding along faces.
+    const steps = Math.max(1, Math.ceil(Math.max(Math.abs(dx), Math.abs(dy)) / 0.15));
+    if(this.stageStrategy.movePlayer)this.stageStrategy.movePlayer(dt);
+    else if(this.stageId===9){this.wind.clean();windMove(this.player,{x:this.move.x*this.speed,y:this.move.y*this.speed},dt,.3,this.hazards,this.time);}
+    else for (let i = 0; i < steps; i++) {
+      this.player.x = Math.max(-22, Math.min(22, this.player.x + dx / steps));
+      arena.resolve(this.player, 0.3);
+      this.player.y = Math.max(-26, Math.min(26, this.player.y + dy / steps));
+      arena.resolve(this.player, 0.3);
+    }
     this.siege.sample();
-    if(this.stageId===4)this.moon.clean();
-    if(this.stageId===3)this.thunder.clean();
-    if(this.stageId===2)this.sand.clean();
+    this.stageStrategy.clean();
     this.director.step(this, dt);
     stepEnemies(this, dt);
     stepHazards(this);

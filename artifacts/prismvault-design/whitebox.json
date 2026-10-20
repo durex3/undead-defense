@@ -1,0 +1,175 @@
+{
+  "status": "design-only; no runtime or mobile/human acceptance",
+  "bounds": [
+    22,
+    26
+  ],
+  "boxes": [
+    [
+      -10,
+      7,
+      1.6,
+      3
+    ],
+    [
+      10,
+      -7,
+      1.6,
+      3
+    ],
+    [
+      -6,
+      -17,
+      3.2,
+      1.4
+    ],
+    [
+      6,
+      17,
+      3.2,
+      1.4
+    ],
+    [
+      -15,
+      -11,
+      1.5,
+      2
+    ],
+    [
+      15,
+      11,
+      1.5,
+      2
+    ]
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "grid": 0.5,
+      "edgeSample": 0.05,
+      "reachableCells": 8471,
+      "routes": [
+        {
+          "point": [
+            0,
+            -8
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            -15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            12
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            -12
+          ],
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "radius": 0.7,
+      "grid": 0.5,
+      "edgeSample": 0.05,
+      "reachableCells": 7847,
+      "routes": [
+        {
+          "point": [
+            0,
+            -8
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            -15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            12
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            -12
+          ],
+          "reachable": true
+        }
+      ]
+    }
+  ],
+  "reflectionExample": {
+    "start": [
+      -4,
+      3.5
+    ],
+    "target": [
+      -4,
+      8
+    ],
+    "radius": 0.22,
+    "normal": [
+      1,
+      0
+    ],
+    "bend": [
+      -8.18,
+      5.75
+    ],
+    "end": [
+      -1.7935352095373949,
+      9.187690377641355
+    ],
+    "totalTravel": 12,
+    "speed": 4.2,
+    "arrivalAtTarget": 2.2605208799137593,
+    "targetOnReflectedRay": true,
+    "secondObstacle": null
+  }
+}

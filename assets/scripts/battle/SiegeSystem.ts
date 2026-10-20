@@ -1,3 +1,4 @@
+import {eliteQuiet} from "./EncounterPacing";
 import {mapApproach,mapPackOffset} from './MapEncounters';
 import type { SurvivalWorld } from './SurvivalWorld';
 import { Enemy, Hazard, Point, distance, angleDelta, segmentDistance } from './SurvivalTypes';
@@ -124,7 +125,7 @@ export class SiegeSystem {
     return true;
   }
   director(dt:number,position:(a:number,r?:number)=>Point,suppressSpecial=false) {
-    const w=this.w,t=siegeScoreTime(1,w.time);if(siegeRest(w.time,1)||t<w.reinforcementRestUntil*4/3)return;
+    const w=this.w,t=siegeScoreTime(1,w.time);if(eliteQuiet(w.time)||siegeRest(w.time,1)||t<w.reinforcementRestUntil*4/3)return;
     const elite=w.enemies.some(e=>e.hp>0&&isElite(e.kind));
     this.group-=dt;
     if(this.group<=0){

@@ -1,0 +1,103 @@
+{
+  "scope": "Offline runtime body and painter command budgets; not GPU frame time or mobile heat.",
+  "actors": [
+    {
+      "kind": "shardhermit",
+      "commands": 11,
+      "vertices": 131,
+      "limit": [
+        15,
+        240
+      ],
+      "over": false
+    },
+    {
+      "kind": "facetgastropod",
+      "commands": 14,
+      "vertices": 94,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "prismmason",
+      "commands": 12,
+      "vertices": 95,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "corebrood",
+      "commands": 13,
+      "vertices": 144,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "bifacetregent",
+      "commands": 14,
+      "vertices": 123,
+      "limit": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "strataflinger",
+      "commands": 15,
+      "vertices": 164,
+      "limit": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "boss",
+      "commands": 16,
+      "vertices": 175,
+      "limit": [
+        38,
+        950
+      ],
+      "over": false
+    },
+    {
+      "kind": "prismmirror",
+      "commands": 4,
+      "vertices": 22,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "prismcore",
+      "commands": 5,
+      "vertices": 29,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    }
+  ],
+  "stress": {
+    "enemies": 100,
+    "weapons": 4,
+    "frames": 360,
+    "vertices": 23117,
+    "commands": 1463,
+    "over": false
+  }
+}

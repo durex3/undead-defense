@@ -13,6 +13,10 @@ const THUNDER = new Set(["rivetwalker", "anchorweaver", "arclantern", "railsaw",
 const MOON = new Set(["thornrunner", "crescentmantis", "vaultlynx", "antlerprowler", "moonreaver", "hornwarden"]);
 
 function stageFor(kind) {
+  if (["rootshuffler","vinecantor","wreathpod","bulbmaw","biforktangler","pairedcalyx","migratorycorolla"].includes(kind)) return 8;
+  if (["shardhermit","facetgastropod","prismmason","corebrood","bifacetregent","strataflinger","prismmirror","prismcore"].includes(kind)) return 7;
+  if (["brineporter","sluiceray","sailharpooner","winchbeast","twinlockwarden","severedcrane"].includes(kind)) return 6;
+  if (["waxbearer","bellacolyte","waxscribe","waxcrawler","twinbell","waxporter"].includes(kind)) return 5;
   if (SIEGE.has(kind)) return 1;
   if (SAND.has(kind)) return 2;
   if (THUNDER.has(kind)) return 3;
@@ -39,7 +43,7 @@ test("every enemy kind draws without throwing", () => {
 });
 
 test("every stage boss draws without throwing", () => {
-  for (const stage of [1, 2, 3, 4]) {
+  for (const stage of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
     const world = makeWorld(stage);
     addEnemy(world, "boss", { x: 0, y: 0, hp: 1 });
     const g = draw(world);

@@ -1,0 +1,3906 @@
+{
+  "scope": "144 full-level boss output-window diagnostics (12 legal builds × 3 seeds × 2 movement policies × stages 5/6) with huge HP, 12 random-growth huge-HP collectors and 12 real-HP greedy dodge/nearest-gem bots (finite 0.9s lookahead, not human play), 4 offline painter samples. No human win rate or phone GPU/temperature claim.",
+  "boss": [
+    {
+      "stage": 5,
+      "build": "ground",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 6,
+      "damageTaken": 562,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "ground",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 3.7,
+      "damageTaken": 610,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "ground",
+      "seed": 73,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 6,
+      "damageTaken": 562,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "ground",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 1.9,
+      "damageTaken": 560,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 1,
+        "boss": 17
+      }
+    },
+    {
+      "stage": 5,
+      "build": "ground",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 8.6,
+      "damageTaken": 562,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "ground",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 2.7,
+      "damageTaken": 558,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 16,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 2,
+        "boss": 17
+      }
+    },
+    {
+      "stage": 5,
+      "build": "swarm",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 167.4,
+      "bossRemaining": 0,
+      "damageTaken": 458,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 15
+      }
+    },
+    {
+      "stage": 5,
+      "build": "swarm",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 10.5,
+      "damageTaken": 634,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "swarm",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 166,
+      "bossRemaining": 0,
+      "damageTaken": 458,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 15
+      }
+    },
+    {
+      "stage": 5,
+      "build": "swarm",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 7,
+      "damageTaken": 634,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "swarm",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 164.8,
+      "bossRemaining": 0,
+      "damageTaken": 458,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 15
+      }
+    },
+    {
+      "stage": 5,
+      "build": "swarm",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 9.8,
+      "damageTaken": 610,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 17,
+        "wax": 15,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "orbit",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 40.5,
+      "damageTaken": 534,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 16,
+        "wax": 16,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "orbit",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 41.3,
+      "damageTaken": 558,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 15,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "orbit",
+      "seed": 73,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 40.5,
+      "damageTaken": 534,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 16,
+        "wax": 16,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "orbit",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 41.1,
+      "damageTaken": 582,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 15,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "orbit",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 40.5,
+      "damageTaken": 534,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 16,
+        "wax": 16,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "orbit",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 41.1,
+      "damageTaken": 582,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 15,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "pierce",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 152.7,
+      "bossRemaining": 0,
+      "damageTaken": 458,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "wax": 13,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 13
+      }
+    },
+    {
+      "stage": 5,
+      "build": "pierce",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 151.6,
+      "bossRemaining": 0,
+      "damageTaken": 482,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "wax": 13,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 13
+      }
+    },
+    {
+      "stage": 5,
+      "build": "pierce",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 154.3,
+      "bossRemaining": 0,
+      "damageTaken": 484,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 14,
+        "wax": 14,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 14
+      }
+    },
+    {
+      "stage": 5,
+      "build": "pierce",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 154,
+      "bossRemaining": 0,
+      "damageTaken": 482,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "wax": 14,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 14
+      }
+    },
+    {
+      "stage": 5,
+      "build": "pierce",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 153.8,
+      "bossRemaining": 0,
+      "damageTaken": 484,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 14,
+        "wax": 13,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 14
+      }
+    },
+    {
+      "stage": 5,
+      "build": "pierce",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 153,
+      "bossRemaining": 0,
+      "damageTaken": 482,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "wax": 14,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 14
+      }
+    },
+    {
+      "stage": 5,
+      "build": "furnace",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 38.9,
+      "damageTaken": 560,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 16,
+        "wax": 16,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "furnace",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 40.9,
+      "damageTaken": 558,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 15,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "furnace",
+      "seed": 73,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 38.5,
+      "damageTaken": 536,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 16,
+        "wax": 16,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "furnace",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 40.6,
+      "damageTaken": 558,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 15,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "furnace",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 39.2,
+      "damageTaken": 560,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 16,
+        "wax": 16,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "furnace",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 40.6,
+      "damageTaken": 558,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 15,
+        "wax": 17,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 16
+      }
+    },
+    {
+      "stage": 5,
+      "build": "control",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 112.4,
+      "bossRemaining": 0,
+      "damageTaken": 306,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 10
+      }
+    },
+    {
+      "stage": 5,
+      "build": "control",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 121.5,
+      "bossRemaining": 0,
+      "damageTaken": 406,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "wax": 10,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 11
+      }
+    },
+    {
+      "stage": 5,
+      "build": "control",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 109.6,
+      "bossRemaining": 0,
+      "damageTaken": 280,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 10
+      }
+    },
+    {
+      "stage": 5,
+      "build": "control",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 121.5,
+      "bossRemaining": 0,
+      "damageTaken": 432,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "wax": 10,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 11
+      }
+    },
+    {
+      "stage": 5,
+      "build": "control",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 110.6,
+      "bossRemaining": 0,
+      "damageTaken": 306,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 10
+      }
+    },
+    {
+      "stage": 5,
+      "build": "control",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 122.8,
+      "bossRemaining": 0,
+      "damageTaken": 408,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "wax": 8,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 11
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammerGround",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 97.6,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammerGround",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 83.9,
+      "bossRemaining": 0,
+      "damageTaken": 304,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "wax": 7,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 8
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammerGround",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 99.3,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammerGround",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 82.8,
+      "bossRemaining": 0,
+      "damageTaken": 292,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "wax": 7,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 8
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammerGround",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 96.6,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammerGround",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 83,
+      "bossRemaining": 0,
+      "damageTaken": 304,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "wax": 7,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 8
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheelLane",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 72.1,
+      "bossRemaining": 0,
+      "damageTaken": 204,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 6,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 6
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheelLane",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 71.6,
+      "bossRemaining": 0,
+      "damageTaken": 204,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 6,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 6
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheelLane",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 69.5,
+      "bossRemaining": 0,
+      "damageTaken": 204,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 6,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 6
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheelLane",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 71.4,
+      "bossRemaining": 0,
+      "damageTaken": 228,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 6,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 6
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheelLane",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 69.5,
+      "bossRemaining": 0,
+      "damageTaken": 204,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 6,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 6
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheelLane",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 71.3,
+      "bossRemaining": 0,
+      "damageTaken": 228,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 6,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 6
+      }
+    },
+    {
+      "stage": 5,
+      "build": "both",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 56.1,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "both",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 54.2,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "both",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 56.1,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "both",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 54.2,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "both",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 56.1,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "both",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 54.2,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 13,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "base",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 99.9,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "stage": 5,
+      "build": "base",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 106,
+      "bossRemaining": 0,
+      "damageTaken": 306,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "wax": 9,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 10
+      }
+    },
+    {
+      "stage": 5,
+      "build": "base",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 98.4,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "stage": 5,
+      "build": "base",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 99.9,
+      "bossRemaining": 0,
+      "damageTaken": 302,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "stage": 5,
+      "build": "base",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 99.8,
+      "bossRemaining": 0,
+      "damageTaken": 254,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 9
+      }
+    },
+    {
+      "stage": 5,
+      "build": "base",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 110.7,
+      "bossRemaining": 0,
+      "damageTaken": 330,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "wax": 11,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 10
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammer",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 49.4,
+      "bossRemaining": 0,
+      "damageTaken": 128,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammer",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 55.2,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammer",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 49.4,
+      "bossRemaining": 0,
+      "damageTaken": 128,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammer",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 54.8,
+      "bossRemaining": 0,
+      "damageTaken": 178,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammer",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 48.3,
+      "bossRemaining": 0,
+      "damageTaken": 128,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "hammer",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 52.4,
+      "bossRemaining": 0,
+      "damageTaken": 152,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheel",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 46.2,
+      "bossRemaining": 0,
+      "damageTaken": 102,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheel",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 49.5,
+      "bossRemaining": 0,
+      "damageTaken": 152,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheel",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 45.8,
+      "bossRemaining": 0,
+      "damageTaken": 102,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheel",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 49.4,
+      "bossRemaining": 0,
+      "damageTaken": 154,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 4,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheel",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 45.9,
+      "bossRemaining": 0,
+      "damageTaken": 102,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "wax": 3,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 5
+      }
+    },
+    {
+      "stage": 5,
+      "build": "wheel",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 46.2,
+      "bossRemaining": 0,
+      "damageTaken": 126,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "wax": 5,
+        "charges": 0,
+        "rejected": 0,
+        "boss": 4
+      }
+    },
+    {
+      "stage": 6,
+      "build": "ground",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 38,
+      "damageTaken": 424,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "ground",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 17.9,
+      "damageTaken": 296,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 15,
+        "rejected": 5,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "ground",
+      "seed": 73,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 38.6,
+      "damageTaken": 424,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "ground",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 19.4,
+      "damageTaken": 308,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 6,
+        "boss": 13,
+        "rejected": 6,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "ground",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 38.6,
+      "damageTaken": 424,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "ground",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 19.1,
+      "damageTaken": 268,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 14,
+        "rejected": 4,
+        "berths": 1,
+        "cancelledBerths": 2
+      }
+    },
+    {
+      "stage": 6,
+      "build": "swarm",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 18.4,
+      "damageTaken": 474,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 5,
+        "hooks": 6,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "swarm",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 13.3,
+      "damageTaken": 294,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 14,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "swarm",
+      "seed": 73,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 18.3,
+      "damageTaken": 450,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 5,
+        "hooks": 6,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "swarm",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 13.9,
+      "damageTaken": 294,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "swarm",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 15.6,
+      "damageTaken": 450,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 5,
+        "hooks": 7,
+        "boss": 13,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "swarm",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 15.8,
+      "damageTaken": 268,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "orbit",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 42.4,
+      "damageTaken": 450,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 5,
+        "hooks": 6,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "orbit",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 46,
+      "damageTaken": 268,
+      "peak": 13,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "orbit",
+      "seed": 73,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 42.4,
+      "damageTaken": 450,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 5,
+        "hooks": 6,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "orbit",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 46.3,
+      "damageTaken": 268,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "orbit",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 42.4,
+      "damageTaken": 450,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 5,
+        "hooks": 6,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "orbit",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 46.1,
+      "damageTaken": 268,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "pierce",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 0.7,
+      "damageTaken": 424,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "pierce",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 174,
+      "bossRemaining": 0,
+      "damageTaken": 334,
+      "peak": 18,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 4,
+        "boss": 13,
+        "rejected": 7,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "pierce",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 176.1,
+      "bossRemaining": 0,
+      "damageTaken": 424,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "pierce",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 168.4,
+      "bossRemaining": 0,
+      "damageTaken": 270,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "forks": 4,
+        "hooks": 7,
+        "boss": 13,
+        "rejected": 5,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "pierce",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 1.2,
+      "damageTaken": 424,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 12,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 12,
+        "rejected": 0,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "pierce",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 167.7,
+      "bossRemaining": 0,
+      "damageTaken": 296,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "forks": 4,
+        "hooks": 7,
+        "boss": 13,
+        "rejected": 5,
+        "berths": 3,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "furnace",
+      "seed": 19,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 42.4,
+      "damageTaken": 450,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "furnace",
+      "seed": 19,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 41.7,
+      "damageTaken": 268,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 14,
+        "rejected": 3,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "furnace",
+      "seed": 73,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 43.5,
+      "damageTaken": 450,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 4,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "furnace",
+      "seed": 73,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 46.7,
+      "damageTaken": 268,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "furnace",
+      "seed": 131,
+      "moving": false,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 47.6,
+      "damageTaken": 450,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 4,
+        "hooks": 7,
+        "boss": 13,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "furnace",
+      "seed": 131,
+      "moving": true,
+      "state": "battle",
+      "seconds": 180,
+      "bossRemaining": 47.1,
+      "damageTaken": 268,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 5,
+        "hooks": 8,
+        "boss": 13,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "control",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 118.3,
+      "bossRemaining": 0,
+      "damageTaken": 294,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 8,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "control",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 127.2,
+      "bossRemaining": 0,
+      "damageTaken": 214,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "forks": 4,
+        "hooks": 4,
+        "boss": 9,
+        "rejected": 2,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "control",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 119.7,
+      "bossRemaining": 0,
+      "damageTaken": 294,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 8,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "control",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 127,
+      "bossRemaining": 0,
+      "damageTaken": 214,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "forks": 4,
+        "hooks": 6,
+        "boss": 10,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "control",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 116.5,
+      "bossRemaining": 0,
+      "damageTaken": 294,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 9,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 8,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "control",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 123.2,
+      "bossRemaining": 0,
+      "damageTaken": 214,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "forks": 4,
+        "hooks": 5,
+        "boss": 10,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammerGround",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 131.2,
+      "bossRemaining": 0,
+      "damageTaken": 344,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 4,
+        "hooks": 4,
+        "boss": 9,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammerGround",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 96.3,
+      "bossRemaining": 0,
+      "damageTaken": 212,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 8,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammerGround",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 137.6,
+      "bossRemaining": 0,
+      "damageTaken": 368,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 4,
+        "hooks": 4,
+        "boss": 9,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammerGround",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 95.8,
+      "bossRemaining": 0,
+      "damageTaken": 198,
+      "peak": 19,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 8,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammerGround",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 136.4,
+      "bossRemaining": 0,
+      "damageTaken": 368,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 4,
+        "hooks": 4,
+        "boss": 9,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammerGround",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 95.6,
+      "bossRemaining": 0,
+      "damageTaken": 212,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 6,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 8,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheelLane",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 77,
+      "bossRemaining": 0,
+      "damageTaken": 184,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "forks": 2,
+        "hooks": 3,
+        "boss": 6,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheelLane",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 77.9,
+      "bossRemaining": 0,
+      "damageTaken": 134,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 6,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheelLane",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 77.5,
+      "bossRemaining": 0,
+      "damageTaken": 184,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "forks": 2,
+        "hooks": 3,
+        "boss": 6,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheelLane",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 76.8,
+      "bossRemaining": 0,
+      "damageTaken": 134,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 6,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheelLane",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 77.7,
+      "bossRemaining": 0,
+      "damageTaken": 184,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 5,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 6,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheelLane",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 78.8,
+      "bossRemaining": 0,
+      "damageTaken": 134,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 6,
+        "rejected": 2,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "both",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 59.8,
+      "bossRemaining": 0,
+      "damageTaken": 156,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "both",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 56,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 1,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "both",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 59.8,
+      "bossRemaining": 0,
+      "damageTaken": 156,
+      "peak": 14,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "both",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 56,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 1,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "both",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 59.8,
+      "bossRemaining": 0,
+      "damageTaken": 156,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "both",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 56,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 15,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 1,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "base",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 109.1,
+      "bossRemaining": 0,
+      "damageTaken": 268,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 7,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "base",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 120.6,
+      "bossRemaining": 0,
+      "damageTaken": 214,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "forks": 3,
+        "hooks": 5,
+        "boss": 10,
+        "rejected": 2,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "base",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 106.8,
+      "bossRemaining": 0,
+      "damageTaken": 268,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 7,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "base",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 117.2,
+      "bossRemaining": 0,
+      "damageTaken": 188,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "forks": 3,
+        "hooks": 4,
+        "boss": 8,
+        "rejected": 2,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "base",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 110.3,
+      "bossRemaining": 0,
+      "damageTaken": 268,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 8,
+        "forks": 2,
+        "hooks": 4,
+        "boss": 7,
+        "rejected": 0,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "base",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 122.7,
+      "bossRemaining": 0,
+      "damageTaken": 214,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 7,
+        "forks": 4,
+        "hooks": 5,
+        "boss": 10,
+        "rejected": 3,
+        "berths": 2,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammer",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 54.2,
+      "bossRemaining": 0,
+      "damageTaken": 132,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 1,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammer",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 56.5,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 1,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammer",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 55.3,
+      "bossRemaining": 0,
+      "damageTaken": 132,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammer",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 54.9,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 1,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammer",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 54.9,
+      "bossRemaining": 0,
+      "damageTaken": 132,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "hammer",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 56.6,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 1,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheel",
+      "seed": 19,
+      "moving": false,
+      "state": "won",
+      "seconds": 51.3,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 1,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheel",
+      "seed": 19,
+      "moving": true,
+      "state": "won",
+      "seconds": 51.6,
+      "bossRemaining": 0,
+      "damageTaken": 118,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 1,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheel",
+      "seed": 73,
+      "moving": false,
+      "state": "won",
+      "seconds": 53.1,
+      "bossRemaining": 0,
+      "damageTaken": 132,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 1,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheel",
+      "seed": 73,
+      "moving": true,
+      "state": "won",
+      "seconds": 49.6,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 1,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheel",
+      "seed": 131,
+      "moving": false,
+      "state": "won",
+      "seconds": 53.4,
+      "bossRemaining": 0,
+      "damageTaken": 132,
+      "peak": 16,
+      "slots": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 1,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 0,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    },
+    {
+      "stage": 6,
+      "build": "wheel",
+      "seed": 131,
+      "moving": true,
+      "state": "won",
+      "seconds": 54.2,
+      "bossRemaining": 0,
+      "damageTaken": 106,
+      "peak": 17,
+      "slots": 2,
+      "attacks": {
+        "waves": 3,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 4,
+        "rejected": 1,
+        "berths": 1,
+        "cancelledBerths": 0
+      }
+    }
+  ],
+  "growth": [
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999999296,
+      "damageTaken": 1114,
+      "unlocked": [],
+      "seed": 19,
+      "firstNew": null,
+      "firstEight": 41.8,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 6,
+        "forks": 3,
+        "hooks": 3,
+        "boss": 0,
+        "rejected": 6,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999998685,
+      "damageTaken": 1790,
+      "unlocked": [],
+      "seed": 73,
+      "firstNew": null,
+      "firstEight": 32,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "bone",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "peak": 32,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 9,
+        "forks": 8,
+        "hooks": 7,
+        "boss": 0,
+        "rejected": 8,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999998436,
+      "damageTaken": 1914,
+      "unlocked": [],
+      "seed": 131,
+      "firstNew": null,
+      "firstEight": 36.9,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 6,
+        "forks": 5,
+        "hooks": 5,
+        "boss": 0,
+        "rejected": 4,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999998889,
+      "damageTaken": 1526,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 19,
+      "firstNew": 14.8,
+      "firstEight": 62.6,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "bone",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 5,
+        "forks": 9,
+        "hooks": 5,
+        "boss": 0,
+        "rejected": 4,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999998827,
+      "damageTaken": 1448,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 73,
+      "firstNew": 36.4,
+      "firstEight": 32,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 35,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 11,
+        "forks": 11,
+        "hooks": 4,
+        "boss": 0,
+        "rejected": 2,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999999326,
+      "damageTaken": 1074,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 131,
+      "firstNew": 22.9,
+      "firstEight": 59,
+      "level": 39,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 45,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 4,
+        "forks": 5,
+        "hooks": 4,
+        "boss": 0,
+        "rejected": 5,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999998774,
+      "damageTaken": 1566,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 19,
+      "firstNew": 14.8,
+      "firstEight": 69,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 37,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 7,
+        "forks": 2,
+        "hooks": 3,
+        "boss": 0,
+        "rejected": 3,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999998691,
+      "damageTaken": 1734,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 73,
+      "firstNew": 36.4,
+      "firstEight": 32,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "bone",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 33,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 10,
+        "forks": 8,
+        "hooks": 8,
+        "boss": 0,
+        "rejected": 6,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999999248,
+      "damageTaken": 1132,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 131,
+      "firstNew": 22.9,
+      "firstEight": 49.4,
+      "level": 39,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 45,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 5,
+        "forks": 6,
+        "hooks": 6,
+        "boss": 0,
+        "rejected": 1,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999998738,
+      "damageTaken": 1642,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 19,
+      "firstNew": 14.8,
+      "firstEight": 106.9,
+      "level": 39,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "bone",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 34,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 9,
+        "forks": 15,
+        "hooks": 5,
+        "boss": 0,
+        "rejected": 1,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999999420,
+      "damageTaken": 960,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 73,
+      "firstNew": 36.9,
+      "firstEight": 33.2,
+      "level": 39,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 45,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 5,
+        "forks": 3,
+        "hooks": 7,
+        "boss": 0,
+        "rejected": 3,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": true,
+      "state": "battle",
+      "time": 360,
+      "hp": 999999172,
+      "damageTaken": 1168,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 131,
+      "firstNew": 22.9,
+      "firstEight": 49.4,
+      "level": 39,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "holy",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 45,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 5,
+        "forks": 2,
+        "hooks": 2,
+        "boss": 0,
+        "rejected": 0,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": false,
+      "state": "lost",
+      "time": 63.7,
+      "hp": 0,
+      "damageTaken": 100,
+      "unlocked": [],
+      "seed": 19,
+      "firstNew": null,
+      "firstEight": 62.6,
+      "level": 11,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          2
+        ]
+      ],
+      "peak": 67,
+      "eliteKills": 0,
+      "attacks": {
+        "waves": 1,
+        "forks": 0,
+        "hooks": 0,
+        "boss": 0,
+        "rejected": 0,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": false
+    },
+    {
+      "highHP": false,
+      "state": "battle",
+      "time": 599.8,
+      "hp": 50,
+      "damageTaken": 134,
+      "unlocked": [],
+      "seed": 73,
+      "firstNew": null,
+      "firstEight": 55.8,
+      "level": 42,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "peak": 56,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 20,
+        "forks": 4,
+        "hooks": 11,
+        "boss": 17,
+        "rejected": 10,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": false,
+      "state": "battle",
+      "time": 599.9,
+      "hp": 18,
+      "damageTaken": 154,
+      "unlocked": [],
+      "seed": 131,
+      "firstNew": null,
+      "firstEight": 53,
+      "level": 42,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "void",
+          8
+        ]
+      ],
+      "peak": 52,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 21,
+        "forks": 10,
+        "hooks": 16,
+        "boss": 17,
+        "rejected": 3,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": false,
+      "state": "lost",
+      "time": 63.7,
+      "hp": 0,
+      "damageTaken": 100,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 19,
+      "firstNew": 62.6,
+      "firstEight": 62.6,
+      "level": 12,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "hammer",
+          3
+        ]
+      ],
+      "peak": 67,
+      "eliteKills": 0,
+      "attacks": {
+        "waves": 1,
+        "forks": 0,
+        "hooks": 0,
+        "boss": 0,
+        "rejected": 0,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": false
+    },
+    {
+      "highHP": false,
+      "state": "battle",
+      "time": 599.8,
+      "hp": 88,
+      "damageTaken": 96,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 73,
+      "firstNew": 67.2,
+      "firstEight": 55.8,
+      "level": 42,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 56,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 18,
+        "forks": 8,
+        "hooks": 12,
+        "boss": 16,
+        "rejected": 3,
+        "berths": 3,
+        "cancelledBerths": 0
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": false,
+      "state": "won",
+      "time": 580.6,
+      "hp": 100,
+      "damageTaken": 24,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 131,
+      "firstNew": 26.7,
+      "firstEight": 45.6,
+      "level": 42,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "peak": 53,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 22,
+        "forks": 12,
+        "hooks": 8,
+        "boss": 17,
+        "rejected": 8,
+        "berths": 4,
+        "cancelledBerths": 0
+      },
+      "bossPresent": false
+    },
+    {
+      "highHP": false,
+      "state": "lost",
+      "time": 63.7,
+      "hp": 0,
+      "damageTaken": 100,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 19,
+      "firstNew": 62.6,
+      "firstEight": 62.6,
+      "level": 12,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "wheel",
+          3
+        ]
+      ],
+      "peak": 67,
+      "eliteKills": 0,
+      "attacks": {
+        "waves": 1,
+        "forks": 0,
+        "hooks": 0,
+        "boss": 0,
+        "rejected": 0,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": false
+    },
+    {
+      "highHP": false,
+      "state": "battle",
+      "time": 599.9,
+      "hp": 145,
+      "damageTaken": 84,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 73,
+      "firstNew": 67.2,
+      "firstEight": 55.8,
+      "level": 42,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 56,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 16,
+        "forks": 7,
+        "hooks": 7,
+        "boss": 14,
+        "rejected": 8,
+        "berths": 2,
+        "cancelledBerths": 1
+      },
+      "bossPresent": true
+    },
+    {
+      "highHP": false,
+      "state": "won",
+      "time": 586.9,
+      "hp": 160,
+      "damageTaken": 36,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 131,
+      "firstNew": 26.7,
+      "firstEight": 50.1,
+      "level": 42,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 53,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 19,
+        "forks": 13,
+        "hooks": 11,
+        "boss": 16,
+        "rejected": 3,
+        "berths": 3,
+        "cancelledBerths": 0
+      },
+      "bossPresent": false
+    },
+    {
+      "highHP": false,
+      "state": "lost",
+      "time": 63.7,
+      "hp": 0,
+      "damageTaken": 100,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 19,
+      "firstNew": 62.6,
+      "firstEight": 62.6,
+      "level": 12,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "wheel",
+          3
+        ]
+      ],
+      "peak": 67,
+      "eliteKills": 0,
+      "attacks": {
+        "waves": 1,
+        "forks": 0,
+        "hooks": 0,
+        "boss": 0,
+        "rejected": 0,
+        "berths": 0,
+        "cancelledBerths": 0
+      },
+      "bossPresent": false
+    },
+    {
+      "highHP": false,
+      "state": "won",
+      "time": 591.3,
+      "hp": 88,
+      "damageTaken": 24,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 73,
+      "firstNew": 75.1,
+      "firstEight": 109.1,
+      "level": 41,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 100,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 20,
+        "forks": 8,
+        "hooks": 10,
+        "boss": 17,
+        "rejected": 6,
+        "berths": 2,
+        "cancelledBerths": 1
+      },
+      "bossPresent": false
+    },
+    {
+      "highHP": false,
+      "state": "won",
+      "time": 509.7,
+      "hp": 118,
+      "damageTaken": 48,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 131,
+      "firstNew": 26.7,
+      "firstEight": 50.1,
+      "level": 41,
+      "skills": [
+        [
+          "frost",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "peak": 53,
+      "eliteKills": 2,
+      "attacks": {
+        "waves": 13,
+        "forks": 11,
+        "hooks": 6,
+        "boss": 11,
+        "rejected": 5,
+        "berths": 2,
+        "cancelledBerths": 0
+      },
+      "bossPresent": false
+    }
+  ],
+  "maxVertices": 2845
+}

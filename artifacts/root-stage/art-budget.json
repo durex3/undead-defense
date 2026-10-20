@@ -1,0 +1,93 @@
+{
+  "scope": "Offline runtime body and painter command budgets; not GPU frame time or mobile heat.",
+  "actors": [
+    {
+      "kind": "rootshuffler",
+      "commands": 12,
+      "vertices": 165,
+      "limit": [
+        15,
+        240
+      ],
+      "over": false
+    },
+    {
+      "kind": "vinecantor",
+      "commands": 11,
+      "vertices": 159,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "wreathpod",
+      "commands": 12,
+      "vertices": 155,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "bulbmaw",
+      "commands": 13,
+      "vertices": 106,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "biforktangler",
+      "commands": 13,
+      "vertices": 194,
+      "limit": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "pairedcalyx",
+      "commands": 13,
+      "vertices": 177,
+      "limit": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "migratorycorolla",
+      "commands": 13,
+      "vertices": 233,
+      "limit": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "boss",
+      "commands": 18,
+      "vertices": 274,
+      "limit": [
+        38,
+        950
+      ],
+      "over": false
+    }
+  ],
+  "stress": {
+    "enemies": 100,
+    "weapons": 4,
+    "frames": 360,
+    "vertices": 27569,
+    "commands": 1636,
+    "over": false
+  }
+}

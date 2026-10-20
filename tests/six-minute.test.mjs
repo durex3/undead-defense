@@ -19,7 +19,7 @@ test('all stage directors preserve both elites and the full enemy introduction s
     }
     for(const kind of [...elites[stage],...specials[stage]])
       assert(events.some(e=>e.kind===kind&&e.seconds<350),`${stage}: missing ${kind}`);
-    for(const kind of elites[stage])assert.equal(events.filter(e=>e.kind===kind).length,1);
+    for(const [i,kind] of elites[stage].entries())assert.equal(events.filter(e=>e.kind===kind).length,i===0?2:1);
     assert.deepEqual(events.filter(e=>e.kind==='boss').map(e=>e.seconds),[360]);
   }
 });

@@ -1,0 +1,54 @@
+{
+  "version": "0.30.1",
+  "scope": "isolated controlled high-HP fixture with all eight silhouettes, not a normal encounter; three elite bodies shown only for art review",
+  "viewport": {
+    "width": 844,
+    "height": 390,
+    "dpr": 2
+  },
+  "firstPhase": {
+    "slots": 2,
+    "shapes": [
+      "arm",
+      "ring"
+    ]
+  },
+  "newElite": {
+    "name": "迁萼巡守",
+    "slots": 2,
+    "paths": [
+      {
+        "shape": "ring",
+        "x": -2.9500000000000006,
+        "y": -8,
+        "created": 381,
+        "due": 382.8,
+        "until": 383.40000000000003
+      },
+      {
+        "shape": "ring",
+        "x": 2.9500000000000006,
+        "y": -8,
+        "created": 384.00000000000006,
+        "due": 385.80000000000007,
+        "until": 386.4000000000001
+      }
+    ]
+  },
+  "pauseHeld": true,
+  "tripleDelta": 0.049999999999954525,
+  "phaseTwo": {
+    "slots": 2,
+    "shapes": [
+      "arm",
+      "disk"
+    ],
+    "fired": [
+      true,
+      true
+    ]
+  },
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "isolatedStorageCleared": true
+}

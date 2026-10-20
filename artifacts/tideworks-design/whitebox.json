@@ -1,0 +1,157 @@
+{
+  "scope": "Static design whitebox only: half-unit flood fill with sampled edges; open-field first-wave lateral distance check. Not runtime navigation, dynamic crowd safety, chained-wave proof or balance evidence.",
+  "bounds": [
+    -22,
+    22,
+    -26,
+    26
+  ],
+  "obstacles": [
+    {
+      "x": -10,
+      "y": 9,
+      "halfWidth": 1.8,
+      "halfHeight": 2.8
+    },
+    {
+      "x": 10,
+      "y": -9,
+      "halfWidth": 1.8,
+      "halfHeight": 2.8
+    },
+    {
+      "x": -6,
+      "y": -17,
+      "halfWidth": 3,
+      "halfHeight": 1.2
+    },
+    {
+      "x": 6,
+      "y": 17,
+      "halfWidth": 3,
+      "halfHeight": 1.2
+    }
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "reachableCells": 8597,
+      "routeTargets": [
+        {
+          "point": [
+            0,
+            -8
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            -15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            -12
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            12
+          ],
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "radius": 0.7,
+      "reachableCells": 8141,
+      "routeTargets": [
+        {
+          "point": [
+            0,
+            -8
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            -15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            -12
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            12
+          ],
+          "reachable": true
+        }
+      ]
+    }
+  ],
+  "firstWaveExamples": [
+    {
+      "width": 5.6,
+      "arrivalFromWarning": 2.714,
+      "requiredSideTravel": 3.4499999999999997,
+      "availableBaseSpeedTravel": 9.927,
+      "openFieldSideExitPossible": true
+    },
+    {
+      "width": 7,
+      "arrivalFromWarning": 2.65,
+      "requiredSideTravel": 4.1499999999999995,
+      "availableBaseSpeedTravel": 9.66,
+      "openFieldSideExitPossible": true
+    },
+    {
+      "width": 8,
+      "arrivalFromWarning": 2.804,
+      "requiredSideTravel": 4.6499999999999995,
+      "availableBaseSpeedTravel": 10.308,
+      "openFieldSideExitPossible": true
+    }
+  ],
+  "runtimeChanged": false
+}

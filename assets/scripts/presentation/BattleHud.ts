@@ -37,7 +37,7 @@ export function battleHud(
     .trim();
   const boss = w.enemies.find((e) => e.kind === "boss" && e.hp > 0);
   const lateHazard = w.hazards.find((h) => h.damageLabel);
-  const hint = w.stageId === 4
+  const hint = w.stageId === 10 ? "踩签撤招 · 看配对编号 · 中缝可留，端头可绕" : w.stageId === 9 ? "借风换位 · 曲羽不追踪 · 击破一名精英可减压" : w.stageId === 8 ? "绕端换侧 · 空心可进，实心须出 · 收招护皮开缝" : w.stageId === 7 ? "看完整折线 · 晶核可击碎 · 收招时甲缝暴露" : w.stageId === 6 ? "绕过浪头再切回 · 厚蜡甲可裂解 · 收舷时反击" : w.stageId === 5 ? "钟台挡声浪 · 蜡印需换位 · 收招甲缝可反击" : w.stageId === 4
     ? moonHint(w)
     : w.stageId === 3
       ? thunderHint(w)
@@ -71,7 +71,7 @@ export function battleHud(
   const bossHealth = boss
     ? {
         ratio: Math.max(0, Math.min(1, boss.hp / Math.max(1, boss.maxHp))),
-        label: `${STAGES[w.stageId].boss} · ${boss.bossPhase >= 2 ? "狂怒" : "第一阶段"} · ${Math.ceil(boss.hp)} / ${Math.ceil(boss.maxHp)}`,
+        label: `${STAGES[w.stageId].boss} · ${w.stageId===10?["第一阶段 I","第二阶段 II","第三阶段 III"][boss.bossPhase-1]:boss.bossPhase >= 2 ? "狂怒" : "第一阶段"} · ${Math.ceil(boss.hp)} / ${Math.ceil(boss.maxHp)}`,
       }
     : null;
   return { stats, weapons, hint, nova, bossHealth };

@@ -1,3 +1,5 @@
+import { SupportArmory } from "./SupportArmory";
+import { UnlockedArmory } from "./UnlockedArmory";
 import { ExtraArmory } from "./ExtraArmory";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Skill, WEAPONS, isElite } from "./SurvivalConfig";
@@ -69,9 +71,13 @@ export class Armory {
       end: Point;
     }
   >();
+  readonly support: SupportArmory;
   readonly extra: ExtraArmory;
+  readonly unlocked: UnlockedArmory;
   constructor(private w: SurvivalWorld) {
+    this.support = new SupportArmory(w);
     this.extra = new ExtraArmory(w);
+    this.unlocked = new UnlockedArmory(w);
   }
   private enemies(origin: Point, range: number) {
     return this.w.enemies.filter(
@@ -90,7 +96,7 @@ export class Armory {
       let value = -distance(e, this.w.player) * 0.01;
       if (skill === "blade")
         value +=
-          isElite(e.kind) || /bow|spitter|mage|archer|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind) ? 100 : 0;
+          isElite(e.kind) || /bow|spitter|mage|archer|sealclerk|folioray|spineclasp|reedwhistler|sickleplumer|foldedskimmer|vinecantor|wreathpod|bulbmaw|facetgastropod|prismmason|corebrood|prismcore|sluiceray|sailharpooner|winchbeast|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind) ? 100 : 0;
       else
         for (const other of list)
           if (distance(other, e) <= s.radius * 1.3) value++;
@@ -147,7 +153,9 @@ export class Armory {
   }
   step(dt: number) {
     const w = this.w;
+    this.support.step(dt);
     this.extra.step(dt);
+    this.unlocked.step(dt);
     for (const skill of WEAPONS) {
       if (!["blade", "fire", "water"].includes(skill)) continue;
       if (!w.skills[skill]) continue;

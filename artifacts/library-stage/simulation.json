@@ -1,0 +1,2804 @@
+{
+  "scope": "Sixteen huge-HP full-level output-window comparisons (4 builds x stand/move x stage 9/10), 300s Boss cap, seed 19. Twenty-four real-HP random-offer runs (stages 9/10 x base/hammer/wheel/both pools x 3 seeds), 900s real-time cap and 600s snapshot. Greedy .6s lookahead sign-aware dodge/nearest-gem bot; not human difficulty or win-rate evidence.",
+  "boss": [
+    {
+      "stage": 9,
+      "build": "base",
+      "moving": false,
+      "state": "won",
+      "time": 121.5,
+      "remaining": 0,
+      "phaseSeconds": [
+        56.5,
+        64.9,
+        0
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 208,
+      "stats": {
+        "wind": 7,
+        "feather": 11,
+        "glide": 4,
+        "pairs": 0,
+        "rejected": 0,
+        "cancelled": 3,
+        "patterns": {
+          "A": 4,
+          "B": 4,
+          "C": 3
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "build": "base",
+      "moving": true,
+      "state": "won",
+      "time": 126.9,
+      "remaining": 0,
+      "phaseSeconds": [
+        57.2,
+        69.7,
+        0
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 0,
+      "stats": {
+        "wind": 7,
+        "feather": 11,
+        "glide": 4,
+        "pairs": 0,
+        "rejected": 0,
+        "cancelled": 0,
+        "patterns": {
+          "A": 4,
+          "B": 4,
+          "C": 3
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "build": "ground",
+      "moving": false,
+      "state": "won",
+      "time": 204,
+      "remaining": 0,
+      "phaseSeconds": [
+        95.8,
+        108.2,
+        0
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 312,
+      "stats": {
+        "wind": 11,
+        "feather": 17,
+        "glide": 6,
+        "pairs": 0,
+        "rejected": 0,
+        "cancelled": 0,
+        "patterns": {
+          "A": 6,
+          "B": 6,
+          "C": 5
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "build": "ground",
+      "moving": true,
+      "state": "won",
+      "time": 218.3,
+      "remaining": 0,
+      "phaseSeconds": [
+        102.8,
+        115.4,
+        0
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 0,
+      "stats": {
+        "wind": 12,
+        "feather": 19,
+        "glide": 5,
+        "pairs": 0,
+        "rejected": 1,
+        "cancelled": 0,
+        "patterns": {
+          "A": 6,
+          "B": 5,
+          "C": 7
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "build": "swarm",
+      "moving": false,
+      "state": "won",
+      "time": 210.8,
+      "remaining": 0,
+      "phaseSeconds": [
+        97.4,
+        113.3,
+        0
+      ],
+      "peak": 16,
+      "slots": 2,
+      "damageTaken": 312,
+      "stats": {
+        "wind": 12,
+        "feather": 18,
+        "glide": 6,
+        "pairs": 0,
+        "rejected": 0,
+        "cancelled": 0,
+        "patterns": {
+          "A": 6,
+          "B": 6,
+          "C": 6
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "build": "swarm",
+      "moving": true,
+      "state": "won",
+      "time": 220.9,
+      "remaining": 0,
+      "phaseSeconds": [
+        101.9,
+        119,
+        0
+      ],
+      "peak": 15,
+      "slots": 2,
+      "damageTaken": 0,
+      "stats": {
+        "wind": 13,
+        "feather": 19,
+        "glide": 6,
+        "pairs": 0,
+        "rejected": 0,
+        "cancelled": 0,
+        "patterns": {
+          "A": 6,
+          "B": 6,
+          "C": 7
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "build": "unlocked",
+      "moving": false,
+      "state": "won",
+      "time": 65.7,
+      "remaining": 0,
+      "phaseSeconds": [
+        32.1,
+        33.5,
+        0
+      ],
+      "peak": 15,
+      "slots": 2,
+      "damageTaken": 104,
+      "stats": {
+        "wind": 4,
+        "feather": 6,
+        "glide": 2,
+        "pairs": 0,
+        "rejected": 0,
+        "cancelled": 3,
+        "patterns": {
+          "A": 2,
+          "B": 2,
+          "C": 2
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "build": "unlocked",
+      "moving": true,
+      "state": "won",
+      "time": 63.3,
+      "remaining": 0,
+      "phaseSeconds": [
+        30.8,
+        32.5,
+        0
+      ],
+      "peak": 14,
+      "slots": 2,
+      "damageTaken": 0,
+      "stats": {
+        "wind": 3,
+        "feather": 6,
+        "glide": 1,
+        "pairs": 0,
+        "rejected": 1,
+        "cancelled": 0,
+        "patterns": {
+          "A": 2,
+          "B": 1,
+          "C": 2
+        }
+      }
+    },
+    {
+      "stage": 10,
+      "build": "base",
+      "moving": false,
+      "state": "won",
+      "time": 101.4,
+      "remaining": 0,
+      "phaseSeconds": [
+        38.6,
+        33.1,
+        29.6
+      ],
+      "peak": 16,
+      "slots": 2,
+      "damageTaken": 1156,
+      "stats": {
+        "imprint": 8,
+        "page": 3,
+        "clamp": 6,
+        "stepped": 0,
+        "cancelled": 2,
+        "rejected": 0,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 4,
+          "B": 3,
+          "C": 3
+        },
+        "phases": [
+          4,
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "stage": 10,
+      "build": "base",
+      "moving": true,
+      "state": "won",
+      "time": 99.9,
+      "remaining": 0,
+      "phaseSeconds": [
+        30.4,
+        33.5,
+        36
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 158,
+      "stats": {
+        "imprint": 5,
+        "page": 3,
+        "clamp": 6,
+        "stepped": 1,
+        "cancelled": 0,
+        "rejected": 1,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 2,
+          "B": 3,
+          "C": 3
+        },
+        "phases": [
+          3,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "stage": 10,
+      "build": "ground",
+      "moving": false,
+      "state": "won",
+      "time": 145.4,
+      "remaining": 0,
+      "phaseSeconds": [
+        50.1,
+        47.8,
+        47.5
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 1662,
+      "stats": {
+        "imprint": 9,
+        "page": 5,
+        "clamp": 8,
+        "stepped": 0,
+        "cancelled": 0,
+        "rejected": 0,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 4,
+          "B": 5,
+          "C": 4
+        },
+        "phases": [
+          5,
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "stage": 10,
+      "build": "ground",
+      "moving": true,
+      "state": "won",
+      "time": 165.7,
+      "remaining": 0,
+      "phaseSeconds": [
+        51,
+        58.3,
+        56.3
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 238,
+      "stats": {
+        "imprint": 12,
+        "page": 6,
+        "clamp": 8,
+        "stepped": 5,
+        "cancelled": 0,
+        "rejected": 0,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 5,
+          "B": 6,
+          "C": 4
+        },
+        "phases": [
+          5,
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "stage": 10,
+      "build": "swarm",
+      "moving": false,
+      "state": "won",
+      "time": 142.4,
+      "remaining": 0,
+      "phaseSeconds": [
+        49.4,
+        48,
+        44.9
+      ],
+      "peak": 15,
+      "slots": 2,
+      "damageTaken": 1662,
+      "stats": {
+        "imprint": 9,
+        "page": 5,
+        "clamp": 8,
+        "stepped": 0,
+        "cancelled": 0,
+        "rejected": 0,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 4,
+          "B": 5,
+          "C": 4
+        },
+        "phases": [
+          5,
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "stage": 10,
+      "build": "swarm",
+      "moving": true,
+      "state": "won",
+      "time": 189.9,
+      "remaining": 0,
+      "phaseSeconds": [
+        56,
+        72.5,
+        61.4
+      ],
+      "peak": 17,
+      "slots": 2,
+      "damageTaken": 192,
+      "stats": {
+        "imprint": 11,
+        "page": 5,
+        "clamp": 8,
+        "stepped": 5,
+        "cancelled": 0,
+        "rejected": 4,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 5,
+          "B": 5,
+          "C": 4
+        },
+        "phases": [
+          6,
+          5,
+          3
+        ]
+      }
+    },
+    {
+      "stage": 10,
+      "build": "unlocked",
+      "moving": false,
+      "state": "won",
+      "time": 58.4,
+      "remaining": 0,
+      "phaseSeconds": [
+        20.7,
+        18.9,
+        18.7
+      ],
+      "peak": 15,
+      "slots": 2,
+      "damageTaken": 638,
+      "stats": {
+        "imprint": 5,
+        "page": 3,
+        "clamp": 2,
+        "stepped": 0,
+        "cancelled": 4,
+        "rejected": 0,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 2,
+          "B": 3,
+          "C": 1
+        },
+        "phases": [
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "stage": 10,
+      "build": "unlocked",
+      "moving": true,
+      "state": "won",
+      "time": 60.8,
+      "remaining": 0,
+      "phaseSeconds": [
+        19.2,
+        20.7,
+        20.9
+      ],
+      "peak": 15,
+      "slots": 2,
+      "damageTaken": 106,
+      "stats": {
+        "imprint": 5,
+        "page": 3,
+        "clamp": 2,
+        "stepped": 0,
+        "cancelled": 0,
+        "rejected": 0,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 2,
+          "B": 3,
+          "C": 1
+        },
+        "phases": [
+          2,
+          2,
+          2
+        ]
+      }
+    }
+  ],
+  "growth": [
+    {
+      "stage": 9,
+      "unlocked": [],
+      "seed": 19,
+      "state": "won",
+      "time": 736.9,
+      "hp": 78,
+      "level": 43,
+      "first8": 60.2,
+      "peak": 52,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 32.4
+      },
+      "phaseSeconds": [
+        167.3,
+        209.6,
+        0
+      ],
+      "stats": {
+        "wind": 16,
+        "feather": 38,
+        "glide": 5,
+        "pairs": 0,
+        "rejected": 18,
+        "cancelled": 2,
+        "patterns": {
+          "A": 10,
+          "B": 3,
+          "C": 8
+        }
+      },
+      "damageTaken": 118,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 0,
+        "area": 2,
+        "duration": 4,
+        "amount": 2,
+        "boots": 0,
+        "vitality": 0,
+        "magnet": 3
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [],
+      "seed": 73,
+      "state": "won",
+      "time": 883.4,
+      "hp": 100,
+      "level": 44,
+      "first8": 59.4,
+      "peak": 64,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 1,
+        "remaining": 57.3
+      },
+      "phaseSeconds": [
+        254.5,
+        268.9,
+        0
+      ],
+      "stats": {
+        "wind": 21,
+        "feather": 25,
+        "glide": 10,
+        "pairs": 0,
+        "rejected": 26,
+        "cancelled": 3,
+        "patterns": {
+          "A": 6,
+          "B": 9,
+          "C": 8
+        }
+      },
+      "damageTaken": 36,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "bone",
+          8
+        ],
+        [
+          "mine",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 2,
+        "hourglass": 4,
+        "area": 4,
+        "duration": 0,
+        "amount": 0,
+        "boots": 0,
+        "vitality": 0,
+        "magnet": 2
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [],
+      "seed": 131,
+      "state": "battle",
+      "time": 900,
+      "hp": 100,
+      "level": 44,
+      "first8": 59.8,
+      "peak": 56,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 1,
+        "remaining": 68.2
+      },
+      "phaseSeconds": [
+        315.2,
+        224.9,
+        0
+      ],
+      "bossRemaining": 11300.776199997219,
+      "stats": {
+        "wind": 13,
+        "feather": 31,
+        "glide": 7,
+        "pairs": 0,
+        "rejected": 24,
+        "cancelled": 4,
+        "patterns": {
+          "A": 12,
+          "B": 3,
+          "C": 6
+        }
+      },
+      "damageTaken": 60,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 4,
+        "area": 0,
+        "duration": 0,
+        "amount": 2,
+        "boots": 3,
+        "vitality": 0,
+        "magnet": 3
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 19,
+      "state": "won",
+      "time": 833.5,
+      "hp": 100,
+      "level": 44,
+      "first8": 57,
+      "peak": 52,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 54.6
+      },
+      "phaseSeconds": [
+        230.6,
+        243,
+        0
+      ],
+      "stats": {
+        "wind": 5,
+        "feather": 18,
+        "glide": 1,
+        "pairs": 0,
+        "rejected": 38,
+        "cancelled": 1,
+        "patterns": {
+          "A": 7,
+          "B": 1,
+          "C": 2
+        }
+      },
+      "damageTaken": 60,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 4,
+        "hourglass": 1,
+        "area": 3,
+        "duration": 0,
+        "amount": 0,
+        "boots": 4,
+        "vitality": 0,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 73,
+      "state": "battle",
+      "time": 900,
+      "hp": 100,
+      "level": 44,
+      "first8": 59.4,
+      "peak": 64,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 1,
+        "remaining": 58.9
+      },
+      "phaseSeconds": [
+        281.2,
+        258.9,
+        0
+      ],
+      "bossRemaining": 6130.967049999258,
+      "stats": {
+        "wind": 19,
+        "feather": 38,
+        "glide": 9,
+        "pairs": 0,
+        "rejected": 28,
+        "cancelled": 4,
+        "patterns": {
+          "A": 12,
+          "B": 8,
+          "C": 7
+        }
+      },
+      "damageTaken": 36,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 2,
+        "area": 2,
+        "duration": 0,
+        "amount": 0,
+        "boots": 4,
+        "vitality": 0,
+        "magnet": 4
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 131,
+      "state": "won",
+      "time": 534.5,
+      "hp": 100,
+      "level": 38,
+      "first8": 142.6,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": null,
+      "phaseSeconds": [
+        85.4,
+        89.2,
+        0
+      ],
+      "stats": {
+        "wind": 5,
+        "feather": 7,
+        "glide": 2,
+        "pairs": 0,
+        "rejected": 13,
+        "cancelled": 1,
+        "patterns": {
+          "A": 4,
+          "B": 2,
+          "C": 1
+        }
+      },
+      "damageTaken": 84,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 4,
+        "hourglass": 0,
+        "area": 0,
+        "duration": 0,
+        "amount": 2,
+        "boots": 0,
+        "vitality": 0,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 19,
+      "state": "won",
+      "time": 833.5,
+      "hp": 100,
+      "level": 44,
+      "first8": 57,
+      "peak": 52,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 54.6
+      },
+      "phaseSeconds": [
+        230.6,
+        243,
+        0
+      ],
+      "stats": {
+        "wind": 5,
+        "feather": 18,
+        "glide": 1,
+        "pairs": 0,
+        "rejected": 38,
+        "cancelled": 1,
+        "patterns": {
+          "A": 7,
+          "B": 1,
+          "C": 2
+        }
+      },
+      "damageTaken": 60,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 4,
+        "hourglass": 1,
+        "area": 3,
+        "duration": 0,
+        "amount": 0,
+        "boots": 4,
+        "vitality": 0,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 73,
+      "state": "battle",
+      "time": 900,
+      "hp": 100,
+      "level": 44,
+      "first8": 59.4,
+      "peak": 64,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 1,
+        "remaining": 58.9
+      },
+      "phaseSeconds": [
+        281.2,
+        258.9,
+        0
+      ],
+      "bossRemaining": 6130.967049999258,
+      "stats": {
+        "wind": 19,
+        "feather": 38,
+        "glide": 9,
+        "pairs": 0,
+        "rejected": 28,
+        "cancelled": 4,
+        "patterns": {
+          "A": 12,
+          "B": 8,
+          "C": 7
+        }
+      },
+      "damageTaken": 36,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 2,
+        "area": 2,
+        "duration": 0,
+        "amount": 0,
+        "boots": 4,
+        "vitality": 0,
+        "magnet": 4
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 131,
+      "state": "won",
+      "time": 635.1,
+      "hp": 160,
+      "level": 39,
+      "first8": 142.6,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 16.3
+      },
+      "phaseSeconds": [
+        115,
+        160.2,
+        0
+      ],
+      "stats": {
+        "wind": 5,
+        "feather": 13,
+        "glide": 0,
+        "pairs": 0,
+        "rejected": 17,
+        "cancelled": 2,
+        "patterns": {
+          "A": 4,
+          "B": 0,
+          "C": 2
+        }
+      },
+      "damageTaken": 84,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "holy",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 1,
+        "hourglass": 1,
+        "area": 0,
+        "duration": 0,
+        "amount": 0,
+        "boots": 1,
+        "vitality": 4,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 19,
+      "state": "won",
+      "time": 833.5,
+      "hp": 100,
+      "level": 44,
+      "first8": 57,
+      "peak": 52,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 54.6
+      },
+      "phaseSeconds": [
+        230.6,
+        243,
+        0
+      ],
+      "stats": {
+        "wind": 5,
+        "feather": 18,
+        "glide": 1,
+        "pairs": 0,
+        "rejected": 38,
+        "cancelled": 1,
+        "patterns": {
+          "A": 7,
+          "B": 1,
+          "C": 2
+        }
+      },
+      "damageTaken": 60,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 4,
+        "hourglass": 1,
+        "area": 3,
+        "duration": 0,
+        "amount": 0,
+        "boots": 4,
+        "vitality": 0,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 73,
+      "state": "won",
+      "time": 843.2,
+      "hp": 115,
+      "level": 37,
+      "first8": 215.3,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135.1,
+          "hp": 1817.1167999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 270.6,
+          "hp": 2505.6
+        },
+        {
+          "kind": "windarbiter",
+          "at": 309.1,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 315.1,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 49.8
+      },
+      "phaseSeconds": [
+        210.7,
+        272.6,
+        0
+      ],
+      "stats": {
+        "wind": 16,
+        "feather": 21,
+        "glide": 6,
+        "pairs": 0,
+        "rejected": 26,
+        "cancelled": 2,
+        "patterns": {
+          "A": 8,
+          "B": 6,
+          "C": 5
+        }
+      },
+      "damageTaken": 36,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 0,
+        "area": 1,
+        "duration": 0,
+        "amount": 0,
+        "boots": 0,
+        "vitality": 1,
+        "magnet": 3
+      }
+    },
+    {
+      "stage": 9,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 131,
+      "state": "won",
+      "time": 560.4,
+      "hp": 100,
+      "level": 38,
+      "first8": 142.6,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "windarbiter",
+          "at": 135,
+          "hp": 1816.6991999999786
+        },
+        {
+          "kind": "plumejudge",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "windarbiter",
+          "at": 305,
+          "hp": 2255.04
+        },
+        {
+          "kind": "plumejudge",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": null,
+      "phaseSeconds": [
+        92.8,
+        107.6,
+        0
+      ],
+      "stats": {
+        "wind": 7,
+        "feather": 12,
+        "glide": 2,
+        "pairs": 0,
+        "rejected": 9,
+        "cancelled": 2,
+        "patterns": {
+          "A": 4,
+          "B": 2,
+          "C": 2
+        }
+      },
+      "damageTaken": 84,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 0,
+        "area": 1,
+        "duration": 2,
+        "amount": 2,
+        "boots": 1,
+        "vitality": 0,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [],
+      "seed": 19,
+      "state": "battle",
+      "time": 900,
+      "hp": 123,
+      "level": 45,
+      "first8": 55.4,
+      "peak": 62,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 66
+      },
+      "phaseSeconds": [
+        211,
+        212.6,
+        116.5
+      ],
+      "bossRemaining": 9419.855239997923,
+      "stats": {
+        "imprint": 21,
+        "page": 9,
+        "clamp": 24,
+        "stepped": 29,
+        "cancelled": 1,
+        "rejected": 29,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 1,
+          "claspjailer": 1
+        },
+        "patterns": {
+          "A": 9,
+          "B": 8,
+          "C": 11
+        },
+        "phases": [
+          9,
+          11,
+          8
+        ]
+      },
+      "damageTaken": 82,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "void",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 0,
+        "area": 3,
+        "duration": 4,
+        "amount": 0,
+        "boots": 3,
+        "vitality": 3,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [],
+      "seed": 73,
+      "state": "won",
+      "time": 717.7,
+      "hp": 88,
+      "level": 44,
+      "first8": 52.6,
+      "peak": 56,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 3,
+        "remaining": 32.5
+      },
+      "phaseSeconds": [
+        109.6,
+        125,
+        123.1
+      ],
+      "stats": {
+        "imprint": 11,
+        "page": 7,
+        "clamp": 14,
+        "stepped": 15,
+        "cancelled": 1,
+        "rejected": 20,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 6,
+          "B": 7,
+          "C": 6
+        },
+        "phases": [
+          10,
+          8,
+          1
+        ]
+      },
+      "damageTaken": 120,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 3,
+        "area": 3,
+        "duration": 0,
+        "amount": 2,
+        "boots": 4,
+        "vitality": 0,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [],
+      "seed": 131,
+      "state": "won",
+      "time": 817.1,
+      "hp": 56,
+      "level": 45,
+      "first8": 53,
+      "peak": 53,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 48.6
+      },
+      "phaseSeconds": [
+        142.3,
+        163.2,
+        151.7
+      ],
+      "stats": {
+        "imprint": 32,
+        "page": 15,
+        "clamp": 24,
+        "stepped": 26,
+        "cancelled": 1,
+        "rejected": 12,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 3,
+          "claspjailer": 1
+        },
+        "patterns": {
+          "A": 12,
+          "B": 12,
+          "C": 11
+        },
+        "phases": [
+          13,
+          12,
+          10
+        ]
+      },
+      "damageTaken": 92,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "ghost",
+          8
+        ],
+        [
+          "void",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 4,
+        "area": 3,
+        "duration": 0,
+        "amount": 0,
+        "boots": 3,
+        "vitality": 0,
+        "magnet": 3
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 19,
+      "state": "battle",
+      "time": 900,
+      "hp": 138,
+      "level": 45,
+      "first8": 55.4,
+      "peak": 62,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 62.9
+      },
+      "phaseSeconds": [
+        207.2,
+        198.1,
+        134.8
+      ],
+      "bossRemaining": 8559.127599998903,
+      "stats": {
+        "imprint": 18,
+        "page": 8,
+        "clamp": 26,
+        "stepped": 25,
+        "cancelled": 2,
+        "rejected": 35,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 3,
+          "claspjailer": 2
+        },
+        "patterns": {
+          "A": 6,
+          "B": 5,
+          "C": 10
+        },
+        "phases": [
+          5,
+          7,
+          9
+        ]
+      },
+      "damageTaken": 70,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 3,
+        "hourglass": 0,
+        "area": 0,
+        "duration": 0,
+        "amount": 2,
+        "boots": 4,
+        "vitality": 4,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 73,
+      "state": "won",
+      "time": 525.3,
+      "hp": 145,
+      "level": 42,
+      "first8": 52.6,
+      "peak": 56,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": null,
+      "phaseSeconds": [
+        37.6,
+        62.2,
+        65.5
+      ],
+      "stats": {
+        "imprint": 11,
+        "page": 8,
+        "clamp": 8,
+        "stepped": 8,
+        "cancelled": 6,
+        "rejected": 8,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 3,
+          "claspjailer": 2
+        },
+        "patterns": {
+          "A": 3,
+          "B": 2,
+          "C": 2
+        },
+        "phases": [
+          1,
+          3,
+          3
+        ]
+      },
+      "damageTaken": 24,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "hammer",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 3,
+        "hourglass": 0,
+        "area": 0,
+        "duration": 2,
+        "amount": 2,
+        "boots": 0,
+        "vitality": 3,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "hammer"
+      ],
+      "seed": 131,
+      "state": "battle",
+      "time": 900,
+      "hp": 56,
+      "level": 42,
+      "first8": 167.9,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 177.8,
+          "hp": 2105.995466666633
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        }
+      ],
+      "eliteKills": 3,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 67.5
+      },
+      "phaseSeconds": [
+        220.4,
+        238.1,
+        81.6
+      ],
+      "bossRemaining": 20568.517820002904,
+      "stats": {
+        "imprint": 26,
+        "page": 15,
+        "clamp": 26,
+        "stepped": 26,
+        "cancelled": 10,
+        "rejected": 21,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 4,
+          "claspjailer": 3
+        },
+        "patterns": {
+          "A": 11,
+          "B": 11,
+          "C": 10
+        },
+        "phases": [
+          20,
+          11,
+          1
+        ]
+      },
+      "damageTaken": 116,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "void",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 4,
+        "area": 0,
+        "duration": 0,
+        "amount": 2,
+        "boots": 3,
+        "vitality": 0,
+        "magnet": 1
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 19,
+      "state": "battle",
+      "time": 900,
+      "hp": 138,
+      "level": 45,
+      "first8": 55.4,
+      "peak": 62,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 62.9
+      },
+      "phaseSeconds": [
+        207.2,
+        198.1,
+        134.8
+      ],
+      "bossRemaining": 8559.127599998903,
+      "stats": {
+        "imprint": 18,
+        "page": 8,
+        "clamp": 26,
+        "stepped": 25,
+        "cancelled": 2,
+        "rejected": 35,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 3,
+          "claspjailer": 2
+        },
+        "patterns": {
+          "A": 6,
+          "B": 5,
+          "C": 10
+        },
+        "phases": [
+          5,
+          7,
+          9
+        ]
+      },
+      "damageTaken": 70,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 3,
+        "hourglass": 0,
+        "area": 0,
+        "duration": 0,
+        "amount": 2,
+        "boots": 4,
+        "vitality": 4,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 73,
+      "state": "won",
+      "time": 576.1,
+      "hp": 130,
+      "level": 42,
+      "first8": 52.6,
+      "peak": 56,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": null,
+      "phaseSeconds": [
+        75.9,
+        84.8,
+        55.4
+      ],
+      "stats": {
+        "imprint": 7,
+        "page": 3,
+        "clamp": 6,
+        "stepped": 7,
+        "cancelled": 1,
+        "rejected": 18,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 1,
+          "claspjailer": 0
+        },
+        "patterns": {
+          "A": 2,
+          "B": 2,
+          "C": 3
+        },
+        "phases": [
+          2,
+          1,
+          4
+        ]
+      },
+      "damageTaken": 72,
+      "skills": [
+        [
+          "water",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "wheel",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 0,
+        "area": 0,
+        "duration": 3,
+        "amount": 2,
+        "boots": 0,
+        "vitality": 2,
+        "magnet": 3
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "wheel"
+      ],
+      "seed": 131,
+      "state": "battle",
+      "time": 900,
+      "hp": 56,
+      "level": 42,
+      "first8": 167.9,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 177.8,
+          "hp": 2105.995466666633
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        }
+      ],
+      "eliteKills": 3,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 67.5
+      },
+      "phaseSeconds": [
+        220.4,
+        238.1,
+        81.6
+      ],
+      "bossRemaining": 20568.517820002904,
+      "stats": {
+        "imprint": 26,
+        "page": 15,
+        "clamp": 26,
+        "stepped": 26,
+        "cancelled": 10,
+        "rejected": 21,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 4,
+          "claspjailer": 3
+        },
+        "patterns": {
+          "A": 11,
+          "B": 11,
+          "C": 10
+        },
+        "phases": [
+          20,
+          11,
+          1
+        ]
+      },
+      "damageTaken": 116,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "void",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 4,
+        "area": 0,
+        "duration": 0,
+        "amount": 2,
+        "boots": 3,
+        "vitality": 0,
+        "magnet": 1
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 19,
+      "state": "battle",
+      "time": 900,
+      "hp": 138,
+      "level": 45,
+      "first8": 55.4,
+      "peak": 62,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 135,
+          "hp": 1917.626933333311
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 62.9
+      },
+      "phaseSeconds": [
+        207.2,
+        198.1,
+        134.8
+      ],
+      "bossRemaining": 8559.127599998903,
+      "stats": {
+        "imprint": 18,
+        "page": 8,
+        "clamp": 26,
+        "stepped": 25,
+        "cancelled": 2,
+        "rejected": 35,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 3,
+          "claspjailer": 2
+        },
+        "patterns": {
+          "A": 6,
+          "B": 5,
+          "C": 10
+        },
+        "phases": [
+          5,
+          7,
+          9
+        ]
+      },
+      "damageTaken": 70,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "water",
+          8
+        ],
+        [
+          "lightning",
+          8
+        ],
+        [
+          "bone",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 3,
+        "hourglass": 0,
+        "area": 0,
+        "duration": 0,
+        "amount": 2,
+        "boots": 4,
+        "vitality": 4,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 73,
+      "state": "won",
+      "time": 743.7,
+      "hp": 128,
+      "level": 39,
+      "first8": 193.7,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 198.3,
+          "hp": 2196.3594666666286
+        },
+        {
+          "kind": "claspjailer",
+          "at": 240.3,
+          "hp": 2505.6
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 42.8
+      },
+      "phaseSeconds": [
+        126.1,
+        148.5,
+        109.2
+      ],
+      "stats": {
+        "imprint": 15,
+        "page": 7,
+        "clamp": 20,
+        "stepped": 25,
+        "cancelled": 4,
+        "rejected": 19,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 0,
+          "claspjailer": 4
+        },
+        "patterns": {
+          "A": 3,
+          "B": 6,
+          "C": 6
+        },
+        "phases": [
+          3,
+          7,
+          5
+        ]
+      },
+      "damageTaken": 46,
+      "skills": [
+        [
+          "fire",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "bone",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 1,
+        "hourglass": 0,
+        "area": 0,
+        "duration": 0,
+        "amount": 1,
+        "boots": 3,
+        "vitality": 2,
+        "magnet": 0
+      }
+    },
+    {
+      "stage": 10,
+      "unlocked": [
+        "hammer",
+        "wheel"
+      ],
+      "seed": 131,
+      "state": "won",
+      "time": 873.1,
+      "hp": 100,
+      "level": 42,
+      "first8": 167.9,
+      "peak": 100,
+      "slots": 2,
+      "elites": [
+        {
+          "kind": "sealprovost",
+          "at": 175.8,
+          "hp": 2097.1794666666337
+        },
+        {
+          "kind": "claspjailer",
+          "at": 225,
+          "hp": 2436.1546666666195
+        },
+        {
+          "kind": "sealprovost",
+          "at": 305,
+          "hp": 2380.3199999999997
+        },
+        {
+          "kind": "claspjailer",
+          "at": 311,
+          "hp": 2505.6
+        }
+      ],
+      "eliteKills": 4,
+      "snapshot600": {
+        "time": 600,
+        "state": "battle",
+        "phase": 2,
+        "remaining": 60
+      },
+      "phaseSeconds": [
+        172.5,
+        190,
+        150.6
+      ],
+      "stats": {
+        "imprint": 15,
+        "page": 7,
+        "clamp": 16,
+        "stepped": 18,
+        "cancelled": 5,
+        "rejected": 33,
+        "fallback": 0,
+        "eliteCasts": {
+          "sealprovost": 3,
+          "claspjailer": 4
+        },
+        "patterns": {
+          "A": 2,
+          "B": 4,
+          "C": 4
+        },
+        "phases": [
+          1,
+          3,
+          6
+        ]
+      },
+      "damageTaken": 72,
+      "skills": [
+        [
+          "blade",
+          8
+        ],
+        [
+          "frost",
+          8
+        ],
+        [
+          "mine",
+          8
+        ],
+        [
+          "holy",
+          8
+        ]
+      ],
+      "passives": {
+        "power": 0,
+        "hourglass": 3,
+        "area": 1,
+        "duration": 0,
+        "amount": 2,
+        "boots": 4,
+        "vitality": 0,
+        "magnet": 0
+      }
+    }
+  ]
+}

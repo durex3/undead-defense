@@ -1,0 +1,83 @@
+{
+  "scope": "Offline art and draw budgets; 844x390 HUD footprints are illustrative. Real Cocos UI checked separately; no phone GPU or heat claim.",
+  "actors": [
+    {
+      "kind": "fledglingeffigy",
+      "commands": 7,
+      "vertices": 86,
+      "limits": [
+        15,
+        240
+      ],
+      "over": false
+    },
+    {
+      "kind": "reedwhistler",
+      "commands": 13,
+      "vertices": 138,
+      "limits": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "sickleplumer",
+      "commands": 12,
+      "vertices": 143,
+      "limits": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "foldedskimmer",
+      "commands": 11,
+      "vertices": 127,
+      "limits": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "windarbiter",
+      "commands": 19,
+      "vertices": 255,
+      "limits": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "plumejudge",
+      "commands": 13,
+      "vertices": 167,
+      "limits": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "boss",
+      "commands": 19,
+      "vertices": 254,
+      "limits": [
+        38,
+        950
+      ],
+      "over": false
+    }
+  ],
+  "stress": {
+    "enemies": 100,
+    "elites": 2,
+    "weapons": 4,
+    "vertices": 18314,
+    "commands": 1210,
+    "over": false
+  }
+}

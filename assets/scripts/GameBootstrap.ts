@@ -345,7 +345,7 @@ export class GameBootstrap extends Component {
       this.progress.unlockedCharacter(id),
     );
     const stageBefore = STAGE_IDS.filter(id=>this.progress.unlockedStage(id));
-    this.progress.observe(this.world);
+    const accountNotices=this.progress.observe(this.world);
     const unlocks = (Object.keys(CHARACTERS) as CharacterId[])
       .filter(
         (id) => !before.includes(id) && this.progress.unlockedCharacter(id),
@@ -353,6 +353,7 @@ export class GameBootstrap extends Component {
       .map((id) => CHARACTERS[id].name);
     for (const id of STAGE_IDS)
       if (!stageBefore.includes(id) && this.progress.unlockedStage(id)) unlocks.push(STAGES[id].name);
+    unlocks.push(...accountNotices);
     this.runUnlocks.push(...unlocks);
     if (unlocks.length)
       this.progressNotice = "解锁成功 · " + unlocks.join(" / ");
@@ -372,6 +373,8 @@ export class GameBootstrap extends Component {
       this.selectedStage,
       this.progress.weaponSlots,
     );
+    this.world.availableWeapons=this.progress.availableWeapons;
+    this.world.weaponGrades=this.progress.weaponGrades;
     this.world.offerStartingWeapons();
     this.runUnlocks = [];
     this.progressNotice = "";
@@ -554,8 +557,8 @@ export class GameBootstrap extends Component {
         this.announcementLife=1.6;
       }
       if (e.type === "bossPhase") {
-        this.announcement.string = `${STAGES[w.stageId].boss}狂怒 · 第二阶段`;
-        this.announcementLife = 2.5;
+        this.announcement.string = w.stageId===10 ? `${STAGES[w.stageId].boss} · ${e.value===3?"第三阶段 III":"第二阶段 II"}` : `${STAGES[w.stageId].boss}狂怒 · 第二阶段`;
+        this.announcementLife = w.stageId===10?1.5:2.5;
       }
       if (e.type === "elite" || e.type === "boss") {
         this.announcement.string =

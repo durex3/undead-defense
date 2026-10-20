@@ -1,9 +1,4 @@
-import { moonEnemy } from "./MoonSystem";
-import { thunderDevice, thunderEnemy } from "./ThunderSystem";
-import { sandEnemy } from "./SandSystem";
-import { sandMap } from "./SandMap";
-import { siegeMap } from "./SiegeMap";
-import { siegeEnemy } from "./SiegeSystem";
+import { thunderDevice } from "./ThunderSystem";
 import { crownEscape } from "./Escape";
 import { stepBoss } from "./BossSystem";
 import type { SurvivalWorld } from "./SurvivalWorld";
@@ -73,9 +68,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       stepBoss(w, e, dt);
       continue;
     }
-    if(w.stageId===4&&moonEnemy(e.kind)){w.moon.stepEnemy(e,dt);continue;}
-    if(w.stageId===3&&thunderEnemy(e.kind)){w.thunder.stepEnemy(e,dt);continue;}
-    if(w.stageId===2&&sandEnemy(e.kind)){w.sand.stepEnemy(e,dt);continue;}
+    if(w.stageId!==1&&w.stageStrategy.stepEnemy(e,dt))continue;
     if (e.freezeUntil > w.time) {
       if(e.siegeNext!==undefined)e.siegeNext+=dt;
       for (const h of w.hazards) if (h.source === e.id && !h.fired && !h.siegeLaunched) {
@@ -83,8 +76,8 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       }
       continue;
     }
-    if(w.stageId===1&&siegeEnemy(e.kind)){w.siege.stepEnemy(e,dt);continue;}
-    const moveAngle=w.stageId===2?sandMap.heading(e,w.player):w.stageId===1?siegeMap.heading(e,w.player):Math.atan2(w.player.y-e.y,w.player.x-e.x);
+    if(w.stageId===1&&w.stageStrategy.stepEnemy(e,dt))continue;
+    const moveAngle=w.stageStrategy.map.heading(e,w.player);
     const d = distance(e, w.player),
       angle = Math.atan2(w.player.y - e.y, w.player.x - e.x),
       slow = e.slowUntil > w.time ? 1 - e.slow : 1;
@@ -119,20 +112,20 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
   }
   const grid = new Map<string, Enemy[]>();
   for (const e of w.enemies) {
-    if (e.hp <= 0 || thunderDevice(e.kind)) continue;
+    if (e.hp <= 0 || e.immovable || thunderDevice(e.kind)) continue;
     const key = Math.floor(e.x) + "," + Math.floor(e.y);
     const list = grid.get(key) || [];
     list.push(e);
     grid.set(key, list);
   }
   for (const e of w.enemies) {
-    if (e.hp <= 0 || thunderDevice(e.kind) || e.state !== "seek") continue;
+    if (e.hp <= 0 || e.immovable || thunderDevice(e.kind) || e.state !== "seek") continue;
     const x = Math.floor(e.x),
       y = Math.floor(e.y);
     for (let a = x - 1; a <= x + 1; a++)
       for (let b = y - 1; b <= y + 1; b++)
         for (const o of grid.get(a + "," + b) || []) {
-          if (o.id <= e.id || thunderDevice(o.kind) || o.state !== "seek") continue;
+          if (o.id <= e.id || o.immovable || thunderDevice(o.kind) || o.state !== "seek") continue;
           const dx = e.x - o.x,
             dy = e.y - o.y,
             d = Math.hypot(dx, dy);
@@ -145,19 +138,18 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
           }
         }
   }
+  if(w.stageStrategy.resolveCrowd)for(const e of w.enemies)if(e.hp>0&&!e.immovable&&e.state==="seek")w.stageStrategy.map.resolve(e,e.kind==="boss"?.65:.35);
 }
 export function stepHazards(w: SurvivalWorld) {
-  if(w.stageId===4)w.moon.clean();
-  if(w.stageId===3)w.thunder.clean();
+  w.stageStrategy.clean();
   for(const h of w.hazards)if(h.siegeBallistic&&!h.siegeLaunched&&w.time>=h.created+(h.sandLaunchDelay??.2)&&w.enemies.some(e=>e.id===h.source&&e.hp>0&&e.freezeUntil<=w.time))h.siegeLaunched=true;
   w.hazards = w.hazards.filter(
     (h) =>
-      h.until > w.time &&
-      (!!h.moon || !!h.thunder || h.source === 0 || h.siegeLaunched || ((h.kind === "arrow" || h.siegeGround) && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
+      (h.until > w.time || (!!h.library && !h.library.cancelled && h.library.last < h.until && h.due <= w.time) || (!!h.root && !h.root.cancelled && h.root.last < h.until && h.due <= w.time) || (!!h.wind && !h.wind.cancelled && h.wind.last < h.until && h.due <= w.time)) &&
+      (!!h.library || !!h.wind || !!h.root || !!h.prism || !!h.tide || !!h.bell || !!h.moon || !!h.thunder || h.source === 0 || h.siegeLaunched || ((h.kind === "arrow" || h.siegeGround) && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
   );
   for (const h of w.hazards) {
-    if(h.moon){w.moon.stepHazard(h);continue;}
-    if(h.thunder){w.thunder.stepHazard(h);continue;}
+    if(w.stageStrategy.stepHazard(h))continue;
     if (h.due > w.time) continue;
     const d = distance(h, w.player);
     if(h.siegeGround){

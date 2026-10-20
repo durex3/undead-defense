@@ -1,3 +1,4 @@
+import {ELITE_TIMES,eliteQuiet,RETURN_ELITE_HEALTH} from "./EncounterPacing";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import type { MoonSystem } from "./MoonSystem";
 import { ENEMIES, Kind, isElite } from "./SurvivalConfig";
@@ -9,7 +10,7 @@ export class MoonDirector {
   private nextGroup = 0;
   private nextSpecial = encounterRealTime(35);
   private specialWave = 0;
-  private elites = [false, false];
+  private elites = [false, false, false];
   private boss = false;
   private lastSide = 1;
   constructor(
@@ -24,7 +25,7 @@ export class MoonDirector {
   ordinaryRest() {
     const t = encounterScoreTime(this.w.time);
     return (
-      (t >= 175 && t < 185) ||
+      eliteQuiet(this.w.time) || (t >= 175 && t < 185) ||
       (t >= 290 && t < 300) ||
       (t >= 345 && t < 355) ||
       (t >= 472 && t < 480)
@@ -134,9 +135,9 @@ export class MoonDirector {
       return;
     }
     if (!this.boss) {
-      for (let i = 0; i < 2; i++)
-        if (!this.elites[i] && score >= [185, 355][i]) {
-          if (score >= 460) {
+      for (let i = 0; i < 3; i++)
+        if (!this.elites[i] && w.time >= ELITE_TIMES[i]) {
+          if (w.time >= 340) {
             this.elites[i] = true;
             continue;
           }
@@ -146,10 +147,11 @@ export class MoonDirector {
           )
             break;
           const e = this.spawn(
-            i ? "hornwarden" : "moonreaver",
+            i === 1 ? "hornwarden" : "moonreaver",
             w.random() * TAU,
           );
           if (e) {
+            if(i===2)e.hp=e.maxHp=e.hp*RETURN_ELITE_HEALTH;
             this.elites[i] = true;
             e.timer = 1.5;
             w.effects.push({ type: "elite", ...e });

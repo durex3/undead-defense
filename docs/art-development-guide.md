@@ -2,6 +2,8 @@
 
 更新：2026-10-19。适用于当前四关版本（铁棘围城、赤砂虫巢、雷铸机庭、苍棘猎原）。本文是美术工作的入口；规则冲突时，以 `assets/scripts/battle/` 的实际代码和本文“几何真值”一节为准。
 
+2026-10-20第五关扩展：`BellArt.ts`、`BellHazardArt.ts`、`UnlockedSpellArt.ts`、`WeaponGlyph.ts`及MapArt第五关分支已接入；`StageStrategy.ts`统一战斗入口。新增内容与预算见[第五关实现记录](stage-05-implementation.md)，下文四关清单不覆盖新声浪遮挡几何。
+
 ## 0. 协作分工
 
 当前工作区允许多个 AI 并行开发，建议按以下边界交接：

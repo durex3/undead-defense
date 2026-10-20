@@ -123,11 +123,23 @@ const MOON: EnemyPalette = {
   eye: "#ff9d78",
 };
 
+const BELL:EnemyPalette={outline:'#191923',shade:'#6d5e68',base:'#baa98c',light:'#ede1bf',cloth:'#665768',metal:'#8e805c',metalLight:'#d9c58d',bone:'#e0d6b6',accent:'#edb76d',eye:'#ffe9b4'};
+const TIDE:EnemyPalette={outline:'#101d22',shade:'#314a4d',base:'#6b9390',light:'#b7d0bc',cloth:'#8f6248',metal:'#8e6950',metalLight:'#cfaa7b',bone:'#c6c2a1',accent:'#77d9cf',eye:'#ffc17e'};
+const LIBRARY:EnemyPalette={outline:"#1d1b25",shade:"#726354",base:"#c7b999",light:"#f1e5c7",cloth:"#7e708d",metal:"#816345",metalLight:"#c5a172",bone:"#e8daba",accent:"#e8b68e",eye:"#c1d4de"};
+const WIND:EnemyPalette={outline:"#182128",shade:"#596975",base:"#b4b8ad",light:"#e8dfc9",cloth:"#607987",metal:"#806653",metalLight:"#c6a67a",bone:"#e9dfc8",accent:"#dfad81",eye:"#b6deea"};
+const ROOT:EnemyPalette={outline:"#161e19",shade:"#405243",base:"#7e9675",light:"#c6d3ac",cloth:"#956c75",metal:"#66543d",metalLight:"#d1be8d",bone:"#dfd6b7",accent:"#e3ab78",eye:"#f3d9a0"};
+const PRISM:EnemyPalette={outline:"#191625",shade:"#494359",base:"#7b7894",light:"#c6bcd1",cloth:"#665568",metal:"#807666",metalLight:"#c7b5bd",bone:"#d6ceb8",accent:"#edc48c",eye:"#f3dfa7"};
 export const STAGE_PALETTES: Record<StageId, EnemyPalette> = {
   1: SIEGE,
   2: SAND,
   3: THUNDER,
   4: MOON,
+  5: BELL,
+  6: TIDE,
+  10: LIBRARY,
+  9: WIND,
+  8: ROOT,
+  7: PRISM,
 };
 
 function look(overrides: Partial<LookParams> = {}): LookParams {
@@ -146,6 +158,12 @@ function look(overrides: Partial<LookParams> = {}): LookParams {
 }
 
 const DETAIL_ONE = new Set<Kind>([
+ "sealclerk","folioray","spineclasp",
+ "reedwhistler","sickleplumer","foldedskimmer",
+ "vinecantor","wreathpod","bulbmaw",
+  "facetgastropod","prismmason","corebrood",
+  "sluiceray","sailharpooner","winchbeast",
+  "bellacolyte","waxscribe","waxcrawler",
   "thornshield",
   "siegebow",
   "sandegg",
@@ -197,10 +215,16 @@ export const CATALOG_STAGE_KINDS: Record<StageId, readonly Kind[]> = {
   2: ["sandworker", "sandlarva", "sandegg", "shellroller", "sandspitter", "sandstalker", "broodelite", "breakerelite"],
   3: ["rivetwalker", "anchorweaver", "arclantern", "railsaw", "gridwarden", "railreaper", "thunderanchor", "gridelectrode"],
   4: ["thornrunner", "crescentmantis", "vaultlynx", "antlerprowler", "moonreaver", "hornwarden"],
+  10: ["paperbonegrub","sealclerk","folioray","spineclasp","sealprovost","claspjailer"],
+  9: ["fledglingeffigy","reedwhistler","sickleplumer","foldedskimmer","windarbiter","plumejudge"],
+  8: ["rootshuffler","vinecantor","wreathpod","bulbmaw","biforktangler","pairedcalyx","migratorycorolla"],
+  7: ["shardhermit","facetgastropod","prismmason","corebrood","bifacetregent","strataflinger","prismmirror","prismcore"],
+  6: ["brineporter","sluiceray","sailharpooner","winchbeast","twinlockwarden","severedcrane"],
+  5: ["waxbearer","bellacolyte","waxscribe","waxcrawler","twinbell","waxporter"],
 };
 
 const STAGE_OF: Partial<Record<Kind, StageId>> = {};
-for (const stage of [1, 2, 3, 4] as const)
+for (const stage of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const)
   for (const kind of CATALOG_STAGE_KINDS[stage]) STAGE_OF[kind] = stage;
 
 export function catalogStage(kind: Kind): StageId | 0 {
@@ -208,7 +232,7 @@ export function catalogStage(kind: Kind): StageId | 0 {
 }
 
 export function isDeviceKind(kind: Kind) {
-  return kind === "thunderanchor" || kind === "gridelectrode";
+  return kind === "thunderanchor" || kind === "gridelectrode" || kind === "prismmirror" || kind === "prismcore";
 }
 
 const COMMON: Partial<Record<Kind, EnemyArt>> = {
@@ -358,6 +382,12 @@ const COMMON: Partial<Record<Kind, EnemyArt>> = {
 };
 
 export const BOSS_ART: Record<StageId, EnemyArt> = {
+ 10:art("boss",10,"humanoid",125,69,LIBRARY,{head:"core",legs:"spider"},{scale:1.2,motionSpeed:4,strideAmp:1.5}),
+ 9:art("boss",9,"humanoid",125,65,WIND,{head:"beast",legs:"biped"},{scale:1.2,motionSpeed:5,strideAmp:1.5}),
+  8:art("boss",8,"grub",140,52,ROOT,{head:"core",legs:"spider"},{scale:1.18,motionSpeed:4,bobAmp:1.1}),
+  7:art("boss",7,"quadruped",124,52,PRISM,{head:"core",legs:"quad"},{scale:1.3,motionSpeed:5,bobAmp:.8}),
+  6: art("boss",6,"mech",104,58,TIDE,{head:"core",legs:"quad",weapon:"anchor"},{scale:1.3,motionSpeed:5,bobAmp:1}),
+  5: art("boss",5,"float",94,34,BELL,{head:"core",legs:"spider",weapon:"staff",bulk:1.4},{scale:1.45}),
   1: art("boss", 1, "humanoid", 92, 28, SIEGE, {
     weapon: "halberd",
     shield: "tower",
@@ -389,13 +419,72 @@ export const BOSS_ART: Record<StageId, EnemyArt> = {
 };
 
 const MINION_ART: Record<StageId, EnemyArt> = {
+ 10:{...COMMON.minion!,stage:10,palette:LIBRARY},
+ 9:{...COMMON.minion!,stage:9,palette:WIND},
+  8:{...COMMON.minion!,stage:8,palette:ROOT},
+  7:{...COMMON.minion!,stage:7,palette:PRISM},
+  6:{...COMMON.minion!,stage:6,palette:TIDE},
+  5:{...COMMON.minion!,stage:5,palette:BELL},
   1: { ...COMMON.minion!, palette: SIEGE },
   2: { ...COMMON.minion!, palette: SAND },
   3: { ...COMMON.minion!, palette: THUNDER },
   4: { ...COMMON.minion!, palette: MOON },
 };
 
+const BELL_ART:Partial<Record<Kind,EnemyArt>>={
+ waxbearer:art('waxbearer',5,'humanoid',66,20,BELL,{weapon:'staff'}),
+ bellacolyte:art('bellacolyte',5,'humanoid',70,22,BELL,{weapon:'staff',head:'hood'}),
+ waxscribe:art('waxscribe',5,'humanoid',50,27,BELL,{weapon:'sickle'}),
+ waxcrawler:art('waxcrawler',5,'insect',34,36,BELL,{legs:'quad'}),
+ twinbell:art('twinbell',5,'humanoid',82,32,BELL,{weapon:'staff',head:'hood'},{scale:1.3}),
+ waxporter:art('waxporter',5,'humanoid',70,35,BELL,{weapon:'crusher'},{scale:1.3}),
+};
+const TIDE_ART:Partial<Record<Kind,EnemyArt>>={
+ brineporter:art('brineporter',6,'humanoid',63,24,TIDE,{head:'hood'},{strideAmp:3.5}),
+ sluiceray:art('sluiceray',6,'quadruped',40,38,TIDE,{head:'beast',legs:'none'},{motionSpeed:4,bobAmp:1}),
+ sailharpooner:art('sailharpooner',6,'humanoid',72,32,TIDE,{weapon:'spear'}),
+ winchbeast:art('winchbeast',6,'quadruped',42,44,TIDE,{weapon:'anchor',legs:'quad'}),
+ twinlockwarden:art('twinlockwarden',6,'humanoid',77,39,TIDE,{head:'helm'},{scale:1.28}),
+ severedcrane:art('severedcrane',6,'mech',80,34,TIDE,{weapon:'anchor',legs:'spider'},{scale:1.3}),
+};
+const PRISM_ART:Partial<Record<Kind,EnemyArt>>={
+ shardhermit:art('shardhermit',7,'quadruped',50,39,PRISM,{head:'beast',legs:'quad'}),
+ facetgastropod:art('facetgastropod',7,'quadruped',69,40,PRISM,{weapon:'spit',legs:'none'},{motionSpeed:5,strideAmp:.5}),
+ prismmason:art('prismmason',7,'mech',74,30,PRISM,{head:'core',legs:'spider'}),
+ corebrood:art('corebrood',7,'grub',50,39,PRISM,{head:'beast',legs:'quad'},{motionSpeed:7,strideAmp:2}),
+ bifacetregent:art('bifacetregent',7,'humanoid',83,45,PRISM,{weapon:'staff',head:'core'},{scale:1.28}),
+ strataflinger:art('strataflinger',7,'quadruped',78,47,PRISM,{head:'core',legs:'quad'},{scale:1.3}),
+ prismmirror:art('prismmirror',7,'device',42,34,PRISM,{head:'core',legs:'none'},{motionSpeed:0,strideAmp:0,bobAmp:0}),
+ prismcore:art('prismcore',7,'device',38,32,PRISM,{head:'core',legs:'none'},{motionSpeed:0,strideAmp:0,bobAmp:0}),
+};
+const ROOT_ART:Partial<Record<Kind,EnemyArt>>={
+ migratorycorolla:art("migratorycorolla",8,"grub",90,52,ROOT,{head:"core",legs:"insect"},{scale:1.2,motionSpeed:6,strideAmp:1.8}),
+ rootshuffler:art("rootshuffler",8,"grub",48,34,ROOT,{head:"core",legs:"insect"},{motionSpeed:9,strideAmp:2}),
+ vinecantor:art("vinecantor",8,"humanoid",80,32,ROOT,{head:"core",legs:"spider"},{motionSpeed:6,strideAmp:1.5}),
+ wreathpod:art("wreathpod",8,"grub",57,38,ROOT,{head:"core",legs:"none"},{motionSpeed:5,strideAmp:1}),
+ bulbmaw:art("bulbmaw",8,"grub",81,25,ROOT,{head:"lantern",legs:"spider"},{motionSpeed:5,strideAmp:1.5}),
+ biforktangler:art("biforktangler",8,"humanoid",95,42,ROOT,{head:"core",legs:"spider"},{scale:1.24,motionSpeed:5}),
+ pairedcalyx:art("pairedcalyx",8,"grub",85,56,ROOT,{head:"core",legs:"spider"},{scale:1.22,motionSpeed:5}),
+};
+const WIND_ART:Partial<Record<Kind,EnemyArt>>={
+ fledglingeffigy:art("fledglingeffigy",9,"humanoid",40,26,WIND,{head:"beast",legs:"biped"},{scale:1,motionSpeed:6,strideAmp:2}),
+ reedwhistler:art("reedwhistler",9,"humanoid",77,22,WIND,{head:"beast",legs:"biped"},{scale:1,motionSpeed:6,strideAmp:2}),
+ sickleplumer:art("sickleplumer",9,"humanoid",64,33,WIND,{head:"beast",legs:"biped"},{scale:1,motionSpeed:6,strideAmp:2}),
+ foldedskimmer:art("foldedskimmer",9,"humanoid",72,35,WIND,{head:"beast",legs:"biped"},{scale:1,motionSpeed:6,strideAmp:2}),
+ windarbiter:art("windarbiter",9,"humanoid",100,45,WIND,{head:"beast",legs:"biped"},{scale:1.2,motionSpeed:6,strideAmp:2}),
+ plumejudge:art("plumejudge",9,"humanoid",90,53,WIND,{head:"beast",legs:"biped"},{scale:1.2,motionSpeed:6,strideAmp:2}),
+};
+const LIBRARY_ART:Partial<Record<Kind,EnemyArt>>={
+ paperbonegrub:art("paperbonegrub",10,"grub",38,30,LIBRARY,{head:"core",legs:"spider"},{scale:1,motionSpeed:6,strideAmp:1.7}),
+ sealclerk:art("sealclerk",10,"humanoid",79,26,LIBRARY,{head:"core",legs:"spider"},{scale:1,motionSpeed:6,strideAmp:1.7}),
+ folioray:art("folioray",10,"quadruped",48,42,LIBRARY,{head:"core",legs:"spider"},{scale:1,motionSpeed:6,strideAmp:1.7}),
+ spineclasp:art("spineclasp",10,"quadruped",53,38,LIBRARY,{head:"core",legs:"spider"},{scale:1,motionSpeed:6,strideAmp:1.7}),
+ sealprovost:art("sealprovost",10,"humanoid",101,42,LIBRARY,{head:"core",legs:"spider"},{scale:1.22,motionSpeed:6,strideAmp:1.7}),
+ claspjailer:art("claspjailer",10,"quadruped",77,54,LIBRARY,{head:"core",legs:"spider"},{scale:1.22,motionSpeed:6,strideAmp:1.7}),
+};
+Object.assign(COMMON,BELL_ART,TIDE_ART,PRISM_ART,ROOT_ART,WIND_ART,LIBRARY_ART);
 export function enemyArt(stage: StageId, kind: Kind): EnemyArt {
+  if(stage===5&&BELL_ART[kind])return BELL_ART[kind]!;
   if (kind === "boss") return BOSS_ART[stage];
   if (kind === "minion") return MINION_ART[stage];
   return COMMON[kind] ?? MINION_ART[stage];

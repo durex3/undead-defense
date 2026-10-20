@@ -1,3 +1,7 @@
+import {
+  ELITE_TIMES,
+  eliteQuiet,
+} from "./EncounterPacing";
 import { sandMap } from "./SandMap";
 import { siegeMap } from "./SiegeMap";
 import { thunderMap } from "./ThunderMap";
@@ -15,31 +19,28 @@ export class SpawnDirector {
   restUntil = 0;
   private boss = false;
   private nextBossWave = 0;
-  private elites = [false, false];
+  private elites = [false, false, false];
   private lastAngle = 0;
 
   step(w: SurvivalWorld, dt: number) {
     if (!w.active) return;
-    if (w.stageId === 4) {
-      w.moon.director(dt);
-      return;
-    }
-    if (w.stageId === 3) {
-      w.thunder.director(dt);
-      return;
-    }
+    if (w.stageStrategy.director(dt)) return;
     const bossTime = bossTimeForStage(w.stageId);
     if (w.time >= bossTime && !this.boss) {
       this.boss = true;
-      w.hazards = [];
+      const eliteIds = new Set(
+        w.enemies.filter((e) => e.hp > 0 && isElite(e.kind)).map((e) => e.id),
+      );
+      w.hazards = w.hazards.filter((h) => eliteIds.has(h.source));
       let kept = 0;
       w.enemies = w.enemies.filter(
         (e) =>
-          (e.kind === "minion" ||
-            (w.stageId === 1 && e.kind === "siegebone") ||
-            (w.stageId === 2 && e.kind === "sandworker")) &&
           e.hp > 0 &&
-          kept++ < bossCrowdRules(w.stageId).target,
+          (isElite(e.kind) ||
+            ((e.kind === "minion" ||
+              (w.stageId === 1 && e.kind === "siegebone") ||
+              (w.stageId === 2 && e.kind === "sandworker")) &&
+              kept++ < bossCrowdRules(w.stageId).target)),
       );
       const p = this.position(w, Math.atan2(-w.player.y, -w.player.x), 6.5);
       w.addEnemy("boss", p.x, p.y);
@@ -56,37 +57,42 @@ export class SpawnDirector {
       w.sand.director(
         dt,
         (a) => this.position(w, a),
-        (!this.elites[0] && w.time >= encounterRealTime(175)) || (!this.elites[1] && w.time >= encounterRealTime(345)),
+        this.elites.some((done, i) => !done && w.time >= ELITE_TIMES[i]),
       );
       return;
     }
     w.siege.director(
       dt,
       (a, r) => this.position(w, a, r),
-      (!this.elites[0] && w.time >= 134) || (!this.elites[1] && w.time >= 263),
+      this.elites.some((done, i) => !done && w.time >= ELITE_TIMES[i]),
     );
   }
 
   private elitesAt(w: SurvivalWorld, bossTime: number) {
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
       if (w.time >= bossTime - 20) break;
-      const due = w.stageId === 2 ? encounterRealTime(i ? 345 : 175) : i ? 263 : 134;
+      const due = ELITE_TIMES[i];
       if (w.time < w.reinforcementRestUntil) continue;
       if (this.elites[i] || w.time < due) continue;
-      const special = w.enemies.filter((e) => ENEMIES[e.kind].threat > 0).length;
+      const special = w.enemies.filter(
+        (e) => ENEMIES[e.kind].threat > 0,
+      ).length;
       if (special > 2 && w.time < due + 20) continue;
       if (w.enemies.some((e) => isElite(e.kind) && e.hp > 0)) continue;
       const p = this.position(w, this.lastAngle + Math.PI, 7);
       const kind: Kind =
         w.stageId === 2
-          ? i
+          ? i === 1
             ? "breakerelite"
             : "broodelite"
-          : i
+          : i === 1
             ? "siegerider"
             : "siegeflag";
       if (
-        w.enemies.reduce((n, o) => n + (o.hp > 0 ? ENEMIES[o.kind].threat : 0), 0) +
+        w.enemies.reduce(
+          (n, o) => n + (o.hp > 0 ? ENEMIES[o.kind].threat : 0),
+          0,
+        ) +
           ENEMIES[kind].threat >
         6
       )
@@ -94,8 +100,6 @@ export class SpawnDirector {
       const e = w.addEnemy(kind, p.x, p.y);
       if (e) {
         w.hazards = w.hazards.filter((h) => h.source !== 0);
-        e.hp *= i === 0 ? 0.9 : 1.1;
-        e.maxHp = e.hp;
         e.state = "arriving";
         e.timer = 1.5;
         e.attack = i ? 1 : 4;
@@ -107,6 +111,11 @@ export class SpawnDirector {
   }
 
   private bossHorde(w: SurvivalWorld) {
+    if (
+      w.enemies.some((e) => e.hp > 0 && isElite(e.kind)) ||
+      w.time < w.bossEliteRestUntil
+    )
+      return;
     const boss = w.enemies.find((e) => e.kind === "boss" && e.hp > 0);
     if (
       !boss ||
@@ -138,9 +147,17 @@ export class SpawnDirector {
       const p = this.position(w, angle);
       if (Math.hypot(p.x - w.player.x, p.y - w.player.y) < 4) continue;
       const actual = Math.atan2(p.y - w.player.y, p.x - w.player.x);
-      if (Math.abs(Math.atan2(Math.sin(actual - gap), Math.cos(actual - gap))) < 0.6) continue;
+      if (
+        Math.abs(Math.atan2(Math.sin(actual - gap), Math.cos(actual - gap))) <
+        0.6
+      )
+        continue;
       const e = w.addEnemy(
-        w.stageId === 2 ? "sandworker" : w.stageId === 1 ? "siegebone" : "minion",
+        w.stageId === 2
+          ? "sandworker"
+          : w.stageId === 1
+            ? "siegebone"
+            : "minion",
         p.x,
         p.y,
         true,

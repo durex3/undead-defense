@@ -1,0 +1,108 @@
+{
+  "initial": {
+    "ready": true,
+    "stage": 1
+  },
+  "started": {
+    "stage": 10,
+    "state": "battle",
+    "viewport": {
+      "x": 16.23076923076923,
+      "y": 7.5
+    }
+  },
+  "selectionLabels": [
+    "选择关卡",
+    "点击查看特点 · 通关前一关解锁 · 本关胜利奖励 280金币",
+    "",
+    "9 · 断羽风廊",
+    "未解锁",
+    "通关第8关解锁",
+    "",
+    "✓ 10 · 缄页禁库",
+    "已解锁",
+    "尚未挑战",
+    "2/2 页",
+    "上一页",
+    "10 · 缄页禁库 · 首领：缄律藏典",
+    "封签可踏断撤招 · 实体页刃与双夹页 · 三阶段藏典 · 书架不挡友方攻击",
+    "禁库：直接躲开或提前踩签撤一招；两夹页保留中缝与端头，三阶段仍有收招窗口",
+    "返回菜单",
+    "选择本关"
+  ],
+  "counter": {
+    "stepped": 1,
+    "cancelled": true,
+    "siblingCancelled": false,
+    "slots": 1,
+    "siblingUnchanged": true
+  },
+  "signPixels": [
+    124,
+    118
+  ],
+  "phases": [
+    {
+      "requested": 1,
+      "actual": 1,
+      "hp": 71680,
+      "expectedHp": 71680,
+      "slots": 1,
+      "hazards": [
+        {
+          "shape": "imprint",
+          "order": 1,
+          "due": 392,
+          "created": 390
+        }
+      ]
+    },
+    {
+      "requested": 2,
+      "actual": 2,
+      "hp": 49459.2,
+      "expectedHp": 49459.2,
+      "slots": 2,
+      "hazards": [
+        {
+          "shape": "imprint",
+          "order": 1,
+          "due": 394.61,
+          "created": 392.61
+        },
+        {
+          "shape": "page",
+          "order": 2,
+          "due": 395.31,
+          "created": 393.31
+        }
+      ]
+    },
+    {
+      "requested": 3,
+      "actual": 3,
+      "hp": 24371.2,
+      "expectedHp": 24371.2,
+      "slots": 2,
+      "hazards": [
+        {
+          "shape": "clamp",
+          "order": 1,
+          "due": 394.91,
+          "created": 392.61
+        },
+        {
+          "shape": "clamp",
+          "order": 2,
+          "due": 394.91,
+          "created": 392.61
+        }
+      ]
+    }
+  ],
+  "pause": {
+    "timeUnchanged": true,
+    "planUnchanged": true
+  },
+  "errors": []
+}

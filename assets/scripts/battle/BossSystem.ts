@@ -1,3 +1,4 @@
+import { isElite } from "./SurvivalConfig";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { Enemy } from "./SurvivalTypes";
 
@@ -11,17 +12,10 @@ export function bossExposed(w: SurvivalWorld, e: Enemy) {
 
 /** Each playable stage owns its boss behaviour. */
 export function stepBoss(w: SurvivalWorld, e: Enemy, dt: number) {
-  if (w.stageId === 4) {
-    w.moon.stepEnemy(e, dt);
+  if (w.enemies.some((o) => o.hp > 0 && isElite(o.kind))) {
+    w.bossEliteRestUntil = w.time + 3;
     return;
   }
-  if (w.stageId === 3) {
-    w.thunder.stepEnemy(e, dt);
-    return;
-  }
-  if (w.stageId === 2) {
-    w.sand.stepEnemy(e, dt);
-    return;
-  }
-  w.siege.stepBoss(e, dt);
+  if (w.time < w.bossEliteRestUntil) return;
+  w.stageStrategy.stepBoss(e, dt);
 }

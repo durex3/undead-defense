@@ -1,0 +1,340 @@
+{
+  "status": "design-only; static and synthetic empty-space checks, not runtime/dynamic escape or human validation",
+  "bounds": [
+    22,
+    26
+  ],
+  "boxes": [
+    [
+      -9,
+      9,
+      2.8,
+      1.3
+    ],
+    [
+      9,
+      -9,
+      2.8,
+      1.3
+    ],
+    [
+      -10,
+      -9,
+      1.4,
+      3
+    ],
+    [
+      10,
+      9,
+      1.4,
+      3
+    ],
+    [
+      -3,
+      19,
+      3.5,
+      1.2
+    ],
+    [
+      3,
+      -19,
+      3.5,
+      1.2
+    ]
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "grid": 0.5,
+      "edgeSample": 0.05,
+      "reachableCells": 8447,
+      "references": [
+        {
+          "point": [
+            0,
+            -8
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            -15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            12
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            -12
+          ],
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "radius": 0.7,
+      "grid": 0.5,
+      "edgeSample": 0.05,
+      "reachableCells": 7895,
+      "references": [
+        {
+          "point": [
+            0,
+            -8
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            -15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            15,
+            0
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            12
+          ],
+          "reachable": true
+        },
+        {
+          "point": [
+            0,
+            -12
+          ],
+          "reachable": true
+        }
+      ]
+    }
+  ],
+  "independentInnerChannels": [
+    [
+      [
+        0,
+        -8
+      ],
+      [
+        -5,
+        -8
+      ],
+      [
+        -5,
+        12
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    [
+      [
+        0,
+        -8
+      ],
+      [
+        5,
+        -8
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        0,
+        12
+      ]
+    ]
+  ],
+  "metrics": {
+    "speed": 4.2,
+    "playerRadius": 0.3,
+    "reaction": 0.35
+  },
+  "arm": {
+    "origin": [
+      0,
+      0
+    ],
+    "inner": 1.5,
+    "outer": 5.2,
+    "halfWidth": 0.22,
+    "startDegrees": -50,
+    "endDegrees": 50,
+    "duration": 2.6,
+    "warning": 1.6,
+    "angularSpeedRadians": 0.6712804815362806,
+    "outerTipSpeed": 3.4906585039886595,
+    "innerSafePlayerCenterRadius": 0.98
+  },
+  "flower": {
+    "ring": {
+      "inner": 2.2,
+      "outer": 3.5,
+      "warning": 1.8,
+      "active": 0.6
+    },
+    "disk": {
+      "radius": 2.2,
+      "warning": 1.6,
+      "active": 0.35
+    },
+    "sequenceClearGap": 1.8
+  },
+  "emptySpaceDistances": {
+    "ringHalfBand": 0.95,
+    "diskWorstEscape": 2.5,
+    "ringReach": 6.090000000000001,
+    "diskReach": 5.25
+  },
+  "syntheticPair": {
+    "armOrigin": [
+      0,
+      0
+    ],
+    "flowerCenter": [
+      3,
+      0
+    ],
+    "flowerType": "disk",
+    "armDue": 1.6,
+    "flowerDue": 2.8,
+    "timeStep": 0.016666666666666666,
+    "moveUntil": 2.75,
+    "samples": [
+      {
+        "degrees": 0,
+        "safe": true
+      },
+      {
+        "degrees": 15,
+        "safe": true
+      },
+      {
+        "degrees": 30,
+        "safe": true
+      },
+      {
+        "degrees": 45,
+        "safe": true
+      },
+      {
+        "degrees": 60,
+        "safe": true
+      },
+      {
+        "degrees": 75,
+        "safe": true
+      },
+      {
+        "degrees": 90,
+        "safe": true
+      },
+      {
+        "degrees": 105,
+        "safe": true
+      },
+      {
+        "degrees": 120,
+        "safe": true
+      },
+      {
+        "degrees": 135,
+        "safe": true
+      },
+      {
+        "degrees": 150,
+        "safe": true
+      },
+      {
+        "degrees": 165,
+        "safe": true
+      },
+      {
+        "degrees": 180,
+        "safe": true
+      },
+      {
+        "degrees": 195,
+        "safe": true
+      },
+      {
+        "degrees": 210,
+        "safe": true
+      },
+      {
+        "degrees": 225,
+        "safe": true
+      },
+      {
+        "degrees": 240,
+        "safe": true
+      },
+      {
+        "degrees": 255,
+        "safe": true
+      },
+      {
+        "degrees": 270,
+        "safe": true
+      },
+      {
+        "degrees": 285,
+        "safe": true
+      },
+      {
+        "degrees": 300,
+        "safe": true
+      },
+      {
+        "degrees": 315,
+        "safe": true
+      },
+      {
+        "degrees": 330,
+        "safe": true
+      },
+      {
+        "degrees": 345,
+        "safe": true
+      }
+    ],
+    "safeDirections": 24
+  }
+}

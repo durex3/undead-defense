@@ -1,0 +1,11 @@
+{
+  "version": "0.28.0",
+  "viewport": {"width":844,"height":390,"devicePixelRatio":2},
+  "context":"isolated tide-stage-qa; normal account storage untouched",
+  "checks":["sixth-stage locked card and prior-clear requirement","three achievement cards fit shell","sixth-stage map, original actors and wreck boss","fixed two-wave ultimate preview and berth","hook warning direction, second-leg preview, live head and harmless quiet rope"],
+  "speed3Smoke":{"wallSeconds":2.2,"simulationSeconds":6.65,"stage":6,"playerX":7.9,"playerY":-8,"hp":76,"enemies":16,"state":"battle","weaponPool":10,"observation":"held right stopped at crate expanded left face; no player tunnelling"},
+  "consoleErrors":0,
+  "consoleWarnings":0,
+  "builds":{"web-mobile":{"creatorExit":36,"success":true},"wechatgame":{"creatorExit":36,"success":true,"uploaded":false}},
+  "limits":"Screenshots include controlled combat fixtures, not ordinary random-play progression; no phone GPU, touch or human difficulty acceptance."
+}

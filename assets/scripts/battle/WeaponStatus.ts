@@ -1,10 +1,11 @@
+import { weaponName, gradeOf, GRADE_NAMES } from "./WeaponGrade";
 import { EXTRA_RULES, ExtraSkill } from "./ExtraArmoryConfig";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import {
   Skill,
   Card,
   Passive,
-  WEAPONS,
+  ALL_WEAPONS as WEAPONS,
   PASSIVES,
   NAMES,
   WEAPON_ROLES,
@@ -28,7 +29,7 @@ export function weaponStatus(w: SurvivalWorld, s: Skill) {
 export function combatWeaponEntries(w: SurvivalWorld) {
   return WEAPONS.filter((s) => w.skills[s]).map(
     (s) =>
-      `${NAMES[s]} ${w.skills[s]}级 ${weaponStatus(w, s).icons} ${modSummary(w, s)}`,
+      `${GRADE_NAMES[gradeOf(s,w.weaponGrades)]} · ${weaponName(s,w.weaponGrades)} ${w.skills[s]}级 ${weaponStatus(w, s).icons} ${modSummary(w, s)}`,
   );
 }
 export function weaponDetails(w: SurvivalWorld, s: Skill) {
@@ -38,6 +39,7 @@ export function weaponDetails(w: SurvivalWorld, s: Skill) {
   const rangeLabel=s==="blade"&&!a.mods.includes("hunt")?`环绕半径 ${n((a.mods.includes("orbit")?2.7:1.9)*a.radius/.21)}`:
     s==="ghost"?`爪击半径 ${n(a.radius+.45)}`:`范围 ${n(a.radius)}`;
   return [
+    `${GRADE_NAMES[gradeOf(s,w.weaponGrades)]} · ${weaponName(s,w.weaponGrades)}`,
     WEAPON_ROLES[s],
     `${w.skills[s]}/8级 · ${a.count}${countLabel} · ${s==="blade"&&!a.mods.includes("hunt")?"旋转一周":"周期"} ${n(a.cooldown)}秒`,
     `${damageLabel} ${n(a.damage)} · ${rangeLabel}${["water", "mine", "void", "frost", "bone"].includes(s) ? ` · 持续 ${n(a.duration)}秒` : ""}`,
@@ -52,7 +54,7 @@ export function weaponDetails(w: SurvivalWorld, s: Skill) {
         ? "数量增加本轮主球总数；碎焰每主球2枚；火海同源重叠不叠伤。"
         : s === "water"
           ? "每0.4秒一跳；水爆改为每秒×2.5伤害；同源重叠不叠伤。"
-          : EXTRA_RULES[s as ExtraSkill],
+          : s === "hammer" ? "自动举锤扇面破甲；每次主击施加裂甲，裂纹不递归。" : s === "wheel" ? "去回各命中一次并裂甲，端点绞切不额外裂甲；回收点固定。" : s === "lamp" ? "一个灯区，有限目标烙魂；增伤不叠层。" : s === "needle" ? "最多一对缝线；传递有间隔与预算，不递归；单目标仍有针击。" : EXTRA_RULES[s as ExtraSkill],
     "被动仅增加通用属性，不与武器组成配方。",
   ].join("\n");
 }

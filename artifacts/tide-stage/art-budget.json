@@ -1,0 +1,83 @@
+{
+  "scope": "Offline runtime body and painter command budgets; not GPU frame time or mobile heat.",
+  "actors": [
+    {
+      "kind": "brineporter",
+      "commands": 14,
+      "vertices": 100,
+      "limit": [
+        15,
+        240
+      ],
+      "over": false
+    },
+    {
+      "kind": "sluiceray",
+      "commands": 15,
+      "vertices": 105,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "sailharpooner",
+      "commands": 13,
+      "vertices": 96,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "winchbeast",
+      "commands": 15,
+      "vertices": 151,
+      "limit": [
+        22,
+        360
+      ],
+      "over": false
+    },
+    {
+      "kind": "twinlockwarden",
+      "commands": 17,
+      "vertices": 120,
+      "limit": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "severedcrane",
+      "commands": 14,
+      "vertices": 117,
+      "limit": [
+        27,
+        540
+      ],
+      "over": false
+    },
+    {
+      "kind": "boss",
+      "commands": 23,
+      "vertices": 221,
+      "limit": [
+        38,
+        950
+      ],
+      "over": false
+    }
+  ],
+  "stress": {
+    "enemies": 100,
+    "weapons": 4,
+    "frames": 360,
+    "vertices": 20277,
+    "commands": 1854,
+    "over": false
+  }
+}
