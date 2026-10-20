@@ -4,7 +4,7 @@ import { Graphics } from "cc";
 import type { SurvivalWorld } from "../../battle/SurvivalWorld";
 import type { Effect } from "../../battle/SurvivalTypes";
 import { ink } from "./Ink";
-import { cutTrail, chevrons } from "./VfxBrush";
+import { cutTrail } from "./VfxBrush";
 import { enemyArt } from "./EnemyCatalog";
 import type { Kind } from "../../battle/SurvivalConfig";
 import type { StageId } from "../../battle/ProgressionConfig";
@@ -188,18 +188,21 @@ function crescent(g: Graphics, x: number, y: number, angle: number, r: number, c
 }
 
 function drawBlade(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false, grade=1) {
-  if(grade>1){drawBladeForm(g,x,y,angle,grade,p.child,quiet);return;}
   const c = SPELL.blade;
-  const size = p.child ? 10 : 16;
-  if(p.child) {
-    const dx=Math.cos(angle),dy=Math.sin(angle),nx=-dy,ny=dx;
-    g.fillColor=ink(c.core);g.strokeColor=ink(c.edge);g.lineWidth=1.4;
-    g.moveTo(x+dx*10,y+dy*10);g.lineTo(x+nx*4,y+ny*4);g.lineTo(x-dx*8,y-dy*8);g.lineTo(x-nx*4,y-ny*4);
-    g.close();g.fill();g.stroke();return;
+  if(!p.orbit) {
+    const trail = p.trail || [];
+    if(trail.length) {
+      for(let i=0;i<trail.length;i++) {
+        const a=trail[i],b=trail[i+1]||p;
+        g.strokeColor=ink(p.returning?"#98eacb":c.edge,30+100*(i+1)/trail.length);
+        g.lineWidth=(p.child?1.2:2.2)*(i+1)/trail.length;
+        g.moveTo(a.x*48,a.y*48);g.lineTo(b.x*48,b.y*48);g.stroke();
+      }
+    } else cutTrail(g,x,y,angle,p.child?10:quiet?16:26,p.child?1.5:3,c.edge,90);
   }
-  const facing = angle;
-  const dx=Math.cos(facing),dy=Math.sin(facing),nx=-dy,ny=dx;
-  if(!p.orbit)cutTrail(g,x,y,facing,quiet?16:26,3,c.edge,90);
+  if(grade>1){drawBladeForm(g,x,y,angle,grade,p.child,quiet);return;}
+  const scale=p.child?.58:1;
+  const dx=Math.cos(angle)*scale,dy=Math.sin(angle)*scale,nx=-dy,ny=dx;
   // Short steel knife, readable independently of the long bone shaft.
   g.fillColor=ink(c.mid);g.strokeColor=ink("#211d19");g.lineWidth=2;
   g.moveTo(x+dx*20,y+dy*20);g.lineTo(x+nx*5,y+ny*5);
@@ -209,12 +212,6 @@ function drawBlade(g: Graphics, x: number, y: number, angle: number, p: any, qui
   g.strokeColor=ink("#8d6646");g.lineWidth=4;
   g.moveTo(x-dx*9,y-dy*9);g.lineTo(x-dx*15,y-dy*15);g.stroke();
 
-  if (p.stats.mods.includes("hunt")) {
-    chevrons(g,x+Math.cos(angle)*size,y+Math.sin(angle)*size,angle,12,c.core,1);
-  }
-  if (p.returning) {
-    chevrons(g,x-Math.cos(angle)*12,y-Math.sin(angle)*12,angle,10,"#98eacb",2);
-  }
 }
 
 function drawFire(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false) {

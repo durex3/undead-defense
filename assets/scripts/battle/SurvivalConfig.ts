@@ -7,9 +7,9 @@ export const PASSIVES=["power","hourglass","area","duration","amount","boots","v
 export type Passive=typeof PASSIVES[number];
 export type Card=Skill|Passive|"repair"|"continue";
 export const PASSIVE_MAX:Record<Passive,number>={power:4,hourglass:4,area:4,duration:4,amount:2,boots:4,vitality:4,magnet:4};
-export const NAMES:Record<Card,string>={lamp:"引魂灯",needle:"缚影缝针",hammer:"镇钟重锤",wheel:"裂甲飞轮",blade:"飞刀",fire:"烈焰火球",water:"圣水瓶",frost:"寒霜脉环",lightning:"连锁闪电",ghost:"幽灵伙伴",bone:"贯阵骨矛",mine:"符印地雷",void:"坍缩黑洞",holy:"裁决圣剑",power:"力量徽记",hourglass:"疾咏沙漏",area:"广域烛台",duration:"长效符文",amount:"复刻指环",boots:"风行靴",vitality:"生命护符",magnet:"拾魂吊坠",repair:"生命药剂",continue:"继续战斗"};
+export const NAMES:Record<Card,string>={lamp:"引魂灯",needle:"缚影缝针",hammer:"镇钟重锤",wheel:"裂甲飞轮",blade:"飞刀",fire:"烈焰火球",water:"圣水瓶",frost:"寒霜脉环",lightning:"天降落雷",ghost:"幽灵伙伴",bone:"贯阵骨矛",mine:"符印地雷",void:"坍缩黑洞",holy:"裁决圣剑",power:"力量徽记",hourglass:"疾咏沙漏",area:"广域烛台",duration:"长效符文",amount:"复刻指环",boots:"风行靴",vitality:"生命护符",magnet:"拾魂吊坠",repair:"生命药剂",continue:"继续战斗"};
 export const COLORS:Record<string,string>={lamp:"#92e5cd",needle:"#d2b3ee",hammer:"#deb976",wheel:"#a8d7c7",blade:"#f4da9b",fire:"#ff9854",water:"#7bdded",frost:"#9edfff",lightning:"#ffe075",ghost:"#a7e4cf",bone:"#e6d4b5",mine:"#e6a45b",void:"#bf9bff",holy:"#fff1ab",power:"#efaa89",hourglass:"#ecc99d",area:"#b8a4ed",duration:"#a9d8b1",amount:"#e8d9a6",boots:"#bdd99a",vitality:"#f59fa7",magnet:"#72e4ca",repair:"#f59fa7",continue:"#c4d4de"};
-export const WEAPON_ROLES:Record<Skill,string>={lamp:"定点烙魂 · 短时支援增伤",needle:"双端缝线 · 有限伤害转递",hammer:"近侧重击破甲 · 慢速扇面",wheel:"去回贯穿裂甲 · 中距切线",blade:"多刃环绕 · 数把实体刀持续绕身切割",fire:"范围爆破 · 轰炸密集敌群",water:"持续封路 · 将追兵引进水区",frost:"结霜爆冰 · 短冻结解围，不控制首领",lightning:"瞬时传导 · 在邻近敌人之间跳跃",ghost:"驻队伙伴 · 离队追猎两爪后回收",bone:"蓄力贯阵 · 选密集直线，长矛贯穿整列",mine:"布设反击 · 敌人靠近才触发爆炸",void:"短时聚怪 · 收束爆破，不牵制首领",holy:"锁点裁决 · 预示后落剑，抓住停顿"};
+export const WEAPON_ROLES:Record<Skill,string>={lamp:"定点烙魂 · 短时支援增伤",needle:"双端缝线 · 有限伤害转递",hammer:"近侧重击破甲 · 慢速扇面",wheel:"去回贯穿裂甲 · 中距切线",blade:"多刃环绕 · 数把实体刀持续绕身切割",fire:"范围爆破 · 轰炸密集敌群",water:"持续封路 · 将追兵引进水区",frost:"结霜爆冰 · 短冻结解围，不控制首领",lightning:"定点落雷 · 同时轰击多个敌人位置",ghost:"驻队伙伴 · 离队追猎两爪后回收",bone:"蓄力贯阵 · 选密集直线，长矛贯穿整列",mine:"布设反击 · 敌人靠近才触发爆炸",void:"短时聚怪 · 收束爆破，不牵制首领",holy:"锁点裁决 · 预示后落剑，抓住停顿"};
 
 /**
  * Every enemy belongs to exactly one stage, plus two shared roles.

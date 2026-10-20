@@ -1,5 +1,5 @@
 import type { StoragePort } from './StoragePort';
-export const PLAY_VERSION = '开发版 0.33.1 · 首领预警与战斗补给';
+export const PLAY_VERSION = '开发版 0.33.2 · 武器命中与回流优化';
 export type Lesson = 'move' | 'xp' | 'upgrade' | 'nova' | 'elite';
 const lessons: Lesson[] = ['move', 'xp', 'upgrade', 'nova', 'elite'];
 export class PlayPreferences {

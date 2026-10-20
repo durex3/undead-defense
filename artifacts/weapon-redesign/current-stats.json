@@ -108,7 +108,7 @@
           "id": "shards",
           "name": "碎刃散射",
           "short": "碎刃",
-          "effect": "终结时向前散出2把短程碎刃",
+          "effect": "终结时沿刀刃当前飞行方向分出2把短程碎刃",
           "cost": "主刀伤害−15%；碎刃每轮只出一组",
           "glyph": "⋔"
         }
@@ -258,7 +258,7 @@
           "mods": []
         },
         {
-          "damage": 9,
+          "damage": 10,
           "count": 2,
           "cooldown": 2.8,
           "radius": 1.7,
@@ -276,7 +276,7 @@
           "mods": []
         },
         {
-          "damage": 12,
+          "damage": 13,
           "count": 3,
           "cooldown": 2.8,
           "radius": 1.7,
@@ -294,9 +294,9 @@
           "mods": []
         },
         {
-          "damage": 15,
+          "damage": 16,
           "count": 3,
-          "cooldown": 2.4,
+          "cooldown": 2.2,
           "radius": 1.9,
           "duration": 5,
           "range": 10,
@@ -326,8 +326,8 @@
           "id": "recall",
           "name": "潮汐回涌",
           "short": "回涌",
-          "effect": "后半段锁定玩家位置并沿路线回流",
-          "cost": "持续时间−15%；不会一直跟随玩家",
+          "effect": "后半段回流；追上敌人后减速维持覆盖，保留完整持续时间",
+          "cost": "水区离开原落点；回收点锁定，不持续跟随玩家",
           "glyph": "↩"
         },
         {
@@ -466,7 +466,7 @@
           "mods": []
         },
         {
-          "damage": 37.5,
+          "damage": 38,
           "count": 3,
           "cooldown": 2.3,
           "radius": 0.9,
@@ -475,7 +475,7 @@
           "mods": []
         },
         {
-          "damage": 37.5,
+          "damage": 38,
           "count": 4,
           "cooldown": 2.3,
           "radius": 0.9,
@@ -484,9 +484,9 @@
           "mods": []
         },
         {
-          "damage": 37.5,
+          "damage": 40,
           "count": 4,
-          "cooldown": 2.024,
+          "cooldown": 2,
           "radius": 1.0080000000000002,
           "duration": 0.4,
           "range": 11,
@@ -495,25 +495,16 @@
         {
           "damage": 48,
           "count": 4,
-          "cooldown": 2.024,
+          "cooldown": 2,
           "radius": 1.0080000000000002,
           "duration": 0.4,
           "range": 11,
           "mods": []
         },
         {
-          "damage": 48,
+          "damage": 52,
           "count": 5,
-          "cooldown": 2.024,
-          "radius": 1.0080000000000002,
-          "duration": 0.4,
-          "range": 11,
-          "mods": []
-        },
-        {
-          "damage": 60,
-          "count": 5,
-          "cooldown": 2.024,
+          "cooldown": 2,
           "radius": 1.0080000000000002,
           "duration": 0.4,
           "range": 11,
@@ -522,7 +513,16 @@
         {
           "damage": 60,
           "count": 5,
-          "cooldown": 1.7249999999999999,
+          "cooldown": 2,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 66,
+          "count": 5,
+          "cooldown": 1.6,
           "radius": 1.1088000000000005,
           "duration": 0.4,
           "range": 11,
@@ -532,19 +532,19 @@
       "mods": [
         {
           "id": "relay",
-          "name": "远距接力",
-          "short": "接力",
+          "name": "扩域落雷",
+          "short": "扩雷",
           "glyph": "ϟ",
-          "effect": "跳跃距离从3.5增至5.5，追加2次跳跃",
+          "effect": "每轮落雷数量+2，相邻落点可选间距由3.5增至5.5",
           "cost": "每击伤害−20%",
           "excludes": "storm"
         },
         {
           "id": "storm",
-          "name": "三重雷暴",
+          "name": "范围雷暴",
           "short": "雷暴",
           "glyph": "≋",
-          "effect": "链式跳跃改为依次定点落雷，每点半径0.9",
+          "effect": "同时小范围落雷改为每0.18秒依次轰击，基础半径0.48增至0.9",
           "cost": "每击伤害−30%；锁定后不追踪",
           "excludes": "relay"
         },

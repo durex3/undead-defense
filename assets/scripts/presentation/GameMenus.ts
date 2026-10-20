@@ -1,6 +1,11 @@
 import { LAMP_PRICE } from "../battle/SupportConfig";
 import { gradeOf, weaponName, nextGrade, gradeMultiplier, GRADE_NAMES, GRADE_COLORS, GRADE_PRICE } from "../battle/WeaponGrade";
 import { drawWeaponGlyph } from "./art/WeaponGlyph";
+import { drawStageMap } from "./StageMapPainter";
+import { drawActorLayer } from "./art/EnemyPainter";
+import { stageMapBackdrop } from "./art/MapArt";
+import { SurvivalWorld } from "../battle/SurvivalWorld";
+import { ink } from "./art/Ink";
 import {
   ACHIEVEMENTS,
   HAMMER_PRICE,
@@ -99,13 +104,9 @@ export class GameMenus {
     }
     if (this.stagePreview !== null && !this.host.started) {
       if (code === KeyCode.ESCAPE) this.host.showStart();
-      else if (
-        code === KeyCode.ENTER &&
-        this.host.progress.unlockedStage(this.stagePreview)
-      ) {
-        this.host.selectedStage = this.stagePreview;
-        this.host.showStart();
-      }
+      else if (code === KeyCode.ARROW_LEFT || code === KeyCode.KEY_A) this.moveStage(-1);
+      else if (code === KeyCode.ARROW_RIGHT || code === KeyCode.KEY_D) this.moveStage(1);
+      else if (code === KeyCode.ENTER || code === KeyCode.SPACE) this.startPreviewStage();
       return true;
     }
     return false;
@@ -843,138 +844,89 @@ export class GameMenus {
     this.catalogButton("下一页",300,-185,180,34,()=>this.showAchievements(this.achievementPage+1));
     this.catalogButton("返回菜单",0,-245,280,44,()=>this.showStart());
   }
+  private moveStage(direction: number) {
+    if (this.stagePreview === null) return;
+    const index = STAGE_IDS.indexOf(this.stagePreview);
+    const next = Math.max(0, Math.min(STAGE_IDS.length - 1, index + direction));
+    if (next !== index) this.showStageSelect(STAGE_IDS[next]);
+  }
+  private startPreviewStage() {
+    const stage = this.stagePreview;
+    if (stage === null || !this.host.progress.unlockedStage(stage)) return;
+    this.host.selectedStage = stage;
+    this.stagePreview = null;
+    this.host.restart();
+  }
   showStageSelect(preview: StageId = this.host.selectedStage) {
+    const h = this.host;
+    this.catalog = null;
+    this.detailSkill = null;
     this.stagePreview = preview;
-    this.host.overlay.destroyAllChildren();
-    this.host.panel(this.host.overlay, 0, 0, 1100, 570, "#191e2d");
-    this.host.text(this.host.overlay, "选择关卡", 0, 235, 32, "#f3deac");
-    this.host.text(
-      this.host.overlay,
-      `点击查看特点 · 通关前一关解锁 · 本关胜利奖励 ${CLEAR_COINS[preview]}金币`,
-      0,
-      170,
-      14,
-      "#b9c8d5",
-    );
-    const stages = STAGE_IDS;
-    const page = Math.floor(stages.indexOf(preview) / 8),
-      pages = Math.ceil(stages.length / 8);
-    for (const [i, stage] of stages.slice(page * 8, page * 8 + 8).entries()) {
-      const x =
-          ((i % 4) - (Math.min(stages.length - page * 8, 4) - 1) / 2) *
-          (stages.length > 3 ? 280 : 350),
-        y = 100 - Math.floor(i / 4) * 135,
-        unlocked = this.host.progress.unlockedStage(stage);
-      const label = this.host.button(
-        this.host.overlay,
-        "",
-        x,
-        y,
-        236,
-        116,
-        () => this.showStageSelect(stage),
-      );
-      const card = label.node.parent!;
-      this.host.text(
-        card,
-        `${stage === preview ? "✓ " : ""}${stageNumber(stage)} · ${STAGES[stage].name}`,
-        0,
-        32,
-        17,
-        unlocked ? "#f3deac" : "#9ba5b1",
-        224,
-      );
-      const best = this.host.progress.data.stageBest?.[stage];
-      this.host.text(
-        card,
-        unlocked ? (best?.won ? "已通关" : "已解锁") : "未解锁",
-        0,
-        0,
-        14,
-        unlocked ? "#a9cdbc" : "#9ba5b1",
-        180,
-      );
-      this.host.text(
-        card,
-        !unlocked
-          ? `通关第${stageNumber(stage) - 1}关解锁`
-          : best
-            ? `最佳 ${Math.floor(best.time / 60)
-                .toString()
-                .padStart(2, "0")}:${Math.floor(best.time % 60)
-                .toString()
-                .padStart(2, "0")}${best.won ? " · 通关" : " · 挑战"}`
-            : "尚未挑战",
-        0,
-        -32,
-        13,
-        "#b9c8d5",
-        180,
-      );
+    h.started = false;
+    h.clearInput();
+    h.overlay.destroyAllChildren();
+    h.panel(h.overlay, 0, 0, 1280, 720, "#131821");
+    h.panel(h.overlay, 0, 0, 1100, 650, "#191e2d");
+    const index = STAGE_IDS.indexOf(preview);
+    const unlocked = h.progress.unlockedStage(preview);
+    const best = h.progress.data.stageBest?.[preview];
+    h.text(h.overlay, `选择战场 · ${index + 1} / ${STAGE_IDS.length}`, 0, 283, 18, "#a9bac4");
+    h.text(h.overlay, STAGES[preview].name, 0, 237, 32, "#f3deac", 800);
+
+    // One themed image, using the actual complete map and the stage's own boss art.
+    const image = h.panel(h.overlay, 0, 38, 790, 310, stageMapBackdrop(preview));
+    image.name = "StageThemePreview";
+    const map = h.make("StageMapThumbnail", image);
+    map.setPosition(-185, 0);
+    map.setScale(.095, .095, 1);
+    drawStageMap(map.addComponent(Graphics), preview);
+    h.text(image, "战场全貌", -185, -139, 14, "#c4d4d2", 260);
+    const portrait = h.make("StageBossPortrait", image);
+    portrait.setPosition(165, -62);
+    portrait.setScale(1.15, 1.15, 1);
+    const study = new SurvivalWorld(19, "ranger", preview);
+    study.player = {x: 0, y: -8};
+    study.camera = {x: 0, y: 0};
+    study.time = .5;
+    const boss = study.addEnemy("boss", 0, 0)!;
+    boss.state = "seek";
+    drawActorLayer(portrait.addComponent(Graphics), study, false, false);
+    h.text(image, "首领", 165, 119, 14, "#b5c4cd", 300);
+    h.text(image, STAGES[preview].boss, 165, -111, 22, "#f3deac", 340);
+
+    for (const direction of [-1, 1]) {
+      const enabled = direction < 0 ? index > 0 : index < STAGE_IDS.length - 1;
+      const x = direction * 475;
+      if (enabled) {
+        const label = h.button(h.overlay, direction < 0 ? "‹" : "›", x, 38, 84, 104,
+          () => this.moveStage(direction));
+        label.fontSize = 56;
+        label.lineHeight = 70;
+      } else {
+        const edge = h.panel(h.overlay, x, 38, 84, 104, "#222a36");
+        h.text(edge, direction < 0 ? "‹" : "›", 0, 0, 56, "#53606d", 68);
+      }
     }
-    this.host.text(
-      this.host.overlay,
-      `${page + 1}/${pages} 页`,
-      0,
-      190,
-      16,
-      "#b9c8d5",
-      100,
-    );
-    if (page > 0)
-      this.host.button(this.host.overlay, "上一页", -440, 190, 150, 38, () =>
-        this.showStageSelect(stages[(page - 1) * 8]),
-      );
-    if (page + 1 < pages)
-      this.host.button(this.host.overlay, "下一页", 440, 190, 150, 38, () =>
-        this.showStageSelect(stages[(page + 1) * 8]),
-      );
-    const guide = STAGE_GUIDES[preview];
-    this.host.text(
-      this.host.overlay,
-      `${stageNumber(preview)} · ${STAGES[preview].name} · 首领：${STAGES[preview].boss}`,
-      0,
-      -125,
-      21,
-      "#f3deac",
-      1020,
-    );
-    this.host.text(
-      this.host.overlay,
-      guide?.threat || "清理尸潮、积累武器，六分钟后迎战首领",
-      0,
-      -165,
-      16,
-      "#e8cc92",
-      1020,
-    );
-    this.host.text(
-      this.host.overlay,
-      stageBuildHint(preview),
-      0,
-      -194,
-      15,
-      "#a9cdbc",
-      1020,
-    );
-    this.host.button(this.host.overlay, "返回菜单", -190, -250, 290, 48, () =>
-      this.host.showStart(),
-    );
-    const unlocked = this.host.progress.unlockedStage(preview);
-    this.host.button(
-      this.host.overlay,
-      unlocked ? "选择本关" : `通关第${stageNumber(preview) - 1}关解锁`,
-      190,
-      -250,
-      290,
-      48,
-      () => {
-        if (unlocked) {
-          this.host.selectedStage = preview;
-          this.host.showStart();
-        }
-      },
-    );
+    h.text(h.overlay, STAGE_GUIDES[preview].threat, 0, -144, 16, "#c4d4d2", 940);
+    const status = !unlocked ? `通关第${stageNumber(preview)-1}关解锁`
+      : best?.won ? "已通关" : "已解锁";
+    h.text(h.overlay, `${status} · 胜利奖励 ${CLEAR_COINS[preview]}金币 · 6分钟迎战首领`,
+      0, -181, 17, unlocked ? "#b8d4bc" : "#b5b5c3", 940);
+    const dots = h.make("StageCarouselPosition", h.overlay);
+    dots.setPosition(0, -212);
+    const g = dots.addComponent(Graphics);
+    for (let i=0;i<STAGE_IDS.length;i++) {
+      g.fillColor = ink(i===index?"#f3deac":"#53606d");
+      g.circle((i-(STAGE_IDS.length-1)/2)*18,0,i===index?4.5:2.5);g.fill();
+    }
+    h.button(h.overlay, "返回菜单", -175, -263, 270, 54, () => h.showStart());
+    if (unlocked) h.button(h.overlay, "开始本关", 175, -263, 310, 54, () => this.startPreviewStage());
+    else {
+      const locked = h.panel(h.overlay, 175, -263, 310, 54, "#2b313e");
+      h.text(locked, "尚未解锁", 0, 0, 20, "#8795a6", 290);
+    }
+    h.text(h.overlay, h.touchMode ? "点击左右箭头切换关卡" : "← → / A D 切换关卡 · Enter 开始 · Esc 返回",
+      0, -307, 14, "#8fa1b1", 940);
   }
   muteButton(x: number, y: number, start: boolean) {
     this.host.button(

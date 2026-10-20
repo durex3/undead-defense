@@ -53,7 +53,7 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
       id: "shards",
       name: "碎刃散射",
       short: "碎刃",
-      effect: "终结时向前散出2把短程碎刃",
+      effect: "终结时沿刀刃当前飞行方向分出2把短程碎刃",
       cost: "主刀伤害−15%；碎刃每轮只出一组",
       glyph: "⋔",
     },
@@ -117,8 +117,8 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
       id: "recall",
       name: "潮汐回涌",
       short: "回涌",
-      effect: "后半段锁定玩家位置并沿路线回流",
-      cost: "持续时间−15%；不会一直跟随玩家",
+      effect: "后半段回流；追上敌人后减速维持覆盖，保留完整持续时间",
+      cost: "水区离开原落点；回收点锁定，不持续跟随玩家",
       glyph: "↩",
     },
     {
@@ -208,9 +208,9 @@ export function weaponStats(
       duration: 2.6,
     },
     water: {
-      damage: [7, 9, 9, 9, 12, 12, 15, 15],
+      damage: [7, 9, 9, 10, 12, 13, 15, 16],
       count: [1, 1, 2, 2, 2, 3, 3, 3],
-      cooldown: [3.2, 3.2, 3.2, 2.8, 2.8, 2.8, 2.8, 2.4],
+      cooldown: [3.2, 3.2, 3.2, 2.8, 2.8, 2.8, 2.8, 2.2],
       radius: 1.5 + (l >= 3 ? 0.2 : 0) + (l >= 7 ? 0.2 : 0),
       range: 10,
       duration: 4 + (l >= 5 ? 1 : 0),
@@ -264,7 +264,6 @@ export function weaponStats(
   }
   if (skill === "water") {
     if (m.includes("wave")) s.damage *= 0.8;
-    if (m.includes("recall")) s.duration *= 0.85;
   }
   if(skill==="hammer"||skill==="wheel")applyUnlockMods(skill,s);
   if (skill === "lamp" || skill === "needle") applySupportMods(skill,s);

@@ -1,0 +1,56 @@
+{
+  "scope": "One seed, fixed stationary hero and high-HP scripted targets. Fire/bone single cast. Water single field with identical damage, old recall 85% duration. Offline painter, no browser/phone validation.",
+  "impact": {
+    "before": {
+      "bone": 0.508,
+      "fire": 0.767
+    },
+    "after": {
+      "fire": 0.242,
+      "bone": 0.508
+    }
+  },
+  "water": [
+    {
+      "speed": 1.5,
+      "stationary": 88,
+      "oldRecall": 176,
+      "newRecall": 193.6
+    },
+    {
+      "speed": 1.55,
+      "stationary": 88,
+      "oldRecall": 176,
+      "newRecall": 193.6
+    },
+    {
+      "speed": 1.7,
+      "stationary": 70.4,
+      "oldRecall": 158.4,
+      "newRecall": 158.4
+    },
+    {
+      "speed": 1.75,
+      "stationary": 70.4,
+      "oldRecall": 158.4,
+      "newRecall": 158.4
+    }
+  ],
+  "clips": [
+    {
+      "skill": "blade",
+      "frames": 50,
+      "file": "blade.gif"
+    },
+    {
+      "skill": "water",
+      "frames": 50,
+      "file": "water.gif"
+    },
+    {
+      "skill": "lightning",
+      "frames": 50,
+      "file": "lightning.gif"
+    }
+  ]
+}

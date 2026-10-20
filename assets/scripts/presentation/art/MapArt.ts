@@ -13,6 +13,7 @@ import { ink } from "./Ink";
 
 type Point = [number, number];
 const floors = ["", "#303439", "#674936", "#202e35", "#24382e", "#34303b", "#25383c", "#302d3b", "#303b32", "#293740", "#30343d"];
+export const stageMapBackdrop = (stage: number) => floors[stage] || floors[1];
 const grain = ["", "#454a4c", "#8c6345", "#374950", "#3c5140", "#554957", "#56665e", "#51485d", "#566052", "#52616a", "#575561"];
 const hash = (x: number, y: number) => {
   const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;

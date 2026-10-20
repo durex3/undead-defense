@@ -1,0 +1,51 @@
+/** Isolated Chrome profile. Exercises the real Cocos screen, never the user's browser session. */
+import {spawn} from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+const out='artifacts/stage-carousel';fs.mkdirSync(out,{recursive:true});
+const candidates=[process.env.CHROME_PATH,'C:/Program Files/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].filter(Boolean);
+const chrome=candidates.find(p=>fs.existsSync(p));if(!chrome)throw Error('Chrome/Edge executable not found');
+const child=spawn(chrome,['--headless=new','--remote-debugging-port=0',`--user-data-dir=${path.resolve('temp/stage-carousel-browser-profile')}`,'--no-first-run','--no-default-browser-check','--autoplay-policy=no-user-gesture-required','--use-angle=swiftshader','--enable-unsafe-swiftshader','about:blank'],{windowsHide:true,stdio:['ignore','ignore','pipe']});
+let stderr='';
+const endpoint=await new Promise((resolve,reject)=>{child.stderr.on('data',b=>{stderr+=b;const m=stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);if(m)resolve(m[1]);});child.on('error',reject);child.on('exit',code=>reject(Error(`Browser exited ${code}: ${stderr.slice(-500)}`)));setTimeout(()=>reject(Error('Browser startup timeout')),20000).unref();});
+const ws=new WebSocket(endpoint);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
+let id=0;const pending=new Map(),events=[];
+ws.onmessage=({data})=>{const m=JSON.parse(data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p?.reject(Error(JSON.stringify(m.error))):p?.resolve(m.result);}else events.push(m);};
+const cmd=(method,params={},sessionId)=>new Promise((resolve,reject)=>{const n=++id;pending.set(n,{resolve,reject});ws.send(JSON.stringify({id:n,method,params,...(sessionId?{sessionId}:{})}));});
+const assert=(ok,message)=>{if(!ok)throw Error(message);};
+try {
+  const {targetId}=await cmd('Target.createTarget',{url:'about:blank'});
+  const {sessionId}=await cmd('Target.attachToTarget',{targetId,flatten:true});
+  const c=(m,p)=>cmd(m,p,sessionId);
+  const run=async expression=>{const r=await c('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+  await c('Page.enable');await c('Runtime.enable');await c('Log.enable');
+  await c('Emulation.setDeviceMetricsOverride',{width:844,height:390,deviceScaleFactor:1,mobile:false});
+  await c('Page.navigate',{url:'http://127.0.0.1:8128'});
+  let ready=false;for(let i=0;i<200;i++){ready=await run('Boolean(globalThis.__undead?.ready)');if(ready)break;await new Promise(r=>setTimeout(r,100));}assert(ready,'Game failed to boot');
+  const labels=`(()=>{const a=[];function walk(n){for(const c of n.components||[])if(typeof c.string==='string')a.push(c.string);for(const c of n.children||[])walk(c);}walk(__undead.overlay);return a;})()`;
+  const state=()=>run(`({preview:__undead.menuScreens.stagePreview,selected:__undead.selectedStage,started:__undead.started,images:__undead.overlay.children.filter(n=>n.name==='StageThemePreview').length})`);
+  const shot=async name=>{await new Promise(r=>setTimeout(r,180));const r=await c('Page.captureScreenshot',{format:'png'});fs.writeFileSync(`${out}/${name}.png`,Buffer.from(r.data,'base64'));};
+  const key=async code=>{const names={37:'ArrowLeft',39:'ArrowRight',13:'Enter',27:'Escape'};const event={key:names[code],code:names[code],windowsVirtualKeyCode:code,nativeVirtualKeyCode:code};await c('Input.dispatchKeyEvent',{type:'keyDown',...event});await c('Input.dispatchKeyEvent',{type:'keyUp',...event});};
+  await run('__undead.progress.data.stages=[];__undead.menuScreens.showStageSelect(1);true');
+  const report={scope:'Real Cocos Web in isolated headless Chrome, software WebGL, no user profile; screenshots at phone landscape and desktop.',checks:[]};
+  assert((await state()).images===1,'Only one themed stage image should exist');await shot('stage-1-phone');
+  await key(37);assert((await state()).preview===1,'Left boundary should stop at stage one');report.checks.push('stage-one left boundary');
+  // Click the visible right arrow using real mouse events at its scaled on-screen centre.
+  await c('Input.dispatchMouseEvent',{type:'mousePressed',x:679,y:174,button:'left',clickCount:1});
+  await c('Input.dispatchMouseEvent',{type:'mouseReleased',x:679,y:174,button:'left',clickCount:1});
+  assert((await state()).preview===2,'Right arrow click should advance one stage');report.checks.push('right-arrow click');
+  assert((await run(labels)).includes('尚未解锁'),'Locked stage should show a disabled start');await shot('stage-2-locked');
+  await key(13);assert(!(await state()).started,'Enter must not start a locked stage');report.checks.push('locked-stage Enter blocked');
+  await key(37);assert((await state()).preview===1,'Left arrow keyboard should go back');
+  await run('__undead.progress.data.stages=[1,2,3,4,5,6,7,8,9];__undead.menuScreens.showStageSelect(7);true');
+  await shot('stage-7-phone');await key(39);assert((await state()).preview===8,'Keyboard right should advance one stage');
+  await run('__undead.menuScreens.showStageSelect(10);true');await key(39);assert((await state()).preview===10,'Right boundary should stop at stage ten');report.checks.push('last-stage right boundary');
+  await shot('stage-10-phone');
+  await c('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:1,mobile:false});await shot('stage-10-desktop');
+  await c('Emulation.setDeviceMetricsOverride',{width:667,height:375,deviceScaleFactor:1,mobile:false});await shot('stage-10-small-phone');
+  await key(27);assert((await state()).preview===null,'Escape should return to main menu');report.checks.push('Escape returns');
+  await run('__undead.menuScreens.showStageSelect(2);true');await key(13);assert((await state()).started&&(await state()).selected===2,'Unlocked stage should start directly');report.checks.push('Enter starts selected unlocked stage');
+  report.errors=events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Log.entryAdded'&&e.params.entry.level==='error');
+  assert(!report.errors.length,`Browser runtime errors: ${JSON.stringify(report.errors)}`);
+  fs.writeFileSync(`${out}/browser-report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+} finally {ws.close();child.kill();}

@@ -1,0 +1,12 @@
+{
+  "scope": "Real Cocos Web in isolated headless Chrome, software WebGL, no user profile; screenshots at phone landscape and desktop.",
+  "checks": [
+    "stage-one left boundary",
+    "right-arrow click",
+    "locked-stage Enter blocked",
+    "last-stage right boundary",
+    "Escape returns",
+    "Enter starts selected unlocked stage"
+  ],
+  "errors": []
+}

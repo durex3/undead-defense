@@ -2,7 +2,7 @@ import { SupportArmory } from "./SupportArmory";
 import { UnlockedArmory } from "./UnlockedArmory";
 import { ExtraArmory } from "./ExtraArmory";
 import type { SurvivalWorld } from "./SurvivalWorld";
-import { Skill, WEAPONS, isElite } from "./SurvivalConfig";
+import { Skill, WEAPONS, isElite, ENEMIES } from "./SurvivalConfig";
 import {
   Enemy,
   Point,
@@ -31,6 +31,8 @@ export interface ArmoryShot extends Point {
   target: Point;
   orbit: boolean;
   index: number;
+  trail?: Point[];
+  spawnStep?: number;
 }
 export interface ArmoryField extends Point {
   active: boolean;
@@ -58,6 +60,7 @@ interface Cast {
 }
 /** Bounded reusable entities. Every cast snapshots its modifiers and attributes. */
 export class Armory {
+  private stepIndex = 0;
   shots: ArmoryShot[] = [];
   fields: ArmoryField[] = [];
   pending: Cast[] = [];
@@ -152,6 +155,7 @@ export class Armory {
     );
   }
   step(dt: number) {
+    this.stepIndex++;
     const w = this.w;
     this.support.step(dt);
     this.extra.step(dt);
@@ -175,7 +179,8 @@ export class Armory {
         const c = this.pending.splice(i, 1)[0];
         this.launch(c);
       }
-    for (const p of this.shots) if (p.active) this.stepShot(p, dt);
+    for (const p of this.shots)
+      if (p.active && (!p.child || p.spawnStep !== this.stepIndex)) this.stepShot(p, dt);
     // Replace the completed orbit as a whole in the same frame: four/six
     // separate knives remain present, with new upgrades applied at the seam.
     if(w.skills.blade && !w.mods.blade.includes("hunt") && w.cooldowns.blade<=1e-7 &&
@@ -258,7 +263,7 @@ export class Armory {
       x: o.x,
       y: o.y,
       angle,
-      speed: skill === "blade" ? 15 : 7,
+      speed: skill === "blade" ? 15 : skill === "fire" ? (child ? 12 : 22) : 7,
       travel: 0,
       range: skill === "fire" ? Math.max(0.4, distance(o, t)) : s.range,
       hit: new Set(),
@@ -271,6 +276,8 @@ export class Armory {
       target: { ...t },
       orbit: skill === "blade" && !child && !s.mods.includes("hunt"),
       index: c.index,
+      trail: [],
+      spawnStep: this.stepIndex,
     };
     const slot = this.shots.find((p) => !p.active);
     if (slot) Object.assign(slot, data);
@@ -302,6 +309,11 @@ export class Armory {
       m = s.mods,
       old = { x: p.x, y: p.y };
     p.age += dt;
+    if(p.skill === "blade" && !p.orbit && dt > 0) {
+      p.trail ??= [];
+      p.trail.push(old);
+      if(p.trail.length>4)p.trail.shift();
+    }
     if (p.skill === "water") {
       const q = Math.min(1, p.age / 0.45);
       p.x = p.start.x + (p.target.x - p.start.x) * q;
@@ -368,7 +380,7 @@ export class Armory {
           );
       }
     }
-    const step = p.speed * dt;
+    const step = Math.min(p.speed * dt, Math.max(0,p.range-p.travel));
     p.x += Math.cos(p.angle) * step;
     p.y += Math.sin(p.angle) * step;
     p.travel += step;
@@ -387,6 +399,14 @@ export class Armory {
     for (const e of collisions) {
       p.hit.add(e.id);
       if (p.skill === "fire") {
+        // Resolve at first contact, even when a fast shot crosses a whole enemy in one frame.
+        const dx=p.x-old.x,dy=p.y-old.y,len=Math.hypot(dx,dy);
+        if(len>0) {
+          const along=((e.x-old.x)*dx+(e.y-old.y)*dy)/len;
+          const across2=(e.x-old.x)**2+(e.y-old.y)**2-along**2;
+          const contact=Math.max(0,Math.min(len,along-Math.sqrt(Math.max(0,.69**2-across2))));
+          p.x=old.x+dx/len*contact;p.y=old.y+dy/len*contact;
+        }
         this.explode(p);
         return;
       }
@@ -420,11 +440,12 @@ export class Armory {
     if (!g) return;
     g.left--;
     g.end = { x: p.x, y: p.y };
+    g.angle = p.orbit ? p.angle + Math.PI / 2 : p.angle;
     if (g.left > 0) return;
     this.groups.delete(p.group);
     if (g.shards) {
       for (let i = 0; i < 2; i++) {
-        const a = g.angle + (i ? 0.5 : -0.5);
+        const a = g.angle + (i ? 0.32 : -0.32);
         const s = {
           ...g.stats,
           damage: g.stats.damage * 0.5,
@@ -539,9 +560,13 @@ export class Armory {
       f.returnTarget = { ...w.player };
     }
     if (f.returning) {
+      // Catch up across empty ground, then stay with enemies instead of outrunning them.
+      const covered=this.enemies(f,f.radius+.35);
+      const speed=covered.length ? Math.max(.6,Math.min(1.6,...covered.map(e =>
+        e.freezeUntil>w.time ? 0 : ENEMIES[e.kind].speed*(e.slowUntil>w.time?1-e.slow:1)))) : 3.8;
       const t = f.returnTarget!,
         d = distance(f, t),
-        step = Math.min(d, 3.8 * dt);
+        step = Math.min(d, speed * dt);
       if (d > 0) {
         f.x += ((t.x - f.x) / d) * step;
         f.y += ((t.y - f.y) / d) * step;
