@@ -90,8 +90,8 @@ export function drawThunderHazard(
     y = h.y * 48;
   const contact = active ? Math.max(0, 1 - (time - h.due) / .16) : 0;
   g.strokeColor = ink(active ? contact > 0 ? "#fff2d1" : "#ffe0a8" : "#ffac7a", preview ? 100 : 245);
-  g.fillColor = ink("#ed674a", active ? 100 + Math.round(contact * 45) : preview ? 10 : 28);
-  g.lineWidth = active ? 4 + contact * 2 : 2;
+  g.fillColor = ink("#ed674a", active ? 100 + Math.round(contact * 45) : preview ? 10 : 55);
+  g.lineWidth = active ? 4 + contact * 2 : 4;
   const at = (u: number, v: number) => ({
     x: x + (u * c - v * s) * 48,
     y: y + (u * s + v * c) * 48,

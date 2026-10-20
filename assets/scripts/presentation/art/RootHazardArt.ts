@@ -46,13 +46,13 @@ export function drawRootHazard(g: Graphics, h: Hazard, time: number) {
       }
       g.close();
     };
-    g.fillColor = ink(color, active ? 12 : 24);
+    g.fillColor = ink(color, active ? 12 : 50);
     area();
     g.fill();
     area();
     g.stroke();
-    g.strokeColor = ink(color, active ? 70 : 210);
-    g.lineWidth = 2;
+    g.strokeColor = ink(color, active ? 70 : 255);
+    g.lineWidth = 4;
     area();
     g.stroke();
     for (const t of [h.due, h.until]) {
@@ -110,12 +110,12 @@ export function drawRootHazard(g: Graphics, h: Hazard, time: number) {
       inner = b.inner * S;
     if (b.shape === "ring") {
       // Fill the annular strip without painting over its genuinely safe center.
-      g.strokeColor = ink(color, preview ? 18 : active ? 90 : 35);
+      g.strokeColor = ink(color, preview ? 18 : active ? 90 : 60);
       g.lineWidth = outer - inner;
       g.circle(x, y, (outer + inner) / 2);
       g.stroke();
     } else {
-      g.fillColor = ink(color, preview ? 12 : active ? 75 : 30);
+      g.fillColor = ink(color, preview ? 12 : active ? 75 : 55);
       g.circle(x, y, outer);
       g.fill();
     }
@@ -125,7 +125,7 @@ export function drawRootHazard(g: Graphics, h: Hazard, time: number) {
       g.circle(x, y, r);
       g.stroke();
       g.strokeColor = ink(color, preview ? 100 : 240);
-      g.lineWidth = 2;
+      g.lineWidth = 4;
       g.circle(x, y, r);
       g.stroke();
     }

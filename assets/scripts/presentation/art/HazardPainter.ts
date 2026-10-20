@@ -126,6 +126,23 @@ function progressOf(h: Hazard, time: number) {
   return Math.max(0, Math.min(1, (time - h.created) / Math.max(0.001, h.due - h.created)));
 }
 
+/** Shared cast cue, drawn above spells on every map. */
+export function drawBossCastSignals(g: Graphics, w: SurvivalWorld) {
+  for (const boss of w.enemies) {
+    if (boss.kind !== "boss" || boss.hp <= 0) continue;
+    const pending = w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.due > w.time && !h.library?.cancelled && !h.wind?.cancelled)
+      .sort((a,b) => a.due - b.due)[0];
+    if (!pending) continue;
+    const x = boss.x * 48, y = boss.y * 48 + 152, p = progressOf(pending,w.time);
+    g.fillColor=ink("#24151d",245);g.circle(x,y,24);g.fill();
+    g.strokeColor=ink("#fff0bd",255);g.lineWidth=4;g.circle(x,y,24);g.stroke();
+    g.strokeColor=ink("#ff765b",255);g.lineWidth=6;
+    arc(g,x,y,30,-Math.PI/2,-Math.PI/2+Math.PI*2*p);g.stroke();
+    g.strokeColor=ink("#fff0bd",255);g.lineWidth=5;g.moveTo(x,y+12);g.lineTo(x,y-3);g.stroke();
+    g.fillColor=ink("#fff0bd",255);g.circle(x,y-12,3);g.fill();
+  }
+}
+
 function drawCircle(g: Graphics, h: Hazard, time: number) {
   const x = h.x * 48,
     y = h.y * 48,
@@ -137,7 +154,7 @@ function drawCircle(g: Graphics, h: Hazard, time: number) {
   g.circle(x, y, r);
   g.fill();
   g.strokeColor = ink(c.edge, 235);
-  g.lineWidth = 2.6;
+  g.lineWidth = 5;
   g.circle(x, y, r);
   g.stroke();
   if (!active) {
@@ -165,9 +182,9 @@ function drawSiegeGround(g: Graphics, h: Hazard, time: number) {
     r = h.radius * 48,
     p = progressOf(h, time),
     active = time >= h.due;
-  g.fillColor = ink("#a454ba", active ? 88 : 20 + p * 38);
-  g.strokeColor = ink("#e3a1ff", 245);
-  g.lineWidth = 3;
+  g.fillColor = ink("#c94e86", active ? 120 : 48 + p * 48);
+  g.strokeColor = ink("#fff0bd", 255);
+  g.lineWidth = 5;
   g.circle(x, y, r);
   g.fill();
   g.stroke();
@@ -211,6 +228,10 @@ function drawBell(g: Graphics, h: Hazard, time: number) {
   g.fillColor = ink(waiting ? "#d9be75" : "#83dff3", waiting ? 35 + p * 35 : 145);
   g.lineWidth = 3;
   if (inner > 0) {
+    // Only the annulus is dangerous; keep the safe centre unfilled.
+    g.moveTo(x+r,y);arc(g,x,y,r,0,Math.PI*2,40);
+    g.lineTo(x+inner,y);arc(g,x,y,inner,Math.PI*2,0,40);
+    g.close();g.fill();g.lineWidth=5;
     g.circle(x, y, inner);
     g.stroke();
     g.circle(x, y, r);

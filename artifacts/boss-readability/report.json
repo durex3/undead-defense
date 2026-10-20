@@ -1,0 +1,75 @@
+{
+  "scope": "Real boss casts, offline runtime painter at phone landscape size; no browser/human validation.",
+  "stages": [
+    {
+      "stage": 1,
+      "maxHp": 20580.000000000004,
+      "skill": "督军钉位",
+      "warningSeconds": 1.1000000000000227,
+      "vertices": 1153
+    },
+    {
+      "stage": 2,
+      "maxHp": 22260,
+      "skill": "巢皇砂卵",
+      "warningSeconds": 1.6499999999999773,
+      "vertices": 1111
+    },
+    {
+      "stage": 3,
+      "maxHp": 24024,
+      "skill": "断轨电弧",
+      "warningSeconds": 1.1499999999999773,
+      "vertices": 1148
+    },
+    {
+      "stage": 4,
+      "maxHp": 24360,
+      "skill": "月兽跃扑",
+      "warningSeconds": 1.75,
+      "vertices": 1178
+    },
+    {
+      "stage": 5,
+      "maxHp": 24864,
+      "skill": "钟庭声浪",
+      "warningSeconds": 1.3999999999999773,
+      "vertices": 796
+    },
+    {
+      "stage": 6,
+      "maxHp": 26040,
+      "skill": "船坞潮墙",
+      "warningSeconds": 1.3999999999999773,
+      "vertices": 1116
+    },
+    {
+      "stage": 7,
+      "maxHp": 30240,
+      "skill": "矿窟折射弹",
+      "warningSeconds": 1.5,
+      "vertices": 756
+    },
+    {
+      "stage": 8,
+      "maxHp": 30240,
+      "skill": "温室摆藤",
+      "warningSeconds": 1.8000000000000114,
+      "vertices": 1076
+    },
+    {
+      "stage": 9,
+      "maxHp": 30240,
+      "skill": "风廊曲羽",
+      "warningSeconds": 1.8000000000000114,
+      "vertices": 975
+    },
+    {
+      "stage": 10,
+      "maxHp": 26880,
+      "skill": "禁库钤印",
+      "warningSeconds": 2,
+      "vertices": 875
+    }
+  ]
+}

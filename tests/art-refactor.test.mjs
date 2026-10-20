@@ -70,7 +70,8 @@ test("pickup emphasis follows player distance without changing experience or pot
 test("landing chips occur only after impact and expire before the hazard ends",()=>{
   const w=makeWorld(4);w.hazards=[makeMoonHazard({shape:"landing"})];
   const snapshot=JSON.stringify(w.hazards);
-  const sample=time=>{w.time=time;const g=new Graphics();drawHazards(g,w,true);return g.commands.filter(c=>c.op==="fill").length;};
+  // Count the six angular chips, independently of the new filled warning disc.
+  const sample=time=>{w.time=time;const g=new Graphics();drawHazards(g,w,true);return g.commands.filter(c=>c.op==="fill"&&(c.d.match(/Z/gi)||[]).length>=6).length;};
   const waiting=sample(.99),impact=sample(1.01),settled=sample(1.3);
   assert.ok(impact>waiting);assert.ok(impact>settled);
   assert.equal(JSON.stringify(w.hazards),snapshot);

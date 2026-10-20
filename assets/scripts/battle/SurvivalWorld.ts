@@ -61,6 +61,7 @@ export class SurvivalWorld {
   lastHurt = -Infinity;
   lastDamageSource = "";
   healing = { potion: 0, repair: 0 };
+  private bossPotionMilestones = new Map<number, number>();
   state: "starting" | "battle" | "upgrade" | "modification" | "tactical" | "won" | "lost" = "battle";
   pauses = new Set<string>();
   hp = 100;
@@ -180,7 +181,7 @@ export class SurvivalWorld {
     const c = ENEMIES[kind];
     const hp =
       kind === "boss"
-        ? c.health * STAGES[this.stageId].bossHealth * 8
+        ? c.health * STAGES[this.stageId].bossHealth * 3
         : 30 * (1 + Math.min(this.time, ["paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health);
     const e: Enemy = {
@@ -291,6 +292,20 @@ export class SurvivalWorld {
     if(isElite(e.kind)&&this.stageStrategy.vulnerable?.(e))amount*=1.25;
     const dealt = Math.min(e.hp, amount);
     e.hp -= amount;
+    // Boss fights provide supplies even when their summoned adds cannot drop loot.
+    if (e.kind === "boss" && e.hp > 0) {
+      let milestones = this.bossPotionMilestones.get(e.id) ?? 0;
+      while (milestones < 3 && e.hp <= e.maxHp * (0.75 - milestones * 0.25)) {
+        const angle = Math.atan2(e.y - this.player.y, e.x - this.player.x) + Math.PI / 2;
+        const p = { x: this.player.x + Math.cos(angle) * 2.2, y: this.player.y + Math.sin(angle) * 2.2 };
+        p.x = Math.max(-21, Math.min(21, p.x));
+        p.y = Math.max(-25, Math.min(25, p.y));
+        this.stageStrategy.map.resolve(p, .3);
+        this.dropPotion(p.x, p.y);
+        milestones++;
+      }
+      this.bossPotionMilestones.set(e.id, milestones);
+    }
     const attribution = source === "needleEcho" ? "needle" : source === "poisonBurst" ? "poison" : source;
     this.damage[attribution] = (this.damage[attribution] || 0) + dealt;
     this.effects.push({

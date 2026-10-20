@@ -109,12 +109,12 @@ export function drawMoonHazard(g: Graphics, h: Hazard, time: number) {
     v = moonPose(m, time),
     waiting = time < m.due;
   g.strokeColor = ink("#ffa97e", waiting ? 230 : 170);
-  g.lineWidth = 2;
+  g.lineWidth = waiting ? 4 : 2;
   if (m.shape !== "blade") {
     const anchor = m.shape === "landing" ? m.end : m.start;
     warningGlyph(g, anchor.x * 48, anchor.y * 48, m.shape === "claw" ? "claw" : m.shape === "landing" ? "landing" : "sweep", waiting ? "#ffb38c" : "#fff0ce", !waiting);
     g.strokeColor = ink("#ffa97e", waiting ? 230 : 130);
-    g.lineWidth = 2;
+    g.lineWidth = waiting ? 4 : 2;
   }
   if (m.shape === "blade") {
     // Both immutable legs are shown from the initial warning; double chevrons identify return.
@@ -159,6 +159,9 @@ export function drawMoonHazard(g: Graphics, h: Hazard, time: number) {
   } else if (m.shape === "landing") {
     const x = m.end.x * 48,
       y = m.end.y * 48;
+    if (waiting) {
+      g.fillColor=ink("#ee885c",55);g.circle(x,y,m.radius*48);g.fill();
+    }
     g.circle(x, y, m.radius * 48);
     g.stroke();
     g.strokeColor = ink("#ffd7b6");

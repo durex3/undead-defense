@@ -2,10 +2,6 @@ import fs from 'node:fs';
 import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
 import {WEAPONS} from '../temp/tests/battle/SurvivalConfig.mjs';
 import {BOSS_TIME} from '../temp/tests/battle/EncounterPacing.mjs';
-import {siegeMap} from '../temp/tests/battle/SiegeMap.mjs';
-import {sandMap} from '../temp/tests/battle/SandMap.mjs';
-import {thunderMap} from '../temp/tests/battle/ThunderMap.mjs';
-import {moonMap} from '../temp/tests/battle/MoonMap.mjs';
 
 // Fixed full builds and invulnerability isolate output windows, not player survival.
 const builds={
@@ -14,14 +10,15 @@ const builds={
   pursuit:{blade:['hunt','return'],ghost:['execution','haunt'],bone:['lance','marrow'],holy:['execution','brand']},
 };
 const result=[];
-for(const stage of [1,2,3,4])for(const [build,mods] of Object.entries(builds)) {
-  const w=new SurvivalWorld(19,'ranger',stage), arena=[null,siegeMap,sandMap,thunderMap,moonMap][stage];
+for(const stage of [1,2,3,4,5,6,7,8,9,10])for(const [build,mods] of Object.entries(builds)) {
+  const w=new SurvivalWorld(19,'ranger',stage), arena=w.stageStrategy.map;
   w.player={x:0,y:0};w.camera={...w.player};w.time=BOSS_TIME;w.level=64;
   for(const s of WEAPONS){w.skills[s]=mods[s]?8:0;w.mods[s]=mods[s]||[];}
   for(const p of ['power','hourglass','area'])w.passives[p]=4;
   w.passives.amount=2;
   w.director.step(w,0);
   for(let frame=0;frame<120*30&&w.state!=='won';frame++) {
+    if(w.state==='upgrade')w.choose(w.cards.find(c=>c!=='repair')??w.cards[0]);
     const boss=w.enemies.find(e=>e.kind==='boss'&&e.hp>0);
     if(!boss)throw Error(`Missing boss in stage ${stage}`);
     const a=(w.time-BOSS_TIME)*.35;

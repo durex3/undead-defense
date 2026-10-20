@@ -36,7 +36,7 @@ export function drawWindHazard(g: Graphics, h: Hazard, time: number) {
       point(3.5, 1.6),
       point(-3.5, 1.6),
     ];
-    g.fillColor = ink(color, active ? 20 : 12);
+    g.fillColor = ink(color, active ? 20 : 40);
     corners.forEach((p, i) =>
       i ? g.lineTo(p.x * S, p.y * S) : g.moveTo(p.x * S, p.y * S),
     );
@@ -68,7 +68,7 @@ export function drawWindHazard(g: Graphics, h: Hazard, time: number) {
     badge = point(-3.5, 1.6);
   } else {
     stroke(b.points, 6, "#17252e", preview ? 90 : 190);
-    stroke(b.points, 2, color, preview ? 100 : active ? 95 : 230);
+    stroke(b.points, preview ? 2 : 4, color, preview ? 100 : active ? 95 : 255);
     if (b.shape === "glide") {
       const p = b.points[1];
       g.strokeColor = ink(color, 230);

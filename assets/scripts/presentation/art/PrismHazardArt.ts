@@ -38,7 +38,7 @@ export function drawPrismHazard(g: Graphics, h: Hazard, t: number) {
     }
   };
   if (warning) {
-    g.strokeColor = ink(core ? "#d1a874" : "#d6b6e5", preview ? 20 : 45);
+    g.strokeColor = ink(core ? "#d1a874" : "#d6b6e5", preview ? 20 : 75);
     g.lineWidth = h.width * S * 2;
     route();
     g.stroke();
@@ -51,7 +51,7 @@ export function drawPrismHazard(g: Graphics, h: Hazard, t: number) {
     preview ? "#d8bb98" : core ? "#ffd19a" : "#f4d1f9",
     warning ? (preview ? 140 : 230) : 75,
   );
-  g.lineWidth = warning ? 2 : 1.5;
+  g.lineWidth = warning ? 4 : 2;
   route();
   g.stroke();
   if (warning) {

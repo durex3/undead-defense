@@ -34,9 +34,10 @@ export class UpgradeSystem {
     const w = this.w;
     if (!w.active) return;
     if (this.openNode()) return;
-    if (w.level < MAX_PLAYER_LEVEL && w.xp >= w.xpNeed) {
+    const weaponsComplete = !this.legal().some(c => WEAPONS.includes(c as Skill));
+    if ((w.level < MAX_PLAYER_LEVEL || weaponsComplete) && w.xp >= w.xpNeed) {
       w.xp -= w.xpNeed;
-      w.level++;
+      w.level = Math.min(MAX_PLAYER_LEVEL, w.level + 1);
       w.state = "upgrade";
       w.setMove(0, 0);
       this.roll();
@@ -49,6 +50,7 @@ export class UpgradeSystem {
         w.skills[s] < MAX_SKILL_LEVEL &&
         (w.skills[s] > 0 || w.weaponCount < w.weaponSlots),
     );
+    if (!cards.length && w.hp < w.maxHp) cards.push("repair");
     const slots = PASSIVES.filter((p) => w.passives[p] > 0).length;
     cards.push(
       ...PASSIVES.filter(
@@ -63,6 +65,11 @@ export class UpgradeSystem {
     const w = this.w,
       pool = this.legal(),
       cards: Card[] = [];
+    // Once weapons are complete, a recovery item is a guaranteed choice.
+    if (pool.includes("repair")) {
+      cards.push("repair");
+      pool.splice(pool.indexOf("repair"), 1);
+    }
     const group = (c: Card) =>
       WEAPONS.includes(c as Skill)
         ? w.skills[c as Skill] > 0
@@ -124,6 +131,7 @@ export class UpgradeSystem {
       const heal = Math.min(20, w.maxHp - w.hp);
       w.hp += heal;
       w.healing.repair += heal;
+      if (heal > 0) w.effects.push({ type: "heal", ...w.player });
     }
     this.complete();
     return true;

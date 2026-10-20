@@ -63,11 +63,11 @@ export function drawBellHazard(g: Graphics, h: Hazard, t: number) {
   path();
   g.stroke();
   g.strokeColor = ink(warning ? "#ff9a69" : "#ffcf9d");
-  g.lineWidth = warning ? 2.5 : 4;
+  g.lineWidth = warning ? 4.5 : 6;
   path();
   g.stroke();
   if (b.shape === "wax") {
-    g.fillColor = ink("#e1bf89", warning ? 25 : 100);
+    g.fillColor = ink("#e1bf89", warning ? 55 : 120);
     g.circle(x, y, h.radius * 48);
     g.fill();
   }

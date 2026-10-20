@@ -40,7 +40,7 @@ export function drawTideHazard(g: Graphics, h: Hazard, t: number) {
     // Filled warning cells and the live band share the collision strip cutoffs.
     g.fillColor = ink(
       warning ? "#e69e74" : "#68c5ba",
-      preview ? 12 : warning ? 24 : 125,
+      preview ? 12 : warning ? 50 : 125,
     );
     for (let i = 0; i < TIDE_STRIPS; i++) {
       const stop = b.stops[i];
@@ -88,7 +88,7 @@ export function drawTideHazard(g: Graphics, h: Hazard, t: number) {
     edges();
     g.stroke();
     g.strokeColor = ink(color, preview ? 150 : 255);
-    g.lineWidth = warning ? 2.5 : 4;
+    g.lineWidth = warning ? 4.5 : 6;
     edges();
     g.stroke();
     if (warning) {

@@ -53,7 +53,7 @@ export function drawLibraryHazard(g: Graphics, h: Hazard, time: number) {
   if (b.shape === "imprint") {
     const corners = libraryCorners(h, time);
     path(corners, true);
-    g.fillColor = ink(color, active ? 100 : preview ? 10 : 26);
+    g.fillColor = ink(color, active ? 100 : preview ? 10 : 55);
     g.fill();
     stroke(corners, 7, "#1d1b25", 230, true);
     stroke(corners, 4, color, preview ? 140 : 255, true);
