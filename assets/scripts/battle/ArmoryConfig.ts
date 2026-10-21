@@ -170,6 +170,9 @@ export function playerAttributes(w: SurvivalWorld) {
 }
 export interface WeaponStats {
   damage: number;
+  /** Ring-added attacks, after native level/mod counts. */
+  replicaCount?: number;
+  replicaRadiusScale?: number;
   count: number;
   cooldown: number;
   radius: number;
@@ -231,7 +234,7 @@ export function weaponStats(
     damage: data.damage[l] * (1 + a.damage) * gradeMultiplier(skill, w.weaponGrades),
     count: data.count[l] + (skill === "lamp" || skill === "needle" ? 0 : a.amount),
     cooldown: data.cooldown[l] * (1 - a.cooldown),
-    radius: data.radius * a.area,
+    radius: data.radius * Math.sqrt(a.area),
     duration:
       data.duration *
       (["water", "fire", "mine", "void", "frost", "bone", "lamp", "needle"].includes(skill) ||
@@ -269,14 +272,21 @@ export function weaponStats(
   if (skill === "lamp" || skill === "needle") applySupportMods(skill,s);
   if (!["blade", "fire", "water", "hammer", "wheel", "lamp", "needle"].includes(skill))
     applyExtraMods(skill as ExtraSkill, s);
+  s.replicaRadiusScale = ["fire","water","frost","lightning","mine","void","holy"].includes(skill) ? .8 : 1;
+  s.replicaCount = skill === "lamp" || skill === "needle" ? 0 : Math.min(a.amount,Math.max(0,s.count-1));
   return s;
+}
+/** Extra ring attacks retain coverage with reduced damage. Native attacks and
+ * level/mod additions keep their own existing budget; never attenuate twice. */
+export function replicaStats(s:WeaponStats,index:number):WeaponStats {
+ return index>=s.count-(s.replicaCount||0)?{...s,damage:s.damage*.4,radius:s.radius*(s.replicaRadiusScale??1)}:s;
 }
 export const PASSIVE_LABELS: Record<Passive, string> = {
   power: "伤害",
   hourglass: "冷却缩减",
-  area: "攻击范围",
+  area: "覆盖面积",
   duration: "持续时间",
-  amount: "主攻击数量",
+  amount: "追加攻击（40%伤害）",
   boots: "移动速度",
   vitality: "最大生命",
   magnet: "拾取半径",

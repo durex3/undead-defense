@@ -8,7 +8,7 @@ import {
   segmentDistance,
   angleDelta,
 } from "./SurvivalTypes";
-import { weaponStats, WeaponStats } from "./ArmoryConfig";
+import { weaponStats, WeaponStats, replicaStats } from "./ArmoryConfig";
 import { EXTRA_WEAPONS, ExtraSkill } from "./ExtraArmoryConfig";
 export const EXTRA_LIMIT = 192;
 export interface ExtraAttack extends Point {
@@ -168,7 +168,7 @@ export class ExtraArmory {
       const a: ExtraAttack = {
         active: true,
         skill,
-        stats: s,
+        stats: skill === "lightning" ? s : replicaStats(s,i),
         created: w.time,
         age: 0,
         until: w.time + s.duration,
@@ -298,14 +298,14 @@ export class ExtraArmory {
     const w = this.w,
       s = a.stats,
       storm = this.has(a, "storm");
-    const strike = (p: Point, damage: number, seen: Set<number>) => {
+    const strike = (p: Point, stats:WeaponStats, scale:number, seen: Set<number>) => {
       for (const e of this.enemies(
         p,
-        (storm ? s.radius : (0.48 * s.radius) / 0.9) + 0.35,
+        (storm ? stats.radius : (0.48 * stats.radius) / 0.9) + 0.35,
       ))
         if (!seen.has(e.id)) {
           seen.add(e.id);
-          this.damage(e, damage, a, p);
+          this.damage(e, stats.damage*scale, a, p);
         }
     };
     if (a.phase === 0) {
@@ -313,7 +313,7 @@ export class ExtraArmory {
       while (a.index < Math.min(n, a.points.length)) {
         const i = a.index++,
           p = a.points[i];
-        strike(p, s.damage, a.hit);
+        strike(p, replicaStats(s,i), 1, a.hit);
         if (this.has(a, "bridge") && i > 0) {
           const prev = a.points[i - 1];
           for (const e of w.enemies)
@@ -322,10 +322,10 @@ export class ExtraArmory {
               e.state !== "arriving" &&
               !e.sand?.buried &&
               !a.secondary.has(e.id) &&
-              segmentDistance(e, prev, p) < (0.24 * s.radius) / 0.9 + 0.35
+              segmentDistance(e, prev, p) < (0.24 * replicaStats(s,i).radius) / 0.9 + 0.35
             ) {
               a.secondary.add(e.id);
-              this.damage(e, s.damage * 0.45, a, p);
+              this.damage(e, replicaStats(s,i).damage * 0.45, a, p);
             }
         }
       }
@@ -336,7 +336,7 @@ export class ExtraArmory {
     } else if (a.phase === 1 && a.age >= a.next) {
       if (this.has(a, "echo")) {
         const seen = new Set<number>();
-        for (const p of a.points) strike(p, s.damage * 0.65, seen);
+        for (let i=0;i<a.points.length;i++) strike(a.points[i], replicaStats(s,i), .65, seen);
       }
       a.phase = 2;
       a.next = a.age + 0.18;
@@ -437,19 +437,6 @@ export class ExtraArmory {
       a.phase=0;
       dt=Math.min(dt,Math.max(0,a.age-.2));
     }
-    if (a.phase === 1) {
-      const end = a.end!;
-      for (const e of this.enemies(a, s.radius + 1.6))
-        if (
-          !a.secondary.has(e.id) &&
-          segmentDistance(e, a.start, end) <= s.radius + 0.35
-        ) {
-          a.secondary.add(e.id);
-          this.damage(e, s.damage * 0.5, a);
-        }
-      if (w.time >= a.until) a.active = false;
-      return;
-    }
     const old = { x: a.x, y: a.y },
       step = Math.min(a.speed * dt, s.range - a.travel);
     a.x += Math.cos(a.angle) * step;
@@ -466,26 +453,24 @@ export class ExtraArmory {
       )
       .sort((b, c) => distance(b, old) - distance(c, old));
     for (const e of hits) {
+      if(e.hp<=0)continue;
       const stacks = this.has(a, "marrow") ? Math.min(3, a.hit.size) : 0;
       this.damage(e, s.damage * (1 + stacks * 0.15), a);
       a.hit.add(e.id);
+      if(this.has(a,"ridge") && a.points.length<3) {
+        // Burst at the actual pierced enemy, never an empty far endpoint.
+        const center={x:e.x,y:e.y},radius=.9*s.radius/.24;
+        a.points.push(center);
+        w.effects.push({type:"explosion",skill:"bone",form:"boneBurst",...center,radius});
+        for(const other of this.enemies(center,radius+.35))if(!a.secondary.has(other.id)) {
+          a.secondary.add(other.id);
+          this.damage(other,s.damage*.35,a,center);
+        }
+      }
       if (this.has(a, "marrow"))
         a.speed = 12 * (1 + Math.min(3, a.hit.size) * 0.15);
     }
-    if (a.travel >= s.range - 0.001 || a.age >= 2) {
-      if (this.has(a, "ridge")) {
-        a.phase = 1;
-        a.start = {
-          x: a.x - Math.sin(a.angle) * 1.2,
-          y: a.y + Math.cos(a.angle) * 1.2,
-        };
-        a.end = {
-          x: a.x + Math.sin(a.angle) * 1.2,
-          y: a.y - Math.cos(a.angle) * 1.2,
-        };
-        a.until = w.time + (1.2 * s.duration) / 1.2;
-      } else a.active = false;
-    }
+    if (a.travel >= s.range - 0.001 || a.age >= 2) a.active=false;
   }
   private mine(a: ExtraAttack) {
     const w = this.w,

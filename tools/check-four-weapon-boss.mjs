@@ -39,5 +39,5 @@ for(const seed of [19,41,73])for(const stage of [1,2,3,4,5,6,7,8,9,10])for(const
 }
 const report={scope:'Four max-level weapons, fixed passives and mods, three seeds, invulnerable orbit controller. Output-window diagnostic, not human win rate.',result};
 fs.mkdirSync('artifacts',{recursive:true});
-fs.writeFileSync('artifacts/four-weapon-boss-0.33.7.json',JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync('artifacts/four-weapon-boss-0.33.8.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(result,null,2));

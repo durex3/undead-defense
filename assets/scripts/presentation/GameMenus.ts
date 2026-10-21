@@ -484,7 +484,7 @@ export class GameMenus {
     );
     h.text(
       h.overlay,
-      `总伤害 +${Math.round(a.damage * 100)}% · 冷却 −${Math.round(a.cooldown * 100)}%\n范围 +${Math.round((a.area - 1) * 100)}% · 持续 +${Math.round((a.duration - 1) * 100)}%`,
+      `总伤害 +${Math.round(a.damage * 100)}% · 冷却 −${Math.round(a.cooldown * 100)}%\n覆盖面积 +${Math.round((a.area - 1) * 100)}% · 持续 +${Math.round((a.duration - 1) * 100)}%`,
       280,
       -125,
       17,

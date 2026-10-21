@@ -42,11 +42,12 @@ export function weaponDetails(w: SurvivalWorld, s: Skill) {
     `${GRADE_NAMES[gradeOf(s,w.weaponGrades)]} · ${weaponName(s,w.weaponGrades)}`,
     WEAPON_ROLES[s],
     `${w.skills[s]}/8级 · ${a.count}${countLabel} · ${s==="blade"&&!a.mods.includes("hunt")?"旋转一周":"周期"} ${n(a.cooldown)}秒`,
-    `${damageLabel} ${n(a.damage)} · ${rangeLabel}${["water", "mine", "void", "frost", "bone"].includes(s) ? ` · 持续 ${n(a.duration)}秒` : ""}`,
+    `${damageLabel} ${n(a.damage)} · ${rangeLabel}${["water", "mine", "void", "frost"].includes(s) ? ` · 持续 ${n(a.duration)}秒` : ""}`,
     ...w.mods[s].map((id) => {
       const m = modInfo(s, id)!;
       return `${m.glyph} ${m.name}：${m.effect}\n代价：${m.cost}`;
     }),
+    ...(w.passives.amount && s!=="lamp" && s!=="needle" ? [s==="hammer"||s==="wheel"?"重锤/飞轮保留首击，所有追加攻击为40%伤害。":"指环追加攻击为40%伤害；复制范围技半径80%，原有攻击不减伤。"] : []),
     "4级、8级各一次改造；两个改造共同改变攻击形态。",
     s === "blade"
       ? "数把实体飞刀持续等距环绕，每刀每目标每周一次；扩阵覆盖外圈，追猎替换为远射；往返每周多一个命中段，碎刃每周固定2把。持续属性不改变转速。"
@@ -85,7 +86,7 @@ export function upgradeChanges(w: SurvivalWorld, c: Card) {
   }
   const p = c as Passive,
     l = w.passives[p];
-  return `${PASSIVE_LABELS[p]}\n${passiveValue(p, l)} → ${passiveValue(p, l + 1)}\n${l + 1}/${PASSIVE_MAX[p]}级`;
+  return `${PASSIVE_LABELS[p]}${p==="area"?"（半径按面积换算）":p==="amount"?"；原有攻击不减伤，复制范围技半径80%":""}\n${passiveValue(p, l)} → ${passiveValue(p, l + 1)}\n${l + 1}/${PASSIVE_MAX[p]}级`;
 }
 export function upgradeInventory(w: SurvivalWorld) {
   return (

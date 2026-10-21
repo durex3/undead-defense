@@ -161,6 +161,33 @@
       "saved"
     ]
   },
+  "compiledPassives": {
+    "fire": [
+      {
+        "damage": 33,
+        "radius": 1.6565023392678924
+      },
+      {
+        "damage": 13.200000000000001,
+        "radius": 1.325201871414314
+      },
+      {
+        "damage": 13.200000000000001,
+        "radius": 1.325201871414314
+      }
+    ],
+    "bursts": [
+      {
+        "type": "explosion",
+        "skill": "bone",
+        "form": "boneBurst",
+        "x": 2,
+        "y": 0,
+        "radius": 0.9
+      }
+    ],
+    "boneRemaining": false
+  },
   "compiledGrowth": {
     "hp": [
       20580.000000000004,

@@ -2,7 +2,7 @@ import { Graphics } from "cc";
 import type { SurvivalWorld } from "../../../battle/SurvivalWorld";
 import type { ExtraAttack } from "../../../battle/ExtraArmory";
 import { ink } from "../Ink";
-import { weaponStats } from "../../../battle/ArmoryConfig";
+import { weaponStats,replicaStats } from "../../../battle/ArmoryConfig";
 import { cutTrail, impactCrown, chevrons } from "../VfxBrush";
 import { lightningEnvelope, skyBoltPoints } from "./LightningMotion";
 
@@ -401,49 +401,14 @@ function boneAir(g: Graphics, a: ExtraAttack) {
   }
 }
 
-function boneGround(g: Graphics, a: ExtraAttack) {
-  if (a.phase !== 1 || !a.end) return;
-  const c = P.bone;
-  const sx = a.start.x * 48,
-    sy = a.start.y * 48,
-    ex = a.end.x * 48,
-    ey = a.end.y * 48;
-  const dx = ex - sx,
-    dy = ey - sy,
-    d = Math.hypot(dx, dy) || 1;
-  const nx = -dy / d,
-    ny = dx / d;
-  g.strokeColor = ink(c.mid, 220);
-  g.lineWidth = 5;
-  g.moveTo(sx, sy);
-  g.lineTo(ex, ey);
-  g.stroke();
-  for (let i = 0; i < 5; i++) {
-    const t = (i + 0.5) / 5;
-    const px = sx + dx * t,
-      py = sy + dy * t;
-    poly(
-      g,
-      [
-        [px - nx * 3, py - ny * 3],
-        [px + nx * 15, py + ny * 15],
-        [px + nx * 3, py + ny * 3],
-      ],
-      c.core,
-      230,
-      "#5a4633",
-    );
-  }
-}
-
 /* ---------------- lightning ---------------- */
 
 function lightningAir(g: Graphics, w: SurvivalWorld, a: ExtraAttack, reduced: boolean) {
   const c = P.lightning;
   const n = Math.max(0, a.index);
   const storm = has(a, "storm");
-  const r = a.stats.radius * 48;
   for (let i = 0; i < Math.min(n, a.points.length); i++) {
+    const r=replicaStats(a.stats,i).radius*48;
     const p = a.points[i],
       px = p.x * 48,
       py = p.y * 48;
@@ -556,7 +521,6 @@ export function drawExtraSpell(g: Graphics, w: SurvivalWorld, ground: boolean, r
       else if (a.skill === "mine") mineGround(g, w, a, reduced);
       else if (a.skill === "void") voidGround(g, w, a, reduced||crowded);
       else if (a.skill === "holy") holyGround(g, a);
-      else if (a.skill === "bone" && a.phase === 1) boneGround(g, a);
     } else {
       if (a.skill === "ghost") ghostAir(g, w, a);
       else if (a.skill === "bone" && (a.phase === 0 || a.phase === -1)) boneAir(g, a);

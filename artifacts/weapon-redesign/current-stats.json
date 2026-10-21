@@ -11,7 +11,9 @@
           "radius": 0.21,
           "duration": 1.6,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 10,
@@ -20,7 +22,9 @@
           "radius": 0.21,
           "duration": 1.6,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 10,
@@ -29,7 +33,9 @@
           "radius": 0.21,
           "duration": 1.6,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 10,
@@ -38,7 +44,9 @@
           "radius": 0.21,
           "duration": 1.4,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 13,
@@ -47,7 +55,9 @@
           "radius": 0.21,
           "duration": 1.4,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 13,
@@ -56,7 +66,9 @@
           "radius": 0.21,
           "duration": 1.4,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 16,
@@ -65,7 +77,9 @@
           "radius": 0.21,
           "duration": 1.4,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 16,
@@ -74,7 +88,9 @@
           "radius": 0.21,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -124,7 +140,9 @@
           "radius": 1.4,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 38,
@@ -133,7 +151,9 @@
           "radius": 1.4,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 38,
@@ -142,7 +162,9 @@
           "radius": 1.4,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 38,
@@ -151,7 +173,9 @@
           "radius": 1.5999999999999999,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 48,
@@ -160,7 +184,9 @@
           "radius": 1.5999999999999999,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 48,
@@ -169,7 +195,9 @@
           "radius": 1.5999999999999999,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 60,
@@ -178,7 +206,9 @@
           "radius": 1.5999999999999999,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 60,
@@ -187,7 +217,9 @@
           "radius": 1.7999999999999998,
           "duration": 2.6,
           "range": 13,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -237,7 +269,9 @@
           "radius": 1.5,
           "duration": 4,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 12,
@@ -246,7 +280,9 @@
           "radius": 1.5,
           "duration": 4,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 12,
@@ -255,7 +291,9 @@
           "radius": 1.5,
           "duration": 4,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 15,
@@ -264,7 +302,9 @@
           "radius": 1.7,
           "duration": 4,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 18,
@@ -273,7 +313,9 @@
           "radius": 1.7,
           "duration": 4,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 20,
@@ -282,7 +324,9 @@
           "radius": 1.7,
           "duration": 5,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 23,
@@ -291,7 +335,9 @@
           "radius": 1.7,
           "duration": 5,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 26,
@@ -300,7 +346,9 @@
           "radius": 1.9,
           "duration": 5,
           "range": 10,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -350,7 +398,9 @@
           "radius": 3.2,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 30,
@@ -359,7 +409,9 @@
           "radius": 3.2,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 30,
@@ -368,7 +420,9 @@
           "radius": 3.2,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 30,
@@ -377,7 +431,9 @@
           "radius": 3.5840000000000005,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 38.400000000000006,
@@ -386,7 +442,9 @@
           "radius": 3.5840000000000005,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 38.400000000000006,
@@ -395,7 +453,9 @@
           "radius": 3.5840000000000005,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 48,
@@ -404,7 +464,9 @@
           "radius": 3.5840000000000005,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 48,
@@ -413,7 +475,9 @@
           "radius": 3.942400000000001,
           "duration": 1.2,
           "range": 7,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -463,7 +527,9 @@
           "radius": 0.9,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 45,
@@ -472,7 +538,9 @@
           "radius": 0.9,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 45,
@@ -481,7 +549,9 @@
           "radius": 0.9,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 54,
@@ -490,7 +560,9 @@
           "radius": 1.0080000000000002,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 66,
@@ -499,7 +571,9 @@
           "radius": 1.0080000000000002,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 74,
@@ -508,7 +582,9 @@
           "radius": 1.0080000000000002,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 88,
@@ -517,7 +593,9 @@
           "radius": 1.0080000000000002,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 100,
@@ -526,7 +604,9 @@
           "radius": 1.1088000000000005,
           "duration": 0.4,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -576,7 +656,9 @@
           "radius": 0.3,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 18,
@@ -585,7 +667,9 @@
           "radius": 0.3,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 18,
@@ -594,7 +678,9 @@
           "radius": 0.3,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 18,
@@ -603,7 +689,9 @@
           "radius": 0.336,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 23.040000000000003,
@@ -612,7 +700,9 @@
           "radius": 0.336,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 23.040000000000003,
@@ -621,7 +711,9 @@
           "radius": 0.336,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 28.8,
@@ -630,7 +722,9 @@
           "radius": 0.336,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 28.8,
@@ -639,7 +733,9 @@
           "radius": 0.36960000000000004,
           "duration": 3,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -689,7 +785,9 @@
           "radius": 0.24,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 40,
@@ -698,7 +796,9 @@
           "radius": 0.24,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 40,
@@ -707,7 +807,9 @@
           "radius": 0.24,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 40,
@@ -716,7 +818,9 @@
           "radius": 0.26880000000000004,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 51.2,
@@ -725,7 +829,9 @@
           "radius": 0.26880000000000004,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 51.2,
@@ -734,7 +840,9 @@
           "radius": 0.26880000000000004,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 64,
@@ -743,7 +851,9 @@
           "radius": 0.26880000000000004,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         },
         {
           "damage": 64,
@@ -752,7 +862,9 @@
           "radius": 0.29568000000000005,
           "duration": 1.2,
           "range": 11,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 1,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -784,11 +896,11 @@
         },
         {
           "id": "ridge",
-          "name": "骨棘留阵",
-          "short": "骨棘",
-          "glyph": "╪",
-          "effect": "矛终点留1.2秒横向骨棘，触碰造成50%伤害",
-          "cost": "主矛伤害−15%；每条骨棘同目标只命中一次"
+          "name": "裂骨爆发",
+          "short": "裂骨",
+          "glyph": "✹",
+          "effect": "穿过敌人时原位裂骨，造成35%小范围伤害，每矛最多3次",
+          "cost": "主矛伤害−15%；每矛的裂骨对同目标只命中一次"
         }
       ]
     },
@@ -802,7 +914,9 @@
           "radius": 1.8,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 75,
@@ -811,7 +925,9 @@
           "radius": 1.8,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 75,
@@ -820,7 +936,9 @@
           "radius": 1.8,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 75,
@@ -829,7 +947,9 @@
           "radius": 2.0160000000000005,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 96,
@@ -838,7 +958,9 @@
           "radius": 2.0160000000000005,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 96,
@@ -847,7 +969,9 @@
           "radius": 2.0160000000000005,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 120,
@@ -856,7 +980,9 @@
           "radius": 2.0160000000000005,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 120,
@@ -865,7 +991,9 @@
           "radius": 2.217600000000001,
           "duration": 6,
           "range": 8,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -915,7 +1043,9 @@
           "radius": 2.2,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 10,
@@ -924,7 +1054,9 @@
           "radius": 2.2,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 10,
@@ -933,7 +1065,9 @@
           "radius": 2.2,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 10,
@@ -942,7 +1076,9 @@
           "radius": 2.4640000000000004,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 12.8,
@@ -951,7 +1087,9 @@
           "radius": 2.4640000000000004,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 12.8,
@@ -960,7 +1098,9 @@
           "radius": 2.4640000000000004,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 16,
@@ -969,7 +1109,9 @@
           "radius": 2.4640000000000004,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 16,
@@ -978,7 +1120,9 @@
           "radius": 2.710400000000001,
           "duration": 2.4,
           "range": 9,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         }
       ],
       "mods": [
@@ -1028,7 +1172,9 @@
           "radius": 1.2,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 50,
@@ -1037,7 +1183,9 @@
           "radius": 1.2,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 50,
@@ -1046,7 +1194,9 @@
           "radius": 1.2,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 50,
@@ -1055,7 +1205,9 @@
           "radius": 1.344,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 64,
@@ -1064,7 +1216,9 @@
           "radius": 1.344,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 64,
@@ -1073,7 +1227,9 @@
           "radius": 1.344,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 80,
@@ -1082,7 +1238,9 @@
           "radius": 1.344,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         },
         {
           "damage": 80,
@@ -1091,7 +1249,9 @@
           "radius": 1.4784000000000002,
           "duration": 0.55,
           "range": 12,
-          "mods": []
+          "mods": [],
+          "replicaRadiusScale": 0.8,
+          "replicaCount": 0
         }
       ],
       "mods": [

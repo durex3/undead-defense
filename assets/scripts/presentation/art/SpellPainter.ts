@@ -446,6 +446,11 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
       if (elite) spawn("crest", x, y + 20, "#f2c66d", 0, .34, 3, 0, 22);
     } else if (e.type === "explosion") {
       const c = skillColor(e.skill);
+      if(e.form === "boneBurst") {
+        spawn("fracture",x,y,c.mid,0,.2,3,0,(e.radius||.9)*48);
+        for(let i=0;i<Math.round(6*scale);i++)spawn("shard",x,y,i%2?c.core:c.edge,100,.18+rand()*.08,2.5);
+        continue;
+      }
       const heavy = e.form === "heavy";
       // Repeated heavy contacts share a short presentation gate, without delaying damage.
       if (heavy && particleTime < heavyAccentAt) continue;

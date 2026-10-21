@@ -257,7 +257,7 @@ const extraCells = [
   ["ghost · 归途", { skill: "ghost", mods: ["reap"], phase: 2, angle: 1.2, end: { x: -1, y: 0 } }],
   ["bone · 骨矛", { skill: "bone", mods: [], phase: 0, angle: -0.2 }],
   ["bone · 重矛", { skill: "bone", mods: ["lance"], phase: 0, angle: 0.1, stats: { radius: 0.35 } }],
-  ["bone · 骨棘", { skill: "bone", mods: ["ridge"], phase: 1, angle: 0, start: { x: -2, y: 0 }, end: { x: 2, y: 0 } }],
+  ["bone · 裂骨", { skill: "bone", mods: ["ridge"], phase: 0, angle: 0 }],
   ["mine · 符雷", { skill: "mine", mods: [], phase: 0, age: 0.8, x: -1, y: 0 }],
   ["mine · 布阵", { skill: "mine", mods: ["scatter"], phase: 0, age: 0.3, x: 0, y: 0 }],
   ["mine · 追爆", { skill: "mine", mods: ["fuse"], phase: 2, age: 0.4, x: 0, y: 0 }],

@@ -11,7 +11,7 @@ import {
   segmentDistance,
   angleDelta,
 } from "./SurvivalTypes";
-import { weaponStats, WeaponStats, playerAttributes, orbitProgress } from "./ArmoryConfig";
+import { weaponStats, WeaponStats, playerAttributes, orbitProgress, replicaStats } from "./ArmoryConfig";
 export const ARMORY_LIMITS = { shots: 256, fields: 64, pending: 64 };
 export interface ArmoryShot extends Point {
   active: boolean;
@@ -254,7 +254,7 @@ export class Armory {
           : 0;
       this.pending.push({
         skill,
-        stats: s,
+        stats: replicaStats(s,i),
         due: w.time + delay,
         index: i,
         group: g,
