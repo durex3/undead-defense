@@ -187,6 +187,14 @@ export class Armory {
       w.effects.push({ type: "cast", ...w.player, skill });
 
   }
+  /** Switching away from orbit cancels its old snapshots, without a free cast or fragment proc. */
+  onModification(skill:Skill,id:string){
+    if(skill!=="blade"||id!=="hunt")return;
+    const retired=new Set<number>();
+    for(const p of this.shots)if(p.active&&p.skill==="blade"&&p.orbit){p.active=false;retired.add(p.group);}
+    this.pending=this.pending.filter(c=>{if(c.skill==="blade"&&!c.stats.mods.includes("hunt")){retired.add(c.group);return false;}return true;});
+    for(const group of Array.from(retired))this.groups.delete(group);
+  }
   private advance(dt:number) {
     const w=this.w;
     for (let i = this.pending.length - 1; i >= 0; i--)

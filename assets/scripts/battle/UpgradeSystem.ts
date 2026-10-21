@@ -147,6 +147,7 @@ export class UpgradeSystem {
     )
       return false;
     w.mods[s].push(id);
+    w.armory.onModification(s,id);
     w.effects.push({
       type: "modify",
       ...w.player,

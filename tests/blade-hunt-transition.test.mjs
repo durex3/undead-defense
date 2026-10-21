@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
+import {ALL_WEAPONS} from '../temp/tests/battle/SurvivalConfig.mjs';
+import {weaponStats} from '../temp/tests/battle/ArmoryConfig.mjs';
+function setup(grade){const w=new SurvivalWorld(31,'ranger',1);w.player={x:0,y:0};w.enemies=[];for(const k of ALL_WEAPONS)w.skills[k]=0;w.skills.blade=3;w.weaponGrades.blade=grade;const e=w.addEnemy('minion',6,0);e.hp=e.maxHp=1e6;e.state='seek';w.armory.step(0);w.skills.blade=4;w.step(.01);return {w,e};}
+function advance(w,seconds){for(let i=0;i<Math.ceil(seconds*120);i++){w.time+=1/120;w.armory.step(1/120);}}
+for(const grade of [1,2,3,4])test(`grade${grade}: selecting hunt immediately retires orbit, preserves cooldown, and next volley flies out and damages`,()=>{const {w,e}=setup(grade);assert(w.armory.shots.some(p=>p.active&&p.orbit));const cd=w.cooldowns.blade,casts=w.castCounts.blade;assert(w.chooseMod('hunt'));assert(!w.armory.shots.some(p=>p.active&&p.orbit));assert.equal(w.cooldowns.blade,cd);assert.equal(w.castCounts.blade,casts);assert.equal(e.hp,e.maxHp);advance(w,cd-.03);assert.equal(w.castCounts.blade,casts);advance(w,.1);assert(w.armory.shots.some(p=>p.active&&!p.orbit&&!p.child));assert(w.armory.shots.filter(p=>p.active).every(p=>p.stats.mods.includes('hunt')));advance(w,.5);assert(e.hp<e.maxHp);assert(!w.armory.shots.some(p=>p.active&&p.orbit));});
+test('selecting hunt cancels queued old orbit snapshot without emitting fragments or resetting another weapon',()=>{const {w,e}=setup(4);w.armory.cast('blade',{...weaponStats(w,'blade'),mods:['shards']},e);w.skills.fire=1;w.cooldowns.fire=.71;assert(w.chooseMod('hunt'));assert(!w.armory.pending.some(p=>p.skill==='blade'&&!p.stats.mods.includes('hunt')));assert(!w.armory.shots.some(p=>p.active&&p.child));assert.equal(w.cooldowns.fire,.71);});

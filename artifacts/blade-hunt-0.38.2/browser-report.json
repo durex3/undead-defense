@@ -1,0 +1,66 @@
+{
+  "grades": [
+    {
+      "grade": 1,
+      "old": 5,
+      "immediateOrbit": 0,
+      "cd": 1.6,
+      "afterCD": 1.6,
+      "mods": [
+        "hunt"
+      ],
+      "flight": {
+        "orbit": 0,
+        "hunt": 5
+      },
+      "damage": 46.75
+    },
+    {
+      "grade": 2,
+      "old": 5,
+      "immediateOrbit": 0,
+      "cd": 1.6,
+      "afterCD": 1.6,
+      "mods": [
+        "hunt"
+      ],
+      "flight": {
+        "orbit": 0,
+        "hunt": 5
+      },
+      "damage": 58.4375
+    },
+    {
+      "grade": 3,
+      "old": 5,
+      "immediateOrbit": 0,
+      "cd": 1.6,
+      "afterCD": 1.6,
+      "mods": [
+        "hunt"
+      ],
+      "flight": {
+        "orbit": 0,
+        "hunt": 5
+      },
+      "damage": 74.80000000000001
+    },
+    {
+      "grade": 4,
+      "old": 5,
+      "immediateOrbit": 0,
+      "cd": 1.6,
+      "afterCD": 1.6,
+      "mods": [
+        "hunt"
+      ],
+      "flight": {
+        "orbit": 0,
+        "hunt": 5
+      },
+      "damage": 95.83749999999998
+    }
+  ],
+  "coins": "Lv.1        00:02 / 06:00        击败 0        生命 100 · 金币 400",
+  "errors": []
+}

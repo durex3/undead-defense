@@ -36,7 +36,7 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
       id: "hunt",
       name: "追猎穿刺",
       short: "追猎",
-      effect: "刀刃离阵远射，追踪精英与远程，最多穿过2人",
+      effect: "立即撤回旧刀阵；下一轮远射追踪精英与远程，最多穿过2人",
       cost: "失去绕身刀阵；伤害−15%；转向速度有限",
       excludes: "orbit",
       glyph: "➤",
