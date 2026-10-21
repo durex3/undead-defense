@@ -38,23 +38,30 @@ export class SupportArmory {
     l.next = this.w.time + .25; l.budget -= amount;
     this.w.hit(from.id === a.id ? b : a, amount, "needleEcho", false, from, false);
   }
-  step(dt: number) {
+  prepare() {
     const w=this.w;
     for(const [id,m] of this.marks) if(m.until <= w.time || !w.enemies.some(e=>e.id===id && this.eligible(e))) this.marks.delete(id);
     this.linked();
-    for(const skill of ["lamp","needle"] as const) {
-      if(!w.skills[skill]) continue;
+  }
+  step(dt:number) {
+    this.prepare();
+    for(const skill of ["lamp","needle"] as const)this.castWeapon(skill,dt);
+    this.advance(dt);
+  }
+  castWeapon(skill: "lamp"|"needle",dt:number) {
+    const w=this.w;
+      if(!w.skills[skill]) return;
       w.cooldowns[skill] = Math.max(0,w.cooldowns[skill]-dt);
-      if(w.cooldowns[skill]>0) continue;
+      if(w.cooldowns[skill]>0) return;
       const s=weaponStats(w,skill), list=this.targets(s.range);
-      if(!list.length) continue;
+      if(!list.length) return;
       if(skill === "lamp") {
-        if(this.lamp && this.lamp.until>w.time) continue;
+        if(this.lamp && this.lamp.until>w.time) return;
         // Prefer the densest nearby group, with stable ties.
         const t=[...list].sort((a,b)=>list.filter(e=>distance(e,b)<=s.radius).length-list.filter(e=>distance(e,a)<=s.radius).length)[0];
         this.lamp={x:t.x,y:t.y,created:w.time,until:w.time+s.duration,next:w.time,stats:s};
       } else {
-        if(this.link) continue;
+        if(this.link) return;
         const a=list[0], b=list.find(e=>e.id!==a.id && distance(e,a)<= (s.mods.includes("long")?10.4:8));
         if(b) {
           const base=weaponStats(w,"needle",w.skills.needle).damage;
@@ -68,7 +75,10 @@ export class SupportArmory {
       }
       w.cooldowns[skill]=s.cooldown;
       w.castCounts[skill]=(w.castCounts[skill]||0)+1;
-    }
+
+  }
+  advance(_dt:number) {
+    const w=this.w;
     const f=this.lamp;
     if(!f) return;
     if(w.time>=f.until) {this.lamp=null;return;}

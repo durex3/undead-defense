@@ -398,9 +398,9 @@ test("sixth boss wax armor fractures before hits, expires and naturally exposes 
   };
   assert.equal(hit("blade"), 45);
   w.fracture(e);
-  assert.equal(hit("fire"), 80);
+  assert.equal(hit("fire"), 60);
   w.fracture(e);
-  assert.equal(hit("lightning"), 100);
+  assert.equal(hit("lightning"), 75);
   w.time = 3.01;
   assert.equal(hit("holy"), 45);
   e.state = "recover";
@@ -409,7 +409,7 @@ test("sixth boss wax armor fractures before hits, expires and naturally exposes 
   w.fracture(e);
   assert.equal(hit("water"), 106.25);
   w.fracture(e);
-  assert.equal(hit("bone"), 125);
+  assert.equal(hit("bone"), 106.25);
 });
 test("wax armor is identical for direct, ongoing, secondary and projectile damage on sixth stage", () => {
   const w = world(),
@@ -441,10 +441,10 @@ test("hammer and wheel apply their first fracture before the same sixth-stage hi
       attack = { skill, x: 0, y: 0 };
     let hp = e.hp;
     w.armory.unlocked.hit(e, attack, 100, 1);
-    assert.equal(hp - e.hp, 80);
+    assert.equal(hp - e.hp, 60);
     hp = e.hp;
     w.armory.unlocked.hit(e, attack, 100, 1);
-    assert.equal(hp - e.hp, 100);
+    assert.equal(hp - e.hp, 75);
     assert.equal(e.fracture, 2);
   }
 });

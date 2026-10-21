@@ -1,17 +1,18 @@
+import { stageGrowth } from "./StageGrowth";
 import type { StageId } from './ProgressionConfig';
 
-/** Playable stages; stage eight initially shares stage-seven health budgets. */
+/** Playable identities; health is derived from the shared reference-output × target-time budgets. */
 export const STAGES = {
-  1: {name:'铁棘围城', boss:'铁棘围城督军', health:1.65, elite:1.85, bossHealth:2.45, damage:1.42, xp:.85, medicine:42},
-  2: {name:'赤砂虫巢', boss:'赤砂巢皇', health:1.72, elite:1.95, bossHealth:2.65, damage:1.46, xp:.85, medicine:42},
-  3: {name:'雷铸机庭', boss:'天穹铸雷机', health:1.82, elite:2.08, bossHealth:2.86, damage:1.50, xp:1.2, medicine:42},
-  4: {name:'苍棘猎原', boss:'蚀月角王', health:1.86, elite:2.12, bossHealth:2.90, damage:1.52, xp:1.3, medicine:42},
-  5: {name:"灰烛钟庭",boss:"覆钟蜡主",health:1.90,elite:2.16,bossHealth:2.96,damage:1.54,xp:1.30,medicine:42},
-  10: {name:"缄页禁库",boss:"缄律藏典",health:2.04,elite:2.32,bossHealth:3.20,damage:1.62,xp:1.40,medicine:42},
-  9: {name:"断羽风廊",boss:"悬翼风枭",health:2.04,elite:2.32,bossHealth:3.60,damage:1.62,xp:1.30,medicine:42},
-  8: {name:"蚀根温室",boss:"垂冠根母",health:2.04,elite:2.32,bossHealth:3.60,damage:1.62,xp:1.30,medicine:42},
-  7: {name:"折晶矿窟",boss:"裂冠岩母",health:2.04,elite:2.32,bossHealth:3.60,damage:1.62,xp:1.30,medicine:42},
-  6: {name:"锈潮船坞",boss:"沉锚船骸",health:1.98,elite:2.25,bossHealth:3.10,damage:1.58,xp:1.30,medicine:42},
+  1: {...stageGrowth(1),name:'铁棘围城', boss:'铁棘围城督军', damage:1.42, xp:.85, medicine:42},
+  2: {...stageGrowth(2),name:'赤砂虫巢', boss:'赤砂巢皇', damage:1.46, xp:.85, medicine:42},
+  3: {...stageGrowth(3),name:'雷铸机庭', boss:'天穹铸雷机', damage:1.50, xp:1.2, medicine:42},
+  4: {...stageGrowth(4),name:'苍棘猎原', boss:'蚀月角王', damage:1.52, xp:1.3, medicine:42},
+  5: {...stageGrowth(5),name:"灰烛钟庭",boss:"覆钟蜡主",damage:1.54,xp:1.30,medicine:42},
+  10: {...stageGrowth(10),name:"缄页禁库",boss:"缄律藏典",damage:1.62,xp:1.40,medicine:42},
+  9: {...stageGrowth(9),name:"断羽风廊",boss:"悬翼风枭",damage:1.62,xp:1.30,medicine:42},
+  8: {...stageGrowth(8),name:"蚀根温室",boss:"垂冠根母",damage:1.62,xp:1.30,medicine:42},
+  7: {...stageGrowth(7),name:"折晶矿窟",boss:"裂冠岩母",damage:1.62,xp:1.30,medicine:42},
+  6: {...stageGrowth(6),name:"锈潮船坞",boss:"沉锚船骸",damage:1.58,xp:1.30,medicine:42},
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Record<StageId, {threat: string; builds: string}> = {

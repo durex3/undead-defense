@@ -1,3 +1,4 @@
+import { BOSS_FRACTURE_PER_LAYER, NORMAL_FRACTURE_PER_LAYER } from "./StageGrowth";
 import { initialGrades } from "./WeaponGrade";
 import {LibrarySystem,libraryEnemy} from "./LibrarySystem";
 import {WindSystem,windEnemy} from "./WindSystem";
@@ -285,7 +286,7 @@ export class SurvivalWorld {
       const exposed=this.stageId===5?e.bell?.vulnerable:this.stageId===6?e.tide?.vulnerable:this.stageId===7?e.prism?.vulnerable:this.stageId===8?e.root?.vulnerable:this.stageId===9?e.wind?.vulnerable:e.library?.vulnerable;
       const baseArmor=e.kind==='boss'?.55:isElite(e.kind)?.5:(e.kind==='waxbearer'||e.kind==='brineporter'||e.kind==='shardhermit'||e.kind==='rootshuffler'||e.kind==='fledglingeffigy'||e.kind==='paperbonegrub')?.2:waxKind?.35:0;
       const fracture=(e.fractureUntil??0)>this.time?(e.fracture??0):0;
-      const armor=Math.max(0,baseArmor-fracture*.35);
+      const armor=Math.max(0,baseArmor-fracture*(e.kind==="boss"?BOSS_FRACTURE_PER_LAYER:NORMAL_FRACTURE_PER_LAYER));
       amount*=1-Math.min(armor,e.state==='recover'&&exposed?(e.kind==='boss'?.15:.2):1);
       if(this.stageId===5&&isElite(e.kind)&&exposed&&e.state==='recover')amount*=1.25;
     }

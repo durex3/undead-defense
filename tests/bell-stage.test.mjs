@@ -108,11 +108,11 @@ test("armor is uniform, fracture precedes damage and expires, recovery gives a b
   w.fracture(e);
   const hp = e.hp;
   w.hit(e, 100, "wheel");
-  assert(Math.abs(hp - e.hp - 80) < 1e-6);
+  assert(Math.abs(hp - e.hp - 60) < 1e-6);
   w.fracture(e);
   const hp2 = e.hp;
   w.hit(e, 100, "fire");
-  assert(Math.abs(hp2 - e.hp - 100) < 1e-6);
+  assert(Math.abs(hp2 - e.hp - 75) < 1e-6);
   w.time = 4;
   e.state = "recover";
   e.bell = {

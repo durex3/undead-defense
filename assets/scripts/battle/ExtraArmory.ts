@@ -36,10 +36,15 @@ export interface ExtraAttack extends Point {
   retargeted?: boolean;
   impactAt?: number;
 }
+type ExtraDamageBucket=Map<number,{a:ExtraAttack;damage:number}>;
 /** One bounded slot owns an attack's entire lifecycle, including echoes and terminal effects. */
 export class ExtraArmory {
   attacks: ExtraAttack[] = [];
   ghostCount = 0;
+  private readonly attackStrategies:Record<ExtraSkill,(a:ExtraAttack,dt:number,ticks:ExtraDamageBucket,ends:ExtraDamageBucket)=>void>={
+    frost:(a,dt)=>this.frost(a,dt),lightning:a=>this.lightning(a),ghost:(a,dt)=>this.ghost(a,dt),
+    bone:(a,dt)=>this.bone(a,dt),mine:a=>this.mine(a),void:(a,dt,ticks,ends)=>this.void(a,dt,ticks,ends),holy:a=>this.holy(a),
+  };
   constructor(private w: SurvivalWorld) {}
   private enemies(p: Point, r: number) {
     return this.w.enemies.filter(
@@ -90,21 +95,30 @@ export class ExtraArmory {
   step(dt: number) {
     const w = this.w;
     for (const skill of EXTRA_WEAPONS) {
-      if (!w.skills[skill]) continue;
+      this.castWeapon(skill,dt);
+    }
+    this.advance(dt);
+  }
+  castWeapon(skill: ExtraSkill,dt:number) {
+    const w=this.w;
+      if (!w.skills[skill]) return;
       w.cooldowns[skill] = Math.max(0, w.cooldowns[skill] - dt);
-      if (w.cooldowns[skill] > 0) continue;
-      if (skill === "ghost" && this.attacks.some(a => a.active && a.skill === "ghost")) continue;
+      if (w.cooldowns[skill] > 0) return;
+      if (skill === "ghost" && this.attacks.some(a => a.active && a.skill === "ghost")) return;
       const s = weaponStats(w, skill),
         t = this.target(skill, s);
-      if (!t) continue;
+      if (!t) return;
       const count = skill === "lightning" ? 1 : skill === "ghost" ? Math.min(8,s.count) : s.count;
       if (this.attacks.filter((a) => a.active).length + count > EXTRA_LIMIT)
-        continue;
+        return;
       this.cast(skill, s, t, count);
       w.cooldowns[skill] = s.cooldown;
       w.castCounts[skill] = (w.castCounts[skill] || 0) + 1;
       w.effects.push({ type: "cast", ...w.player, skill });
-    }
+
+  }
+  advance(dt:number) {
+    const w=this.w;
     // Same-source black hole overlap is max-only, including synchronized terminal explosions.
     const ticks = new Map<number, { a: ExtraAttack; damage: number }>(),
       ends = new Map<number, { a: ExtraAttack; damage: number }>();
@@ -112,13 +126,7 @@ export class ExtraArmory {
       if (a.active) {
         a.age += dt;
         if (a.age < 0) continue;
-        if (a.skill === "frost") this.frost(a, dt);
-        else if (a.skill === "lightning") this.lightning(a);
-        else if (a.skill === "ghost") this.ghost(a, dt);
-        else if (a.skill === "bone") this.bone(a, dt);
-        else if (a.skill === "mine") this.mine(a);
-        else if (a.skill === "void") this.void(a, dt, ticks, ends);
-        else this.holy(a);
+        this.attackStrategies[a.skill](a,dt,ticks,ends);
       }
     for (const bucket of [ticks, ends])
       for (const [id, { a, damage }] of bucket) {

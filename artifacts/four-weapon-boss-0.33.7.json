@@ -1,0 +1,3095 @@
+{
+  "scope": "Four max-level weapons, fixed passives and mods, three seeds, invulnerable orbit controller. Output-window diagnostic, not human win rate.",
+  "result": [
+    {
+      "seed": 19,
+      "stage": 1,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 14.83
+      },
+      "damage": {
+        "lightning": 5914.380000000003,
+        "hammer": 7864.22100000001,
+        "wheel": 6287.229,
+        "water": 11417.782499999976
+      },
+      "seconds": 26,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 1,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 29.57
+      },
+      "damage": {
+        "needle": 10491.336899999951,
+        "lamp": 5541.774599999987,
+        "blade": 12638.617499999897,
+        "bone": 15066.845999999934
+      },
+      "seconds": 55,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 1,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.1
+      },
+      "damage": {
+        "lightning": 7716.877500000007,
+        "blade": 7281.0074999999615,
+        "fire": 8616.509999999993,
+        "water": 8071.920000000079
+      },
+      "seconds": 27,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 1,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 13.87
+      },
+      "damage": {
+        "void": 5342.782500000003,
+        "holy": 8428.995000000008,
+        "water": 9682.049999999996,
+        "mine": 8212.920000000018
+      },
+      "seconds": 28,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 1,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.5
+      },
+      "damage": {
+        "blade": 7953.1055999999535,
+        "ghost": 6925.890600000009,
+        "bone": 8614.148700000005,
+        "holy": 9476.952600000086
+      },
+      "seconds": 32,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 2,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 17.8
+      },
+      "damage": {
+        "lightning": 10101.614858375124,
+        "hammer": 11438.663651772227,
+        "wheel": 7900.716311162157,
+        "water": 23075.840999489017
+      },
+      "seconds": 36,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 2,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 45.27
+      },
+      "damage": {
+        "needle": 8287.900148438493,
+        "lamp": 11744.457965253987,
+        "blade": 26850.117444066727,
+        "bone": 60486.52578025079
+      },
+      "seconds": 104,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 2,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 19.5
+      },
+      "damage": {
+        "lightning": 18867.805319987016,
+        "blade": 10389.803946889844,
+        "fire": 10046.391656585032,
+        "water": 19182.862009543398
+      },
+      "seconds": 44,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 2,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.03
+      },
+      "damage": {
+        "void": 8973.588789945552,
+        "holy": 8286.118192501768,
+        "water": 16176.54404032906,
+        "mine": 15144.064188515791
+      },
+      "seconds": 32,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 2,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 23.9
+      },
+      "damage": {
+        "blade": 13363.33510701285,
+        "ghost": 10976.444326566347,
+        "bone": 21702.923838988143,
+        "holy": 24906.183468432795
+      },
+      "seconds": 58,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 3,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 17.57
+      },
+      "damage": {
+        "lightning": 9618.056153073328,
+        "hammer": 12721.548290346069,
+        "wheel": 10383.513423641863,
+        "water": 6040.229055949351
+      },
+      "seconds": 37,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 3,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 21.7
+      },
+      "damage": {
+        "needle": 10369.79056494027,
+        "lamp": 5298.681096151843,
+        "blade": 11224.412369535106,
+        "bone": 15623.425268305755
+      },
+      "seconds": 49,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 3,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.1
+      },
+      "damage": {
+        "lightning": 9985.870670764441,
+        "blade": 8792.348643335668,
+        "fire": 16260.64898614193,
+        "water": 3110.247327846074
+      },
+      "seconds": 31,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 3,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.37
+      },
+      "damage": {
+        "void": 6796.419835382217,
+        "holy": 17477.232934152897,
+        "water": 7447.323757178681,
+        "mine": 8797.316953218304
+      },
+      "seconds": 38,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 3,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 19.37
+      },
+      "damage": {
+        "blade": 8445.921606306758,
+        "ghost": 9918.586435382233,
+        "bone": 9170.07327846073,
+        "holy": 11913.505625629354
+      },
+      "seconds": 37,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 4,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 21.93
+      },
+      "damage": {
+        "lightning": 11971.634822695405,
+        "hammer": 14935.616922185753,
+        "wheel": 12010.694979842867,
+        "water": 9514.890136115911
+      },
+      "seconds": 44,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 4,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 30.37
+      },
+      "damage": {
+        "needle": 11697.134687564683,
+        "lamp": 6693.494238743043,
+        "blade": 16038.467245125721,
+        "bone": 18160.56071050775
+      },
+      "seconds": 66,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 4,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.57
+      },
+      "damage": {
+        "lightning": 12033.71194461078,
+        "blade": 10592.498949607105,
+        "fire": 18167.94478992142,
+        "water": 5363.006218585947
+      },
+      "seconds": 38,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 4,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.97
+      },
+      "damage": {
+        "void": 6497.314537957474,
+        "holy": 15208.37080979566,
+        "water": 7910.698865836388,
+        "mine": 16540.77768913586
+      },
+      "seconds": 36,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 4,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 26.07
+      },
+      "damage": {
+        "blade": 12091.259507709094,
+        "ghost": 13092.605077215725,
+        "bone": 10912.296428664491,
+        "holy": 13363.116650036402
+      },
+      "seconds": 52,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 5,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 31.97
+      },
+      "damage": {
+        "lightning": 9517.511403348703,
+        "hammer": 16469.265141034284,
+        "wheel": 12905.728811386332,
+        "water": 13784.055153348694
+      },
+      "seconds": 61,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 5,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 58.37
+      },
+      "damage": {
+        "needle": 16934.083411305866,
+        "lamp": 6188.646181516206,
+        "blade": 18519.090547833504,
+        "bone": 20575.00539703336
+      },
+      "seconds": 111,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 5,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 38.27
+      },
+      "damage": {
+        "lightning": 15741.995281139254,
+        "blade": 12403.036697284066,
+        "fire": 19072.98949155811,
+        "water": 7773.077168527045
+      },
+      "seconds": 74,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 5,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 49
+      },
+      "damage": {
+        "void": 9126.228112612202,
+        "holy": 19747.939160084454,
+        "water": 16872.13428433834,
+        "mine": 13285.624972842339
+      },
+      "seconds": 96,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 5,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.23
+      },
+      "damage": {
+        "blade": 12126.520389957883,
+        "ghost": 15658.72375705412,
+        "bone": 13542.652596547743,
+        "holy": 15885.657235201414
+      },
+      "seconds": 83,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 6,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 30.77
+      },
+      "damage": {
+        "lightning": 11129.45113278672,
+        "hammer": 18047.583596860684,
+        "wheel": 14229.317665625917,
+        "water": 15733.78537413735
+      },
+      "seconds": 66,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 6,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 57.77
+      },
+      "damage": {
+        "needle": 17449.33683302688,
+        "lamp": 8382.30636280556,
+        "blade": 23126.522823118637,
+        "bone": 23385.709417384125
+      },
+      "seconds": 126,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 6,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 40.97
+      },
+      "damage": {
+        "lightning": 19287.713385458355,
+        "blade": 13108.634262470927,
+        "fire": 21270.719627430044,
+        "water": 11014.342712011166
+      },
+      "seconds": 87,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 6,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 63.47
+      },
+      "damage": {
+        "void": 13737.40791097601,
+        "holy": 27890.641861666212,
+        "water": 23756.148536263572,
+        "mine": 6853.253996193345
+      },
+      "seconds": 133,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 6,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.4
+      },
+      "damage": {
+        "blade": 14272.527149654683,
+        "ghost": 19371.744806263563,
+        "bone": 15525.437683131755,
+        "holy": 18917.24054786024
+      },
+      "seconds": 100,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 7,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 30.9
+      },
+      "damage": {
+        "lightning": 12893.18107733925,
+        "hammer": 18733.946343750024,
+        "wheel": 16168.376776573248,
+        "water": 16170.638763987055
+      },
+      "seconds": 67,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 7,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 57.1
+      },
+      "damage": {
+        "needle": 18956.159407760922,
+        "lamp": 8378.07824115217,
+        "blade": 25159.08268314587,
+        "bone": 25177.226488547927
+      },
+      "seconds": 125,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 7,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 36.7
+      },
+      "damage": {
+        "lightning": 19927.731682887075,
+        "blade": 14380.414165490982,
+        "fire": 22355.667113272117,
+        "water": 10001.98413728264
+      },
+      "seconds": 82,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 7,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 55.2
+      },
+      "damage": {
+        "void": 15576.559172979883,
+        "holy": 27552.71953161754,
+        "water": 25750.23462658713,
+        "mine": 9455.887985895666
+      },
+      "seconds": 130,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 7,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.4
+      },
+      "damage": {
+        "blade": 14883.071331710682,
+        "ghost": 17883.61340791753,
+        "bone": 16776.91960473916,
+        "holy": 19455.422229882737
+      },
+      "seconds": 94,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 8,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 37.27
+      },
+      "damage": {
+        "lightning": 16386.249496239372,
+        "hammer": 21388.53939699979,
+        "wheel": 14245.920269999982,
+        "water": 17491.83204948953
+      },
+      "seconds": 79,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 8,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 56.47
+      },
+      "damage": {
+        "needle": 19130.544921444023,
+        "lamp": 9215.44695404737,
+        "blade": 25243.318186735312,
+        "bone": 28290.255480739073
+      },
+      "seconds": 143,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 8,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.9
+      },
+      "damage": {
+        "lightning": 23368.958577229834,
+        "blade": 15223.002134499322,
+        "fire": 24001.513990749096,
+        "water": 11751.625469245864
+      },
+      "seconds": 96,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 8,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 59.33
+      },
+      "damage": {
+        "void": 13227.74837073747,
+        "holy": 28925.8819969936,
+        "water": 26301.170964736182,
+        "mine": 13029.541008748109
+      },
+      "seconds": 133,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 8,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 51.07
+      },
+      "damage": {
+        "blade": 17700.969182744117,
+        "ghost": 22415.52964199105,
+        "bone": 17081.02570799398,
+        "holy": 23363.08420323792
+      },
+      "seconds": 120,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 9,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 37.2
+      },
+      "damage": {
+        "lightning": 16906.74110264371,
+        "hammer": 21244.82121556639,
+        "wheel": 16305.131969999944,
+        "water": 19881.949111220336
+      },
+      "seconds": 80,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 9,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 84.47
+      },
+      "damage": {
+        "needle": 20937.17352961163,
+        "lamp": 12676.006909548943,
+        "blade": 31451.170269975264,
+        "bone": 32209.192369650216
+      },
+      "seconds": 174,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 9,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.9
+      },
+      "damage": {
+        "lightning": 25369.185567631874,
+        "blade": 14614.401965567582,
+        "fire": 26431.58652154285,
+        "water": 11089.046947894843
+      },
+      "seconds": 97,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 9,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 62.13
+      },
+      "damage": {
+        "void": 16349.860925849538,
+        "holy": 27931.04817197796,
+        "water": 28207.670598194076,
+        "mine": 15843.685202404342
+      },
+      "seconds": 142,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 9,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 56.47
+      },
+      "damage": {
+        "blade": 17467.857515746884,
+        "ghost": 24972.888101160508,
+        "bone": 17904.625239437933,
+        "holy": 24751.027525048128
+      },
+      "seconds": 127,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 10,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 26.67,
+        "3": 57.9
+      },
+      "damage": {
+        "lightning": 17358.76301369286,
+        "hammer": 23612.967934944787,
+        "wheel": 15399.268405658095,
+        "water": 21884.434415539316
+      },
+      "patterns": {
+        "A": 2,
+        "B": 3,
+        "C": 2
+      },
+      "seconds": 87,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 10,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 54.6,
+        "3": 113.4
+      },
+      "damage": {
+        "needle": 17685.35344923126,
+        "lamp": 11104.778654333672,
+        "blade": 33274.479952698755,
+        "bone": 39482.93928892436
+      },
+      "patterns": {
+        "A": 7,
+        "B": 6,
+        "C": 6
+      },
+      "seconds": 180,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 10,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 31.63,
+        "3": 67.37
+      },
+      "damage": {
+        "lightning": 25784.915522793886,
+        "blade": 15939.131999999528,
+        "fire": 27096.468878290485,
+        "water": 13732.955554940576
+      },
+      "patterns": {
+        "A": 4,
+        "B": 4,
+        "C": 4
+      },
+      "seconds": 102,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 10,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 35.47,
+        "3": 75.17
+      },
+      "damage": {
+        "void": 12656.615035863811,
+        "holy": 22723.09853882091,
+        "water": 23842.616680274255,
+        "mine": 24870.52213067123
+      },
+      "patterns": {
+        "A": 4,
+        "B": 3,
+        "C": 4
+      },
+      "seconds": 112,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 10,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 40.6,
+        "3": 82.6
+      },
+      "damage": {
+        "blade": 18012.745370529887,
+        "ghost": 21329.587453231303,
+        "bone": 21144.038342769647,
+        "holy": 26173.407863510893
+      },
+      "patterns": {
+        "A": 4,
+        "B": 5,
+        "C": 4
+      },
+      "seconds": 121,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 1,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 14.83
+      },
+      "damage": {
+        "lightning": 5914.380000000003,
+        "hammer": 7864.22100000001,
+        "wheel": 6287.229,
+        "water": 11417.782499999976
+      },
+      "seconds": 26,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 1,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 29.57
+      },
+      "damage": {
+        "needle": 10491.336899999951,
+        "lamp": 5541.774599999987,
+        "blade": 12638.617499999897,
+        "bone": 15066.845999999934
+      },
+      "seconds": 55,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 1,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.1
+      },
+      "damage": {
+        "lightning": 7716.877500000007,
+        "blade": 7281.0074999999615,
+        "fire": 8616.509999999993,
+        "water": 8071.920000000079
+      },
+      "seconds": 27,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 1,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 13.87
+      },
+      "damage": {
+        "void": 5342.782500000003,
+        "holy": 8428.995000000008,
+        "water": 9682.049999999996,
+        "mine": 8212.920000000018
+      },
+      "seconds": 28,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 1,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.5
+      },
+      "damage": {
+        "blade": 7953.1055999999535,
+        "ghost": 6925.890600000009,
+        "bone": 8614.148700000005,
+        "holy": 9476.952600000086
+      },
+      "seconds": 32,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 2,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 17.8
+      },
+      "damage": {
+        "lightning": 10101.614858375124,
+        "hammer": 11438.663651772227,
+        "wheel": 7900.716311162157,
+        "water": 23075.840999489017
+      },
+      "seconds": 36,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 2,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 45.27
+      },
+      "damage": {
+        "needle": 8287.900148438493,
+        "lamp": 11748.681344856106,
+        "blade": 26829.522187941053,
+        "bone": 59716.318492628096
+      },
+      "seconds": 103,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 2,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 19.5
+      },
+      "damage": {
+        "lightning": 18863.657715882247,
+        "blade": 10422.443946889844,
+        "fire": 10046.391656585032,
+        "water": 19154.369613648167
+      },
+      "seconds": 44,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 2,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.03
+      },
+      "damage": {
+        "void": 8973.588789945552,
+        "holy": 8286.118192501768,
+        "water": 16252.66460460128,
+        "mine": 15067.943624243571
+      },
+      "seconds": 32,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 2,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 23.9
+      },
+      "damage": {
+        "blade": 13363.33510701285,
+        "ghost": 10976.444326566347,
+        "bone": 21702.923838988143,
+        "holy": 24906.183468432795
+      },
+      "seconds": 58,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 3,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 17.57
+      },
+      "damage": {
+        "lightning": 10118.036864457625,
+        "hammer": 12710.7304222975,
+        "wheel": 10342.893751487936,
+        "water": 6293.664507536143
+      },
+      "seconds": 37,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 3,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 22.87
+      },
+      "damage": {
+        "needle": 11064.281245537186,
+        "lamp": 3865.508077488617,
+        "blade": 11542.049408846211,
+        "bone": 13554.6950595249
+      },
+      "seconds": 43,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 3,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.1
+      },
+      "damage": {
+        "lightning": 9936.91067076444,
+        "blade": 8492.4413154896,
+        "fire": 16521.768986141928,
+        "water": 3110.247327846074
+      },
+      "seconds": 31,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 3,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.37
+      },
+      "damage": {
+        "void": 6980.16716322829,
+        "holy": 16632.344248140824,
+        "water": 7593.198757178681,
+        "mine": 9575.825294922519
+      },
+      "seconds": 39,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 3,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 19.37
+      },
+      "damage": {
+        "blade": 9287.648140459634,
+        "ghost": 12256.593317948329,
+        "bone": 8044.559575986837,
+        "holy": 11982.460379690085
+      },
+      "seconds": 43,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 4,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 21.93
+      },
+      "damage": {
+        "lightning": 11802.560212616843,
+        "hammer": 14801.405322185752,
+        "wheel": 12112.613969764307,
+        "water": 8957.6990369015
+      },
+      "seconds": 44,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 4,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 29.57
+      },
+      "damage": {
+        "needle": 13266.038817643243,
+        "lamp": 6516.207672550259,
+        "blade": 15875.764604466187,
+        "bone": 17231.709826294886
+      },
+      "seconds": 68,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 4,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.7
+      },
+      "damage": {
+        "lightning": 13074.422773558177,
+        "blade": 10322.239159685667,
+        "fire": 18381.545709280428,
+        "water": 5137.512579572498
+      },
+      "seconds": 38,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 4,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.73
+      },
+      "damage": {
+        "void": 8024.117747765642,
+        "holy": 15547.07965888767,
+        "water": 7943.864496072067,
+        "mine": 15400.658319371534
+      },
+      "seconds": 40,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 4,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 25.57
+      },
+      "damage": {
+        "blade": 11907.416097643121,
+        "ghost": 11937.28346740756,
+        "bone": 10754.725058900163,
+        "holy": 14591.970556260441
+      },
+      "seconds": 49,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 5,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 32
+      },
+      "damage": {
+        "lightning": 9806.773495201407,
+        "hammer": 16541.239687909285,
+        "wheel": 12959.933681795566,
+        "water": 13368.613644211753
+      },
+      "seconds": 61,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 5,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 55.73
+      },
+      "damage": {
+        "needle": 14697.043452632057,
+        "lamp": 6622.352792716204,
+        "blade": 19711.363450444263,
+        "bone": 21233.829147180626
+      },
+      "seconds": 112,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 5,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 38.57
+      },
+      "damage": {
+        "lightning": 17078.756556697357,
+        "blade": 12381.105394568278,
+        "fire": 18824.732091852737,
+        "water": 7359.304595389965
+      },
+      "seconds": 75,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 5,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 49
+      },
+      "damage": {
+        "void": 9521.5660207595,
+        "holy": 19718.380554652933,
+        "water": 16742.97567890681,
+        "mine": 13049.004275558103
+      },
+      "seconds": 96,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 5,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.97
+      },
+      "damage": {
+        "blade": 11168.100345684546,
+        "ghost": 15968.330785201439,
+        "bone": 12493.259764399903,
+        "holy": 15105.347251369414
+      },
+      "seconds": 77,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 6,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 30.8
+      },
+      "damage": {
+        "lightning": 11548.050478964835,
+        "hammer": 18075.901471250996,
+        "wheel": 14289.89923247122,
+        "water": 15254.709717959238
+      },
+      "seconds": 66,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 6,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 63.93
+      },
+      "damage": {
+        "needle": 15857.705939824911,
+        "lamp": 8079.329588676805,
+        "blade": 22461.160535756753,
+        "bone": 24242.909272306755
+      },
+      "seconds": 127,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 6,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 40.97
+      },
+      "damage": {
+        "lightning": 19255.09774175149,
+        "blade": 13273.805602487304,
+        "fire": 20829.821274942467,
+        "water": 11719.954761896144
+      },
+      "seconds": 89,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 6,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 60.7
+      },
+      "damage": {
+        "void": 14753.428779740383,
+        "holy": 26997.893926738907,
+        "water": 26492.265354567913,
+        "mine": 7477.404443591849
+      },
+      "seconds": 137,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 6,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 46.23
+      },
+      "damage": {
+        "blade": 13444.245527183444,
+        "ghost": 18166.46589527379,
+        "bone": 14868.550692126164,
+        "holy": 19904.917972556712
+      },
+      "seconds": 94,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 7,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 31
+      },
+      "damage": {
+        "lightning": 12745.956330865334,
+        "hammer": 18798.2091203233,
+        "wheel": 16230.020249999963,
+        "water": 16225.063425952281
+      },
+      "seconds": 67,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 7,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 65.8
+      },
+      "damage": {
+        "needle": 18293.201533726147,
+        "lamp": 8823.895453626092,
+        "blade": 25258.62113793071,
+        "bone": 25109.058529832655
+      },
+      "seconds": 139,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 7,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 36.7
+      },
+      "damage": {
+        "lightning": 19659.198472228956,
+        "blade": 13772.303999999733,
+        "fire": 23208.429577456405,
+        "water": 9137.015725317415
+      },
+      "seconds": 78,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 7,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 54.5
+      },
+      "damage": {
+        "void": 14168.05489421753,
+        "holy": 28199.169232923337,
+        "water": 24053.501397743614,
+        "mine": 9240.715489421747
+      },
+      "seconds": 123,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 7,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 42.8
+      },
+      "damage": {
+        "blade": 15325.235566299798,
+        "ghost": 18894.649802426204,
+        "bone": 15607.402208669602,
+        "holy": 19703.75676783711
+      },
+      "seconds": 94,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 8,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 37.43
+      },
+      "damage": {
+        "lightning": 15666.00196623937,
+        "hammer": 21352.84191724991,
+        "wheel": 14402.707908998012,
+        "water": 18592.436621991004
+      },
+      "seconds": 80,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 8,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 72.17
+      },
+      "damage": {
+        "needle": 19214.554614944627,
+        "lamp": 8877.243536347109,
+        "blade": 26749.123427434723,
+        "bone": 28971.290107487257
+      },
+      "seconds": 143,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 8,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 41.03
+      },
+      "damage": {
+        "lightning": 24223.33736522882,
+        "blade": 15064.086134499345,
+        "fire": 23581.53124074877,
+        "water": 12397.337969245866
+      },
+      "seconds": 98,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 8,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 58.63
+      },
+      "damage": {
+        "void": 14572.215523237854,
+        "holy": 29524.451410744223,
+        "water": 25960.580012986553,
+        "mine": 11657.393528746481
+      },
+      "seconds": 139,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 8,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 52.6
+      },
+      "damage": {
+        "blade": 15234.44871024595,
+        "ghost": 20533.18195499255,
+        "bone": 16920.270740995482,
+        "holy": 22002.64596723904
+      },
+      "seconds": 107,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 9,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 37.27
+      },
+      "damage": {
+        "lightning": 18051.51438035903,
+        "hammer": 21246.57250246116,
+        "wheel": 16319.972754648232,
+        "water": 19828.861477392602
+      },
+      "seconds": 80,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 9,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 77
+      },
+      "damage": {
+        "needle": 20834.03197201016,
+        "lamp": 11089.735273805833,
+        "blade": 27650.66100071102,
+        "bone": 30672.74031121808
+      },
+      "seconds": 161,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 9,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 45.03
+      },
+      "damage": {
+        "lightning": 26229.00143386397,
+        "blade": 14746.57977154269,
+        "fire": 26301.701051740103,
+        "water": 12124.983090179518
+      },
+      "seconds": 98,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 9,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 61.4
+      },
+      "damage": {
+        "void": 15598.855098194048,
+        "holy": 28479.232577153336,
+        "water": 25844.59243887584,
+        "mine": 15963.484896427537
+      },
+      "seconds": 131,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 9,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 54.6
+      },
+      "damage": {
+        "blade": 15988.080356488357,
+        "ghost": 24857.373745729856,
+        "bone": 18133.236336351754,
+        "holy": 25303.866638935717
+      },
+      "seconds": 123,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 10,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 26.7,
+        "3": 58
+      },
+      "damage": {
+        "lightning": 15234.677173231265,
+        "hammer": 23938.188547115726,
+        "wheel": 15471.014695658094,
+        "water": 23281.10180251375
+      },
+      "patterns": {
+        "A": 2,
+        "B": 3,
+        "C": 2
+      },
+      "seconds": 87,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 10,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 52.17,
+        "3": 111.6
+      },
+      "damage": {
+        "needle": 20433.407181620834,
+        "lamp": 9911.460241984838,
+        "blade": 28456.23949686276,
+        "bone": 35791.22493063349
+      },
+      "patterns": {
+        "A": 5,
+        "B": 6,
+        "C": 5
+      },
+      "seconds": 163,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 10,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 33.07,
+        "3": 70.9
+      },
+      "damage": {
+        "lightning": 26258.380200018208,
+        "blade": 16465.464909287868,
+        "fire": 26291.788317435887,
+        "water": 13944.264304940572
+      },
+      "patterns": {
+        "A": 3,
+        "B": 4,
+        "C": 3
+      },
+      "seconds": 105,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 10,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 35.9,
+        "3": 80.73
+      },
+      "damage": {
+        "void": 15024.563007248636,
+        "holy": 22989.290115795313,
+        "water": 26674.37797205216,
+        "mine": 24269.136803696823
+      },
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 4
+      },
+      "seconds": 123,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 10,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 35.97,
+        "3": 79.3
+      },
+      "damage": {
+        "blade": 18433.760429817674,
+        "ghost": 21916.101988034763,
+        "bone": 20218.91790533363,
+        "holy": 27406.875425146307
+      },
+      "patterns": {
+        "A": 3,
+        "B": 3,
+        "C": 4
+      },
+      "seconds": 125,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 1,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 14.83
+      },
+      "damage": {
+        "lightning": 5914.380000000003,
+        "hammer": 7864.22100000001,
+        "wheel": 6287.229,
+        "water": 11417.782499999976
+      },
+      "seconds": 26,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 1,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 29.57
+      },
+      "damage": {
+        "needle": 10491.336899999951,
+        "lamp": 5541.774599999987,
+        "blade": 12638.617499999897,
+        "bone": 15066.845999999934
+      },
+      "seconds": 55,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 1,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.1
+      },
+      "damage": {
+        "lightning": 7716.877500000007,
+        "blade": 7281.0074999999615,
+        "fire": 8616.509999999993,
+        "water": 8071.920000000079
+      },
+      "seconds": 27,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 1,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 13.87
+      },
+      "damage": {
+        "void": 5342.782500000003,
+        "holy": 8428.995000000008,
+        "water": 9682.049999999996,
+        "mine": 8212.920000000018
+      },
+      "seconds": 28,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 1,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 20580.000000000004,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.5
+      },
+      "damage": {
+        "blade": 7953.1055999999535,
+        "ghost": 6925.890600000009,
+        "bone": 8614.148700000005,
+        "holy": 9476.952600000086
+      },
+      "seconds": 32,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 2,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 17.8
+      },
+      "damage": {
+        "lightning": 10101.614858375124,
+        "hammer": 11438.663651772227,
+        "wheel": 7900.716311162157,
+        "water": 23075.840999489017
+      },
+      "seconds": 36,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 2,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 45.27
+      },
+      "damage": {
+        "needle": 8252.228693276043,
+        "lamp": 13189.810837546824,
+        "blade": 30436.102802389654,
+        "bone": 65065.20624533762
+      },
+      "seconds": 116,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 2,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 19.5
+      },
+      "damage": {
+        "lightning": 18831.017715882248,
+        "blade": 10455.083946889843,
+        "fire": 10046.391656585032,
+        "water": 19154.369613648167
+      },
+      "seconds": 44,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 2,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.03
+      },
+      "damage": {
+        "void": 8973.588789945552,
+        "holy": 8286.118192501768,
+        "water": 16176.54404032906,
+        "mine": 15144.064188515791
+      },
+      "seconds": 32,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 2,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 26461.85410705019,
+      "phaseTimes": {
+        "1": 0,
+        "2": 23.9
+      },
+      "damage": {
+        "blade": 13363.33510701285,
+        "ghost": 10976.444326566347,
+        "bone": 21702.923838988143,
+        "holy": 24906.183468432795
+      },
+      "seconds": 58,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 3,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 17.57
+      },
+      "damage": {
+        "lightning": 10224.452143791643,
+        "hammer": 12693.151490346068,
+        "wheel": 10469.439927846064,
+        "water": 6078.281983795427
+      },
+      "seconds": 37,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 3,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 27.63
+      },
+      "damage": {
+        "needle": 12426.921012613633,
+        "lamp": 4898.059184767551,
+        "blade": 11955.657346766548,
+        "bone": 12851.83211555505
+      },
+      "seconds": 49,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 3,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 15.1
+      },
+      "damage": {
+        "lightning": 10073.617998610514,
+        "blade": 8596.614655692092,
+        "fire": 16211.688986141937,
+        "water": 3179.4466597975047
+      },
+      "seconds": 31,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 3,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.03
+      },
+      "damage": {
+        "void": 5465.199229075404,
+        "holy": 16442.04562537223,
+        "water": 5742.672507536143,
+        "mine": 10411.450938258246
+      },
+      "seconds": 35,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 3,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 31922.98898614182,
+      "phaseTimes": {
+        "1": 0,
+        "2": 19.37
+      },
+      "damage": {
+        "blade": 8180.837245537129,
+        "ghost": 10088.423746766533,
+        "bone": 9302.007497526052,
+        "holy": 11676.143055949367
+      },
+      "seconds": 36,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 4,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 22.03
+      },
+      "damage": {
+        "lightning": 11791.861452538302,
+        "hammer": 15157.461041950073,
+        "wheel": 12000.310199999984,
+        "water": 8724.645846980062
+      },
+      "seconds": 44,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 4,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 31.53
+      },
+      "damage": {
+        "needle": 13194.121967564686,
+        "lamp": 6687.266758114573,
+        "blade": 17009.298605094715,
+        "bone": 16174.638710853033
+      },
+      "seconds": 68,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 4,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 16.97
+      },
+      "damage": {
+        "lightning": 11792.610605094642,
+        "blade": 9972.560709280366,
+        "fire": 19131.844789921415,
+        "water": 4501.587479057298
+      },
+      "seconds": 36,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 4,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 18.97
+      },
+      "damage": {
+        "void": 6830.93045731649,
+        "holy": 14805.094260200975,
+        "water": 7726.419706150624,
+        "mine": 16794.717479057297
+      },
+      "seconds": 37,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 4,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 36863.49633951607,
+      "phaseTimes": {
+        "1": 0,
+        "2": 24.73
+      },
+      "damage": {
+        "blade": 11282.192178271602,
+        "ghost": 12224.684566621969,
+        "bone": 10942.650448821605,
+        "holy": 14741.8679864961
+      },
+      "seconds": 48,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 5,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 31.63
+      },
+      "damage": {
+        "lightning": 9895.04642370082,
+        "hammer": 16619.22528750005,
+        "wheel": 12821.273644568457,
+        "water": 13878.077245201399
+      },
+      "seconds": 61,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 5,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 52.73
+      },
+      "damage": {
+        "needle": 15506.190945748223,
+        "lamp": 7538.064130884672,
+        "blade": 20834.319381812787,
+        "bone": 21466.411303054523
+      },
+      "seconds": 120,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 5,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 40.3
+      },
+      "damage": {
+        "lightning": 15655.71824040278,
+        "blade": 11793.647999999828,
+        "fire": 19907.409846989565,
+        "water": 8442.488129390105
+      },
+      "seconds": 73,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 5,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 46.33
+      },
+      "damage": {
+        "void": 7919.555561495971,
+        "holy": 20309.11355465293,
+        "water": 17725.052046317633,
+        "mine": 13078.205367410812
+      },
+      "seconds": 92,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 5,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 41252.28380785207,
+      "phaseTimes": {
+        "1": 0,
+        "2": 42.1
+      },
+      "damage": {
+        "blade": 11970.914093831785,
+        "ghost": 15869.977997054131,
+        "bone": 13209.340973831979,
+        "holy": 16365.362308611671
+      },
+      "seconds": 83,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 6,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 30.77
+      },
+      "damage": {
+        "lightning": 12080.726808849815,
+        "hammer": 18098.048221251,
+        "wheel": 14139.032939999974,
+        "water": 14900.32979930988
+      },
+      "seconds": 65,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 6,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 69.27
+      },
+      "damage": {
+        "needle": 18451.320062018593,
+        "lamp": 10006.751513868694,
+        "blade": 25963.9071129323,
+        "bone": 24463.483752888398
+      },
+      "seconds": 150,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 6,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 40.73
+      },
+      "damage": {
+        "lightning": 19557.22025422274,
+        "blade": 13546.483131235336,
+        "fire": 20631.57078360806,
+        "water": 11797.520868189276
+      },
+      "seconds": 91,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 6,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 62.13
+      },
+      "damage": {
+        "void": 15896.013744468073,
+        "holy": 26861.347124137446,
+        "water": 27781.72086703915,
+        "mine": 7707.642787413736
+      },
+      "seconds": 137,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 6,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 45099.553840015426,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.77
+      },
+      "damage": {
+        "blade": 13373.816624728195,
+        "ghost": 17888.252282671743,
+        "bone": 14844.246954597413,
+        "holy": 19085.30751907987
+      },
+      "seconds": 90,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 7,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 31
+      },
+      "damage": {
+        "lightning": 12825.787242830553,
+        "hammer": 18850.8028703233,
+        "wheel": 16230.020249999963,
+        "water": 16059.532598495749
+      },
+      "seconds": 67,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 7,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 63.93
+      },
+      "damage": {
+        "needle": 16981.823246308762,
+        "lamp": 9601.12243953917,
+        "blade": 26306.680849239387,
+        "bone": 27654.910422802102
+      },
+      "seconds": 135,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 7,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 36.3
+      },
+      "damage": {
+        "lightning": 20245.529841326228,
+        "blade": 13799.27449647367,
+        "fire": 23217.38152876336,
+        "water": 10945.260556300029
+      },
+      "seconds": 80,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 7,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 55.03
+      },
+      "damage": {
+        "void": 14990.761059708842,
+        "holy": 27560.591035143614,
+        "water": 25384.147243384243,
+        "mine": 9513.171151386972
+      },
+      "seconds": 128,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 7,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 48438.810620323384,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.43
+      },
+      "damage": {
+        "blade": 14750.19920236925,
+        "ghost": 17851.92126176769,
+        "bone": 16393.277599247846,
+        "holy": 19383.993117917522
+      },
+      "seconds": 91,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 8,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 37.27
+      },
+      "damage": {
+        "lightning": 15736.206025490248,
+        "hammer": 21310.539396999793,
+        "wheel": 14245.920269999982,
+        "water": 18487.322721988283
+      },
+      "seconds": 79,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 8,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 62.07
+      },
+      "damage": {
+        "needle": 19449.50750414341,
+        "lamp": 10150.12297499701,
+        "blade": 26887.254711834627,
+        "bone": 30689.537445485188
+      },
+      "seconds": 154,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 8,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 42.1
+      },
+      "damage": {
+        "lightning": 24506.271115228836,
+        "blade": 15142.830134499329,
+        "fire": 23803.768509748315,
+        "water": 11813.422950246366
+      },
+      "seconds": 98,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 8,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 58.63
+      },
+      "damage": {
+        "void": 14144.913657737612,
+        "holy": 29651.511930742578,
+        "water": 24915.41207148829,
+        "mine": 12081.610277747608
+      },
+      "seconds": 135,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 8,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 51315.286721748256,
+      "phaseTimes": {
+        "1": 0,
+        "2": 52.73
+      },
+      "damage": {
+        "blade": 15884.08263024595,
+        "ghost": 21501.17230924089,
+        "bone": 18193.595406495755,
+        "holy": 21253.581890738587
+      },
+      "seconds": 111,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 9,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 37.27
+      },
+      "damage": {
+        "lightning": 18233.739718815978,
+        "hammer": 21246.587194023316,
+        "wheel": 16316.490689999946,
+        "water": 19650.103512021782
+      },
+      "seconds": 80,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 9,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 75.13
+      },
+      "damage": {
+        "needle": 21805.224527668553,
+        "lamp": 12507.25049537958,
+        "blade": 28886.444749744525,
+        "bone": 35095.86147833747
+      },
+      "seconds": 176,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 9,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 45.63
+      },
+      "damage": {
+        "lightning": 26822.355567631836,
+        "blade": 14716.763999999615,
+        "fire": 26384.009323283084,
+        "water": 10530.114284067102
+      },
+      "seconds": 98,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 9,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 63.47
+      },
+      "damage": {
+        "void": 14929.25006813421,
+        "holy": 27913.789921977965,
+        "water": 28413.24716282328,
+        "mine": 16687.177745490462
+      },
+      "seconds": 137,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 9,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 53778.666694023515,
+      "phaseTimes": {
+        "1": 0,
+        "2": 55.43
+      },
+      "damage": {
+        "blade": 17412.389566548278,
+        "ghost": 24457.325128815955,
+        "bone": 18281.630392464212,
+        "holy": 24939.22936202183
+      },
+      "seconds": 125,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 10,
+      "build": "armor",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 26.6,
+        "3": 57.63
+      },
+      "damage": {
+        "lightning": 16716.963943231265,
+        "hammer": 23890.29993494478,
+        "wheel": 15192.555261316227,
+        "water": 23185.291957317208
+      },
+      "patterns": {
+        "A": 2,
+        "B": 3,
+        "C": 2
+      },
+      "seconds": 87,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 10,
+      "build": "support",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 47.13,
+        "3": 99.03
+      },
+      "damage": {
+        "needle": 17768.265949395252,
+        "lamp": 9934.889711268564,
+        "blade": 28028.17174240127,
+        "bone": 36114.52891579764
+      },
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 152,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 10,
+      "build": "precision",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 38.5,
+        "3": 76.3
+      },
+      "damage": {
+        "lightning": 28775.08278357395,
+        "blade": 17076.22799999956,
+        "fire": 24619.298976724556,
+        "water": 14595.145727966175
+      },
+      "patterns": {
+        "A": 4,
+        "B": 5,
+        "C": 4
+      },
+      "seconds": 112,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 10,
+      "build": "ground",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 36.3,
+        "3": 79.3
+      },
+      "damage": {
+        "void": 14188.421241128895,
+        "holy": 22058.865284620155,
+        "water": 25163.911981590532,
+        "mine": 24627.460083555714
+      },
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 4
+      },
+      "seconds": 119,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 10,
+      "build": "pursuit",
+      "weapons": 4,
+      "maxHp": 55878.662409286786,
+      "phaseTimes": {
+        "1": 0,
+        "2": 37.97,
+        "3": 84.13
+      },
+      "damage": {
+        "blade": 16589.019899213483,
+        "ghost": 23440.993828034785,
+        "bone": 19557.16435027958,
+        "holy": 24283.30924461612
+      },
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 3
+      },
+      "seconds": 118,
+      "state": "won",
+      "bossRemaining": 0
+    }
+  ]
+}

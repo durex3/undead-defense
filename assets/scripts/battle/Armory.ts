@@ -1,3 +1,4 @@
+import { createWeaponStrategies, WeaponStrategyTable, WEAPON_FAMILY_ORDER, WeaponFamily } from "./WeaponStrategies";
 import { SupportArmory } from "./SupportArmory";
 import { UnlockedArmory } from "./UnlockedArmory";
 import { ExtraArmory } from "./ExtraArmory";
@@ -74,6 +75,8 @@ export class Armory {
       end: Point;
     }
   >();
+  readonly strategies: WeaponStrategyTable;
+  private readonly strategySkills: Record<WeaponFamily,Skill[]>;
   readonly support: SupportArmory;
   readonly extra: ExtraArmory;
   readonly unlocked: UnlockedArmory;
@@ -81,6 +84,9 @@ export class Armory {
     this.support = new SupportArmory(w);
     this.extra = new ExtraArmory(w);
     this.unlocked = new UnlockedArmory(w);
+    this.strategies=createWeaponStrategies(this);
+    this.strategySkills={support:[],extra:[],unlocked:[],core:[]};
+    for(const skill of Object.keys(this.strategies) as Skill[])this.strategySkills[this.strategies[skill].family].push(skill);
   }
   private enemies(origin: Point, range: number) {
     return this.w.enemies.filter(
@@ -156,24 +162,33 @@ export class Armory {
   }
   step(dt: number) {
     this.stepIndex++;
-    const w = this.w;
-    this.support.step(dt);
-    this.extra.step(dt);
-    this.unlocked.step(dt);
-    for (const skill of WEAPONS) {
-      if (!["blade", "fire", "water"].includes(skill)) continue;
-      if (!w.skills[skill]) continue;
+    this.support.prepare();
+    for(const family of WEAPON_FAMILY_ORDER) {
+      for(const skill of this.strategySkills[family])if(this.w.skills[skill])this.strategies[skill].cast(dt);
+      this.advanceFamily[family](dt);
+    }
+  }
+  private readonly advanceFamily:Record<WeaponFamily,(dt:number)=>void>={
+    support:dt=>this.support.advance(dt),extra:dt=>this.extra.advance(dt),
+    unlocked:dt=>this.unlocked.advance(dt),core:dt=>this.advance(dt),
+  };
+  castWeapon(skill: "blade"|"fire"|"water",dt:number) {
+    const w=this.w;
+      if (!w.skills[skill]) return;
       w.cooldowns[skill] = Math.max(0, w.cooldowns[skill] - dt);
-      if (w.cooldowns[skill] > 0) continue;
+      if (w.cooldowns[skill] > 0) return;
       const s = weaponStats(w, skill),
         t = this.target(skill, s) || (skill==="blade"&&!s.mods.includes("hunt")?w.player:undefined);
-      if(skill==="blade" && this.shots.some(p=>p.active&&p.orbit))continue;
-      if (!t || !this.room(s, skill)) continue;
+      if(skill==="blade" && this.shots.some(p=>p.active&&p.orbit))return;
+      if (!t || !this.room(s, skill)) return;
       this.cast(skill, s, t);
       w.cooldowns[skill] = s.cooldown;
       w.castCounts[skill] = (w.castCounts[skill] || 0) + 1;
       w.effects.push({ type: "cast", ...w.player, skill });
-    }
+
+  }
+  private advance(dt:number) {
+    const w=this.w;
     for (let i = this.pending.length - 1; i >= 0; i--)
       if (this.pending[i].due <= w.time) {
         const c = this.pending.splice(i, 1)[0];

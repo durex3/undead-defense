@@ -28,6 +28,7 @@ export const UNLOCK_ATTACK_LIMIT = 80;
 export class UnlockedArmory {
   attacks: UnlockAttack[] = [];
   private side = 1;
+  private readonly attackStrategies:Record<UnlockSkill,(a:UnlockAttack)=>void>={hammer:a=>this.hammer(a),wheel:a=>this.wheel(a)};
   constructor(private w: SurvivalWorld) {}
   private add(
     skill: UnlockSkill,
@@ -79,9 +80,15 @@ export class UnlockedArmory {
   step(dt: number) {
     const w = this.w;
     for (const skill of ["hammer", "wheel"] as const) {
-      if (!w.skills[skill]) continue;
+      this.castWeapon(skill,dt);
+    }
+    this.advance(dt);
+  }
+  castWeapon(skill: UnlockSkill,dt:number) {
+    const w=this.w;
+      if (!w.skills[skill]) return;
       w.cooldowns[skill] = Math.max(0, w.cooldowns[skill] - dt);
-      if (w.cooldowns[skill] > 0) continue;
+      if (w.cooldowns[skill] > 0) return;
       const s = weaponStats(w, skill),
         target = w.target(
           w.player,
@@ -93,7 +100,7 @@ export class UnlockedArmory {
           Math.min(16, s.count) * 6 >
           UNLOCK_ATTACK_LIMIT
       )
-        continue;
+        return;
       const angle = Math.atan2(target.y - w.player.y, target.x - w.player.x),
         n = Math.min(16, s.count),
         sweep = skill === "hammer" && s.mods.includes("sweep");
@@ -152,12 +159,14 @@ export class UnlockedArmory {
       w.cooldowns[skill] = s.cooldown;
       w.castCounts[skill] = (w.castCounts[skill] || 0) + 1;
       w.effects.push({ type: "cast", ...w.player, skill });
-    }
+
+  }
+  advance(dt:number) {
+    const w=this.w;
     for (const a of this.attacks)
       if (a.active) {
         if (w.time < a.created) continue;
-        if (a.skill === "hammer") this.hammer(a);
-        else this.wheel(a);
+        this.attackStrategies[a.skill](a);
       }
   }
   private hammer(a: UnlockAttack) {

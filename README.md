@@ -119,3 +119,5 @@ node tools/build.mjs wechatgame
 下一关[第十一关「缚烬织坊」设计稿](docs/stage-11-emberloom.md)已完成文档与静态白盒检查，尚未开发或开放。
 
 0.33.6完成[十四系列品阶与职责平衡](docs/weapon-balance-0.33.6.md)，建立后续新武器必须执行的数值预算、合法改造和整队收益对照。523项测试中522通过、1项历史跳过，714组输出诊断、TypeScript及Web/微信构建通过，已上传微信后台开发版本。正式基准入口为`npm run weapons:benchmark`。
+
+0.33.7完成[参考输出×目标时长成长与武器策略](docs/stage-growth-and-strategies-0.33.7.md)：普通/精英/Boss采用独立预算，十四武器接入可执行策略表，收紧Boss裂甲叠加。526项测试中525通过、1项历史跳过，714组输出预算、150组多配置Boss诊断及真实Cocos/存档冷重载验证通过。已上传微信后台开发版本；第十一关仍为设计稿。
