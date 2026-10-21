@@ -1,0 +1,109 @@
+{
+  "compatible": {
+    "coins": 1640,
+    "stages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hammer": true,
+    "wheel": true,
+    "notice": "已兼容读取旧存档，通关与金币已保留"
+  },
+  "list": [
+    "存档检查与恢复",
+    "账户金币 1640 · 同系列只占一席 · 进阶从下一局生效",
+    "已兼容读取旧存档，通关与金币已保留",
+    "主存档副本 · 7关 · 1640金币",
+    "通关记录：1、2、3、4、5、6、7 · 修订121",
+    "▸ 预览恢复",
+    "备用存档副本 · 7关 · 1640金币",
+    "通关记录：1、2、3、4、5、6、7 · 修订121",
+    "预览恢复",
+    "主存档副本 · 7关 · 1640金币",
+    "通关记录：1、2、3、4、5、6、7 · 修订120 · 已兼容读取",
+    "预览恢复",
+    "1/1",
+    "上一页",
+    "下一页",
+    "返回菜单",
+    "粘贴补回码"
+  ],
+  "beforeRestore": {
+    "coins": 0,
+    "stages": 0
+  },
+  "restored": {
+    "coins": 1640,
+    "stages": 7,
+    "hammer": true,
+    "notice": "记录已变化，请重新选择副本"
+  },
+  "reopened": {
+    "coins": 1640,
+    "stages": 7
+  },
+  "repairPreview": {
+    "coins": 1640,
+    "stages": 7
+  },
+  "repaired": {
+    "coins": 400,
+    "stages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "available": [
+      "blade",
+      "fire",
+      "water",
+      "frost",
+      "lightning",
+      "ghost",
+      "bone",
+      "mine",
+      "void",
+      "holy"
+    ]
+  },
+  "coldRepair": {
+    "coins": 400,
+    "stages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "achievements": [
+      "siege_clear",
+      "sand_clear",
+      "thunder_clear",
+      "moon_clear"
+    ]
+  },
+  "coldVictory": {
+    "coins": 580,
+    "stages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "modWins": {
+      "blade": {
+        "orbit+return": [
+          5
+        ]
+      }
+    },
+    "notice": ""
+  },
+  "errors": []
+}

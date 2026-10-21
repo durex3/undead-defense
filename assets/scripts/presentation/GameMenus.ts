@@ -48,7 +48,7 @@ import {
 } from "../battle/SurvivalConfig";
 import type { GameBootstrap } from "../GameBootstrap";
 export class GameMenus {
-  private catalog: "weapons" | "achievements" | "detail" | "purchase" | null =
+  private catalog: "weapons" | "achievements" | "detail" | "purchase" | "recovery" | null =
     null;
   private catalogPage = 0;
   private catalogFocus = 0;
@@ -506,6 +506,7 @@ export class GameMenus {
     this.host.text(this.host.overlay, "余烬幸存者 · 选择冒险", 0, 220, 34);
     this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
     this.host.muteButton(425, 225, true);
+    this.host.button(this.host.overlay,"存档检查",-430,225,160,38,()=>this.showRecovery());
     this.host.text(
       this.host.overlay,
       "十二武器 · 十把默认开放 · 金币与成就各解锁一把",
@@ -600,11 +601,11 @@ export class GameMenus {
     }
     this.host.text(
       this.host.overlay,
-      this.host.progress.pending
+      this.host.progress.readBlocked ? this.host.progress.loadNotice : (this.host.progress.pending
         ? "进度暂未保存，将自动重试"
-        : this.host.touchMode
+        : this.host.progress.loadNotice || (this.host.touchMode
           ? "左侧拖动移动 · 右下角全收经验 · 6 分钟迎战首领 · 上限64级"
-          : "WASD 移动 · 空格全收经验 · 6 分钟迎战首领 · 上限64级",
+          : "WASD 移动 · 空格全收经验 · 6 分钟迎战首领 · 上限64级")),
       0,
       guide ? -220 : -194,
       16,
@@ -844,6 +845,68 @@ export class GameMenus {
     this.catalogButton("下一页",300,-185,180,34,()=>this.showAchievements(this.achievementPage+1));
     this.catalogButton("返回菜单",0,-245,280,44,()=>this.showStart());
   }
+  showRecovery(page=0) {
+    this.catalog="recovery";this.catalogFocus=0;this.catalogShell("存档检查与恢复");
+    const h=this.host, records=h.progress.recoveryRecords, pages=Math.max(1,Math.ceil(records.length/3)), p=Math.max(0,Math.min(pages-1,page));
+    h.text(h.overlay,this.catalogMessage || h.progress.loadNotice || `当前已通关 ${h.progress.data.stages.length}关 · ${h.progress.coins}金币 · 可读副本 ${records.length}份`,0,153,17,"#e8d1a2",1080);
+    this.catalogMessage="";
+    records.slice(p*3,p*3+3).forEach((record,i)=>{
+      const y=80-i*98,d=record.data;
+      h.panel(h.overlay,0,y,1060,88,"#293443");
+      h.text(h.overlay,`${record.source} · ${d.stages.length}关 · ${d.coins??0}金币`,-200,y+21,21,"#e6d8b7",610);
+      h.text(h.overlay,`通关记录：${d.stages.join("、")||"暂无"} · 修订${d.revision}${record.repaired?" · 已兼容读取":""}`,0,y-17,16,"#b9cbd4",1020);
+      this.catalogButton("预览恢复",355,y+21,240,34,()=>this.confirmRecovery(record.id));
+    });
+    if(!records.length) {
+      h.text(h.overlay,"没有找到可读取的账户副本",0,50,25,"#e6d8b7",1020);
+      h.text(h.overlay,"原始数据会保留；此功能无法还原已被微信清除或完全覆盖的数据。",0,-5,17,"#b9cbd4",1030);
+    }
+    h.text(h.overlay,`${p+1}/${pages}`,0,-180,17);
+    this.catalogButton("上一页",-300,-185,180,34,()=>this.showRecovery(p-1));
+    this.catalogButton("下一页",300,-185,180,34,()=>this.showRecovery(p+1));
+    this.catalogButton("返回菜单",-250,-245,280,44,()=>this.showStart());
+    this.catalogButton("粘贴补回码",250,-245,320,44,()=>this.pasteRepairCode());
+  }
+  private confirmRecovery(id: string) {
+    const h=this.host, record=h.progress.recoveryRecords.find(v=>v.id===id);if(!record){this.showRecovery();return;}
+    const revision=h.progress.data.revision,d=record.data;
+    this.catalog="recovery";this.catalogFocus=0;this.catalogShell("确认恢复账户快照");
+    h.text(h.overlay,`已通关 ${d.stages.join("、")||"暂无"} · ${d.coins??0}金币`,0,100,25,"#f1ddaf",1060);
+    h.text(h.overlay,`购买 ${d.purchasedWeapons?.length??0}项 · 成就 ${d.achievements?.length??0}项`,0,48,21,"#bfd4d2",1060);
+    h.text(h.overlay,"恢复后金币、武器和进度以所选快照为准，不与当前余额相加。",0,-15,18,"#e2c69d",1060);
+    h.text(h.overlay,"当前原始副本会先保留；保存失败不会替换当前账户。",0,-58,17,"#b9cbd4",1060);
+    this.catalogButton("取消",-220,-170,300,48,()=>this.showRecovery());
+    this.catalogButton("确认恢复",220,-170,300,48,()=>{
+      const result=h.progress.restoreRecord(id,revision);
+      if(result!=="restored")h.progress.loadNotice=result==="save-failed"?"恢复保存失败，原始副本已保留，请重试":"记录已变化，请重新选择副本";
+      this.showRecovery();
+    });
+  }
+  private pasteRepairCode() {
+    const fail=()=>{this.catalogMessage="请先复制补回码，再点击粘贴；账户尚未修改";this.showRecovery();};
+    const wx=(globalThis as any).wx;
+    if(wx?.getClipboardData) {
+      wx.getClipboardData({success:(result:{data:string})=>this.showRepairCodePreview(result.data),fail});
+    } else if(typeof navigator!=="undefined" && navigator.clipboard?.readText) {
+      navigator.clipboard.readText().then(code=>this.showRepairCodePreview(code)).catch(fail);
+    } else fail();
+  }
+  private showRepairCodePreview(code: string) {
+    const h=this.host,preview=h.progress.previewRepairCode(code);
+    if(!preview){this.catalogMessage="补回码无效或复制不完整，账户尚未修改";this.showRecovery();return;}
+    const d=preview.data, revision=h.progress.data.revision;
+    this.catalog="recovery";this.catalogFocus=0;this.catalogShell("确认补回通关与金币");
+    h.text(h.overlay,`已通关 ${d.stages.join("、")||"暂无"} · ${d.coins??0}金币`,0,100,26,"#f1ddaf",1060);
+    h.text(h.overlay,"仅默认武器 · 默认品阶 · 不授予挑战解锁武器",0,42,21,"#bfd4d2",1060);
+    h.text(h.overlay,"确认后按以上内容替换当前账户，余额不会相加。",0,-17,18,"#e2c69d",1060);
+    h.text(h.overlay,"当前原始副本会保留；同一补回码只使用一次。",0,-60,17,"#b9cbd4",1060);
+    this.catalogButton("取消",-220,-170,300,48,()=>this.showRecovery());
+    this.catalogButton("确认补回",220,-170,300,48,()=>{
+      const result=h.progress.applyRepairCode(code,revision);
+      this.catalogMessage=result==="restored"?"补回成功 · 请退出重进确认进度":result==="already"?"此码已使用，不会重复增加金币":result==="save-failed"?"保存失败，账户未修改，请重试":"账户已变化，请重新粘贴补回码";
+      this.showRecovery();
+    });
+  }
   private moveStage(direction: number) {
     if (this.stagePreview === null) return;
     const index = STAGE_IDS.indexOf(this.stagePreview);
@@ -909,7 +972,7 @@ export class GameMenus {
     }
     h.text(h.overlay, STAGE_GUIDES[preview].threat, 0, -144, 16, "#c4d4d2", 940);
     const status = !unlocked ? `通关第${stageNumber(preview)-1}关解锁`
-      : best?.won ? "已通关" : "已解锁";
+      : (best?.won || h.progress.data.stages.includes(preview)) ? "已通关" : "已解锁";
     h.text(h.overlay, `${status} · 胜利奖励 ${CLEAR_COINS[preview]}金币 · 6分钟迎战首领`,
       0, -181, 17, unlocked ? "#b8d4bc" : "#b5b5c3", 940);
     const dots = h.make("StageCarouselPosition", h.overlay);

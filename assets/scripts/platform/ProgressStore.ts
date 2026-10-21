@@ -12,8 +12,20 @@ import {
   StageId,
   STAGE_IDS,
 } from "../battle/ProgressionConfig";
-/** Deliberate fresh start: old keys and old schemas are never read. */
+/** Stable account namespace: updates never delete previous saves. */
 export const PROGRESS_KEY = "ashen-survivors-armory-progress-v1";
+export const RECOVERY_KEY = PROGRESS_KEY + "-recovery";
+const SAVE_KEYS = [PROGRESS_KEY, PROGRESS_KEY + "-backup", "ashen-survivors-progress-v1", "ashen-survivors-progress-v1-backup", "undead-defense-v1", "undead-defense-v1-backup"];
+interface PreservedSave { key: string; raw: string; }
+export interface RecoveryRecord { id: string; source: string; data: ProgressData; repaired: boolean; }
+function repairChecksum(body: string) {
+  let hash=2166136261;for(let i=0;i<body.length;i++)hash=Math.imul(hash^body.charCodeAt(i),16777619);
+  return (hash>>>0).toString(36);
+}
+/** Local account correction, with a checksum against copy errors; not cloud authentication. */
+export function createRepairCode(cleared: number, coins: number, nonce: string) {
+  const body=`ASR1-${cleared}-${coins}-${nonce}`;return body+"-"+repairChecksum(body);
+}
 export interface StageBest {
   time: number;
   phase: number;
@@ -51,30 +63,130 @@ const fresh = (): ProgressData => ({
 export class ProgressStore {
   data: ProgressData = fresh();
   pending = false;
+  loadNotice = "";
+  readBlocked = false;
   constructor(private storage: StoragePort) {
-    for (const key of [
-      "ashen-survivors-progress-v1",
-      "ashen-survivors-progress-v1-backup",
-      "ashen-survivors-preferences-v1",
-      "undead-defense-v1",
-      "undead-defense-v1-backup",
-    ])
-      try {
-        storage.removeItem?.(key);
-      } catch {}
-    const candidates: ProgressData[] = [];
-    for (const key of [PROGRESS_KEY, PROGRESS_KEY + "-backup"])
-      try {
-        const d = JSON.parse(storage.getItem(key) || "null");
-        if (this.valid(d)) candidates.push(d);
-      } catch {}
-    if (candidates.length) this.data = candidates.sort((a, b) => b.revision - a.revision)[0];
+    const candidates: RecoveryRecord[] = [];
+    let readFailed=false, activeUnknown=false;
+    for(const key of SAVE_KEYS) try {
+      const raw=this.storage.getItem(key);
+      if(!raw)continue;
+      const record=this.decode(raw);
+      if(record) candidates.push({id:this.recordId(key,this.rawString(raw)),source:key===PROGRESS_KEY?"主存档":key===PROGRESS_KEY+"-backup"?"备用存档":"旧位置",...record});
+      else if(key===PROGRESS_KEY || key===PROGRESS_KEY+"-backup") activeUnknown=true;
+    } catch {readFailed=true;}
+    const current=candidates.filter(v=>v.source!=="旧位置");
+    const pool=current.length?current:candidates;
+    if(pool.length) {
+      const chosen=pool.sort((a,b)=>b.data.revision-a.data.revision)[0];
+      this.data=chosen.data;
+      if(chosen.repaired)this.loadNotice="已兼容读取旧存档，通关与金币已保留";
+      else if(chosen.source!=="主存档")this.loadNotice="已从"+chosen.source+"读取账户进度";
+    } else {
+      this.readBlocked=readFailed || activeUnknown;
+      if(this.readBlocked)this.loadNotice="存档读取异常，已暂停覆盖；请打开存档检查";
+    }
     const before = JSON.stringify(this.data.achievements ?? []);
     const achievements = new Set(this.data.achievements ?? []);
     for(const stage of this.data.stages) achievements.add(STAGE_CLEAR_IDS[stage]);
-    if(JSON.stringify([...achievements]) !== before) {
-      this.data.achievements = [...achievements]; this.data.revision++; this.pending=true; this.flush();
+    if(JSON.stringify(Array.from(achievements)) !== before) {
+      this.data.achievements = Array.from(achievements); this.data.revision++; this.pending=true; this.flush();
     }
+  }
+  private rawString(raw: unknown) {return typeof raw === "string" ? raw : JSON.stringify(raw);}
+  private recordId(key: string, raw: string) {
+    let hash=2166136261;for(const ch of key+raw)hash=Math.imul(hash^ch.charCodeAt(0),16777619);
+    return (hash>>>0).toString(36);
+  }
+  private decode(raw: unknown): {data: ProgressData; repaired: boolean} | null {
+    try {
+      let v:any=raw;
+      for(let i=0;i<2 && typeof v==="string";i++)v=JSON.parse(v);
+      if(this.valid(v)) {
+        const data=JSON.parse(JSON.stringify(v)) as ProgressData;
+        const stages=new Set(data.stages);
+        for(const [id,best]of Object.entries(data.stageBest))if(best.won)stages.add(Number(id));
+        for(const id of data.achievements??[]){const stage=(STAGE_CLEAR_IDS as readonly string[]).indexOf(id);if(stage>0)stages.add(stage);}
+        const repaired=stages.size!==data.stages.length;data.stages=Array.from(stages);
+        return {data,repaired};
+      }
+      if(v?.version!==1 || v?.rules!=="armory-v1")return null;
+      // Isolate optional/corrupt fields instead of discarding the account.
+      if(v.coins!==undefined && !(Number.isSafeInteger(v.coins)&&v.coins>=0))return null;
+      const d=fresh(), stage=(id:any)=>(STAGE_IDS as readonly number[]).includes(id);
+      d.revision=Number.isSafeInteger(v.revision)&&v.revision>=0?v.revision:0;
+      d.coins=Number.isSafeInteger(v.coins)&&v.coins>=0?v.coins:0;
+      d.stages=Array.isArray(v.stages)?Array.from(new Set<number>(v.stages.filter(stage))):[];
+      for(const k of ["kills","time","weapons"] as const) if(Number.isFinite(v.best?.[k])&&v.best[k]>=0)d.best[k]=v.best[k];
+      if(v.stageBest && typeof v.stageBest==="object" && !Array.isArray(v.stageBest)) for(const [key,b] of Object.entries(v.stageBest) as [string,any][]) {
+        if(!stage(Number(key)) || !Number.isFinite(b?.time)||b.time<0||!Number.isInteger(b.phase)||b.phase<0||b.phase>3||typeof b.won!=="boolean" || !(b.bossRemaining===null || Number.isFinite(b.bossRemaining)&&b.bossRemaining>=0&&b.bossRemaining<=100))continue;
+        d.stageBest[key]=b;if(b.won && !d.stages.includes(Number(key)))d.stages.push(Number(key));
+      }
+      d.purchasedWeapons=Array.isArray(v.purchasedWeapons)?Array.from(new Set<string>(v.purchasedWeapons.filter((x:any)=>x==="hammer"||x==="lamp"))):[];
+      d.achievements=Array.isArray(v.achievements)?Array.from(new Set<string>(v.achievements.filter((x:any)=>ACHIEVEMENTS.some(a=>a.id===x)))):[];
+      d.settledRuns=Array.isArray(v.settledRuns)?Array.from(new Set<string>(v.settledRuns.filter((x:any)=>typeof x==="string"&&x.length<120))):[];
+      d.grades={};if(v.grades && typeof v.grades==="object")for(const skill of ALL_WEAPONS)if(validGrade(skill,v.grades[skill]))d.grades[skill]=v.grades[skill];
+      if(Array.isArray(v.openerWins))d.openerWins=v.openerWins.filter((x:any)=>ALL_WEAPONS.includes(x?.skill)&&stage(x.stage));
+      if(Array.isArray(v.sealOpeners))d.sealOpeners=Array.from(new Set<Skill>(v.sealOpeners.filter((x:any)=>ALL_WEAPONS.includes(x))));
+      if(v.modWins && typeof v.modWins==="object") {
+        d.modWins={};for(const skill of ALL_WEAPONS){const history=v.modWins[skill];if(!history||typeof history!=="object"||Array.isArray(history))continue;
+          const result:Record<string,number[]>={};for(const [pair,stages]of Object.entries(history))if(this.legalPair(skill,pair.split("+"))&&Array.isArray(stages)) result[pair.split("+").sort().join("+")]=Array.from(new Set<number>(stages.filter(stage)));
+          if(Object.keys(result).length)d.modWins[skill]=result;
+        }
+      }
+      return this.valid(d)?{data:d,repaired:true}:null;
+    }catch{return null;}
+  }
+  private archives(): PreservedSave[] {
+    const raw=this.storage.getItem(RECOVERY_KEY);if(!raw)return [];
+    const v=JSON.parse(this.rawString(raw));
+    if(!Array.isArray(v))throw Error("Recovery archive unreadable");
+    return v.filter(x=>x && typeof x.key==="string" && typeof x.raw==="string");
+  }
+  private preserveStored() {
+    try {
+      const old=this.archives(), next=[...old];
+      for(const key of SAVE_KEYS){const raw=this.storage.getItem(key);if(!raw)continue;const value=this.rawString(raw);if(!next.some(x=>x.key===key&&x.raw===value))next.push({key,raw:value});}
+      if(next.length===old.length)return true;
+      // Preserve the original pair plus ten recent raw snapshots.
+      const bounded=next.length>12?[...next.slice(0,2),...next.slice(-10)]:next;
+      this.storage.setItem(RECOVERY_KEY,JSON.stringify(bounded));return true;
+    }catch{return false;}
+  }
+  get recoveryRecords(): RecoveryRecord[] {
+    const entries:PreservedSave[]=[];
+    for(const key of SAVE_KEYS)try{const raw=this.storage.getItem(key);if(raw)entries.push({key,raw:this.rawString(raw)});}catch{}
+    try {entries.push(...this.archives());}catch{}
+    const records:RecoveryRecord[]=[], seen=new Set<string>();
+    for(const entry of entries){const value=this.decode(entry.raw);if(!value)continue;const id=this.recordId(entry.key,entry.raw);if(seen.has(id))continue;seen.add(id);records.push({id,source:entry.key===PROGRESS_KEY?"主存档副本":entry.key===PROGRESS_KEY+"-backup"?"备用存档副本":"旧位置副本",...value});}
+    return records.sort((a,b)=>b.data.stages.length-a.data.stages.length || b.data.revision-a.data.revision);
+  }
+  restoreRecord(id: string, expectedRevision: number) {
+    if(this.data.revision!==expectedRevision)return "stale";
+    const record=this.recoveryRecords.find(v=>v.id===id);if(!record)return "missing";
+    const next=JSON.parse(JSON.stringify(record.data)) as ProgressData;
+    next.revision=Math.max(this.data.revision,next.revision);
+    if(!this.commit(next,true))return "save-failed";
+    this.pending=false;this.readBlocked=false;this.loadNotice="已恢复所选账户快照";return "restored";
+  }
+  previewRepairCode(text: string): {data: ProgressData; id: string} | null {
+    const code=text.trim();if(code.length>160)return null;
+    const match=/^(ASR1-(\d{1,2})-(\d{1,8})-(\d{8,16}))-([a-z0-9]+)$/.exec(code);
+    if(!match || repairChecksum(match[1])!==match[5])return null;
+    const cleared=Number(match[2]),coins=Number(match[3]);
+    if(cleared<0 || cleared>Math.max(...STAGE_IDS) || !Number.isSafeInteger(coins) || coins>10000000)return null;
+    const data=fresh();data.stages=STAGE_IDS.filter(id=>id<=cleared);data.coins=coins;
+    data.achievements=data.stages.map(id=>STAGE_CLEAR_IDS[id]);
+    return {data,id:"repair:"+code};
+  }
+  applyRepairCode(code: string, expectedRevision: number) {
+    const preview=this.previewRepairCode(code);if(!preview)return "invalid";
+    if((this.data.settledRuns??[]).includes(preview.id))return "already";
+    if(this.data.revision!==expectedRevision)return "stale";
+    const next=preview.data;next.revision=this.data.revision;
+    next.settledRuns=Array.from(new Set([...(this.data.settledRuns??[]),preview.id]));
+    if(!this.commit(next,true))return "save-failed";
+    this.pending=false;this.readBlocked=false;this.loadNotice="已补回通关与金币；请重新进入确认保存";return "restored";
   }
   private valid(d: any): d is ProgressData {
     return (
@@ -158,7 +270,8 @@ export class ProgressStore {
   private legalPair(s: Skill, pair: readonly string[]) {
     return pair.length===2 && new Set(pair).size===2 && pair.every(id => MODS[s].some(m=>m.id===id && !pair.includes(m.excludes ?? "__none__")));
   }
-  private commit(next: ProgressData) {
+  private commit(next: ProgressData, restoring=false) {
+    if((this.readBlocked && !restoring) || !this.preserveStored())return false;
     next.revision++;
     const raw=JSON.stringify(next); let success=0;
     for(const key of [PROGRESS_KEY,PROGRESS_KEY+"-backup"]) try {this.storage.setItem(key,raw);success++;} catch {}
@@ -239,7 +352,7 @@ export class ProgressStore {
         if(!next.openerWins.some(v=>v.skill===opener && v.stage===w.stageId)) next.openerWins.push({skill:opener,stage:w.stageId});
         if(new Set(next.openerWins.map(v=>v.skill)).size>=5 && new Set(next.openerWins.map(v=>v.stage)).size>=3) achievements.add("five_openers");
         if(w.stageId===10 && [1,2,3].every(phase=>w.challenge.bossSealPhases.has(phase)) && w.challenge.bossHits===0) {
-          next.sealOpeners=[...new Set([...(next.sealOpeners??[]),opener])];
+          next.sealOpeners=Array.from(new Set([...(next.sealOpeners??[]),opener]));
           if(next.sealOpeners.length>=6) achievements.add("seal_pathfinder");
         }
       }
@@ -247,10 +360,10 @@ export class ProgressStore {
       for(const skill of ALL_WEAPONS) if(w.skills[skill]>0 && this.legalPair(skill,w.mods[skill])) {
         const key=[...w.mods[skill]].sort().join("+");
         const history=next.modWins[skill] ??= {};
-        history[key]=[...new Set([...(history[key]??[]),w.stageId])];
+        history[key]=Array.from(new Set([...(history[key]??[]),w.stageId]));
       }
       for(const history of Object.values(next.modWins)) if(history && Object.keys(history).length>=3 && new Set(Object.values(history).flat()).size>=2) achievements.add("modification_paths");
-      for(const id of achievements) if(!(next.achievements??[]).includes(id)) notices.push(ACHIEVEMENTS.find(a=>a.id===id)!.name);
+      for(const id of Array.from(achievements)) if(!(next.achievements??[]).includes(id)) notices.push(ACHIEVEMENTS.find(a=>a.id===id)!.name);
       next.achievements = Array.from(achievements);
     }
     const current: StageBest = {
@@ -287,7 +400,8 @@ export class ProgressStore {
     return notices;
   }
   flush() {
-    if (!this.pending) return true;
+    if (!this.pending) return !this.readBlocked;
+    if(this.readBlocked || !this.preserveStored())return false;
     const raw = JSON.stringify(this.data);
     let successes = 0;
     for (const key of [PROGRESS_KEY, PROGRESS_KEY + "-backup"])
