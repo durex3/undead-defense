@@ -3,9 +3,25 @@
   "result": [
     {
       "stage": 1,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 26,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 1,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 55,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 1,
       "build": "precision",
       "weapons": 4,
-      "seconds": 38,
+      "seconds": 27,
       "state": "won",
       "bossRemaining": 0
     },
@@ -13,7 +29,7 @@
       "stage": 1,
       "build": "ground",
       "weapons": 4,
-      "seconds": 34,
+      "seconds": 28,
       "state": "won",
       "bossRemaining": 0
     },
@@ -27,9 +43,25 @@
     },
     {
       "stage": 2,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 31,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 2,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 99,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 2,
       "build": "precision",
       "weapons": 4,
-      "seconds": 44,
+      "seconds": 36,
       "state": "won",
       "bossRemaining": 0
     },
@@ -37,7 +69,7 @@
       "stage": 2,
       "build": "ground",
       "weapons": 4,
-      "seconds": 37,
+      "seconds": 30,
       "state": "won",
       "bossRemaining": 0
     },
@@ -45,7 +77,23 @@
       "stage": 2,
       "build": "pursuit",
       "weapons": 4,
-      "seconds": 48,
+      "seconds": 50,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 3,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 28,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 3,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 30,
       "state": "won",
       "bossRemaining": 0
     },
@@ -61,7 +109,7 @@
       "stage": 3,
       "build": "ground",
       "weapons": 4,
-      "seconds": 40,
+      "seconds": 30,
       "state": "won",
       "bossRemaining": 0
     },
@@ -69,7 +117,23 @@
       "stage": 3,
       "build": "pursuit",
       "weapons": 4,
-      "seconds": 26,
+      "seconds": 27,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 4,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 29,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 4,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 45,
       "state": "won",
       "bossRemaining": 0
     },
@@ -77,7 +141,7 @@
       "stage": 4,
       "build": "precision",
       "weapons": 4,
-      "seconds": 26,
+      "seconds": 24,
       "state": "won",
       "bossRemaining": 0
     },
@@ -85,7 +149,7 @@
       "stage": 4,
       "build": "ground",
       "weapons": 4,
-      "seconds": 37,
+      "seconds": 28,
       "state": "won",
       "bossRemaining": 0
     },
@@ -93,7 +157,23 @@
       "stage": 4,
       "build": "pursuit",
       "weapons": 4,
-      "seconds": 36,
+      "seconds": 38,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 5,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 31,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 5,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 62,
       "state": "won",
       "bossRemaining": 0
     },
@@ -101,7 +181,7 @@
       "stage": 5,
       "build": "precision",
       "weapons": 4,
-      "seconds": 59,
+      "seconds": 44,
       "state": "won",
       "bossRemaining": 0
     },
@@ -109,60 +189,12 @@
       "stage": 5,
       "build": "ground",
       "weapons": 4,
-      "seconds": 75,
+      "seconds": 64,
       "state": "won",
       "bossRemaining": 0
     },
     {
       "stage": 5,
-      "build": "pursuit",
-      "weapons": 4,
-      "seconds": 46,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 6,
-      "build": "precision",
-      "weapons": 4,
-      "seconds": 55,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 6,
-      "build": "ground",
-      "weapons": 4,
-      "seconds": 86,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 6,
-      "build": "pursuit",
-      "weapons": 4,
-      "seconds": 52,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 7,
-      "build": "precision",
-      "weapons": 4,
-      "seconds": 55,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 7,
-      "build": "ground",
-      "weapons": 4,
-      "seconds": 92,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 7,
       "build": "pursuit",
       "weapons": 4,
       "seconds": 54,
@@ -170,63 +202,31 @@
       "bossRemaining": 0
     },
     {
-      "stage": 8,
+      "stage": 6,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 32,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 6,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 64,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 6,
       "build": "precision",
       "weapons": 4,
-      "seconds": 66,
+      "seconds": 52,
       "state": "won",
       "bossRemaining": 0
     },
     {
-      "stage": 8,
-      "build": "ground",
-      "weapons": 4,
-      "seconds": 101,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 8,
-      "build": "pursuit",
-      "weapons": 4,
-      "seconds": 62,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 9,
-      "build": "precision",
-      "weapons": 4,
-      "seconds": 62,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 9,
-      "build": "ground",
-      "weapons": 4,
-      "seconds": 107,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 9,
-      "build": "pursuit",
-      "weapons": 4,
-      "seconds": 66,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 10,
-      "build": "precision",
-      "weapons": 4,
-      "seconds": 62,
-      "state": "won",
-      "bossRemaining": 0
-    },
-    {
-      "stage": 10,
+      "stage": 6,
       "build": "ground",
       "weapons": 4,
       "seconds": 79,
@@ -234,10 +234,170 @@
       "bossRemaining": 0
     },
     {
+      "stage": 6,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 55,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 7,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 35,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 7,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 72,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 7,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 56,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 7,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 83,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 7,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 48,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 8,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 39,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 8,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 75,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 8,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 63,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 8,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 82,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 8,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 68,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 9,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 37,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 9,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 84,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 9,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 58,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 9,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 83,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 9,
+      "build": "pursuit",
+      "weapons": 4,
+      "seconds": 64,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 10,
+      "build": "armor",
+      "weapons": 4,
+      "seconds": 33,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 10,
+      "build": "support",
+      "weapons": 4,
+      "seconds": 75,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 10,
+      "build": "precision",
+      "weapons": 4,
+      "seconds": 52,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "stage": 10,
+      "build": "ground",
+      "weapons": 4,
+      "seconds": 56,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
       "stage": 10,
       "build": "pursuit",
       "weapons": 4,
-      "seconds": 44,
+      "seconds": 53,
       "state": "won",
       "bossRemaining": 0
     }

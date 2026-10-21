@@ -98,6 +98,9 @@ export class UnlockedArmory {
         n = Math.min(16, s.count),
         sweep = skill === "hammer" && s.mods.includes("sweep");
       for (let i = 0; i < n; i++) {
+        // A full-strength opening strike plus weaker follow-ups. Keep the big
+        // first hit without multiplying damage and fracture value by quantity.
+        const strike = i === 0 ? s : {...s,damage:s.damage*.4};
         const a =
             angle +
             (skill === "wheel"
@@ -109,7 +112,7 @@ export class UnlockedArmory {
           };
         this.add(
           skill,
-          s,
+          strike,
           w.player,
           end,
           a,
@@ -119,7 +122,7 @@ export class UnlockedArmory {
         if (sweep)
           this.add(
             skill,
-            s,
+            strike,
             w.player,
             end,
             a + Math.PI / 3,

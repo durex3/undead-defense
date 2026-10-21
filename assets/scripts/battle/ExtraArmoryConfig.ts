@@ -290,10 +290,10 @@ export function extraBase(skill: ExtraSkill, l: number) {
   const bases = {
     frost: [24, 3.6, 3.2, 1, 7, 1.2],
     lightning: [30, 2.3, 0.9, 3, 11, 0.4],
-    ghost: [16, 3.0, 0.3, 2, 12, 3],
+    ghost: [14.4, 3.0, 0.3, 2, 12, 3],
     bone: [32, 2.6, 0.24, 1, 11, 1.2],
-    mine: [35, 3.8, 1.8, 2, 8, 6],
-    void: [6, 5.4, 2.2, 1, 9, 2.4],
+    mine: [60, 3.8, 1.8, 2, 8, 6],
+    void: [8, 5.4, 2.2, 1, 9, 2.4],
     holy: [40, 3.6, 1.2, 1, 12, 0.55],
   }[skill];
   const value = {
@@ -314,7 +314,7 @@ export function extraBase(skill: ExtraSkill, l: number) {
     duration: bases[5],
   };
   if (skill === "lightning") {
-    value.damage = [30,38,38,40,48,52,60,66];
+    value.damage = [36,45,45,54,66,74,88,100];
     value.cooldown = [2.3,2.3,2.3,2,2,2,2,1.6];
   }
   baseCache.set(key, value);

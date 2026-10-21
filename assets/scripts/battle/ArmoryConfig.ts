@@ -82,7 +82,7 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
       name: "碎焰散射",
       short: "碎焰",
       effect: "主爆炸向外散出2枚燃烧碎片",
-      cost: "主爆炸伤害−20%；碎片不再散射",
+      cost: "主爆炸伤害−30%；碎片不再散射",
       glyph: "✹",
     },
     {
@@ -208,7 +208,7 @@ export function weaponStats(
       duration: 2.6,
     },
     water: {
-      damage: [7, 9, 9, 10, 12, 13, 15, 16],
+      damage: [9, 12, 12, 15, 18, 20, 23, 26],
       count: [1, 1, 2, 2, 2, 3, 3, 3],
       cooldown: [3.2, 3.2, 3.2, 2.8, 2.8, 2.8, 2.8, 2.2],
       radius: 1.5 + (l >= 3 ? 0.2 : 0) + (l >= 7 ? 0.2 : 0),
@@ -259,7 +259,7 @@ export function weaponStats(
       s.radius *= 0.85;
       s.count += 2;
     }
-    if (m.includes("embers")) s.damage *= 0.8;
+    if (m.includes("embers")) s.damage *= 0.7;
     if (m.includes("flame")) s.damage *= 0.75;
   }
   if (skill === "water") {

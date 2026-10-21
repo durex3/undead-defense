@@ -1,0 +1,41 @@
+{
+  "status": "design-only",
+  "grid": 0.5,
+  "edgeSample": 0.05,
+  "actors": [
+    {
+      "radius": 0.3,
+      "freeCells": 8571,
+      "reachable": 8571,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "radius": 0.7,
+      "freeCells": 7999,
+      "reachable": 7999,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "speed": 4.2,
+  "reaction": 0.35,
+  "crossing": {
+    "requiredCenterTravel": 1.06,
+    "baseSeconds": 0.2523809523809524,
+    "looseSeconds": 2.2
+  },
+  "limitations": [
+    "Static layout only; no enemy crowd or combat implementation",
+    "Crossing timing is a theoretical straight-path bound, not proof of combined attack escape",
+    "Requires actual Cocos/HUD, joint future-trajectory and phone validation before release"
+  ]
+}

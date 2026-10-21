@@ -1,10 +1,12 @@
 import fs from 'node:fs';
 import {SurvivalWorld} from '../temp/tests/battle/SurvivalWorld.mjs';
-import {WEAPONS} from '../temp/tests/battle/SurvivalConfig.mjs';
+import {ALL_WEAPONS as WEAPONS} from '../temp/tests/battle/SurvivalConfig.mjs';
 import {BOSS_TIME} from '../temp/tests/battle/EncounterPacing.mjs';
 
 // Fixed full builds and invulnerability isolate output windows, not player survival.
 const builds={
+  armor:{hammer:['heavy','rift'],wheel:['heavy','grind'],water:['spring','pulse'],lightning:['echo','bridge']},
+  support:{blade:['hunt','return'],bone:['lance','marrow'],lamp:['focus','linger'],needle:['swift','barb']},
   precision:{blade:['hunt','return'],fire:['heavy','embers'],water:['spring','pulse'],lightning:['relay','echo']},
   ground:{water:['spring','pulse'],mine:['burrow','fuse'],void:['collapse','repel'],holy:['execution','brand']},
   pursuit:{blade:['hunt','return'],ghost:['execution','haunt'],bone:['lance','marrow'],holy:['execution','brand']},

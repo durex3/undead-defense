@@ -78,7 +78,7 @@ export class SupportArmory {
     // Bound total lingering + current targets; do not grow a trail of permanent marks.
     let spare=max-targets.length;
     for(const id of this.marks.keys()) if(!activeIds.has(id)) {if(spare>0) spare--;else this.marks.delete(id);}
-    for(const e of targets) this.marks.set(e.id,{until:w.time+(s.mods.includes("linger")?1.2:.6),factor:s.mods.includes("focus")?1.18:1.12});
+    for(const e of targets) this.marks.set(e.id,{until:w.time+(s.mods.includes("linger")?1.2:.6),factor:s.mods.includes("focus")?1.22:1.16});
     if(w.time+1e-8>=f.next) {
       f.next=w.time+(s.mods.includes("pulse")?1:.5);
       for(const e of targets) w.hit(e,s.damage,"lamp",false,f,false);

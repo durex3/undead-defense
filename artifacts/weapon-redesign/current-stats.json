@@ -214,7 +214,7 @@
           "name": "碎焰散射",
           "short": "碎焰",
           "effect": "主爆炸向外散出2枚燃烧碎片",
-          "cost": "主爆炸伤害−20%；碎片不再散射",
+          "cost": "主爆炸伤害−30%；碎片不再散射",
           "glyph": "✹"
         },
         {
@@ -231,15 +231,6 @@
       "skill": "water",
       "levels": [
         {
-          "damage": 7,
-          "count": 1,
-          "cooldown": 3.2,
-          "radius": 1.5,
-          "duration": 4,
-          "range": 10,
-          "mods": []
-        },
-        {
           "damage": 9,
           "count": 1,
           "cooldown": 3.2,
@@ -249,19 +240,10 @@
           "mods": []
         },
         {
-          "damage": 9,
-          "count": 2,
+          "damage": 12,
+          "count": 1,
           "cooldown": 3.2,
           "radius": 1.5,
-          "duration": 4,
-          "range": 10,
-          "mods": []
-        },
-        {
-          "damage": 10,
-          "count": 2,
-          "cooldown": 2.8,
-          "radius": 1.7,
           "duration": 4,
           "range": 10,
           "mods": []
@@ -269,6 +251,15 @@
         {
           "damage": 12,
           "count": 2,
+          "cooldown": 3.2,
+          "radius": 1.5,
+          "duration": 4,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 15,
+          "count": 2,
           "cooldown": 2.8,
           "radius": 1.7,
           "duration": 4,
@@ -276,7 +267,16 @@
           "mods": []
         },
         {
-          "damage": 13,
+          "damage": 18,
+          "count": 2,
+          "cooldown": 2.8,
+          "radius": 1.7,
+          "duration": 4,
+          "range": 10,
+          "mods": []
+        },
+        {
+          "damage": 20,
           "count": 3,
           "cooldown": 2.8,
           "radius": 1.7,
@@ -285,7 +285,7 @@
           "mods": []
         },
         {
-          "damage": 15,
+          "damage": 23,
           "count": 3,
           "cooldown": 2.8,
           "radius": 1.7,
@@ -294,7 +294,7 @@
           "mods": []
         },
         {
-          "damage": 16,
+          "damage": 26,
           "count": 3,
           "cooldown": 2.2,
           "radius": 1.9,
@@ -457,7 +457,7 @@
       "skill": "lightning",
       "levels": [
         {
-          "damage": 30,
+          "damage": 36,
           "count": 3,
           "cooldown": 2.3,
           "radius": 0.9,
@@ -466,7 +466,7 @@
           "mods": []
         },
         {
-          "damage": 38,
+          "damage": 45,
           "count": 3,
           "cooldown": 2.3,
           "radius": 0.9,
@@ -475,7 +475,7 @@
           "mods": []
         },
         {
-          "damage": 38,
+          "damage": 45,
           "count": 4,
           "cooldown": 2.3,
           "radius": 0.9,
@@ -484,35 +484,8 @@
           "mods": []
         },
         {
-          "damage": 40,
+          "damage": 54,
           "count": 4,
-          "cooldown": 2,
-          "radius": 1.0080000000000002,
-          "duration": 0.4,
-          "range": 11,
-          "mods": []
-        },
-        {
-          "damage": 48,
-          "count": 4,
-          "cooldown": 2,
-          "radius": 1.0080000000000002,
-          "duration": 0.4,
-          "range": 11,
-          "mods": []
-        },
-        {
-          "damage": 52,
-          "count": 5,
-          "cooldown": 2,
-          "radius": 1.0080000000000002,
-          "duration": 0.4,
-          "range": 11,
-          "mods": []
-        },
-        {
-          "damage": 60,
-          "count": 5,
           "cooldown": 2,
           "radius": 1.0080000000000002,
           "duration": 0.4,
@@ -521,6 +494,33 @@
         },
         {
           "damage": 66,
+          "count": 4,
+          "cooldown": 2,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 74,
+          "count": 5,
+          "cooldown": 2,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 88,
+          "count": 5,
+          "cooldown": 2,
+          "radius": 1.0080000000000002,
+          "duration": 0.4,
+          "range": 11,
+          "mods": []
+        },
+        {
+          "damage": 100,
           "count": 5,
           "cooldown": 1.6,
           "radius": 1.1088000000000005,
@@ -570,7 +570,7 @@
       "skill": "ghost",
       "levels": [
         {
-          "damage": 16,
+          "damage": 14.4,
           "count": 2,
           "cooldown": 3,
           "radius": 0.3,
@@ -579,7 +579,7 @@
           "mods": []
         },
         {
-          "damage": 20,
+          "damage": 18,
           "count": 2,
           "cooldown": 3,
           "radius": 0.3,
@@ -588,7 +588,7 @@
           "mods": []
         },
         {
-          "damage": 20,
+          "damage": 18,
           "count": 3,
           "cooldown": 3,
           "radius": 0.3,
@@ -597,7 +597,7 @@
           "mods": []
         },
         {
-          "damage": 20,
+          "damage": 18,
           "count": 3,
           "cooldown": 2.64,
           "radius": 0.336,
@@ -606,7 +606,7 @@
           "mods": []
         },
         {
-          "damage": 25.6,
+          "damage": 23.040000000000003,
           "count": 3,
           "cooldown": 2.64,
           "radius": 0.336,
@@ -615,7 +615,7 @@
           "mods": []
         },
         {
-          "damage": 25.6,
+          "damage": 23.040000000000003,
           "count": 4,
           "cooldown": 2.64,
           "radius": 0.336,
@@ -624,7 +624,7 @@
           "mods": []
         },
         {
-          "damage": 32,
+          "damage": 28.8,
           "count": 4,
           "cooldown": 2.64,
           "radius": 0.336,
@@ -633,7 +633,7 @@
           "mods": []
         },
         {
-          "damage": 32,
+          "damage": 28.8,
           "count": 4,
           "cooldown": 2.25,
           "radius": 0.36960000000000004,
@@ -796,7 +796,7 @@
       "skill": "mine",
       "levels": [
         {
-          "damage": 35,
+          "damage": 60,
           "count": 2,
           "cooldown": 3.8,
           "radius": 1.8,
@@ -805,7 +805,7 @@
           "mods": []
         },
         {
-          "damage": 43.75,
+          "damage": 75,
           "count": 2,
           "cooldown": 3.8,
           "radius": 1.8,
@@ -814,7 +814,7 @@
           "mods": []
         },
         {
-          "damage": 43.75,
+          "damage": 75,
           "count": 3,
           "cooldown": 3.8,
           "radius": 1.8,
@@ -823,7 +823,7 @@
           "mods": []
         },
         {
-          "damage": 43.75,
+          "damage": 75,
           "count": 3,
           "cooldown": 3.344,
           "radius": 2.0160000000000005,
@@ -832,7 +832,7 @@
           "mods": []
         },
         {
-          "damage": 56,
+          "damage": 96,
           "count": 3,
           "cooldown": 3.344,
           "radius": 2.0160000000000005,
@@ -841,7 +841,7 @@
           "mods": []
         },
         {
-          "damage": 56,
+          "damage": 96,
           "count": 4,
           "cooldown": 3.344,
           "radius": 2.0160000000000005,
@@ -850,7 +850,7 @@
           "mods": []
         },
         {
-          "damage": 70,
+          "damage": 120,
           "count": 4,
           "cooldown": 3.344,
           "radius": 2.0160000000000005,
@@ -859,7 +859,7 @@
           "mods": []
         },
         {
-          "damage": 70,
+          "damage": 120,
           "count": 4,
           "cooldown": 2.8499999999999996,
           "radius": 2.217600000000001,
@@ -909,7 +909,7 @@
       "skill": "void",
       "levels": [
         {
-          "damage": 6,
+          "damage": 8,
           "count": 1,
           "cooldown": 5.4,
           "radius": 2.2,
@@ -918,7 +918,7 @@
           "mods": []
         },
         {
-          "damage": 7.5,
+          "damage": 10,
           "count": 1,
           "cooldown": 5.4,
           "radius": 2.2,
@@ -927,7 +927,7 @@
           "mods": []
         },
         {
-          "damage": 7.5,
+          "damage": 10,
           "count": 2,
           "cooldown": 5.4,
           "radius": 2.2,
@@ -936,7 +936,7 @@
           "mods": []
         },
         {
-          "damage": 7.5,
+          "damage": 10,
           "count": 2,
           "cooldown": 4.752000000000001,
           "radius": 2.4640000000000004,
@@ -945,7 +945,7 @@
           "mods": []
         },
         {
-          "damage": 9.600000000000001,
+          "damage": 12.8,
           "count": 2,
           "cooldown": 4.752000000000001,
           "radius": 2.4640000000000004,
@@ -954,7 +954,7 @@
           "mods": []
         },
         {
-          "damage": 9.600000000000001,
+          "damage": 12.8,
           "count": 3,
           "cooldown": 4.752000000000001,
           "radius": 2.4640000000000004,
@@ -963,7 +963,7 @@
           "mods": []
         },
         {
-          "damage": 12,
+          "damage": 16,
           "count": 3,
           "cooldown": 4.752000000000001,
           "radius": 2.4640000000000004,
@@ -972,7 +972,7 @@
           "mods": []
         },
         {
-          "damage": 12,
+          "damage": 16,
           "count": 3,
           "cooldown": 4.050000000000001,
           "radius": 2.710400000000001,

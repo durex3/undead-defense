@@ -17,7 +17,7 @@
     "art:combat": "node tools/art-combat.mjs",
     "art:feedback": "node tools/art-feedback.mjs",
     "art:weapons": "node tools/weapon-showcase.mjs",
-    "weapons:benchmark": "node tools/weapon-benchmark.mjs",
+    "weapons:benchmark": "node tools/check-current-weapon-balance.mjs",
     "weapons:guide": "node tools/test-build.mjs && node tools/write-modification-guide.mjs",
     "browser-smoke": "node tools/browser-smoke.mjs"
   },

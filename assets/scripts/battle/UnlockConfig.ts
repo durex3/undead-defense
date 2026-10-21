@@ -94,7 +94,7 @@ export const UNLOCK_MODS: Record<UnlockSkill, readonly WeaponMod[]> = {
 };
 export function unlockBase(skill: UnlockSkill, l: number) {
   const base =
-    skill === "hammer" ? [46, 2.8, 3, 1, 4, 0.53] : [28, 2.2, 0.3, 1, 6, 0.25];
+    skill === "hammer" ? [46, 2.8, 3, 1, 4, 0.53] : [24, 2.2, 0.3, 1, 6, 0.25];
   return {
     damage: Array.from(
       { length: 8 },

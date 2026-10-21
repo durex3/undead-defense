@@ -4,7 +4,7 @@ export type SupportSkill = "lamp" | "needle";
 const mod = (id: string, name: string, effect: string, cost: string, excludes?: string): WeaponMod => ({id, name, short: name, effect, cost, excludes, glyph: "◆"});
 export const SUPPORT_MODS: Record<SupportSkill, readonly WeaponMod[]> = {
   lamp: [
-    mod("focus", "聚焰照魂", "烙魂增伤从12%提高至18%", "最多标记3人", "wide"),
+    mod("focus", "聚焰照魂", "烙魂增伤从16%提高至22%", "最多标记3人", "wide"),
     mod("wide", "展灯广照", "最多标记10人，灯区半径+25%", "自身伤害−25%", "focus"),
     mod("linger", "余烬留痕", "离区标记保留1.2秒", "灯区持续−20%"),
     mod("pulse", "魂焰震荡", "每跳自身伤害×2", "伤害间隔从0.5秒变为1秒"),
@@ -17,7 +17,7 @@ export const SUPPORT_MODS: Record<SupportSkill, readonly WeaponMod[]> = {
   ],
 };
 export function supportBase(s: SupportSkill, l: number) {
-  const damage = s === "lamp" ? [6,8,8,8,10,10,13,13] : [28,35,35,35,45,45,56,56];
+  const damage = s === "lamp" ? [8,10,10,10,13,13,17,17] : [168,210,210,210,270,270,336,336];
   return {damage, count: Array(8).fill(1), cooldown: s === "lamp" ? [5,5,5,4.6,4.6,4.6,4.6,4.2] : [4,4,4,3.7,3.7,3.7,3.7,3.4],
     radius: s === "lamp" ? (l >= 6 ? 2.5 : 2.2) : .2, range: s === "lamp" ? 8 : 10, duration: s === "lamp" ? 3 : 2.5};
 }

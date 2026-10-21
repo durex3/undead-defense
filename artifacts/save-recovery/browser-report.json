@@ -161,6 +161,10 @@
       "saved"
     ]
   },
+  "compiledHammer": {
+    "first": 101.2,
+    "volley": 182.16000000000003
+  },
   "sandDamage": {
     "outside": 100,
     "inside": 80,

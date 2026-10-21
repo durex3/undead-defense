@@ -81,7 +81,7 @@ test('all new support mods commute, have finite bounded combat and visible art',
 });
 test('lamp amplification expires, cannot stack, and never marks more than its capacity',()=>{
  const w=world(10,'lamp');for(let i=0;i<30;i++)enemy(w,2+i*.02);w.armory.support.step(0);assert.equal(w.armory.support.marks.size,6);
- const e=w.enemies[0];assert.equal(w.armory.support.amplification(e),1.12);w.armory.support.step(0);assert.equal(w.armory.support.amplification(e),1.12);
+ const e=w.enemies[0];assert.equal(w.armory.support.amplification(e),1.16);w.armory.support.step(0);assert.equal(w.armory.support.amplification(e),1.16);
  w.time=4;w.armory.support.step(0);assert.equal(w.armory.support.amplification(e),1);
 });
 test('needle echo cannot recurse or exceed caps; dead/out-of-range endpoints break, solo attacks still work',()=>{
