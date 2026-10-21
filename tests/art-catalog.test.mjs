@@ -64,5 +64,5 @@ test("all four bosses have distinct palettes and silhouettes", () => {
 
 test("all mechanical and prism device kinds are explicitly catalogued", () => {
   const devices = ENEMY_KINDS.filter(isDeviceKind);
-  assert.deepEqual(devices.sort(), ["gridelectrode", "prismcore", "prismmirror", "thunderanchor"]);
+  assert.deepEqual(devices.sort(), ["gridelectrode", "kilnvalve", "prismcore", "prismmirror", "thunderanchor"]);
 });

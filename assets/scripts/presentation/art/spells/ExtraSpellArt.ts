@@ -1,3 +1,5 @@
+import {drawBoneForm} from "../WeaponFormArt";
+import {gradeOf} from "../../../battle/WeaponGrade";
 import { Graphics } from "cc";
 import type { SurvivalWorld } from "../../../battle/SurvivalWorld";
 import type { ExtraAttack } from "../../../battle/ExtraArmory";
@@ -344,12 +346,13 @@ function ghostRoster(g: Graphics,w: SurvivalWorld) {
 
 /* ---------------- bone ---------------- */
 
-function boneAir(g: Graphics, a: ExtraAttack) {
+function boneAir(g: Graphics, a: ExtraAttack, grade=1) {
   const c = P.bone;
   const ready=a.phase===-1;
   const retreat=ready?20*Math.min(1,a.age/.2):0;
   const x = a.x * 48-Math.cos(a.angle)*retreat,
     y = a.y * 48-Math.sin(a.angle)*retreat;
+  if(grade>1){drawBoneForm(g,x,y,a.angle,grade,has(a,"lance")?1.35:1.05);return;}
   const dx = Math.cos(a.angle),
     dy = Math.sin(a.angle);
   const length = has(a, "lance") ? 54 : 42;
@@ -523,7 +526,7 @@ export function drawExtraSpell(g: Graphics, w: SurvivalWorld, ground: boolean, r
       else if (a.skill === "holy") holyGround(g, a);
     } else {
       if (a.skill === "ghost") ghostAir(g, w, a);
-      else if (a.skill === "bone" && (a.phase === 0 || a.phase === -1)) boneAir(g, a);
+      else if (a.skill === "bone" && (a.phase === 0 || a.phase === -1)) boneAir(g, a,gradeOf("bone",w.weaponGrades));
       else if (a.skill === "lightning") lightningAir(g, w, a, reduced||crowded);
       else if (a.skill === "holy") holyAir(g, a);
     }

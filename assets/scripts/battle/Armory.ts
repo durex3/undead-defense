@@ -102,7 +102,7 @@ export class Armory {
     let best: Enemy | undefined,
       score = -Infinity;
     for (const e of list) {
-      let value = -distance(e, this.w.player) * 0.01;
+      let value = this.w.targetPriority(e)*10000-distance(e, this.w.player) * 0.01;
       if (skill === "blade")
         value +=
           isElite(e.kind) || /bow|spitter|mage|archer|sealclerk|folioray|spineclasp|reedwhistler|sickleplumer|foldedskimmer|vinecantor|wreathpod|bulbmaw|facetgastropod|prismmason|corebrood|prismcore|sluiceray|sailharpooner|winchbeast|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind) ? 100 : 0;

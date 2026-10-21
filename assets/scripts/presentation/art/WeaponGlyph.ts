@@ -1,4 +1,4 @@
-import { drawBladeForm, drawHammerForm, drawWheelForm } from "./WeaponFormArt";
+import { drawBoneForm, drawBladeForm, drawHammerForm, drawWheelForm } from "./WeaponFormArt";
 import type { Graphics } from "cc";
 import type { Skill } from "../../battle/SurvivalConfig";
 import { COLORS } from "../../battle/SurvivalConfig";
@@ -14,6 +14,7 @@ export function drawWeaponGlyph(g: Graphics, skill: Skill, grade=1) {
     g.fill();
     g.stroke();
   };
+  if(skill==="bone"&&grade>1){drawBoneForm(g,0,0,.8,grade,.8);return;}
   if(skill==="blade" && grade>1) {drawBladeForm(g,0,0,.8,grade);return;}
   if(skill==="wheel" && grade>2) {drawWheelForm(g,0,0,0,grade,.9);return;}
   if(skill==="hammer" && grade>2) {drawHammerForm(g,0,0,0,grade,.8);return;}

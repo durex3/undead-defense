@@ -13,7 +13,7 @@ export class SupportArmory {
   private eligible(e: Enemy) { return e.hp > 0 && e.state !== "arriving" && !e.sand?.buried; }
   private targets(range: number) {
     return this.w.enemies.filter(e => this.eligible(e) && distance(e,this.w.player) <= range)
-      .sort((a,b) => distance(a,this.w.player)-distance(b,this.w.player) || a.id-b.id);
+      .sort((a,b) => this.w.targetPriority(b)-this.w.targetPriority(a) || distance(a,this.w.player)-distance(b,this.w.player) || a.id-b.id);
   }
   amplification(e: Enemy) {
     const m = this.marks.get(e.id);
@@ -58,7 +58,7 @@ export class SupportArmory {
       if(skill === "lamp") {
         if(this.lamp && this.lamp.until>w.time) return;
         // Prefer the densest nearby group, with stable ties.
-        const t=[...list].sort((a,b)=>list.filter(e=>distance(e,b)<=s.radius).length-list.filter(e=>distance(e,a)<=s.radius).length)[0];
+        const t=[...list].sort((a,b)=>w.targetPriority(b)-w.targetPriority(a)||list.filter(e=>distance(e,b)<=s.radius).length-list.filter(e=>distance(e,a)<=s.radius).length)[0];
         this.lamp={x:t.x,y:t.y,created:w.time,until:w.time+s.duration,next:w.time,stats:s};
       } else {
         if(this.link) return;

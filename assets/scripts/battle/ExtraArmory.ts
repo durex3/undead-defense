@@ -83,6 +83,7 @@ export class ExtraArmory {
   private target(skill: ExtraSkill, s: WeaponStats) {
     const list = this.enemies(this.w.player, s.range);
     return list.sort((a, b) => {
+      const priority=this.w.targetPriority(b)-this.w.targetPriority(a);if(priority)return priority;
       if (skill === "holy" || (skill === "ghost" && s.mods.includes("execution"))) {
         const rank = (e: Enemy) =>
           Number(isLarge(e.kind) || /bow|spitter|mage|sealclerk|folioray|spineclasp|reedwhistler|sickleplumer|foldedskimmer|vinecantor|wreathpod|bulbmaw|facetgastropod|prismmason|corebrood|prismcore|sluiceray|sailharpooner|winchbeast|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind));
@@ -138,7 +139,7 @@ export class ExtraArmory {
     if(skill==="ghost")this.ghostCount=count;
     const w = this.w,
       group = w.id(),
-      angle = skill === "bone" ? this.boneDirection(s, t) : Math.atan2(t.y - w.player.y, t.x - w.player.x),
+      angle = skill === "bone" ? (w.targetPriority(t)?Math.atan2(t.y-w.player.y,t.x-w.player.x):this.boneDirection(s, t)) : Math.atan2(t.y - w.player.y, t.x - w.player.x),
       targets = this.enemies(w.player, s.range).sort(
         (a, b) => distance(a, t) - distance(b, t),
       );
@@ -246,7 +247,7 @@ export class ExtraArmory {
   private freeze(e: Enemy, a: ExtraAttack) {
     const w = this.w;
     if(e.kind==="prismcore"){if(!this.has(a,"brittle"))w.slow(e,true);return;}
-    if (e.kind === "boss" || (e.immovable && !e.root && !e.wind && !e.library) || thunderDevice(e.kind) || (e.state === "charge" && !e.wind)) return;
+    if (e.kind === "boss" || (e.immovable && !e.root && !e.wind && !e.library && !e.kiln) || thunderDevice(e.kind) || (e.state === "charge" && !e.wind)) return;
     e.slow = 0.4;
     e.slowUntil = Math.max(e.slowUntil, w.time + a.stats.duration);
     if (this.has(a, "brittle") || e.freezeReady > w.time) return;
@@ -461,7 +462,7 @@ export class ExtraArmory {
         // Burst at the actual pierced enemy, never an empty far endpoint.
         const center={x:e.x,y:e.y},radius=.9*s.radius/.24;
         a.points.push(center);
-        w.effects.push({type:"explosion",skill:"bone",form:"boneBurst",...center,radius});
+        w.effects.push({type:"explosion",skill:"bone",form:"boneBurst",grade:w.weaponGrades.bone??1,...center,radius});
         for(const other of this.enemies(center,radius+.35))if(!a.secondary.has(other.id)) {
           a.secondary.add(other.id);
           this.damage(other,s.damage*.35,a,center);

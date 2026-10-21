@@ -1,0 +1,37 @@
+{
+  "setup": {
+    "stage": 12,
+    "touch": true,
+    "lines": 2,
+    "announcement": "裂釉炉心 · 第三阶段 III"
+  },
+  "edges": [
+    {
+      "accepted": true,
+      "slots": 2,
+      "legal": true,
+      "player": {
+        "x": 0,
+        "y": -25.2
+      },
+      "camera": {
+        "x": 0,
+        "y": -23.416666666666668
+      }
+    },
+    {
+      "accepted": true,
+      "slots": 2,
+      "legal": true,
+      "player": {
+        "x": 0,
+        "y": 25.2
+      },
+      "camera": {
+        "x": 0,
+        "y": 23.416666666666668
+      }
+    }
+  ],
+  "errors": []
+}

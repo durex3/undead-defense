@@ -40,6 +40,7 @@ export interface ProgressData {
   modWins?: Partial<Record<Skill, Record<string, number[]>>>;
   sealOpeners?: Skill[];
   loomQualifiedOpeners?: Skill[];
+  kilnQualified?:Partial<Record<Skill,string[]>>;
   coins?: number;
   purchasedWeapons?: string[];
   achievements?: string[];
@@ -130,6 +131,9 @@ export class ProgressStore {
       d.settledRuns=Array.isArray(v.settledRuns)?Array.from(new Set<string>(v.settledRuns.filter((x:any)=>typeof x==="string"&&x.length<120))):[];
       d.grades={};if(v.grades && typeof v.grades==="object")for(const skill of ALL_WEAPONS)if(validGrade(skill,v.grades[skill]))d.grades[skill]=v.grades[skill];
       if(Array.isArray(v.openerWins))d.openerWins=v.openerWins.filter((x:any)=>ALL_WEAPONS.includes(x?.skill)&&stage(x.stage));
+      if(v.kilnQualified && typeof v.kilnQualified==='object'&&!Array.isArray(v.kilnQualified)){
+        d.kilnQualified={};for(const skill of ALL_WEAPONS){const pairs=v.kilnQualified[skill];if(Array.isArray(pairs))d.kilnQualified[skill]=Array.from(new Set<string>(pairs.filter((x:any)=>typeof x==='string'&&this.legalPair(skill,x.split('+'))).map((x:string)=>x.split('+').sort().join('+'))));}
+      }
       if(Array.isArray(v.loomQualifiedOpeners))d.loomQualifiedOpeners=Array.from(new Set<Skill>(v.loomQualifiedOpeners.filter((x:any)=>ALL_WEAPONS.includes(x))));
       if(Array.isArray(v.sealOpeners))d.sealOpeners=Array.from(new Set<Skill>(v.sealOpeners.filter((x:any)=>ALL_WEAPONS.includes(x))));
       if(v.modWins && typeof v.modWins==="object") {
@@ -260,6 +264,7 @@ export class ProgressStore {
           new Set(d.settledRuns).size === d.settledRuns.length)) &&
       (d?.grades === undefined || (d.grades && typeof d.grades === "object" && !Array.isArray(d.grades) && Object.entries(d.grades).every(([skill,g]) => (ALL_WEAPONS as readonly string[]).includes(skill) && validGrade(skill as Skill,g)))) &&
       (d?.openerWins === undefined || (Array.isArray(d.openerWins) && d.openerWins.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v?.skill) && (STAGE_IDS as readonly number[]).includes(v?.stage)))) &&
+      (d?.kilnQualified===undefined||(d.kilnQualified&&typeof d.kilnQualified==='object'&&!Array.isArray(d.kilnQualified)&&Object.entries(d.kilnQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
       (d?.loomQualifiedOpeners === undefined || (Array.isArray(d.loomQualifiedOpeners) && d.loomQualifiedOpeners.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v)) && new Set(d.loomQualifiedOpeners).size===d.loomQualifiedOpeners.length)) &&
       (d?.sealOpeners === undefined || (Array.isArray(d.sealOpeners) && d.sealOpeners.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v)) && new Set(d.sealOpeners).size===d.sealOpeners.length)) &&
       (d?.modWins === undefined || (d.modWins && typeof d.modWins === "object" && !Array.isArray(d.modWins) && Object.entries(d.modWins).every(([skill,combinations]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill) && combinations && typeof combinations === "object" && !Array.isArray(combinations) && Object.entries(combinations).every(([pair,stages]:[string,any])=>this.legalPair(skill as Skill,pair.split("+")) && Array.isArray(stages) && stages.every((id:any)=>(STAGE_IDS as readonly number[]).includes(id)))))) &&
@@ -353,6 +358,7 @@ export class ProgressStore {
   }
   achievementProgress(id: string) {
     if(this.hasAchievement(id)) return "已完成";
+    if(id==="kiln_ten_paths")return `双路线起手 ${Object.values(this.data.kilnQualified??{}).filter(v=>v&&v.length>=2).length}/10 · 三阶段断源且Boss无伤`;
     if(id==="loom_eight_paths") return `合格起手 ${this.data.loomQualifiedOpeners?.length??0}/8 · 三阶段双线且Boss无伤`;
     if(id==="seal_pathfinder") return `合格起手 ${this.data.sealOpeners?.length??0}/6 · 从本版开始统计`;
     if(id==="five_openers") return `起手 ${new Set(this.data.openerWins?.map(v=>v.skill)).size}/5 · 关卡 ${new Set(this.data.openerWins?.map(v=>v.stage)).size}/3`;
@@ -403,6 +409,11 @@ export class ProgressStore {
         next.openerWins ??= [];
         if(!next.openerWins.some(v=>v.skill===opener && v.stage===w.stageId)) next.openerWins.push({skill:opener,stage:w.stageId});
         if(new Set(next.openerWins.map(v=>v.skill)).size>=5 && new Set(next.openerWins.map(v=>v.stage)).size>=3) achievements.add("five_openers");
+        if(w.stageId===12&&w.skills[opener]===8&&this.legalPair(opener,w.mods[opener])&&[1,2,3].every(phase=>w.challenge.kilnPhases.has(phase))&&w.challenge.bossHits===0){
+          next.kilnQualified??={};const key=[...w.mods[opener]].sort().join('+');
+          next.kilnQualified[opener]=Array.from(new Set([...(next.kilnQualified[opener]??[]),key]));
+          if(Object.values(next.kilnQualified).filter(v=>v&&v.length>=2).length>=10)achievements.add('kiln_ten_paths');
+        }
         if(w.stageId===11 && [1,2,3].every(phase=>w.challenge.loomPhases.has(phase)) && w.challenge.bossHits===0) {
           next.loomQualifiedOpeners=Array.from(new Set([...(next.loomQualifiedOpeners??[]),opener]));
           if(next.loomQualifiedOpeners.length>=8)achievements.add("loom_eight_paths");

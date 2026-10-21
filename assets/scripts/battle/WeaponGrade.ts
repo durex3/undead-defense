@@ -4,6 +4,7 @@ export const GRADE_NAMES = ["", "普通", "精良", "稀有", "史诗"] as const
 export const GRADE_COLORS = ["", "#d3d7db", "#94d6a4", "#84bbef", "#c19aef"] as const;
 export const GRADE_PRICE = [0, 0, 360, 720, 1440] as const;
 const forms: Partial<Record<Skill, readonly string[]>> = {
+  bone:["贯阵骨矛","棘脊骨枪","釉裂骨矛","焚髓贯星"],
   blade: ["飞刀", "旋纹飞刃", "银月环刃", "星陨刃阵"],
   wheel: ["", "裂甲飞轮", "断纬棘轮", "裁界环轮"],
   hammer: ["", "镇钟重锤", "裂钟符锤", "震庭鸣钟"],
@@ -22,7 +23,7 @@ export function weaponName(s: Skill, grades: Partial<Record<Skill, WeaponGrade>>
 }
 export function gradeMultiplier(s: Skill, grades: Partial<Record<Skill, WeaponGrade>> = {}) {
   const g = gradeOf(s, grades);
-  return s === "blade" ? [0, 1, 1.25, 1.6, 2.05][g] : s === "hammer" || s === "wheel" ? [0, 1, 1, 1.28, 1.64][g] : 1;
+  return s === "blade" || s === "bone" ? [0, 1, 1.25, 1.6, 2.05][g] : s === "hammer" || s === "wheel" ? [0, 1, 1, 1.28, 1.64][g] : 1;
 }
 export function nextGrade(s: Skill, grades: Partial<Record<Skill, WeaponGrade>> = {}): WeaponGrade | null {
   const g = gradeOf(s, grades);

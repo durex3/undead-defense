@@ -510,7 +510,7 @@ export class GameBootstrap extends Component {
     const f = 1 - Math.exp(-dt * 11 * (w.active?this.playSpeed:1));
     this.camera.x +=
       (Math.max(-512, Math.min(512, w.player.x * 48)) - this.camera.x) * f;
-    const cameraYLimit=w.stageId===11?1124:984;
+    const cameraYLimit=w.stageId>=11?1124:984;
     this.camera.y +=
       (Math.max(-cameraYLimit, Math.min(cameraYLimit, w.player.y * 48)) - this.camera.y) * f;
     this.shake = Math.max(0, this.shake - dt * 20);

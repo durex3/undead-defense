@@ -38,17 +38,18 @@ export function battleHud(
     .trim();
   const boss = w.enemies.find((e) => e.kind === "boss" && e.hp > 0);
   const lateHazard = w.hazards.find((h) => h.damageLabel);
-  const bossHazard = boss && w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.until > w.time && !h.loom?.cancelled && !h.loom?.cancelled && !h.library?.cancelled && !h.wind?.cancelled)
+  const bossHazard = boss && w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.until > w.time && !h.kiln?.cancelled && !h.loom?.cancelled && !h.library?.cancelled && !h.wind?.cancelled)
     .sort((a,b) => Number(a.due <= w.time)-Number(b.due <= w.time) || a.due-b.due)[0];
   const bossAdvice: Record<number,string> = {
+    12:bossHazard?.kiln?`走焰${bossHazard.kiln.order} · ${w.time<bossHazard.due?"看实线箭头，虚线无伤":"绕开火头，尾过安全"}`:"靠近导火栓可引导自动攻击",
     11:bossHazard?.loom?`织线${bossHazard.loom.order} · ${loomState(bossHazard,w.time)==="slack"?"松线可穿，留意第二拍":loomState(bossHazard,w.time)==="tight"?"紧线绕端，离开线体":"看端点与倒计时，准备换侧"}`:"紧线绕端，松弛换侧",
     1: bossHazard?.kind === "bellRing" ? "进入空心内圈或退出外圈" : bossHazard?.siegeCharge ? "横向离开冲锋通道" : "离开实心区域，留意下一击",
     2:"离开锁定区域，留意折返与连喷",3:"离开锁线，向电栅缺口移动",4:"躲开落点，留意回刃折返",
     5:"借钟台避声浪，离开蜡印",6:"绕过浪头，离开锚点",7:"避开完整折线，晶核可击碎",
     8:"空心可进，实心须出，绕藤端换侧",9:"顺风换位，横向避开曲羽",10:"踩配对封签撤招，绕开页刃",
   };
-  const loomProgress=w.stageId===11?`松线双穿 I${w.challenge.loomPhases.has(1)?"✓":"·"} II${w.challenge.loomPhases.has(2)?"✓":"·"} III${w.challenge.loomPhases.has(3)?"✓":"·"}`:"";
-  const hint = w.stageId === 11 ? "紧线绕端 · 松弛可穿 · 看第二拍与移梭箭头" : w.stageId === 10 ? "踩签撤招 · 看配对编号 · 中缝可留，端头可绕" : w.stageId === 9 ? "借风换位 · 曲羽不追踪 · 击破一名精英可减压" : w.stageId === 8 ? "绕端换侧 · 空心可进，实心须出 · 收招护皮开缝" : w.stageId === 7 ? "看完整折线 · 晶核可击碎 · 收招时甲缝暴露" : w.stageId === 6 ? "绕过浪头再切回 · 厚蜡甲可裂解 · 收舷时反击" : w.stageId === 5 ? "钟台挡声浪 · 蜡印需换位 · 收招甲缝可反击" : w.stageId === 4
+  const loomProgress=w.stageId===12?`分流前断源 I${w.challenge.kilnPhases.has(1)?"✓":"·"} II${w.challenge.kilnPhases.has(2)?"✓":"·"} III${w.challenge.kilnPhases.has(3)?"✓":"·"}`:w.stageId===11?`松线双穿 I${w.challenge.loomPhases.has(1)?"✓":"·"} II${w.challenge.loomPhases.has(2)?"✓":"·"} III${w.challenge.loomPhases.has(3)?"✓":"·"}`:"";
+  const hint = w.stageId === 12 ? "虚线无伤 · 尾过安全 · 靠近导火栓可引导自动攻击" : w.stageId === 11 ? "紧线绕端 · 松弛可穿 · 看第二拍与移梭箭头" : w.stageId === 10 ? "踩签撤招 · 看配对编号 · 中缝可留，端头可绕" : w.stageId === 9 ? "借风换位 · 曲羽不追踪 · 击破一名精英可减压" : w.stageId === 8 ? "绕端换侧 · 空心可进，实心须出 · 收招护皮开缝" : w.stageId === 7 ? "看完整折线 · 晶核可击碎 · 收招时甲缝暴露" : w.stageId === 6 ? "绕过浪头再切回 · 厚蜡甲可裂解 · 收舷时反击" : w.stageId === 5 ? "钟台挡声浪 · 蜡印需换位 · 收招甲缝可反击" : w.stageId === 4
     ? moonHint(w)
     : w.stageId === 3
       ? thunderHint(w)

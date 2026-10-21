@@ -432,6 +432,10 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
     if (e.type === "hit") {
       if(!hitDecor.allow(x,y,e.skill)) continue;
       const c = skillColor(e.skill);
+      if(e.skill==="bone"&&(e.grade??1)>1){
+        const grade=e.grade!;
+        spawn(grade===4?"crest":grade===3?"ring":"shard",x,y,c.core,grade===2?90:0,.19,grade===2?3.5:2,0,grade===4?11:grade===3?8:0);
+      }
       if(e.skill==="ghost") {spawn("claw",x,y,c.core,0,.16,12);continue;}
       const n = Math.max(1, Math.round(3 * scale));
       const kind: ParticleKind = e.skill === "fire" ? "ember" : e.skill === "frost" || e.skill === "bone" ? "shard" :
@@ -446,7 +450,10 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
       if (elite) spawn("crest", x, y + 20, "#f2c66d", 0, .34, 3, 0, 22);
     } else if (e.type === "explosion") {
       const c = skillColor(e.skill);
-      if(e.form === "boneBurst") {
+      if(e.form?.startsWith("boneBurst")) {
+        const grade=e.grade??1;
+        if(grade>=3)spawn(grade===4?"crest":"ring",x,y,grade===4?"#e2c3f4":"#d9f0f1",0,.22,2,0,(e.radius||.9)*32);
+
         spawn("fracture",x,y,c.mid,0,.2,3,0,(e.radius||.9)*48);
         for(let i=0;i<Math.round(6*scale);i++)spawn("shard",x,y,i%2?c.core:c.edge,100,.18+rand()*.08,2.5);
         continue;

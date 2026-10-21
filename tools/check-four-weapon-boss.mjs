@@ -14,7 +14,7 @@ const builds={
   pursuit:{blade:['hunt','return'],ghost:['execution','haunt'],bone:['lance','marrow'],holy:['execution','brand']},
 };
 const result=[];
-for(const seed of [19,41,73])for(const stage of [1,2,3,4,5,6,7,8,9,10,11])for(const [build,mods] of Object.entries(builds))for(const equipment of stage>=10?["native","upgraded"]:["native"]) {
+for(const seed of [19,41,73])for(const stage of [1,2,3,4,5,6,7,8,9,10,11,12])for(const [build,mods] of Object.entries(builds))for(const equipment of stage>=10?["native","upgraded"]:["native"]) {
   const w=new SurvivalWorld(seed,'ranger',stage), arena=w.stageStrategy.map;
   w.player={x:0,y:0};w.camera={...w.player};w.time=BOSS_TIME;w.level=64;
   for(const s of WEAPONS){w.skills[s]=mods[s]?8:0;w.mods[s]=mods[s]||[];if(equipment==="upgraded"&&validGrade(s,4))w.weaponGrades[s]=4;}
@@ -32,13 +32,13 @@ for(const seed of [19,41,73])for(const stage of [1,2,3,4,5,6,7,8,9,10,11])for(co
     arena.resolve(target,.35);
     const heading=arena.heading({...w.player},target);
     w.setMove(Math.cos(heading),Math.sin(heading));
-    w.camera={x:Math.max(-10.6,Math.min(10.6,w.player.x)),y:Math.max(-(stage===11?1124:984)/48,Math.min((stage===11?1124:984)/48,w.player.y))};
+    w.camera={x:Math.max(-10.6,Math.min(10.6,w.player.x)),y:Math.max(-(stage>=11?1124:984)/48,Math.min((stage>=11?1124:984)/48,w.player.y))};
     w.invulnerable=1e6;w.step(1/30);w.drain();
   }
   const boss=w.enemies.find(e=>e.kind==='boss'&&e.hp>0);
-  result.push({seed,stage,build,equipment,weapons:w.weaponCount,maxHp:2800*STAGES[stage].bossHealth*3,phaseTimes,damage:w.damage,patterns:stage===11?w.loom.stats.patterns:stage===10?w.library.stats.patterns:undefined,seconds:Math.round(w.time-BOSS_TIME),state:w.state,bossRemaining:boss?Math.round(boss.hp/boss.maxHp*100):0});
+  result.push({seed,stage,build,equipment,weapons:w.weaponCount,maxHp:2800*STAGES[stage].bossHealth*3,phaseTimes,damage:w.damage,patterns:stage===12?w.kiln.stats.patterns:stage===11?w.loom.stats.patterns:stage===10?w.library.stats.patterns:undefined,seconds:Math.round(w.time-BOSS_TIME),state:w.state,bossRemaining:boss?Math.round(boss.hp/boss.maxHp*100):0});
 }
-const report={scope:'Four max-level weapons, fixed passives and mods, three seeds, native and all available upgraded forms for stages10/11, invulnerable orbit controller. Output-window diagnostic, not human win rate.',result};
+const report={scope:'Four max-level weapons, fixed passives and mods, three seeds, native and all available upgraded forms for stages10/11/12, invulnerable orbit controller. Output-window diagnostic, not human win rate.',result};
 fs.mkdirSync('artifacts',{recursive:true});
-fs.writeFileSync('artifacts/four-weapon-boss-0.33.9.json',JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync('artifacts/four-weapon-boss-0.34.0.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(result,null,2));

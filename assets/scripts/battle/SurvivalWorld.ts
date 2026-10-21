@@ -1,3 +1,4 @@
+import {KilnSystem,kilnEnemy} from "./KilnSystem";
 import {LoomSystem,loomEnemy} from "./LoomSystem";
 import { BOSS_FRACTURE_PER_LAYER, NORMAL_FRACTURE_PER_LAYER } from "./StageGrowth";
 import { initialGrades } from "./WeaponGrade";
@@ -44,6 +45,7 @@ export class SurvivalWorld {
   private strategy?:StageStrategy;
   get stageStrategy(){return this.strategy??(this.strategy=createStageStrategy(this));}
   library=new LibrarySystem(this);
+  kiln=new KilnSystem(this);
   loom=new LoomSystem(this);
   wind=new WindSystem(this);
   root=new RootSystem(this);
@@ -109,7 +111,7 @@ export class SurvivalWorld {
     public weaponSlots = MAX_WEAPON_SLOTS,
   ) {
     this.weaponSlots = Math.max(1, Math.min(MAX_WEAPON_SLOTS, Math.floor(weaponSlots) || MAX_WEAPON_SLOTS));
-    if(stageId!==1)this.player={x:0,y:-8};
+    if(stageId!==1)this.player={x:0,y:stageId===12?-9:-8};
     this.seed = seed;
     this.skills.blade = 0;
     this.skills[CHARACTERS[character].weapon] = 1;
@@ -118,7 +120,7 @@ export class SurvivalWorld {
   readonly runId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   weaponGrades = initialGrades();
   startingWeapon: Skill | null = null;
-  challenge = { devices: new Set<number>(), seals: new Set<number>(), bossSealPhases: new Set<number>(), bossHits: 0, loomGroups:new Map<string,Set<number>>(),loomPhases:new Set<number>() };
+  challenge = { devices: new Set<number>(), seals: new Set<number>(), bossSealPhases: new Set<number>(), bossHits: 0, loomGroups:new Map<string,Set<number>>(),loomPhases:new Set<number>(),kilnPhases:new Set<number>() };
   startingWeapons: Skill[] = [];
   offerStartingWeapons() {
     if(this.time!==0 || this.state!=="battle")return false;
@@ -183,9 +185,9 @@ export class SurvivalWorld {
     if (this.enemies.filter((e) => e.hp > 0).length >= MAX_ENEMIES) return undefined;
     const c = ENEMIES[kind];
     const hp =
-      kind === "boss"
+      kind === "kilnvalve"?160:kind === "boss"
         ? c.health * STAGES[this.stageId].bossHealth * 3
-        : 30 * (1 + Math.min(this.time, ["ragbound","paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
+        : 30 * (1 + Math.min(this.time, ["glazeling","ragbound","paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health);
     const e: Enemy = {
       id: this.id(),
@@ -219,6 +221,7 @@ export class SurvivalWorld {
     this.enemies.push(e);
     return e;
   }
+  targetPriority(e:Enemy){return this.stageId===12&&e.kind==='kilnvalve'&&e.hp>0&&distance(e,this.player)<=4.5?1:0;}
   target(origin: Point = this.player, range = 8, exclude: number[] = []) {
     return this.enemies
       .filter(
@@ -230,7 +233,7 @@ export class SurvivalWorld {
           !exclude.includes(e.id),
       )
       .sort((a, b) =>
-        Number(b.kind === "boss") - Number(a.kind === "boss") ||
+        this.targetPriority(b)-this.targetPriority(a) || Number(b.kind === "boss") - Number(a.kind === "boss") ||
         distance(a, origin) - distance(b, origin) || a.id - b.id,
       )[0];
   }
@@ -283,10 +286,10 @@ export class SurvivalWorld {
     if(this.stageId===2&&e.sand?.vulnerable&&e.state==='recover'&&!bossExposed(this,e))amount*=1.25;
     if(this.stageId===4&&isElite(e.kind)&&e.state==='recover'&&e.moon?.vulnerable)amount*=1.25;
     if(this.stageId===3&&isElite(e.kind)&&e.state==='recover'&&e.thunder?.vulnerable)amount*=1.25;
-    if(this.stageId===5||this.stageId===6||this.stageId===7||this.stageId===8||this.stageId===9||this.stageId===10||this.stageId===11){
-      const waxKind=this.stageId===5?bellEnemy(e.kind):this.stageId===6?tideEnemy(e.kind):this.stageId===7?prismEnemy(e.kind)&&!prismDevice(e.kind):this.stageId===8?rootEnemy(e.kind):this.stageId===9?windEnemy(e.kind):this.stageId===10?libraryEnemy(e.kind):loomEnemy(e.kind);
-      const exposed=this.stageId===5?e.bell?.vulnerable:this.stageId===6?e.tide?.vulnerable:this.stageId===7?e.prism?.vulnerable:this.stageId===8?e.root?.vulnerable:this.stageId===9?e.wind?.vulnerable:this.stageId===10?e.library?.vulnerable:e.loom?.vulnerable;
-      const baseArmor=e.kind==='boss'?.55:isElite(e.kind)?.5:(e.kind==='waxbearer'||e.kind==='brineporter'||e.kind==='shardhermit'||e.kind==='rootshuffler'||e.kind==='fledglingeffigy'||e.kind==='paperbonegrub'||e.kind==='ragbound')?.2:waxKind?.35:0;
+    if(this.stageId===5||this.stageId===6||this.stageId===7||this.stageId===8||this.stageId===9||this.stageId===10||this.stageId===11||this.stageId===12){
+      const waxKind=this.stageId===5?bellEnemy(e.kind):this.stageId===6?tideEnemy(e.kind):this.stageId===7?prismEnemy(e.kind)&&!prismDevice(e.kind):this.stageId===8?rootEnemy(e.kind):this.stageId===9?windEnemy(e.kind):this.stageId===10?libraryEnemy(e.kind):this.stageId===11?loomEnemy(e.kind):kilnEnemy(e.kind)&&e.kind!=="kilnvalve";
+      const exposed=this.stageId===5?e.bell?.vulnerable:this.stageId===6?e.tide?.vulnerable:this.stageId===7?e.prism?.vulnerable:this.stageId===8?e.root?.vulnerable:this.stageId===9?e.wind?.vulnerable:this.stageId===10?e.library?.vulnerable:this.stageId===11?e.loom?.vulnerable:e.kiln?.vulnerable;
+      const baseArmor=e.kind==='boss'?.55:isElite(e.kind)?.5:(e.kind==='waxbearer'||e.kind==='brineporter'||e.kind==='shardhermit'||e.kind==='rootshuffler'||e.kind==='fledglingeffigy'||e.kind==='paperbonegrub'||e.kind==='ragbound'||e.kind==='glazeling')?.2:waxKind?.35:0;
       const fracture=(e.fractureUntil??0)>this.time?(e.fracture??0):0;
       const armor=Math.max(0,baseArmor-fracture*(e.kind==="boss"?BOSS_FRACTURE_PER_LAYER:NORMAL_FRACTURE_PER_LAYER));
       amount*=1-Math.min(armor,e.state==='recover'&&exposed?(e.kind==='boss'?.15:.2):1);
@@ -318,6 +321,7 @@ export class SurvivalWorld {
       y: e.y,
       value: dealt,
       skill: source,
+      grade:source==='bone'?this.weaponGrades.bone:undefined,
     });
     if (e.hp <= 0) {
       if(this.stageId === 3 && thunderDevice(e.kind)) this.challenge.devices.add(e.id);
@@ -367,7 +371,7 @@ export class SurvivalWorld {
     e.fractureUntil=this.time+3;
   }
   slow(e: Enemy, freeze = false) {
-    if(e.kind==='prismmirror')return;
+    if(e.kind==='prismmirror'||e.kind==='kilnvalve')return;
     if(e.kind==='prismcore'){
       if(freeze&&e.freezeReady<=this.time){e.freezeUntil=this.time+.35;e.freezeReady=this.time+2;}return;
     }
@@ -382,7 +386,7 @@ export class SurvivalWorld {
     }else if (freeze && e.kind !== "boss" && e.freezeReady <= this.time) {
       e.freezeUntil = this.time + (isElite(e.kind) ? 0.25 : 0.5);
       e.freezeReady = this.time + 3;
-      if (e.state === "windup" && !siegeEnemy(e.kind) && !sandEnemy(e.kind) && !thunderEnemy(e.kind) && !moonEnemy(e.kind) && !bellEnemy(e.kind) && !tideEnemy(e.kind) && !prismEnemy(e.kind) && !rootEnemy(e.kind) && !windEnemy(e.kind) && !libraryEnemy(e.kind) && !loomEnemy(e.kind)) {
+      if (e.state === "windup" && !siegeEnemy(e.kind) && !sandEnemy(e.kind) && !thunderEnemy(e.kind) && !moonEnemy(e.kind) && !bellEnemy(e.kind) && !tideEnemy(e.kind) && !prismEnemy(e.kind) && !rootEnemy(e.kind) && !windEnemy(e.kind) && !libraryEnemy(e.kind) && !loomEnemy(e.kind) && !kilnEnemy(e.kind)) {
         this.hazards = this.hazards.filter((h) => h.source !== e.id);
         e.state = "recover";
         e.timer = 0.5;

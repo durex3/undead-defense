@@ -46,3 +46,20 @@ export function drawWheelForm(g:Graphics,x:number,y:number,angle:number,grade:nu
  for(let i=0;i<(epic?6:4);i++){const a=angle+i*Math.PI*2/(epic?6:4);g.moveTo(x+Math.cos(a)*r*.45,y+Math.sin(a)*r*.45);g.lineTo(x+Math.cos(a+.2)*r*.8,y+Math.sin(a+.2)*r*.8);}g.stroke();
  if(returning){g.strokeColor=ink(epic?"#d6b4ef":"#bce4ed",150);g.lineWidth=3;g.moveTo(x-r*1.4,y);g.quadraticCurveTo(x-r,y+r*.9,x,y+r*.85);g.stroke();}
 }
+
+/** Same narrow spear hitbox; each evolved form changes barbs, hollow joints and trail geometry. */
+export function drawBoneForm(g:Graphics,x:number,y:number,angle:number,grade:number,scale=1){
+ const dx=Math.cos(angle),dy=Math.sin(angle),p=(a:number,b:number)=>[x+(dx*a-dy*b)*scale,y+(dy*a+dx*b)*scale];
+ const line=(a:number[],b:number[],width=2)=>{g.lineWidth=width;g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.stroke();};
+ g.strokeColor=ink('#24212b');line(p(-37,0),p(23,0),7);g.strokeColor=ink(grade===4?'#e6cefa':'#e7dfcb');line(p(-37,0),p(23,0),3);
+ g.fillColor=ink(grade===4?'#d3baef':grade===3?'#d5e6ea':'#dfcda6');g.strokeColor=ink('#332c34');g.lineWidth=1.5;
+ polygon(g,[[40,0],[17,8],[23,0],[17,-8]].map(([a,b])=>p(a,b)));
+ for(let i=0;i<3;i++){
+  const a=-22+i*14;
+  if(grade===2)for(const side of [-1,1])polygon(g,[[a,0],[a-9,side*10],[a+3,side*5]].map(([u,v])=>p(u,v)));
+  else if(grade===3){g.strokeColor=ink('#eafaff');line(p(a-3,-6),p(a+3,-6));line(p(a-3,6),p(a+3,6));line(p(a-3,-6),p(a-3,6));line(p(a+3,-6),p(a+3,6));}
+  else polygon(g,[[a-8,0],[a-2,4],[a,10],[a+3,3],[a+8,0],[a+3,-3],[a,-10],[a-2,-4]].map(([u,v])=>p(u,v)));
+ }
+ g.strokeColor=ink(grade===4?'#eec9fc':'#d4e4e8',155);
+ for(let i=0;i<3;i++){const a=-45-i*12;if(grade===3){const q=p(a,0);g.ellipse(q[0],q[1],3*scale,7*scale);g.stroke();}else if(grade===4){g.fillColor=ink('#e6c6f2',160);polygon(g,[[a+4,0],[a,4],[a-4,0],[a,-4]].map(([u,v])=>p(u,v)));}else line(p(a,3),p(a-5,-3),1.5);}
+}

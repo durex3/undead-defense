@@ -11,6 +11,7 @@ export interface ThunderState {
 }
 export interface MoonState { direction?:number; action:"blades"|"leaps"|"sweeps"|"transition"; step:number; next:number; recovery:number; cooldown:number; flank?:Point; flankUntil?:number; jumpStart?:Point; jumpEnd?:Point; jumpAt?:number; jumpDue?:number; vulnerable?:boolean; }
 export interface Enemy extends Point {
+ kiln?:import("./KilnSystem").KilnState;
  loom?:import("./LoomSystem").LoomState;
  library?:import("./LibrarySystem").LibraryState;
  wind?:import("./WindSystem").WindState;
@@ -87,6 +88,7 @@ export interface Enemy extends Point {
 }
 export interface Effect extends Point {
   form?: string;
+  grade?:number;
   final?: boolean;
   id?: number;
   type: "sealBreak" | "boss" | "elite" | "bossPhase" | "summon" | "block" | "cast"
@@ -101,6 +103,7 @@ export interface Effect extends Point {
   angle?: number;
 }
 export interface Hazard extends Point {
+ kiln?:import("./KilnGeometry").KilnHazard;
  loom?:import("./LoomGeometry").LoomHazard;
  library?:import("./LibraryGeometry").LibraryHazard;
  wind?:import("./WindGeometry").WindHazard;

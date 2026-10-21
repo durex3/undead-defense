@@ -1,0 +1,145 @@
+{
+  "scope": "Invulnerable 660s structural scheduler diagnostic. Script clears fodder after 4.5s, specials after 18s, elites after 30s, and sets Boss phase health thresholds; no claim of normal survival or legitimate wins.",
+  "rows": [
+    {
+      "mode": "stationary",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 30,
+      "seen": [
+        "glazeling",
+        "kilnstoker",
+        "forkmason",
+        "kilnvalve",
+        "ashsled",
+        "splitcrucible",
+        "glazejailer",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 404,
+          "kind": "splitcrucible",
+          "time": 135.05,
+          "hp": 3206.7051088034536
+        },
+        {
+          "id": 758,
+          "kind": "glazejailer",
+          "time": 225,
+          "hp": 4053.9887595494097
+        },
+        {
+          "id": 1105,
+          "kind": "splitcrucible",
+          "time": 305,
+          "hp": 3980.2798730120194
+        },
+        {
+          "id": 1120,
+          "kind": "glazejailer",
+          "time": 311,
+          "hp": 4169.817009822115
+        }
+      ],
+      "stats": {
+        "straight": 29,
+        "fork": 64,
+        "bend": 9,
+        "valves": 0,
+        "cancelled": 17,
+        "rejected": 9,
+        "eliteCasts": {
+          "splitcrucible": 7,
+          "glazejailer": 6
+        },
+        "patterns": {
+          "A": 11,
+          "B": 14,
+          "C": 12
+        },
+        "phases": [
+          10,
+          10,
+          17
+        ]
+      },
+      "bossState": "windup"
+    },
+    {
+      "mode": "moving",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 30,
+      "seen": [
+        "glazeling",
+        "kilnstoker",
+        "forkmason",
+        "kilnvalve",
+        "ashsled",
+        "splitcrucible",
+        "glazejailer",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 545,
+          "kind": "splitcrucible",
+          "time": 135.05,
+          "hp": 3206.7051088034536
+        },
+        {
+          "id": 989,
+          "kind": "glazejailer",
+          "time": 225,
+          "hp": 4053.9887595494097
+        },
+        {
+          "id": 1452,
+          "kind": "splitcrucible",
+          "time": 305,
+          "hp": 3980.2798730120194
+        },
+        {
+          "id": 1471,
+          "kind": "glazejailer",
+          "time": 311,
+          "hp": 4169.817009822115
+        }
+      ],
+      "stats": {
+        "straight": 6,
+        "fork": 13,
+        "bend": 2,
+        "valves": 0,
+        "cancelled": 1,
+        "rejected": 12,
+        "eliteCasts": {
+          "splitcrucible": 1,
+          "glazejailer": 0
+        },
+        "patterns": {
+          "A": 4,
+          "B": 3,
+          "C": 2
+        },
+        "phases": [
+          3,
+          2,
+          4
+        ]
+      },
+      "bossState": "seek"
+    }
+  ]
+}

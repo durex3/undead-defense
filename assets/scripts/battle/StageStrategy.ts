@@ -1,3 +1,5 @@
+import {kilnMap} from "./KilnMap";
+import {kilnEnemy} from "./KilnSystem";
 import {loomMap} from "./LoomMap";
 import {loomEnemy} from "./LoomSystem";
 import {libraryMap} from "./LibraryMap";
@@ -115,6 +117,7 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
         return true;
       },
     }),
+    12:()=>({map:kilnMap,resolveCrowd:true,movePlayer:dt=>w.kiln.movePlayer(dt),vulnerable:e=>!!e.kiln?.vulnerable&&e.state==='recover',director:dt=>{w.kiln.director(dt);return true;},stepEnemy:(e,dt)=>{if(!kilnEnemy(e.kind))return false;w.kiln.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.kiln.stepEnemy(e,dt),clean:()=>w.kiln.clean(),onDeath:e=>w.kiln.onDeath(e),stepHazard:h=>{if(!h.kiln)return false;w.kiln.stepHazard(h);return true;}}),
     11:()=>({map:loomMap,resolveCrowd:true,movePlayer:dt=>w.loom.movePlayer(dt),vulnerable:e=>!!e.loom?.vulnerable&&e.state==='recover',director:dt=>{w.loom.director(dt);return true;},stepEnemy:(e,dt)=>{if(!loomEnemy(e.kind))return false;w.loom.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.loom.stepEnemy(e,dt),clean:()=>w.loom.clean(),onDeath:e=>w.loom.onDeath(e),stepHazard:h=>{if(!h.loom)return false;w.loom.stepHazard(h);return true;}}),
     10:()=>({map:libraryMap,resolveCrowd:true,movePlayer:dt=>w.library.movePlayer(dt),vulnerable:e=>!!e.library?.vulnerable&&e.state==='recover',
       director:dt=>{w.library.director(dt);return true;},stepEnemy:(e,dt)=>{if(!libraryEnemy(e.kind))return false;w.library.stepEnemy(e,dt);return true;},

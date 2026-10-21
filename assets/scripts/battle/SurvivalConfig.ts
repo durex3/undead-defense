@@ -31,6 +31,7 @@ export const ENEMY_KINDS = [
   "fledglingeffigy","reedwhistler","sickleplumer","foldedskimmer","windarbiter","plumejudge",
   "paperbonegrub","sealclerk","folioray","spineclasp","sealprovost","claspjailer",
   "ragbound","weftbinder","hemcocoon","shuttlecrawler","twinweftwarden","shuttlejailer",
+  "glazeling","kilnstoker","forkmason","ashsled","splitcrucible","glazejailer","kilnvalve",
   // 通用
   "minion", "boss",
 ] as const;
@@ -49,6 +50,14 @@ export interface EnemyConfig {
 }
 
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+ glazeling:{name:"釉裂陶俑",health:1.15,speed:1.75,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
+ kilnstoker:{name:"抱栓窑工",health:1.95,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ forkmason:{name:"分流釉匠",health:2.05,speed:1.08,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ ashsled:{name:"灰釉滑炉",health:2,speed:1.2,contact:14,xp:2,threat:2,cap:1,sprite:"",scale:3.4},
+ splitcrucible:{name:"双坩炉监",health:10.5,speed:1.15,contact:12,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+ glazejailer:{name:"钳釉刑炉",health:11,speed:1.12,contact:12,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+ kilnvalve:{name:"导火栓",health:1,speed:0,contact:0,xp:0,threat:0,cap:2,sprite:"",scale:3.4},
+
  ragbound:{name:"缠屑偶",health:1.12,speed:1.7,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
  weftbinder:{name:"引纬匠",health:1.9,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
  hemcocoon:{name:"回扣蛹",health:2,speed:1.02,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
