@@ -557,6 +557,7 @@ export class Armory {
       lastTick: -Infinity,
     };
     if (skill === "water" && s.mods.includes("spring")) f.radius *= 0.45;
+    if(skill==="water"&&w.weaponGrades.water>1)w.effects.push({type:"explosion",skill:"water",form:"waterSplash",grade:w.weaponGrades.water,...p,radius:f.radius});
     const slot = this.fields.find((v) => !v.active);
     if (slot) Object.assign(slot, f);
     else this.fields.push(f);

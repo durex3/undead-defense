@@ -3,6 +3,7 @@ import type { StageId } from './ProgressionConfig';
 
 /** Playable identities; health is derived from the shared reference-output × target-time budgets. */
 export const STAGES = {
+ 13:{...stageGrowth(13),name:"断锋傀庭",boss:"换锋傀主",damage:1.72,xp:1.45,medicine:42},
  12:{...stageGrowth(12),name:"裂釉熔窑",boss:"裂釉炉心",damage:1.70,xp:1.45,medicine:42},
  11:{...stageGrowth(11),name:"缚烬织坊",boss:"绷骨织后",damage:1.66,xp:1.45,medicine:42},
   1: {...stageGrowth(1),name:'铁棘围城', boss:'铁棘围城督军', damage:1.42, xp:.85, medicine:42},
@@ -18,6 +19,7 @@ export const STAGES = {
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Record<StageId, {threat: string; builds: string}> = {
+ 13:{threat:"本体与离体刃交棒 · 停驻刀与细线无伤 · 回锋独立预警 · 三阶段傀主",builds:"看下一击来源；绕过刀身和本体，回收后抓近身空门反击"},
  12:{threat:"火头沿箭头分流，虚线支路无伤 · 导火栓可截断后段 · 三阶段裂釉炉心",builds:"绕开火头、等尾部经过；靠近导火栓可引导自动攻击，分流前击碎可截断后段"},
  11:{threat:"松线可穿、紧线绕端 · 两拍回扣与平移梭线 · 三阶段错拍织后",builds:"看端点开合与第二拍刻度；松弛时换侧，紧线可绕有限端头，收招时反击"},
  10:{threat:"封签可踏断撤招 · 实体页刃与双夹页 · 三阶段藏典 · 书架不挡友方攻击",builds:"先看配对编号，直接躲开或踩签撤一条；抓中缝、端头与收招窗口"},

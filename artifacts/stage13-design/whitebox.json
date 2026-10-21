@@ -1,0 +1,209 @@
+{
+  "status": "design-only",
+  "scope": "Static connectivity and authored timing arithmetic. No runtime AI, full combo escape, actual Cocos, human or phone validation.",
+  "layout": {
+    "boxes": [
+      {
+        "x": -10,
+        "y": -11,
+        "hx": 1.2,
+        "hy": 2.6
+      },
+      {
+        "x": 10,
+        "y": -11,
+        "hx": 1.2,
+        "hy": 2.6
+      },
+      {
+        "x": -10,
+        "y": 11,
+        "hx": 1.2,
+        "hy": 2.6
+      },
+      {
+        "x": 10,
+        "y": 11,
+        "hx": 1.2,
+        "hy": 2.6
+      },
+      {
+        "x": -5,
+        "y": 20,
+        "hx": 3.6,
+        "hy": 1
+      },
+      {
+        "x": 5,
+        "y": -20,
+        "hx": 3.6,
+        "hy": 1
+      },
+      {
+        "x": -18,
+        "y": 0,
+        "hx": 1,
+        "hy": 3
+      },
+      {
+        "x": 18,
+        "y": 0,
+        "hx": 1,
+        "hy": 3
+      }
+    ],
+    "paths": [
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          -4,
+          -8
+        ],
+        [
+          -4,
+          16
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          4,
+          -8
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          -20.2,
+          -23.5
+        ],
+        [
+          -20.2,
+          23.5
+        ],
+        [
+          20.2,
+          23.5
+        ],
+        [
+          20.2,
+          -23.5
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          0,
+          -8
+        ]
+      ]
+    ],
+    "grid": 0.5,
+    "pathSample": 0.025,
+    "actors": [
+      {
+        "radius": 0.3,
+        "freeCells": 8461,
+        "reachable": 8461,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "radius": 0.7,
+        "freeCells": 7773,
+        "reachable": 7773,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "growth": {
+    "normal": 2.9887357252453657,
+    "elite": 3.5662954302047787,
+    "bossDps": 540.3142041361975,
+    "bossSeconds": 111.87988300580324,
+    "bossHP": 60450.289945131466,
+    "recovery": 0.3874204890000001
+  },
+  "example": {
+    "description": "Phase I C fixed center whitebox, straight capsules only. Blade slot is reserved through quiet parking and return.",
+    "blade": {
+      "start": {
+        "x": -3,
+        "y": 0
+      },
+      "end": {
+        "x": 2,
+        "y": 0
+      },
+      "warning": 2.2,
+      "arrive": 3.866666666666667,
+      "returnDue": 5.866666666666667,
+      "returnEnd": 6.876819211218878,
+      "recall": {
+        "x": 0,
+        "y": -2
+      },
+      "halfLength": 0.45,
+      "halfWidth": 0.18
+    },
+    "body": {
+      "start": {
+        "x": -3,
+        "y": 0
+      },
+      "end": {
+        "x": 0,
+        "y": -2
+      },
+      "due": 2.5,
+      "endTime": 3.4013878188659974,
+      "radius": 0.55
+    },
+    "maxSlots": 2
+  },
+  "checks": {
+    "fullReturnWarning": 2,
+    "bodyArrivesBeforeRecall": true,
+    "peakReservedSlots": 2
+  },
+  "limitations": [
+    "All nine Boss phase/pattern variants still need runtime joint escape and source/animation validation",
+    "Static whitebox is not proof of playable difficulty or mobile visibility",
+    "No stage13 gameplay registration, save migration, purchases or upload performed"
+  ]
+}

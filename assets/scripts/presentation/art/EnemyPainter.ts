@@ -1,3 +1,4 @@
+import {drawEdgeBody} from "./enemies/EdgeCourtArt";
 import {drawKilnBody} from "./enemies/KilnArt";
 import {drawLoomBody} from "./enemies/LoomArt";
 import {drawLibraryBody} from "./enemies/LibraryArt";
@@ -23,7 +24,7 @@ import { drawHeroBody, drawHeroShadow } from "./HeroPainter";
 import { warningGlyph } from "./VfxBrush";
 
 /** Stages whose bodies/overlays are fully owned by the new art layer. */
-const CONVERTED = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+const CONVERTED = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
 
 const visible: Enemy[] = [];
 const pose = createPose();
@@ -38,6 +39,7 @@ function collect(w: SurvivalWorld) {
 
 function bodyFor(g: Graphics, w: SurvivalWorld, enemy: Enemy, art: EnemyArt) {
   switch (w.stageId) {
+    case 13: drawEdgeBody(g,w,enemy,art,pose); break;
     case 12: drawKilnBody(g,w,enemy,art,pose); break;
     case 11: drawLoomBody(g,w,enemy,art,pose); break;
     case 10: drawLibraryBody(g,w,enemy,art,pose); break;
@@ -312,7 +314,7 @@ export function drawEnemyWarnings(g: Graphics, w: SurvivalWorld, reduced: boolea
     }
     if (enemy.burnUntil > w.time) burnRing(g, pose, art, w.time);
     if (enemy.slowUntil > w.time && enemy.freezeUntil <= w.time) slowRing(g, pose, art);
-    if (converted && enemy.state === "recover" && (enemy.kiln?.vulnerable || enemy.loom?.vulnerable || enemy.library?.vulnerable || enemy.wind?.vulnerable || enemy.root?.vulnerable || enemy.prism?.vulnerable || enemy.tide?.vulnerable || enemy.sand?.vulnerable || enemy.thunder?.vulnerable || enemy.moon?.vulnerable || bossExposed(w, enemy))) {
+    if (converted && enemy.state === "recover" && (enemy.edge?.vulnerable || enemy.kiln?.vulnerable || enemy.loom?.vulnerable || enemy.library?.vulnerable || enemy.wind?.vulnerable || enemy.root?.vulnerable || enemy.prism?.vulnerable || enemy.tide?.vulnerable || enemy.sand?.vulnerable || enemy.thunder?.vulnerable || enemy.moon?.vulnerable || bossExposed(w, enemy))) {
       g.strokeColor = inkColor("#ffe0a5", 235);
       g.lineWidth = 2.5;
       const y = top + 11 * pose.scale;

@@ -1,0 +1,175 @@
+{
+  "scope": "Invulnerable 660s structural scheduler diagnostic. Script clears fodder after 4.5s, specials after 18s, elites after 30s, and sets Boss phase health thresholds; no claim of normal survival or legitimate wins.",
+  "rows": [
+    {
+      "mode": "stationary",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "scrapbound",
+        "edgecaster",
+        "stepcutter",
+        "reelstalker",
+        "twinclamp",
+        "edgepuppeteer",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 476,
+          "kind": "twinclamp",
+          "time": 135.05,
+          "hp": 3351.2763461268455
+        },
+        {
+          "id": 834,
+          "kind": "edgepuppeteer",
+          "time": 225,
+          "hp": 4268.855629955258
+        },
+        {
+          "id": 1196,
+          "kind": "twinclamp",
+          "time": 305,
+          "hp": 4159.7269897908545
+        },
+        {
+          "id": 1211,
+          "kind": "edgepuppeteer",
+          "time": 311,
+          "hp": 4390.822933668123
+        }
+      ],
+      "stats": {
+        "blade": 60,
+        "body": 51,
+        "rejected": 0,
+        "cancelled": 16,
+        "qualified": 0,
+        "eliteCasts": {
+          "twinclamp": 6,
+          "edgepuppeteer": 7
+        },
+        "patterns": {
+          "A": 10,
+          "B": 10,
+          "C": 10
+        },
+        "phases": [
+          8,
+          9,
+          13
+        ],
+        "phasePatterns": [
+          {
+            "A": 3,
+            "B": 3,
+            "C": 2
+          },
+          {
+            "A": 3,
+            "B": 3,
+            "C": 3
+          },
+          {
+            "A": 4,
+            "B": 4,
+            "C": 5
+          }
+        ]
+      },
+      "bossState": "recover"
+    },
+    {
+      "mode": "moving",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "scrapbound",
+        "edgecaster",
+        "stepcutter",
+        "reelstalker",
+        "twinclamp",
+        "edgepuppeteer",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 570,
+          "kind": "twinclamp",
+          "time": 135.05,
+          "hp": 3351.2763461268455
+        },
+        {
+          "id": 1045,
+          "kind": "edgepuppeteer",
+          "time": 225,
+          "hp": 4268.855629955258
+        },
+        {
+          "id": 1517,
+          "kind": "twinclamp",
+          "time": 305,
+          "hp": 4159.7269897908545
+        },
+        {
+          "id": 1539,
+          "kind": "edgepuppeteer",
+          "time": 311,
+          "hp": 4390.822933668123
+        }
+      ],
+      "stats": {
+        "blade": 14,
+        "body": 11,
+        "rejected": 10,
+        "cancelled": 3,
+        "qualified": 0,
+        "eliteCasts": {
+          "twinclamp": 1,
+          "edgepuppeteer": 0
+        },
+        "patterns": {
+          "A": 4,
+          "B": 3,
+          "C": 4
+        },
+        "phases": [
+          4,
+          3,
+          4
+        ],
+        "phasePatterns": [
+          {
+            "A": 2,
+            "B": 1,
+            "C": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "C": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "C": 2
+          }
+        ]
+      },
+      "bossState": "seek"
+    }
+  ]
+}

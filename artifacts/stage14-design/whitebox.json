@@ -1,0 +1,181 @@
+{
+  "status": "design-only",
+  "layout": {
+    "boxes": [
+      {
+        "x": -7,
+        "y": -8,
+        "hx": 1,
+        "hy": 1.6
+      },
+      {
+        "x": 7,
+        "y": -8,
+        "hx": 1,
+        "hy": 1.6
+      },
+      {
+        "x": -7,
+        "y": 8,
+        "hx": 1,
+        "hy": 1.6
+      },
+      {
+        "x": 7,
+        "y": 8,
+        "hx": 1,
+        "hy": 1.6
+      },
+      {
+        "x": -14,
+        "y": 0,
+        "hx": 1.2,
+        "hy": 2.5
+      },
+      {
+        "x": 14,
+        "y": 0,
+        "hx": 1.2,
+        "hy": 2.5
+      }
+    ],
+    "paths": [
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          -3,
+          -8
+        ],
+        [
+          -3,
+          16
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          3,
+          -8
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          -20.2,
+          -23.5
+        ],
+        [
+          -20.2,
+          23.5
+        ],
+        [
+          20.2,
+          23.5
+        ],
+        [
+          20.2,
+          -23.5
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          0,
+          -8
+        ]
+      ]
+    ],
+    "actors": [
+      {
+        "radius": 0.3,
+        "freeCells": 8711,
+        "reachable": 8711,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "radius": 0.7,
+        "freeCells": 8151,
+        "reachable": 8151,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "beam": {
+    "near": 1.4,
+    "far": 6.2,
+    "halfWidth": 0.2,
+    "warning": 2.4,
+    "rotationDegrees": 90,
+    "duration": 2.4,
+    "pivot": {
+      "x": 3,
+      "y": 8
+    },
+    "checks": {
+      "clippedLength": 2.8,
+      "unblockedLength": 6.2,
+      "exposedPointHit": true,
+      "behindPillarSafe": true,
+      "behindWouldHitWithoutPillar": true,
+      "innerPocketSafe": true,
+      "shadowFollow": {
+        "seconds": 0.8,
+        "radius": 5.6,
+        "angularSpeed": 37.5,
+        "requiredSpeed": 3.665191429188092,
+        "baseSpeed": 4.2,
+        "safe": true,
+        "wouldHitWithoutColumn": true
+      }
+    }
+  },
+  "growth": {
+    "normal": 3.0257599206880657,
+    "elite": 3.614341759830254,
+    "bossDps": 543.8826335274896,
+    "bossSeconds": 113.12646936043873,
+    "bossHP": 61527.522077422276,
+    "recovery": 0.35
+  },
+  "limitations": [
+    "Only static connectivity and isolated fixed-angle thick-ray occlusion are checked",
+    "Rotating continuous collision, dual-beam escape, source/HUD visibility, AI and real device remain unimplemented",
+    "Does not register stage14, modify saves, build or upload a game"
+  ]
+}

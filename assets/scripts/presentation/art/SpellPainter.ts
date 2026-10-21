@@ -1,4 +1,4 @@
-import { drawBladeForm } from "./WeaponFormArt";
+import { drawWaterForm,drawWaterFieldForm,drawBladeForm } from "./WeaponFormArt";
 import { gradeOf } from "../../battle/WeaponGrade";
 import { Graphics } from "cc";
 import type { SurvivalWorld } from "../../battle/SurvivalWorld";
@@ -43,6 +43,7 @@ export function drawGroundFields(g: Graphics, w: SurvivalWorld, reduced: boolean
     const quiet = reduced || crowded || overlaps > 0;
     const wash = (crowded ? .65 : 1) / (1 + overlaps * .6);
     if (field.skill === "water") {
+      const grade=gradeOf("water",w.weaponGrades);if(grade>1)drawWaterFieldForm(g,x,y,r,grade,quiet);
       g.fillColor = ink("#2f7fb5", 34 * wash);
       g.circle(x, y, r);
       g.fill();
@@ -270,7 +271,7 @@ function drawFire(g: Graphics, x: number, y: number, angle: number, p: any, quie
   g.fill();
 }
 
-function drawWater(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false) {
+function drawWater(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false,grade=1) {
   const c = SPELL.water;
   const q = Math.min(1, (p.age || 0) / 0.45);
   const arc = Math.sin(q * Math.PI) * 60;
@@ -279,6 +280,7 @@ function drawWater(g: Graphics, x: number, y: number, angle: number, p: any, qui
     x + u * Math.cos(angle) - v * Math.sin(angle),
     y + arc + u * Math.sin(angle) + v * Math.cos(angle),
   ];
+  if(grade>1){drawWaterForm(g,x,y+arc,angle,grade,.7);return;}
   // Bottle body.
   const body: [number, number][] = [
     [-6, -10],
@@ -342,7 +344,7 @@ export function drawProjectiles(g: Graphics, w: SurvivalWorld, reduced: boolean,
     if (!w.visible(p, 1)) continue;
     if (p.skill === "blade") drawBlade(g, x, y, p.angle, p,reduced||crowded,gradeOf("blade",w.weaponGrades));
     else if (p.skill === "fire") drawFire(g, x, y, p.angle, p,reduced||crowded);
-    else drawWater(g, x, y, p.angle, p,reduced||crowded);
+    else drawWater(g, x, y, p.angle, p,reduced||crowded,gradeOf("water",w.weaponGrades));
   }
 }
 
@@ -441,7 +443,7 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
       const kind: ParticleKind = e.skill === "fire" ? "ember" : e.skill === "frost" || e.skill === "bone" ? "shard" :
         e.skill === "ghost" || e.skill === "void" ? "rune" : "spark";
       for (let i = 0; i < n; i++) spawn(kind, x, y, i === 0 ? c.core : c.mid, 110, 0.14 + rand() * 0.08, 2.6);
-      if (e.skill === "water") spawn("ember", x, y, "#bff6ff", 40, 0.2, 2.4);
+      if (e.skill === "water") {spawn("ember", x, y, "#bff6ff", 40, 0.2, 2.4);if((e.grade??1)>1)spawn(e.grade===3?"ring":"crest",x,y,"#d2f2e6",0,.2,2,0,9);}
     } else if (e.type === "death" || e.type === "eliteDown") {
       const c = enemyBurstColor(e.skill, stage);
       const elite = e.type === "eliteDown";
@@ -450,6 +452,9 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
       if (elite) spawn("crest", x, y + 20, "#f2c66d", 0, .34, 3, 0, 22);
     } else if (e.type === "explosion") {
       const c = skillColor(e.skill);
+      if(e.form==='waterSplash'){
+        const r=(e.radius??1)*48;if(e.grade===2){for(const side of [-1,1])spawn('crest',x+side*r*.18,y,'#d7f4df',0,.2,3,0,r*.22);}else for(const v of [.35,.6])spawn('ring',x,y,'#c2ede4',0,.24,2,0,r*v);continue;
+      }
       if(e.form?.startsWith("boneBurst")) {
         const grade=e.grade??1;
         if(grade>=3)spawn(grade===4?"crest":"ring",x,y,grade===4?"#e2c3f4":"#d9f0f1",0,.22,2,0,(e.radius||.9)*32);

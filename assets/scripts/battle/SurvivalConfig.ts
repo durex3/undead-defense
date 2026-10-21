@@ -32,6 +32,7 @@ export const ENEMY_KINDS = [
   "paperbonegrub","sealclerk","folioray","spineclasp","sealprovost","claspjailer",
   "ragbound","weftbinder","hemcocoon","shuttlecrawler","twinweftwarden","shuttlejailer",
   "glazeling","kilnstoker","forkmason","ashsled","splitcrucible","glazejailer","kilnvalve",
+  "scrapbound","edgecaster","stepcutter","reelstalker","twinclamp","edgepuppeteer",
   // 通用
   "minion", "boss",
 ] as const;
@@ -50,6 +51,13 @@ export interface EnemyConfig {
 }
 
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+ scrapbound:{name:"铁屑傀",health:1.16,speed:1.8,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
+ edgecaster:{name:"掷锋傀",health:2.05,speed:1.1,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ stepcutter:{name:"踏刃傀",health:2.1,speed:1.15,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ reelstalker:{name:"牵锋兽",health:2.05,speed:1.12,contact:14,xp:2,threat:2,cap:1,sprite:"",scale:3.4},
+ twinclamp:{name:"双铗裁手",health:10.8,speed:1.16,contact:12,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+ edgepuppeteer:{name:"换锋司傀",health:11.4,speed:1.12,contact:13,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+
  glazeling:{name:"釉裂陶俑",health:1.15,speed:1.75,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
  kilnstoker:{name:"抱栓窑工",health:1.95,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
  forkmason:{name:"分流釉匠",health:2.05,speed:1.08,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},

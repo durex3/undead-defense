@@ -63,3 +63,20 @@ export function drawBoneForm(g:Graphics,x:number,y:number,angle:number,grade:num
  g.strokeColor=ink(grade===4?'#eec9fc':'#d4e4e8',155);
  for(let i=0;i<3;i++){const a=-45-i*12;if(grade===3){const q=p(a,0);g.ellipse(q[0],q[1],3*scale,7*scale);g.stroke();}else if(grade===4){g.fillColor=ink('#e6c6f2',160);polygon(g,[[a+4,0],[a,4],[a-4,0],[a,-4]].map(([u,v])=>p(u,v)));}else line(p(a,3),p(a-5,-3),1.5);}
 }
+
+/** Water grade changes bottle/urn silhouette, never the splash hitbox or tick count. */
+export function drawWaterForm(g:Graphics,x:number,y:number,angle:number,grade:number,scale=1){
+ const dx=Math.cos(angle),dy=Math.sin(angle),p=(a:number,b:number)=>[x+(dx*a-dy*b)*scale,y+(dy*a+dx*b)*scale];
+ g.fillColor=ink(grade===3?'#a8dbdf':'#84d9d9');g.strokeColor=ink('#243c4d');g.lineWidth=2;
+ const shape=grade===3?[[-13,-17],[10,-17],[17,-7],[14,9],[6,14],[6,21],[-7,21],[-7,13],[-17,4]]:[[-10,-18],[10,-18],[14,-10],[12,8],[5,14],[5,21],[-5,21],[-5,14],[-12,8],[-14,-10]];
+ polygon(g,shape.map(([a,b])=>p(a,b)));
+ g.strokeColor=ink('#d6f6ec');g.lineWidth=3;
+ for(const side of [-1,1]){const a=p(side*10,8),b=p(side*(grade===3?22:19),12),c=p(side*(grade===3?21:19),-6),d=p(side*12,-9);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.lineTo(c[0],c[1]);g.lineTo(d[0],d[1]);g.stroke();}
+ g.fillColor=ink('#f1ffe4');polygon(g,[[0,8],[5,1],[0,-10],[-5,1]].map(([a,b])=>p(a,b)));
+ if(grade===3){g.strokeColor=ink('#f7e4ac');g.lineWidth=2;for(const v of [-3,3]){const a=p(-10,v),b=p(10,v);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);}g.stroke();}
+}
+export function drawWaterFieldForm(g:Graphics,x:number,y:number,r:number,grade:number,quiet=false){
+ g.strokeColor=ink(grade===3?'#d0f0e3':'#bde4d1',quiet?95:140);g.lineWidth=1.8;
+ if(grade===2){for(let i=0;i<8;i++){const a=i*Math.PI/4;g.moveTo(x+Math.cos(a)*r*.82,y+Math.sin(a)*r*.82);g.lineTo(x+Math.cos(a+.12)*r*.9,y+Math.sin(a+.12)*r*.9);}g.stroke();}
+ else{g.circle(x,y,r*.72);g.stroke();for(let i=0;i<4;i++){const a=i*Math.PI/2,px=x+Math.cos(a)*r*.55,py=y+Math.sin(a)*r*.55;g.moveTo(px-4,py);g.lineTo(px,py+5);g.lineTo(px+4,py);g.lineTo(px,py-5);g.close();}g.stroke();}
+}

@@ -511,7 +511,7 @@ export class GameMenus {
     this.host.progress.flush();
     this.host.overlay.destroyAllChildren();
     this.host.panel(this.host.overlay, 0, 0, 1100, 570, "#191e2d");
-    this.host.text(this.host.overlay, this.host.progress.hasAchievement("kiln_ten_paths")?"余烬幸存者 · 断焰司炉":this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
+    this.host.text(this.host.overlay, this.host.progress.hasAchievement("edge_twelve_paths")?"余烬幸存者 · 识锋者":this.host.progress.hasAchievement("kiln_ten_paths")?"余烬幸存者 · 断焰司炉":this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
     this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
     this.host.muteButton(425, 225, true);
     this.host.button(this.host.overlay,"存档管理",-430,225,160,38,()=>this.showManualSaves());
@@ -849,6 +849,7 @@ export class GameMenus {
       h.text(h.overlay,a.name+(done?" · 已完成":" · 未完成"),-265,y+29,21,done?"#a8d7c7":"#f3deac",500);
       h.text(h.overlay,a.condition,0,y,15,"#d5dfdc",1020);
       h.text(h.overlay,`奖励：${a.reward} · ${h.progress.achievementProgress(a.id)}`,0,y-29,14,"#b9c8d5",1020);
+      if(a.id==='edge_twelve_paths'&&done){const badge=h.make('EdgeAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#d4dfcc');g.lineWidth=3;g.moveTo(-14,-11);g.lineTo(10,13);g.lineTo(14,8);g.lineTo(-10,-14);g.moveTo(-12,10);g.lineTo(-1,0);g.moveTo(2,-2);g.lineTo(13,-12);g.stroke();}
       if(a.id==='kiln_ten_paths'&&done){const badge=h.make('KilnAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#efbf8e');g.lineWidth=3;g.circle(0,0,14);g.moveTo(-5,-12);g.lineTo(1,-4);g.lineTo(-4,2);g.lineTo(5,12);g.moveTo(0,-5);g.lineTo(9,-2);g.stroke();}
       if(a.id==='loom_eight_paths'&&done){const badge=h.make('LoomAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#d9c0f0');g.lineWidth=3;for(let v=-1;v<=1;v++){g.moveTo(v*8-13,-9);g.lineTo(v*8+13,9);g.moveTo(v*8-13,9);g.lineTo(v*8+13,-9);}g.stroke();}
       const weapon=a.weapon;if(weapon)this.catalogButton("查看奖励武器",345,y+29,260,29,()=>this.showWeaponDetail(weapon));

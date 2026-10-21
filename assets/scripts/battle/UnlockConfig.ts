@@ -2,11 +2,12 @@ import type { WeaponMod, WeaponStats } from "./ArmoryConfig";
 export const UNLOCK_WEAPONS = ["hammer", "wheel"] as const;
 export type UnlockSkill = (typeof UNLOCK_WEAPONS)[number];
 export const HAMMER_PRICE = 360;
-export const CLEAR_COINS = [0, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320] as const;
-export const STAGE_CLEAR_IDS = ["", "siege_clear", "sand_clear", "thunder_clear", "moon_clear", "bellcourt_clear", "tideworks_clear", "prismvault_clear", "rootglass_clear", "windcloister_clear", "library_clear", "emberloom_clear", "glazekiln_clear"] as const;
+export const CLEAR_COINS = [0, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340] as const;
+export const STAGE_CLEAR_IDS = ["", "siege_clear", "sand_clear", "thunder_clear", "moon_clear", "bellcourt_clear", "tideworks_clear", "prismvault_clear", "rootglass_clear", "windcloister_clear", "library_clear", "emberloom_clear", "glazekiln_clear", "edgecourt_clear"] as const;
 export interface Achievement { id: string; name: string; condition: string; reward: string; weapon: import("./SurvivalConfig").Skill | null; category: "通关记录" | "机制挑战" | "配装挑战"; }
 export const ACHIEVEMENTS: readonly Achievement[] = [
-  ...["围城初破","赤砂脱困","雷庭止鸣","逐月归来","钟庭来客","潮间过客","棱间行者","温室回生","借风过廊","禁库开卷","织坊断经","釉庭熄炉"].map((name,i):Achievement=>({id:STAGE_CLEAR_IDS[i+1],name,condition:`通关第${i+1}关`,reward:"图鉴完成标记",weapon:null,category:"通关记录"})),
+  ...["围城初破","赤砂脱困","雷庭止鸣","逐月归来","钟庭来客","潮间过客","棱间行者","温室回生","借风过廊","禁库开卷","织坊断经","釉庭熄炉","傀庭识锋"].map((name,i):Achievement=>({id:STAGE_CLEAR_IDS[i+1],name,condition:`通关第${i+1}关`,reward:"图鉴完成标记",weapon:null,category:"通关记录"})),
+  {id:"edge_twelve_paths",name:"十二途识锋",condition:"12种实际起手各以2组合法双改通关第十三关；起手8级，Boss三阶段各完整躲C组后近身反击，Boss来源无伤",reward:"识锋者称号与断刃徽纹",weapon:null,category:"机制挑战"},
   {id:"kiln_ten_paths",name:"十路断焰",condition:"10种实际起手各以2种不同合法双改通关第十二关；起手8级，Boss三阶段各分流前击碎Boss导火栓，Boss来源无伤",reward:"断焰司炉称号与裂釉徽纹",weapon:null,category:"机制挑战"},
   {id:"loom_eight_paths",name:"八途解织",condition:"用8种不同起手通关第十一关；每局Boss三阶段各穿越同组两条松线，且不受Boss来源伤害",reward:"断纬者称号与织纹徽章",weapon:null,category:"机制挑战"},
   {id:"forge_mastery",name:"破阵熟手",condition:"通关第三关，至少一把武器8级并有两项合法改造",reward:"精良裂甲飞轮",weapon:"wheel",category:"机制挑战"},

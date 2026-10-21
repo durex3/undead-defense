@@ -1,0 +1,7817 @@
+{
+  "scope": "20s high-HP targets, fixed ranger, no other passives, unmodified and legal dual mods, single or 8×8 spread, actual Armory/hit. Not normal survival play.",
+  "rows": [
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2425.500000000011,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2425.500000000011,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2425.500000000011,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 2813.5800000000154,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2425.500000000011,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 2425.500000000011,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 2813.5800000000154,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 485.09999999999957,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2772.000000000014,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 4712.400000000003,
+      "hitTargets": 13,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3001.6800000000167,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 5385.599999999985,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2950.2000000000157,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3237.3000000000184,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 6423.119999999954,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3663,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 4059,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 4138.200000000003,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 5603.399999999991,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 4158,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 4059,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 5959.7999999999865,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 142.56,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 150.48,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 142.56,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 150.48,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 253.43999999999983,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 237.59999999999985,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 245.51999999999984,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 1496.880000000002,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 1845.3600000000051,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2402.9279999999994,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 2783.0880000000075,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 1916.6400000000058,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 1900.8000000000056,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 4023.3600000000292,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 118.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 118.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 118.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 118.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 118.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 138.6,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 158.4,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 1465.199999999998,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 1742.3999999999974,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2336.4000000000033,
+      "hitTargets": 30,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 2344.320000000002,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 1465.199999999998,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 1821.5999999999972,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 3029.4000000000087,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 495,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2351.25,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2450.25,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2371.05,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 2925.4500000000025,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2697.75,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 2623.5,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 3291.7500000000023,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 15415.400000000134,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 29429.39999999948,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 18778.760000000017,
+      "hitTargets": 17,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 33913.87999999915,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 15415.400000000134,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 15415.400000000134,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 33913.87999999915,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1401.3999999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 27084.1999999996,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 40583.39999999892,
+      "hitTargets": 35,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 28685.799999999486,
+      "hitTargets": 25,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 43489.159999998876,
+      "hitTargets": 41,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 27198.599999999595,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 28113.799999999548,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 43620.71999999891,
+      "hitTargets": 41,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 26026,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 46189,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 29286.399999999943,
+      "hitTargets": 25,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 49563.7999999999,
+      "hitTargets": 40,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 25454,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 26026,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 47518.8999999999,
+      "hitTargets": 40,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 846.56,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 938.0799999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 919.7760000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 938.0799999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 960.9599999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 983.8399999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1006.7199999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 18532.799999999843,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 17777.75999999981,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 21790.911999999855,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 21841.247999999814,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 19013.279999999864,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 20660.639999999938,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 24769.887999999824,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 514.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 572,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 537.68,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 572,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 514.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 686.4000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 743.6000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 16187.600000000084,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 17045.600000000093,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 19367.92000000008,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 20386.080000000096,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 16187.600000000084,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 20992.400000000143,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 24641.760000000173,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1430,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 16945.5,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 30030,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 19891.299999999996,
+      "hitTargets": 17,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 34605.9999999999,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 16874,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 16945.5,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 34605.9999999999,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3031.875,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 3031.875,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3031.875,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 3516.9749999999945,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3031.875,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3031.875,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 3516.9749999999945,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 606.375,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3465,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 5890.5,
+      "hitTargets": 13,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3752.0999999999967,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 6731.999999999981,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3687.75,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 4046.625,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 8028.899999999974,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 4578.75,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 5073.75,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 5172.75,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 7004.25,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 5197.5,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 5073.75,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 7449.75,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 178.20000000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 188.10000000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 178.20000000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 188.10000000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 316.79999999999995,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 297,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 306.9,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 1871.100000000006,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2306.70000000001,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3003.660000000018,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 3478.8600000000224,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2395.8000000000106,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 2376.0000000000105,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 5029.200000000005,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 148.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 148.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 148.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 148.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 148.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 173.25,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 198,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 1831.5,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2178,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2920.5000000000055,
+      "hitTargets": 30,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 2930.4000000000037,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 1831.5,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 2277,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 3786.7500000000064,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 618.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2939.0625,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 3062.8125,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2963.8125,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 3656.8125,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3372.1875,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3279.375,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 4114.6875,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 19269.25,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 36786.75,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 23473.449999999877,
+      "hitTargets": 17,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 42392.3500000001,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 19269.25,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 19269.25,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 42392.3500000001,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1751.75,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 33855.25,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 50729.25,
+      "hitTargets": 35,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 35857.24999999997,
+      "hitTargets": 25,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 54361.4500000002,
+      "hitTargets": 41,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 33998.25,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 35142.25,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 54525.90000000023,
+      "hitTargets": 41,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 32532.5,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 57736.25,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 36608,
+      "hitTargets": 25,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 61954.75,
+      "hitTargets": 40,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 31817.5,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 32532.5,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 59398.625,
+      "hitTargets": 40,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1058.2000000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1172.6000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1149.7200000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1172.6000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1201.2,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1229.8,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1258.3999999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 23165.9999999998,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 22222.199999999848,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 27238.639999999505,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 27301.559999999477,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 23766.59999999977,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 25825.799999999665,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 30962.359999999262,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 643.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 715,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 672.1,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 715,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 643.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 858,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 929.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 20234.5,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 21307,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 24209.899999999965,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 25482.59999999996,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 20234.5,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 26240.5,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 30802.199999999895,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1787.5,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 21181.875,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 37537.5,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 24864.125,
+      "hitTargets": 17,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 43257.5,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 21092.5,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 21181.875,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 43257.5,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3880.800000000012,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 3880.800000000012,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3880.800000000012,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 4501.728000000008,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3880.800000000012,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3880.800000000012,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 4501.728000000008,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 776.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 4435.200000000017,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 7539.840000000046,
+      "hitTargets": 13,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 4802.688000000017,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 8616.960000000061,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 4720.32000000002,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 5179.680000000024,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 10276.992000000047,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 5860.800000000009,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 6494.400000000015,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 6621.120000000018,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 8965.440000000046,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 6652.800000000017,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 6494.400000000015,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 9535.68000000005,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 228.09599999999998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 240.76799999999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 228.09599999999998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 240.76799999999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 405.50400000000025,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 380.1600000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 392.8320000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2395.008000000004,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2952.576000000005,
+      "hitTargets": 9,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3844.6848000000073,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 4452.940799999999,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3066.6240000000053,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3041.280000000005,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 6437.375999999951,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 190.08000000000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 190.08000000000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 190.08000000000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 190.08000000000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 190.08000000000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 221.76000000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 253.44000000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2344.3200000000015,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2787.8399999999992,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3738.2399999999993,
+      "hitTargets": 30,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 3750.911999999997,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2344.3200000000015,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 2914.5599999999986,
+      "hitTargets": 10,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 4847.0399999999945,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 792.0000000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3761.999999999994,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 3920.3999999999937,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3793.6799999999944,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 4680.720000000002,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 4316.399999999995,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 4197.599999999994,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 1.5,
+      "count": 1
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 5266.800000000007,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 1.7748239349298847,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 24664.639999999778,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 47087.04000000013,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 30046.015999999687,
+      "hitTargets": 17,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 54262.207999999875,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 24664.639999999778,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 24664.639999999778,
+      "hitTargets": 11,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 54262.207999999875,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 2242.2400000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 43334.719999999965,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 64933.44000000093,
+      "hitTargets": 35,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 45897.279999999955,
+      "hitTargets": 25,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 69582.65600000012,
+      "hitTargets": 41,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 43517.75999999997,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 44982.08000000004,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 69793.15200000003,
+      "hitTargets": 41,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 41641.60000000028,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 73902.40000000015,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 46858.24000000031,
+      "hitTargets": 25,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 79302.07999999986,
+      "hitTargets": 40,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 40726.40000000027,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 41641.60000000028,
+      "hitTargets": 19,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "spring",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 76030.24000000003,
+      "hitTargets": 40,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1354.495999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1500.9279999999987,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1471.6415999999988,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1500.9279999999987,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1537.5359999999987,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1574.1439999999986,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1610.7519999999986,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 29652.480000000127,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 28444.41600000012,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 34865.45919999993,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 34945.996799999855,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 30421.24800000013,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 33057.02400000014,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "recall"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 39631.82079999982,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 823.68,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 915.1999999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 860.288,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 915.1999999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 823.68,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1098.24,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1189.76,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 25900.1600000001,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 27272.96000000011,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 30988.672000000126,
+      "hitTargets": 34,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 32617.728000000134,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 25900.1600000001,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 33587.840000000106,
+      "hitTargets": 24,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "wave",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 39426.81599999995,
+      "hitTargets": 38,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 2288.000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 27112.8000000001,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 48048.000000000364,
+      "hitTargets": 21,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 31826.080000000064,
+      "hitTargets": 17,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 55369.60000000046,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 26998.4000000001,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 27112.8000000001,
+      "hitTargets": 12,
+      "controlledSeconds": 0,
+      "radius": 1.9,
+      "count": 3
+    },
+    {
+      "skill": "water",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "recall",
+        "pulse"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 55369.60000000046,
+      "hitTargets": 29,
+      "controlledSeconds": 0,
+      "radius": 2.248110317577854,
+      "count": 5
+    }
+  ]
+}
