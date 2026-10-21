@@ -15,6 +15,8 @@ import {
 /** Stable account namespace: updates never delete previous saves. */
 export const PROGRESS_KEY = "ashen-survivors-armory-progress-v1";
 export const RECOVERY_KEY = PROGRESS_KEY + "-recovery";
+export const MANUAL_SAVE_LIMIT = 3;
+export interface ManualSave { slot: number; token: string; state: "empty" | "saved" | "invalid" | "unreadable"; savedAt?: number; data?: ProgressData; }
 const SAVE_KEYS = [PROGRESS_KEY, PROGRESS_KEY + "-backup", "ashen-survivors-progress-v1", "ashen-survivors-progress-v1-backup", "undead-defense-v1", "undead-defense-v1-backup"];
 interface PreservedSave { key: string; raw: string; }
 export interface RecoveryRecord { id: string; source: string; data: ProgressData; repaired: boolean; }
@@ -168,6 +170,52 @@ export class ProgressStore {
     next.revision=Math.max(this.data.revision,next.revision);
     if(!this.commit(next,true))return "save-failed";
     this.pending=false;this.readBlocked=false;this.loadNotice="已恢复所选账户快照";return "restored";
+  }
+  /** Manual slots are independent of automatic saves and bounded recovery history. */
+  private manualKey(slot: number) { return PROGRESS_KEY + "-manual-" + slot; }
+  get manualSaves(): ManualSave[] {
+    return [1,2,3].map<ManualSave>(slot => {
+      const key=this.manualKey(slot);
+      try {
+        const raw=this.storage.getItem(key), token=this.recordId(key,raw ? this.rawString(raw) : "");
+        if(!raw)return {slot,token,state:"empty"};
+        let v:any;
+        try {v=JSON.parse(this.rawString(raw));} catch {return {slot,token,state:"invalid"};}
+        if(v?.version===1 && v.deleted===true)return {slot,token,state:"empty"};
+        const record=v?.version===1 && Number.isSafeInteger(v.savedAt) ? this.decode(v.data) : null;
+        return record ? {slot,token,state:"saved",savedAt:v.savedAt,data:record.data} : {slot,token,state:"invalid"};
+      } catch {return {slot,token:"",state:"unreadable"};}
+    });
+  }
+  saveManual(slot: number, token: string, revision: number) {
+    const entry=this.manualSaves.find(v=>v.slot===slot);
+    if(!entry)return "missing";
+    if(entry.state==="unreadable" || this.readBlocked)return "save-failed";
+    if(entry.token!==token || this.data.revision!==revision)return "stale";
+    try {
+      this.storage.setItem(this.manualKey(slot),JSON.stringify({version:1,savedAt:Date.now(),data:this.data}));
+      return "saved";
+    } catch {return "save-failed";}
+  }
+  loadManual(slot: number, token: string, revision: number) {
+    const entry=this.manualSaves.find(v=>v.slot===slot);
+    if(!entry?.data)return "missing";
+    if(entry.token!==token || this.data.revision!==revision)return "stale";
+    const next=JSON.parse(JSON.stringify(entry.data)) as ProgressData;
+    next.revision=Math.max(next.revision,this.data.revision);
+    if(!this.commit(next,true))return "save-failed";
+    this.pending=false;this.readBlocked=false;this.loadNotice="已读取手动存档";return "loaded";
+  }
+  deleteManual(slot: number, token: string) {
+    const entry=this.manualSaves.find(v=>v.slot===slot);
+    if(!entry || entry.state==="empty")return "missing";
+    if(entry.state==="unreadable")return "save-failed";
+    if(entry.token!==token)return "stale";
+    try {
+      // A single-key tombstone cannot be resurrected from automatic backups.
+      this.storage.setItem(this.manualKey(slot),JSON.stringify({version:1,deleted:true}));
+      return "deleted";
+    } catch {return "save-failed";}
   }
   previewRepairCode(text: string): {data: ProgressData; id: string} | null {
     const code=text.trim();if(code.length>160)return null;

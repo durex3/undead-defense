@@ -100,7 +100,7 @@ try {
   report.compatible=await run(`(()=>{const g=__undead,C=g.progress.constructor,storage=g.progress.storage,key='ashen-survivors-armory-progress-v1';const d={...g.progress.data,revision:120,stages:[1,2,3,4,5,6,7],coins:1640,purchasedWeapons:['hammer'],achievements:['forge_mastery','future-test'],grades:{blade:3,fire:4},modWins:{blade:{'orbit+return':[3],'removed+orbit':[3]}}};storage.setItem(key,JSON.stringify(d));g.progress=new C(storage);g.menuScreens.showStart();return {coins:g.progress.coins,stages:g.progress.data.stages,hammer:g.progress.unlockedWeapon('hammer'),wheel:g.progress.unlockedWeapon('wheel'),notice:g.progress.loadNotice};})()`);
   if(report.compatible.coins!==1640 || report.compatible.stages.length!==7 || !report.compatible.hammer || !report.compatible.wheel)throw Error('Compatible progress failed '+JSON.stringify(report.compatible));
   await shot('compatible-start');
-  if(!(await run(labelsOf)).includes('存档检查'))throw Error('Recovery entry missing');
+  if(!(await run(labelsOf)).includes('存档管理'))throw Error('Recovery entry missing');
   await run(`__undead.menuScreens.showRecovery();true`);await shot('recovery-list');report.list=await run(labelsOf);
   if(!report.list.some(s=>s.includes('1640金币')))throw Error('Recovery summary missing');
   report.beforeRestore=await run(`(()=>{const g=__undead,C=g.progress.constructor,s=g.progress.storage,key='ashen-survivors-armory-progress-v1';s.setItem(key,JSON.stringify({...g.progress.data,revision:999,stages:[],stageBest:{},achievements:[],coins:0}));s.setItem(key+'-backup',JSON.stringify({...g.progress.data,revision:999,stages:[],stageBest:{},achievements:[],coins:0}));g.progress=new C(s);g.menuScreens.showRecovery();const record=g.progress.recoveryRecords.find(r=>r.data.coins===1640);g.menuScreens.confirmRecovery(record.id);return {coins:g.progress.coins,stages:g.progress.data.stages.length};})()`);
@@ -152,11 +152,33 @@ try {
   report.coldVictory=await run(`({coins:__undead.progress.coins,stages:__undead.progress.data.stages,modWins:__undead.progress.data.modWins,notice:__undead.progress.loadNotice})`);
   if(report.coldVictory.coins!==580 || report.coldVictory.stages.length!==5 || !report.coldVictory.modWins.blade['orbit+return'].every(n=>typeof n==='number'))throw Error('Real compiled victory save corrupted on reload');
   await shot('cold-victory-preserved');
+  report.manualSaved=await run(`(()=>{const g=__undead,m=g.menuScreens;m.showManualSaves();for(let slot=1;slot<=3;slot++){m.confirmManualSave(slot,'save');m.catalogActions[1]();}return g.progress.manualSaves.map(e=>({slot:e.slot,state:e.state,coins:e.data?.coins}));})()`);
+  if(report.manualSaved.length!==3 || !report.manualSaved.every(e=>e.state==='saved'&&e.coins===580))throw Error('Three manual slots failed');
+  await shot('manual-saves-full');
+  report.manualOverwrite=await run(`(()=>{const g=__undead,m=g.menuScreens;g.progress.data.coins=700;g.progress.data.revision++;g.progress.pending=true;g.progress.flush();m.confirmManualSave(1,'save');const before=g.progress.manualSaves[0].data.coins;m.catalogActions[1]();return {before,after:g.progress.manualSaves[0].data.coins};})()`);
+  if(report.manualOverwrite.before!==580 || report.manualOverwrite.after!==700)throw Error('Manual overwrite preview mutated save');
+  await reloadGame();
+  report.manualLoaded=await run(`(()=>{const g=__undead,m=g.menuScreens;m.confirmManualSave(2,'load');const before=g.progress.coins;m.catalogActions[1]();return {before,after:g.progress.coins,states:g.progress.manualSaves.map(e=>e.state)};})()`);
+  if(report.manualLoaded.before!==700 || report.manualLoaded.after!==580)throw Error('Manual cold load failed');
+  await run(`__undead.menuScreens.confirmManualSave(1,'delete');true`);await shot('manual-delete-confirm');
+  await run(`__undead.menuScreens.catalogActions[0]();true`);
+  if(!(await run(`__undead.progress.manualSaves[0].data.coins===700`)))throw Error('Cancel deleted slot');
+  await run(`__undead.menuScreens.confirmManualSave(1,'delete');__undead.menuScreens.catalogActions[1]();true`);
+  await reloadGame();
+  report.manualDeleted=await run(`({coins:__undead.progress.coins,states:__undead.progress.manualSaves.map(e=>e.state)})`);
+  if(report.manualDeleted.coins!==580 || report.manualDeleted.states.join(',')!=='empty,saved,saved')throw Error('Deleted slot resurrected or current progress lost');
+  await run(`__undead.menuScreens.showManualSaves();true`);await shot('manual-after-reload');
   report.sandDamage=await run(`(()=>{const g=__undead;g.selectedStage=2;g.restart();const w=g.world;w.chooseStartingWeapon(w.startingWeapons[0]);w.director.step=()=>{};w.armory.step=()=>{};w.enemies=[];w.move={x:0,y:0};const probe=(y,rift=false)=>{w.hp=100;w.invulnerable=0;w.player={x:3,y};w.time=1;w.hazards=[{id:100,source:0,kind:'frontierLane',x:0,y:0,angle:0,radius:6,width:.55,created:0,due:1,until:3,damage:20,fixedDamage:true,fired:rift,next:1,sandRift:rift}];w.step(.01);return w.hp;};const result={outside:probe(.56),inside:probe(.54),riftOutside:probe(.56,true),riftInside:probe(.54,true)};g.enabled=false;w.state='paused';g.overlay.destroyAllChildren();g.stage.setPosition(-144,0);w.time=.5;w.player={x:3,y:1.2};w.hazards=[{id:101,source:0,kind:'frontierLane',x:0,y:0,angle:0,radius:6,width:.55,created:0,due:1,until:3,fired:false}];w.camera={x:3,y:0};g.camera={x:144,y:0};g.painter.draw(w,0,[],false);return result;})()`);
   if(report.sandDamage.outside!==100 || report.sandDamage.inside!==80 || report.sandDamage.riftOutside!==100 || report.sandDamage.riftInside!==94)throw Error('Compiled sand boundaries mismatch '+JSON.stringify(report.sandDamage));
   await shot('sand-lane-boundary');
   await run(`(()=>{const g=__undead;g.selectedStage=3;g.restart();const w=g.world;w.state='paused';w.player={x:2,y:0};g.stage.setPosition(-60,0);w.time=.5;w.hazards=[{id:102,source:0,kind:'sector',x:0,y:0,angle:.4,radius:3,width:Math.PI/2,created:0,due:1,until:2,fired:false,thunder:{shape:'sector'}}];g.painter.draw(w,0,[],false);return true;})()`);
   await shot('thunder-sector-warning');
+  await run(`(()=>{const g=__undead;g.selectedStage=1;g.restart();const w=g.world;w.state='paused';w.player={x:0,y:-1};w.time=20;w.enemies=[];g.stage.setPosition(0,-30);for(const [i,kind]of ['siegebone','thornshield','siegebow','flanker'].entries()){const e=w.addEnemy(kind,-6+i*4,1);e.state='seek';e.facing=0;}g.painter.draw(w,0,[],false);return true;})()`);
+  await shot('stage-one-redesign');
+  for(const character of ['ranger','alchemist','necromancer']) {
+    await run(`(()=>{const g=__undead,w=g.world;w.character='${character}';w.player={x:0,y:0};w.move={x:1,y:0};w.time=20.2;w.enemies=[];g.stage.setPosition(0,-40);g.painter.draw(w,0,[],false);return true;})()`);
+    await shot('hero-'+character);
+  }
   report.errors=events.filter(e=>e.method==='Runtime.exceptionThrown').map(e=>e.params.exceptionDetails);
   fs.writeFileSync(out+'/browser-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));if(report.errors.length)throw Error('Runtime exceptions');
 } finally {

@@ -236,14 +236,14 @@ export function isDeviceKind(kind: Kind) {
 }
 
 const COMMON: Partial<Record<Kind, EnemyArt>> = {
-  siegebone: art("siegebone", 1, "humanoid", 54, 13, SIEGE, { weapon: "spear", head: "helm", bulk: 1.08 }),
+  siegebone: art("siegebone", 1, "humanoid", 54, 13, SIEGE, { weapon: "spear", head: "skull", bulk: 0.94 }),
   thornshield: art("thornshield", 1, "humanoid", 56, 18, SIEGE, {
     weapon: "axe",
     shield: "thorn",
-    head: "helm",
+    head: "skull",
     bulk: 1.14,
   }),
-  siegebow: art("siegebow", 1, "humanoid", 52, 16, SIEGE, { weapon: "crossbow", head: "helm", bulk: 0.96 }),
+  siegebow: art("siegebow", 1, "humanoid", 52, 16, SIEGE, { weapon: "crossbow", head: "skull", bulk: 0.9 }),
   flanker: art("flanker", 1, "quadruped", 34, 20, SIEGE, { head: "beast", tail: true, bulk: 0.95 }, {
     motionSpeed: 14,
     strideAmp: 4.5,

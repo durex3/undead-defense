@@ -1,11 +1,12 @@
 import { Graphics } from "cc";
+import { ink } from "../Ink";
 import type { SurvivalWorld } from "../../../battle/SurvivalWorld";
 import type { Enemy } from "../../../battle/SurvivalTypes";
 import type { Pose } from "../Actor";
 import { createPose, torsoOffset } from "../Actor";
 import { enemyArt, type EnemyArt } from "../EnemyCatalog";
 import { drawHumanoid, drawQuadruped } from "../Archetypes";
-import { detailEllipse, detailLine, detailPoly, eye, rim, Silhouette } from "../Brush";
+import { detailEllipse, detailLine, detailPoly, eye, rim, Silhouette, lx, ly } from "../Brush";
 
 const HORSE: EnemyArt = (() => {
   const base = enemyArt(1, "flanker");
@@ -69,15 +70,20 @@ function drawSiegeBone(g: Graphics, pose: Pose, art: EnemyArt) {
   drawHumanoid(g, pose, art, {
     extra: s => {
       const shift=torsoOffset(pose);
-      // A low helmet comb and one broad shoulder survive phone-size scaling.
-      s.poly([[-7,50+shift],[-6,56+shift],[2,58+shift],[5,51+shift]]);
-      s.poly([[-13,35+shift],[-17,40+shift],[-10,44+shift],[-4,40+shift]]);
+      // Exposed skull, broken bone shoulder and hanging rags: a medieval revenant.
+      s.poly([[-12,38+shift],[-20,47+shift],[-15,35+shift],[-9,33+shift]]);
     },
     details: (gg, p) => {
       const shift = torsoOffset(p);
       detailPoly(gg, p, [[-7,31+shift],[4,30+shift],[5,17],[0,12],[-2,17],[-7,14]], art.palette.cloth);
       if(art.detail>=1) detailPoly(gg, p, [[-13,39+shift],[-9,42+shift],[-5,39+shift],[-10,37+shift]],art.palette.metalLight);
-      if (art.detail >= 1) detailLine(gg,p,[-4,29+shift],[3,28+shift],art.palette.bone,1.5);
+      // Batch the ribs/spine in one submission for the 100-body crowd budget.
+      gg.strokeColor=ink(art.palette.bone,p.alpha);gg.lineWidth=1.4*p.scale;
+      for(let i=0;i<3;i++) {
+        gg.moveTo(lx(p,-5),ly(p,35+shift-i*3));gg.lineTo(lx(p,4),ly(p,34+shift-i*3));
+      }
+      gg.moveTo(lx(p,0),ly(p,37+shift));gg.lineTo(lx(p,0),ly(p,27+shift));
+      gg.stroke();
     },
   });
 }

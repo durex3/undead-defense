@@ -514,7 +514,7 @@ export class GameMenus {
     this.host.text(this.host.overlay, "余烬幸存者 · 选择冒险", 0, 220, 34);
     this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
     this.host.muteButton(425, 225, true);
-    this.host.button(this.host.overlay,"存档检查",-430,225,160,38,()=>this.showRecovery());
+    this.host.button(this.host.overlay,"存档管理",-430,225,160,38,()=>this.showManualSaves());
     this.host.text(
       this.host.overlay,
       "十二武器 · 十把默认开放 · 金币与成就各解锁一把",
@@ -855,6 +855,42 @@ export class GameMenus {
     this.catalogButton("上一页",-300,-185,180,34,()=>this.showAchievements(this.achievementPage-1));
     this.catalogButton("下一页",300,-185,180,34,()=>this.showAchievements(this.achievementPage+1));
     this.catalogButton("返回菜单",0,-245,280,44,()=>this.showStart());
+  }
+  showManualSaves() {
+    this.catalog="recovery";this.catalogFocus=0;this.catalogShell("存档管理 · 最多3个");
+    const h=this.host;
+    h.text(h.overlay,this.catalogMessage || "保存通关、金币、武器与成就；不保存战斗中途状态。",0,155,18,"#e8d1a2",1080);
+    this.catalogMessage="";
+    for(const entry of h.progress.manualSaves) {
+      const y=80-(entry.slot-1)*100,d=entry.data;
+      h.panel(h.overlay,0,y,1060,90,"#293443");
+      h.text(h.overlay,`存档 ${entry.slot} · ${d?`${d.stages.length}关 · ${d.coins??0}金币`:entry.state==="empty"?"空存档位":"读取异常"}`,-285,y+22,21,"#e6d8b7",460);
+      const stamp=entry.savedAt?new Date(entry.savedAt).toLocaleString():"";
+      h.text(h.overlay,d?stamp:entry.state==="empty"?"点击保存当前进度":"原始数据保留；覆盖前请确认",-270,y-18,15,"#b9cbd4",490);
+      this.catalogButton(d?"覆盖保存":"保存",75,y+17,160,36,()=>this.confirmManualSave(entry.slot,"save"));
+      if(d)this.catalogButton("读取",255,y+17,160,36,()=>this.confirmManualSave(entry.slot,"load"));
+      if(entry.state!=="empty")this.catalogButton("删除",435,y+17,140,36,()=>this.confirmManualSave(entry.slot,"delete"));
+    }
+    h.text(h.overlay,"自动保存独立保留；删除手动存档不会清空当前进度。",0,-190,17,"#b9cbd4",1080);
+    this.catalogButton("返回菜单",-350,-245,280,44,()=>this.showStart());
+    this.catalogButton("存档检查",0,-245,280,44,()=>this.showRecovery());
+    this.catalogButton("输入补回码",350,-245,280,44,()=>this.showRepairEntry());
+  }
+  private confirmManualSave(slot: number, action: "save" | "load" | "delete") {
+    const h=this.host,entry=h.progress.manualSaves.find(v=>v.slot===slot);if(!entry)return;
+    const revision=h.progress.data.revision,verb=action==="save"?"保存":action==="load"?"读取":"删除";
+    this.catalog="recovery";this.catalogFocus=0;this.catalogShell(`确认${verb}存档 ${slot}`);
+    const data=action==="save"?h.progress.data:entry.data;
+    h.text(h.overlay,`已通关 ${data?.stages.join("、")||"暂无"} · ${data?.coins??0}金币`,0,95,25,"#f1ddaf",1060);
+    h.text(h.overlay,action==="save"?(entry.state==="empty"?"将当前进度保存到这个存档位。":"将替换此存档位的旧内容，其他存档位不受影响。"):
+      action==="load"?"当前金币、通关、武器与成就将以此存档为准，不叠加奖励。":"此手动存档将被删除，不能撤销；当前进度与其他存档位保留。",0,15,19,"#e2c69d",1060);
+    h.text(h.overlay,"手动存档仅保存在当前设备的微信环境中。",0,-55,17,"#b9cbd4",1060);
+    this.catalogButton("取消",-220,-170,300,48,()=>this.showManualSaves());
+    this.catalogButton(`确认${verb}`,220,-170,300,48,()=>{
+      const result=action==="save"?h.progress.saveManual(slot,entry.token,revision):action==="load"?h.progress.loadManual(slot,entry.token,revision):h.progress.deleteManual(slot,entry.token);
+      this.catalogMessage=result==="saved"?`存档 ${slot} 已保存`:result==="loaded"?`存档 ${slot} 已读取`:result==="deleted"?`存档 ${slot} 已删除`:result==="save-failed"?"操作失败，未确认保存，请重试":"记录已变化，请重新选择";
+      this.showManualSaves();
+    });
   }
   showRecovery(page=0) {
     this.catalog="recovery";this.catalogFocus=0;this.catalogShell("存档检查与恢复");

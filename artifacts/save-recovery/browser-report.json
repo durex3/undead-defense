@@ -123,6 +123,44 @@
     },
     "notice": ""
   },
+  "manualSaved": [
+    {
+      "slot": 1,
+      "state": "saved",
+      "coins": 580
+    },
+    {
+      "slot": 2,
+      "state": "saved",
+      "coins": 580
+    },
+    {
+      "slot": 3,
+      "state": "saved",
+      "coins": 580
+    }
+  ],
+  "manualOverwrite": {
+    "before": 580,
+    "after": 700
+  },
+  "manualLoaded": {
+    "before": 700,
+    "after": 580,
+    "states": [
+      "saved",
+      "saved",
+      "saved"
+    ]
+  },
+  "manualDeleted": {
+    "coins": 580,
+    "states": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
   "sandDamage": {
     "outside": 100,
     "inside": 80,

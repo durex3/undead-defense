@@ -89,6 +89,13 @@ function headSilhouette(s: Silhouette, art: EnemyArt, x: number, y: number, r: n
   const look = art.look;
   switch (look.head) {
     case "skull": {
+      if(art.stage===1) {
+        // One chipped skull contour keeps large first-stage crowds inexpensive.
+        s.poly([[x-r*.7,y+r*.7],[x,y+r],[x+r*.7,y+r*.7],
+          [x+r*.9,y],[x+r*.5,y-r*.5],[x+r*.45,y-r*.95],
+          [x-r*.35,y-r*.95],[x-r*.5,y-r*.5],[x-r*.9,y]]);
+        break;
+      }
       s.ellipse(x, y, r * 0.92, r, segments);
       s.poly([
         [x - r * 0.32, y - r * 0.88],

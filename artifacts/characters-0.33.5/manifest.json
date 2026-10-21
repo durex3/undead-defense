@@ -1,0 +1,32 @@
+{
+  "version": "0.33.5",
+  "engine": "Cocos Creator 3.8.8",
+  "renderer": "Graphics vector ink",
+  "worldUnitPixels": 48,
+  "pivot": "feet",
+  "source": "Project-authored procedural geometry; no external images",
+  "assets": [
+    {
+      "ids": [
+        "siegebone",
+        "thornshield",
+        "siegebow"
+      ],
+      "source": "assets/scripts/presentation/art/enemies/SiegeArt.ts",
+      "catalog": "assets/scripts/presentation/art/EnemyCatalog.ts",
+      "change": "Exposed chipped skulls and revenant equipment"
+    },
+    {
+      "ids": [
+        "ranger",
+        "alchemist",
+        "necromancer"
+      ],
+      "source": "assets/scripts/presentation/art/HeroPainter.ts",
+      "change": "Independent adventurer silhouettes, material blocks and equipment"
+    }
+  ],
+  "preview": "characters.png",
+  "runtimeEvidence": "../save-recovery/stage-one-redesign.png",
+  "collision": "Gameplay collision and damage unchanged"
+}
