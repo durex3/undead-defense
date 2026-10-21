@@ -34,6 +34,7 @@ export const ENEMY_KINDS = [
   "glazeling","kilnstoker","forkmason","ashsled","splitcrucible","glazejailer","kilnvalve",
   "scrapbound","edgecaster","stepcutter","reelstalker","twinclamp","edgepuppeteer",
   "dialscrap","glowdisc","reversegazer","offsetorrery","twindial","eclipsewarden",
+  "gravegrub","ribwarden","echoacolyte","shedstalker","coffinregent","scarprelate",
   "leadgrub","pitchframe","kneehopper","offsetcart","twinpitch","presswarden",
   // 通用
   "minion", "boss",
@@ -53,6 +54,12 @@ export interface EnemyConfig {
 }
 
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+ gravegrub:{name:"灰骨蠹",health:1.22,speed:1.86,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
+ ribwarden:{name:"掀棺骨卫",health:2.2,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.8},
+ echoacolyte:{name:"留痕执骸",health:2.2,speed:1.10,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.8},
+ shedstalker:{name:"离棺猎足",health:2.25,speed:1.18,contact:14,xp:2,threat:2,cap:1,sprite:"",scale:4},
+ coffinregent:{name:"双棺拱卫",health:11.6,speed:1.12,contact:12,xp:8,threat:3,cap:1,sprite:"",scale:4.8,elite:true},
+ scarprelate:{name:"遗痕祭正",health:12.2,speed:1.12,contact:13,xp:8,threat:3,cap:1,sprite:"",scale:4.8,elite:true},
  leadgrub:{name:"铅屑爬俑",health:1.2,speed:1.84,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
  pitchframe:{name:"单臂抛架",health:2.15,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
  kneehopper:{name:"折膝跃架",health:2.2,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},

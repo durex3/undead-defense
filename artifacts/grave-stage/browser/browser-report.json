@@ -1,0 +1,222 @@
+{
+  "setup": {
+    "stage": 16,
+    "total": 63198.698550066634,
+    "health": 25279.479420026655,
+    "plans": 1
+  },
+  "firstDeath": {
+    "state": "battle",
+    "hp": 0,
+    "reviveAt": 363.4,
+    "coins": 10000,
+    "kills": 0
+  },
+  "second": {
+    "life": 2,
+    "hp": 37919.21913003998,
+    "items": 2
+  },
+  "upgrade": {
+    "before": 10000,
+    "after": 8560,
+    "result": "evolved",
+    "grade": 4
+  },
+  "qualified": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards",
+        "hunt+return",
+        "hunt+shards",
+        "return+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy",
+        "embers+salvo",
+        "flame+salvo",
+        "embers+flame"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring",
+        "recall+wave",
+        "pulse+wave",
+        "pulse+recall"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward",
+        "aftershock+sectors",
+        "brittle+sectors",
+        "aftershock+brittle"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay",
+        "echo+storm",
+        "bridge+storm",
+        "bridge+echo"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap",
+        "haunt+swarm",
+        "reap+swarm",
+        "haunt+reap"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge",
+        "fan+marrow",
+        "fan+ridge",
+        "marrow+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip",
+        "burrow+scatter",
+        "burrow+fuse",
+        "fuse+scatter"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel",
+        "binary+collapse",
+        "collapse+repel",
+        "binary+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution",
+        "cross+rain",
+        "brand+rain",
+        "brand+cross"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return",
+        "rift+sweep",
+        "return+sweep",
+        "return+rift"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy",
+        "grind+twin",
+        "curve+twin",
+        "curve+grind"
+      ]
+    },
+    "title": true,
+    "coins": 32560,
+    "grade": 4
+  },
+  "cold": {
+    "coins": 32560,
+    "title": true,
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards",
+        "hunt+return",
+        "hunt+shards",
+        "return+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy",
+        "embers+salvo",
+        "flame+salvo",
+        "embers+flame"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring",
+        "recall+wave",
+        "pulse+wave",
+        "pulse+recall"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward",
+        "aftershock+sectors",
+        "brittle+sectors",
+        "aftershock+brittle"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay",
+        "echo+storm",
+        "bridge+storm",
+        "bridge+echo"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap",
+        "haunt+swarm",
+        "reap+swarm",
+        "haunt+reap"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge",
+        "fan+marrow",
+        "fan+ridge",
+        "marrow+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip",
+        "burrow+scatter",
+        "burrow+fuse",
+        "fuse+scatter"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel",
+        "binary+collapse",
+        "collapse+repel",
+        "binary+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution",
+        "cross+rain",
+        "brand+rain",
+        "brand+cross"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return",
+        "rift+sweep",
+        "return+sweep",
+        "return+rift"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy",
+        "grind+twin",
+        "curve+twin",
+        "curve+grind"
+      ]
+    },
+    "grade": 4,
+    "slots": [
+      "saved",
+      "saved",
+      "saved"
+    ],
+    "best": {
+      "time": 71,
+      "phase": 1,
+      "form": 2,
+      "livesRemaining": 0,
+      "bossRemaining": 0,
+      "won": true
+    }
+  },
+  "errors": []
+}

@@ -8,6 +8,7 @@ export class SupportArmory {
   strike: (Point & {until:number}) | null = null;
   lamp: SoulLamp | null = null;
   link: SoulLink | null = null;
+  clearTarget(id:number){this.marks.delete(id);if(this.link&&(this.link.a===id||this.link.b===id))this.link=null;}
   marks = new Map<number, {until: number; factor: number}>();
   constructor(private w: SurvivalWorld) {}
   private eligible(e: Enemy) { return e.hp > 0 && e.state !== "arriving" && !e.sand?.buried; }

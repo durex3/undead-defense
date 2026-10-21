@@ -247,7 +247,7 @@ export class ExtraArmory {
   private freeze(e: Enemy, a: ExtraAttack) {
     const w = this.w;
     if(e.kind==="prismcore"){if(!this.has(a,"brittle"))w.slow(e,true);return;}
-    if (e.kind === "boss" || (e.immovable && !e.root && !e.wind && !e.library && !e.kiln && !e.edge && !e.eclipse && !e.lead) || thunderDevice(e.kind) || (e.state === "charge" && !e.wind)) return;
+    if (e.kind === "boss" || (e.immovable && !e.root && !e.wind && !e.library && !e.kiln && !e.edge && !e.eclipse && !e.lead && !e.grave) || thunderDevice(e.kind) || (e.state === "charge" && !e.wind)) return;
     e.slow = 0.4;
     e.slowUntil = Math.max(e.slowUntil, w.time + a.stats.duration);
     if (this.has(a, "brittle") || e.freezeReady > w.time) return;
@@ -255,6 +255,7 @@ export class ExtraArmory {
     e.freezeReady = w.time + 3;
     if(e.eclipse)w.eclipse.clean();
     if(e.lead)w.lead.clean();
+    if(e.grave)w.grave.clean();
   }
   private frost(a: ExtraAttack, dt: number) {
     const w = this.w,

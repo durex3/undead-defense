@@ -1,3 +1,4 @@
+import {drawGraveBody} from "./enemies/EchoGraveArt";
 import {drawLeadBody} from "./enemies/LeadFoundryArt";
 import {drawEclipseBody} from "./enemies/EclipseArt";
 import {drawEdgeBody} from "./enemies/EdgeCourtArt";
@@ -26,7 +27,7 @@ import { drawHeroBody, drawHeroShadow } from "./HeroPainter";
 import { warningGlyph } from "./VfxBrush";
 
 /** Stages whose bodies/overlays are fully owned by the new art layer. */
-const CONVERTED = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+const CONVERTED = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]);
 
 const visible: Enemy[] = [];
 const pose = createPose();
@@ -41,6 +42,7 @@ function collect(w: SurvivalWorld) {
 
 function bodyFor(g: Graphics, w: SurvivalWorld, enemy: Enemy, art: EnemyArt) {
   switch (w.stageId) {
+    case 16: drawGraveBody(g,w,enemy,art,pose); break;
     case 15: drawLeadBody(g,w,enemy,art,pose); break;
     case 14: drawEclipseBody(g,w,enemy,art,pose); break;
     case 13: drawEdgeBody(g,w,enemy,art,pose); break;

@@ -93,6 +93,13 @@ export function drawWaterFieldForm(g:Graphics,x:number,y:number,r:number,grade:n
 /** Fire evolution preserves the actual explosion size, shard count and field lifecycle. */
 export function drawFireForm(g:Graphics,x:number,y:number,angle:number,grade:number,scale=1){
  const u=Math.cos(angle),v=Math.sin(angle),p=(a:number,b:number)=>[x+(u*a-v*b)*scale,y+(v*a+u*b)*scale];
+ if(grade===4){
+  g.strokeColor=ink('#3a243d');g.lineWidth=2;g.fillColor=ink('#d8a0cf');
+  for(const side of [-1,1])polygon(g,[[side*8+12,0],[side*8,10],[side*8-10,0],[side*8,-10]].map(([a,b])=>p(a,b)));
+  for(let i=0;i<3;i++){const a=i*Math.PI*2/3;polygon(g,[[Math.cos(a)*25,Math.sin(a)*25],[Math.cos(a+.45)*17,Math.sin(a+.45)*17],[Math.cos(a+.15)*13,Math.sin(a+.15)*13]].map(([a,b])=>p(a,b)));}
+  g.strokeColor=ink('#f9dfb4');g.lineWidth=2;for(let i=0;i<3;i++){for(let j=0;j<8;j++){const a=i*Math.PI*2/3+j*.11,q=p(Math.cos(a)*30,Math.sin(a)*30);j?g.lineTo(q[0],q[1]):g.moveTo(q[0],q[1]);}g.stroke();}
+  g.strokeColor=ink('#e5b3dc',160);for(let i=0;i<4;i++){const a=p(-35-i*10,i%2?4:-4),b=p(-40-i*10,i%2?7:-7);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);}g.stroke();return;
+ }
  g.fillColor=ink(grade===3?'#e8a967':'#df9c69');g.strokeColor=ink('#35292a');g.lineWidth=2;
  if(grade===2)for(let i=0;i<3;i++){const a=i*Math.PI*2/3;polygon(g,[[Math.cos(a)*18,Math.sin(a)*18],[Math.cos(a+.6)*11,Math.sin(a+.6)*11],[Math.cos(a+.2)*7,Math.sin(a+.2)*7]].map(([a,b])=>p(a,b)));}
  else{polygon(g,Array.from({length:6},(_,i)=>p(Math.cos(i*Math.PI/3)*17,Math.sin(i*Math.PI/3)*17)));g.fillColor=ink('#3b3030');polygon(g,Array.from({length:6},(_,i)=>p(Math.cos(i*Math.PI/3)*10,Math.sin(i*Math.PI/3)*10)));g.strokeColor=ink('#f1d7a6');g.lineWidth=2;for(const side of [-1,1]){const q=p(0,side*24);g.ellipse(q[0],q[1],9*scale,3*scale);g.stroke();}}
@@ -100,6 +107,7 @@ export function drawFireForm(g:Graphics,x:number,y:number,angle:number,grade:num
  g.strokeColor=ink('#ffbb70',170);g.lineWidth=2;for(let i=0;i<(grade===3?4:2);i++){const a=p(-22-i*8,i%2?4:-4),b=p(-28-i*8,i%2?6:-6);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);}g.stroke();
 }
 export function drawFireFieldForm(g:Graphics,x:number,y:number,r:number,grade:number,quiet=false){
+ if(grade===4){g.strokeColor=ink('#e3b7dd',quiet?90:150);g.lineWidth=1.8;for(let i=0;i<6;i++){const a=i*Math.PI/3;for(let j=0;j<8;j++){const b=a+j*.055,px=x+Math.cos(b)*r*.72,py=y+Math.sin(b)*r*.72;j?g.lineTo(px,py):g.moveTo(px,py);}g.stroke();const px=x+Math.cos(a)*r*.4,py=y+Math.sin(a)*r*.4;g.moveTo(px-5,py);g.lineTo(px-3,py+7);g.lineTo(px,py+2);g.lineTo(px+3,py+7);g.lineTo(px+5,py);g.stroke();}return;}
  g.strokeColor=ink('#d6b786',quiet?90:140);g.lineWidth=1.5;
  const n=grade===3?6:3;for(let i=0;i<n;i++){const a=i*Math.PI*2/n;
   if(grade===2){g.moveTo(x+Math.cos(a-.25)*r*.5,y+Math.sin(a-.25)*r*.5);g.quadraticCurveTo(x+Math.cos(a)*r*.9,y+Math.sin(a)*r*.9,x+Math.cos(a+.25)*r*.5,y+Math.sin(a+.25)*r*.5);}

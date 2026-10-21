@@ -512,7 +512,7 @@ export class GameMenus {
     this.host.progress.flush();
     this.host.overlay.destroyAllChildren();
     this.host.panel(this.host.overlay, 0, 0, 1100, 570, "#191e2d");
-    this.host.text(this.host.overlay, this.host.progress.hasAchievement("lead_twelve_paths")?"余烬幸存者 · 踏空铸客":this.host.progress.hasAchievement("eclipse_twelve_paths")?"余烬幸存者 · 逐晖者":this.host.progress.hasAchievement("edge_twelve_paths")?"余烬幸存者 · 识锋者":this.host.progress.hasAchievement("kiln_ten_paths")?"余烬幸存者 · 断焰司炉":this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
+    this.host.text(this.host.overlay, this.host.progress.hasAchievement("grave_twelve_paths")?"余烬幸存者 · 拆棺猎手":this.host.progress.hasAchievement("lead_twelve_paths")?"余烬幸存者 · 踏空铸客":this.host.progress.hasAchievement("eclipse_twelve_paths")?"余烬幸存者 · 逐晖者":this.host.progress.hasAchievement("edge_twelve_paths")?"余烬幸存者 · 识锋者":this.host.progress.hasAchievement("kiln_ten_paths")?"余烬幸存者 · 断焰司炉":this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
     this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
     this.host.muteButton(425, 225, true);
     this.host.button(this.host.overlay,"存档管理",-430,225,160,38,()=>this.showManualSaves());
@@ -849,6 +849,12 @@ export class GameMenus {
     h.text(h.overlay,"起手8级 · 每种起手需4组不同合法双改 · 三阶段穿空无伤通关",0,-200,17,"#b9c8d5",1060);
     this.catalogButton("返回成就",0,-260,260,44,()=>this.showAchievements(this.achievementPage,"机制挑战"));
   }
+  showGravePaths(){
+    this.catalogShell("十二途断棺 · 起手进度");const h=this.host;
+    ALL_WEAPONS.forEach((skill,i)=>{const x=i<7?-260:260,y=160-(i%7)*48,n=Math.min(5,h.progress.data.graveQualified?.[skill]?.length??0);h.text(h.overlay,`${NAMES[skill]}  ${n}/5`,x,y,22,n>=5?"#a8d7c7":"#e7dcc7",460);});
+    h.text(h.overlay,"起手8级 · 每种起手需5组不同合法双改 · 负棺A/B、裂棺双址B反击并全Boss无伤",0,-200,17,"#b9c8d5",1060);
+    this.catalogButton("返回成就",0,-260,260,44,()=>this.showAchievements(this.achievementPage,"机制挑战"));
+  }
   showAchievements(page=this.achievementPage,category=this.achievementCategory) {
     if(this.catalog!=="achievements")this.catalogFocus=0;
     this.catalog="achievements";this.achievementCategory=category;
@@ -862,7 +868,9 @@ export class GameMenus {
       h.text(h.overlay,a.name+(done?" · 已完成":" · 未完成"),-265,y+29,21,done?"#a8d7c7":"#f3deac",500);
       h.text(h.overlay,a.condition,0,y,15,"#d5dfdc",1020);
       h.text(h.overlay,`奖励：${a.reward} · ${h.progress.achievementProgress(a.id)}`,0,y-29,14,"#b9c8d5",1020);
+      if(a.id==='grave_twelve_paths')this.catalogButton('起手进度',300,y+29,170,29,()=>this.showGravePaths());
       if(a.id==='lead_twelve_paths')this.catalogButton('起手进度',300,y+29,170,29,()=>this.showLeadPaths());
+      if(a.id==='grave_twelve_paths'&&done){const badge=h.make('GraveAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#ceb2e8');g.lineWidth=2;for(const side of [-1,1]){g.moveTo(side*3,-10);g.lineTo(side*16,-4);g.lineTo(side*13,12);g.lineTo(side*3,16);g.stroke();}}
       if(a.id==='lead_twelve_paths'&&done){const badge=h.make('LeadAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#c8e1d6');g.lineWidth=3;g.moveTo(-16,-8);g.quadraticCurveTo(0,22,16,-8);g.stroke();g.fillColor=ink('#e8c39b');g.circle(0,9,5);g.fill();}
       if(a.id==='eclipse_twelve_paths')this.catalogButton('起手进度',300,y+29,170,29,()=>this.showEclipsePaths());
       if(a.id==='eclipse_twelve_paths'&&done){const badge=h.make('EclipseAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#ecd092');g.lineWidth=3;g.circle(0,0,13);g.moveTo(-17,0);g.lineTo(17,0);g.moveTo(0,-17);g.lineTo(0,17);g.stroke();g.fillColor=ink('#fff3cd');g.circle(0,0,4);g.fill();}

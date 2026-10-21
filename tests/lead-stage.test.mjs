@@ -303,7 +303,7 @@ test("48 distinct legal opener/pair wins required, duplicate settlement and fail
   assert.equal(r.coins, p.coins);
   assert(!r.data.leadQualified.water.includes("obsolete+unknown"));
 });
-test("fire two paid grades, max rare/no epic charge, unchanged pool and atomic failed writes", () => {
+test("fire three paid grades, epic costs1440, unchanged pool and atomic failed writes", () => {
   const s = storage(),
     p = new ProgressStore(s);
   p.data.coins = 1080;
@@ -311,9 +311,9 @@ test("fire two paid grades, max rare/no epic charge, unchanged pool and atomic f
   assert.equal(p.evolveWeapon("fire", 1), "evolved");
   assert.equal(p.evolveWeapon("fire", 2), "evolved");
   assert.equal(p.coins, 0);
-  assert.equal(p.evolveWeapon("fire", 3), "unavailable");
-  assert(!validGrade("fire", 4));
-  assert.equal(nextGrade("fire", p.weaponGrades), null);
+  assert.equal(p.evolveWeapon("fire", 3), "insufficient");
+  assert(validGrade("fire", 4));
+  assert.equal(nextGrade("fire", p.weaponGrades), 4);
   assert.equal(p.availableWeapons.length, n);
   assert.equal(new ProgressStore(s).weaponGrades.fire, 3);
   const q = new ProgressStore({

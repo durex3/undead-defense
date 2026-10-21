@@ -11,6 +11,7 @@ export interface ThunderState {
 }
 export interface MoonState { direction?:number; action:"blades"|"leaps"|"sweeps"|"transition"; step:number; next:number; recovery:number; cooldown:number; flank?:Point; flankUntil?:number; jumpStart?:Point; jumpEnd?:Point; jumpAt?:number; jumpDue?:number; vulnerable?:boolean; }
 export interface Enemy extends Point {
+ grave?:import("./EchoGraveSystem").GraveState;
  lead?:import("./LeadFoundrySystem").LeadState;
  eclipse?:import("./EclipseSystem").EclipseState;
  edge?:import("./EdgeCourtSystem").EdgeState;
@@ -106,6 +107,7 @@ export interface Effect extends Point {
   angle?: number;
 }
 export interface Hazard extends Point {
+ grave?:import("./EchoGraveGeometry").GraveHazard;
  lead?:import("./LeadFoundryGeometry").LeadHazard;
  eclipse?:import("./EclipseGeometry").EclipseHazard;
  edge?:import("./EdgeCourtGeometry").EdgeHazard;

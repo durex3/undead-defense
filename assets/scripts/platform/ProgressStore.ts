@@ -1,3 +1,4 @@
+import {graveRecipe} from "../battle/GraveChallenge";
 import { gradeOf, initialGrades, nextGrade, GRADE_PRICE, validGrade, WeaponGrade } from "../battle/WeaponGrade";
 import { LAMP_PRICE } from "../battle/SupportConfig";
 import { MODS } from "../battle/ArmoryConfig";
@@ -29,6 +30,7 @@ export function createRepairCode(cleared: number, coins: number, nonce: string) 
   const body=`ASR1-${cleared}-${coins}-${nonce}`;return body+"-"+repairChecksum(body);
 }
 export interface StageBest {
+  form?:number; livesRemaining?:number;
   time: number;
   phase: number;
   bossRemaining: number | null;
@@ -40,6 +42,8 @@ export interface ProgressData {
   modWins?: Partial<Record<Skill, Record<string, number[]>>>;
   sealOpeners?: Skill[];
   loomQualifiedOpeners?: Skill[];
+  graveQualifiedVersion?:1;
+  graveQualified?:Partial<Record<Skill,string[]>>;
   leadQualified?:Partial<Record<Skill,string[]>>;
   eclipseQualified?:Partial<Record<Skill,string[]>>;
   edgeQualified?:Partial<Record<Skill,string[]>>;
@@ -136,6 +140,8 @@ export class ProgressStore {
       if(Array.isArray(v.openerWins))d.openerWins=v.openerWins.filter((x:any)=>ALL_WEAPONS.includes(x?.skill)&&stage(x.stage));
       if(v.leadQualified && typeof v.leadQualified==='object'&&!Array.isArray(v.leadQualified)){
         d.leadQualified={};for(const skill of ALL_WEAPONS){const pairs=v.leadQualified[skill];if(Array.isArray(pairs))d.leadQualified[skill]=Array.from(new Set<string>(pairs.filter((x:any)=>typeof x==='string'&&this.legalPair(skill,x.split('+'))).map((x:string)=>x.split('+').sort().join('+'))));}
+      }      if((v.graveQualifiedVersion===undefined||v.graveQualifiedVersion===1)&&v.graveQualified && typeof v.graveQualified==='object'&&!Array.isArray(v.graveQualified)){
+        d.graveQualified={};d.graveQualifiedVersion=1;for(const skill of ALL_WEAPONS){const pairs=v.graveQualified[skill];if(Array.isArray(pairs))d.graveQualified[skill]=Array.from(new Set<string>(pairs.filter((x:any)=>typeof x==='string'&&graveRecipe(skill,x.split('+'))).map((x:string)=>x.split('+').sort().join('+'))));}
       }
       if(v.eclipseQualified && typeof v.eclipseQualified==='object'&&!Array.isArray(v.eclipseQualified)){
         d.eclipseQualified={};for(const skill of ALL_WEAPONS){const pairs=v.eclipseQualified[skill];if(Array.isArray(pairs))d.eclipseQualified[skill]=Array.from(new Set<string>(pairs.filter((x:any)=>typeof x==='string'&&this.legalPair(skill,x.split('+'))).map((x:string)=>x.split('+').sort().join('+'))));}
@@ -277,6 +283,7 @@ export class ProgressStore {
       (d?.grades === undefined || (d.grades && typeof d.grades === "object" && !Array.isArray(d.grades) && Object.entries(d.grades).every(([skill,g]) => (ALL_WEAPONS as readonly string[]).includes(skill) && validGrade(skill as Skill,g)))) &&
       (d?.openerWins === undefined || (Array.isArray(d.openerWins) && d.openerWins.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v?.skill) && (STAGE_IDS as readonly number[]).includes(v?.stage)))) &&
       (d?.leadQualified===undefined||(d.leadQualified&&typeof d.leadQualified==='object'&&!Array.isArray(d.leadQualified)&&Object.entries(d.leadQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
+      (d?.graveQualified===undefined||(d.graveQualified&&typeof d.graveQualified==='object'&&!Array.isArray(d.graveQualified)&&Object.entries(d.graveQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&graveRecipe(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
       (d?.eclipseQualified===undefined||(d.eclipseQualified&&typeof d.eclipseQualified==='object'&&!Array.isArray(d.eclipseQualified)&&Object.entries(d.eclipseQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
       (d?.edgeQualified===undefined||(d.edgeQualified&&typeof d.edgeQualified==='object'&&!Array.isArray(d.edgeQualified)&&Object.entries(d.edgeQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
       (d?.kilnQualified===undefined||(d.kilnQualified&&typeof d.kilnQualified==='object'&&!Array.isArray(d.kilnQualified)&&Object.entries(d.kilnQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
@@ -373,6 +380,7 @@ export class ProgressStore {
   }
   achievementProgress(id: string) {
     if(this.hasAchievement(id)) return "已完成";
+    if(id==="grave_twelve_paths")return `断棺起手 ${Object.values(this.data.graveQualified??{}).filter(v=>v&&v.length>=5).length}/12 · 每种起手5组双改`;
     if(id==="lead_twelve_paths")return `踏空起手 ${Object.values(this.data.leadQualified??{}).filter(v=>v&&v.length>=4).length}/12 · 每种起手4组双改`;
     if(id==="eclipse_twelve_paths")return `逐晖起手 ${Object.values(this.data.eclipseQualified??{}).filter(v=>v&&v.length>=3).length}/12 · 每种起手3组双改`;
     if(id==="edge_twelve_paths")return `双改起手 ${Object.values(this.data.edgeQualified??{}).filter(v=>v&&v.length>=2).length}/12 · 三阶段交棒反击且Boss无伤`;
@@ -399,7 +407,7 @@ export class ProgressStore {
       ? "本关尚无挑战记录"
       : b.won
         ? "本关最佳：已通关"
-        : b.phase > 0
+        : b.form ? `本关最佳：${b.form===1?"负棺":"裂棺"}形态 · 总剩余 ${b.bossRemaining}%` : b.phase > 0
           ? `本关最佳：首领第 ${b.phase} 阶段 · 剩余 ${b.bossRemaining}%`
           : `本关最佳：存活 ${Math.floor(b.time)} 秒`;
   }
@@ -427,6 +435,11 @@ export class ProgressStore {
         next.openerWins ??= [];
         if(!next.openerWins.some(v=>v.skill===opener && v.stage===w.stageId)) next.openerWins.push({skill:opener,stage:w.stageId});
         if(new Set(next.openerWins.map(v=>v.skill)).size>=5 && new Set(next.openerWins.map(v=>v.stage)).size>=3) achievements.add("five_openers");
+        if(w.stageId===16&&w.skills[opener]===8&&graveRecipe(opener,w.mods[opener])&&['1A','1B','2B'].every(key=>w.challenge.graveGroups.has(key))&&w.challenge.bossHits===0){
+          next.graveQualifiedVersion=1;next.graveQualified??={};const key=[...w.mods[opener]].sort().join('+');
+          next.graveQualified[opener]=Array.from(new Set([...(next.graveQualified[opener]??[]),key]));
+          if(Object.values(next.graveQualified).filter(v=>v&&v.length>=5).length>=12)achievements.add('grave_twelve_paths');
+        }
         if(w.stageId===15&&w.skills[opener]===8&&this.legalPair(opener,w.mods[opener])&&[1,2,3].every(phase=>w.challenge.leadPhases.has(phase))&&w.challenge.bossHits===0){
           next.leadQualified??={};const key=[...w.mods[opener]].sort().join('+');
           next.leadQualified[opener]=Array.from(new Set([...(next.leadQualified[opener]??[]),key]));
@@ -469,8 +482,9 @@ export class ProgressStore {
     const current: StageBest = {
         time: Math.floor(w.time),
         phase: boss?.bossPhase || 0,
+        ...(w.stageId===16?{form:boss?.grave?.life??(w.state==='won'?2:0),livesRemaining:w.state==='won'?0:boss?.grave?.life===1?2:boss?1:0}:{}),
         bossRemaining: boss
-          ? Math.ceil((Math.max(0, boss.hp) / boss.maxHp) * 100)
+          ? Math.ceil((w.stageId===16?w.grave.totalRemaining(boss)/boss.grave!.total!:Math.max(0,boss.hp)/boss.maxHp)*100)
           : null,
         won: w.state === "won",
       },

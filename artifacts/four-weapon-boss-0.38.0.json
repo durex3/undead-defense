@@ -1,0 +1,1475 @@
+{
+  "scope": "Four max-level weapons, fixed passives and mods, three seeds, native and all available upgraded forms for stage16 with a single resurrection, one totalHP budget, invulnerable orbit controller. Output-window diagnostic, not human win rate.",
+  "result": [
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "armor",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 39.43
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 397.0333333333628
+        },
+        {
+          "event": "revivalStart",
+          "time": 397.0333333333628
+        },
+        {
+          "event": "secondAlive",
+          "time": 399.4333333333647
+        },
+        {
+          "event": "finalDead",
+          "time": 456.36666666674336
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "lightning": 16423.066502124406,
+        "hammer": 25700.504399602192,
+        "wheel": 19668.788969535293,
+        "water": 18134.78982584116
+      },
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 96,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "armor",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 26.67
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 384.266666666686
+        },
+        {
+          "event": "revivalStart",
+          "time": 384.266666666686
+        },
+        {
+          "event": "secondAlive",
+          "time": 386.6666666666879
+        },
+        {
+          "event": "finalDead",
+          "time": 423.1333333333836
+        }
+      ],
+      "dualCasts": 2,
+      "damage": {
+        "lightning": 7832.582849070822,
+        "hammer": 26721.268843151563,
+        "wheel": 19922.328668021262,
+        "water": 19938.778954513873
+      },
+      "patterns": {
+        "A": 4,
+        "B": 4,
+        "C": 3
+      },
+      "seconds": 63,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "support",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 71.9
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 429.5000000000553
+        },
+        {
+          "event": "revivalStart",
+          "time": 429.5000000000553
+        },
+        {
+          "event": "secondAlive",
+          "time": 431.9000000000572
+        },
+        {
+          "event": "finalDead",
+          "time": 544.2666666667583
+        }
+      ],
+      "dualCasts": 7,
+      "damage": {
+        "needle": 28445.78756500084,
+        "lamp": 8506.841387858927,
+        "blade": 29463.33161649423,
+        "bone": 29359.195477572943
+      },
+      "patterns": {
+        "A": 10,
+        "B": 10,
+        "C": 9
+      },
+      "seconds": 184,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "support",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 43.9
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 401.500000000033
+        },
+        {
+          "event": "revivalStart",
+          "time": 401.500000000033
+        },
+        {
+          "event": "secondAlive",
+          "time": 403.90000000003494
+        },
+        {
+          "event": "finalDead",
+          "time": 465.4000000000839
+        }
+      ],
+      "dualCasts": 2,
+      "damage": {
+        "needle": 18274.10203330855,
+        "lamp": 4524.166413087394,
+        "blade": 29280.490550252583,
+        "bone": 28413.053099060784
+      },
+      "patterns": {
+        "A": 7,
+        "B": 6,
+        "C": 5
+      },
+      "seconds": 105,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "precision",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 55.33
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 412.93333333337546
+        },
+        {
+          "event": "revivalStart",
+          "time": 412.93333333337546
+        },
+        {
+          "event": "secondAlive",
+          "time": 415.33333333337737
+        },
+        {
+          "event": "finalDead",
+          "time": 498.7666666667771
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "lightning": 25565.019413297123,
+        "blade": 17917.375197212146,
+        "fire": 27895.81229402696,
+        "water": 16472.945967478496
+      },
+      "patterns": {
+        "A": 9,
+        "B": 7,
+        "C": 7
+      },
+      "seconds": 139,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "precision",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 30.13
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 387.7333333333554
+        },
+        {
+          "event": "revivalStart",
+          "time": 387.7333333333554
+        },
+        {
+          "event": "secondAlive",
+          "time": 390.1333333333573
+        },
+        {
+          "event": "finalDead",
+          "time": 435.60000000006016
+        }
+      ],
+      "dualCasts": 3,
+      "damage": {
+        "lightning": 10661.768839778948,
+        "blade": 18636.038758141724,
+        "fire": 31879.226711814696,
+        "water": 14335.790601770335
+      },
+      "patterns": {
+        "A": 5,
+        "B": 4,
+        "C": 3
+      },
+      "seconds": 76,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "ground",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 98.2
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 455.80000000007624
+        },
+        {
+          "event": "revivalStart",
+          "time": 455.80000000007624
+        },
+        {
+          "event": "secondAlive",
+          "time": 458.20000000007815
+        },
+        {
+          "event": "finalDead",
+          "time": 589.6333333333837
+        }
+      ],
+      "dualCasts": 7,
+      "damage": {
+        "void": 22705.007969801456,
+        "holy": 36046.6403556243,
+        "water": 34804.71159657179,
+        "mine": 11477.184896589213
+      },
+      "patterns": {
+        "A": 13,
+        "B": 13,
+        "C": 12
+      },
+      "seconds": 230,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "ground",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 76.17
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 433.76666666672537
+        },
+        {
+          "event": "revivalStart",
+          "time": 433.76666666672537
+        },
+        {
+          "event": "secondAlive",
+          "time": 436.1666666667273
+        },
+        {
+          "event": "finalDead",
+          "time": 539.0000000000964
+        }
+      ],
+      "dualCasts": 6,
+      "damage": {
+        "void": 15658.444785597607,
+        "holy": 30890.870472305625,
+        "water": 41951.098244669294,
+        "mine": 7194.433744818956
+      },
+      "patterns": {
+        "A": 11,
+        "B": 10,
+        "C": 9
+      },
+      "seconds": 179,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "pursuit",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 64
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 421.4666666667156
+        },
+        {
+          "event": "revivalStart",
+          "time": 421.5933333333782
+        },
+        {
+          "event": "secondAlive",
+          "time": 424.00000000005093
+        },
+        {
+          "event": "finalDead",
+          "time": 522.8333333334444
+        }
+      ],
+      "dualCasts": 5,
+      "damage": {
+        "blade": 20673.98406907995,
+        "ghost": 29294.601764588977,
+        "bone": 19675.699385920667,
+        "holy": 22609.09163848711
+      },
+      "patterns": {
+        "A": 9,
+        "B": 9,
+        "C": 8
+      },
+      "seconds": 163,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 16,
+      "build": "pursuit",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 42.8
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 400.40000000003215
+        },
+        {
+          "event": "revivalStart",
+          "time": 400.40000000003215
+        },
+        {
+          "event": "secondAlive",
+          "time": 402.80000000003406
+        },
+        {
+          "event": "finalDead",
+          "time": 468.8000000000866
+        }
+      ],
+      "dualCasts": 1,
+      "damage": {
+        "blade": 23487.31115348274,
+        "ghost": 18701.045460849822,
+        "bone": 25077.027943739286,
+        "holy": 14726.380876991401
+      },
+      "patterns": {
+        "A": 7,
+        "B": 6,
+        "C": 5
+      },
+      "seconds": 109,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "armor",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 39.43
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 397.0333333333628
+        },
+        {
+          "event": "revivalStart",
+          "time": 397.0333333333628
+        },
+        {
+          "event": "secondAlive",
+          "time": 399.4333333333647
+        },
+        {
+          "event": "finalDead",
+          "time": 457.0000000000772
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "lightning": 15877.22346816412,
+        "hammer": 25416.656491437152,
+        "wheel": 19641.368309535308,
+        "water": 18991.901427966466
+      },
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 97,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "armor",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 26.67
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 384.266666666686
+        },
+        {
+          "event": "revivalStart",
+          "time": 384.266666666686
+        },
+        {
+          "event": "secondAlive",
+          "time": 386.6666666666879
+        },
+        {
+          "event": "finalDead",
+          "time": 423.1333333333836
+        }
+      ],
+      "dualCasts": 2,
+      "damage": {
+        "lightning": 7984.56714460623,
+        "hammer": 26725.057141422378,
+        "wheel": 19904.07607421504,
+        "water": 19635.697355443055
+      },
+      "patterns": {
+        "A": 4,
+        "B": 4,
+        "C": 3
+      },
+      "seconds": 63,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "support",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 74.53
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 432.13333333339074
+        },
+        {
+          "event": "revivalStart",
+          "time": 432.13333333339074
+        },
+        {
+          "event": "secondAlive",
+          "time": 434.53333333339265
+        },
+        {
+          "event": "finalDead",
+          "time": 547.4666666667554
+        }
+      ],
+      "dualCasts": 6,
+      "damage": {
+        "needle": 30409.547334391646,
+        "lamp": 8832.935011566482,
+        "blade": 29593.44957269629,
+        "bone": 27819.66892548495
+      },
+      "patterns": {
+        "A": 11,
+        "B": 10,
+        "C": 9
+      },
+      "seconds": 187,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "support",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 48.2
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 405.80000000003645
+        },
+        {
+          "event": "revivalStart",
+          "time": 405.80000000003645
+        },
+        {
+          "event": "secondAlive",
+          "time": 408.20000000003836
+        },
+        {
+          "event": "finalDead",
+          "time": 466.8666666667517
+        }
+      ],
+      "dualCasts": 3,
+      "damage": {
+        "needle": 20385.881060834516,
+        "lamp": 4809.2133878432405,
+        "blade": 29013.376649005757,
+        "bone": 27681.44393610001
+      },
+      "patterns": {
+        "A": 6,
+        "B": 6,
+        "C": 5
+      },
+      "seconds": 107,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "precision",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 57.07
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 414.66666666671017
+        },
+        {
+          "event": "revivalStart",
+          "time": 414.66666666671017
+        },
+        {
+          "event": "secondAlive",
+          "time": 417.0666666667121
+        },
+        {
+          "event": "finalDead",
+          "time": 496.73333333344215
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "lightning": 25949.998610974144,
+        "blade": 17768.46479721206,
+        "fire": 28335.11339263325,
+        "water": 15504.09447212442
+      },
+      "patterns": {
+        "A": 9,
+        "B": 7,
+        "C": 7
+      },
+      "seconds": 137,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "precision",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 31.6
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 389.20000000002324
+        },
+        {
+          "event": "revivalStart",
+          "time": 389.20000000002324
+        },
+        {
+          "event": "secondAlive",
+          "time": 391.60000000002515
+        },
+        {
+          "event": "finalDead",
+          "time": 437.2333333333948
+        }
+      ],
+      "dualCasts": 2,
+      "damage": {
+        "lightning": 10595.381774642032,
+        "blade": 19506.61802020387,
+        "fire": 29738.20024128318,
+        "water": 16271.688873053588
+      },
+      "patterns": {
+        "A": 5,
+        "B": 4,
+        "C": 3
+      },
+      "seconds": 77,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "ground",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 97.6
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 455.20000000007576
+        },
+        {
+          "event": "revivalStart",
+          "time": 455.20000000007576
+        },
+        {
+          "event": "secondAlive",
+          "time": 457.60000000007767
+        },
+        {
+          "event": "finalDead",
+          "time": 589.6333333333837
+        }
+      ],
+      "dualCasts": 6,
+      "damage": {
+        "void": 23960.203882394617,
+        "holy": 36661.39753234549,
+        "water": 34833.79599982396,
+        "mine": 9804.769802628942
+      },
+      "patterns": {
+        "A": 13,
+        "B": 13,
+        "C": 11
+      },
+      "seconds": 230,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "ground",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 75.4
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 433.0000000000581
+        },
+        {
+          "event": "revivalStart",
+          "time": 433.0000000000581
+        },
+        {
+          "event": "secondAlive",
+          "time": 435.40000000006
+        },
+        {
+          "event": "finalDead",
+          "time": 538.6000000000968
+        }
+      ],
+      "dualCasts": 5,
+      "damage": {
+        "void": 16824.23038234547,
+        "holy": 30472.428140708103,
+        "water": 41730.95165358975,
+        "mine": 6747.545870283535
+      },
+      "patterns": {
+        "A": 11,
+        "B": 10,
+        "C": 9
+      },
+      "seconds": 179,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "pursuit",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 64.43
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 422.0333333333827
+        },
+        {
+          "event": "revivalStart",
+          "time": 422.0333333333827
+        },
+        {
+          "event": "secondAlive",
+          "time": 424.4333333333846
+        },
+        {
+          "event": "finalDead",
+          "time": 524.1333333334433
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "blade": 21929.04182109353,
+        "ghost": 28322.368971093292,
+        "bone": 18773.158154190525,
+        "holy": 23228.80791169955
+      },
+      "patterns": {
+        "A": 10,
+        "B": 9,
+        "C": 8
+      },
+      "seconds": 164,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 16,
+      "build": "pursuit",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 44.67
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 402.2666666667003
+        },
+        {
+          "event": "revivalStart",
+          "time": 402.2666666667003
+        },
+        {
+          "event": "secondAlive",
+          "time": 404.6666666667022
+        },
+        {
+          "event": "finalDead",
+          "time": 467.00000000008515
+        }
+      ],
+      "dualCasts": 3,
+      "damage": {
+        "blade": 26487.542213482633,
+        "ghost": 17472.797654708203,
+        "bone": 22798.013864203873,
+        "holy": 15234.351734668437
+      },
+      "patterns": {
+        "A": 7,
+        "B": 6,
+        "C": 5
+      },
+      "seconds": 107,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "armor",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 39.8
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 397.40000000002976
+        },
+        {
+          "event": "revivalStart",
+          "time": 397.40000000002976
+        },
+        {
+          "event": "secondAlive",
+          "time": 399.8000000000317
+        },
+        {
+          "event": "finalDead",
+          "time": 457.43333333341087
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "lightning": 15480.394115376559,
+        "hammer": 26248.889162847543,
+        "wheel": 20126.561785825314,
+        "water": 18071.30463305361
+      },
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 97,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "armor",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 26.67
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 384.266666666686
+        },
+        {
+          "event": "revivalStart",
+          "time": 384.266666666686
+        },
+        {
+          "event": "secondAlive",
+          "time": 386.6666666666879
+        },
+        {
+          "event": "finalDead",
+          "time": 423.1333333333836
+        }
+      ],
+      "dualCasts": 2,
+      "damage": {
+        "lightning": 8292.125793212452,
+        "hammer": 26696.63634188697,
+        "wheel": 19918.419824215038,
+        "water": 19424.996555907648
+      },
+      "patterns": {
+        "A": 4,
+        "B": 4,
+        "C": 3
+      },
+      "seconds": 63,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "support",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 72.2
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 429.80000000005555
+        },
+        {
+          "event": "revivalStart",
+          "time": 429.80000000005555
+        },
+        {
+          "event": "secondAlive",
+          "time": 432.20000000005746
+        },
+        {
+          "event": "finalDead",
+          "time": 538.0000000000973
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "needle": 29475.244601950406,
+        "lamp": 8691.459379714275,
+        "blade": 29907.211671121855,
+        "bone": 26278.875598786304
+      },
+      "patterns": {
+        "A": 11,
+        "B": 9,
+        "C": 9
+      },
+      "seconds": 178,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "support",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 44.13
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 401.73333333336655
+        },
+        {
+          "event": "revivalStart",
+          "time": 401.73333333336655
+        },
+        {
+          "event": "secondAlive",
+          "time": 404.13333333336845
+        },
+        {
+          "event": "finalDead",
+          "time": 466.0666666667511
+        }
+      ],
+      "dualCasts": 3,
+      "damage": {
+        "needle": 17385.12908101429,
+        "lamp": 5025.5361343028,
+        "blade": 29468.530478475364,
+        "bone": 28876.601425916815
+      },
+      "patterns": {
+        "A": 7,
+        "B": 6,
+        "C": 5
+      },
+      "seconds": 106,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "precision",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 53.4
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 411.0000000000406
+        },
+        {
+          "event": "revivalStart",
+          "time": 411.0000000000406
+        },
+        {
+          "event": "secondAlive",
+          "time": 413.4000000000425
+        },
+        {
+          "event": "finalDead",
+          "time": 503.86666666678116
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "lightning": 25791.08381654929,
+        "blade": 19174.891196283046,
+        "fire": 26960.30282121265,
+        "water": 17683.023832859246
+      },
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "seconds": 144,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "precision",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 30.13
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 387.7333333333554
+        },
+        {
+          "event": "revivalStart",
+          "time": 387.7333333333554
+        },
+        {
+          "event": "secondAlive",
+          "time": 390.1333333333573
+        },
+        {
+          "event": "finalDead",
+          "time": 436.0000000000605
+        }
+      ],
+      "dualCasts": 3,
+      "damage": {
+        "lightning": 11292.12463931436,
+        "blade": 18641.312681788037,
+        "fire": 31532.878587703777,
+        "water": 14058.609802234925
+      },
+      "patterns": {
+        "A": 5,
+        "B": 4,
+        "C": 3
+      },
+      "seconds": 76,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "ground",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 97.4
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 455.0000000000756
+        },
+        {
+          "event": "revivalStart",
+          "time": 455.0000000000756
+        },
+        {
+          "event": "secondAlive",
+          "time": 457.4000000000775
+        },
+        {
+          "event": "finalDead",
+          "time": 588.0000000000518
+        }
+      ],
+      "dualCasts": 6,
+      "damage": {
+        "void": 25353.70075725743,
+        "holy": 38090.11257955796,
+        "water": 32351.52970500109,
+        "mine": 8724.779378164118
+      },
+      "patterns": {
+        "A": 13,
+        "B": 13,
+        "C": 11
+      },
+      "seconds": 228,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "ground",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 76.4
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 434.0000000000589
+        },
+        {
+          "event": "revivalStart",
+          "time": 434.0000000000589
+        },
+        {
+          "event": "secondAlive",
+          "time": 436.4000000000608
+        },
+        {
+          "event": "finalDead",
+          "time": 539.0000000000964
+        }
+      ],
+      "dualCasts": 5,
+      "damage": {
+        "void": 14809.060787920567,
+        "holy": 30912.498589314324,
+        "water": 42424.12928362978,
+        "mine": 7343.665786991389
+      },
+      "patterns": {
+        "A": 11,
+        "B": 10,
+        "C": 9
+      },
+      "seconds": 179,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "pursuit",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 64.27
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 421.8666666667159
+        },
+        {
+          "event": "revivalStart",
+          "time": 421.8666666667159
+        },
+        {
+          "event": "secondAlive",
+          "time": 424.2666666667178
+        },
+        {
+          "event": "finalDead",
+          "time": 521.9333333334453
+        }
+      ],
+      "dualCasts": 4,
+      "damage": {
+        "blade": 21385.360629079936,
+        "ghost": 27758.37893020396,
+        "bone": 19765.247547557883,
+        "holy": 23344.389751234965
+      },
+      "patterns": {
+        "A": 9,
+        "B": 9,
+        "C": 8
+      },
+      "seconds": 162,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 16,
+      "build": "pursuit",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 63198.698550066634,
+      "phaseTimes": {
+        "1": 0,
+        "2": 42.4
+      },
+      "lifecycle": [
+        {
+          "event": "firstAlive",
+          "time": 360
+        },
+        {
+          "event": "firstDead",
+          "time": 400.00000000003183
+        },
+        {
+          "event": "revivalStart",
+          "time": 400.00000000003183
+        },
+        {
+          "event": "secondAlive",
+          "time": 402.40000000003374
+        },
+        {
+          "event": "finalDead",
+          "time": 469.4333333334204
+        }
+      ],
+      "dualCasts": 2,
+      "damage": {
+        "blade": 25063.498591726046,
+        "ghost": 17496.997348566754,
+        "bone": 24481.64771899144,
+        "holy": 15251.659470385193
+      },
+      "patterns": {
+        "A": 7,
+        "B": 6,
+        "C": 5
+      },
+      "seconds": 109,
+      "state": "won",
+      "bossRemaining": 0
+    }
+  ]
+}

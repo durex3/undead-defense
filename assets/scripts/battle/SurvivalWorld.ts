@@ -1,3 +1,4 @@
+import {EchoGraveSystem,graveEnemy} from "./EchoGraveSystem";
 import {LeadFoundrySystem,leadEnemy} from "./LeadFoundrySystem";
 import {EclipseSystem,eclipseEnemy} from "./EclipseSystem";
 import {EdgeCourtSystem,edgeEnemy} from "./EdgeCourtSystem";
@@ -48,6 +49,7 @@ export class SurvivalWorld {
   private strategy?:StageStrategy;
   get stageStrategy(){return this.strategy??(this.strategy=createStageStrategy(this));}
   library=new LibrarySystem(this);
+  grave=new EchoGraveSystem(this);
   lead=new LeadFoundrySystem(this);
   eclipse=new EclipseSystem(this);
   edge=new EdgeCourtSystem(this);
@@ -126,7 +128,7 @@ export class SurvivalWorld {
   readonly runId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   weaponGrades = initialGrades();
   startingWeapon: Skill | null = null;
-  challenge = { devices: new Set<number>(), seals: new Set<number>(), bossSealPhases: new Set<number>(), bossHits: 0, loomGroups:new Map<string,Set<number>>(),loomPhases:new Set<number>(),kilnPhases:new Set<number>(),edgePhases:new Set<number>(),eclipsePhases:new Set<number>(),leadPhases:new Set<number>() };
+  challenge = { devices: new Set<number>(), seals: new Set<number>(), bossSealPhases: new Set<number>(), bossHits: 0, loomGroups:new Map<string,Set<number>>(),loomPhases:new Set<number>(),kilnPhases:new Set<number>(),edgePhases:new Set<number>(),eclipsePhases:new Set<number>(),leadPhases:new Set<number>(),graveGroups:new Set<string>() };
   startingWeapons: Skill[] = [];
   offerStartingWeapons() {
     if(this.time!==0 || this.state!=="battle")return false;
@@ -193,7 +195,7 @@ export class SurvivalWorld {
     const hp =
       kind === "kilnvalve"?160:kind === "boss"
         ? c.health * STAGES[this.stageId].bossHealth * 3
-        : 30 * (1 + Math.min(this.time, ["leadgrub","dialscrap","scrapbound","glazeling","ragbound","paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
+        : 30 * (1 + Math.min(this.time, ["gravegrub","leadgrub","dialscrap","scrapbound","glazeling","ragbound","paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health);
     const e: Enemy = {
       id: this.id(),
@@ -224,6 +226,7 @@ export class SurvivalWorld {
       bossPhase: 1,
       bossAction: "none",
     };
+    if(this.stageId===16&&kind==='boss')this.grave.initialize(e);
     this.enemies.push(e);
     return e;
   }
@@ -292,10 +295,10 @@ export class SurvivalWorld {
     if(this.stageId===2&&e.sand?.vulnerable&&e.state==='recover'&&!bossExposed(this,e))amount*=1.25;
     if(this.stageId===4&&isElite(e.kind)&&e.state==='recover'&&e.moon?.vulnerable)amount*=1.25;
     if(this.stageId===3&&isElite(e.kind)&&e.state==='recover'&&e.thunder?.vulnerable)amount*=1.25;
-    if(this.stageId===5||this.stageId===6||this.stageId===7||this.stageId===8||this.stageId===9||this.stageId===10||this.stageId===11||this.stageId===12||this.stageId===13||this.stageId===14||this.stageId===15){
-      const waxKind=this.stageId===5?bellEnemy(e.kind):this.stageId===6?tideEnemy(e.kind):this.stageId===7?prismEnemy(e.kind)&&!prismDevice(e.kind):this.stageId===8?rootEnemy(e.kind):this.stageId===9?windEnemy(e.kind):this.stageId===10?libraryEnemy(e.kind):this.stageId===11?loomEnemy(e.kind):this.stageId===12?kilnEnemy(e.kind)&&e.kind!=="kilnvalve":this.stageId===13?edgeEnemy(e.kind):this.stageId===14?eclipseEnemy(e.kind):leadEnemy(e.kind);
-      const exposed=this.stageId===5?e.bell?.vulnerable:this.stageId===6?e.tide?.vulnerable:this.stageId===7?e.prism?.vulnerable:this.stageId===8?e.root?.vulnerable:this.stageId===9?e.wind?.vulnerable:this.stageId===10?e.library?.vulnerable:this.stageId===11?e.loom?.vulnerable:this.stageId===12?e.kiln?.vulnerable:this.stageId===13?e.edge?.vulnerable:this.stageId===14?e.eclipse?.vulnerable:e.lead?.vulnerable;
-      const baseArmor=e.kind==='boss'?.55:isElite(e.kind)?.5:(e.kind==='waxbearer'||e.kind==='brineporter'||e.kind==='shardhermit'||e.kind==='rootshuffler'||e.kind==='fledglingeffigy'||e.kind==='paperbonegrub'||e.kind==='ragbound'||e.kind==='glazeling'||e.kind==='scrapbound'||e.kind==='dialscrap'||e.kind==='leadgrub')?.2:waxKind?.35:0;
+    if(this.stageId===5||this.stageId===6||this.stageId===7||this.stageId===8||this.stageId===9||this.stageId===10||this.stageId===11||this.stageId===12||this.stageId===13||this.stageId===14||this.stageId===15||this.stageId===16){
+      const waxKind=this.stageId===5?bellEnemy(e.kind):this.stageId===6?tideEnemy(e.kind):this.stageId===7?prismEnemy(e.kind)&&!prismDevice(e.kind):this.stageId===8?rootEnemy(e.kind):this.stageId===9?windEnemy(e.kind):this.stageId===10?libraryEnemy(e.kind):this.stageId===11?loomEnemy(e.kind):this.stageId===12?kilnEnemy(e.kind)&&e.kind!=="kilnvalve":this.stageId===13?edgeEnemy(e.kind):this.stageId===14?eclipseEnemy(e.kind):this.stageId===15?leadEnemy(e.kind):graveEnemy(e.kind);
+      const exposed=this.stageId===5?e.bell?.vulnerable:this.stageId===6?e.tide?.vulnerable:this.stageId===7?e.prism?.vulnerable:this.stageId===8?e.root?.vulnerable:this.stageId===9?e.wind?.vulnerable:this.stageId===10?e.library?.vulnerable:this.stageId===11?e.loom?.vulnerable:this.stageId===12?e.kiln?.vulnerable:this.stageId===13?e.edge?.vulnerable:this.stageId===14?e.eclipse?.vulnerable:this.stageId===15?e.lead?.vulnerable:e.grave?.vulnerable;
+      const baseArmor=e.kind==='boss'?.55:isElite(e.kind)?.5:(e.kind==='waxbearer'||e.kind==='brineporter'||e.kind==='shardhermit'||e.kind==='rootshuffler'||e.kind==='fledglingeffigy'||e.kind==='paperbonegrub'||e.kind==='ragbound'||e.kind==='glazeling'||e.kind==='scrapbound'||e.kind==='dialscrap'||e.kind==='leadgrub'||e.kind==='gravegrub')?.2:waxKind?.35:0;
       const fracture=(e.fractureUntil??0)>this.time?(e.fracture??0):0;
       const armor=Math.max(0,baseArmor-fracture*(e.kind==="boss"?BOSS_FRACTURE_PER_LAYER:NORMAL_FRACTURE_PER_LAYER));
       amount*=1-Math.min(armor,e.state==='recover'&&exposed?(e.kind==='boss'?.15:.2):1);
@@ -304,9 +307,11 @@ export class SurvivalWorld {
     if(isElite(e.kind)&&this.stageStrategy.vulnerable?.(e))amount*=1.25;
     const dealt = Math.min(e.hp, amount);
     e.hp -= amount;
+    this.stageStrategy.lifecycle?.onHit(e,source,dealt);
+    if(e.kind==='boss')this.stageStrategy.lifecycle?.supplies(e);
     if(this.stageId===13)this.edge.onHit(e,source,dealt);
     // Boss fights provide supplies even when their summoned adds cannot drop loot.
-    if (e.kind === "boss" && e.hp > 0) {
+    if (e.kind === "boss" && e.hp > 0 && !this.stageStrategy.lifecycle) {
       let milestones = this.bossPotionMilestones.get(e.id) ?? 0;
       while (milestones < 3 && e.hp <= e.maxHp * (0.75 - milestones * 0.25)) {
         const angle = Math.atan2(e.y - this.player.y, e.x - this.player.x) + Math.PI / 2;
@@ -423,11 +428,12 @@ export class SurvivalWorld {
     this.siege.sample();
     this.stageStrategy.clean();
     this.director.step(this, dt);
+    this.stageStrategy.lifecycle?.tick();
     stepEnemies(this, dt);
     stepHazards(this);
     this.collect(dt);
     if(this.active)this.armory.step(dt);
-    this.enemies = this.enemies.filter((e) => e.hp > 0);
+    this.enemies = this.enemies.filter((e) => e.hp > 0 || this.stageStrategy.lifecycle?.keep(e));
     if (this.hp <= 0) {
       this.state = "lost";
       this.touch();
@@ -436,6 +442,7 @@ export class SurvivalWorld {
     if (this.state === "won") return;
     this.checkUpgrade();
   }
+  dropBossPotion(e:Enemy){const a=Math.atan2(e.y-this.player.y,e.x-this.player.x)+Math.PI/2,p={x:Math.max(-21,Math.min(21,this.player.x+Math.cos(a)*2.2)),y:Math.max(-25,Math.min(25,this.player.y+Math.sin(a)*2.2))};this.stageStrategy.map.resolve(p,.3);this.dropPotion(p.x,p.y);}
   private dropPotion(x: number, y: number) {
     this.potions.push({id: this.id(), x, y, expires: this.time + 25});
     if (this.potions.length > 3) this.potions.shift();

@@ -3,6 +3,7 @@ import type { StageId } from './ProgressionConfig';
 
 /** Playable identities; health is derived from the shared reference-output × target-time budgets. */
 export const STAGES = {
+ 16:{...stageGrowth(16),name:"回骸墓苑",boss:"镇墓者",damage:1.78,xp:1.45,medicine:42},
  15:{...stageGrowth(15),name:"沉铅铸庭",boss:"抛铅铸主",damage:1.76,xp:1.45,medicine:42},
  14:{...stageGrowth(14),name:"蚀昼观台",boss:"噬曜仪主",damage:1.74,xp:1.45,medicine:42},
  13:{...stageGrowth(13),name:"断锋傀庭",boss:"换锋傀主",damage:1.72,xp:1.45,medicine:42},
@@ -21,6 +22,7 @@ export const STAGES = {
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Record<StageId, {threat: string; builds: string}> = {
+ 16:{threat:"一次裂棺复活 · 旧骨痕与本体夹击 · 墓台不挡骨震",builds:"看身体与旧痕编号，完整预警后才有伤；第二命倒下才通关"},
  15:{threat:"空中丸与投影无伤 · 落地短冲击 · 看编号与下一落点",builds:"可从高飞铅丸投影下穿过；离开即将落点，驻丸回跳另有完整预警"},
  14:{threat:"定轴旋光 · 实体石柱截光 · 预警扇面无伤 · 三阶段双仪",builds:"看箭头转向，绕内圈或有限光束末端；借柱影换位，收招时反击"},
  13:{threat:"本体与离体刃交棒 · 停驻刀与细线无伤 · 回锋独立预警 · 三阶段傀主",builds:"看下一击来源；绕过刀身和本体，回收后抓近身空门反击"},

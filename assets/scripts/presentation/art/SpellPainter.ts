@@ -466,7 +466,7 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
         for(let i=0;i<Math.round(6*scale);i++)spawn("shard",x,y,i%2?c.core:c.edge,100,.18+rand()*.08,2.5);
         continue;
       }
-      if(e.skill==='fire'&&(e.grade??1)>1){const r=(e.radius??1)*48,n=e.grade===3?6:3;for(let i=0;i<n;i++){const a=i*Math.PI*2/n;spawn(e.grade===3?'shard':'crest',x+Math.cos(a)*r*.35,y+Math.sin(a)*r*.35,'#ffd398',e.grade===3?55:0,.22,2.5,0,r*.2);}spawn('fracture',x,y,'#edb578',0,.23,3,0,r);continue;}
+      if(e.skill==='fire'&&(e.grade??1)>1){const r=(e.radius??1)*48,n=(e.grade??1)>=3?6:3;for(let i=0;i<n;i++){const a=i*Math.PI*2/n;spawn(e.grade===3?'shard':'crest',x+Math.cos(a)*r*.35,y+Math.sin(a)*r*.35,'#ffd398',e.grade===3?55:0,.22,2.5,0,r*.2);}spawn('fracture',x,y,'#edb578',0,.23,3,0,r);continue;}
       const heavy = e.form === "heavy";
       // Repeated heavy contacts share a short presentation gate, without delaying damage.
       if (heavy && particleTime < heavyAccentAt) continue;

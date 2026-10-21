@@ -1,0 +1,243 @@
+{
+  "status": "design-only",
+  "scope": "Static connectivity and isolated sector/echo/timing arithmetic. No playable stage16 or resurrection implementation.",
+  "layout": {
+    "boxes": [
+      {
+        "x": -9,
+        "y": -10,
+        "hx": 2.8,
+        "hy": 1
+      },
+      {
+        "x": 9,
+        "y": 10,
+        "hx": 2.8,
+        "hy": 1
+      },
+      {
+        "x": -9,
+        "y": 10,
+        "hx": 1,
+        "hy": 2.8
+      },
+      {
+        "x": 9,
+        "y": -10,
+        "hx": 1,
+        "hy": 2.8
+      },
+      {
+        "x": -17,
+        "y": 0,
+        "hx": 1,
+        "hy": 2.8
+      },
+      {
+        "x": 17,
+        "y": 0,
+        "hx": 1,
+        "hy": 2.8
+      }
+    ],
+    "routes": [
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          -3,
+          -8
+        ],
+        [
+          -3,
+          17
+        ],
+        [
+          0,
+          17
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          3,
+          -8
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          0,
+          17
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          -20.2,
+          -23.5
+        ],
+        [
+          -20.2,
+          23.5
+        ],
+        [
+          20.2,
+          23.5
+        ],
+        [
+          20.2,
+          -23.5
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          0,
+          -8
+        ]
+      ]
+    ],
+    "actors": [
+      {
+        "radius": 0.3,
+        "freeCells": 8571,
+        "reachable": 8571,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "radius": 0.7,
+        "freeCells": 8039,
+        "reachable": 8039,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "sector": {
+    "first": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "halfAngle": 0.7853981633974483,
+      "radius": 4.2,
+      "due": 2.4,
+      "end": 2.58
+    },
+    "echo": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "halfAngle": 0.7853981633974483,
+      "radius": 4.2,
+      "due": 4.98,
+      "end": 5.16
+    },
+    "paired": [
+      {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "angle": 0,
+        "halfAngle": 0.7853981633974483,
+        "radius": 4.2,
+        "due": 2.4,
+        "end": 2.58
+      },
+      {
+        "origin": {
+          "x": 0,
+          "y": 1.8
+        },
+        "angle": 0,
+        "halfAngle": 0.8726646259971648,
+        "radius": 4.2,
+        "due": 3.2,
+        "end": 3.38
+      }
+    ],
+    "checks": {
+      "echoSameGeometry": true,
+      "echoFullWarning": 2.4000000000000004,
+      "fullDiskNotRadiusShortcut": true,
+      "originCovered": true,
+      "outerTangent": true,
+      "backSafe": true,
+      "pairedBaseSpeedEscape": {
+        "start": {
+          "x": 1,
+          "y": 1.2
+        },
+        "reaction": 0.35,
+        "speed": 4.2,
+        "seconds": 4,
+        "minClearance": 7.404031412189335,
+        "valid": true
+      },
+      "twoFormHPAddsExactly": true
+    }
+  },
+  "revival": {
+    "lethalAt": 10,
+    "releasedEnd": 10.12,
+    "revivalSeconds": 2.4,
+    "reviveAt": 12.52,
+    "revives": 1,
+    "rewardSettlements": 1
+  },
+  "growth": {
+    "health": 3.084085740550793,
+    "elite": 3.690078618699185,
+    "bossHealth": 7.523654589293646,
+    "normalOutput": 1.3671660005504405,
+    "normalSeconds": 2.734332001100881,
+    "eliteOutput": 1.3671660005504405,
+    "eliteSeconds": 11.671660005504405,
+    "bossDps": 549.1962061641735,
+    "bossSeconds": 115.07490008256607,
+    "totalBossHP": 63198.69855006663,
+    "firstHP": 25279.47942002665,
+    "secondHP": 37919.21913003997,
+    "firstHudHP": 25280,
+    "secondHudHP": 37920,
+    "totalHudHP": 63199,
+    "bossIncreaseOver15": 0.012231490794324618,
+    "recovery": 0.35,
+    "clearCoins": 400,
+    "totalCoins1to16": 4000
+  },
+  "limits": [
+    "No moving-crowd or all Boss-pattern joint-escape validation",
+    "No lifecycle state interception, damage ownership, supplies, achievement, save or weapon implementation",
+    "No projected mobile/HUD or actual Cocos verification",
+    "No gameplay registration, game build, upload or human difficulty validation"
+  ]
+}

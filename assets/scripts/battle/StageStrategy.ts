@@ -1,3 +1,5 @@
+import {graveMap} from "./EchoGraveMap";
+import {graveEnemy} from "./EchoGraveSystem";
 import {leadMap} from "./LeadFoundryMap";
 import {leadEnemy} from "./LeadFoundrySystem";
 import {eclipseMap} from "./EclipseMap";
@@ -41,6 +43,7 @@ export interface StageStrategy {
   stepEnemy(enemy: Enemy, dt: number): boolean;
   stepBoss(enemy: Enemy, dt: number): void;
   clean(): void;
+  lifecycle?: { tick():void; keep(e:Enemy):boolean; onHit(e:Enemy,source:string,dealt:number):void; supplies(e:Enemy):void; };
   onDeath(enemy: Enemy): boolean;
   stepHazard(hazard: Hazard): boolean;
 }
@@ -123,6 +126,7 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
         return true;
       },
     }),
+    16:()=>({map:graveMap,resolveCrowd:true,movePlayer:dt=>w.grave.movePlayer(dt),vulnerable:e=>!!e.grave?.vulnerable&&e.state==='recover',lifecycle:w.grave,director:dt=>{w.grave.director(dt);return true;},stepEnemy:(e,dt)=>{if(!graveEnemy(e.kind))return false;w.grave.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.grave.stepEnemy(e,dt),clean:()=>w.grave.clean(),onDeath:e=>w.grave.onDeath(e),stepHazard:h=>{if(!h.grave)return false;w.grave.stepHazard(h);return true;}}),
     15:()=>({map:leadMap,resolveCrowd:true,movePlayer:dt=>w.lead.movePlayer(dt),vulnerable:e=>!!e.lead?.vulnerable&&e.state==='recover',director:dt=>{w.lead.director(dt);return true;},stepEnemy:(e,dt)=>{if(!leadEnemy(e.kind))return false;w.lead.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.lead.stepEnemy(e,dt),clean:()=>w.lead.clean(),onDeath:e=>w.lead.onDeath(e),stepHazard:h=>{if(!h.lead)return false;w.lead.stepHazard(h);return true;}}),
     14:()=>({map:eclipseMap,resolveCrowd:true,movePlayer:dt=>w.eclipse.movePlayer(dt),vulnerable:e=>!!e.eclipse?.vulnerable&&e.state==='recover',director:dt=>{w.eclipse.director(dt);return true;},stepEnemy:(e,dt)=>{if(!eclipseEnemy(e.kind))return false;w.eclipse.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.eclipse.stepEnemy(e,dt),clean:()=>w.eclipse.clean(),onDeath:e=>w.eclipse.onDeath(e),stepHazard:h=>{if(!h.eclipse)return false;w.eclipse.stepHazard(h);return true;}}),
     13:()=>({map:edgeMap,resolveCrowd:true,movePlayer:dt=>w.edge.movePlayer(dt),vulnerable:e=>!!e.edge?.vulnerable&&e.state==='recover',director:dt=>{w.edge.director(dt);return true;},stepEnemy:(e,dt)=>{if(!edgeEnemy(e.kind))return false;w.edge.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.edge.stepEnemy(e,dt),clean:()=>w.edge.clean(),onDeath:e=>w.edge.onDeath(e),stepHazard:h=>{if(!h.edge)return false;w.edge.stepHazard(h);return true;}}),
