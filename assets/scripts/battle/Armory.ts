@@ -34,6 +34,7 @@ export interface ArmoryShot extends Point {
   index: number;
   trail?: Point[];
   spawnStep?: number;
+  shardTarget?: number;
 }
 export interface ArmoryField extends Point {
   active: boolean;
@@ -70,9 +71,6 @@ export class Armory {
     {
       left: number;
       shards: boolean;
-      stats: WeaponStats;
-      angle: number;
-      end: Point;
     }
   >();
   readonly strategies: WeaponStrategyTable;
@@ -229,9 +227,6 @@ export class Armory {
       this.groups.set(g, {
         left: s.count,
         shards: s.mods.includes("shards"),
-        stats: s,
-        angle,
-        end: { ...target },
       });
     const targets = this.enemies(w.player, s.range).sort(
       (a, b) => distance(a, target) - distance(b, target),
@@ -301,6 +296,7 @@ export class Armory {
       index: c.index,
       trail: [],
       spawnStep: this.stepIndex,
+      shardTarget: undefined,
     };
     const slot = this.shots.find((p) => !p.active);
     if (slot) Object.assign(slot, data);
@@ -312,7 +308,9 @@ export class Armory {
     p: Point,
     skill: Skill,
     projectile = false,
+    parent?:ArmoryShot,
   ) {
+    const before=e.hp;
     this.w.hit(
       e,
       damage,
@@ -325,6 +323,8 @@ export class Armory {
       projectile,
       false,
     );
+    const shot=parent??p as ArmoryShot;
+    if(skill==="blade"&&e.hp<before&&shot.skill==="blade"&&!shot.child)this.splitOnHit(shot,e);
   }
   private stepShot(p: ArmoryShot, dt: number) {
     const w = this.w,
@@ -370,11 +370,16 @@ export class Armory {
         const angle=p.index*Math.PI*2/s.count+orbitProgress(t)*Math.PI*2;
         const sample={x:w.player.x+Math.cos(angle)*rr,y:w.player.y+Math.sin(angle)*rr};
         for(const e of this.enemies(sample,s.radius+.45))if(!p.hit.has(e.id)) {
-          p.hit.add(e.id);this.hit(e,s.damage,sample,"blade",true);
+          p.hit.add(e.id);this.hit(e,s.damage,sample,"blade",true,p);
         }
       }
       if (q >= 1) this.finish(p);
       return;
+    }
+    if(p.skill==="blade"&&p.child&&p.shardTarget!==undefined){
+      const target=w.enemies.find(e=>e.id===p.shardTarget&&e.hp>0&&e.state!=="arriving"&&!e.sand?.buried);
+      if(target&&distance(target,p.start)<=p.range+.45){const desired=Math.atan2(target.y-p.y,target.x-p.x);p.angle+=Math.max(-dt*6,Math.min(dt*6,angleDelta(desired,p.angle)));}
+      else p.shardTarget=undefined;
     }
     if (p.skill === "blade" && !p.child) {
       if (p.returning) {
@@ -462,35 +467,20 @@ export class Armory {
     const g = this.groups.get(p.group);
     if (!g) return;
     g.left--;
-    g.end = { x: p.x, y: p.y };
-    g.angle = p.orbit ? p.angle + Math.PI / 2 : p.angle;
-    if (g.left > 0) return;
-    this.groups.delete(p.group);
-    if (g.shards) {
-      for (let i = 0; i < 2; i++) {
-        const a = g.angle + (i ? 0.32 : -0.32);
-        const s = {
-          ...g.stats,
-          damage: g.stats.damage * 0.5,
-          mods: [],
-          range: 2.4,
-        };
-        this.launch(
-          {
-            skill: "blade",
-            stats: s,
-            due: this.w.time,
-            index: i,
-            group: p.group,
-            origin: { ...g.end },
-            target: {
-              x: g.end.x + Math.cos(a) * 2,
-              y: g.end.y + Math.sin(a) * 2,
-            },
-          },
-          true,
-        );
-      }
+    if(g.left<=0)this.groups.delete(p.group);
+  }
+  /** Two bounded fragments per cast, triggered by actual main damage instead of an empty terminal point. */
+  private splitOnHit(p:ArmoryShot,hit:Enemy){
+    const g=this.groups.get(p.group);if(!g?.shards)return;g.shards=false;
+    const origin={x:hit.x,y:hit.y};
+    const targets=this.enemies(origin,2.8).sort((a,b)=>Number(a.id===hit.id)-Number(b.id===hit.id)||distance(a,origin)-distance(b,origin)||a.id-b.id);
+    if(!targets.length)return;
+    for(let i=0;i<2;i++){
+      const t=targets[Math.min(i,targets.length-1)];
+      const s={...p.stats,damage:p.stats.damage*.6,mods:[],range:2.8};
+      this.launch({skill:"blade",stats:s,due:this.w.time,index:i,group:p.group,origin:{...origin},target:{x:t.x,y:t.y}},true);
+      const child=this.shots.find(q=>q.active&&q.child&&q.group===p.group&&q.index===i&&q.spawnStep===this.stepIndex);
+      if(child){child.shardTarget=t.id;if(t.id!==hit.id)child.hit.add(hit.id);if(distance(t,origin)<.05)child.angle=p.angle+(i?.28:-.28);}
     }
   }
   private explode(p: ArmoryShot) {

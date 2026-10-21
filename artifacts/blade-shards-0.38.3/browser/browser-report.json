@@ -1,0 +1,426 @@
+{
+  "cases": [
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 8.448
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 8.448
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 16.89599999994971,
+        "main": 253.43999999924563,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "children": [
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": -1.8
+          },
+          "damage": 8.976
+        },
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": 1.8
+          },
+          "damage": 8.976
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 17.95200000004843,
+        "main": 89.75999999977648,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 8.448
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 8.448
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 16.89599999994971,
+        "main": 197.11999999941327,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 2,
+      "partner": "orbit",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 10.56
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 10.56
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 21.12000000011176,
+        "main": 316.7999999995809,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 2,
+      "partner": "hunt",
+      "children": [
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": -1.8
+          },
+          "damage": 11.219999999999999
+        },
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": 1.8
+          },
+          "damage": 11.219999999999999
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 22.43999999994412,
+        "main": 112.1999999997206,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 2,
+      "partner": "return",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 10.56
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 10.56
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 21.12000000011176,
+        "main": 246.39999999967404,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 3,
+      "partner": "orbit",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 13.516800000000003
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 13.516800000000003
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 27.0335999999661,
+        "main": 405.5040000008885,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 3,
+      "partner": "hunt",
+      "children": [
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": -1.8
+          },
+          "damage": 14.361600000000001
+        },
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": 1.8
+          },
+          "damage": 14.361600000000001
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 28.72319999989122,
+        "main": 143.61599999992177,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 3,
+      "partner": "return",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 13.516800000000003
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 13.516800000000003
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 27.0335999999661,
+        "main": 315.39200000069104,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 17.3184
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 17.3184
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 34.63679999997839,
+        "main": 519.5519999989774,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "children": [
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": -1.8
+          },
+          "damage": 18.4008
+        },
+        {
+          "origin": {
+            "x": 5.5,
+            "y": 0
+          },
+          "target": {
+            "x": 5.5,
+            "y": 1.8
+          },
+          "damage": 18.4008
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 36.80159999988973,
+        "main": 184.0079999996815,
+        "children": 2,
+        "live": 0
+      }
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "children": [
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": -1.8
+          },
+          "damage": 17.3184
+        },
+        {
+          "origin": {
+            "x": 2.7,
+            "y": 0
+          },
+          "target": {
+            "x": 2.7,
+            "y": 1.8
+          },
+          "damage": 17.3184
+        }
+      ],
+      "activeChildren": 2,
+      "damage": {
+        "child": 34.63679999997839,
+        "main": 404.09599999920465,
+        "children": 2,
+        "live": 0
+      }
+    }
+  ],
+  "coins": "Lv.1        00:02 / 06:00        击败 0        生命 100 · 金币 400",
+  "errors": []
+}

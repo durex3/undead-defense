@@ -54,20 +54,18 @@ test('extra lightning means two more actual strikes, and all player copy describ
   const text=[NAMES.lightning,WEAPON_ROLES.lightning,weaponDetails(w,'lightning'),...MODS.lightning.map(m=>m.effect)].join('\n');
   assert.match(text,/落雷数量\+2/);assert.match(text,/道落雷上限/);assert.doesNotMatch(text,/跳跃|链节|链式/);
 });
-test('knife fragments leave the real terminal point along its final flight direction',()=>{
-  const w=world();w.skills.blade=1;w.mods.blade=['hunt','shards'];enemy(w,6);w.armory.step(0);
-  for(const p of w.armory.shots.filter(p=>p.active)){p.x=2;p.y=4;p.angle=Math.PI/2;w.armory.finish(p);}
-  const children=w.armory.shots.filter(p=>p.active&&p.child);assert.equal(children.length,2);
-  for(const c of children){assert.deepEqual(c.start,{x:2,y:4});assert(Math.sin(c.angle)>.9);assert.deepEqual(c.stats.mods,[]);}
+test('finishing an empty knife cast does not emit blind fragments',()=>{
+ const w=world();w.skills.blade=1;w.mods.blade=['hunt','shards'];enemy(w,6);w.armory.step(0);
+ for(const p of w.armory.shots.filter(p=>p.active))w.armory.finish(p);
+ assert.equal(w.armory.shots.filter(p=>p.active&&p.child).length,0);assert.equal(w.armory.groups.size,0);
 });
 test('both split knives begin together even when one reuses a pool slot and one is appended',()=>{
   const w=world();const e=enemy(w,6);const s={...weaponStats(w,'blade',1),count:1,mods:['hunt','shards']};
   w.armory.cast('blade',s,e);w.armory.step(0);
-  const main=w.armory.shots.find(p=>p.active);main.range=.1;
-  tick(w,.02,.02);
+  const main=w.armory.shots.find(p=>p.active);main.x=5.5;w.armory.hit(e,s.damage,main,'blade',true);
   let children=w.armory.shots.filter(p=>p.active&&p.child);assert.equal(children.length,2);
   assert(children.every(p=>p.age===0));
-  tick(w,.02,.02);children=w.armory.shots.filter(p=>p.active&&p.child);
+  tick(w,.02,.02);children=w.armory.shots.filter(p=>p.child);
   assert(children.every(p=>Math.abs(p.age-.02)<1e-9));
   assert(Math.abs(children[0].travel-children[1].travel)<1e-9);
 });

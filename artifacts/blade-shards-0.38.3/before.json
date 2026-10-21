@@ -1,0 +1,549 @@
+{
+  "scope": "30s fixed high-HP targets, no enemy AI/contact, native/epic blade8, with/without each legal partner; output diagnostic, not human win rate. Pre-change capture retains total DPS and fragment count only; component attribution was not reliable and is omitted.",
+  "rows": [
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": false,
+      "scene": "single",
+      "dps": 87.99999999999976,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": false,
+      "scene": "moving",
+      "dps": 26.986666666666686,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": false,
+      "scene": "cluster",
+      "dps": 440.00000000000574,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": false,
+      "scene": "spread",
+      "dps": 0,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": true,
+      "scene": "single",
+      "dps": 86.76800000000017,
+      "children": 50,
+      "gain": -0.01399999999999535
+    },
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": true,
+      "scene": "moving",
+      "dps": 24.933333333333344,
+      "children": 50,
+      "gain": -0.07608695652173936
+    },
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": true,
+      "scene": "cluster",
+      "dps": 385.9679999999937,
+      "children": 50,
+      "gain": -0.12280000000002578
+    },
+    {
+      "grade": 1,
+      "partner": null,
+      "shards": true,
+      "scene": "spread",
+      "dps": 5.983999999999999,
+      "children": 50,
+      "gain": null
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "single",
+      "dps": 70.39999999999986,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "moving",
+      "dps": 26.75200000000002,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "cluster",
+      "dps": 563.1999999999995,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "spread",
+      "dps": 0,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "single",
+      "dps": 69.41440000000009,
+      "children": 50,
+      "gain": -0.013999999999996904
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "moving",
+      "dps": 24.33493333333332,
+      "children": 50,
+      "gain": -0.09035087719298363
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "cluster",
+      "dps": 488.29440000001136,
+      "children": 50,
+      "gain": -0.13299999999997902
+    },
+    {
+      "grade": 1,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "spread",
+      "dps": 4.7871999999999995,
+      "children": 50,
+      "gain": null
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "single",
+      "dps": 74.80000000000013,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "moving",
+      "dps": 74.80000000000013,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "cluster",
+      "dps": 149.6000000000003,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "spread",
+      "dps": 74.80000000000013,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "single",
+      "dps": 63.57999999999978,
+      "children": 50,
+      "gain": -0.15000000000000435
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "moving",
+      "dps": 63.57999999999978,
+      "children": 50,
+      "gain": -0.15000000000000435
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "cluster",
+      "dps": 137.75666666666604,
+      "children": 50,
+      "gain": -0.07916666666667282
+    },
+    {
+      "grade": 1,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "spread",
+      "dps": 63.57999999999978,
+      "children": 50,
+      "gain": -0.15000000000000435
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": false,
+      "scene": "single",
+      "dps": 93.8666666666664,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": false,
+      "scene": "moving",
+      "dps": 25.81333333333335,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": false,
+      "scene": "cluster",
+      "dps": 539.7333333333307,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": false,
+      "scene": "spread",
+      "dps": 234.6666666666657,
+      "children": 0
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": true,
+      "scene": "single",
+      "dps": 89.36106666666652,
+      "children": 50,
+      "gain": -0.04799999999999893
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": true,
+      "scene": "moving",
+      "dps": 23.537066666666654,
+      "children": 50,
+      "gain": -0.08818181818181925
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": true,
+      "scene": "cluster",
+      "dps": 468.3477333333434,
+      "children": 50,
+      "gain": -0.13226086956519456
+    },
+    {
+      "grade": 1,
+      "partner": "return",
+      "shards": true,
+      "scene": "spread",
+      "dps": 204.2538666666652,
+      "children": 50,
+      "gain": -0.1296000000000026
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": false,
+      "scene": "single",
+      "dps": 180.39999999999972,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": false,
+      "scene": "moving",
+      "dps": 55.32266666666664,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": false,
+      "scene": "cluster",
+      "dps": 902.0000000000163,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": false,
+      "scene": "spread",
+      "dps": 0,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": true,
+      "scene": "single",
+      "dps": 177.8743999999996,
+      "children": 50,
+      "gain": -0.014000000000000679
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": true,
+      "scene": "moving",
+      "dps": 51.113333333333294,
+      "children": 50,
+      "gain": -0.07608695652173947
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": true,
+      "scene": "cluster",
+      "dps": 791.2344000000072,
+      "children": 50,
+      "gain": -0.12280000000000779
+    },
+    {
+      "grade": 4,
+      "partner": null,
+      "shards": true,
+      "scene": "spread",
+      "dps": 12.2672,
+      "children": 50,
+      "gain": null
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "single",
+      "dps": 144.32000000000002,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "moving",
+      "dps": 54.841600000000035,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "cluster",
+      "dps": 1154.5600000000236,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": false,
+      "scene": "spread",
+      "dps": 0,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "single",
+      "dps": 142.29951999999975,
+      "children": 50,
+      "gain": -0.0140000000000019
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "moving",
+      "dps": 49.88661333333334,
+      "children": 50,
+      "gain": -0.09035087719298296
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "cluster",
+      "dps": 1001.0035200000099,
+      "children": 50,
+      "gain": -0.13300000000000922
+    },
+    {
+      "grade": 4,
+      "partner": "orbit",
+      "shards": true,
+      "scene": "spread",
+      "dps": 9.81376,
+      "children": 50,
+      "gain": null
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "single",
+      "dps": 153.33999999999997,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "moving",
+      "dps": 153.33999999999997,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "cluster",
+      "dps": 306.6799999999983,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": false,
+      "scene": "spread",
+      "dps": 153.33999999999997,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "single",
+      "dps": 130.3389999999996,
+      "children": 50,
+      "gain": -0.15000000000000246
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "moving",
+      "dps": 130.3389999999996,
+      "children": 50,
+      "gain": -0.15000000000000246
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "cluster",
+      "dps": 282.4011666666658,
+      "children": 50,
+      "gain": -0.07916666666666439
+    },
+    {
+      "grade": 4,
+      "partner": "hunt",
+      "shards": true,
+      "scene": "spread",
+      "dps": 130.3389999999996,
+      "children": 50,
+      "gain": -0.15000000000000246
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": false,
+      "scene": "single",
+      "dps": 192.42666666666597,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": false,
+      "scene": "moving",
+      "dps": 52.91733333333336,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": false,
+      "scene": "cluster",
+      "dps": 1106.4533333333545,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": false,
+      "scene": "spread",
+      "dps": 481.0666666666618,
+      "children": 0
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": true,
+      "scene": "single",
+      "dps": 183.19018666666585,
+      "children": 50,
+      "gain": -0.04800000000000082
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": true,
+      "scene": "moving",
+      "dps": 48.25098666666667,
+      "children": 50,
+      "gain": -0.08818181818181858
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": true,
+      "scene": "cluster",
+      "dps": 960.1128533333426,
+      "children": 50,
+      "gain": -0.13226086956522565
+    },
+    {
+      "grade": 4,
+      "partner": "return",
+      "shards": true,
+      "scene": "spread",
+      "dps": 418.720426666667,
+      "children": 50,
+      "gain": -0.1295999999999905
+    }
+  ]
+}

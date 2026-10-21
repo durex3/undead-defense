@@ -53,8 +53,8 @@ export const MODS: Record<Skill, readonly WeaponMod[]> = {
       id: "shards",
       name: "碎刃散射",
       short: "碎刃",
-      effect: "终结时沿刀刃当前飞行方向分出2把短程碎刃",
-      cost: "主刀伤害−15%；碎刃每轮只出一组",
+      effect: "每轮首次命中分出2把短程锁敌碎刃，优先补附近敌人，单体时补刀",
+      cost: "碎刃各为主刀60%伤害；每轮只一组，不穿透、不递归",
       glyph: "⋔",
     },
   ],
@@ -249,7 +249,7 @@ export function weaponStats(
     if (m.includes("orbit")) s.damage *= 0.8;
     if (m.includes("hunt")) s.damage *= 0.85;
     if (m.includes("return")) s.damage *= 0.8;
-    if (m.includes("shards")) s.damage *= 0.85;
+
   }
   if (skill === "fire") {
     if (m.includes("heavy")) {
