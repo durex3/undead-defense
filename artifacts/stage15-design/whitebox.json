@@ -1,0 +1,209 @@
+{
+  "status": "design-only",
+  "scope": "Static connected routes, authored timing, a single unobstructed mid-air crossing and fixed formula budgets; not runtime combat validation.",
+  "layout": {
+    "boxes": [
+      {
+        "x": -11,
+        "y": -12,
+        "hx": 3,
+        "hy": 1.1
+      },
+      {
+        "x": 11,
+        "y": 12,
+        "hx": 3,
+        "hy": 1.1
+      },
+      {
+        "x": -11,
+        "y": 12,
+        "hx": 1.1,
+        "hy": 3
+      },
+      {
+        "x": 11,
+        "y": -12,
+        "hx": 1.1,
+        "hy": 3
+      },
+      {
+        "x": -18,
+        "y": 0,
+        "hx": 0.8,
+        "hy": 2.6
+      },
+      {
+        "x": 18,
+        "y": 0,
+        "hx": 0.8,
+        "hy": 2.6
+      }
+    ],
+    "paths": [
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          -3,
+          -8
+        ],
+        [
+          -3,
+          17
+        ],
+        [
+          0,
+          17
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          3,
+          -8
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          0,
+          17
+        ]
+      ],
+      [
+        [
+          0,
+          -8
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          -20.2,
+          -23.5
+        ],
+        [
+          -20.2,
+          23.5
+        ],
+        [
+          20.2,
+          23.5
+        ],
+        [
+          20.2,
+          -23.5
+        ],
+        [
+          0,
+          -23.5
+        ],
+        [
+          0,
+          -8
+        ]
+      ]
+    ],
+    "actors": [
+      {
+        "radius": 0.3,
+        "freeCells": 8591,
+        "reachable": 8591,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "radius": 0.7,
+        "freeCells": 8035,
+        "reachable": 8035,
+        "connected": true,
+        "routes": [
+          true,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "timing": {
+    "warning": 2.4,
+    "flight": 0.8,
+    "contact": 0.16,
+    "radius": 0.8,
+    "landings": [
+      {
+        "due": 2.4,
+        "until": 2.56
+      },
+      {
+        "due": 3.36,
+        "until": 3.52
+      },
+      {
+        "due": 4.32,
+        "until": 4.48
+      }
+    ],
+    "secondChainOffset": 0.8,
+    "peakReservedSlots": 2,
+    "firstLaunch": 1.5999999999999999
+  },
+  "crossing": {
+    "from": {
+      "x": 0,
+      "y": -0.4619999999999995
+    },
+    "to": {
+      "x": 0,
+      "y": 0.4620000000000004
+    },
+    "seconds": 0.21999999999999997,
+    "baseSpeed": 4.2,
+    "sideMargin": 0.45,
+    "minHeight": 1.294125,
+    "requiredHeight": 0.9,
+    "minShadowDistance": 2.220446049250313e-16,
+    "maxShadowDistance": 0.4,
+    "walkable": true,
+    "nextImpactClearance": 2.064558064090231,
+    "requiredClearance": 1.1,
+    "valid": true
+  },
+  "growth": {
+    "health": 3.0572783439001743,
+    "elite": 3.6552617354301593,
+    "bossHealth": 7.432741085134229,
+    "normalOutput": 1.361211212854238,
+    "normalSeconds": 2.722422425708476,
+    "eliteOutput": 1.361211212854238,
+    "eliteSeconds": 11.61211212854238,
+    "bossDps": 546.8042164103277,
+    "bossSeconds": 114.1816819281357,
+    "bossHP": 62435.02511512752,
+    "bossHudHP": 62436,
+    "bossIncreaseOver14": 0.014749546334131614,
+    "recovery": 0.35,
+    "elite135": 3625.288589199632,
+    "elite225": 4605.629786642001,
+    "clearCoins": 380,
+    "totalCoins1to15": 3600
+  },
+  "limitations": [
+    "No stage15 runtime registration, AI, collision implementation, saves or purchases",
+    "No joint dual-chain escape or all nine Boss variants validated",
+    "No actual Cocos mobile projection, frame-rate or human difficulty checks",
+    "No gameplay build or WeChat upload"
+  ]
+}

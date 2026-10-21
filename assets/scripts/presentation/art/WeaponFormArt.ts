@@ -89,3 +89,20 @@ export function drawWaterFieldForm(g:Graphics,x:number,y:number,r:number,grade:n
  if(grade===2){for(let i=0;i<8;i++){const a=i*Math.PI/4;g.moveTo(x+Math.cos(a)*r*.82,y+Math.sin(a)*r*.82);g.lineTo(x+Math.cos(a+.12)*r*.9,y+Math.sin(a+.12)*r*.9);}g.stroke();}
  else{g.circle(x,y,r*.72);g.stroke();for(let i=0;i<4;i++){const a=i*Math.PI/2,px=x+Math.cos(a)*r*.55,py=y+Math.sin(a)*r*.55;g.moveTo(px-4,py);g.lineTo(px,py+5);g.lineTo(px+4,py);g.lineTo(px,py-5);g.close();}g.stroke();}
 }
+
+/** Fire evolution preserves the actual explosion size, shard count and field lifecycle. */
+export function drawFireForm(g:Graphics,x:number,y:number,angle:number,grade:number,scale=1){
+ const u=Math.cos(angle),v=Math.sin(angle),p=(a:number,b:number)=>[x+(u*a-v*b)*scale,y+(v*a+u*b)*scale];
+ g.fillColor=ink(grade===3?'#e8a967':'#df9c69');g.strokeColor=ink('#35292a');g.lineWidth=2;
+ if(grade===2)for(let i=0;i<3;i++){const a=i*Math.PI*2/3;polygon(g,[[Math.cos(a)*18,Math.sin(a)*18],[Math.cos(a+.6)*11,Math.sin(a+.6)*11],[Math.cos(a+.2)*7,Math.sin(a+.2)*7]].map(([a,b])=>p(a,b)));}
+ else{polygon(g,Array.from({length:6},(_,i)=>p(Math.cos(i*Math.PI/3)*17,Math.sin(i*Math.PI/3)*17)));g.fillColor=ink('#3b3030');polygon(g,Array.from({length:6},(_,i)=>p(Math.cos(i*Math.PI/3)*10,Math.sin(i*Math.PI/3)*10)));g.strokeColor=ink('#f1d7a6');g.lineWidth=2;for(const side of [-1,1]){const q=p(0,side*24);g.ellipse(q[0],q[1],9*scale,3*scale);g.stroke();}}
+ g.fillColor=ink('#fff1b1');g.strokeColor=ink('#e67d4a');polygon(g,[[11,0],[0,7],[-9,0],[0,-7]].map(([a,b])=>p(a,b)));
+ g.strokeColor=ink('#ffbb70',170);g.lineWidth=2;for(let i=0;i<(grade===3?4:2);i++){const a=p(-22-i*8,i%2?4:-4),b=p(-28-i*8,i%2?6:-6);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);}g.stroke();
+}
+export function drawFireFieldForm(g:Graphics,x:number,y:number,r:number,grade:number,quiet=false){
+ g.strokeColor=ink('#d6b786',quiet?90:140);g.lineWidth=1.5;
+ const n=grade===3?6:3;for(let i=0;i<n;i++){const a=i*Math.PI*2/n;
+  if(grade===2){g.moveTo(x+Math.cos(a-.25)*r*.5,y+Math.sin(a-.25)*r*.5);g.quadraticCurveTo(x+Math.cos(a)*r*.9,y+Math.sin(a)*r*.9,x+Math.cos(a+.25)*r*.5,y+Math.sin(a+.25)*r*.5);}
+  else{const q=a+Math.PI/3;g.moveTo(x+Math.cos(a)*r*.72,y+Math.sin(a)*r*.72);g.lineTo(x+Math.cos(q)*r*.72,y+Math.sin(q)*r*.72);g.moveTo(x+Math.cos(a)*r*.3,y+Math.sin(a)*r*.3);g.lineTo(x+Math.cos(a)*r*.55,y+Math.sin(a)*r*.55);}}
+ g.stroke();
+}

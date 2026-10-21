@@ -19,7 +19,7 @@ test('grade trades follow 360/720/1440, reject stale clicks, snapshot next run, 
  for(const [g,cost]of [[1,360],[2,720],[3,1440]]){const coins=p.coins;assert.equal(p.evolveWeapon('blade',g),'evolved');assert.equal(p.coins,coins-cost);assert.equal(p.evolveWeapon('blade',g),'already');}
  assert.equal(gradeOf('blade',p.weaponGrades),4);assert.equal(gradeOf('blade',w.weaponGrades),1);
  assert.deepEqual(p.availableWeapons,before);assert.equal(p.evolveWeapon('blade',4),'unavailable');
- assert.equal(p.evolveWeapon('fire',1),'unavailable');assert.equal(p.evolveWeapon('hammer',2),'locked');
+ assert.equal(p.evolveWeapon('frost',1),'unavailable');assert.equal(p.evolveWeapon('hammer',2),'locked');
 });
 test('purchase retains all goods, initial epic has no paid evolution, and backup restores evolved form',()=>{
  const s=storage(),p=new ProgressStore(s);p.data.coins=9000;
@@ -96,8 +96,8 @@ test('three exploration challenges use successful canonical series snapshots onl
  for(const [i,m]of [['orbit','return'],['return','shards'],['hunt','shards']].entries()){const w=world(i%2+1);w.mods.blade=m;w.state='won';p.observe(w);}assert(p.hasAchievement('modification_paths'));
  const w=world(7);for(const skill of ['blade','fire','water']){w.skills[skill]=8;w.mods[skill]=[MODS[skill][0].id,MODS[skill][2].id];}w.state='won';p.observe(w);assert(p.hasAchievement('triple_mastery'));
 });
-test('grade glyphs differ by geometry, not just color; twenty-four achievements and late recovery curve are explicit',()=>{
+test('grade glyphs differ by geometry, not just color; twenty-six achievements and late recovery curve are explicit',()=>{
  for(const [skill,grades]of [['blade',[1,2,3,4]],['hammer',[2,3,4]]]){const shapes=grades.map(g=>{const a=new Graphics();drawWeaponGlyph(a,skill,g);assert(a.vertexCount<2500);return JSON.stringify(a.commands.map(({op,d,width})=>({op,d,width})));});assert.equal(new Set(shapes).size,grades.length);}
- assert.equal(ACHIEVEMENTS.length,24);assert.equal(new Set(ACHIEVEMENTS.map(a=>a.id)).size,24);assert.equal(stageRecoveryFactor(4),1);assert(Math.abs(stageRecoveryFactor(10)-.531441)<1e-8);
+ assert.equal(ACHIEVEMENTS.length,26);assert.equal(new Set(ACHIEVEMENTS.map(a=>a.id)).size,26);assert.equal(stageRecoveryFactor(4),1);assert(Math.abs(stageRecoveryFactor(10)-.531441)<1e-8);
  const w=world(10),e=w.addEnemy('boss',3,0);e.state='seek';w.library.state(e).countered=true;w.library.recover(e,2);assert(Math.abs(e.timer-(2*.531441+.6))<1e-8);
 });

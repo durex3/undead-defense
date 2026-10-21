@@ -3,6 +3,7 @@ import type { StageId } from './ProgressionConfig';
 
 /** Playable identities; health is derived from the shared reference-output × target-time budgets. */
 export const STAGES = {
+ 15:{...stageGrowth(15),name:"沉铅铸庭",boss:"抛铅铸主",damage:1.76,xp:1.45,medicine:42},
  14:{...stageGrowth(14),name:"蚀昼观台",boss:"噬曜仪主",damage:1.74,xp:1.45,medicine:42},
  13:{...stageGrowth(13),name:"断锋傀庭",boss:"换锋傀主",damage:1.72,xp:1.45,medicine:42},
  12:{...stageGrowth(12),name:"裂釉熔窑",boss:"裂釉炉心",damage:1.70,xp:1.45,medicine:42},
@@ -20,6 +21,7 @@ export const STAGES = {
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Record<StageId, {threat: string; builds: string}> = {
+ 15:{threat:"空中丸与投影无伤 · 落地短冲击 · 看编号与下一落点",builds:"可从高飞铅丸投影下穿过；离开即将落点，驻丸回跳另有完整预警"},
  14:{threat:"定轴旋光 · 实体石柱截光 · 预警扇面无伤 · 三阶段双仪",builds:"看箭头转向，绕内圈或有限光束末端；借柱影换位，收招时反击"},
  13:{threat:"本体与离体刃交棒 · 停驻刀与细线无伤 · 回锋独立预警 · 三阶段傀主",builds:"看下一击来源；绕过刀身和本体，回收后抓近身空门反击"},
  12:{threat:"火头沿箭头分流，虚线支路无伤 · 导火栓可截断后段 · 三阶段裂釉炉心",builds:"绕开火头、等尾部经过；靠近导火栓可引导自动攻击，分流前击碎可截断后段"},

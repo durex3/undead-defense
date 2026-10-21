@@ -38,9 +38,10 @@ export function battleHud(
     .trim();
   const boss = w.enemies.find((e) => e.kind === "boss" && e.hp > 0);
   const lateHazard = w.hazards.find((h) => h.damageLabel);
-  const bossHazard = boss && w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.until > w.time && !h.eclipse?.cancelled && !h.edge?.cancelled && !h.kiln?.cancelled && !h.loom?.cancelled && !h.library?.cancelled && !h.wind?.cancelled)
+  const bossHazard = boss && w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.until > w.time && !h.lead?.cancelled && !h.eclipse?.cancelled && !h.edge?.cancelled && !h.kiln?.cancelled && !h.loom?.cancelled && !h.library?.cancelled && !h.wind?.cancelled)
     .sort((a,b) => Number(a.due <= w.time)-Number(b.due <= w.time) || a.due-b.due)[0];
   const bossAdvice: Record<number,string> = {
+    15:"空中丸/投影无伤 · 看下一落点编号与倒计时",
     14:"看箭头转向 · 石柱截光 · 内圈与光束末端可绕",
     13:bossHazard?.edge?`来源${bossHazard.edge.order} · ${bossHazard.edge.shape==="body"?"本体换步，侧移避开":"看落刀回收箭头，停驻刀无伤"}`:"回收后抓本体空门",
     12:bossHazard?.kiln?`走焰${bossHazard.kiln.order} · ${w.time<bossHazard.due?"看实线箭头，虚线无伤":"绕开火头，尾过安全"}`:"靠近导火栓可引导自动攻击",
@@ -51,8 +52,9 @@ export function battleHud(
     8:"空心可进，实心须出，绕藤端换侧",9:"顺风换位，横向避开曲羽",10:"踩配对封签撤招，绕开页刃",
   };
   const shadowTimer=Math.max(0,...Object.values(boss?.eclipse?.shadow??{}));
-  const loomProgress=w.stageId===14?`柱影 I${w.challenge.eclipsePhases.has(1)?"✓":"·"} II${w.challenge.eclipsePhases.has(2)?"✓":"·"} III${w.challenge.eclipsePhases.has(3)?"✓":"·"} · ${Math.min(.8,shadowTimer).toFixed(1)}/0.8秒`:w.stageId===13?`交棒反击 I${w.challenge.edgePhases.has(1)?"✓":"·"} II${w.challenge.edgePhases.has(2)?"✓":"·"} III${w.challenge.edgePhases.has(3)?"✓":"·"}`:w.stageId===12?`分流前断源 I${w.challenge.kilnPhases.has(1)?"✓":"·"} II${w.challenge.kilnPhases.has(2)?"✓":"·"} III${w.challenge.kilnPhases.has(3)?"✓":"·"}`:w.stageId===11?`松线双穿 I${w.challenge.loomPhases.has(1)?"✓":"·"} II${w.challenge.loomPhases.has(2)?"✓":"·"} III${w.challenge.loomPhases.has(3)?"✓":"·"}`:"";
-  const hint = w.stageId === 14 ? "预警无伤 · 仅亮束有伤 · 借柱影换位或绕有限端头" : w.stageId === 13 ? "本体与落刀交棒 · 停驻刀/细线无伤 · 回收后反击" : w.stageId === 12 ? "虚线无伤 · 尾过安全 · 靠近导火栓可引导自动攻击" : w.stageId === 11 ? "紧线绕端 · 松弛可穿 · 看第二拍与移梭箭头" : w.stageId === 10 ? "踩签撤招 · 看配对编号 · 中缝可留，端头可绕" : w.stageId === 9 ? "借风换位 · 曲羽不追踪 · 击破一名精英可减压" : w.stageId === 8 ? "绕端换侧 · 空心可进，实心须出 · 收招护皮开缝" : w.stageId === 7 ? "看完整折线 · 晶核可击碎 · 收招时甲缝暴露" : w.stageId === 6 ? "绕过浪头再切回 · 厚蜡甲可裂解 · 收舷时反击" : w.stageId === 5 ? "钟台挡声浪 · 蜡印需换位 · 收招甲缝可反击" : w.stageId === 4
+  const leadPending=!!boss?.lead?.earned;
+  const loomProgress=w.stageId===15?`踏空 I${w.challenge.leadPhases.has(1)?"✓":"·"} II${w.challenge.leadPhases.has(2)?"✓":"·"} III${w.challenge.leadPhases.has(3)?"✓":"·"}${leadPending?" · 待落地收束确认":""}`:w.stageId===14?`柱影 I${w.challenge.eclipsePhases.has(1)?"✓":"·"} II${w.challenge.eclipsePhases.has(2)?"✓":"·"} III${w.challenge.eclipsePhases.has(3)?"✓":"·"} · ${Math.min(.8,shadowTimer).toFixed(1)}/0.8秒`:w.stageId===13?`交棒反击 I${w.challenge.edgePhases.has(1)?"✓":"·"} II${w.challenge.edgePhases.has(2)?"✓":"·"} III${w.challenge.edgePhases.has(3)?"✓":"·"}`:w.stageId===12?`分流前断源 I${w.challenge.kilnPhases.has(1)?"✓":"·"} II${w.challenge.kilnPhases.has(2)?"✓":"·"} III${w.challenge.kilnPhases.has(3)?"✓":"·"}`:w.stageId===11?`松线双穿 I${w.challenge.loomPhases.has(1)?"✓":"·"} II${w.challenge.loomPhases.has(2)?"✓":"·"} III${w.challenge.loomPhases.has(3)?"✓":"·"}`:"";
+  const hint = w.stageId === 15 ? "空中/投影无伤 · 仅落地短冲击 · 驻丸回跳另有预警" : w.stageId === 14 ? "预警无伤 · 仅亮束有伤 · 借柱影换位或绕有限端头" : w.stageId === 13 ? "本体与落刀交棒 · 停驻刀/细线无伤 · 回收后反击" : w.stageId === 12 ? "虚线无伤 · 尾过安全 · 靠近导火栓可引导自动攻击" : w.stageId === 11 ? "紧线绕端 · 松弛可穿 · 看第二拍与移梭箭头" : w.stageId === 10 ? "踩签撤招 · 看配对编号 · 中缝可留，端头可绕" : w.stageId === 9 ? "借风换位 · 曲羽不追踪 · 击破一名精英可减压" : w.stageId === 8 ? "绕端换侧 · 空心可进，实心须出 · 收招护皮开缝" : w.stageId === 7 ? "看完整折线 · 晶核可击碎 · 收招时甲缝暴露" : w.stageId === 6 ? "绕过浪头再切回 · 厚蜡甲可裂解 · 收舷时反击" : w.stageId === 5 ? "钟台挡声浪 · 蜡印需换位 · 收招甲缝可反击" : w.stageId === 4
     ? moonHint(w)
     : w.stageId === 3
       ? thunderHint(w)
@@ -93,7 +95,9 @@ export function battleHud(
   const edgeHint=edgeNext?`${bossHazard!.edge!.shape==='body'?'本体换步':edgeNext.index?'落刀回收':'本体掷锋'} · ${w.time<edgeNext.due?`${(edgeNext.due-w.time).toFixed(1)}秒后启动`:'移动实体有伤'} · 停驻刀/细线无伤`:'';
   const beam=bossHazard?.eclipse?.sweeps.find(f=>!f.cancelled&&f.end>w.time);
   const beamHint=beam?`旋光${bossHazard!.eclipse!.order} · ${w.time<beam.due?`${(beam.due-w.time).toFixed(1)}秒后启动`:"旋转中"} · 柱后/内圈/端头换位`:"";
-  const bossHint = beamHint?beamHint:edgeHint?edgeHint:bossHazard
+  const leadItems=boss?w.hazards.filter(h=>h.source===boss.id&&h.lead&&!h.lead.cancelled&&h.until>w.time).flatMap(h=>h.lead!.legs.filter(f=>!f.cancelled&&f.end>w.time).map(f=>({f,order:h.lead!.order}))).sort((a,b)=>Number(a.f.due>w.time)-Number(b.f.due>w.time)||a.f.due-b.f.due):[];
+  const leadHint=leadItems.slice(0,2).map(({f,order})=>`丸${order}→点${f.index+1} ${w.time<f.due?`${(f.due-w.time).toFixed(1)}秒`:"冲击中"}`).join(" · ");
+  const bossHint = leadHint?leadHint:beamHint?beamHint:edgeHint?edgeHint:bossHazard
     ? `${bossHazard.damageLabel || "首领技能"} · ${bossHazard.due > w.time ? `${(bossHazard.due-w.time).toFixed(1)}秒后释放` : "释放中"} · ${bossAdvice[w.stageId]}`
     : boss && bossExposed(w,boss) ? "破绽！伤害 +25% · 抓紧反击" : hint;
   return { stats, weapons, hint: loomProgress&&boss?bossHint+" · "+loomProgress:bossHint, nova, bossHealth };

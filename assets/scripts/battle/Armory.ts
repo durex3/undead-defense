@@ -503,6 +503,7 @@ export class Armory {
       y: p.y,
       radius: s.radius,
       skill: "fire",
+      grade: this.w.weaponGrades.fire,
       form: p.child ? "ember" : m.includes("heavy") ? "heavy" : "base",
     });
     if (p.child) return;

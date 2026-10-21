@@ -129,11 +129,13 @@ const LIBRARY:EnemyPalette={outline:"#1d1b25",shade:"#726354",base:"#c7b999",lig
 const WIND:EnemyPalette={outline:"#182128",shade:"#596975",base:"#b4b8ad",light:"#e8dfc9",cloth:"#607987",metal:"#806653",metalLight:"#c6a67a",bone:"#e9dfc8",accent:"#dfad81",eye:"#b6deea"};
 const ROOT:EnemyPalette={outline:"#161e19",shade:"#405243",base:"#7e9675",light:"#c6d3ac",cloth:"#956c75",metal:"#66543d",metalLight:"#d1be8d",bone:"#dfd6b7",accent:"#e3ab78",eye:"#f3d9a0"};
 const PRISM:EnemyPalette={outline:"#191625",shade:"#494359",base:"#7b7894",light:"#c6bcd1",cloth:"#665568",metal:"#807666",metalLight:"#c7b5bd",bone:"#d6ceb8",accent:"#edc48c",eye:"#f3dfa7"};
+const LEAD:EnemyPalette={outline:"#161d23",shade:"#3d4d50",base:"#818e8b",light:"#cad2bf",cloth:"#5c625a",metal:"#786355",metalLight:"#c3a380",bone:"#dcd8bd",accent:"#e8b181",eye:"#c4e5d9"};
 const ECLIPSE:EnemyPalette={outline:"#171823",shade:"#484555",base:"#91889c",light:"#e6ddc5",cloth:"#514761",metal:"#67594d",metalLight:"#c9b17e",bone:"#dad3c3",accent:"#ecd092",eye:"#fff3cd"};
 const EDGE:EnemyPalette={outline:"#151d28",shade:"#3d4c5a",base:"#7c929f",light:"#c6d4d7",cloth:"#485563",metal:"#646d7b",metalLight:"#c6c4a5",bone:"#c4c9bb",accent:"#eacb86",eye:"#b3e6df"};
 const KILN:EnemyPalette={outline:"#241b20",shade:"#62433e",base:"#b77460",light:"#ead1b0",cloth:"#665951",metal:"#8b6654",metalLight:"#dcc7a0",bone:"#f2dfb8",accent:"#ffac65",eye:"#fff1b7"};
 const LOOM:EnemyPalette={outline:"#201a20",shade:"#61505b",base:"#a58e7a",light:"#e9d7bc",cloth:"#827084",metal:"#8b6955",metalLight:"#d8b987",bone:"#eddfc5",accent:"#b8a6d6",eye:"#f6dba5"};
 export const STAGE_PALETTES: Record<StageId, EnemyPalette> = {
+ 15:LEAD,
  14:ECLIPSE,
  13:EDGE,
  12:KILN,
@@ -219,6 +221,7 @@ function art(
 /* Stage membership is duplicated here on purpose (art must not import stage
  * systems); tests/art-catalog.test.mjs compares it with SIEGE_KINDS etc. */
 export const CATALOG_STAGE_KINDS: Record<StageId, readonly Kind[]> = {
+ 15:["leadgrub","pitchframe","kneehopper","offsetcart","twinpitch","presswarden"],
  14:["dialscrap","glowdisc","reversegazer","offsetorrery","twindial","eclipsewarden"],
  13:["scrapbound","edgecaster","stepcutter","reelstalker","twinclamp","edgepuppeteer"],
  12:["glazeling","kilnstoker","forkmason","ashsled","splitcrucible","glazejailer","kilnvalve"],
@@ -236,7 +239,7 @@ export const CATALOG_STAGE_KINDS: Record<StageId, readonly Kind[]> = {
 };
 
 const STAGE_OF: Partial<Record<Kind, StageId>> = {};
-for (const stage of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] as const)
+for (const stage of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] as const)
   for (const kind of CATALOG_STAGE_KINDS[stage]) STAGE_OF[kind] = stage;
 
 export function catalogStage(kind: Kind): StageId | 0 {
@@ -394,6 +397,7 @@ const COMMON: Partial<Record<Kind, EnemyArt>> = {
 };
 
 export const BOSS_ART: Record<StageId, EnemyArt> = {
+ 15:art("boss",15,"mech",105,76,LEAD,{head:"core",legs:"quad"},{scale:1.2,motionSpeed:4,strideAmp:1.4}),
  14:art("boss",14,"float",125,65,ECLIPSE,{head:"core",legs:"none"},{scale:1.2,motionSpeed:3,strideAmp:0}),
  13:art("boss",13,"mech",122,68,EDGE,{head:"core",legs:"quad"},{scale:1.2,motionSpeed:5,strideAmp:1.4}),
  12:art("boss",12,"mech",115,66,KILN,{head:"core",legs:"quad"},{scale:1.2,motionSpeed:4,strideAmp:1.4}),
@@ -435,6 +439,7 @@ export const BOSS_ART: Record<StageId, EnemyArt> = {
 };
 
 const MINION_ART: Record<StageId, EnemyArt> = {
+ 15:{...COMMON.minion!,stage:15,palette:LEAD},
  14:{...COMMON.minion!,stage:14,palette:ECLIPSE},
  13:{...COMMON.minion!,stage:13,palette:EDGE},
  12:{...COMMON.minion!,stage:12,palette:KILN},
@@ -513,7 +518,8 @@ const LOOM_ART:Partial<Record<Kind,EnemyArt>>={
 const KILN_ART:Partial<Record<Kind,EnemyArt>>={glazeling:art("glazeling",12,"mech",48,24,KILN,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),kilnstoker:art("kilnstoker",12,"mech",70,32,KILN,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),forkmason:art("forkmason",12,"mech",77,37,KILN,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),ashsled:art("ashsled",12,"mech",45,42,KILN,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),splitcrucible:art("splitcrucible",12,"mech",92,48,KILN,{head:"core",legs:"quad"},{scale:1.18,strideAmp:1.4}),glazejailer:art("glazejailer",12,"mech",80,56,KILN,{head:"core",legs:"quad"},{scale:1.18,strideAmp:1.4}),kilnvalve:art("kilnvalve",12,"device",36,18,KILN,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),};
 const EDGE_ART:Partial<Record<Kind,EnemyArt>>={scrapbound:art("scrapbound",13,"mech",45,26,EDGE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.6}),edgecaster:art("edgecaster",13,"mech",75,35,EDGE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.6}),stepcutter:art("stepcutter",13,"mech",69,30,EDGE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.6}),reelstalker:art("reelstalker",13,"mech",44,44,EDGE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.6}),twinclamp:art("twinclamp",13,"mech",85,55,EDGE,{head:"core",legs:"quad"},{scale:1.2,strideAmp:1.6}),edgepuppeteer:art("edgepuppeteer",13,"mech",105,46,EDGE,{head:"core",legs:"quad"},{scale:1.18,strideAmp:1.6}),};
 const ECLIPSE_ART:Partial<Record<Kind,EnemyArt>>={dialscrap:art("dialscrap",14,"mech",40,25,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),glowdisc:art("glowdisc",14,"float",60,37,ECLIPSE,{head:"core",legs:"none"},{scale:1,strideAmp:1.4}),reversegazer:art("reversegazer",14,"mech",90,32,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),offsetorrery:art("offsetorrery",14,"mech",60,43,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),twindial:art("twindial",14,"mech",96,53,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),eclipsewarden:art("eclipsewarden",14,"mech",110,52,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4})};
-Object.assign(COMMON,ECLIPSE_ART,EDGE_ART,KILN_ART,BELL_ART,TIDE_ART,PRISM_ART,ROOT_ART,WIND_ART,LIBRARY_ART,LOOM_ART);
+const LEAD_ART:Partial<Record<Kind,EnemyArt>>={leadgrub:art("leadgrub",15,"mech",38,28,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),pitchframe:art("pitchframe",15,"mech",65,34,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),kneehopper:art("kneehopper",15,"mech",78,35,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),offsetcart:art("offsetcart",15,"mech",58,47,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),twinpitch:art("twinpitch",15,"mech",83,54,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),presswarden:art("presswarden",15,"mech",95,48,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8})};
+Object.assign(COMMON,LEAD_ART,ECLIPSE_ART,EDGE_ART,KILN_ART,BELL_ART,TIDE_ART,PRISM_ART,ROOT_ART,WIND_ART,LIBRARY_ART,LOOM_ART);
 export function enemyArt(stage: StageId, kind: Kind): EnemyArt {
   if(stage===5&&BELL_ART[kind])return BELL_ART[kind]!;
   if (kind === "boss") return BOSS_ART[stage];

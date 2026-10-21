@@ -1,3 +1,4 @@
+import {drawFireForm,drawFireFieldForm} from "./WeaponFormArt";
 import { drawWaterForm,drawWaterFieldForm,drawBladeForm } from "./WeaponFormArt";
 import { gradeOf } from "../../battle/WeaponGrade";
 import { Graphics } from "cc";
@@ -127,6 +128,7 @@ export function drawGroundFields(g: Graphics, w: SurvivalWorld, reduced: boolean
       }
     } else {
       // Fire field: scorched bed, layered tongues, embers.
+      const grade=gradeOf("fire",w.weaponGrades);if(grade>1)drawFireFieldForm(g,x,y,r,grade,quiet);
       g.fillColor = ink("#251411", 64 * wash);
       g.circle(x, y, r);
       g.fill();
@@ -215,7 +217,8 @@ function drawBlade(g: Graphics, x: number, y: number, angle: number, p: any, qui
 
 }
 
-function drawFire(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false) {
+function drawFire(g: Graphics, x: number, y: number, angle: number, p: any, quiet=false,grade=1) {
+  if(grade>1){drawFireForm(g,x,y,angle,grade,p.child?.35:p.stats.mods.includes("heavy")?1:.65);return;}
   const c = SPELL.fire;
   const r = p.child ? 6 : p.stats.mods.includes("heavy") ? 17 : 10;
   cutTrail(g, x, y, angle, r * 3.8, r * .65, c.edge, 100);
@@ -343,7 +346,7 @@ export function drawProjectiles(g: Graphics, w: SurvivalWorld, reduced: boolean,
       y = p.y * 48;
     if (!w.visible(p, 1)) continue;
     if (p.skill === "blade") drawBlade(g, x, y, p.angle, p,reduced||crowded,gradeOf("blade",w.weaponGrades));
-    else if (p.skill === "fire") drawFire(g, x, y, p.angle, p,reduced||crowded);
+    else if (p.skill === "fire") drawFire(g, x, y, p.angle, p,reduced||crowded,gradeOf("fire",w.weaponGrades));
     else drawWater(g, x, y, p.angle, p,reduced||crowded,gradeOf("water",w.weaponGrades));
   }
 }
@@ -463,6 +466,7 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
         for(let i=0;i<Math.round(6*scale);i++)spawn("shard",x,y,i%2?c.core:c.edge,100,.18+rand()*.08,2.5);
         continue;
       }
+      if(e.skill==='fire'&&(e.grade??1)>1){const r=(e.radius??1)*48,n=e.grade===3?6:3;for(let i=0;i<n;i++){const a=i*Math.PI*2/n;spawn(e.grade===3?'shard':'crest',x+Math.cos(a)*r*.35,y+Math.sin(a)*r*.35,'#ffd398',e.grade===3?55:0,.22,2.5,0,r*.2);}spawn('fracture',x,y,'#edb578',0,.23,3,0,r);continue;}
       const heavy = e.form === "heavy";
       // Repeated heavy contacts share a short presentation gate, without delaying damage.
       if (heavy && particleTime < heavyAccentAt) continue;

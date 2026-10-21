@@ -78,7 +78,7 @@ test('confirmed repair code restores four clears and exactly 400 coins, no paid/
 });
 test('mistyped, out-of-range, stale or unsavable repair codes leave the wallet unchanged',()=>{
  const s=storage(),p=new ProgressStore(s),code=createRepairCode(4,400,'2026102101');
- assert.equal(p.applyRepairCode(code.replace('-400-','-401-'),0),'invalid');assert.equal(p.applyRepairCode(createRepairCode(15,400,'2026102101'),0),'invalid');
+ assert.equal(p.applyRepairCode(code.replace('-400-','-401-'),0),'invalid');assert.equal(p.applyRepairCode(createRepairCode(16,400,'2026102101'),0),'invalid');
  assert.equal(p.applyRepairCode(code,99),'stale');assert.equal(p.coins,0);
  const q=new ProgressStore({getItem:()=>null,setItem:()=>{throw Error('quota');}});assert.equal(q.applyRepairCode(code,0),'save-failed');assert.equal(q.coins,0);assert(!q.unlockedStage(2));
 });

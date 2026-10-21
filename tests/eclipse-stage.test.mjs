@@ -62,7 +62,7 @@ const pairs = (skill) =>
   );
 test("stage14 registration, formula health, elite coefficients and prerequisite remain independent", () => {
   const w = world();
-  assert.equal(STAGE_IDS.at(-1), 14);
+  assert(STAGE_IDS.includes(14));
   assert.equal(w.stageStrategy.map, eclipseMap);
   assert.equal(new SurvivalWorld(41, "ranger", 14).player.y, -8);
   assert(Math.abs(actor(w).maxHp - 61527.522077422276) < 1e-8);

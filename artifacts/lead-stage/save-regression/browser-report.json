@@ -1,0 +1,831 @@
+{
+  "compatible": {
+    "coins": 1640,
+    "stages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "hammer": true,
+    "wheel": true,
+    "notice": "已兼容读取旧存档，通关与金币已保留"
+  },
+  "list": [
+    "存档检查与恢复",
+    "账户金币 1640 · 同系列只占一席 · 进阶从下一局生效",
+    "已兼容读取旧存档，通关与金币已保留",
+    "主存档副本 · 7关 · 1640金币",
+    "通关记录：1、2、3、4、5、6、7 · 修订121",
+    "▸ 预览恢复",
+    "备用存档副本 · 7关 · 1640金币",
+    "通关记录：1、2、3、4、5、6、7 · 修订121",
+    "预览恢复",
+    "主存档副本 · 7关 · 1640金币",
+    "通关记录：1、2、3、4、5、6、7 · 修订120 · 已兼容读取",
+    "预览恢复",
+    "1/1",
+    "上一页",
+    "下一页",
+    "返回菜单",
+    "输入补回码"
+  ],
+  "beforeRestore": {
+    "coins": 0,
+    "stages": 0
+  },
+  "restored": {
+    "coins": 1640,
+    "stages": 7,
+    "hammer": true,
+    "notice": "记录已变化，请重新选择副本"
+  },
+  "reopened": {
+    "coins": 1640,
+    "stages": 7
+  },
+  "emptyInput": {
+    "hint": "请先在输入框填写补回码",
+    "coins": 1640,
+    "input": true
+  },
+  "nativeInput": {
+    "tag": "TEXTAREA",
+    "type": "textarea",
+    "hint": "无法读取剪贴板，请长按输入框粘贴或手动输入"
+  },
+  "invalidInput": {
+    "value": "bad-code",
+    "hint": "补回码无效或复制不完整，请检查后重试"
+  },
+  "typed": {
+    "value": "ASR1-4-400-2026102101-ekzqm6",
+    "editing": false
+  },
+  "repairPreview": {
+    "coins": 1640,
+    "stages": 7
+  },
+  "repaired": {
+    "coins": 400,
+    "stages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "available": [
+      "blade",
+      "fire",
+      "water",
+      "frost",
+      "lightning",
+      "ghost",
+      "bone",
+      "mine",
+      "void",
+      "holy"
+    ]
+  },
+  "coldRepair": {
+    "coins": 400,
+    "stages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "achievements": [
+      "siege_clear",
+      "sand_clear",
+      "thunder_clear",
+      "moon_clear"
+    ]
+  },
+  "coldVictory": {
+    "coins": 580,
+    "stages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "modWins": {
+      "blade": {
+        "orbit+return": [
+          5
+        ]
+      }
+    },
+    "notice": ""
+  },
+  "manualSaved": [
+    {
+      "slot": 1,
+      "state": "saved",
+      "coins": 580
+    },
+    {
+      "slot": 2,
+      "state": "saved",
+      "coins": 580
+    },
+    {
+      "slot": 3,
+      "state": "saved",
+      "coins": 580
+    }
+  ],
+  "manualOverwrite": {
+    "before": 580,
+    "after": 700
+  },
+  "manualLoaded": {
+    "before": 700,
+    "after": 580,
+    "states": [
+      "saved",
+      "saved",
+      "saved"
+    ]
+  },
+  "manualDeleted": {
+    "coins": 580,
+    "states": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
+  "compiledPassives": {
+    "fire": [
+      {
+        "damage": 33,
+        "radius": 1.6565023392678924
+      },
+      {
+        "damage": 13.200000000000001,
+        "radius": 1.325201871414314
+      },
+      {
+        "damage": 13.200000000000001,
+        "radius": 1.325201871414314
+      }
+    ],
+    "bursts": [
+      {
+        "type": "explosion",
+        "skill": "bone",
+        "form": "boneBurst",
+        "grade": 1,
+        "x": 2,
+        "y": 0,
+        "radius": 0.9
+      }
+    ],
+    "boneRemaining": false
+  },
+  "compiledGrowth": {
+    "hp": [
+      20580.000000000004,
+      26461.85410705019,
+      31922.98898614182,
+      36863.49633951607,
+      41252.28380785207,
+      45099.553840015426,
+      48438.810620323384,
+      51315.286721748256,
+      53778.666694023515,
+      55878.662409286786
+    ],
+    "strategies": [
+      "lamp",
+      "needle",
+      "frost",
+      "lightning",
+      "ghost",
+      "bone",
+      "mine",
+      "void",
+      "holy",
+      "hammer",
+      "wheel",
+      "blade",
+      "fire",
+      "water"
+    ],
+    "bossFracturedHit": 75
+  },
+  "compiledHammer": {
+    "first": 101.2,
+    "volley": 182.16000000000003
+  },
+  "sandDamage": {
+    "outside": 100,
+    "inside": 80,
+    "riftOutside": 100,
+    "riftInside": 94
+  },
+  "compiledLoom": {
+    "stage": 11,
+    "bossHP": 57662.46013152525,
+    "lines": 2,
+    "wheel3": "evolved",
+    "wheel4": "evolved",
+    "coins": 840
+  },
+  "loomQualification": {
+    "qualified": [
+      "blade",
+      "fire",
+      "water",
+      "frost",
+      "lightning",
+      "ghost",
+      "bone",
+      "mine"
+    ],
+    "achievement": true,
+    "wheel": 4,
+    "coins": 3240
+  },
+  "loomCold": {
+    "qualified": [
+      "blade",
+      "fire",
+      "water",
+      "frost",
+      "lightning",
+      "ghost",
+      "bone",
+      "mine"
+    ],
+    "achievement": true,
+    "wheel": 4,
+    "coins": 3240,
+    "slots": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
+  "kilnUpgrade": {
+    "results": [
+      "evolved",
+      "evolved",
+      "evolved"
+    ],
+    "grade": 4,
+    "coins": 720
+  },
+  "kilnQualified": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution"
+      ]
+    },
+    "achievement": true,
+    "bone": 4,
+    "coins": 7120
+  },
+  "kilnCold": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution"
+      ]
+    },
+    "achievement": true,
+    "bone": 4,
+    "wheel": 4,
+    "coins": 7120,
+    "slots": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
+  "edgeUpgrade": {
+    "results": [
+      "evolved",
+      "evolved"
+    ],
+    "grade": 3,
+    "coins": 6040,
+    "epic": "available"
+  },
+  "edgeQualified": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy"
+      ]
+    },
+    "achievement": true,
+    "water": 3,
+    "coins": 14200
+  },
+  "edgeCold": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy"
+      ]
+    },
+    "achievement": true,
+    "water": 3,
+    "bone": 4,
+    "wheel": 4,
+    "coins": 14200,
+    "slots": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
+  "eclipseUpgrade": {
+    "result": "evolved",
+    "grade": 4,
+    "coins": 12760
+  },
+  "eclipseQualified": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards",
+        "hunt+return"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy",
+        "embers+salvo"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring",
+        "pulse+wave"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward",
+        "brittle+sectors"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay",
+        "echo+storm"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap",
+        "haunt+swarm"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge",
+        "fan+marrow"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip",
+        "burrow+scatter"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel",
+        "binary+collapse"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution",
+        "brand+rain"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return",
+        "rift+sweep"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy",
+        "grind+twin"
+      ]
+    },
+    "achievement": true,
+    "water": 4,
+    "coins": 25720
+  },
+  "eclipseCold": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards",
+        "hunt+return"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy",
+        "embers+salvo"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring",
+        "pulse+wave"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward",
+        "brittle+sectors"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay",
+        "echo+storm"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap",
+        "haunt+swarm"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge",
+        "fan+marrow"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip",
+        "burrow+scatter"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel",
+        "binary+collapse"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution",
+        "brand+rain"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return",
+        "rift+sweep"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy",
+        "grind+twin"
+      ]
+    },
+    "achievement": true,
+    "water": 4,
+    "bone": 4,
+    "wheel": 4,
+    "coins": 25720,
+    "slots": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
+  "leadUpgrade": {
+    "results": [
+      "evolved",
+      "evolved"
+    ],
+    "grade": 3,
+    "coins": 24640,
+    "epic": "unavailable"
+  },
+  "leadQualified": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards",
+        "hunt+return",
+        "hunt+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy",
+        "embers+salvo",
+        "flame+salvo"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring",
+        "recall+wave",
+        "pulse+wave"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward",
+        "aftershock+sectors",
+        "brittle+sectors"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay",
+        "echo+storm",
+        "bridge+storm"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap",
+        "haunt+swarm",
+        "reap+swarm"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge",
+        "fan+marrow",
+        "fan+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip",
+        "burrow+scatter",
+        "burrow+fuse"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel",
+        "binary+collapse",
+        "collapse+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution",
+        "cross+rain",
+        "brand+rain"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return",
+        "rift+sweep",
+        "return+sweep"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy",
+        "grind+twin",
+        "curve+twin"
+      ]
+    },
+    "achievement": true,
+    "fire": 3,
+    "coins": 42880
+  },
+  "leadCold": {
+    "qualified": {
+      "blade": [
+        "orbit+return",
+        "orbit+shards",
+        "hunt+return",
+        "hunt+shards"
+      ],
+      "fire": [
+        "embers+heavy",
+        "flame+heavy",
+        "embers+salvo",
+        "flame+salvo"
+      ],
+      "water": [
+        "recall+spring",
+        "pulse+spring",
+        "recall+wave",
+        "pulse+wave"
+      ],
+      "frost": [
+        "aftershock+outward",
+        "brittle+outward",
+        "aftershock+sectors",
+        "brittle+sectors"
+      ],
+      "lightning": [
+        "echo+relay",
+        "bridge+relay",
+        "echo+storm",
+        "bridge+storm"
+      ],
+      "ghost": [
+        "execution+haunt",
+        "execution+reap",
+        "haunt+swarm",
+        "reap+swarm"
+      ],
+      "bone": [
+        "lance+marrow",
+        "lance+ridge",
+        "fan+marrow",
+        "fan+ridge"
+      ],
+      "mine": [
+        "scatter+trip",
+        "fuse+trip",
+        "burrow+scatter",
+        "burrow+fuse"
+      ],
+      "void": [
+        "binary+drift",
+        "drift+repel",
+        "binary+collapse",
+        "collapse+repel"
+      ],
+      "holy": [
+        "cross+execution",
+        "brand+execution",
+        "cross+rain",
+        "brand+rain"
+      ],
+      "hammer": [
+        "heavy+rift",
+        "heavy+return",
+        "rift+sweep",
+        "return+sweep"
+      ],
+      "wheel": [
+        "grind+heavy",
+        "curve+heavy",
+        "grind+twin",
+        "curve+twin"
+      ]
+    },
+    "achievement": true,
+    "fire": 3,
+    "water": 4,
+    "coins": 42880,
+    "slots": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
+  "errors": []
+}

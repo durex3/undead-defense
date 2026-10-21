@@ -5,6 +5,6 @@ export const CHARACTERS={
  necromancer:{name:"亡灵使者",stage:2,weapon:"fire" as Skill,description:"冷却缩减 8% · 拾取半径 +20%"},
 };
 export type CharacterId=keyof typeof CHARACTERS;
-export type StageId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
-export const STAGE_IDS: readonly StageId[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+export type StageId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15;
+export const STAGE_IDS: readonly StageId[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 export function stageNumber(id: StageId) { return STAGE_IDS.indexOf(id)+1; }

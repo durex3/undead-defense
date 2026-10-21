@@ -1,3 +1,4 @@
+import {drawLeadHazard} from "./LeadFoundryHazardArt";
 import {drawEclipseHazard} from "./EclipseHazardArt";
 import {drawEdgeHazard} from "./EdgeCourtHazardArt";
 import {drawKilnHazard} from "./KilnHazardArt";
@@ -60,6 +61,7 @@ export function drawHazards(g: Graphics, w: SurvivalWorld, reduced: boolean) {
   if (w.stageId === 6) drawTidePreviews(g,w);
   if (w.stageId === 3) drawThunderPreviews(g, w);
   for (const h of w.hazards) {
+    if(h.lead){drawLeadHazard(g,h,w.time);continue;}
     if(h.eclipse){drawEclipseHazard(g,h,w.time);continue;}
     if(h.edge){drawEdgeHazard(g,h,w.time);continue;}
     if(h.kiln){drawKilnHazard(g,h,w.time);continue;}
@@ -138,7 +140,7 @@ function progressOf(h: Hazard, time: number) {
 export function drawBossCastSignals(g: Graphics, w: SurvivalWorld) {
   for (const boss of w.enemies) {
     if (boss.kind !== "boss" || boss.hp <= 0) continue;
-    const pending = w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.due > w.time && !h.eclipse?.cancelled && !h.edge?.cancelled && !h.kiln?.cancelled && !h.loom?.cancelled && !h.library?.cancelled && !h.wind?.cancelled)
+    const pending = w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.due > w.time && !h.lead?.cancelled && !h.eclipse?.cancelled && !h.edge?.cancelled && !h.kiln?.cancelled && !h.loom?.cancelled && !h.library?.cancelled && !h.wind?.cancelled)
       .sort((a,b) => a.due - b.due)[0];
     if (!pending) continue;
     const x = boss.x * 48, y = boss.y * 48 + 152, p = progressOf(pending,w.time);

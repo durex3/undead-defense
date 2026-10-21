@@ -40,6 +40,7 @@ export interface ProgressData {
   modWins?: Partial<Record<Skill, Record<string, number[]>>>;
   sealOpeners?: Skill[];
   loomQualifiedOpeners?: Skill[];
+  leadQualified?:Partial<Record<Skill,string[]>>;
   eclipseQualified?:Partial<Record<Skill,string[]>>;
   edgeQualified?:Partial<Record<Skill,string[]>>;
   kilnQualified?:Partial<Record<Skill,string[]>>;
@@ -133,6 +134,9 @@ export class ProgressStore {
       d.settledRuns=Array.isArray(v.settledRuns)?Array.from(new Set<string>(v.settledRuns.filter((x:any)=>typeof x==="string"&&x.length<120))):[];
       d.grades={};if(v.grades && typeof v.grades==="object")for(const skill of ALL_WEAPONS)if(validGrade(skill,v.grades[skill]))d.grades[skill]=v.grades[skill];
       if(Array.isArray(v.openerWins))d.openerWins=v.openerWins.filter((x:any)=>ALL_WEAPONS.includes(x?.skill)&&stage(x.stage));
+      if(v.leadQualified && typeof v.leadQualified==='object'&&!Array.isArray(v.leadQualified)){
+        d.leadQualified={};for(const skill of ALL_WEAPONS){const pairs=v.leadQualified[skill];if(Array.isArray(pairs))d.leadQualified[skill]=Array.from(new Set<string>(pairs.filter((x:any)=>typeof x==='string'&&this.legalPair(skill,x.split('+'))).map((x:string)=>x.split('+').sort().join('+'))));}
+      }
       if(v.eclipseQualified && typeof v.eclipseQualified==='object'&&!Array.isArray(v.eclipseQualified)){
         d.eclipseQualified={};for(const skill of ALL_WEAPONS){const pairs=v.eclipseQualified[skill];if(Array.isArray(pairs))d.eclipseQualified[skill]=Array.from(new Set<string>(pairs.filter((x:any)=>typeof x==='string'&&this.legalPair(skill,x.split('+'))).map((x:string)=>x.split('+').sort().join('+'))));}
       }
@@ -272,6 +276,7 @@ export class ProgressStore {
           new Set(d.settledRuns).size === d.settledRuns.length)) &&
       (d?.grades === undefined || (d.grades && typeof d.grades === "object" && !Array.isArray(d.grades) && Object.entries(d.grades).every(([skill,g]) => (ALL_WEAPONS as readonly string[]).includes(skill) && validGrade(skill as Skill,g)))) &&
       (d?.openerWins === undefined || (Array.isArray(d.openerWins) && d.openerWins.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v?.skill) && (STAGE_IDS as readonly number[]).includes(v?.stage)))) &&
+      (d?.leadQualified===undefined||(d.leadQualified&&typeof d.leadQualified==='object'&&!Array.isArray(d.leadQualified)&&Object.entries(d.leadQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
       (d?.eclipseQualified===undefined||(d.eclipseQualified&&typeof d.eclipseQualified==='object'&&!Array.isArray(d.eclipseQualified)&&Object.entries(d.eclipseQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
       (d?.edgeQualified===undefined||(d.edgeQualified&&typeof d.edgeQualified==='object'&&!Array.isArray(d.edgeQualified)&&Object.entries(d.edgeQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
       (d?.kilnQualified===undefined||(d.kilnQualified&&typeof d.kilnQualified==='object'&&!Array.isArray(d.kilnQualified)&&Object.entries(d.kilnQualified).every(([skill,pairs]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(pairs)&&new Set(pairs).size===pairs.length&&pairs.every((pair:any)=>typeof pair==='string'&&this.legalPair(skill as Skill,pair.split('+'))&&pair===pair.split('+').sort().join('+'))))) &&
@@ -368,6 +373,7 @@ export class ProgressStore {
   }
   achievementProgress(id: string) {
     if(this.hasAchievement(id)) return "已完成";
+    if(id==="lead_twelve_paths")return `踏空起手 ${Object.values(this.data.leadQualified??{}).filter(v=>v&&v.length>=4).length}/12 · 每种起手4组双改`;
     if(id==="eclipse_twelve_paths")return `逐晖起手 ${Object.values(this.data.eclipseQualified??{}).filter(v=>v&&v.length>=3).length}/12 · 每种起手3组双改`;
     if(id==="edge_twelve_paths")return `双改起手 ${Object.values(this.data.edgeQualified??{}).filter(v=>v&&v.length>=2).length}/12 · 三阶段交棒反击且Boss无伤`;
     if(id==="kiln_ten_paths")return `双路线起手 ${Object.values(this.data.kilnQualified??{}).filter(v=>v&&v.length>=2).length}/10 · 三阶段断源且Boss无伤`;
@@ -421,6 +427,11 @@ export class ProgressStore {
         next.openerWins ??= [];
         if(!next.openerWins.some(v=>v.skill===opener && v.stage===w.stageId)) next.openerWins.push({skill:opener,stage:w.stageId});
         if(new Set(next.openerWins.map(v=>v.skill)).size>=5 && new Set(next.openerWins.map(v=>v.stage)).size>=3) achievements.add("five_openers");
+        if(w.stageId===15&&w.skills[opener]===8&&this.legalPair(opener,w.mods[opener])&&[1,2,3].every(phase=>w.challenge.leadPhases.has(phase))&&w.challenge.bossHits===0){
+          next.leadQualified??={};const key=[...w.mods[opener]].sort().join('+');
+          next.leadQualified[opener]=Array.from(new Set([...(next.leadQualified[opener]??[]),key]));
+          if(Object.values(next.leadQualified).filter(v=>v&&v.length>=4).length>=12)achievements.add('lead_twelve_paths');
+        }
         if(w.stageId===14&&w.skills[opener]===8&&this.legalPair(opener,w.mods[opener])&&[1,2,3].every(phase=>w.challenge.eclipsePhases.has(phase))&&w.challenge.bossHits===0){
           next.eclipseQualified??={};const key=[...w.mods[opener]].sort().join('+');
           next.eclipseQualified[opener]=Array.from(new Set([...(next.eclipseQualified[opener]??[]),key]));

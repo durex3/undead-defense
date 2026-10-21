@@ -1,0 +1,173 @@
+{
+  "scope": "Invulnerable 960s structural scheduler diagnostic. Script clears fodder after 4.5s, specials after 18s, elites after 30s, and sets Boss phase health thresholds; no claim of normal survival or legitimate wins.",
+  "rows": [
+    {
+      "mode": "stationary",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "leadgrub",
+        "pitchframe",
+        "kneehopper",
+        "offsetcart",
+        "twinpitch",
+        "presswarden",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 1027,
+          "kind": "twinpitch",
+          "time": 135.05,
+          "hp": 3625.705289037442
+        },
+        {
+          "id": 1678,
+          "kind": "presswarden",
+          "time": 225,
+          "hp": 4605.629786642148
+        },
+        {
+          "id": 2355,
+          "kind": "twinpitch",
+          "time": 305,
+          "hp": 4500.358248661612
+        },
+        {
+          "id": 2371,
+          "kind": "presswarden",
+          "time": 311,
+          "hp": 4737.219209117487
+        }
+      ],
+      "stats": {
+        "balls": 172,
+        "rejected": 8,
+        "cancelled": 12,
+        "qualified": 0,
+        "eliteCasts": {
+          "twinpitch": 7,
+          "presswarden": 7
+        },
+        "patterns": {
+          "A": 29,
+          "B": 30,
+          "C": 28
+        },
+        "phases": [
+          26,
+          23,
+          38
+        ],
+        "phasePatterns": [
+          {
+            "A": 9,
+            "B": 9,
+            "C": 8
+          },
+          {
+            "A": 8,
+            "B": 8,
+            "C": 7
+          },
+          {
+            "A": 12,
+            "B": 13,
+            "C": 13
+          }
+        ]
+      },
+      "bossState": "recover"
+    },
+    {
+      "mode": "moving",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "leadgrub",
+        "pitchframe",
+        "kneehopper",
+        "offsetcart",
+        "twinpitch",
+        "presswarden",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 695,
+          "kind": "twinpitch",
+          "time": 135.05,
+          "hp": 3625.705289037442
+        },
+        {
+          "id": 1294,
+          "kind": "presswarden",
+          "time": 225,
+          "hp": 4605.629786642148
+        },
+        {
+          "id": 1897,
+          "kind": "twinpitch",
+          "time": 305,
+          "hp": 4500.358248661612
+        },
+        {
+          "id": 1942,
+          "kind": "presswarden",
+          "time": 311,
+          "hp": 4737.219209117487
+        }
+      ],
+      "stats": {
+        "balls": 40,
+        "rejected": 23,
+        "cancelled": 0,
+        "qualified": 0,
+        "eliteCasts": {
+          "twinpitch": 1,
+          "presswarden": 1
+        },
+        "patterns": {
+          "A": 8,
+          "B": 8,
+          "C": 7
+        },
+        "phases": [
+          7,
+          5,
+          11
+        ],
+        "phasePatterns": [
+          {
+            "A": 3,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "A": 2,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "A": 3,
+            "B": 4,
+            "C": 4
+          }
+        ]
+      },
+      "bossState": "seek"
+    }
+  ]
+}

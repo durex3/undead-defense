@@ -34,6 +34,7 @@ export const ENEMY_KINDS = [
   "glazeling","kilnstoker","forkmason","ashsled","splitcrucible","glazejailer","kilnvalve",
   "scrapbound","edgecaster","stepcutter","reelstalker","twinclamp","edgepuppeteer",
   "dialscrap","glowdisc","reversegazer","offsetorrery","twindial","eclipsewarden",
+  "leadgrub","pitchframe","kneehopper","offsetcart","twinpitch","presswarden",
   // 通用
   "minion", "boss",
 ] as const;
@@ -52,6 +53,12 @@ export interface EnemyConfig {
 }
 
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+ leadgrub:{name:"铅屑爬俑",health:1.2,speed:1.84,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
+ pitchframe:{name:"单臂抛架",health:2.15,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ kneehopper:{name:"折膝跃架",health:2.2,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ offsetcart:{name:"偏斗投车",health:2.2,speed:1.1,contact:14,xp:2,threat:2,cap:1,sprite:"",scale:3.4},
+ twinpitch:{name:"双臂投铸者",health:11.4,speed:1.14,contact:12,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+ presswarden:{name:"三节压铸体",health:12,speed:1.1,contact:13,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
  dialscrap:{name:"晦砂蠹",health:1.18,speed:1.82,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
  glowdisc:{name:"引晖巡盘",health:2.1,speed:1.1,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
  reversegazer:{name:"回晷长颈",health:2.1,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},

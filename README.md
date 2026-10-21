@@ -1,6 +1,8 @@
 # 余烬幸存者
 
-当前本地开发版 **0.36.0** 已开放十四关；新增「蚀昼观台」旋光/柱影与三阶段Boss、两项成就及圣水史诗进阶。详见[当前基线](docs/current-baseline.md)与[第十四关开发记录](docs/stage-14-implementation.md)。按要求未上传微信后台，后台仍为0.33.9。以下旧版本记录按历史保留。
+当前本地开发版 **0.37.0** 已开放十五关；新增「沉铅铸庭」弹跳落点/空中无伤与三阶段Boss、两项成就及火球精良/稀有进阶。详见[当前基线](docs/current-baseline.md)与[第十五关开发记录](docs/stage-15-implementation.md)。按要求未上传微信后台，后台仍为0.33.9。第16关起Boss结构逐关设计，可采用复活变身，不再固定三阶段。以下旧版本记录按历史保留。
+
+第十五关[沉铅铸庭设计](docs/stage-15-leadfoundry.md)已在本地实现，验证边界见开发记录。
 
 Cocos Creator 3.8.8，横屏2D生存小游戏。场景入口 `assets/scenes/Main.scene`。
 

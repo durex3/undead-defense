@@ -1,3 +1,4 @@
+import {drawFireForm} from "./WeaponFormArt";
 import { drawWaterForm, drawBoneForm, drawBladeForm, drawHammerForm, drawWheelForm } from "./WeaponFormArt";
 import type { Graphics } from "cc";
 import type { Skill } from "../../battle/SurvivalConfig";
@@ -14,6 +15,7 @@ export function drawWeaponGlyph(g: Graphics, skill: Skill, grade=1) {
     g.fill();
     g.stroke();
   };
+  if(skill==="fire"&&grade>1){drawFireForm(g,0,0,0,grade,.9);return;}
   if(skill==="water"&&grade>1){drawWaterForm(g,0,0,0,grade,.8);return;}
   if(skill==="bone"&&grade>1){drawBoneForm(g,0,0,.8,grade,.8);return;}
   if(skill==="blade" && grade>1) {drawBladeForm(g,0,0,.8,grade);return;}

@@ -1,3 +1,4 @@
+import {LEAD_BASES} from "../../battle/LeadFoundryMap";
 import {ECLIPSE_PILLARS} from "../../battle/EclipseMap";
 import {EDGE_BASES} from "../../battle/EdgeCourtMap";
 import {KILN_BASES} from "../../battle/KilnMap";
@@ -16,9 +17,9 @@ import { MOON_BASES } from "../../battle/MoonMap";
 import { ink } from "./Ink";
 
 type Point = [number, number];
-const floors = ["", "#303439", "#674936", "#202e35", "#24382e", "#34303b", "#25383c", "#302d3b", "#303b32", "#293740", "#30343d", "#3a3037", "#3b2c29", "#29323b", "#2b2b38"];
+const floors = ["", "#303439", "#674936", "#202e35", "#24382e", "#34303b", "#25383c", "#302d3b", "#303b32", "#293740", "#30343d", "#3a3037", "#3b2c29", "#29323b", "#2b2b38", "#303638"];
 export const stageMapBackdrop = (stage: number) => floors[stage] || floors[1];
-const grain = ["", "#454a4c", "#8c6345", "#374950", "#3c5140", "#554957", "#56665e", "#51485d", "#566052", "#52616a", "#575561", "#665361", "#79594b", "#53616a", "#625a72"];
+const grain = ["", "#454a4c", "#8c6345", "#374950", "#3c5140", "#554957", "#56665e", "#51485d", "#566052", "#52616a", "#575561", "#665361", "#79594b", "#53616a", "#625a72", "#5f6c6b"];
 const hash = (x: number, y: number) => {
   const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
   return n - Math.floor(n);
@@ -104,6 +105,7 @@ export function drawInkMap(g: Graphics, stage: number) {
     }
     else if (stage === 2) path(g, [[x-34,y],[x-8,y+10],[x+34,y+4],[x+12,y+2],[x-5,y+5]]);
     else if (stage === 3) path(g, [[x-32,y-32],[x+29,y-32],[x+29,y+23],[x+19,y+32],[x-32,y+32]]);
+    else if(stage===15) path(g,[[x-24,y-17],[x+26,y-17],[x+29,y+12],[x+15,y+20],[x-26,y+14]]);
     else if(stage===14) path(g,[[x-30,y-16],[x+22,y-16],[x+30,y+10],[x+19,y+18],[x-30,y+18]]);
     else if(stage===13) path(g,[[x-23,y-8],[x+29,y-8],[x+23,y+9],[x-27,y+5]]);
     else if(stage===12) path(g,[[x-30,y-25],[x+27,y-25],[x+30,y+20],[x+12,y+25],[x-30,y+22]]);
@@ -156,9 +158,13 @@ export function drawInkMap(g: Graphics, stage: number) {
     g.strokeColor = ink("#a97d54", 125); g.lineWidth = 4;
     g.moveTo(x+48,y); g.arc(x,y,48,0,Math.PI*2,false); g.stroke();
   }
-  const obstacles = stage === 14 ? ECLIPSE_PILLARS : stage === 13 ? EDGE_BASES : stage === 12 ? KILN_BASES : stage === 11 ? LOOM_BASES : stage === 10 ? LIBRARY_BASES : stage === 9 ? WIND_BASES : stage === 8 ? ROOT_BASES : stage === 7 ? PRISM_BASES : stage === 6 ? TIDE_BASES : stage === 5 ? BELL_BASES : stage === 1 ? SIEGE_WALLS : stage === 2 ? SAND_ROCKS : stage === 3 ? THUNDER_BASES : MOON_BASES;
+  const obstacles = stage === 15 ? LEAD_BASES : stage === 14 ? ECLIPSE_PILLARS : stage === 13 ? EDGE_BASES : stage === 12 ? KILN_BASES : stage === 11 ? LOOM_BASES : stage === 10 ? LIBRARY_BASES : stage === 9 ? WIND_BASES : stage === 8 ? ROOT_BASES : stage === 7 ? PRISM_BASES : stage === 6 ? TIDE_BASES : stage === 5 ? BELL_BASES : stage === 1 ? SIEGE_WALLS : stage === 2 ? SAND_ROCKS : stage === 3 ? THUNDER_BASES : MOON_BASES;
   for (const b of obstacles) {
     const x = b.x * 48, y = b.y * 48, w = b.halfWidth * 48, h = b.halfHeight * 48;
+    if(stage===15){
+      face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],'#5b6b6b');g.strokeColor=ink('#b8a58a');g.lineWidth=3;g.rect(x-w,y-h,w*2,h*2);g.stroke();
+      face(g,[[x-w+4,y+h-4],[x+w-4,y+h-4],[x+w-12,y+h-17],[x-w+12,y+h-17]],'#99a39a');g.strokeColor=ink('#303f43');g.lineWidth=4;for(let xx=x-w+14;xx<x+w-7;xx+=24){g.moveTo(xx,y-h+8);g.lineTo(xx+6,y+h-18);}g.stroke();continue;
+    }
     if(stage===14){
       face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],'#686071');
       g.strokeColor=ink('#b9a787');g.lineWidth=3;g.rect(x-w,y-h,w*2,h*2);g.stroke();
