@@ -28,9 +28,10 @@ export function battleHud(
   w: SurvivalWorld,
   touchMode: boolean,
   visiblePotions: readonly { x: number; y: number }[],
+  accountCoins?: number,
 ) {
   const bossTime = bossTimeForStage(w.stageId);
-  const stats = `Lv.${w.level}                 ${w.time >= bossTime ? "首领战 " + clock(w.time - bossTime) : clock(w.time) + " / " + clock(bossTime)}                 击败 ${w.kills}                 生命 ${Math.ceil(w.hp)}`;
+  const stats = `Lv.${w.level}        ${w.time >= bossTime ? "首领战 " + clock(w.time - bossTime) : clock(w.time) + " / " + clock(bossTime)}        击败 ${w.kills}        生命 ${Math.ceil(w.hp)}${accountCoins === undefined ? "" : ` · 金币 ${accountCoins}`}`;
   const entries = combatWeaponEntries(w);
   const weapons = entries
     .map((entry, i) => entry + (i % 3 === 2 ? "\n" : "    "))

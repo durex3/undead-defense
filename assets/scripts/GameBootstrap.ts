@@ -611,7 +611,7 @@ export class GameBootstrap extends Component {
       hy = w.player.y * 48 - this.camera.y - 24;
     this.rect(b, hx - 25, hy, 50, 6, "#371f32");
     this.rect(b, hx - 25, hy, (50 * w.hp) / w.maxHp, 6, "#f18787");
-    const hud = battleHud(w, this.touchMode, visiblePotions);
+    const hud = battleHud(w, this.touchMode, visiblePotions, this.progress.coins);
     this.bossHealthLabel.node.active = !!hud.bossHealth;
     if (hud.bossHealth) {
       this.bossHealthLabel.string = hud.bossHealth.label;

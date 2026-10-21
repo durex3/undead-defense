@@ -427,6 +427,7 @@ export class GameMenus {
     const h = this.host,
       w = h.world;
     h.muteButton(445, 235, false);
+    h.text(h.overlay, `账户金币 ${h.progress.coins}`, -400, 235, 21, "#f3d798", 260);
     if (this.detailSkill) {
       const s = this.detailSkill;
       h.text(
@@ -515,14 +516,16 @@ export class GameMenus {
     this.host.text(this.host.overlay, this.host.progress.hasAchievement("grave_twelve_paths")?"余烬幸存者 · 拆棺猎手":this.host.progress.hasAchievement("lead_twelve_paths")?"余烬幸存者 · 踏空铸客":this.host.progress.hasAchievement("eclipse_twelve_paths")?"余烬幸存者 · 逐晖者":this.host.progress.hasAchievement("edge_twelve_paths")?"余烬幸存者 · 识锋者":this.host.progress.hasAchievement("kiln_ten_paths")?"余烬幸存者 · 断焰司炉":this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
     this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
     this.host.muteButton(425, 225, true);
+    this.host.text(this.host.overlay, `账户金币 ${this.host.progress.coins}`, 425, 174, 21, "#f3d798", 230);
     this.host.button(this.host.overlay,"存档管理",-430,225,160,38,()=>this.showManualSaves());
     this.host.text(
       this.host.overlay,
       "十四系列 · 十把默认开放 · 金币与成就各解锁两把",
-      0,
+      -110,
       174,
-      20,
+      18,
       "#b9c8d5",
+      760,
     );
     (Object.keys(CHARACTERS) as CharacterId[]).forEach((id, i) => {
       const c = CHARACTERS[id],
@@ -1031,6 +1034,7 @@ export class GameMenus {
     const index = STAGE_IDS.indexOf(preview);
     const unlocked = h.progress.unlockedStage(preview);
     const best = h.progress.data.stageBest?.[preview];
+    h.text(h.overlay, `账户金币 ${h.progress.coins}`, 420, 283, 20, "#f3d798", 230);
     h.text(h.overlay, `选择战场 · ${index + 1} / ${STAGE_IDS.length}`, 0, 283, 18, "#a9bac4");
     h.text(h.overlay, STAGES[preview].name, 0, 237, 32, "#f3deac", 800);
 
