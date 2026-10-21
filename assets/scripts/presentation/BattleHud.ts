@@ -1,3 +1,4 @@
+import {loomState} from "../battle/LoomGeometry";
 import { moonHint } from "../battle/MoonSystem";
 import { thunderHint } from "../battle/ThunderSystem";
 import { mapRouteHint } from "../battle/MapEncounters";
@@ -37,15 +38,17 @@ export function battleHud(
     .trim();
   const boss = w.enemies.find((e) => e.kind === "boss" && e.hp > 0);
   const lateHazard = w.hazards.find((h) => h.damageLabel);
-  const bossHazard = boss && w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.until > w.time && !h.library?.cancelled && !h.wind?.cancelled)
+  const bossHazard = boss && w.hazards.filter(h => h.source === boss.id && h.created <= w.time && h.until > w.time && !h.loom?.cancelled && !h.loom?.cancelled && !h.library?.cancelled && !h.wind?.cancelled)
     .sort((a,b) => Number(a.due <= w.time)-Number(b.due <= w.time) || a.due-b.due)[0];
   const bossAdvice: Record<number,string> = {
+    11:bossHazard?.loom?`织线${bossHazard.loom.order} · ${loomState(bossHazard,w.time)==="slack"?"松线可穿，留意第二拍":loomState(bossHazard,w.time)==="tight"?"紧线绕端，离开线体":"看端点与倒计时，准备换侧"}`:"紧线绕端，松弛换侧",
     1: bossHazard?.kind === "bellRing" ? "进入空心内圈或退出外圈" : bossHazard?.siegeCharge ? "横向离开冲锋通道" : "离开实心区域，留意下一击",
     2:"离开锁定区域，留意折返与连喷",3:"离开锁线，向电栅缺口移动",4:"躲开落点，留意回刃折返",
     5:"借钟台避声浪，离开蜡印",6:"绕过浪头，离开锚点",7:"避开完整折线，晶核可击碎",
     8:"空心可进，实心须出，绕藤端换侧",9:"顺风换位，横向避开曲羽",10:"踩配对封签撤招，绕开页刃",
   };
-  const hint = w.stageId === 10 ? "踩签撤招 · 看配对编号 · 中缝可留，端头可绕" : w.stageId === 9 ? "借风换位 · 曲羽不追踪 · 击破一名精英可减压" : w.stageId === 8 ? "绕端换侧 · 空心可进，实心须出 · 收招护皮开缝" : w.stageId === 7 ? "看完整折线 · 晶核可击碎 · 收招时甲缝暴露" : w.stageId === 6 ? "绕过浪头再切回 · 厚蜡甲可裂解 · 收舷时反击" : w.stageId === 5 ? "钟台挡声浪 · 蜡印需换位 · 收招甲缝可反击" : w.stageId === 4
+  const loomProgress=w.stageId===11?`松线双穿 I${w.challenge.loomPhases.has(1)?"✓":"·"} II${w.challenge.loomPhases.has(2)?"✓":"·"} III${w.challenge.loomPhases.has(3)?"✓":"·"}`:"";
+  const hint = w.stageId === 11 ? "紧线绕端 · 松弛可穿 · 看第二拍与移梭箭头" : w.stageId === 10 ? "踩签撤招 · 看配对编号 · 中缝可留，端头可绕" : w.stageId === 9 ? "借风换位 · 曲羽不追踪 · 击破一名精英可减压" : w.stageId === 8 ? "绕端换侧 · 空心可进，实心须出 · 收招护皮开缝" : w.stageId === 7 ? "看完整折线 · 晶核可击碎 · 收招时甲缝暴露" : w.stageId === 6 ? "绕过浪头再切回 · 厚蜡甲可裂解 · 收舷时反击" : w.stageId === 5 ? "钟台挡声浪 · 蜡印需换位 · 收招甲缝可反击" : w.stageId === 4
     ? moonHint(w)
     : w.stageId === 3
       ? thunderHint(w)
@@ -79,11 +82,11 @@ export function battleHud(
   const bossHealth = boss
     ? {
         ratio: Math.max(0, Math.min(1, boss.hp / Math.max(1, boss.maxHp))),
-        label: `${STAGES[w.stageId].boss} · ${w.stageId===10?["第一阶段 I","第二阶段 II","第三阶段 III"][boss.bossPhase-1]:boss.bossPhase >= 2 ? "狂怒" : "第一阶段"} · ${Math.ceil(boss.hp)} / ${Math.ceil(boss.maxHp)}`,
+        label: `${STAGES[w.stageId].boss} · ${w.stageId>=10?["第一阶段 I","第二阶段 II","第三阶段 III"][boss.bossPhase-1]:boss.bossPhase >= 2 ? "狂怒" : "第一阶段"} · ${Math.ceil(boss.hp)} / ${Math.ceil(boss.maxHp)}`,
       }
     : null;
   const bossHint = bossHazard
     ? `${bossHazard.damageLabel || "首领技能"} · ${bossHazard.due > w.time ? `${(bossHazard.due-w.time).toFixed(1)}秒后释放` : "释放中"} · ${bossAdvice[w.stageId]}`
     : boss && bossExposed(w,boss) ? "破绽！伤害 +25% · 抓紧反击" : hint;
-  return { stats, weapons, hint: bossHint, nova, bossHealth };
+  return { stats, weapons, hint: loomProgress&&boss?bossHint+" · "+loomProgress:bossHint, nova, bossHealth };
 }

@@ -30,6 +30,7 @@ export const ENEMY_KINDS = [
   "rootshuffler","vinecantor","wreathpod","bulbmaw","biforktangler","pairedcalyx","migratorycorolla",
   "fledglingeffigy","reedwhistler","sickleplumer","foldedskimmer","windarbiter","plumejudge",
   "paperbonegrub","sealclerk","folioray","spineclasp","sealprovost","claspjailer",
+  "ragbound","weftbinder","hemcocoon","shuttlecrawler","twinweftwarden","shuttlejailer",
   // 通用
   "minion", "boss",
 ] as const;
@@ -48,6 +49,13 @@ export interface EnemyConfig {
 }
 
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+ ragbound:{name:"缠屑偶",health:1.12,speed:1.7,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
+ weftbinder:{name:"引纬匠",health:1.9,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ hemcocoon:{name:"回扣蛹",health:2,speed:1.02,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ shuttlecrawler:{name:"偏梭螳",health:1.95,speed:1.18,contact:14,xp:2,threat:2,cap:1,sprite:"",scale:3.4},
+ twinweftwarden:{name:"双纬监工",health:10,speed:1.15,contact:11,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+ shuttlejailer:{name:"断梭刑匠",health:10.5,speed:1.1,contact:12,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+
  paperbonegrub:{name:"纸骨蠹",health:1.1,speed:1.65,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
  sealclerk:{name:"押印书吏",health:1.9,speed:1.15,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
  folioray:{name:"巡页鳐",health:1.85,speed:1.2,contact:12,xp:2,threat:2,cap:2,sprite:"",scale:3.4},

@@ -39,6 +39,7 @@ export interface ProgressData {
   openerWins?: {skill: Skill; stage: number}[];
   modWins?: Partial<Record<Skill, Record<string, number[]>>>;
   sealOpeners?: Skill[];
+  loomQualifiedOpeners?: Skill[];
   coins?: number;
   purchasedWeapons?: string[];
   achievements?: string[];
@@ -129,6 +130,7 @@ export class ProgressStore {
       d.settledRuns=Array.isArray(v.settledRuns)?Array.from(new Set<string>(v.settledRuns.filter((x:any)=>typeof x==="string"&&x.length<120))):[];
       d.grades={};if(v.grades && typeof v.grades==="object")for(const skill of ALL_WEAPONS)if(validGrade(skill,v.grades[skill]))d.grades[skill]=v.grades[skill];
       if(Array.isArray(v.openerWins))d.openerWins=v.openerWins.filter((x:any)=>ALL_WEAPONS.includes(x?.skill)&&stage(x.stage));
+      if(Array.isArray(v.loomQualifiedOpeners))d.loomQualifiedOpeners=Array.from(new Set<Skill>(v.loomQualifiedOpeners.filter((x:any)=>ALL_WEAPONS.includes(x))));
       if(Array.isArray(v.sealOpeners))d.sealOpeners=Array.from(new Set<Skill>(v.sealOpeners.filter((x:any)=>ALL_WEAPONS.includes(x))));
       if(v.modWins && typeof v.modWins==="object") {
         d.modWins={};for(const skill of ALL_WEAPONS){const history=v.modWins[skill];if(!history||typeof history!=="object"||Array.isArray(history))continue;
@@ -258,6 +260,7 @@ export class ProgressStore {
           new Set(d.settledRuns).size === d.settledRuns.length)) &&
       (d?.grades === undefined || (d.grades && typeof d.grades === "object" && !Array.isArray(d.grades) && Object.entries(d.grades).every(([skill,g]) => (ALL_WEAPONS as readonly string[]).includes(skill) && validGrade(skill as Skill,g)))) &&
       (d?.openerWins === undefined || (Array.isArray(d.openerWins) && d.openerWins.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v?.skill) && (STAGE_IDS as readonly number[]).includes(v?.stage)))) &&
+      (d?.loomQualifiedOpeners === undefined || (Array.isArray(d.loomQualifiedOpeners) && d.loomQualifiedOpeners.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v)) && new Set(d.loomQualifiedOpeners).size===d.loomQualifiedOpeners.length)) &&
       (d?.sealOpeners === undefined || (Array.isArray(d.sealOpeners) && d.sealOpeners.every((v:any)=>(ALL_WEAPONS as readonly string[]).includes(v)) && new Set(d.sealOpeners).size===d.sealOpeners.length)) &&
       (d?.modWins === undefined || (d.modWins && typeof d.modWins === "object" && !Array.isArray(d.modWins) && Object.entries(d.modWins).every(([skill,combinations]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill) && combinations && typeof combinations === "object" && !Array.isArray(combinations) && Object.entries(combinations).every(([pair,stages]:[string,any])=>this.legalPair(skill as Skill,pair.split("+")) && Array.isArray(stages) && stages.every((id:any)=>(STAGE_IDS as readonly number[]).includes(id)))))) &&
       d?.version === 1 &&
@@ -350,6 +353,7 @@ export class ProgressStore {
   }
   achievementProgress(id: string) {
     if(this.hasAchievement(id)) return "已完成";
+    if(id==="loom_eight_paths") return `合格起手 ${this.data.loomQualifiedOpeners?.length??0}/8 · 三阶段双线且Boss无伤`;
     if(id==="seal_pathfinder") return `合格起手 ${this.data.sealOpeners?.length??0}/6 · 从本版开始统计`;
     if(id==="five_openers") return `起手 ${new Set(this.data.openerWins?.map(v=>v.skill)).size}/5 · 关卡 ${new Set(this.data.openerWins?.map(v=>v.stage)).size}/3`;
     return "以胜利结算验证；新挑战从本版开始统计";
@@ -393,12 +397,16 @@ export class ProgressStore {
       if(w.stageId===3 && mastered.length) achievements.add("forge_mastery");
       if(w.stageId===3 && w.challenge.devices.size>=4) achievements.add("device_tactician");
       achievements.add(STAGE_CLEAR_IDS[w.stageId]);
-      if(w.stageId>=7 && mastered.length>=3) achievements.add("triple_mastery");
+      if(w.stageId>=7 && w.stageId<=10 && mastered.length>=3) achievements.add("triple_mastery");
       if(w.startingWeapon) {
         const opener=w.startingWeapon;
         next.openerWins ??= [];
         if(!next.openerWins.some(v=>v.skill===opener && v.stage===w.stageId)) next.openerWins.push({skill:opener,stage:w.stageId});
         if(new Set(next.openerWins.map(v=>v.skill)).size>=5 && new Set(next.openerWins.map(v=>v.stage)).size>=3) achievements.add("five_openers");
+        if(w.stageId===11 && [1,2,3].every(phase=>w.challenge.loomPhases.has(phase)) && w.challenge.bossHits===0) {
+          next.loomQualifiedOpeners=Array.from(new Set([...(next.loomQualifiedOpeners??[]),opener]));
+          if(next.loomQualifiedOpeners.length>=8)achievements.add("loom_eight_paths");
+        }
         if(w.stageId===10 && [1,2,3].every(phase=>w.challenge.bossSealPhases.has(phase)) && w.challenge.bossHits===0) {
           next.sealOpeners=Array.from(new Set([...(next.sealOpeners??[]),opener]));
           if(next.sealOpeners.length>=6) achievements.add("seal_pathfinder");

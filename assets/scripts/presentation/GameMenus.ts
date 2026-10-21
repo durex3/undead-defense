@@ -511,13 +511,13 @@ export class GameMenus {
     this.host.progress.flush();
     this.host.overlay.destroyAllChildren();
     this.host.panel(this.host.overlay, 0, 0, 1100, 570, "#191e2d");
-    this.host.text(this.host.overlay, "余烬幸存者 · 选择冒险", 0, 220, 34);
+    this.host.text(this.host.overlay, this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
     this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
     this.host.muteButton(425, 225, true);
     this.host.button(this.host.overlay,"存档管理",-430,225,160,38,()=>this.showManualSaves());
     this.host.text(
       this.host.overlay,
-      "十二武器 · 十把默认开放 · 金币与成就各解锁一把",
+      "十四系列 · 十把默认开放 · 金币与成就各解锁两把",
       0,
       174,
       20,
@@ -849,6 +849,7 @@ export class GameMenus {
       h.text(h.overlay,a.name+(done?" · 已完成":" · 未完成"),-265,y+29,21,done?"#a8d7c7":"#f3deac",500);
       h.text(h.overlay,a.condition,0,y,15,"#d5dfdc",1020);
       h.text(h.overlay,`奖励：${a.reward} · ${h.progress.achievementProgress(a.id)}`,0,y-29,14,"#b9c8d5",1020);
+      if(a.id==='loom_eight_paths'&&done){const badge=h.make('LoomAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#d9c0f0');g.lineWidth=3;for(let v=-1;v<=1;v++){g.moveTo(v*8-13,-9);g.lineTo(v*8+13,9);g.moveTo(v*8-13,9);g.lineTo(v*8+13,-9);}g.stroke();}
       const weapon=a.weapon;if(weapon)this.catalogButton("查看奖励武器",345,y+29,260,29,()=>this.showWeaponDetail(weapon));
     });
     h.text(h.overlay,`${this.achievementPage+1}/${pages}`,0,-185,17);

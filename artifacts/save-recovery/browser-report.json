@@ -229,5 +229,48 @@
     "riftOutside": 100,
     "riftInside": 94
   },
+  "compiledLoom": {
+    "stage": 11,
+    "bossHP": 57662.46013152525,
+    "lines": 2,
+    "wheel3": "evolved",
+    "wheel4": "evolved",
+    "coins": 840
+  },
+  "loomQualification": {
+    "qualified": [
+      "blade",
+      "fire",
+      "water",
+      "frost",
+      "lightning",
+      "ghost",
+      "bone",
+      "mine"
+    ],
+    "achievement": true,
+    "wheel": 4,
+    "coins": 3240
+  },
+  "loomCold": {
+    "qualified": [
+      "blade",
+      "fire",
+      "water",
+      "frost",
+      "lightning",
+      "ghost",
+      "bone",
+      "mine"
+    ],
+    "achievement": true,
+    "wheel": 4,
+    "coins": 3240,
+    "slots": [
+      "empty",
+      "saved",
+      "saved"
+    ]
+  },
   "errors": []
 }

@@ -34,7 +34,7 @@ function probe(skill,level,scene,mods=[],grade=initialGrade(skill)){
 for(const level of [1,4,8])for(const skill of ALL_WEAPONS)for(const scene of ['near','far','rear','moving','cluster','ring','line','armored-boss','exposed-boss'])rows.push(probe(skill,level,scene));
 const modified=[];
 for(const skill of ALL_WEAPONS){const pairs=[];for(let i=0;i<MODS[skill].length;i++)for(let j=i+1;j<MODS[skill].length;j++){const a=MODS[skill][i],b=MODS[skill][j];if(a.excludes===b.id||b.excludes===a.id)continue;pairs.push([a.id,b.id]);}
- for(const mods of pairs)for(const scene of ['near','moving','cluster','armored-boss'])modified.push(probe(skill,8,scene,mods));
+ for(let grade=1;grade<=4;grade++)if(validGrade(skill,grade))for(const mods of pairs)for(const scene of ['near','moving','cluster','armored-boss'])modified.push(probe(skill,8,scene,mods,grade));
 }
 const grades=[];for(const skill of ALL_WEAPONS)for(let grade=1;grade<=4;grade++)if(validGrade(skill,grade))for(const scene of [WEAPON_BALANCE[skill].scene,'armored-boss'])grades.push(probe(skill,8,scene,[],grade));
 const teams=[];
@@ -51,8 +51,8 @@ for(const scene of ['single','pair','cluster'])for(const fourth of [null,'lamp',
 }
 const budgets=ALL_WEAPONS.map(skill=>{const p=WEAPON_BALANCE[skill],r=rows.find(r=>r.skill===skill&&r.level===8&&r.scene===p.scene),band=weaponBalanceBand(skill,r.grade);return {skill,role:p.role,scene:p.scene,grade:r.grade,dps:r.dps,...band,pass:r.dps>=band.min&&r.dps<=band.max};});
 const gradeBudgets=grades.map(r=>{const band=weaponBalanceBand(r.skill,r.grade);return {skill:r.skill,grade:r.grade,scene:r.scene,dps:r.dps,...band,pass:r.scene==='armored-boss'||r.dps>=band.min&&r.dps<=band.max};});
-const modifiedCaps=modified.map(r=>({skill:r.skill,scene:r.scene,mods:r.mods,dps:r.dps,max:weaponBalanceBand(r.skill,r.grade).max*1.8,pass:r.dps<=weaponBalanceBand(r.skill,r.grade).max*1.8})).filter(r=>r.scene==='near'||r.scene==='moving');
+const modifiedCaps=modified.map(r=>({skill:r.skill,grade:r.grade,scene:r.scene,mods:r.mods,dps:r.dps,max:weaponBalanceBand(r.skill,r.grade).max*1.8,pass:r.dps<=weaponBalanceBand(r.skill,r.grade).max*1.8})).filter(r=>r.scene==='near'||r.scene==='moving');
 const report={scope:'30s isolated real Armory/hit logic, ranger +10% innate damage, no passives or AI/contact. Native initial grades differ legitimately. High-HP targets avoid kill/retarget effects. Armor/exposure probes are fixed stage10 boss states. Budget bands apply only to the designated reference scene; team diagnostics separately count support amplification/transfer. This is not human win rate or device performance.',rows,modified,grades,teams,budgets,gradeBudgets,modifiedCaps};
-const out=process.argv[2]||'artifacts/weapon-balance-0.33.8';fs.mkdirSync(out,{recursive:true});fs.writeFileSync(out+'/after.json',JSON.stringify(report,null,2)+'\n');
+const out=process.argv[2]||'artifacts/weapon-balance-0.33.9';fs.mkdirSync(out,{recursive:true});fs.writeFileSync(out+'/after.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({cases:rows.length+modified.length+grades.length+teams.length,budgets,teams:teams.map(({bySkill,...t})=>t)},null,2));
 if([...budgets,...gradeBudgets,...modifiedCaps].some(r=>!r.pass))throw Error('Weapon balance reference outside role/grade band');

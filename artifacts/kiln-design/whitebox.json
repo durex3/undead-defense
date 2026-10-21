@@ -1,0 +1,43 @@
+{
+  "status": "design-only",
+  "grid": 0.5,
+  "edgeSample": 0.05,
+  "actors": [
+    {
+      "radius": 0.3,
+      "freeCells": 8361,
+      "reachable": 8361,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "radius": 0.7,
+      "freeCells": 7633,
+      "reachable": 7633,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "speed": 4.2,
+  "reaction": 0.35,
+  "packetReference": {
+    "pathLength": 4.4,
+    "bodyLength": 1.2,
+    "halfWidth": 0.22,
+    "speed": 1.6,
+    "duration": 3.5
+  },
+  "limitations": [
+    "Static layout only; no enemy crowd or combat implementation",
+    "Packet duration is a design calculation, not proof of combined attack escape",
+    "Requires actual Cocos/HUD, joint future-trajectory and phone validation before release"
+  ]
+}

@@ -129,7 +129,9 @@ const LIBRARY:EnemyPalette={outline:"#1d1b25",shade:"#726354",base:"#c7b999",lig
 const WIND:EnemyPalette={outline:"#182128",shade:"#596975",base:"#b4b8ad",light:"#e8dfc9",cloth:"#607987",metal:"#806653",metalLight:"#c6a67a",bone:"#e9dfc8",accent:"#dfad81",eye:"#b6deea"};
 const ROOT:EnemyPalette={outline:"#161e19",shade:"#405243",base:"#7e9675",light:"#c6d3ac",cloth:"#956c75",metal:"#66543d",metalLight:"#d1be8d",bone:"#dfd6b7",accent:"#e3ab78",eye:"#f3d9a0"};
 const PRISM:EnemyPalette={outline:"#191625",shade:"#494359",base:"#7b7894",light:"#c6bcd1",cloth:"#665568",metal:"#807666",metalLight:"#c7b5bd",bone:"#d6ceb8",accent:"#edc48c",eye:"#f3dfa7"};
+const LOOM:EnemyPalette={outline:"#201a20",shade:"#61505b",base:"#a58e7a",light:"#e9d7bc",cloth:"#827084",metal:"#8b6955",metalLight:"#d8b987",bone:"#eddfc5",accent:"#b8a6d6",eye:"#f6dba5"};
 export const STAGE_PALETTES: Record<StageId, EnemyPalette> = {
+ 11:LOOM,
   1: SIEGE,
   2: SAND,
   3: THUNDER,
@@ -211,6 +213,7 @@ function art(
 /* Stage membership is duplicated here on purpose (art must not import stage
  * systems); tests/art-catalog.test.mjs compares it with SIEGE_KINDS etc. */
 export const CATALOG_STAGE_KINDS: Record<StageId, readonly Kind[]> = {
+ 11:["ragbound","weftbinder","hemcocoon","shuttlecrawler","twinweftwarden","shuttlejailer"],
   1: ["siegebone", "thornshield", "siegebow", "flanker", "siegeflag", "siegerider"],
   2: ["sandworker", "sandlarva", "sandegg", "shellroller", "sandspitter", "sandstalker", "broodelite", "breakerelite"],
   3: ["rivetwalker", "anchorweaver", "arclantern", "railsaw", "gridwarden", "railreaper", "thunderanchor", "gridelectrode"],
@@ -224,7 +227,7 @@ export const CATALOG_STAGE_KINDS: Record<StageId, readonly Kind[]> = {
 };
 
 const STAGE_OF: Partial<Record<Kind, StageId>> = {};
-for (const stage of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const)
+for (const stage of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as const)
   for (const kind of CATALOG_STAGE_KINDS[stage]) STAGE_OF[kind] = stage;
 
 export function catalogStage(kind: Kind): StageId | 0 {
@@ -382,6 +385,7 @@ const COMMON: Partial<Record<Kind, EnemyArt>> = {
 };
 
 export const BOSS_ART: Record<StageId, EnemyArt> = {
+ 11:art("boss",11,"mech",130,74,LOOM,{head:"core",legs:"quad"},{scale:1.2,motionSpeed:4,strideAmp:1.5}),
  10:art("boss",10,"humanoid",125,69,LIBRARY,{head:"core",legs:"spider"},{scale:1.2,motionSpeed:4,strideAmp:1.5}),
  9:art("boss",9,"humanoid",125,65,WIND,{head:"beast",legs:"biped"},{scale:1.2,motionSpeed:5,strideAmp:1.5}),
   8:art("boss",8,"grub",140,52,ROOT,{head:"core",legs:"spider"},{scale:1.18,motionSpeed:4,bobAmp:1.1}),
@@ -419,6 +423,7 @@ export const BOSS_ART: Record<StageId, EnemyArt> = {
 };
 
 const MINION_ART: Record<StageId, EnemyArt> = {
+ 11:{...COMMON.minion!,stage:11,palette:LOOM},
  10:{...COMMON.minion!,stage:10,palette:LIBRARY},
  9:{...COMMON.minion!,stage:9,palette:WIND},
   8:{...COMMON.minion!,stage:8,palette:ROOT},
@@ -482,7 +487,15 @@ const LIBRARY_ART:Partial<Record<Kind,EnemyArt>>={
  sealprovost:art("sealprovost",10,"humanoid",101,42,LIBRARY,{head:"core",legs:"spider"},{scale:1.22,motionSpeed:6,strideAmp:1.7}),
  claspjailer:art("claspjailer",10,"quadruped",77,54,LIBRARY,{head:"core",legs:"spider"},{scale:1.22,motionSpeed:6,strideAmp:1.7}),
 };
-Object.assign(COMMON,BELL_ART,TIDE_ART,PRISM_ART,ROOT_ART,WIND_ART,LIBRARY_ART);
+const LOOM_ART:Partial<Record<Kind,EnemyArt>>={
+ ragbound:art("ragbound",11,"humanoid",44,25,LOOM,{head:"skull"}),
+ weftbinder:art("weftbinder",11,"humanoid",80,32,LOOM,{head:"skull"}),
+ hemcocoon:art("hemcocoon",11,"float",80,38,LOOM,{head:"core",legs:"spider"}),
+ shuttlecrawler:art("shuttlecrawler",11,"quadruped",49,49,LOOM,{head:"core",legs:"quad"}),
+ twinweftwarden:art("twinweftwarden",11,"humanoid",105,46,LOOM,{head:"skull"},{scale:1.18}),
+ shuttlejailer:art("shuttlejailer",11,"quadruped",80,65,LOOM,{head:"core",legs:"quad"},{scale:1.18}),
+};
+Object.assign(COMMON,BELL_ART,TIDE_ART,PRISM_ART,ROOT_ART,WIND_ART,LIBRARY_ART,LOOM_ART);
 export function enemyArt(stage: StageId, kind: Kind): EnemyArt {
   if(stage===5&&BELL_ART[kind])return BELL_ART[kind]!;
   if (kind === "boss") return BOSS_ART[stage];

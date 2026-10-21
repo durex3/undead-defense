@@ -1,0 +1,17 @@
+/** Design-only whitebox: no playable stage registration or account access. */
+import fs from 'node:fs';
+import sharp from 'sharp';
+const out='artifacts/kiln-design';fs.mkdirSync(out,{recursive:true});
+const blocks=[{x:-13,y:-12,hx:3.6,hy:1.1},{x:11,y:-14,hx:1.1,hy:3.6},{x:-11,y:14,hx:1.1,hy:3.6},{x:13,y:12,hx:3.6,hy:1.1},{x:-5,y:21,hx:4,hy:1},{x:5,y:-21,hx:4,hy:1},{x:-18,y:1,hx:1,hy:3},{x:18,y:-1,hx:1,hy:3}];
+function blocked(x,y,r){return Math.abs(x)>22-r||Math.abs(y)>26-r||blocks.some(b=>Math.abs(x-b.x)<b.hx+r&&Math.abs(y-b.y)<b.hy+r);}
+const paths=[[[0,-9],[-4,-9],[-4,16],[0,16]],[[0,-9],[4,-9],[4,16],[0,16]],[[0,-9],[0,-23.5],[-20.2,-23.5],[-20.2,23.5],[20.2,23.5],[20.2,-23.5],[0,-23.5],[0,-9]]];
+function clearPath(path,r){for(let k=1;k<path.length;k++){const a=path[k-1],z=path[k],n=Math.ceil(Math.hypot(z[0]-a[0],z[1]-a[1])/.05);for(let i=0;i<=n;i++)if(blocked(a[0]+(z[0]-a[0])*i/n,a[1]+(z[1]-a[1])*i/n,r))return false;}return true;}
+function connectivity(r){const free=new Set();for(let x=-44;x<=44;x++)for(let y=-52;y<=52;y++)if(!blocked(x*.5,y*.5,r))free.add(`${x},${y}`);const seen=new Set(['0,-18']),queue=[[0,-18]];for(let head=0;head<queue.length;head++){const [x,y]=queue[head];for(const [dx,dy]of [[1,0],[-1,0],[0,1],[0,-1]]){const key=`${x+dx},${y+dy}`;if(free.has(key)&&!seen.has(key)){seen.add(key);queue.push([x+dx,y+dy]);}}}return {radius:r,freeCells:free.size,reachable:seen.size,connected:free.size===seen.size,routes:paths.map(p=>clearPath(p,r))};}
+const report={status:'design-only',grid:.5,edgeSample:.05,actors:[connectivity(.3),connectivity(.7)],speed:4.2,reaction:.35,packetReference:{pathLength:4.4,bodyLength:1.2,halfWidth:.22,speed:1.6,duration:(4.4+1.2)/1.6},limitations:['Static layout only; no enemy crowd or combat implementation','Packet duration is a design calculation, not proof of combined attack escape','Requires actual Cocos/HUD, joint future-trajectory and phone validation before release']};
+if(report.actors.some(a=>!a.connected||a.routes.some(v=>!v)))throw Error('Whitebox connectivity failed');
+fs.writeFileSync(out+'/whitebox.json',JSON.stringify(report,null,2)+'\n');
+const S=11,X=310,Y=330,p=(x,y)=>`${X+x*S},${Y-y*S}`;
+const rects=blocks.map(b=>`<rect x="${X+(b.x-b.hx)*S}" y="${Y-(b.y+b.hy)*S}" width="${b.hx*2*S}" height="${b.hy*2*S}" rx="3" fill="#75605c" stroke="#c9aaa0"/>`).join('');
+const routes=paths.map((path,i)=>`<polyline points="${path.map(([x,y])=>p(x,y)).join(' ')}" fill="none" stroke="${['#7fc3cc','#e4bd70','#9cad82'][i]}" stroke-width="3" stroke-dasharray="6 4"/>`).join('');
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="620" height="690"><rect width="620" height="690" fill="#171d2a"/><text x="310" y="25" text-anchor="middle" fill="#edddbb" font-size="20">12 · GLAZE KILN / DESIGN WHITEBOX</text><rect x="68" y="44" width="484" height="572" fill="#2b2936" stroke="#bc9eaa"/>${rects}${routes}<circle cx="310" cy="330" r="66" fill="none" stroke="#b99baf" stroke-dasharray="3 6"/><circle cx="310" cy="429" r="6" fill="#f3da87"/><text x="325" y="446" fill="#f3da87" font-size="15">START (0,-9)</text><text x="310" y="647" fill="#c9d2d8" text-anchor="middle" font-size="14">Two central routes + outer loop / radius .3 and .7</text><text x="310" y="671" fill="#a2adb9" text-anchor="middle" font-size="13">Static design validation; combat escape remains unverified</text></svg>`;
+fs.writeFileSync(out+'/layout.svg',svg);await sharp(Buffer.from(svg)).png().toFile(out+'/layout.png');console.log(JSON.stringify(report,null,2));

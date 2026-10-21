@@ -1,3 +1,4 @@
+import {LOOM_BASES} from "../../battle/LoomMap";
 import {LIBRARY_BASES} from "../../battle/LibraryMap";
 import {WIND_BASES} from "../../battle/WindMap";
 import {ROOT_BASES} from "../../battle/RootMap";
@@ -12,9 +13,9 @@ import { MOON_BASES } from "../../battle/MoonMap";
 import { ink } from "./Ink";
 
 type Point = [number, number];
-const floors = ["", "#303439", "#674936", "#202e35", "#24382e", "#34303b", "#25383c", "#302d3b", "#303b32", "#293740", "#30343d"];
+const floors = ["", "#303439", "#674936", "#202e35", "#24382e", "#34303b", "#25383c", "#302d3b", "#303b32", "#293740", "#30343d", "#3a3037"];
 export const stageMapBackdrop = (stage: number) => floors[stage] || floors[1];
-const grain = ["", "#454a4c", "#8c6345", "#374950", "#3c5140", "#554957", "#56665e", "#51485d", "#566052", "#52616a", "#575561"];
+const grain = ["", "#454a4c", "#8c6345", "#374950", "#3c5140", "#554957", "#56665e", "#51485d", "#566052", "#52616a", "#575561", "#665361"];
 const hash = (x: number, y: number) => {
   const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
   return n - Math.floor(n);
@@ -100,6 +101,7 @@ export function drawInkMap(g: Graphics, stage: number) {
     }
     else if (stage === 2) path(g, [[x-34,y],[x-8,y+10],[x+34,y+4],[x+12,y+2],[x-5,y+5]]);
     else if (stage === 3) path(g, [[x-32,y-32],[x+29,y-32],[x+29,y+23],[x+19,y+32],[x-32,y+32]]);
+    else if(stage===11) path(g,[[x-33,y-7],[x+25,y-7],[x+33,y-1],[x+29,y+7],[x-29,y+7]]);
     else if(stage===10) path(g,[[x-28,y-14],[x+22,y-14],[x+26,y+13],[x-25,y+16]]);
     else if(stage===9) path(g,[[x-28,y-12],[x+24,y-12],[x+28,y+13],[x-25,y+15]]);
     else if(stage===8) path(g,[[x-18,y-4],[x+18,y-4],[x+22,y+5],[x-14,y+7]]);
@@ -143,9 +145,15 @@ export function drawInkMap(g: Graphics, stage: number) {
     g.strokeColor = ink("#a97d54", 125); g.lineWidth = 4;
     g.moveTo(x+48,y); g.arc(x,y,48,0,Math.PI*2,false); g.stroke();
   }
-  const obstacles = stage === 10 ? LIBRARY_BASES : stage === 9 ? WIND_BASES : stage === 8 ? ROOT_BASES : stage === 7 ? PRISM_BASES : stage === 6 ? TIDE_BASES : stage === 5 ? BELL_BASES : stage === 1 ? SIEGE_WALLS : stage === 2 ? SAND_ROCKS : stage === 3 ? THUNDER_BASES : MOON_BASES;
+  const obstacles = stage === 11 ? LOOM_BASES : stage === 10 ? LIBRARY_BASES : stage === 9 ? WIND_BASES : stage === 8 ? ROOT_BASES : stage === 7 ? PRISM_BASES : stage === 6 ? TIDE_BASES : stage === 5 ? BELL_BASES : stage === 1 ? SIEGE_WALLS : stage === 2 ? SAND_ROCKS : stage === 3 ? THUNDER_BASES : MOON_BASES;
   for (const b of obstacles) {
     const x = b.x * 48, y = b.y * 48, w = b.halfWidth * 48, h = b.halfHeight * 48;
+    if(stage===11){
+      g.fillColor=ink("#17151c",150);g.rect(x-w+6,y-h-7,w*2,h*2);g.fill();
+      face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],"#5f493d");g.strokeColor=ink("#271f25");g.lineWidth=4;g.rect(x-w,y-h,w*2,h*2);g.stroke();
+      g.strokeColor=ink("#bca080");g.lineWidth=3;g.moveTo(x-w+8,y-h+10);g.lineTo(x+w-8,y+h-10);g.moveTo(x-w+8,y+h-10);g.lineTo(x+w-8,y-h+10);g.stroke();
+      for(let i=-2;i<=2;i++){g.strokeColor=ink(i%2?"#8e758e":"#c3b397");g.lineWidth=2;g.moveTo(x-w+10,y+i*8);g.lineTo(x+w-10,y+i*8);g.stroke();}continue;
+    }
     if(stage===10){
       g.fillColor=ink("#14151d",100);g.rect(x-w+7,y-h-7,w*2,h*2);g.fill();
       face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],"#705846");

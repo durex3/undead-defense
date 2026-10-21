@@ -1,0 +1,143 @@
+{
+  "scope": "Invulnerable 660s structural scheduler diagnostic. Script clears fodder after 4.5s, specials after 18s, elites after 30s, and sets Boss phase health thresholds; no claim of normal survival or legitimate wins.",
+  "rows": [
+    {
+      "mode": "stationary",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "ragbound",
+        "weftbinder",
+        "hemcocoon",
+        "shuttlecrawler",
+        "twinweftwarden",
+        "shuttlejailer",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 390,
+          "kind": "twinweftwarden",
+          "time": 135.05,
+          "hp": 2996.583986216556
+        },
+        {
+          "id": 727,
+          "kind": "shuttlejailer",
+          "time": 225,
+          "hp": 3796.95879186747
+        },
+        {
+          "id": 1084,
+          "kind": "twinweftwarden",
+          "time": 305,
+          "hp": 3719.4698369312796
+        },
+        {
+          "id": 1101,
+          "kind": "shuttlejailer",
+          "time": 311,
+          "hp": 3905.443328777844
+        }
+      ],
+      "stats": {
+        "fixed": 50,
+        "repeat": 64,
+        "shuttle": 28,
+        "crossings": 0,
+        "cancelled": 11,
+        "rejected": 1,
+        "eliteCasts": {
+          "twinweftwarden": 7,
+          "shuttlejailer": 8
+        },
+        "patterns": {
+          "A": 14,
+          "B": 14,
+          "C": 14
+        },
+        "phases": [
+          12,
+          12,
+          18
+        ]
+      },
+      "bossState": "recover"
+    },
+    {
+      "mode": "moving",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "ragbound",
+        "weftbinder",
+        "hemcocoon",
+        "shuttlecrawler",
+        "twinweftwarden",
+        "shuttlejailer",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 531,
+          "kind": "twinweftwarden",
+          "time": 135.05,
+          "hp": 2996.583986216556
+        },
+        {
+          "id": 979,
+          "kind": "shuttlejailer",
+          "time": 225,
+          "hp": 3796.95879186747
+        },
+        {
+          "id": 1430,
+          "kind": "twinweftwarden",
+          "time": 305,
+          "hp": 3719.4698369312796
+        },
+        {
+          "id": 1451,
+          "kind": "shuttlejailer",
+          "time": 311,
+          "hp": 3905.443328777844
+        }
+      ],
+      "stats": {
+        "fixed": 12,
+        "repeat": 14,
+        "shuttle": 8,
+        "crossings": 0,
+        "cancelled": 3,
+        "rejected": 9,
+        "eliteCasts": {
+          "twinweftwarden": 1,
+          "shuttlejailer": 1
+        },
+        "patterns": {
+          "A": 6,
+          "B": 5,
+          "C": 4
+        },
+        "phases": [
+          6,
+          3,
+          6
+        ]
+      },
+      "bossState": "recover"
+    }
+  ]
+}

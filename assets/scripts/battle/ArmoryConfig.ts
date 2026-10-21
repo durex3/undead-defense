@@ -307,6 +307,7 @@ export function modSummary(w: SurvivalWorld, s: Skill) {
   );
 }
 export function stageBuildHint(stage: number) {
+  if(stage===11)return "织坊：紧线绕端，松弛换侧；看第二拍刻度和移梭箭头，三阶段抓收招反击";
   if(stage===10)return "禁库：直接躲开或提前踩签撤一招；两夹页保留中缝与端头，三阶段仍有收招窗口";
   if(stage===9)return "风廊：先看风向借风换位，沿曲羽侧移；击破一名精英减压，收招时反击";
   if (stage === 8) return "温室：看摆向绕端换侧；空心可进，实心须出；收招开缝时反击";

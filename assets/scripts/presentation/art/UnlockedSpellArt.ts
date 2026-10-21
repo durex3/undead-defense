@@ -1,5 +1,5 @@
 import { gradeOf } from "../../battle/WeaponGrade";
-import { drawHammerForm } from "./WeaponFormArt";
+import { drawHammerForm, drawWheelForm } from "./WeaponFormArt";
 import type { Graphics } from "cc";
 import type { SurvivalWorld } from "../../battle/SurvivalWorld";
 import { ink } from "./Ink";
@@ -23,6 +23,9 @@ export function drawUnlockedSpells(
         y = a.y * 48,
         r = (12 + s.radius * 16) * scale,
         turn = age * 9;
+      const grade=gradeOf("wheel",w.weaponGrades);
+      if(grade>2)drawWheelForm(g,x,y,turn,grade,r/23,a.phase===2);
+      else {
       for (let i = 0; i < 20; i++) {
         const ang = turn + (i * Math.PI) / 10,
           rad = r * (i % 2 ? 1 : 0.76);
@@ -40,6 +43,7 @@ export function drawUnlockedSpells(
       g.moveTo(x - r * 0.28, y);
       g.lineTo(x + r * 0.28, y);
       g.stroke();
+      }
       if (!reduced && !crowded && s.mods.includes("grind") && a.phase === 1) {
         g.strokeColor = ink("#dfe3a7");
         for (let i = 0; i < 5; i++) {

@@ -510,8 +510,9 @@ export class GameBootstrap extends Component {
     const f = 1 - Math.exp(-dt * 11 * (w.active?this.playSpeed:1));
     this.camera.x +=
       (Math.max(-512, Math.min(512, w.player.x * 48)) - this.camera.x) * f;
+    const cameraYLimit=w.stageId===11?1124:984;
     this.camera.y +=
-      (Math.max(-984, Math.min(984, w.player.y * 48)) - this.camera.y) * f;
+      (Math.max(-cameraYLimit, Math.min(cameraYLimit, w.player.y * 48)) - this.camera.y) * f;
     this.shake = Math.max(0, this.shake - dt * 20);
     this.stage.setPosition(
       -this.camera.x + Math.sin(w.time * 73) * this.shake,
@@ -557,8 +558,8 @@ export class GameBootstrap extends Component {
         this.announcementLife=1.6;
       }
       if (e.type === "bossPhase") {
-        this.announcement.string = w.stageId===10 ? `${STAGES[w.stageId].boss} · ${e.value===3?"第三阶段 III":"第二阶段 II"}` : `${STAGES[w.stageId].boss}狂怒 · 第二阶段`;
-        this.announcementLife = w.stageId===10?1.5:2.5;
+        this.announcement.string = w.stageId>=10 ? `${STAGES[w.stageId].boss} · ${e.value===3?"第三阶段 III":"第二阶段 II"}` : `${STAGES[w.stageId].boss}狂怒 · 第二阶段`;
+        this.announcementLife = w.stageId>=10?1.5:2.5;
       }
       if (e.type === "elite" || e.type === "boss") {
         this.announcement.string =

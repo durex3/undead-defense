@@ -146,8 +146,8 @@ export function stepHazards(w: SurvivalWorld) {
   for(const h of w.hazards)if(h.siegeBallistic&&!h.siegeLaunched&&w.time>=h.created+(h.sandLaunchDelay??.2)&&w.enemies.some(e=>e.id===h.source&&e.hp>0&&e.freezeUntil<=w.time))h.siegeLaunched=true;
   w.hazards = w.hazards.filter(
     (h) =>
-      (h.until > w.time || (!!h.library && !h.library.cancelled && h.library.last < h.until && h.due <= w.time) || (!!h.root && !h.root.cancelled && h.root.last < h.until && h.due <= w.time) || (!!h.wind && !h.wind.cancelled && h.wind.last < h.until && h.due <= w.time)) &&
-      (!!h.library || !!h.wind || !!h.root || !!h.prism || !!h.tide || !!h.bell || !!h.moon || !!h.thunder || h.source === 0 || h.siegeLaunched || ((h.kind === "arrow" || h.siegeGround) && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
+      (h.until > w.time || (!!h.loom && !h.loom.cancelled && h.loom.last < h.until && h.due <= w.time) || (!!h.library && !h.library.cancelled && h.library.last < h.until && h.due <= w.time) || (!!h.root && !h.root.cancelled && h.root.last < h.until && h.due <= w.time) || (!!h.wind && !h.wind.cancelled && h.wind.last < h.until && h.due <= w.time)) &&
+      (!!h.loom || !!h.library || !!h.wind || !!h.root || !!h.prism || !!h.tide || !!h.bell || !!h.moon || !!h.thunder || h.source === 0 || h.siegeLaunched || ((h.kind === "arrow" || h.siegeGround) && h.fixedDamage && h.fired) || w.enemies.some((e) => e.id === h.source && e.hp > 0)),
   );
   for (const h of w.hazards) {
     if(w.stageStrategy.stepHazard(h))continue;

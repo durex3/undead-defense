@@ -3,6 +3,7 @@ import type { StageId } from './ProgressionConfig';
 
 /** Playable identities; health is derived from the shared reference-output × target-time budgets. */
 export const STAGES = {
+ 11:{...stageGrowth(11),name:"缚烬织坊",boss:"绷骨织后",damage:1.66,xp:1.45,medicine:42},
   1: {...stageGrowth(1),name:'铁棘围城', boss:'铁棘围城督军', damage:1.42, xp:.85, medicine:42},
   2: {...stageGrowth(2),name:'赤砂虫巢', boss:'赤砂巢皇', damage:1.46, xp:.85, medicine:42},
   3: {...stageGrowth(3),name:'雷铸机庭', boss:'天穹铸雷机', damage:1.50, xp:1.2, medicine:42},
@@ -16,6 +17,7 @@ export const STAGES = {
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Record<StageId, {threat: string; builds: string}> = {
+ 11:{threat:"松线可穿、紧线绕端 · 两拍回扣与平移梭线 · 三阶段错拍织后",builds:"看端点开合与第二拍刻度；松弛时换侧，紧线可绕有限端头，收招时反击"},
  10:{threat:"封签可踏断撤招 · 实体页刃与双夹页 · 三阶段藏典 · 书架不挡友方攻击",builds:"先看配对编号，直接躲开或踩签撤一条；抓中缝、端头与收招窗口"},
  9:{threat:"定向风推、完整曲羽与贴地折步 · 双精英错峰同场 · 风柱挡敌弹，不挡友方攻击",builds:"先看风向借风换位，沿弧线侧移；优先击破一名精英，抓收招窗口反击"},
  8:{threat:"树脂护皮 · 固定支点摆藤、空心环刺与实心花爆 · 盆床不挡友方攻击",builds:"看摆向绕端换侧，空心可进内圈，实心须退出；收招开缝时反击"},
