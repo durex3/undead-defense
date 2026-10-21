@@ -396,20 +396,21 @@ test("missed phase, wrong stage, Boss hit, failed run or corrupt pair cannot rep
   assert.equal(q.coins, p.coins);
   assert.deepEqual(q.data.edgeQualified.water, p.data.edgeQualified.water);
 });
-test("water has two paid evolutions, no epic charge, one pool slot and cold-saved transactions", () => {
+test("water now has three paid evolutions, one pool slot and cold-saved transactions", () => {
   const s = storage(),
     p = new ProgressStore(s);
-  p.data.coins = 1080;
+  p.data.coins = 2520;
   const count = p.availableWeapons.length;
   assert.equal(p.evolveWeapon("water", 1), "evolved");
-  assert.equal(p.coins, 720);
+  assert.equal(p.coins, 2160);
   assert.equal(p.evolveWeapon("water", 2), "evolved");
-  assert.equal(p.coins, 0);
-  assert.equal(p.evolveWeapon("water", 3), "unavailable");
-  assert(!validGrade("water", 4));
+  assert.equal(p.coins, 1440);
+  assert.equal(p.evolveWeapon("water", 3), "evolved");
+  assert.equal(p.coins,0);
+  assert(validGrade("water", 4));
   assert.equal(nextGrade("water", p.weaponGrades), null);
   assert.equal(p.availableWeapons.length, count);
-  assert.equal(new ProgressStore(s).weaponGrades.water, 3);
+  assert.equal(new ProgressStore(s).weaponGrades.water, 4);
 });
 test("all legal water grade/mod snapshots change damage exactly once while preserving field lifecycle", () => {
   for (const pair of pairs("water")) {

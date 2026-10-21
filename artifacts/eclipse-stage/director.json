@@ -1,0 +1,173 @@
+{
+  "scope": "Invulnerable 960s structural scheduler diagnostic. Script clears fodder after 4.5s, specials after 18s, elites after 30s, and sets Boss phase health thresholds; no claim of normal survival or legitimate wins.",
+  "rows": [
+    {
+      "mode": "stationary",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "dialscrap",
+        "glowdisc",
+        "reversegazer",
+        "offsetorrery",
+        "twindial",
+        "eclipsewarden",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 785,
+          "kind": "twindial",
+          "time": 135.05,
+          "hp": 3459.3226417511064
+        },
+        {
+          "id": 1593,
+          "kind": "eclipsewarden",
+          "time": 225,
+          "hp": 4402.26826347339
+        },
+        {
+          "id": 2266,
+          "kind": "twindial",
+          "time": 305,
+          "hp": 4293.838010678342
+        },
+        {
+          "id": 2282,
+          "kind": "eclipsewarden",
+          "time": 311,
+          "hp": 4528.047356715342
+        }
+      ],
+      "stats": {
+        "beam": 171,
+        "rejected": 6,
+        "cancelled": 19,
+        "qualified": 0,
+        "eliteCasts": {
+          "twindial": 6,
+          "eclipsewarden": 7
+        },
+        "patterns": {
+          "A": 26,
+          "B": 27,
+          "C": 25
+        },
+        "phases": [
+          23,
+          23,
+          32
+        ],
+        "phasePatterns": [
+          {
+            "A": 8,
+            "B": 8,
+            "C": 7
+          },
+          {
+            "A": 8,
+            "B": 8,
+            "C": 7
+          },
+          {
+            "A": 10,
+            "B": 11,
+            "C": 11
+          }
+        ]
+      },
+      "bossState": "windup"
+    },
+    {
+      "mode": "moving",
+      "maxSlots": 2,
+      "maxThreat": 6,
+      "maxEntities": 29,
+      "seen": [
+        "dialscrap",
+        "glowdisc",
+        "reversegazer",
+        "offsetorrery",
+        "twindial",
+        "eclipsewarden",
+        "boss"
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "elites": [
+        {
+          "id": 671,
+          "kind": "twindial",
+          "time": 135.05,
+          "hp": 3459.3226417511064
+        },
+        {
+          "id": 1259,
+          "kind": "eclipsewarden",
+          "time": 225,
+          "hp": 4402.26826347339
+        },
+        {
+          "id": 1860,
+          "kind": "twindial",
+          "time": 305,
+          "hp": 4293.838010678342
+        },
+        {
+          "id": 1881,
+          "kind": "eclipsewarden",
+          "time": 311,
+          "hp": 4528.047356715342
+        }
+      ],
+      "stats": {
+        "beam": 44,
+        "rejected": 21,
+        "cancelled": 0,
+        "qualified": 0,
+        "eliteCasts": {
+          "twindial": 1,
+          "eclipsewarden": 1
+        },
+        "patterns": {
+          "A": 7,
+          "B": 8,
+          "C": 8
+        },
+        "phases": [
+          6,
+          6,
+          11
+        ],
+        "phasePatterns": [
+          {
+            "A": 2,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "A": 2,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "A": 3,
+            "B": 4,
+            "C": 4
+          }
+        ]
+      },
+      "bossState": "windup"
+    }
+  ]
+}

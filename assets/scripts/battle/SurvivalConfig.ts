@@ -33,6 +33,7 @@ export const ENEMY_KINDS = [
   "ragbound","weftbinder","hemcocoon","shuttlecrawler","twinweftwarden","shuttlejailer",
   "glazeling","kilnstoker","forkmason","ashsled","splitcrucible","glazejailer","kilnvalve",
   "scrapbound","edgecaster","stepcutter","reelstalker","twinclamp","edgepuppeteer",
+  "dialscrap","glowdisc","reversegazer","offsetorrery","twindial","eclipsewarden",
   // 通用
   "minion", "boss",
 ] as const;
@@ -51,6 +52,12 @@ export interface EnemyConfig {
 }
 
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+ dialscrap:{name:"晦砂蠹",health:1.18,speed:1.82,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
+ glowdisc:{name:"引晖巡盘",health:2.1,speed:1.1,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ reversegazer:{name:"回晷长颈",health:2.1,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
+ offsetorrery:{name:"偏轴环足",health:2.15,speed:1.1,contact:14,xp:2,threat:2,cap:1,sprite:"",scale:3.4},
+ twindial:{name:"双环测晷者",health:11,speed:1.14,contact:12,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
+ eclipsewarden:{name:"偏轴锁曜体",health:11.6,speed:1.1,contact:13,xp:8,threat:3,cap:1,sprite:"",scale:3.4,elite:true},
  scrapbound:{name:"铁屑傀",health:1.16,speed:1.8,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
  edgecaster:{name:"掷锋傀",health:2.05,speed:1.1,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},
  stepcutter:{name:"踏刃傀",health:2.1,speed:1.15,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.4},

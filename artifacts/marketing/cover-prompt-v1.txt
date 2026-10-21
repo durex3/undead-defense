@@ -1,0 +1,12 @@
+Generation: built-in image_gen tool
+References: artifacts/characters-0.33.5/characters.png; artifacts/edge-stage/mobile-844-head.png
+
+Use case: ads-marketing
+Asset type: square cover illustration for the Chinese WeChat survival roguelite game 《余烬幸存者》.
+Create a polished 1024x1024 square cover. The supplied images are visual references for existing character identity and the game's simple 2D dark fantasy world, not images to reproduce as screenshots.
+Subject: the teal hooded ranger from reference 1, with short orange scarf, tan diagonal strap, small determined face, dark boots. Show full upper body and legs in a heroic central pose, surrounded by an encroaching curved crowd of stylized skeleton soldiers with bone faces, iron shields, rust-red ragged cloth. A looming abstract armored undead boss silhouette in the background. Orbiting combat effects: a small spectral bone spear, a curling orange fireball, a short branching blue lightning bolt, and a teal holy-water splash, clearly separated and readable.
+Style: high-quality flat 2D game key art, bold angular silhouettes, clean dark outlines, layered geometric shapes, limited textured shading, charming yet tense. Match the original game's vector-art identity; do not turn this into realistic 3D or anime.
+Scene: ruined charcoal-gray stone courtyard, scattered ember sparks, ominous mist. Palette charcoal and desaturated blue-gray with teal, orange-gold and bone-white highlights.
+Composition: central ranger, enemies at lower edges and sides, strong readable silhouette at small thumbnail size, all important content in the central 80% with generous safe margins.
+Text (verbatim): “余烬幸存者” in large expertly composed warm ivory/gold Chinese title lettering in the upper quarter, five characters exactly. No subtitle or other text.
+Constraints: polished finished cover, no UI, no stat numbers, no watermark, no logos, no photorealism, no gore, no extra limbs. The title and the character must both remain easy to recognize.

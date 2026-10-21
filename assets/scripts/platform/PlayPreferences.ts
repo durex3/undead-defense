@@ -1,5 +1,5 @@
 import type { StoragePort } from './StoragePort';
-export const PLAY_VERSION = '开发版 0.35.0 · 断锋傀庭';
+export const PLAY_VERSION = '开发版 0.36.0 · 蚀昼观台';
 export type Lesson = 'move' | 'xp' | 'upgrade' | 'nova' | 'elite';
 const lessons: Lesson[] = ['move', 'xp', 'upgrade', 'nova', 'elite'];
 export class PlayPreferences {

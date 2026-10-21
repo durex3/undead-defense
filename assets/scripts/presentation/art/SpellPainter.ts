@@ -453,7 +453,7 @@ export function spawnParticles(events: readonly Effect[], reduced: boolean, stag
     } else if (e.type === "explosion") {
       const c = skillColor(e.skill);
       if(e.form==='waterSplash'){
-        const r=(e.radius??1)*48;if(e.grade===2){for(const side of [-1,1])spawn('crest',x+side*r*.18,y,'#d7f4df',0,.2,3,0,r*.22);}else for(const v of [.35,.6])spawn('ring',x,y,'#c2ede4',0,.24,2,0,r*v);continue;
+        const r=(e.radius??1)*48;if(e.grade===4){for(let i=0;i<3;i++){const a=i*Math.PI*2/3;spawn('crest',x+Math.cos(a)*r*.25,y+Math.sin(a)*r*.25,'#e7d1fa',0,.24,2,0,r*.2);}}else if(e.grade===2){for(const side of [-1,1])spawn('crest',x+side*r*.18,y,'#d7f4df',0,.2,3,0,r*.22);}else for(const v of [.35,.6])spawn('ring',x,y,'#c2ede4',0,.24,2,0,r*v);continue;
       }
       if(e.form?.startsWith("boneBurst")) {
         const grade=e.grade??1;

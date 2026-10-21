@@ -1,0 +1,34 @@
+{
+  "version": "0.36.0",
+  "web": {
+    "command": "npm run build:web",
+    "creatorExit": 36,
+    "normalizedSuccess": true,
+    "output": "build/web-mobile",
+    "debug": true
+  },
+  "wechat": {
+    "command": "node tools/build.mjs wechatgame",
+    "creatorExit": 36,
+    "normalizedSuccess": true,
+    "output": "build/wechatgame",
+    "debug": false
+  },
+  "uploaded": false,
+  "backendVersion": "0.33.9",
+  "tests": {
+    "total": 596,
+    "passed": 595,
+    "skipped": 1
+  },
+  "diagnostics": {
+    "weaponBudgetCases": 990,
+    "waterPassiveCases": 672,
+    "fourWeaponBossCases": 285
+  },
+  "limitations": [
+    "Independent temporary browser profiles only",
+    "No WeChat phone performance or human difficulty certification",
+    "No upload, submission or live publishing"
+  ]
+}

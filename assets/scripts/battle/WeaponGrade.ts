@@ -4,7 +4,7 @@ export const GRADE_NAMES = ["", "普通", "精良", "稀有", "史诗"] as const
 export const GRADE_COLORS = ["", "#d3d7db", "#94d6a4", "#84bbef", "#c19aef"] as const;
 export const GRADE_PRICE = [0, 0, 360, 720, 1440] as const;
 const forms: Partial<Record<Skill, readonly string[]>> = {
-  water:["圣水瓶","巡灯净瓶","回澜圣壶"],
+  water:["圣水瓶","巡灯净瓶","回澜圣壶","长明灵泉"],
   bone:["贯阵骨矛","棘脊骨枪","釉裂骨矛","焚髓贯星"],
   blade: ["飞刀", "旋纹飞刃", "银月环刃", "星陨刃阵"],
   wheel: ["", "裂甲飞轮", "断纬棘轮", "裁界环轮"],

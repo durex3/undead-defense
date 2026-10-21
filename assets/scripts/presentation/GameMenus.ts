@@ -1,3 +1,4 @@
+import {ALL_WEAPONS} from "../battle/SurvivalConfig";
 import { LAMP_PRICE } from "../battle/SupportConfig";
 import { gradeOf, weaponName, nextGrade, gradeMultiplier, GRADE_NAMES, GRADE_COLORS, GRADE_PRICE } from "../battle/WeaponGrade";
 import { drawWeaponGlyph } from "./art/WeaponGlyph";
@@ -511,7 +512,7 @@ export class GameMenus {
     this.host.progress.flush();
     this.host.overlay.destroyAllChildren();
     this.host.panel(this.host.overlay, 0, 0, 1100, 570, "#191e2d");
-    this.host.text(this.host.overlay, this.host.progress.hasAchievement("edge_twelve_paths")?"余烬幸存者 · 识锋者":this.host.progress.hasAchievement("kiln_ten_paths")?"余烬幸存者 · 断焰司炉":this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
+    this.host.text(this.host.overlay, this.host.progress.hasAchievement("eclipse_twelve_paths")?"余烬幸存者 · 逐晖者":this.host.progress.hasAchievement("edge_twelve_paths")?"余烬幸存者 · 识锋者":this.host.progress.hasAchievement("kiln_ten_paths")?"余烬幸存者 · 断焰司炉":this.host.progress.hasAchievement("loom_eight_paths")?"余烬幸存者 · 断纬者":"余烬幸存者 · 选择冒险", 0, 220, 34);
     this.host.text(this.host.overlay, PLAY_VERSION, 0, 265, 14, "#adbccc");
     this.host.muteButton(425, 225, true);
     this.host.button(this.host.overlay,"存档管理",-430,225,160,38,()=>this.showManualSaves());
@@ -836,6 +837,12 @@ export class GameMenus {
       this.showWeaponDetail(skill);
     });
   }
+  showEclipsePaths(){
+    this.catalogShell("十二途逐晖 · 起手进度");const h=this.host;
+    ALL_WEAPONS.forEach((skill,i)=>{const x=i<7?-260:260,y=160-(i%7)*48,n=Math.min(3,h.progress.data.eclipseQualified?.[skill]?.length??0);h.text(h.overlay,`${NAMES[skill]}  ${n}/3`,x,y,22,n>=3?"#a8d7c7":"#e7dcc7",460);});
+    h.text(h.overlay,"起手8级 · 每种起手需3组不同合法双改 · 三阶段柱影无伤通关",0,-200,17,"#b9c8d5",1060);
+    this.catalogButton("返回成就",0,-260,260,44,()=>this.showAchievements(this.achievementPage,"机制挑战"));
+  }
   showAchievements(page=this.achievementPage,category=this.achievementCategory) {
     if(this.catalog!=="achievements")this.catalogFocus=0;
     this.catalog="achievements";this.achievementCategory=category;
@@ -849,7 +856,9 @@ export class GameMenus {
       h.text(h.overlay,a.name+(done?" · 已完成":" · 未完成"),-265,y+29,21,done?"#a8d7c7":"#f3deac",500);
       h.text(h.overlay,a.condition,0,y,15,"#d5dfdc",1020);
       h.text(h.overlay,`奖励：${a.reward} · ${h.progress.achievementProgress(a.id)}`,0,y-29,14,"#b9c8d5",1020);
-      if(a.id==='edge_twelve_paths'&&done){const badge=h.make('EdgeAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#d4dfcc');g.lineWidth=3;g.moveTo(-14,-11);g.lineTo(10,13);g.lineTo(14,8);g.lineTo(-10,-14);g.moveTo(-12,10);g.lineTo(-1,0);g.moveTo(2,-2);g.lineTo(13,-12);g.stroke();}
+      if(a.id==='eclipse_twelve_paths')this.catalogButton('起手进度',300,y+29,170,29,()=>this.showEclipsePaths());
+      if(a.id==='eclipse_twelve_paths'&&done){const badge=h.make('EclipseAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#ecd092');g.lineWidth=3;g.circle(0,0,13);g.moveTo(-17,0);g.lineTo(17,0);g.moveTo(0,-17);g.lineTo(0,17);g.stroke();g.fillColor=ink('#fff3cd');g.circle(0,0,4);g.fill();}
+      if(a.id==='edge_twelve_paths' &&done){const badge=h.make('EdgeAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#d4dfcc');g.lineWidth=3;g.moveTo(-14,-11);g.lineTo(10,13);g.lineTo(14,8);g.lineTo(-10,-14);g.moveTo(-12,10);g.lineTo(-1,0);g.moveTo(2,-2);g.lineTo(13,-12);g.stroke();}
       if(a.id==='kiln_ten_paths'&&done){const badge=h.make('KilnAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#efbf8e');g.lineWidth=3;g.circle(0,0,14);g.moveTo(-5,-12);g.lineTo(1,-4);g.lineTo(-4,2);g.lineTo(5,12);g.moveTo(0,-5);g.lineTo(9,-2);g.stroke();}
       if(a.id==='loom_eight_paths'&&done){const badge=h.make('LoomAchievementBadge',h.overlay);badge.setPosition(425,y+29);const g=badge.addComponent(Graphics);g.strokeColor=ink('#d9c0f0');g.lineWidth=3;for(let v=-1;v<=1;v++){g.moveTo(v*8-13,-9);g.lineTo(v*8+13,9);g.moveTo(v*8-13,9);g.lineTo(v*8+13,-9);}g.stroke();}
       const weapon=a.weapon;if(weapon)this.catalogButton("查看奖励武器",345,y+29,260,29,()=>this.showWeaponDetail(weapon));

@@ -68,6 +68,12 @@ export function drawBoneForm(g:Graphics,x:number,y:number,angle:number,grade:num
 export function drawWaterForm(g:Graphics,x:number,y:number,angle:number,grade:number,scale=1){
  const dx=Math.cos(angle),dy=Math.sin(angle),p=(a:number,b:number)=>[x+(dx*a-dy*b)*scale,y+(dy*a+dx*b)*scale];
  g.fillColor=ink(grade===3?'#a8dbdf':'#84d9d9');g.strokeColor=ink('#243c4d');g.lineWidth=2;
+ if(grade===4){
+  g.fillColor=ink('#ccbbea');polygon(g,[[0,20],[16,0],[0,-20],[-16,0]].map(([a,b])=>p(a,b)));
+  g.fillColor=ink('#efffe9');polygon(g,[[0,11],[7,0],[0,-11],[-7,0]].map(([a,b])=>p(a,b)));
+  g.strokeColor=ink('#f3d9a6');g.lineWidth=3;const pts=[[-11,25],[-7,32],[7,32],[11,25]].map(([a,b])=>p(a,b));pts.forEach(([a,b],i)=>i?g.lineTo(a,b):g.moveTo(a,b));g.stroke();
+  for(const side of [-1,1]){const q=p(side*23,0);g.strokeColor=ink('#d0f3e9');g.lineWidth=2;g.ellipse(q[0],q[1],3*scale,9*scale);g.stroke();}return;
+ }
  const shape=grade===3?[[-13,-17],[10,-17],[17,-7],[14,9],[6,14],[6,21],[-7,21],[-7,13],[-17,4]]:[[-10,-18],[10,-18],[14,-10],[12,8],[5,14],[5,21],[-5,21],[-5,14],[-12,8],[-14,-10]];
  polygon(g,shape.map(([a,b])=>p(a,b)));
  g.strokeColor=ink('#d6f6ec');g.lineWidth=3;
@@ -77,6 +83,9 @@ export function drawWaterForm(g:Graphics,x:number,y:number,angle:number,grade:nu
 }
 export function drawWaterFieldForm(g:Graphics,x:number,y:number,r:number,grade:number,quiet=false){
  g.strokeColor=ink(grade===3?'#d0f0e3':'#bde4d1',quiet?95:140);g.lineWidth=1.8;
+ if(grade===4){for(let i=0;i<6;i++){const a=i*Math.PI/3;
+  for(let j=0;j<=8;j++){const q=a+j*.075,rr=r*.73;const px=x+Math.cos(q)*rr,py=y+Math.sin(q)*rr;j?g.lineTo(px,py):g.moveTo(px,py);}g.stroke();
+  const px=x+Math.cos(a)*r*.42,py=y+Math.sin(a)*r*.42;g.moveTo(px-4,py-4);g.quadraticCurveTo(px,py+11,px+4,py-4);g.stroke();}return;}
  if(grade===2){for(let i=0;i<8;i++){const a=i*Math.PI/4;g.moveTo(x+Math.cos(a)*r*.82,y+Math.sin(a)*r*.82);g.lineTo(x+Math.cos(a+.12)*r*.9,y+Math.sin(a+.12)*r*.9);}g.stroke();}
  else{g.circle(x,y,r*.72);g.stroke();for(let i=0;i<4;i++){const a=i*Math.PI/2,px=x+Math.cos(a)*r*.55,py=y+Math.sin(a)*r*.55;g.moveTo(px-4,py);g.lineTo(px,py+5);g.lineTo(px+4,py);g.lineTo(px,py-5);g.close();}g.stroke();}
 }

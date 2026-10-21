@@ -1,3 +1,5 @@
+import {eclipseMap} from "./EclipseMap";
+import {eclipseEnemy} from "./EclipseSystem";
 import {edgeMap} from "./EdgeCourtMap";
 import {edgeEnemy} from "./EdgeCourtSystem";
 import {kilnMap} from "./KilnMap";
@@ -119,6 +121,7 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
         return true;
       },
     }),
+    14:()=>({map:eclipseMap,resolveCrowd:true,movePlayer:dt=>w.eclipse.movePlayer(dt),vulnerable:e=>!!e.eclipse?.vulnerable&&e.state==='recover',director:dt=>{w.eclipse.director(dt);return true;},stepEnemy:(e,dt)=>{if(!eclipseEnemy(e.kind))return false;w.eclipse.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.eclipse.stepEnemy(e,dt),clean:()=>w.eclipse.clean(),onDeath:e=>w.eclipse.onDeath(e),stepHazard:h=>{if(!h.eclipse)return false;w.eclipse.stepHazard(h);return true;}}),
     13:()=>({map:edgeMap,resolveCrowd:true,movePlayer:dt=>w.edge.movePlayer(dt),vulnerable:e=>!!e.edge?.vulnerable&&e.state==='recover',director:dt=>{w.edge.director(dt);return true;},stepEnemy:(e,dt)=>{if(!edgeEnemy(e.kind))return false;w.edge.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.edge.stepEnemy(e,dt),clean:()=>w.edge.clean(),onDeath:e=>w.edge.onDeath(e),stepHazard:h=>{if(!h.edge)return false;w.edge.stepHazard(h);return true;}}),
     12:()=>({map:kilnMap,resolveCrowd:true,movePlayer:dt=>w.kiln.movePlayer(dt),vulnerable:e=>!!e.kiln?.vulnerable&&e.state==='recover',director:dt=>{w.kiln.director(dt);return true;},stepEnemy:(e,dt)=>{if(!kilnEnemy(e.kind))return false;w.kiln.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.kiln.stepEnemy(e,dt),clean:()=>w.kiln.clean(),onDeath:e=>w.kiln.onDeath(e),stepHazard:h=>{if(!h.kiln)return false;w.kiln.stepHazard(h);return true;}}),
     11:()=>({map:loomMap,resolveCrowd:true,movePlayer:dt=>w.loom.movePlayer(dt),vulnerable:e=>!!e.loom?.vulnerable&&e.state==='recover',director:dt=>{w.loom.director(dt);return true;},stepEnemy:(e,dt)=>{if(!loomEnemy(e.kind))return false;w.loom.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.loom.stepEnemy(e,dt),clean:()=>w.loom.clean(),onDeath:e=>w.loom.onDeath(e),stepHazard:h=>{if(!h.loom)return false;w.loom.stepHazard(h);return true;}}),

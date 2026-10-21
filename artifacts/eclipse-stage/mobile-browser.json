@@ -1,0 +1,46 @@
+{
+  "setup": {
+    "stage": 14,
+    "touch": true,
+    "lines": 2,
+    "announcement": "噬曜仪主 · 第三阶段 III"
+  },
+  "edges": [
+    {
+      "accepted": true,
+      "slots": 2,
+      "legal": true,
+      "player": {
+        "x": 0,
+        "y": -25.2
+      },
+      "camera": {
+        "x": 0,
+        "y": -23.416666666666668
+      }
+    },
+    {
+      "accepted": true,
+      "slots": 2,
+      "legal": true,
+      "player": {
+        "x": 0,
+        "y": 25.2
+      },
+      "camera": {
+        "x": 0,
+        "y": 23.416666666666668
+      }
+    }
+  ],
+  "pillar": {
+    "hpBefore": 100,
+    "hpAfter": 100,
+    "angle": 0,
+    "pivot": {
+      "x": 3,
+      "y": 8
+    }
+  },
+  "errors": []
+}
