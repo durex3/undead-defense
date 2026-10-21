@@ -1,5 +1,5 @@
 import type { StoragePort } from './StoragePort';
-export const PLAY_VERSION = '开发版 0.33.3 · 存档保护与进度恢复';
+export const PLAY_VERSION = '开发版 0.33.4 · 补回输入与伤害判定修复';
 export type Lesson = 'move' | 'xp' | 'upgrade' | 'nova' | 'elite';
 const lessons: Lesson[] = ['move', 'xp', 'upgrade', 'nova', 'elite'];
 export class PlayPreferences {

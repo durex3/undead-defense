@@ -112,7 +112,31 @@ try {
   report.reopened=await run(`(()=>{const g=__undead;g.progress=new g.progress.constructor(g.progress.storage);g.menuScreens.showStart();return {coins:g.progress.coins,stages:g.progress.data.stages.length};})()`);
   if(report.reopened.coins!==1640 || report.reopened.stages!==7)throw Error('Cold reopen failed');
 
-  report.repairPreview=await run(`(()=>{const g=__undead;globalThis.wx={getClipboardData:options=>options.success({data:'ASR1-4-400-2026102101-ekzqm6'})};g.menuScreens.showRecovery();g.menuScreens.pasteRepairCode();return {coins:g.progress.coins,stages:g.progress.data.stages.length};})()`);
+  await run(`(()=>{const m=__undead.menuScreens;m.showRecovery();m.catalogActions[m.catalogActions.length-1]();return true;})()`);
+  if(!(await run(labelsOf)).includes('输入补回码'))throw Error('Input entry missing');
+  report.emptyInput=await run(`(()=>{const g=__undead,m=g.menuScreens;m.catalogActions[2]();return {hint:m.repairHint.string,coins:g.progress.coins,input:!!m.repairInput};})()`);
+  if(!report.emptyInput.input || !report.emptyInput.hint.includes('请先'))throw Error('Empty validation lost input');
+  await run(`(()=>{globalThis.wx={getClipboardData:o=>o.fail()};__undead.menuScreens.catalogActions[1]();return true;})()`);
+  await c('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:422,y:169}]});
+  await c('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  await new Promise(r=>setTimeout(r,200));
+  report.nativeInput=await run(`({tag:document.activeElement.tagName,type:document.activeElement.type,hint:__undead.menuScreens.repairHint.string})`);
+  if(!['INPUT','TEXTAREA'].includes(report.nativeInput.tag))throw Error('Native input did not focus');
+  await c('Input.insertText',{text:'bad-code'});
+  await run(`document.activeElement.blur();__undead.menuScreens.catalogActions[2]();true`);
+  report.invalidInput=await run(`({value:__undead.menuScreens.repairInput.string,hint:__undead.menuScreens.repairHint.string})`);
+  if(report.invalidInput.value!=='bad-code' || !report.invalidInput.hint.includes('无效'))throw Error('Typed invalid code was not retained');
+  // Replace through native browser editing, not by assigning the Cocos string.
+  await run(`__undead.menuScreens.repairInput.setFocus();true`);
+  await new Promise(r=>setTimeout(r,100));
+  await run(`document.activeElement.select();true`);
+  await c('Input.insertText',{text:'ASR1-4-400-2026102101-ekzqm6'});
+  await run(`document.activeElement.blur();true`);
+  report.typed=await run(`({value:__undead.menuScreens.repairInput.string,editing:__undead.menuScreens.repairEditing})`);
+  if(report.typed.value!=='ASR1-4-400-2026102101-ekzqm6')throw Error('Native input text was not captured');
+  await shot('repair-code-input');
+  if((await run(labelsOf)).includes('label'))throw Error('Default EditBox label leaked');
+  report.repairPreview=await run(`(()=>{const g=__undead;g.menuScreens.catalogActions[2]();return {coins:g.progress.coins,stages:g.progress.data.stages.length};})()`);
   await shot('repair-code-preview');
   if(report.repairPreview.coins!==1640 || report.repairPreview.stages!==7)throw Error('Repair preview changed account');
   report.repaired=await run(`(()=>{const g=__undead,apply=g.menuScreens.catalogActions[1];apply();apply();return {coins:g.progress.coins,stages:g.progress.data.stages,available:g.progress.availableWeapons};})()`);
@@ -128,6 +152,11 @@ try {
   report.coldVictory=await run(`({coins:__undead.progress.coins,stages:__undead.progress.data.stages,modWins:__undead.progress.data.modWins,notice:__undead.progress.loadNotice})`);
   if(report.coldVictory.coins!==580 || report.coldVictory.stages.length!==5 || !report.coldVictory.modWins.blade['orbit+return'].every(n=>typeof n==='number'))throw Error('Real compiled victory save corrupted on reload');
   await shot('cold-victory-preserved');
+  report.sandDamage=await run(`(()=>{const g=__undead;g.selectedStage=2;g.restart();const w=g.world;w.chooseStartingWeapon(w.startingWeapons[0]);w.director.step=()=>{};w.armory.step=()=>{};w.enemies=[];w.move={x:0,y:0};const probe=(y,rift=false)=>{w.hp=100;w.invulnerable=0;w.player={x:3,y};w.time=1;w.hazards=[{id:100,source:0,kind:'frontierLane',x:0,y:0,angle:0,radius:6,width:.55,created:0,due:1,until:3,damage:20,fixedDamage:true,fired:rift,next:1,sandRift:rift}];w.step(.01);return w.hp;};const result={outside:probe(.56),inside:probe(.54),riftOutside:probe(.56,true),riftInside:probe(.54,true)};g.enabled=false;w.state='paused';g.overlay.destroyAllChildren();g.stage.setPosition(-144,0);w.time=.5;w.player={x:3,y:1.2};w.hazards=[{id:101,source:0,kind:'frontierLane',x:0,y:0,angle:0,radius:6,width:.55,created:0,due:1,until:3,fired:false}];w.camera={x:3,y:0};g.camera={x:144,y:0};g.painter.draw(w,0,[],false);return result;})()`);
+  if(report.sandDamage.outside!==100 || report.sandDamage.inside!==80 || report.sandDamage.riftOutside!==100 || report.sandDamage.riftInside!==94)throw Error('Compiled sand boundaries mismatch '+JSON.stringify(report.sandDamage));
+  await shot('sand-lane-boundary');
+  await run(`(()=>{const g=__undead;g.selectedStage=3;g.restart();const w=g.world;w.state='paused';w.player={x:2,y:0};g.stage.setPosition(-60,0);w.time=.5;w.hazards=[{id:102,source:0,kind:'sector',x:0,y:0,angle:.4,radius:3,width:Math.PI/2,created:0,due:1,until:2,fired:false,thunder:{shape:'sector'}}];g.painter.draw(w,0,[],false);return true;})()`);
+  await shot('thunder-sector-warning');
   report.errors=events.filter(e=>e.method==='Runtime.exceptionThrown').map(e=>e.params.exceptionDetails);
   fs.writeFileSync(out+'/browser-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));if(report.errors.length)throw Error('Runtime exceptions');
 } finally {

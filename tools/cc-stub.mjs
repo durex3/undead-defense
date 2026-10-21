@@ -280,6 +280,7 @@ export class Node {}
 export class Component {}
 export class UITransform {}
 export class Label {}
+export class EditBox {}
 export class Sprite {}
 export class SpriteFrame {}
 export class Texture2D {}

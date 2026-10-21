@@ -35,7 +35,7 @@ import {
   StageId,
 } from "../battle/ProgressionConfig";
 import { battleReport } from "../battle/BattleReport";
-import { KeyCode, Graphics } from "cc";
+import { KeyCode, Graphics, EditBox, Label, UITransform } from "cc";
 import {
   ALL_WEAPONS as WEAPONS,
   PASSIVES,
@@ -61,8 +61,14 @@ export class GameMenus {
   private achievementCategory = "通关记录";
   private detailSkill: Skill | null = null;
   private stagePreview: StageId | null = null;
+  private repairInput: EditBox | null = null;
+  private repairHint: Label | null = null;
+  private repairDraft = "";
+  private repairEditing = false;
+  private catalogLabels: {label: Label; title: string; width: number}[] = [];
   constructor(private host: ReturnType<GameBootstrap["menuContext"]>) {}
   handleTargetKey(code: number) {
+    if(this.repairEditing)return true;
     if (this.catalog) {
       if (code === KeyCode.ESCAPE) {
         if (this.catalog === "purchase")
@@ -90,6 +96,7 @@ export class GameMenus {
         if (route === "weapons") this.showWeapons();
         else if (route === "achievements") this.showAchievements();
         else if (route === "detail") this.showWeaponDetail(this.catalogSkill);
+        else if(route === "recovery") this.catalogLabels.forEach((b,i)=>{b.label.string=(i===this.catalogFocus&&b.width>=100?"▸ ":"")+b.title;});
         else this.confirmWeaponPurchase();
       }
       return true;
@@ -495,6 +502,7 @@ export class GameMenus {
   }
   showStart() {
     this.catalog = null;
+    this.repairInput=null;this.repairHint=null;this.repairEditing=false;
     this.stagePreview = null;
     this.host.confirmation = null;
     setupWechatShare();
@@ -624,6 +632,8 @@ export class GameMenus {
   private catalogShell(title: string) {
     const h = this.host;
     this.catalogActions = [];
+    this.catalogLabels = [];
+    this.repairInput=null;this.repairHint=null;this.repairEditing=false;
     h.started = false;
     h.clearInput();
     h.overlay.destroyAllChildren();
@@ -649,7 +659,7 @@ export class GameMenus {
   ) {
     const i = this.catalogActions.length;
     this.catalogActions.push(action);
-    this.host.button(
+    const widget=this.host.button(
       this.host.overlay,
       (i === this.catalogFocus && width >= 100 ? "▸ " : "") + label,
       x,
@@ -661,6 +671,7 @@ export class GameMenus {
         action();
       },
     );
+    this.catalogLabels.push({label:widget,title:label,width});
   }
   private returnCatalog() {
     if (this.catalogReturn === "achievements") this.showAchievements();
@@ -865,7 +876,7 @@ export class GameMenus {
     this.catalogButton("上一页",-300,-185,180,34,()=>this.showRecovery(p-1));
     this.catalogButton("下一页",300,-185,180,34,()=>this.showRecovery(p+1));
     this.catalogButton("返回菜单",-250,-245,280,44,()=>this.showStart());
-    this.catalogButton("粘贴补回码",250,-245,320,44,()=>this.pasteRepairCode());
+    this.catalogButton("输入补回码",250,-245,320,44,()=>this.showRepairEntry());
   }
   private confirmRecovery(id: string) {
     const h=this.host, record=h.progress.recoveryRecords.find(v=>v.id===id);if(!record){this.showRecovery();return;}
@@ -882,18 +893,41 @@ export class GameMenus {
       this.showRecovery();
     });
   }
+  private showRepairEntry(code=this.repairDraft) {
+    this.catalog="recovery";this.catalogFocus=2;this.catalogShell("输入补回码");
+    const h=this.host;
+    h.text(h.overlay,"点击下方输入框，可手动输入或长按粘贴",0,140,23,"#e7d5af",1040);
+    const box=h.panel(h.overlay,0,48,1010,82,"#293b48");box.name="RepairCodeInput";
+    const input=box.addComponent(EditBox);
+    input.inputMode=EditBox.InputMode.SINGLE_LINE;input.inputFlag=EditBox.InputFlag.DEFAULT;
+    input.returnType=EditBox.KeyboardReturnType.DONE;input.maxLength=160;
+    // addComponent initializes default labels immediately; remove them before
+    // assigning our styled labels so the engine's default “label” cannot leak.
+    input.textLabel?.node.destroy();input.placeholderLabel?.node.destroy();
+    const text=h.text(box,"",0,0,25,"#f3e6c7",970),placeholder=h.text(box,"在这里输入或长按粘贴补回码",0,0,22,"#92a8b8",970);
+    for(const label of [text,placeholder]){label.horizontalAlign=Label.HorizontalAlign.LEFT;label.enableWrapText=false;label.node.getComponent(UITransform)!.setContentSize(970,70);}
+    input.textLabel=text;input.placeholderLabel=placeholder;input.string=code;this.repairDraft=code;this.repairInput=input;
+    this.repairHint=h.text(h.overlay,"",0,-25,18,"#efc896",1040);
+    box.on(EditBox.EventType.TEXT_CHANGED,()=>{this.repairDraft=input.string;if(this.repairHint)this.repairHint.string="";});
+    box.on(EditBox.EventType.EDITING_DID_BEGAN,()=>{this.repairEditing=true;});
+    box.on(EditBox.EventType.EDITING_DID_ENDED,()=>{this.repairEditing=false;this.repairDraft=input.string;});
+    box.on(EditBox.EventType.EDITING_RETURN,()=>{this.repairEditing=false;this.showRepairCodePreview(input.string);});
+    this.catalogButton("返回检查",-340,-140,280,48,()=>this.showRecovery());
+    this.catalogButton("从剪贴板粘贴",0,-140,280,48,()=>this.pasteRepairCode());
+    this.catalogButton("预览补回",340,-140,280,48,()=>this.showRepairCodePreview(this.repairInput?.string??this.repairDraft));
+    h.text(h.overlay,"预览不会修改账户；确认补回后才会保存。",0,-220,17,"#b7c7ce",1040);
+  }
   private pasteRepairCode() {
-    const fail=()=>{this.catalogMessage="请先复制补回码，再点击粘贴；账户尚未修改";this.showRecovery();};
+    const fail=()=>{if(this.repairHint)this.repairHint.string="无法读取剪贴板，请长按输入框粘贴或手动输入";};
+    const accept=(code:string)=>{if(!this.repairInput){this.showRepairEntry(code);return;}this.repairInput.string=code;this.repairDraft=code;if(this.repairHint)this.repairHint.string="已粘贴，请点击预览补回";};
     const wx=(globalThis as any).wx;
-    if(wx?.getClipboardData) {
-      wx.getClipboardData({success:(result:{data:string})=>this.showRepairCodePreview(result.data),fail});
-    } else if(typeof navigator!=="undefined" && navigator.clipboard?.readText) {
-      navigator.clipboard.readText().then(code=>this.showRepairCodePreview(code)).catch(fail);
-    } else fail();
+    if(wx?.getClipboardData) wx.getClipboardData({success:(result:{data:string})=>accept(result.data),fail});
+    else if(typeof navigator!=="undefined"&&navigator.clipboard?.readText)navigator.clipboard.readText().then(accept).catch(fail);
+    else fail();
   }
   private showRepairCodePreview(code: string) {
     const h=this.host,preview=h.progress.previewRepairCode(code);
-    if(!preview){this.catalogMessage="补回码无效或复制不完整，账户尚未修改";this.showRecovery();return;}
+    if(!preview){if(this.repairInput){if(this.repairHint)this.repairHint.string=code.trim()?"补回码无效或复制不完整，请检查后重试":"请先在输入框填写补回码";}else{this.catalogMessage="补回码无效或复制不完整，账户尚未修改";this.showRecovery();}return;}
     const d=preview.data, revision=h.progress.data.revision;
     this.catalog="recovery";this.catalogFocus=0;this.catalogShell("确认补回通关与金币");
     h.text(h.overlay,`已通关 ${d.stages.join("、")||"暂无"} · ${d.coins??0}金币`,0,100,26,"#f1ddaf",1060);

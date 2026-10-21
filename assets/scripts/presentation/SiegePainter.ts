@@ -1,6 +1,7 @@
 import { Graphics } from 'cc';
 import { SIEGE_WALLS, SIEGE_ROUTES } from '../battle/SiegeMap';
 import { Hazard } from '../battle/SurvivalTypes';
+import { hazardLaneEnd } from '../battle/HazardLane';
 // Shared immutable palette avoids thousands of Color allocations per crowd frame.
 import { ink } from './StagePalette';
 export function drawSiegeMap(g:Graphics) {
@@ -23,7 +24,7 @@ export function drawSiegeCharge(g:Graphics,h:Hazard,time:number) {
   const x=h.x*48,y=h.y*48,progress=Math.max(0,Math.min(1,(time-h.created)/(h.due-h.created||1)));
   const active=time>=h.due;
   g.strokeColor=ink(active?'#fff0bd':'#ffe5ba',255);g.fillColor=ink('#ed7656',active?145:48+progress*45);g.lineWidth=active?6:5;
-  const bx=(h.x+Math.cos(h.angle)*h.radius)*48,by=(h.y+Math.sin(h.angle)*h.radius)*48,a=Math.atan2(by-y,bx-x),r=h.width*48;
+  const end=hazardLaneEnd(h),bx=end.x*48,by=end.y*48,a=Math.atan2(by-y,bx-x),r=h.width*48;
   g.moveTo(x-Math.sin(a)*r,y+Math.cos(a)*r);
   for(let i=0;i<=12;i++){const t=a+Math.PI/2-i*Math.PI/12;g.lineTo(bx+Math.cos(t)*r,by+Math.sin(t)*r);}
   for(let i=0;i<=12;i++){const t=a-Math.PI/2-i*Math.PI/12;g.lineTo(x+Math.cos(t)*r,y+Math.sin(t)*r);}g.close();g.fill();g.stroke();

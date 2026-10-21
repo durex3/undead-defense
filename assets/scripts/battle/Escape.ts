@@ -1,5 +1,6 @@
 import { siegeMap } from "./SiegeMap";
 import { sandMap } from "./SandMap";
+import { hazardLaneContains } from "./HazardLane";
 import { thunderMap } from "./ThunderMap";
 import { angleDelta, segmentDistance } from "./SurvivalTypes";
 import type { Hazard, Point } from "./SurvivalTypes";
@@ -7,6 +8,7 @@ import type { SurvivalWorld } from "./SurvivalWorld";
 
 /** True when a hazard covers the point right now. Shared by all four stages. */
 export function hazardContains(h: Hazard, p: Point) {
+  if(h.kind==="frontierLane"||h.kind==="frontierImpact")return hazardLaneContains(h,p);
   const dx = p.x - h.x,
     dy = p.y - h.y,
     d = Math.hypot(dx, dy);

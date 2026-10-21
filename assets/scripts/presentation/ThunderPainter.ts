@@ -155,14 +155,12 @@ export function drawThunderHazard(
     }
   } else if (t.shape === "sector") {
     g.moveTo(x, y);
-    g.arc(
-      x,
-      y,
-      h.radius * 48,
-      h.angle - h.width / 2,
-      h.angle + h.width / 2,
-      false,
-    );
+    // Cocos arc() starts a new subpath and its clockwise flag follows
+    // engine coordinates. Build the full damaging fan explicitly instead.
+    for (let i = 0; i <= 32; i++) {
+      const a = h.angle - h.width / 2 + h.width * i / 32;
+      g.lineTo(x + Math.cos(a) * h.radius * 48, y + Math.sin(a) * h.radius * 48);
+    }
     g.close();
     g.fill();
     g.stroke();
@@ -175,7 +173,11 @@ export function drawThunderHazard(
         0,
         Math.min(1, (time - h.created) / (h.due - h.created)),
       );
-      g.arc(x, y, h.radius * 48 - 5, 0, u * Math.PI * 2, false);
+      for (let i = 0; i <= 32; i++) {
+        const a = u * Math.PI * 2 * i / 32, r = h.radius * 48 - 5;
+        if (i === 0) g.moveTo(x + r, y);
+        else g.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r);
+      }
       g.stroke();
     }
   }

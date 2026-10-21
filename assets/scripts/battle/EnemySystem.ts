@@ -1,5 +1,6 @@
 import { thunderDevice } from "./ThunderSystem";
 import { crownEscape } from "./Escape";
+import { hazardLaneContains } from "./HazardLane";
 import { stepBoss } from "./BossSystem";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import {
@@ -157,9 +158,9 @@ export function stepHazards(w: SurvivalWorld) {
       else if(h.siegeTick&&w.time>=h.next){h.next=w.time+.7;if(d<h.radius)w.hurt(h.siegeTick,h.damageLabel||'钉地',false);}
       continue;
     }
-    if(h.sandRift&&h.fired&&w.time>=h.next){h.next=w.time+.6;if(distance(h,w.player)<h.radius)w.hurt(6,h.damageLabel||"沙裂",false);}
+    if(h.sandRift&&h.fired&&w.time>=h.next){h.next=w.time+.6;if(hazardLaneContains(h,w.player))w.hurt(6,h.damageLabel||"沙裂",false);}
     if(h.kind==="frontierLane"||h.kind==="frontierImpact"){
-      if(!h.fired){h.fired=true;if(!h.groupHit&&d<h.radius){w.hurt(h.damage,h.damageLabel||"铸潮攻击",false);for(const other of w.hazards)if(other.id===h.id||(h.group!==undefined&&other.group===h.group))other.groupHit=true;}}
+      if(!h.fired){h.fired=true;if(!h.groupHit&&hazardLaneContains(h,w.player)){w.hurt(h.damage,h.damageLabel||"铸潮攻击",false);for(const other of w.hazards)if(other.id===h.id||(h.group!==undefined&&other.group===h.group))other.groupHit=true;}}
       continue;
     }
     if(h.kind==='starTrace'){

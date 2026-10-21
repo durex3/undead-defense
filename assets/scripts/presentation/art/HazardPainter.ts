@@ -384,12 +384,22 @@ function drawSector(g: Graphics, h: Hazard, time: number) {
     end = h.angle + h.width / 2;
   g.fillColor = ink("#ed6c88", time < h.due ? 24 + p * 30 : 82);
   g.moveTo(x, y);
-  arc(g, x, y, r, start, end, 24);
+  // Keep the centre and arc in one subpath: an arc starting with moveTo
+  // closes to a chord and hides the dangerous inner portion of the fan.
+  for (let i = 0; i <= 24; i++) {
+    const a = start + (end - start) * i / 24;
+    g.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r);
+  }
   g.close();
   g.fill();
   g.strokeColor = ink("#ff7694", 240);
   g.lineWidth = 3;
-  arc(g, x, y, r, start, end, 24);
+  g.moveTo(x, y);
+  for (let i = 0; i <= 24; i++) {
+    const a = start + (end - start) * i / 24;
+    g.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r);
+  }
+  g.close();
   g.stroke();
   if (time < h.due) {
     for (const a of [start, end]) {

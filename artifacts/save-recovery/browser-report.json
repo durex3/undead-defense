@@ -31,7 +31,7 @@
     "上一页",
     "下一页",
     "返回菜单",
-    "粘贴补回码"
+    "输入补回码"
   ],
   "beforeRestore": {
     "coins": 0,
@@ -46,6 +46,24 @@
   "reopened": {
     "coins": 1640,
     "stages": 7
+  },
+  "emptyInput": {
+    "hint": "请先在输入框填写补回码",
+    "coins": 1640,
+    "input": true
+  },
+  "nativeInput": {
+    "tag": "TEXTAREA",
+    "type": "textarea",
+    "hint": "无法读取剪贴板，请长按输入框粘贴或手动输入"
+  },
+  "invalidInput": {
+    "value": "bad-code",
+    "hint": "补回码无效或复制不完整，请检查后重试"
+  },
+  "typed": {
+    "value": "ASR1-4-400-2026102101-ekzqm6",
+    "editing": false
   },
   "repairPreview": {
     "coins": 1640,
@@ -104,6 +122,12 @@
       }
     },
     "notice": ""
+  },
+  "sandDamage": {
+    "outside": 100,
+    "inside": 80,
+    "riftOutside": 100,
+    "riftInside": 94
   },
   "errors": []
 }
