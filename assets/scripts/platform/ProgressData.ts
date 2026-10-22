@@ -2,6 +2,8 @@ import type { Skill } from "../battle/SurvivalConfig";
 import type { WeaponGrade } from "../battle/WeaponGrade";
 /** Stable persisted account schema; optional progress fields retain their existing names. */
 export interface StageBest {
+  bodiesRemaining?:number;
+  killOrder?:"hunter_first"|"warden_first"|"simultaneous";
   form?: number;
   livesRemaining?: number;
   time: number;
@@ -15,6 +17,12 @@ export interface ProgressData {
   modWins?: Partial<Record<Skill, Record<string, number[]>>>;
   sealOpeners?: Skill[];
   loomQualifiedOpeners?: Skill[];
+  duetOrdersVersion?:1;
+  duetOrders?:Partial<Record<Skill,import("../battle/TwingateChallenge").GateOrder[]>>;
+  counterbeatMasteryVersion?:1;
+  counterbeatMastery?:Skill[];
+  traceQualifiedVersion?:1;
+  traceQualified?:Partial<Record<Skill,string[]>>;
   graveQualifiedVersion?: 1;
   graveQualified?: Partial<Record<Skill, string[]>>;
   leadQualified?: Partial<Record<Skill, string[]>>;

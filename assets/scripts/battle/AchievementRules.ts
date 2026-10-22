@@ -1,3 +1,6 @@
+import {GATE_OPENERS,validGateOrder} from "./TwingateChallenge";
+import {counterbeatComplete,COUNTERBEAT_OPENERS} from "./CounterbeatChallenge";
+import {traceKey} from "./TraceChallenge";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import type { ProgressData } from "../platform/ProgressData";
 import type { StageId } from "./ProgressionConfig";
@@ -91,6 +94,22 @@ const openerRules: Partial<Record<StageId, OpenerRule>> = {
     "eclipsePhases",
   ),
   15: phasePairs("leadQualified", 4, 12, "lead_twelve_paths", "leadPhases"),
+  19:(next,w,opener,earned)=>{
+    const order=w.twingate.encounter.order;
+    if(!GATE_OPENERS.includes(opener)||!validGateOrder(order)||w.skills[opener]!==8||!isLegalModPair(opener,w.mods[opener])||w.challenge.bossHits||!["A","B"].every(k=>w.challenge.gateGroups.has(k)&&w.challenge.gateSolo.has(k))||!["hunter","warden"].every(k=>w.challenge.gateBodies.has(k)))return;
+    next.duetOrdersVersion=1;const progress=next.duetOrders??(next.duetOrders={});progress[opener]=Array.from(new Set([...(progress[opener]??[]),order]));if(Object.values(progress).filter(v=>v&&v.length===2).length>=12)earned.add("twingate_twelve_orders");
+  },
+  18:(next,w,opener,earned)=>{
+    if(!COUNTERBEAT_OPENERS.includes(opener)||w.skills[opener]!==8||!isLegalModPair(opener,w.mods[opener])||w.challenge.bossHits||!w.challenge.counterElite||Object.values(w.challenge.counterGroups).some(n=>n<2))return;
+    next.counterbeatMasteryVersion=1;next.counterbeatMastery=Array.from(new Set([...(next.counterbeatMastery??[]),opener]));
+    if(counterbeatComplete(next.counterbeatMastery))earned.add("counterbeat_mastery");
+  },
+  17:(next,w,opener,earned)=>{
+    if(w.skills[opener]!==8||w.challenge.bossHits||!w.challenge.traceDirection||!["1B","2A","2B","2C"].every(k=>w.challenge.traceGroups.has(k)))return;
+    const key=traceKey(opener,w.mods[opener],w.challenge.traceDirection);if(!key)return;
+    next.traceQualifiedVersion=1;const progress=next.traceQualified??(next.traceQualified={});progress[opener]=Array.from(new Set([...(progress[opener]??[]),key]));
+    if(Object.values(progress).filter(v=>v&&v.length>=10).length>=12)earned.add("trace_twelve_paths");
+  },
   16: pairRule(
     "graveQualified",
     5,

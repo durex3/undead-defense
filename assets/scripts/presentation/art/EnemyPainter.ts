@@ -1,3 +1,6 @@
+import {drawTwingateBody} from "./enemies/TwingateArt";
+import {drawCounterbeatBody} from "./enemies/CounterbeatArt";
+import {drawTraceBody} from "./enemies/TraceCourtArt";
 import {drawGraveBody} from "./enemies/EchoGraveArt";
 import {drawLeadBody} from "./enemies/LeadFoundryArt";
 import {drawEclipseBody} from "./enemies/EclipseArt";
@@ -43,6 +46,9 @@ function collect(w: SurvivalWorld) {
 
 function bodyFor(g: Graphics, w: SurvivalWorld, enemy: Enemy, art: EnemyArt) {
   switch (w.stageId) {
+    case 19: drawTwingateBody(g,w,enemy,art,pose); break;
+    case 18: drawCounterbeatBody(g,w,enemy,art,pose); break;
+    case 17: drawTraceBody(g,w,enemy,art,pose); break;
     case 16: drawGraveBody(g,w,enemy,art,pose); break;
     case 15: drawLeadBody(g,w,enemy,art,pose); break;
     case 14: drawEclipseBody(g,w,enemy,art,pose); break;

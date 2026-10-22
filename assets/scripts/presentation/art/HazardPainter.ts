@@ -1,3 +1,6 @@
+import {drawTwingateHazard,drawTwingateInheritance} from "./TwingateHazardArt";
+import {drawCounterbeatHazard,drawCounterbeatSupport} from "./CounterbeatHazardArt";
+import {drawTraceHazard,drawTraceMemory} from "./TraceCourtHazardArt";
 import {drawGraveHazard,drawGraveMemory} from "./EchoGraveHazardArt";
 import {drawLeadHazard} from "./LeadFoundryHazardArt";
 import {drawEclipseHazard} from "./EclipseHazardArt";
@@ -61,8 +64,14 @@ export function drawHazards(g: Graphics, w: SurvivalWorld, reduced: boolean) {
   if (w.stageId === 7) drawPrismPreviews(g,w);
   if (w.stageId === 6) drawTidePreviews(g,w);
   if (w.stageId === 3) drawThunderPreviews(g, w);
+  if(w.stageId===19)drawTwingateInheritance(g,w);
+  if(w.stageId===18)drawCounterbeatSupport(g,w);
+  if(w.stageId===17)drawTraceMemory(g,w);
   if(w.stageId===16)drawGraveMemory(g,w);
   for (const h of w.hazards) {
+    if(h.twin){drawTwingateHazard(g,h,w.time);continue;}
+    if(h.counter){drawCounterbeatHazard(g,h,w.time);continue;}
+    if(h.trace){drawTraceHazard(g,h,w.time);continue;}
     if(h.grave){drawGraveHazard(g,h,w.time);continue;}
     if(h.lead){drawLeadHazard(g,h,w.time);continue;}
     if(h.eclipse){drawEclipseHazard(g,h,w.time);continue;}

@@ -1,0 +1,1630 @@
+{
+  "scope": "Real world, two Boss bodies, either solo survivor or paired elites, no weapons/director, 120s, stationary and moving,30/5fps. Not a win-rate test.",
+  "rows": [
+    {
+      "kind": "duet",
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 752,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16000000000012538,
+      "patterns": {
+        "A": 10,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 19,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 674,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9600000000002495,
+      "patterns": {
+        "A": 9,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 18,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "edge",
+      "dt": 0.03333333333333333,
+      "damage": 752,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16000000000012593,
+      "patterns": {
+        "A": 10,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 19,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "edge",
+      "dt": 0.2,
+      "damage": 674,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9600000000002498,
+      "patterns": {
+        "A": 9,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 18,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 752,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.0800000000000007,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 10
+    },
+    {
+      "kind": "duet",
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 672,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.47999999999999454,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 9
+    },
+    {
+      "kind": "duet",
+      "scene": "plinth",
+      "dt": 0.03333333333333333,
+      "damage": 752,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16000000000012626,
+      "patterns": {
+        "A": 10,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 19,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "plinth",
+      "dt": 0.2,
+      "damage": 674,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9600000000002504,
+      "patterns": {
+        "A": 9,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 18,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "close",
+      "dt": 0.03333333333333333,
+      "damage": 752,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16000000000012538,
+      "patterns": {
+        "A": 10,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 19,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "close",
+      "dt": 0.2,
+      "damage": 674,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9600000000002495,
+      "patterns": {
+        "A": 9,
+        "B": 9
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 18,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 218,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1666666666666672,
+      "patterns": {
+        "A": 3,
+        "B": 2
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 5,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 13
+    },
+    {
+      "kind": "duet",
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 348,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000000029,
+      "patterns": {
+        "A": 5,
+        "B": 5
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 10,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 11
+    },
+    {
+      "kind": "duet",
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 252,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666666682,
+      "patterns": {
+        "A": 9,
+        "B": 8
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 17,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "duet",
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 152,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000000022,
+      "patterns": {
+        "A": 8,
+        "B": 7
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 15,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 1
+    },
+    {
+      "kind": "hunter",
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 690,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1666666666667993,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 7
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 662,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000002238,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 6
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "edge",
+      "dt": 0.03333333333333333,
+      "damage": 728,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 15
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 8
+    },
+    {
+      "kind": "hunter",
+      "scene": "edge",
+      "dt": 0.2,
+      "damage": 704,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 14
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 7
+    },
+    {
+      "kind": "hunter",
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 728,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 15
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 8
+    },
+    {
+      "kind": "hunter",
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 704,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 14
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 7
+    },
+    {
+      "kind": "hunter",
+      "scene": "plinth",
+      "dt": 0.03333333333333333,
+      "damage": 690,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1666666666667993,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 7
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "plinth",
+      "dt": 0.2,
+      "damage": 662,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000002247,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 6
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "close",
+      "dt": 0.03333333333333333,
+      "damage": 690,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1666666666667993,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 7
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "close",
+      "dt": 0.2,
+      "damage": 662,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000002238,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 6
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 168,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666679952,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 8,
+          "B": 8
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 140,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000000009,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 9,
+          "B": 8
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 136,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666679988,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 6
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "hunter",
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 28,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000002236,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 7,
+          "B": 6
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "warden",
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 760,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.15333333333345392,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 13
+        }
+      },
+      "rejected": 6
+    },
+    {
+      "kind": "warden",
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 736,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9200000000001982,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 12
+        }
+      },
+      "rejected": 6
+    },
+    {
+      "kind": "warden",
+      "scene": "edge",
+      "dt": 0.03333333333333333,
+      "damage": 392,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.0866666666666672,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 15,
+          "B": 0
+        }
+      },
+      "rejected": 9
+    },
+    {
+      "kind": "warden",
+      "scene": "edge",
+      "dt": 0.2,
+      "damage": 364,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.520432183519092,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 13,
+          "B": 0
+        }
+      },
+      "rejected": 8
+    },
+    {
+      "kind": "warden",
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 804,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1533333333334573,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 14
+        }
+      },
+      "rejected": 7
+    },
+    {
+      "kind": "warden",
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 758,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9200000000002012,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 13
+        }
+      },
+      "rejected": 7
+    },
+    {
+      "kind": "warden",
+      "scene": "plinth",
+      "dt": 0.03333333333333333,
+      "damage": 788,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.15333333333345525,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 16
+        }
+      },
+      "rejected": 8
+    },
+    {
+      "kind": "warden",
+      "scene": "plinth",
+      "dt": 0.2,
+      "damage": 714,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9200000000002625,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 15
+        }
+      },
+      "rejected": 7
+    },
+    {
+      "kind": "warden",
+      "scene": "close",
+      "dt": 0.03333333333333333,
+      "damage": 760,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.15333333333345392,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 13
+        }
+      },
+      "rejected": 6
+    },
+    {
+      "kind": "warden",
+      "scene": "close",
+      "dt": 0.2,
+      "damage": 736,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9200000000001982,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 12
+        }
+      },
+      "rejected": 6
+    },
+    {
+      "kind": "warden",
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 0,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1666666666666665,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 13
+        }
+      },
+      "rejected": 6
+    },
+    {
+      "kind": "warden",
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 260,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9200000000001984,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 13
+        }
+      },
+      "rejected": 7
+    },
+    {
+      "kind": "warden",
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 26,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666666677,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 1,
+          "B": 13
+        }
+      },
+      "rejected": 6
+    },
+    {
+      "kind": "warden",
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 46,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.000000000000001,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 0,
+        "gateballista": 0
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 3,
+          "B": 10
+        }
+      },
+      "rejected": 4
+    },
+    {
+      "kind": "elite",
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 734,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.14666666666678518,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 19,
+        "gateballista": 19
+      },
+      "pairs": 19,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "elite",
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 684,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.8799999999999586,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 18,
+        "gateballista": 18
+      },
+      "pairs": 18,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "elite",
+      "scene": "edge",
+      "dt": 0.03333333333333333,
+      "damage": 734,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.14666666666678552,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 19,
+        "gateballista": 19
+      },
+      "pairs": 19,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "elite",
+      "scene": "edge",
+      "dt": 0.2,
+      "damage": 684,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.8799999999999584,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 18,
+        "gateballista": 18
+      },
+      "pairs": 18,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "elite",
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 686,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.14666666666678596,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 20,
+        "gateballista": 17
+      },
+      "pairs": 4,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 8
+    },
+    {
+      "kind": "elite",
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 636,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.23600000000000293,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 18,
+        "gateballista": 15
+      },
+      "pairs": 0,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 9
+    },
+    {
+      "kind": "elite",
+      "scene": "plinth",
+      "dt": 0.03333333333333333,
+      "damage": 734,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1466666666667864,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 19,
+        "gateballista": 18
+      },
+      "pairs": 15,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 1
+    },
+    {
+      "kind": "elite",
+      "scene": "plinth",
+      "dt": 0.2,
+      "damage": 658,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.8800000000002086,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 18,
+        "gateballista": 17
+      },
+      "pairs": 12,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 3
+    },
+    {
+      "kind": "elite",
+      "scene": "close",
+      "dt": 0.03333333333333333,
+      "damage": 734,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.14666666666678518,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 19,
+        "gateballista": 19
+      },
+      "pairs": 19,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "elite",
+      "scene": "close",
+      "dt": 0.2,
+      "damage": 684,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.8799999999999586,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 18,
+        "gateballista": 18
+      },
+      "pairs": 18,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 0
+    },
+    {
+      "kind": "elite",
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 148,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1466666666667856,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 15,
+        "gateballista": 16
+      },
+      "pairs": 12,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 28
+    },
+    {
+      "kind": "elite",
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 282,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.880000000000208,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 14,
+        "gateballista": 14
+      },
+      "pairs": 13,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 3
+    },
+    {
+      "kind": "elite",
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 308,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.14666666666678563,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 13,
+        "gateballista": 12
+      },
+      "pairs": 9,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 34
+    },
+    {
+      "kind": "elite",
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 178,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.8800000000002081,
+      "patterns": {
+        "A": 0,
+        "B": 0
+      },
+      "eliteCasts": {
+        "huntermarshal": 13,
+        "gateballista": 14
+      },
+      "pairs": 7,
+      "solo": {
+        "hunter": {
+          "A": 0,
+          "B": 0
+        },
+        "warden": {
+          "A": 0,
+          "B": 0
+        }
+      },
+      "rejected": 13
+    }
+  ],
+  "issues": []
+}

@@ -1,0 +1,594 @@
+{
+  "scope": "Real world, single boss or paired elites, no weapons/director, 120s, stationary and moving,30/5fps. Not a win-rate test.",
+  "rows": [
+    {
+      "kind": "boss",
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 1146,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 22,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 1068,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 20,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "edge",
+      "dt": 0.03333333333333333,
+      "damage": 1146,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 22,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "edge",
+      "dt": 0.2,
+      "damage": 1068,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 20,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 1146,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 22,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 1068,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 20,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "plinth",
+      "dt": 0.03333333333333333,
+      "damage": 1046,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.07333333333333404,
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 16,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "plinth",
+      "dt": 0.2,
+      "damage": 938,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.4400000000000011,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 7
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 14,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "close",
+      "dt": 0.03333333333333333,
+      "damage": 1146,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 22,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "close",
+      "dt": 0.2,
+      "damage": 1068,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 20,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 260,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.07333333333333349,
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 13,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 312,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.4400000000000003,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 17,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 22,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1666666666666668,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 18,
+      "rejected": 0
+    },
+    {
+      "kind": "boss",
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 26,
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.4400000000000009,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "eliteCasts": {
+        "broadcantor": 0,
+        "needleconductor": 0
+      },
+      "pairs": 0,
+      "secondLocks": 14,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 3044,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.04000000000000002,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 23,
+        "needleconductor": 23
+      },
+      "pairs": 23,
+      "secondLocks": 23,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 2656,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.24000000000000002,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 21,
+        "needleconductor": 21
+      },
+      "pairs": 21,
+      "secondLocks": 21,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "edge",
+      "dt": 0.03333333333333333,
+      "damage": 3188,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.040000000000000084,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 23,
+        "needleconductor": 23
+      },
+      "pairs": 23,
+      "secondLocks": 23,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "edge",
+      "dt": 0.2,
+      "damage": 2804,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.2400000000000009,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 21,
+        "needleconductor": 21
+      },
+      "pairs": 21,
+      "secondLocks": 21,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 3044,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.03999999999999915,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 23,
+        "needleconductor": 23
+      },
+      "pairs": 23,
+      "secondLocks": 23,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 2660,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.23999999999999952,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 21,
+        "needleconductor": 21
+      },
+      "pairs": 21,
+      "secondLocks": 21,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "plinth",
+      "dt": 0.03333333333333333,
+      "damage": 4252,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.03999999999999988,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 21,
+        "needleconductor": 20
+      },
+      "pairs": 8,
+      "secondLocks": 8,
+      "rejected": 14
+    },
+    {
+      "kind": "pair",
+      "scene": "plinth",
+      "dt": 0.2,
+      "damage": 2512,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.24000000000000032,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 21,
+        "needleconductor": 21
+      },
+      "pairs": 21,
+      "secondLocks": 21,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "close",
+      "dt": 0.03333333333333333,
+      "damage": 3140,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.040000000000000015,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 22,
+        "needleconductor": 22
+      },
+      "pairs": 22,
+      "secondLocks": 22,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "close",
+      "dt": 0.2,
+      "damage": 2948,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.24000000000000002,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 21,
+        "needleconductor": 21
+      },
+      "pairs": 21,
+      "secondLocks": 20,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 256,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.03933333333333344,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 20,
+        "needleconductor": 20
+      },
+      "pairs": 20,
+      "secondLocks": 19,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 78,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.2360000000000001,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 18,
+        "needleconductor": 18
+      },
+      "pairs": 18,
+      "secondLocks": 18,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 126,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.07045141538731882,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 20,
+        "needleconductor": 20
+      },
+      "pairs": 19,
+      "secondLocks": 16,
+      "rejected": 0
+    },
+    {
+      "kind": "pair",
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 334,
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "maxBodyStep": 0.23600000000000035,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "eliteCasts": {
+        "broadcantor": 20,
+        "needleconductor": 20
+      },
+      "pairs": 19,
+      "secondLocks": 17,
+      "rejected": 0
+    }
+  ],
+  "issues": []
+}

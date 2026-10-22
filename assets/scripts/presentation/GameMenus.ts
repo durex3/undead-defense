@@ -330,6 +330,7 @@ export class GameMenus {
         "#adbccc",
         1000,
       );
+      if(r.bodiesRemaining!==undefined)h.text(h.overlay,`猎主存活 ${r.bodiesRemaining}/2 · 合计余血 ${r.bossRemaining??0}% · ${r.killOrder==='simultaneous'?'同时击败':r.killOrder==='hunter_first'?'逐猎者先倒':r.killOrder==='warden_first'?'镇阙者先倒':'尚未先倒'}`,0,149,14,'#b6cbd0',1000);
       r.rows.forEach((row, i) => {
         const y = 82 - i * 34;
         h.panel(h.overlay, 0, y, 1020, 30, "#26323f");
@@ -706,12 +707,12 @@ export class GameMenus {
   showEclipsePaths(){this.showOpenerPaths("eclipse_twelve_paths");}
   showLeadPaths(){this.showOpenerPaths("lead_twelve_paths");}
   showGravePaths(){this.showOpenerPaths("grave_twelve_paths");}
-  private showOpenerPaths(id:OpenerPathId) {
+  private showOpenerPaths(id:OpenerPathId,detail?:Skill) {
     const page=this.achievementPage;
-    const back=this.navigation.returnTo(()=>this.showAchievements(page,"机制挑战"));
+    const back=detail?()=>this.showOpenerPaths(id):this.navigation.returnTo(()=>this.showAchievements(page,"机制挑战"));
     this.navigation.open("paths",back,0);
     this.catalogShell(OPENER_PATH_SCREENS[id].title);
-    renderOpenerProgress(this.host,id,this.catalogButton.bind(this),back);
+    renderOpenerProgress(this.host,id,this.catalogButton.bind(this),back,detail,skill=>this.showOpenerPaths(id,skill));
   }
   showAchievements(page=this.achievementPage,category=this.achievementCategory) {
     if(this.catalog!=="achievements")this.catalogFocus=0;

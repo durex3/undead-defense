@@ -36,6 +36,9 @@ export const ENEMY_KINDS = [
   "dialscrap","glowdisc","reversegazer","offsetorrery","twindial","eclipsewarden",
   "gravegrub","ribwarden","echoacolyte","shedstalker","coffinregent","scarprelate",
   "leadgrub","pitchframe","kneehopper","offsetcart","twinpitch","presswarden",
+  "shackleshard","fettersprinter","trailhound","turnwarden","trailmarshal","reversejailer",
+  "chimeshard","forklancer","pipereader","resonancebearer","broadcantor","needleconductor",
+  "gategrub","shorthorn","bowwatch","splitblade","huntermarshal","gateballista",
   // 通用
   "minion", "boss",
 ] as const;
@@ -51,6 +54,7 @@ export interface EnemyConfig {
   sprite: string;
   scale: number;
   elite?: boolean;
+  stagePositioning?:boolean;
   elitePosition?: "anchor"|"flank";
   /** Optional seeking-only spacing; original stage still owns every attack. */
   tacticalRange?: { min: number; preferred: number; max: number };
@@ -61,6 +65,26 @@ export interface EnemyConfig {
 }
 
 export const ENEMIES: Record<Kind, EnemyConfig> = {
+ gategrub:{name:"阙尘猎徒",health:1.28,speed:1.92,contact:12,xp:1,threat:0,cap:100,sprite:"碎猎骨壳",scale:1,armor:.2},
+ shorthorn:{name:"短角逐卫",health:2.35,speed:1.16,contact:14,xp:2,threat:2,cap:2,sprite:"短角奔猎",scale:1},
+ bowwatch:{name:"鸣弦哨侍",health:2.35,speed:1.10,contact:14,xp:2,threat:2,cap:2,sprite:"骨弦猎哨",scale:1,tacticalRange:{min:3.5,preferred:4.5,max:5.5}},
+ splitblade:{name:"裂门刃侍",health:2.4,speed:1.14,contact:14,xp:2,threat:2,cap:1,sprite:"裂门肩刃",scale:1},
+ huntermarshal:{name:"奔阙猎监",health:12.4,speed:1.18,contact:24,xp:8,threat:3,cap:1,sprite:"奔阙双刃",scale:1,elite:true,stagePositioning:true,elitePosition:"flank"},
+ gateballista:{name:"守阙弩监",health:12.9,speed:1.16,contact:26,xp:8,threat:3,cap:1,sprite:"守阙宽弩",scale:1,elite:true,stagePositioning:true,elitePosition:"anchor"},
+
+ chimeshard:{name:"磬屑行徒",health:1.26,speed:1.90,contact:12,xp:1,threat:0,cap:100,sprite:"碎磬背壳",scale:1,armor:.2},
+ forklancer:{name:"分律刺手",health:2.30,speed:1.14,contact:14,xp:2,threat:2,cap:2,sprite:"分叉音刺",scale:1},
+ pipereader:{name:"列管鸣侍",health:2.35,speed:1.10,contact:14,xp:2,threat:2,cap:2,sprite:"展开排管",scale:1,tacticalRange:{min:3.5,preferred:4.5,max:5.5}},
+ resonancebearer:{name:"共鸣架使",health:2,speed:1.02,contact:12,xp:2,threat:2,cap:1,sprite:"共鸣背架",scale:1,priorityTarget:true},
+ broadcantor:{name:"展磬领奏",health:12.20,speed:1.16,contact:24,xp:8,threat:3,cap:1,sprite:"宽磬刃",scale:1,elite:true,elitePosition:"anchor"},
+ needleconductor:{name:"锥律督奏",health:12.70,speed:1.18,contact:26,xp:8,threat:3,cap:1,sprite:"长鸣枪",scale:1,elite:true,elitePosition:"flank"},
+
+ shackleshard:{armor:.2,name:"锁屑刑徒",health:1.24,speed:1.88,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
+ fettersprinter:{name:"曳枷刑卒",health:2.25,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.8},
+ trailhound:{name:"寻痕缚兽",health:2.3,speed:1.16,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.8},
+ turnwarden:{name:"折步钩卫",health:2.3,speed:1.14,contact:14,xp:2,threat:2,cap:1,sprite:"",scale:3.8},
+ trailmarshal:{elitePosition:"anchor",name:"领痕刑使",health:12,speed:1.16,contact:24,xp:8,threat:3,cap:1,sprite:"",scale:4.8,elite:true},
+ reversejailer:{name:"返步狱长",health:12.5,speed:1.18,contact:26,xp:8,threat:3,cap:1,sprite:"",scale:4.8,elite:true},
  gravegrub:{armor:.2,name:"灰骨蠹",health:1.22,speed:1.86,contact:12,xp:1,threat:0,cap:100,sprite:"",scale:3.4},
  ribwarden:{name:"掀棺骨卫",health:2.2,speed:1.12,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.8},
  echoacolyte:{tacticalRange: { min: 2.8, preferred: 3.8, max: 4.8 },name:"留痕执骸",health:2.2,speed:1.10,contact:14,xp:2,threat:2,cap:2,sprite:"",scale:3.8},

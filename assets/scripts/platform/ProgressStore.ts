@@ -214,29 +214,13 @@ export class ProgressStore {
     if (w.state === "won" && !(next.settledRuns ?? []).includes(w.runId)) {
       notices.push(...settleVictory(next, w));
     }
+    const group=w.stageStrategy.encounter?.();
     const current: StageBest = {
         time: Math.floor(w.time),
         phase: boss?.bossPhase || 0,
-        ...(w.stageId === 16
-          ? {
-              form: boss?.grave?.life ?? (w.state === "won" ? 2 : 0),
-              livesRemaining:
-                w.state === "won"
-                  ? 0
-                  : boss?.grave?.life === 1
-                    ? 2
-                    : boss
-                      ? 1
-                      : 0,
-            }
-          : {}),
-        bossRemaining: boss
-          ? Math.ceil(
-              (w.stageId === 16
-                ? w.grave.totalRemaining(boss) / boss.grave!.total!
-                : Math.max(0, boss.hp) / boss.maxHp) * 100,
-            )
-          : null,
+        ...(w.stageStrategy.lifecycle?.progress?{form:boss?w.stageStrategy.lifecycle.progress(boss).form:w.state==="won"?(w.stageStrategy.lifecycle.forms??0):0,livesRemaining:w.state==="won"||!boss?0:w.stageStrategy.lifecycle.progress(boss).livesRemaining}:{}),
+        bossRemaining:boss?Math.ceil((w.stageStrategy.lifecycle?.progress?.(boss).remaining??Math.max(0,boss.hp)/boss.maxHp)*100):null,
+        ...(group?{form:group.form,livesRemaining:group.livesRemaining,bodiesRemaining:group.bodiesRemaining,killOrder:group.killOrder,bossRemaining:Math.ceil(group.remaining*100),phase:group.form}:{}),
         won: w.state === "won",
       },
       best = next.stageBest[w.stageId];

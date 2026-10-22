@@ -114,3 +114,22 @@ export function drawFireFieldForm(g:Graphics,x:number,y:number,r:number,grade:nu
   else{const q=a+Math.PI/3;g.moveTo(x+Math.cos(a)*r*.72,y+Math.sin(a)*r*.72);g.lineTo(x+Math.cos(q)*r*.72,y+Math.sin(q)*r*.72);g.moveTo(x+Math.cos(a)*r*.3,y+Math.sin(a)*r*.3);g.lineTo(x+Math.cos(a)*r*.55,y+Math.sin(a)*r*.55);}}
  g.stroke();
 }
+export function drawHolyForm(g:Graphics,x:number,y:number,grade:number,scale=1){
+ const p=(a:number,b:number)=>[x+a*scale,y+b*scale];
+ if(grade===4){g.fillColor=ink('#f2dfa6');g.strokeColor=ink('#354552');g.lineWidth=2;
+ for(let i=0;i<3;i++){const yy=-20+i*17;polygon(g,[p(0,yy-7),p(-10+i*2,yy+7),p(-5,yy+15),p(0,yy+10),p(5,yy+15),p(10-i*2,yy+7)]);}
+ g.strokeColor=ink('#fffbe5');g.lineWidth=2;for(const side of [-1,1]){g.moveTo(...p(side*7,24) as [number,number]);g.lineTo(...p(side*21,29) as [number,number]);g.lineTo(...p(side*15,36) as [number,number]);}g.moveTo(...p(0,31) as [number,number]);g.lineTo(...p(0,43) as [number,number]);g.stroke();return;}
+g.fillColor=ink(grade===3?'#bedbe6':'#e0d7a2');g.strokeColor=ink('#253139');g.lineWidth=2;
+ if(grade===3){polygon(g,[p(0,-24),p(-11,0),p(-7,23),p(0,14),p(7,23),p(11,0)]);g.fillColor=ink('#20333b');polygon(g,[p(0,-10),p(-3,4),p(0,11),p(3,4)]);}
+ else {polygon(g,[p(0,-23),p(-8,-5),p(-5,23),p(0,17),p(5,23),p(8,-5)]);g.strokeColor=ink('#fff4c4');g.lineWidth=2;for(const side of [-1,1]){g.moveTo(...p(side*2,-12) as [number,number]);g.lineTo(...p(side*3,14) as [number,number]);}g.stroke();}
+ g.strokeColor=ink(grade===3?'#d7f3fc':'#f4eabf');g.lineWidth=3;for(const side of [-1,1]){g.moveTo(...p(side*3,18) as [number,number]);g.lineTo(...p(side*17,22) as [number,number]);g.lineTo(...p(side*12,29) as [number,number]);}g.moveTo(...p(0,22) as [number,number]);g.lineTo(...p(0,34) as [number,number]);g.stroke();
+}
+
+/** One partner silhouette; evolving armor never increases companion count. */
+export function drawGhostForm(g:Graphics,x:number,y:number,grade:number,scale=1){
+ const p=(a:number,b:number)=>[x+a*scale,y+b*scale];g.fillColor=ink(grade===3?'#d6d6b4':'#a9cdb7');g.strokeColor=ink('#17312e');g.lineWidth=2;
+ polygon(g,[[0,30],[-12,17],[-17,-19],[-7,-12],[0,-30],[7,-12],[17,-19],[12,17]].map(([a,b])=>p(a,b)));
+ g.fillColor=ink('#294d48');polygon(g,[[-6,12],[0,20],[6,12],[4,-2],[-4,-2]].map(([a,b])=>p(a,b)));
+ for(const side of[-1,1]){g.strokeColor=ink('#e5e7ca');g.lineWidth=3;const a=p(side*8,7),b=p(side*22,-1),c=p(side*25,-10);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.lineTo(c[0],c[1]);g.stroke();}
+ if(grade===3){g.strokeColor=ink('#d8c291');g.lineWidth=2;for(const side of[-1,1]){const a=p(side*13,29),b=p(side*8,39),c=p(side*3,31);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.lineTo(c[0],c[1]);}g.stroke();g.fillColor=ink('#19342d');polygon(g,[[0,-1],[-4,-8],[0,-16],[4,-8]].map(([a,b])=>p(a,b)));}
+}

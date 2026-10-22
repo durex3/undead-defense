@@ -1,0 +1,537 @@
+{
+  "scope": "Single real boss/no weapons or director,120 seconds, stationary and moving,30/5fps; not a victory or win-rate test",
+  "rows": [
+    {
+      "life": 1,
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 592,
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.15333333333345722,
+      "state": "charge",
+      "rejected": 0,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 518,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9200000000000002,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "east",
+      "dt": 0.03333333333333333,
+      "damage": 546,
+      "patterns": {
+        "A": 15,
+        "B": 1,
+        "C": 8
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666666669,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "east",
+      "dt": 0.2,
+      "damage": 758,
+      "patterns": {
+        "A": 14,
+        "B": 1,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000000064,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "north",
+      "dt": 0.03333333333333333,
+      "damage": 592,
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666666835,
+      "state": "charge",
+      "rejected": 0,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "north",
+      "dt": 0.2,
+      "damage": 518,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.000000000000002,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 592,
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.15333333333346044,
+      "state": "charge",
+      "rejected": 0,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 518,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.9200000000000018,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 126,
+      "patterns": {
+        "A": 7,
+        "B": 8,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666666738,
+      "state": "windup",
+      "rejected": 1,
+      "genuineHistory": 541,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 130,
+      "patterns": {
+        "A": 7,
+        "B": 6,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000000036,
+      "state": "recover",
+      "rejected": 0,
+      "genuineHistory": 480,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 156,
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666666743,
+      "state": "recover",
+      "rejected": 0,
+      "genuineHistory": 541,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 156,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000000033,
+      "state": "charge",
+      "rejected": 0,
+      "genuineHistory": 480,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "zigzag",
+      "dt": 0.03333333333333333,
+      "damage": 252,
+      "patterns": {
+        "A": 7,
+        "B": 8,
+        "C": 8
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.16666666666666755,
+      "state": "recover",
+      "rejected": 0,
+      "genuineHistory": 360,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 1,
+      "scene": "zigzag",
+      "dt": 0.2,
+      "damage": 182,
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0000000000000027,
+      "state": "recover",
+      "rejected": 0,
+      "genuineHistory": 276,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "center",
+      "dt": 0.03333333333333333,
+      "damage": 390,
+      "patterns": {
+        "A": 8,
+        "B": 0,
+        "C": 8
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.17333333333347145,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "center",
+      "dt": 0.2,
+      "damage": 672,
+      "patterns": {
+        "A": 7,
+        "B": 0,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0400000000002367,
+      "state": "seek",
+      "rejected": 0,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "east",
+      "dt": 0.03333333333333333,
+      "damage": 1144,
+      "patterns": {
+        "A": 0,
+        "B": 0,
+        "C": 1
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1733333333334718,
+      "state": "recover",
+      "rejected": 57,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "east",
+      "dt": 0.2,
+      "damage": 624,
+      "patterns": {
+        "A": 7,
+        "B": 0,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0400000000002365,
+      "state": "windup",
+      "rejected": 2,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "north",
+      "dt": 0.03333333333333333,
+      "damage": 390,
+      "patterns": {
+        "A": 8,
+        "B": 0,
+        "C": 8
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.17333333333347145,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "north",
+      "dt": 0.2,
+      "damage": 672,
+      "patterns": {
+        "A": 7,
+        "B": 0,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0400000000002367,
+      "state": "seek",
+      "rejected": 0,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "corner",
+      "dt": 0.03333333333333333,
+      "damage": 244,
+      "patterns": {
+        "A": 7,
+        "B": 0,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.17333333333347514,
+      "state": "charge",
+      "rejected": 2,
+      "genuineHistory": 55,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "corner",
+      "dt": 0.2,
+      "damage": 424,
+      "patterns": {
+        "A": 8,
+        "B": 0,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0400000000002383,
+      "state": "recover",
+      "rejected": 0,
+      "genuineHistory": 56,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "circle",
+      "dt": 0.03333333333333333,
+      "damage": 0,
+      "patterns": {
+        "A": 10,
+        "B": 0,
+        "C": 9
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.17333333333347206,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 541,
+      "genuineCasts": 0,
+      "historyCasts": 0
+    },
+    {
+      "life": 2,
+      "scene": "circle",
+      "dt": 0.2,
+      "damage": 22,
+      "patterns": {
+        "A": 7,
+        "B": 2,
+        "C": 7
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.040000000000236,
+      "state": "windup",
+      "rejected": 1,
+      "genuineHistory": 480,
+      "genuineCasts": 0,
+      "historyCasts": 3
+    },
+    {
+      "life": 2,
+      "scene": "weave",
+      "dt": 0.03333333333333333,
+      "damage": 84,
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 5
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.1733333333335105,
+      "state": "charge",
+      "rejected": 0,
+      "genuineHistory": 541,
+      "genuineCasts": 1,
+      "historyCasts": 10
+    },
+    {
+      "life": 2,
+      "scene": "weave",
+      "dt": 0.2,
+      "damage": 78,
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 5
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0400000000003187,
+      "state": "charge",
+      "rejected": 0,
+      "genuineHistory": 480,
+      "genuineCasts": 0,
+      "historyCasts": 7
+    },
+    {
+      "life": 2,
+      "scene": "zigzag",
+      "dt": 0.03333333333333333,
+      "damage": 376,
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 6
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 0.17333333333359802,
+      "state": "windup",
+      "rejected": 1,
+      "genuineHistory": 360,
+      "genuineCasts": 7,
+      "historyCasts": 9
+    },
+    {
+      "life": 2,
+      "scene": "zigzag",
+      "dt": 0.2,
+      "damage": 376,
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 5
+      },
+      "maxSlots": 1,
+      "wallViolations": 0,
+      "maxBodyStep": 1.0400000000002367,
+      "state": "windup",
+      "rejected": 0,
+      "genuineHistory": 276,
+      "genuineCasts": 8,
+      "historyCasts": 9
+    }
+  ]
+}

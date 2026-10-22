@@ -2,6 +2,9 @@ import { Graphics } from "cc";
 import type { GameBootstrap } from "../GameBootstrap";
 import { ink } from "./art/Ink";
 const BADGES = new Map<string, { name: string; draw: (g: Graphics) => void }>([
+ ["twingate_twelve_orders",{name:"TwingateAchievementBadge",draw:g=>{g.strokeColor=ink('#d8c7a3');g.lineWidth=3;for(const side of [-1,1]){g.moveTo(side*4,-17);g.lineTo(side*18,-8);g.lineTo(side*18,12);g.lineTo(side*4,18);g.lineTo(side*4,5);g.lineTo(side*11,0);}g.stroke();}}],
+ ["counterbeat_mastery",{name:"CounterbeatAchievementBadge",draw:g=>{g.strokeColor=ink('#ebd2a0');g.lineWidth=3;for(const side of [-1,1]){g.moveTo(side*6,18);g.lineTo(side*17,-9);g.circle(side*17,-9,4);}g.stroke();g.moveTo(-18,18);g.lineTo(18,18);g.stroke();}}],
+ ["trace_twelve_paths",{name:"TraceAchievementBadge",draw:g=>{g.strokeColor=ink("#e5ba87");g.lineWidth=3;for(const side of [-1,1]){g.moveTo(side*17,-10);g.lineTo(side*5,4);g.lineTo(side*14,15);g.moveTo(side*5,4);g.lineTo(side*13,3);}g.stroke();}}],
   [
     "grave_twelve_paths",
     {

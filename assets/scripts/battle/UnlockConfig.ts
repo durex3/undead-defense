@@ -2,11 +2,11 @@ import type { WeaponMod, WeaponStats } from "./ArmoryConfig";
 export const UNLOCK_WEAPONS = ["hammer", "wheel"] as const;
 export type UnlockSkill = (typeof UNLOCK_WEAPONS)[number];
 export const HAMMER_PRICE = 360;
-export const CLEAR_COINS = [0, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400] as const;
-export const STAGE_CLEAR_IDS = ["", "siege_clear", "sand_clear", "thunder_clear", "moon_clear", "bellcourt_clear", "tideworks_clear", "prismvault_clear", "rootglass_clear", "windcloister_clear", "library_clear", "emberloom_clear", "glazekiln_clear", "edgecourt_clear", "observatory_clear", "leadfoundry_clear", "echograve_clear"] as const;
+export const CLEAR_COINS = [0, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400, 420, 440, 460] as const;
+export const STAGE_CLEAR_IDS = ["", "siege_clear", "sand_clear", "thunder_clear", "moon_clear", "bellcourt_clear", "tideworks_clear", "prismvault_clear", "rootglass_clear", "windcloister_clear", "library_clear", "emberloom_clear", "glazekiln_clear", "edgecourt_clear", "observatory_clear", "leadfoundry_clear", "echograve_clear", "tracecourt_clear", "counterbeat_clear", "twingate_clear"] as const;
 export interface Achievement { id: string; name: string; condition: string; reward: string; weapon: import("./SurvivalConfig").Skill | null; category: "通关记录" | "机制挑战" | "配装挑战"; }
 export const ACHIEVEMENTS: readonly Achievement[] = [
-  ...["围城初破","赤砂脱困","雷庭止鸣","逐月归来","钟庭来客","潮间过客","棱间行者","温室回生","借风过廊","禁库开卷","织坊断经","釉庭熄炉","傀庭识锋","观台复明","铸庭卸铅","墓苑破棺"].map((name,i):Achievement=>({id:STAGE_CLEAR_IDS[i+1],name,condition:`通关第${i+1}关`,reward:"图鉴完成标记",weapon:null,category:"通关记录"})),
+  ...["围城初破","赤砂脱困","雷庭止鸣","逐月归来","钟庭来客","潮间过客","棱间行者","温室回生","借风过廊","禁库开卷","织坊断经","釉庭熄炉","傀庭识锋","观台复明","铸庭卸铅","墓苑破棺","刑场脱枷","断奏鸣庭","双阙止猎"].map((name,i):Achievement=>({id:STAGE_CLEAR_IDS[i+1],name,condition:`通关第${i+1}关`,reward:"图鉴完成标记",weapon:null,category:"通关记录"})),
   {id:"grave_twelve_paths",name:"十二途断棺",condition:"12种实际起手各5组合法双改通关16关；起手8级，负棺A/B和裂棺双址B整组无伤后近身反击，全Boss无伤",reward:"拆棺猎手称号与裂棺双芯徽纹",weapon:null,category:"机制挑战"},
   {id:"lead_twelve_paths",name:"十二途踏空",condition:"12种实际起手各4组合法双改通关15关；起手8级，Boss三阶段各穿空丸并等整组收束，III须C组，全Boss无伤",reward:"踏空铸客称号与跃丸徽纹",weapon:null,category:"机制挑战"},
   {id:"eclipse_twelve_paths",name:"十二途逐晖",condition:"12种实际起手各以3组合法双改通关第十四关；起手8级，Boss三阶段各连续借柱影遮光0.8秒，III须双仪C组，Boss来源无伤",reward:"逐晖者称号与曜环徽纹",weapon:null,category:"机制挑战"},
@@ -19,6 +19,9 @@ export const ACHIEVEMENTS: readonly Achievement[] = [
   {id:"triple_mastery",name:"三核齐鸣",condition:"通关第七至十关任一关，至少三把武器8级且各有两项合法改造",reward:"挑战完成章",weapon:null,category:"配装挑战"},
   {id:"five_openers",name:"五路起手",condition:"用5种不同实际起手通关，成功记录覆盖至少3个关卡",reward:"挑战完成章",weapon:null,category:"配装挑战"},
   {id:"modification_paths",name:"改造异途",condition:"同一系列以3种不同合法双改组合通关，成功记录覆盖至少2个关卡",reward:"挑战完成章",weapon:null,category:"配装挑战"},
+  {id:"trace_twelve_paths",name:"十二途逆痕",condition:"12种起手各5组双改，分别左右辨迹通关17关；起手8级、缚枷B及脱枷A/B/C完整无伤后近身反击，全Boss无伤",reward:"逆痕断枷者称号与顺逆双箭徽纹",weapon:null,category:"机制挑战"},
+  {id:"counterbeat_mastery",name:"六律拆奏",condition:"六类起手各两系列通关18关；起手8级双改、双精英错拍反击，Boss A/B/C各两次有威胁完整应对后近身反击且全Boss无伤",reward:"错拍断奏者称号与双摆徽章",weapon:null,category:"机制挑战"},
+  {id:"twingate_twelve_orders",name:"十二途分猎",condition:"12种起手分别两种先倒顺序通关19关；起手8级双改、双体A/B反击两体及独猎A/B反击，全Boss无伤",reward:"分猎破阙者称号与左右半徽",weapon:null,category:"机制挑战"},
 ];
 const m = (
   id: string,

@@ -1,3 +1,6 @@
+import {TWINGATE_BASES} from "../../battle/TwingateMap";
+import {COUNTERBEAT_BASES} from "../../battle/CounterbeatMap";
+import {TRACE_BASES} from "../../battle/TraceCourtMap";
 import type {StageId} from "../../battle/ProgressionConfig";
 import {GRAVE_BASES} from "../../battle/EchoGraveMap";
 import {LEAD_BASES} from "../../battle/LeadFoundryMap";
@@ -20,6 +23,8 @@ import { ink } from "./Ink";
 
 type Point = [number, number];
 export const STAGE_MAP_COLORS:Record<StageId,{floor:string;grain:string}> = {
+ 19:{floor:"#26392f",grain:"#617563"},
+  18:{floor:"#25383b",grain:"#57736d"},
   1:{floor:"#303439",grain:"#454a4c"},
   2:{floor:"#674936",grain:"#8c6345"},
   3:{floor:"#202e35",grain:"#374950"},
@@ -35,6 +40,7 @@ export const STAGE_MAP_COLORS:Record<StageId,{floor:string;grain:string}> = {
   13:{floor:"#29323b",grain:"#53616a"},
   14:{floor:"#2b2b38",grain:"#625a72"},
   15:{floor:"#303638",grain:"#5f6c6b"},
+  17:{floor:"#343034",grain:"#746560"},
   16:{floor:"#2d3935",grain:"#667264"},
 };
 export const stageMapBackdrop=(stage:number)=>STAGE_MAP_COLORS[stage as StageId]?.floor??STAGE_MAP_COLORS[1].floor;
@@ -176,9 +182,14 @@ export function drawInkMap(g: Graphics, stage: StageId) {
     g.strokeColor = ink("#a97d54", 125); g.lineWidth = 4;
     g.moveTo(x+48,y); g.arc(x,y,48,0,Math.PI*2,false); g.stroke();
   }
-  const obstacles = stage === 16 ? GRAVE_BASES : stage === 15 ? LEAD_BASES : stage === 14 ? ECLIPSE_PILLARS : stage === 13 ? EDGE_BASES : stage === 12 ? KILN_BASES : stage === 11 ? LOOM_BASES : stage === 10 ? LIBRARY_BASES : stage === 9 ? WIND_BASES : stage === 8 ? ROOT_BASES : stage === 7 ? PRISM_BASES : stage === 6 ? TIDE_BASES : stage === 5 ? BELL_BASES : stage === 1 ? SIEGE_WALLS : stage === 2 ? SAND_ROCKS : stage === 3 ? THUNDER_BASES : MOON_BASES;
+  const obstacles = stage === 19 ? TWINGATE_BASES : stage === 18 ? COUNTERBEAT_BASES : stage === 17 ? TRACE_BASES : stage === 16 ? GRAVE_BASES : stage === 15 ? LEAD_BASES : stage === 14 ? ECLIPSE_PILLARS : stage === 13 ? EDGE_BASES : stage === 12 ? KILN_BASES : stage === 11 ? LOOM_BASES : stage === 10 ? LIBRARY_BASES : stage === 9 ? WIND_BASES : stage === 8 ? ROOT_BASES : stage === 7 ? PRISM_BASES : stage === 6 ? TIDE_BASES : stage === 5 ? BELL_BASES : stage === 1 ? SIEGE_WALLS : stage === 2 ? SAND_ROCKS : stage === 3 ? THUNDER_BASES : MOON_BASES;
   for (const b of obstacles) {
     const x = b.x * 48, y = b.y * 48, w = b.halfWidth * 48, h = b.halfHeight * 48;
+    if(stage===19){face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],'#6c7e70');g.strokeColor=ink('#d2bf99');g.lineWidth=3;g.rect(x-w+6,y-h+6,w*2-12,h*2-12);g.stroke();for(const side of[-1,1]){g.moveTo(x+side*18,y-9);g.lineTo(x+side*5,y);g.lineTo(x+side*18,y+9);}g.stroke();continue;}
+    if(stage===18){face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],'#5c7a78');g.strokeColor=ink('#c5b580');g.lineWidth=3;g.rect(x-w+5,y-h+5,w*2-10,h*2-10);g.stroke();for(const side of [-1,1]){g.moveTo(x+side*12,y-h+10);g.lineTo(x+side*12,y+h-10);}g.stroke();continue;}
+    if(stage===17){
+      face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],'#6b5c58');g.strokeColor=ink('#c59a78',170);g.lineWidth=3;g.rect(x-w+7,y-h+7,w*2-14,h*2-14);g.stroke();g.moveTo(x-13,y-7);g.lineTo(x+13,y+7);g.moveTo(x-13,y+7);g.lineTo(x+13,y-7);g.stroke();continue;
+    }
     if(stage===16){
       g.fillColor=ink('#181a23',140);g.rect(x-w+5,y-h-5,w*2,h*2);g.fill();face(g,[[x-w,y-h],[x+w,y-h],[x+w,y+h],[x-w,y+h]],'#616c62');
       face(g,[[x-w+7,y-h+7],[x+w-7,y-h+7],[x+w-7,y+h-7],[x-w+7,y+h-7]],'#88917d');

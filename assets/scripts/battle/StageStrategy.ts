@@ -1,3 +1,9 @@
+import {twingateMap} from "./TwingateMap";
+import {gateEnemy} from "./TwingateSystem";
+import {counterbeatMap} from "./CounterbeatMap";
+import {counterEnemy} from "./CounterbeatSystem";
+import {traceMap} from "./TraceCourtMap";
+import {traceEnemy} from "./TraceCourtSystem";
 import { windMove } from "./WindGeometry";
 import type { Kind } from "./SurvivalConfig";
 import {
@@ -41,7 +47,9 @@ import { sandEnemy } from "./SandSystem";
 import { thunderEnemy, thunderDevice } from "./ThunderSystem";
 import { moonEnemy } from "./MoonSystem";
 import { bellEnemy } from "./BellSystem";
+export interface EncounterSnapshot {hp:number;maxHp:number;remaining:number;form:number;livesRemaining:number;bodiesRemaining:number;killOrder?:"hunter_first"|"warden_first"|"simultaneous";hunterHp:number;wardenHp:number;}
 export interface StageStrategy {
+  encounter?():EncounterSnapshot|undefined;
   readonly map: typeof siegeMap;
   readonly resolveCrowd?: boolean;
   readonly adaptiveBossPositioning?: boolean;
@@ -56,6 +64,8 @@ export interface StageStrategy {
   clean(): void;
   lifecycle?: {
     initialize?(e: Enemy): void;
+    readonly forms?:number;
+    progress?(e:Enemy):{form:number;livesRemaining:number;remaining:number};
     tick(): void;
     keep(e: Enemy): boolean;
     onHit(e: Enemy, source: string, dealt: number): void;
@@ -84,7 +94,10 @@ type HazardKey =
   | "edge"
   | "eclipse"
   | "lead"
-  | "grave";
+  | "grave"
+  | "trace"
+  | "counter"
+  | "twin";
 /** Common adapter owns plumbing only; each system retains its encounter rules. */
 function managedStage(
   map: StageStrategy["map"],
@@ -93,7 +106,7 @@ function managedStage(
   hazard: HazardKey,
   combat: StageCombat,
   extra: Partial<
-    Pick<StageStrategy, "movePlayer" | "lifecycle" | "targetPriority">
+    Pick<StageStrategy, "movePlayer" | "lifecycle" | "targetPriority" | "encounter" | "adaptiveBossPositioning">
   > = {},
 ): StageStrategy {
   return {
@@ -126,6 +139,9 @@ function managedStage(
 export function createStageStrategy(w: SurvivalWorld): StageStrategy {
   const noop = () => {};
   const entries: Record<StageId, () => StageStrategy> = {
+    19:()=>managedStage(twingateMap,w.twingate,gateEnemy,"twin",armoredCombat(w,gateEnemy,e=>!!e.twin?.vulnerable),{adaptiveBossPositioning:false,movePlayer:dt=>w.twingate.movePlayer(dt),lifecycle:w.twingate,encounter:()=>w.twingate.summary()}),
+    18:()=>managedStage(counterbeatMap,w.counter,counterEnemy,"counter",armoredCombat(w,counterEnemy,e=>!!e.counter?.vulnerable,undefined,e=>w.counter.armor(e)),{movePlayer:dt=>w.counter.movePlayer(dt),lifecycle:w.counter}),
+    17:()=>managedStage(traceMap,w.trace,traceEnemy,"trace",armoredCombat(w,traceEnemy,e=>!!e.trace?.vulnerable),{movePlayer:dt=>w.trace.movePlayer(dt),lifecycle:w.trace}),
     1: () => ({
       map: siegeMap,
       combat: siegeCombat(w),

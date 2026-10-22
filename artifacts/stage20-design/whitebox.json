@@ -1,0 +1,297 @@
+{
+  "status": "design-only; finite 120Hz examples, not runtime proof or human playtest",
+  "posts": [
+    {
+      "id": "SW",
+      "x": -7,
+      "y": -6,
+      "r": 1
+    },
+    {
+      "id": "SE",
+      "x": 7,
+      "y": -6,
+      "r": 1
+    },
+    {
+      "id": "NW",
+      "x": -7,
+      "y": 6,
+      "r": 1
+    },
+    {
+      "id": "NE",
+      "x": 7,
+      "y": 6,
+      "r": 1
+    },
+    {
+      "id": "W",
+      "x": -17,
+      "y": 0,
+      "r": 1.2
+    },
+    {
+      "id": "E",
+      "x": 17,
+      "y": 0,
+      "r": 1.2
+    }
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "freeCells": 8827,
+      "reachable": 8827,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "radius": 0.7,
+      "freeCells": 8347,
+      "reachable": 8347,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "scene": "center",
+      "kind": "A",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "center",
+      "kind": "B",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "center",
+      "kind": "C",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "center",
+      "kind": "D",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "edge",
+      "kind": "A",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "edge",
+      "kind": "B",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 90,
+        "pin": {
+          "time": 3.4253151163165447,
+          "post": "E",
+          "at": {
+            "x": 18.488069313862706,
+            "y": -0.7797754273764832
+          }
+        }
+      }
+    },
+    {
+      "scene": "edge",
+      "kind": "C",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": -90,
+        "pin": null
+      }
+    },
+    {
+      "scene": "edge",
+      "kind": "D",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "corner",
+      "kind": "A",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "corner",
+      "kind": "B",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "corner",
+      "kind": "C",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": -90,
+        "pin": null
+      }
+    },
+    {
+      "scene": "corner",
+      "kind": "D",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "post",
+      "kind": "A",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "post",
+      "kind": "B",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": {
+          "time": 3.3473774177757645,
+          "post": "NW",
+          "at": {
+            "x": -5.591866513572199,
+            "y": 5.544412374618573
+          }
+        }
+      }
+    },
+    {
+      "scene": "post",
+      "kind": "C",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    },
+    {
+      "scene": "post",
+      "kind": "D",
+      "sampledEscape": {
+        "heading": 0,
+        "turn": 0,
+        "pin": null
+      }
+    }
+  ],
+  "pinExamples": [
+    {
+      "kind": "A",
+      "boss": {
+        "x": -11,
+        "y": 6
+      },
+      "player": {
+        "x": -4.5,
+        "y": 6
+      },
+      "pin": {
+        "time": 2.8846153846153846,
+        "post": "NW",
+        "at": {
+          "x": -8.48,
+          "y": 6
+        }
+      },
+      "safeWithPost": true,
+      "threatWithoutPost": true
+    },
+    {
+      "kind": "B",
+      "boss": {
+        "x": -10.8,
+        "y": 6
+      },
+      "player": {
+        "x": -7.5,
+        "y": 7.4
+      },
+      "pin": {
+        "time": 3.098404396881114,
+        "post": "NW",
+        "at": {
+          "x": -7.841065465505143,
+          "y": 4.782211478648851
+        }
+      },
+      "safeWithPost": true,
+      "threatWithoutPost": true
+    }
+  ],
+  "budget": {
+    "normalOutput": 1.3831424625962896,
+    "normalSeconds": 2.7662849251925787,
+    "eliteOutput": 1.3831424625962896,
+    "eliteSeconds": 11.831424625962894,
+    "bossDps": 555.145542507212,
+    "bossSeconds": 117.47136938944342,
+    "health": 3.156587068530931,
+    "elite": 3.7843012146721122,
+    "bossHealth": 7.763536558186627,
+    "total": 65213.70708876767,
+    "increasePercent": 0.5866583894488464,
+    "clearCoins": 480,
+    "ghostEpicCost": 1440,
+    "ghostEpicReference": [
+      174.24999999999997,
+      256.25
+    ]
+  },
+  "proposal": {
+    "bodies": 1,
+    "revivals": 0,
+    "phases": 1,
+    "weaponSeries": 14,
+    "forms": 36,
+    "achievements": 36,
+    "masteryCertificates": 36
+  }
+}

@@ -11752,6 +11752,766 @@
       "cooldown": 2.25
     },
     {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 5509.47,
+      "dps": 183.65,
+      "maxHit": 53.86,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 53.86,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 4879.35,
+      "dps": 162.65,
+      "maxHit": 53.86,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 53.86,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 22926.5,
+      "dps": 764.22,
+      "maxHit": 53.86,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 53.86,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 2479.26,
+      "dps": 82.64,
+      "maxHit": 24.24,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 53.86,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 5004.06,
+      "dps": 166.8,
+      "maxHit": 57.22,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 57.22,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 5175.73,
+      "dps": 172.52,
+      "maxHit": 57.22,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 57.22,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 13595.95,
+      "dps": 453.2,
+      "maxHit": 57.22,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 57.22,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 2251.83,
+      "dps": 75.06,
+      "maxHit": 25.75,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 57.22,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 4790.02,
+      "dps": 159.67,
+      "maxHit": 19.01,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 19.01,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 3832.01,
+      "dps": 127.73,
+      "maxHit": 19.01,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 19.01,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 23417.86,
+      "dps": 780.6,
+      "maxHit": 19.01,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 19.01,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 2155.51,
+      "dps": 71.85,
+      "maxHit": 8.55,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 19.01,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 4495.63,
+      "dps": 149.85,
+      "maxHit": 20.2,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 20.2,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 4495.63,
+      "dps": 149.85,
+      "maxHit": 20.2,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 20.2,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 12214.54,
+      "dps": 407.15,
+      "maxHit": 20.2,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 20.2,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 2023.03,
+      "dps": 67.43,
+      "maxHit": 9.09,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 20.2,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 4523.9,
+      "dps": 150.8,
+      "maxHit": 26.93,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 26.93,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 3829.16,
+      "dps": 127.64,
+      "maxHit": 26.93,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 26.93,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 20357.57,
+      "dps": 678.59,
+      "maxHit": 26.93,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 26.93,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 2035.76,
+      "dps": 67.86,
+      "maxHit": 12.12,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 26.93,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 7052.12,
+      "dps": 235.07,
+      "maxHit": 68.94,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 68.94,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 6245.57,
+      "dps": 208.19,
+      "maxHit": 68.94,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 68.94,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 29345.92,
+      "dps": 978.2,
+      "maxHit": 68.94,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 68.94,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "damage": 3173.45,
+      "dps": 105.78,
+      "maxHit": 31.02,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 68.94,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 6405.2,
+      "dps": 213.51,
+      "maxHit": 73.24,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 73.24,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 6624.93,
+      "dps": 220.83,
+      "maxHit": 73.24,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 73.24,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 17402.81,
+      "dps": 580.09,
+      "maxHit": 73.24,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 73.24,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "damage": 2882.34,
+      "dps": 96.08,
+      "maxHit": 32.96,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 73.24,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 6131.22,
+      "dps": 204.37,
+      "maxHit": 24.33,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 24.33,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 4904.98,
+      "dps": 163.5,
+      "maxHit": 24.33,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 24.33,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 29974.86,
+      "dps": 999.16,
+      "maxHit": 24.33,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 24.33,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "damage": 2759.05,
+      "dps": 91.97,
+      "maxHit": 10.95,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 24.33,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 5754.41,
+      "dps": 191.81,
+      "maxHit": 25.85,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 25.85,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 5754.41,
+      "dps": 191.81,
+      "maxHit": 25.85,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 25.85,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 15634.61,
+      "dps": 521.15,
+      "maxHit": 25.85,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 25.85,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "damage": 2589.48,
+      "dps": 86.32,
+      "maxHit": 11.63,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 25.85,
+      "count": 6,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 5790.6,
+      "dps": 193.02,
+      "maxHit": 34.47,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 34.47,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 4901.33,
+      "dps": 163.38,
+      "maxHit": 34.47,
+      "firstHitSeconds": 0.21666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 34.47,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 26057.69,
+      "dps": 868.59,
+      "maxHit": 34.47,
+      "firstHitSeconds": 0.11666666666666667,
+      "controlTargetSeconds": 0,
+      "baseHit": 34.47,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "damage": 2605.77,
+      "dps": 86.86,
+      "maxHit": 15.51,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 34.47,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
       "skill": "bone",
       "name": "贯阵骨矛",
       "grade": 1,
@@ -14408,6 +15168,1146 @@
       "firstHitSeconds": 0.5333333333333333,
       "controlTargetSeconds": 0,
       "baseHit": 63.58,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 3702.6,
+      "dps": 123.42,
+      "maxHit": 168.3,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 2356.2,
+      "dps": 78.54,
+      "maxHit": 168.3,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 29620.8,
+      "dps": 987.36,
+      "maxHit": 168.3,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 1666.17,
+      "dps": 55.54,
+      "maxHit": 75.73,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 6109.29,
+      "dps": 203.64,
+      "maxHit": 168.3,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 3702.6,
+      "dps": 123.42,
+      "maxHit": 168.3,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 48874.32,
+      "dps": 1629.14,
+      "maxHit": 168.3,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 2749.18,
+      "dps": 91.64,
+      "maxHit": 75.73,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 168.3,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 3085.5,
+      "dps": 102.85,
+      "maxHit": 56.1,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 2075.7,
+      "dps": 69.19,
+      "maxHit": 56.1,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 24684,
+      "dps": 822.8,
+      "maxHit": 56.1,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 1388.47,
+      "dps": 46.28,
+      "maxHit": 25.24,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 5091.08,
+      "dps": 169.7,
+      "maxHit": 56.1,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 1851.3,
+      "dps": 61.71,
+      "maxHit": 56.1,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 40728.6,
+      "dps": 1357.62,
+      "maxHit": 56.1,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 2290.98,
+      "dps": 76.37,
+      "maxHit": 25.24,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 56.1,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 4327.41,
+      "dps": 144.25,
+      "maxHit": 79.47,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 79.47,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 3707.51,
+      "dps": 123.58,
+      "maxHit": 79.47,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 79.47,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 34619.31,
+      "dps": 1153.98,
+      "maxHit": 79.47,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 79.47,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 1947.34,
+      "dps": 64.91,
+      "maxHit": 35.76,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 79.47,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 4739.33,
+      "dps": 157.98,
+      "maxHit": 215.42,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 3015.94,
+      "dps": 100.53,
+      "maxHit": 215.42,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 37914.62,
+      "dps": 1263.82,
+      "maxHit": 215.42,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 2132.7,
+      "dps": 71.09,
+      "maxHit": 96.94,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 7819.89,
+      "dps": 260.66,
+      "maxHit": 215.42,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 4739.33,
+      "dps": 157.98,
+      "maxHit": 215.42,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 62559.13,
+      "dps": 2085.3,
+      "maxHit": 215.42,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 3518.95,
+      "dps": 117.3,
+      "maxHit": 96.94,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 215.42,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 3949.44,
+      "dps": 131.65,
+      "maxHit": 71.81,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 2656.9,
+      "dps": 88.56,
+      "maxHit": 71.81,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 31595.52,
+      "dps": 1053.18,
+      "maxHit": 71.81,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 1777.25,
+      "dps": 59.24,
+      "maxHit": 32.31,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 6516.58,
+      "dps": 217.22,
+      "maxHit": 71.81,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 2369.66,
+      "dps": 78.99,
+      "maxHit": 71.81,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 52132.61,
+      "dps": 1737.75,
+      "maxHit": 71.81,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 2932.46,
+      "dps": 97.75,
+      "maxHit": 32.31,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 71.81,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 5539.09,
+      "dps": 184.64,
+      "maxHit": 101.73,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 101.73,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 4745.61,
+      "dps": 158.19,
+      "maxHit": 101.73,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 101.73,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 44312.72,
+      "dps": 1477.09,
+      "maxHit": 101.73,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 101.73,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 2492.59,
+      "dps": 83.09,
+      "maxHit": 45.78,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 101.73,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 6072.26,
+      "dps": 202.41,
+      "maxHit": 276.01,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 3864.17,
+      "dps": 128.81,
+      "maxHit": 276.01,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 48578.11,
+      "dps": 1619.27,
+      "maxHit": 276.01,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "damage": 2732.52,
+      "dps": 91.08,
+      "maxHit": 124.21,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 10019.24,
+      "dps": 333.97,
+      "maxHit": 276.01,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 6072.26,
+      "dps": 202.41,
+      "maxHit": 276.01,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 80153.88,
+      "dps": 2671.8,
+      "maxHit": 276.01,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "damage": 4508.66,
+      "dps": 150.29,
+      "maxHit": 124.21,
+      "firstHitSeconds": 0.7833333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 276.01,
+      "count": 2,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 5060.22,
+      "dps": 168.67,
+      "maxHit": 92,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 3404.15,
+      "dps": 113.47,
+      "maxHit": 92,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 40481.76,
+      "dps": 1349.39,
+      "maxHit": 92,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "damage": 2277.1,
+      "dps": 75.9,
+      "maxHit": 41.4,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 8349.36,
+      "dps": 278.31,
+      "maxHit": 92,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 3036.13,
+      "dps": 101.2,
+      "maxHit": 92,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 66794.9,
+      "dps": 2226.5,
+      "maxHit": 92,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "damage": 3757.21,
+      "dps": 125.24,
+      "maxHit": 41.4,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 92,
+      "count": 5,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "near",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 7096.96,
+      "dps": 236.57,
+      "maxHit": 130.34,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 130.34,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "moving",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 6080.31,
+      "dps": 202.68,
+      "maxHit": 130.34,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 130.34,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "cluster",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 56775.67,
+      "dps": 1892.52,
+      "maxHit": 130.34,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 130.34,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "damage": 3193.63,
+      "dps": 106.45,
+      "maxHit": 58.65,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 130.34,
       "count": 3,
       "cooldown": 2.7
     },
@@ -17934,6 +19834,70 @@
       "cooldown": 2.25
     },
     {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [],
+      "damage": 4435.2,
+      "dps": 147.84,
+      "maxHit": 39.6,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 39.6,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "守誓幽侍",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [],
+      "damage": 1995.84,
+      "dps": 66.53,
+      "maxHit": 17.82,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 39.6,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [],
+      "damage": 5677.06,
+      "dps": 189.24,
+      "maxHit": 50.69,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 50.69,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
+      "skill": "ghost",
+      "name": "巡猎冥卫",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [],
+      "damage": 2554.68,
+      "dps": 85.16,
+      "maxHit": 22.81,
+      "firstHitSeconds": 0.15,
+      "controlTargetSeconds": 0,
+      "baseHit": 50.69,
+      "count": 4,
+      "cooldown": 2.25
+    },
+    {
       "skill": "bone",
       "name": "贯阵骨矛",
       "grade": 1,
@@ -18154,6 +20118,102 @@
       "firstHitSeconds": 0.5333333333333333,
       "controlTargetSeconds": 0,
       "baseHit": 88,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "near",
+      "mods": [],
+      "damage": 3630,
+      "dps": 121,
+      "maxHit": 110,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 110,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "誓纹裁剑",
+      "grade": 2,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [],
+      "damage": 1633.5,
+      "dps": 54.45,
+      "maxHit": 49.5,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 110,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "near",
+      "mods": [],
+      "damage": 4646.4,
+      "dps": 154.88,
+      "maxHit": 140.8,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 140.8,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "断律圣裁",
+      "grade": 3,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [],
+      "damage": 2090.88,
+      "dps": 69.7,
+      "maxHit": 63.36,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 140.8,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "near",
+      "mods": [],
+      "damage": 5953.2,
+      "dps": 198.44,
+      "maxHit": 180.4,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 180.4,
+      "count": 3,
+      "cooldown": 2.7
+    },
+    {
+      "skill": "holy",
+      "name": "寂律天裁",
+      "grade": 4,
+      "level": 8,
+      "scene": "armored-boss",
+      "mods": [],
+      "damage": 2678.94,
+      "dps": 89.3,
+      "maxHit": 81.18,
+      "firstHitSeconds": 0.5333333333333333,
+      "controlTargetSeconds": 0,
+      "baseHit": 180.4,
       "count": 3,
       "cooldown": 2.7
     },
@@ -19037,6 +21097,42 @@
       "pass": true
     },
     {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "near",
+      "dps": 147.84,
+      "min": 106.25,
+      "max": 156.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "armored-boss",
+      "dps": 66.53,
+      "min": 106.25,
+      "max": 156.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "near",
+      "dps": 189.24,
+      "min": 136,
+      "max": 200,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "armored-boss",
+      "dps": 85.16,
+      "min": 136,
+      "max": 200,
+      "pass": true
+    },
+    {
       "skill": "bone",
       "grade": 1,
       "scene": "near",
@@ -19160,6 +21256,60 @@
       "dps": 43.56,
       "min": 85,
       "max": 125,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "near",
+      "dps": 121,
+      "min": 106.25,
+      "max": 156.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "armored-boss",
+      "dps": 54.45,
+      "min": 106.25,
+      "max": 156.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "near",
+      "dps": 154.88,
+      "min": 136,
+      "max": 200,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "armored-boss",
+      "dps": 69.7,
+      "min": 136,
+      "max": 200,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "near",
+      "dps": 198.44,
+      "min": 174.24999999999997,
+      "max": 256.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "armored-boss",
+      "dps": 89.3,
+      "min": 174.24999999999997,
+      "max": 256.25,
       "pass": true
     },
     {
@@ -21109,6 +23259,246 @@
       "pass": true
     },
     {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "dps": 183.65,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "dps": 162.65,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "dps": 166.8,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "dps": 172.52,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "dps": 159.67,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "dps": 127.73,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "dps": 149.85,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "dps": 149.85,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "dps": 150.8,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "dps": 127.64,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "dps": 235.07,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "dps": 208.19,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "dps": 213.51,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "dps": 220.83,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "dps": 204.37,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "dps": 163.5,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "dps": 191.81,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "dps": 191.81,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "dps": 193.02,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "dps": 163.38,
+      "max": 360,
+      "pass": true
+    },
+    {
       "skill": "bone",
       "grade": 1,
       "scene": "near",
@@ -21946,6 +24336,366 @@
       ],
       "dps": 98.87,
       "max": 225,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "dps": 123.42,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "dps": 78.54,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "dps": 203.64,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "dps": 123.42,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "dps": 102.85,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "dps": 69.19,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "dps": 169.7,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "dps": 61.71,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "near",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "dps": 144.25,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 2,
+      "scene": "moving",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "dps": 123.58,
+      "max": 281.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "dps": 157.98,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "dps": 100.53,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "dps": 260.66,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "dps": 157.98,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "dps": 131.65,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "dps": 88.56,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "dps": 217.22,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "dps": 78.99,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "near",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "dps": 184.64,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 3,
+      "scene": "moving",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "dps": 158.19,
+      "max": 360,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "dps": 202.41,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "cross"
+      ],
+      "dps": 128.81,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "near",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "dps": 333.97,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "moving",
+      "mods": [
+        "execution",
+        "brand"
+      ],
+      "dps": 202.41,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "dps": 168.67,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "cross"
+      ],
+      "dps": 113.47,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "near",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "dps": 278.31,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "moving",
+      "mods": [
+        "rain",
+        "brand"
+      ],
+      "dps": 101.2,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "near",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "dps": 236.57,
+      "max": 461.25,
+      "pass": true
+    },
+    {
+      "skill": "holy",
+      "grade": 4,
+      "scene": "moving",
+      "mods": [
+        "cross",
+        "brand"
+      ],
+      "dps": 202.68,
+      "max": 461.25,
       "pass": true
     },
     {

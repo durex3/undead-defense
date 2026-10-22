@@ -11,6 +11,7 @@ interface Context {
   hazard?: Hazard;
 }
 interface StageHudProvider {
+  label?(w:SurvivalWorld):string;
   hint?(w: SurvivalWorld): string;
   advice(c: Context): string;
   progress?(c: Context): string;
@@ -30,6 +31,8 @@ const phases = (label: string, set: Set<number>) =>
   `${label} I${set.has(1) ? "✓" : "·"} II${set.has(2) ? "✓" : "·"} III${set.has(3) ? "✓" : "·"}`;
 /** Complete presentation registration. Adding a StageId requires a HUD provider. */
 const providers: Record<StageId, StageHudProvider> = {
+ 19:{...fixed('两体同场 · 先拆一体可改变后半场 · 只避实际身体与矢头','离开冲锋路线，留意另一体飞矢'),phase:()=>"双体/独猎",label:w=>{const s=w.twingate.summary();return s?`双阙猎主 · ${s.bodiesRemaining}体 · 逐${Math.ceil(s.hunterHp)} 镇${Math.ceil(s.wardenHp)} / 合计${Math.ceil(s.maxHp)}`:'双阙猎主 · 双体集结';},progress:({w})=>`分猎 双A${w.challenge.gateGroups.has('A')?'✓':'·'} B${w.challenge.gateGroups.has('B')?'✓':'·'} · 逐${w.challenge.gateBodies.has('hunter')?'✓':'·'}镇${w.challenge.gateBodies.has('warden')?'✓':'·'} · 独A${w.challenge.gateSolo.has('A')?'✓':'·'}B${w.challenge.gateSolo.has('B')?'✓':'·'}`,action:({w})=>w.twingate.encounter.solo&&w.time<w.twingate.encounter.soloAt?`搭档已倒 · 独猎 ${(w.twingate.encounter.soloAt-w.time).toFixed(1)}秒`:w.hazards.filter(h=>h.twin&&h.until>w.time).map(h=>{const b=h.twin!,f=b.parts.find(f=>!f.cancelled&&f.end>w.time);return(b.role==='hunter'?'逐猎':'镇阙')+(b.solo?'独猎':'')+b.action+' · '+(f?`${f.kind==='charge'?'冲锋':f.kind==='sweep'?'横扫':'飞矢'} ${Math.max(0,f.due-w.time).toFixed(1)}秒`:b.pendingAt!==undefined?'待第二锁定':'后段另行预告');}).slice(0,2).join(' / ')},
+ 18:{...fixed('共鸣可拆 · 两拍各自预告 · 躲完第一拍继续观察','看单刻/双刻预警，等整组结束再反击'),phase:()=>"单形态 · 双拍",progress:({w})=>`拆奏 精英${w.challenge.counterElite?'✓':'·'} · A${w.challenge.counterGroups.A}/2 B${w.challenge.counterGroups.B}/2 C${w.challenge.counterGroups.C}/2`,action:({w})=>w.hazards.filter(h=>h.counter&&h.until>w.time).map(h=>{const b=h.counter!,f=b.pulses.find(f=>!f.cancelled&&f.end>w.time);return (b.action==='A'?'扫→刺':b.action==='B'?'刺→扫':'左右错扫')+' · '+(f?`第${f.order}拍 ${Math.max(0,f.due-w.time).toFixed(1)}秒`:b.pendingAt!==undefined?'等待第二锁定':'整组收束');}).slice(0,2).join(' / ')},
   1: {
     phase: legacy,
     advice: ({ hazard: h }) =>
@@ -151,6 +154,7 @@ const providers: Record<StageId, StageHudProvider> = {
             .join(" · ")
         : "",
   },
+  17:{...fixed("旧脚印和预警线无伤 · 只避实体 · 返程和横扫各有预告","离开旧路线，等整组收束再近身反击"),phase:e=>e.trace?.deadUntil?"脱枷复生":"余命"+(e.trace?.life===1?2:1),bossTitle:e=>e.trace?.life===2?"脱枷逐痕者":"缚枷刑官",progress:({w})=>`逆痕 ${["1B","2A","2B","2C"].map(k=>k+(w.challenge.traceGroups.has(k)?"✓":"·")).join(" ")} · ${w.challenge.traceDirection==="left"?"左转":w.challenge.traceDirection==="right"?"右转":"方向待辨迹"}`,action:({w,boss})=>boss?.trace?.deadUntil?`脱枷复生 ${(boss.trace.deadUntil-w.time).toFixed(1)}秒 · 第二命倒下才通关`:w.hazards.filter(h=>h.trace&&h.until>w.time).map(h=>{const b=h.trace!,f=b.legs.find(f=>f.end>w.time),s=b.sweep;return s?`横扫 ${Math.max(0,s.due-w.time).toFixed(1)}秒`:f?`${f.pass===2?"返程":"实体冲锋"}${b.legs.indexOf(f)+1} ${Math.max(0,f.due-w.time).toFixed(1)}秒`:'到位后另行预告';}).slice(0,2).join(' · ')},
   16: {
     ...fixed(
       "旧痕再震前有完整预警 · 墓台不挡骨震 · 裂棺后更换招式",
@@ -188,8 +192,8 @@ export function stageHud(w: SurvivalWorld, boss?: Enemy, hazard?: Hazard) {
     advice: p.advice(context),
     progress: p.progress?.(context) ?? "",
     action: p.action?.(context) ?? "",
-    bossLabel: boss
+    bossLabel: p.label?.(w) ?? (boss
       ? `${p.bossTitle?.(boss) ?? STAGES[w.stageId].boss} · ${p.phase(boss)} · ${Math.ceil(boss.hp)} / ${Math.ceil(boss.maxHp)}`
-      : "",
+      : ""),
   };
 }

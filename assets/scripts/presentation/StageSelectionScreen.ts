@@ -59,6 +59,7 @@ export function renderStageSelection(
   study.time = 0.5;
   const boss = study.addEnemy("boss", 0, 0)!;
   boss.state = "seek";
+  if(study.stageStrategy.encounter){boss.x=-1.6;const partner=study.addEnemy("boss",1.6,0)!;partner.state="seek";}
   drawActorLayer(portrait.addComponent(Graphics), study, false, false);
   h.text(image, "首领", 165, 119, 14, "#b5c4cd", 300);
   h.text(image, STAGES[preview].boss, 165, -111, 22, "#f3deac", 340);

@@ -1,0 +1,109 @@
+{
+  "scope": "Design only: .5-grid connectivity, sampled route clearance, isolated affine collision examples and formula arithmetic. Not runtime integration, dynamic escape proof, balance, win rate or mobile QA.",
+  "boxes": [
+    {
+      "x": -10,
+      "y": -11,
+      "hx": 2.6,
+      "hy": 1
+    },
+    {
+      "x": 10,
+      "y": 11,
+      "hx": 2.6,
+      "hy": 1
+    },
+    {
+      "x": -10,
+      "y": 11,
+      "hx": 1,
+      "hy": 2.6
+    },
+    {
+      "x": 10,
+      "y": -11,
+      "hx": 1,
+      "hy": 2.6
+    },
+    {
+      "x": -17,
+      "y": 0,
+      "hx": 0.9,
+      "hy": 2.3
+    },
+    {
+      "x": 17,
+      "y": 0,
+      "hx": 0.9,
+      "hy": 2.3
+    },
+    {
+      "x": -5,
+      "y": 21,
+      "hx": 2.6,
+      "hy": 0.8
+    },
+    {
+      "x": 5,
+      "y": -21,
+      "hx": 2.6,
+      "hy": 0.8
+    }
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "freeCells": 8521,
+      "reachable": 8521,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "radius": 0.7,
+      "freeCells": 7937,
+      "reachable": 7937,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "geometryExamples": {
+    "sweptCrossing": true,
+    "outsideSafe": true,
+    "roundCapHit": true,
+    "noBoundingBoxHit": true
+  },
+  "budget": {
+    "normalOutput": 1.3722066195108793,
+    "normalSeconds": 2.7444132390217586,
+    "eliteOutput": 1.3722066195108793,
+    "eliteSeconds": 11.722066195108795,
+    "bossDps": 551.1546017366945,
+    "bossSeconds": 115.83099292663191,
+    "health": 3.1068691609386336,
+    "elite": 3.71967864130688,
+    "bossHealth": 7.600093425624249,
+    "total": 63840.784775243694,
+    "first": 22344.27467133529,
+    "second": 41496.510103908404,
+    "increasePercent": 1.0159801386865563,
+    "recoveryFactor": 0.35,
+    "clearCoins": 420,
+    "holyFineCost": 360,
+    "holyRareTotalCost": 1080
+  },
+  "proposal": {
+    "lives": 2,
+    "forms": 2,
+    "weaponSeries": 14,
+    "addedAchievements": 2,
+    "masteryQualifiedWins": 120
+  }
+}

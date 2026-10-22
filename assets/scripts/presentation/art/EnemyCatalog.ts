@@ -136,6 +136,9 @@ const KILN:EnemyPalette={outline:"#241b20",shade:"#62433e",base:"#b77460",light:
 const LOOM:EnemyPalette={outline:"#201a20",shade:"#61505b",base:"#a58e7a",light:"#e9d7bc",cloth:"#827084",metal:"#8b6955",metalLight:"#d8b987",bone:"#eddfc5",accent:"#b8a6d6",eye:"#f6dba5"};
 const GRAVE:EnemyPalette={outline:"#191a24",shade:"#474854",base:"#9d9d8b",light:"#e4dfc9",cloth:"#63556e",metal:"#6f7772",metalLight:"#c4d2b6",bone:"#ded8bb",accent:"#b79ed4",eye:"#a9ead4"};
 export const STAGE_PALETTES: Record<StageId, EnemyPalette> = {
+ 19:{...MOON,base:"#879e8c",bone:"#dedfc7",cloth:"#314e43",metal:"#869b91",metalLight:"#c3d7ca",accent:"#d3aa71",eye:"#f1ddae"},
+ 18:{...THUNDER,base:"#70938e",light:"#cbd9ba",cloth:"#34575b",accent:"#e6c489",metal:"#9a855b",eye:"#e6f3c4"},
+ 17:{...GRAVE,accent:"#edb77e",metal:"#795c52",cloth:"#8e625c"},
  16:GRAVE,
  15:LEAD,
  14:ECLIPSE,
@@ -223,6 +226,9 @@ function art(
 /* Stage membership is duplicated here on purpose (art must not import stage
  * systems); tests/art-catalog.test.mjs compares it with SIEGE_KINDS etc. */
 export const CATALOG_STAGE_KINDS: Record<StageId, readonly Kind[]> = {
+ 19:["gategrub","shorthorn","bowwatch","splitblade","huntermarshal","gateballista"],
+ 18:["chimeshard","forklancer","pipereader","resonancebearer","broadcantor","needleconductor"],
+ 17:["shackleshard","fettersprinter","trailhound","turnwarden","trailmarshal","reversejailer"],
  16:["gravegrub","ribwarden","echoacolyte","shedstalker","coffinregent","scarprelate"],
  15:["leadgrub","pitchframe","kneehopper","offsetcart","twinpitch","presswarden"],
  14:["dialscrap","glowdisc","reversegazer","offsetorrery","twindial","eclipsewarden"],
@@ -400,6 +406,9 @@ const COMMON: Partial<Record<Kind, EnemyArt>> = {
 };
 
 export const BOSS_ART: Record<StageId, EnemyArt> = {
+ 19:art("boss",19,"quadruped",132,85,STAGE_PALETTES[19],{head:"horned",legs:"quad",weapon:"claw"},{scale:1.05,motionSpeed:4,strideAmp:1.5}),
+ 18:art("boss",18,"humanoid",140,85,STAGE_PALETTES[18],{head:"crest",legs:"biped",weapon:"lance"},{scale:1.1,motionSpeed:3,strideAmp:1.4}),
+ 17:art("boss",17,"humanoid",120,74,STAGE_PALETTES[17],{head:"skull",legs:"quad"},{scale:1.2,motionSpeed:4,strideAmp:1.4}),
  16:art("boss",16,"mech",118,72,GRAVE,{head:"skull",legs:"quad"},{scale:1.2,motionSpeed:4,strideAmp:1.4}),
  15:art("boss",15,"mech",105,76,LEAD,{head:"core",legs:"quad"},{scale:1.2,motionSpeed:4,strideAmp:1.4}),
  14:art("boss",14,"float",125,65,ECLIPSE,{head:"core",legs:"none"},{scale:1.2,motionSpeed:3,strideAmp:0}),
@@ -443,6 +452,9 @@ export const BOSS_ART: Record<StageId, EnemyArt> = {
 };
 
 const MINION_ART: Record<StageId, EnemyArt> = {
+ 19:{...COMMON.minion!,stage:19,palette:STAGE_PALETTES[19]},
+ 18:{...COMMON.minion!,stage:18,palette:STAGE_PALETTES[18]},
+ 17:{...COMMON.minion!,stage:17,palette:STAGE_PALETTES[17]},
  16:{...COMMON.minion!,stage:16,palette:GRAVE},
  15:{...COMMON.minion!,stage:15,palette:LEAD},
  14:{...COMMON.minion!,stage:14,palette:ECLIPSE},
@@ -525,7 +537,10 @@ const EDGE_ART:Partial<Record<Kind,EnemyArt>>={scrapbound:art("scrapbound",13,"m
 const ECLIPSE_ART:Partial<Record<Kind,EnemyArt>>={dialscrap:art("dialscrap",14,"mech",40,25,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),glowdisc:art("glowdisc",14,"float",60,37,ECLIPSE,{head:"core",legs:"none"},{scale:1,strideAmp:1.4}),reversegazer:art("reversegazer",14,"mech",90,32,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),offsetorrery:art("offsetorrery",14,"mech",60,43,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),twindial:art("twindial",14,"mech",96,53,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4}),eclipsewarden:art("eclipsewarden",14,"mech",110,52,ECLIPSE,{head:"core",legs:"quad"},{scale:1,strideAmp:1.4})};
 const LEAD_ART:Partial<Record<Kind,EnemyArt>>={leadgrub:art("leadgrub",15,"mech",38,28,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),pitchframe:art("pitchframe",15,"mech",65,34,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),kneehopper:art("kneehopper",15,"mech",78,35,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),offsetcart:art("offsetcart",15,"mech",58,47,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),twinpitch:art("twinpitch",15,"mech",83,54,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8}),presswarden:art("presswarden",15,"mech",95,48,LEAD,{head:"core",legs:"quad"},{scale:1,strideAmp:1.8})};
 const GRAVE_ART:Partial<Record<Kind,EnemyArt>>={gravegrub:art("gravegrub",16,"mech",38,28,GRAVE,{head:"skull",legs:"quad"},{scale:1,strideAmp:1.8}),ribwarden:art("ribwarden",16,"mech",68,35,GRAVE,{head:"skull",legs:"quad"},{scale:1,strideAmp:1.8}),echoacolyte:art("echoacolyte",16,"mech",82,32,GRAVE,{head:"skull",legs:"quad"},{scale:1,strideAmp:1.8}),shedstalker:art("shedstalker",16,"mech",64,38,GRAVE,{head:"skull",legs:"quad"},{scale:1,strideAmp:1.8}),coffinregent:art("coffinregent",16,"mech",92,52,GRAVE,{head:"skull",legs:"quad"},{scale:1,strideAmp:1.8}),scarprelate:art("scarprelate",16,"mech",106,45,GRAVE,{head:"skull",legs:"quad"},{scale:1,strideAmp:1.8})};
-Object.assign(COMMON,GRAVE_ART,LEAD_ART,ECLIPSE_ART,EDGE_ART,KILN_ART,BELL_ART,TIDE_ART,PRISM_ART,ROOT_ART,WIND_ART,LIBRARY_ART,LOOM_ART);
+const GATE_ART:Partial<Record<Kind,EnemyArt>>=Object.fromEntries(CATALOG_STAGE_KINDS[19].map((kind,i)=>[kind,art(kind,19,i===1||i===4?'quadruped':'humanoid',i===0?36:i>=4?110:86,i===0?27:i>=4?64:42,STAGE_PALETTES[19],{head:'horned',legs:i===1||i===4?'quad':'biped',weapon:i===2||i===5?'crossbow':i===0?'none':'claw'},{scale:1,strideAmp:1.8})]));
+const COUNTER_ART:Partial<Record<Kind,EnemyArt>>=Object.fromEntries(CATALOG_STAGE_KINDS[18].map((kind,i)=>[kind,art(kind,18,'humanoid',i===0?36:i>=4?105:86,i===0?27:i>=4?60:40,STAGE_PALETTES[18],{head:'crest',legs:'biped',weapon:i===0?'none':i===1||i===5?'spear':i===3?'staff':'halberd'},{scale:1,strideAmp:1.8})]));
+const TRACE_ART:Partial<Record<Kind,EnemyArt>>=Object.fromEntries(CATALOG_STAGE_KINDS[17].map((kind,i)=>[kind,art(kind,17,i===2?'quadruped':'humanoid',i===0?34:i>=4?100:70,i===0?28:i>=4?50:34,STAGE_PALETTES[17],{head:'skull',legs:i===2?'quad':'biped',weapon:i===0?'none':'sickle'},{scale:1,strideAmp:1.8})]));
+Object.assign(COMMON,GATE_ART,COUNTER_ART,TRACE_ART,GRAVE_ART,LEAD_ART,ECLIPSE_ART,EDGE_ART,KILN_ART,BELL_ART,TIDE_ART,PRISM_ART,ROOT_ART,WIND_ART,LIBRARY_ART,LOOM_ART);
 export function enemyArt(stage: StageId, kind: Kind): EnemyArt {
   if(stage===5&&BELL_ART[kind])return BELL_ART[kind]!;
   if (kind === "boss") return BOSS_ART[stage];

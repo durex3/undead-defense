@@ -1,0 +1,694 @@
+{
+  "scope": "Design only: .5-grid connectivity, sampled path clearance and twenty-four isolated 120Hz examples with delayed locks and actual sampled body/head positions. No crowds, continuous runtime collision, viewport/HUD proof, AI, balance, human win rate or device QA.",
+  "boxes": [
+    {
+      "x": -12,
+      "y": -12,
+      "hx": 2.3,
+      "hy": 1.1
+    },
+    {
+      "x": 12,
+      "y": 12,
+      "hx": 2.3,
+      "hy": 1.1
+    },
+    {
+      "x": -12,
+      "y": 12,
+      "hx": 1.1,
+      "hy": 2.3
+    },
+    {
+      "x": 12,
+      "y": -12,
+      "hx": 1.1,
+      "hy": 2.3
+    },
+    {
+      "x": -18,
+      "y": 0,
+      "hx": 0.8,
+      "hy": 1.8
+    },
+    {
+      "x": 18,
+      "y": 0,
+      "hx": 0.8,
+      "hy": 1.8
+    }
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "freeCells": 8651,
+      "reachable": 8651,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "radius": 0.7,
+      "freeCells": 8187,
+      "reachable": 8187,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "scene": "center",
+      "mode": "duetA",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 75,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.567
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 4.7
+          }
+        ]
+      }
+    },
+    {
+      "scene": "center",
+      "mode": "duetB",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 0,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 3.5
+          }
+        ]
+      }
+    },
+    {
+      "scene": "center",
+      "mode": "hunterA",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 120,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.52
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 3.533,
+            "due": 5.933,
+            "end": 7.203
+          }
+        ]
+      }
+    },
+    {
+      "scene": "center",
+      "mode": "hunterB",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 75,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0,
+            "due": 2.4,
+            "end": 2.6
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 2.608,
+            "due": 5.008,
+            "end": 6.278
+          }
+        ]
+      }
+    },
+    {
+      "scene": "center",
+      "mode": "wardenA",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 75,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "r",
+            "kind": "fan",
+            "at": 3.808,
+            "due": 6.208,
+            "end": 6.408
+          }
+        ]
+      }
+    },
+    {
+      "scene": "center",
+      "mode": "wardenB",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 75,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.226
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 3.242,
+            "due": 5.642,
+            "end": 6.911
+          }
+        ]
+      }
+    },
+    {
+      "scene": "edge",
+      "mode": "duetA",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 90,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.567
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 4.7
+          }
+        ]
+      }
+    },
+    {
+      "scene": "edge",
+      "mode": "duetB",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 90,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 3.5
+          }
+        ]
+      }
+    },
+    {
+      "scene": "edge",
+      "mode": "hunterA",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 150,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.52
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 3.533,
+            "due": 5.933,
+            "end": 7.203
+          }
+        ]
+      }
+    },
+    {
+      "scene": "edge",
+      "mode": "hunterB",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 90,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0,
+            "due": 2.4,
+            "end": 2.6
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 2.608,
+            "due": 5.008,
+            "end": 6.278
+          }
+        ]
+      }
+    },
+    {
+      "scene": "edge",
+      "mode": "wardenA",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 90,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "r",
+            "kind": "fan",
+            "at": 3.808,
+            "due": 6.208,
+            "end": 6.408
+          }
+        ]
+      }
+    },
+    {
+      "scene": "edge",
+      "mode": "wardenB",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 150,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.226
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 3.242,
+            "due": 5.642,
+            "end": 6.911
+          }
+        ]
+      }
+    },
+    {
+      "scene": "corner",
+      "mode": "duetA",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 180,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.567
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 4.7
+          }
+        ]
+      }
+    },
+    {
+      "scene": "corner",
+      "mode": "duetB",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 180,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 3.5
+          }
+        ]
+      }
+    },
+    {
+      "scene": "corner",
+      "mode": "hunterA",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 180,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.52
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 3.533,
+            "due": 5.933,
+            "end": 7.203
+          }
+        ]
+      }
+    },
+    {
+      "scene": "corner",
+      "mode": "hunterB",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 180,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0,
+            "due": 2.4,
+            "end": 2.6
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 2.608,
+            "due": 5.008,
+            "end": 6.278
+          }
+        ]
+      }
+    },
+    {
+      "scene": "corner",
+      "mode": "wardenA",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 180,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "r",
+            "kind": "fan",
+            "at": 3.808,
+            "due": 6.208,
+            "end": 6.408
+          }
+        ]
+      }
+    },
+    {
+      "scene": "corner",
+      "mode": "wardenB",
+      "sampledEscape": {
+        "firstDirectionDeg": 30,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 180,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.226
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 3.242,
+            "due": 5.642,
+            "end": 6.911
+          }
+        ]
+      }
+    },
+    {
+      "scene": "plinth",
+      "mode": "duetA",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 0,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.567
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 4.7
+          }
+        ]
+      }
+    },
+    {
+      "scene": "plinth",
+      "mode": "duetB",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 0,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0.9,
+            "due": 3.3,
+            "end": 3.5
+          }
+        ]
+      }
+    },
+    {
+      "scene": "plinth",
+      "mode": "hunterA",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 15,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.52
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 3.533,
+            "due": 5.933,
+            "end": 7.203
+          }
+        ]
+      }
+    },
+    {
+      "scene": "plinth",
+      "mode": "hunterB",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 15,
+        "locks": [
+          {
+            "source": "h",
+            "kind": "fan",
+            "at": 0,
+            "due": 2.4,
+            "end": 2.6
+          },
+          {
+            "source": "h",
+            "kind": "bolt",
+            "at": 2.608,
+            "due": 5.008,
+            "end": 6.278
+          }
+        ]
+      }
+    },
+    {
+      "scene": "plinth",
+      "mode": "wardenA",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 15,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "split",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.8
+          },
+          {
+            "source": "r",
+            "kind": "fan",
+            "at": 3.808,
+            "due": 6.208,
+            "end": 6.408
+          }
+        ]
+      }
+    },
+    {
+      "scene": "plinth",
+      "mode": "wardenB",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "turnAt": 0.8,
+        "afterTurnDirectionDeg": 15,
+        "locks": [
+          {
+            "source": "r",
+            "kind": "charge",
+            "at": 0,
+            "due": 2.4,
+            "end": 3.226
+          },
+          {
+            "source": "r",
+            "kind": "bolt",
+            "at": 3.242,
+            "due": 5.642,
+            "end": 6.911
+          }
+        ]
+      }
+    }
+  ],
+  "budget": {
+    "normalOutput": 1.3800851726528545,
+    "normalSeconds": 2.760170345305709,
+    "eliteOutput": 1.3800851726528545,
+    "eliteSeconds": 11.800851726528544,
+    "bossDps": 554.0707522289375,
+    "bossSeconds": 117.01277589792817,
+    "health": 3.1426478882308273,
+    "elite": 3.766179238880654,
+    "bossHealth": 7.718256757400137,
+    "total": 64833.35676216115,
+    "hunter": 32416.678381080575,
+    "warden": 32416.678381080575,
+    "increasePercent": 0.7037453121618631,
+    "clearCoins": 460,
+    "ghostFineCost": 360,
+    "ghostRareCost": 720
+  },
+  "proposal": {
+    "initialBodies": 2,
+    "revivals": 0,
+    "oneSharedHpBudget": true,
+    "weaponSeries": 14,
+    "addedForms": 2,
+    "addedAchievements": 2,
+    "masteryCertificates": 24
+  }
+}

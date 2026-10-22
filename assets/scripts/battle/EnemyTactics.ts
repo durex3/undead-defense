@@ -34,6 +34,7 @@ export class EnemyTactics {
       map = w.stageStrategy.map,
       c = ENEMIES[e.kind];
     if (
+      c.stagePositioning ||
       e.kind === "boss" ||
       e.state !== "seek" ||
       e.immovable ||

@@ -43,6 +43,7 @@ export interface GraveState {
   usedActions?: number;
 }
 export class EchoGraveSystem {
+  readonly forms=2;
   private reinforceEpoch = 360;
   private wave = 0;
   private special = 0;
@@ -291,6 +292,7 @@ export class EchoGraveSystem {
       w.touch();
     }
   }
+  progress(e:Enemy){const s=this.state(e);return {form:s.life,livesRemaining:e.hp<=0&&!s.deadUntil?0:s.life===1?2:1,remaining:this.totalRemaining(e)/(s.total||e.maxHp)};}
   totalRemaining(e: Enemy) {
     const s = this.state(e);
     return s.total

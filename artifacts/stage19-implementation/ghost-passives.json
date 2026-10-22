@@ -1,0 +1,7817 @@
+{
+  "scope": "20s high-HP targets, fixed ranger, no other passives, unmodified and legal dual mods, single or 8×8 spread, actual Armory/hit. Not normal survival play.",
+  "rows": [
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 443.51999999999975,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 443.51999999999975,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 620.9280000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 620.9280000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 443.51999999999975,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 570.2399999999998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 798.3360000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 443.51999999999975,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 443.51999999999975,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 620.9280000000001,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 620.9280000000001,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 443.51999999999975,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 570.2399999999998,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 798.3360000000005,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 400.6886399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 400.6886399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 721.2395520000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 721.2395520000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 400.6886399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 504.09215999999986,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 907.365888000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 400.6886399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 400.6886399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 721.2395520000007,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 721.2395520000007,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 400.6886399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 519.1718399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 934.509312000001,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 363.93192000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 363.93192000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 655.0774560000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 655.0774560000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 363.93192000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 485.2425600000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 873.4366080000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 363.93192000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 363.93192000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 655.0774560000003,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 655.0774560000003,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 363.93192000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 485.2425600000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 873.4366080000003,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 659.9577600000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 659.9577600000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 791.9493120000009,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 791.9493120000009,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 659.9577600000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 848.5171199999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1018.2205440000009,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 771.7247999999997,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 771.7247999999997,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 993.1299840000015,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 993.1299840000015,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 771.7247999999997,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 992.2175999999988,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1276.8814079999988,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 599.4172799999996,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 599.4172799999996,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 719.3007359999992,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 719.3007359999992,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 599.4172799999996,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 770.6793599999991,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 924.8152319999986,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 636.1739999999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 636.1739999999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 785.4628319999987,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 785.4628319999987,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 636.1739999999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 817.9379999999989,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1009.8807839999978,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 467.4700800000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 467.4700800000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 654.458112000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 654.458112000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 467.4700800000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 601.032960000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 841.4461440000017,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 516.4790400000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 516.4790400000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 806.0088960000016,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 806.0088960000016,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 516.4790400000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 664.044480000001,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1036.2971520000024,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2280.96,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2280.96,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2737.151999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2737.151999999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2280.96,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 3041.279999999996,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 3649.5359999999955,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2280.96,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2280.96,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2737.151999999999,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 2737.151999999999,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2280.96,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3041.279999999996,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 3649.5359999999955,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3115.0310400000058,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3115.0310400000058,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 3945.705984000009,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 3945.705984000009,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3115.0310400000058,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 4006.8864000000085,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 5075.38944,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 7548.456959999971,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 7548.456959999971,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 8934.064127999958,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 8934.064127999958,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 7548.456959999971,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 9435.571199999953,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 11227.89887999992,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2911.4553599999954,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2911.4553599999954,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 3687.843455999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 3687.843455999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2911.4553599999954,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 3639.3191999999935,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 4609.804319999995,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2911.4553599999954,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2911.4553599999954,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3878.2782719999977,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 3878.2782719999977,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2911.4553599999954,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3639.3191999999935,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 4847.847839999994,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2545.5513599999954,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2545.5513599999954,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2884.9582079999946,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2884.9582079999946,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2545.5513599999954,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 3394.068479999992,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 3846.610943999988,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 5132.159999999981,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 5132.159999999981,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 5816.447999999989,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 5816.447999999989,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 5132.159999999981,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 6842.879999999972,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 7755.263999999995,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2312.0380800000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2312.0380800000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2620.3098240000036,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2620.3098240000036,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2312.0380800000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 3082.7174400000104,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 3493.7464320000145,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2595.5899200000035,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2595.5899200000035,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 2941.668576000008,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 2941.668576000008,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2595.5899200000035,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3460.786560000015,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 3922.224768000021,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2404.131840000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2404.131840000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 2884.958207999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 2884.958207999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2404.131840000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 3205.5091199999924,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 3846.6109439999877,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 5632.260479999969,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 5632.260479999969,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 6539.626367999948,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 6590.0355839999465,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 5632.260479999969,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 7495.678079999954,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 1,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 8775.512063999946,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 554.4000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 554.4000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 776.1599999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 776.1599999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 554.4000000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 712.7999999999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 997.9199999999987,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 554.4000000000001,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 554.4000000000001,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 776.1599999999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 776.1599999999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 554.4000000000001,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 712.7999999999997,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 997.9199999999987,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 500.86080000000015,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 500.86080000000015,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 901.549440000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 901.549440000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 500.86080000000015,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 630.1152000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1134.2073600000008,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 500.86080000000015,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 500.86080000000015,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 901.549440000001,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 901.549440000001,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 500.86080000000015,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 648.9648000000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1168.1366400000006,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 454.91489999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 454.91489999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 818.8468199999995,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 818.8468199999995,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 454.91489999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 606.5532000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1091.7957599999995,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 454.91489999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 454.91489999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 818.8468199999995,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 818.8468199999995,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 454.91489999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 606.5532000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1091.7957599999995,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 824.9471999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 824.9471999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 989.9366399999985,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 989.9366399999985,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 824.9471999999993,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1060.646399999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1272.7756799999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 964.6559999999987,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 964.6559999999987,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 1241.4124799999988,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 1241.4124799999988,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 964.6559999999987,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 1240.2720000000002,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1596.1017599999998,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 749.2716,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 749.2716,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 899.1259200000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 899.1259200000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 749.2716,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 963.3491999999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1156.0190399999992,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 795.2175,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 795.2175,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 981.828540000001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 981.828540000001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 795.2175,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 1022.4224999999997,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1262.3509799999986,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 584.3376000000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 584.3376000000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 818.0726399999998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 818.0726399999998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 584.3376000000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 751.2912000000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1051.8076799999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 645.5988000000003,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 645.5988000000003,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 1007.5111199999991,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 1007.5111199999991,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 645.5988000000003,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 830.0556000000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1295.3714399999985,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2851.199999999996,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2851.199999999996,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 3421.4399999999973,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 3421.4399999999973,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2851.199999999996,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 3801.599999999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 4561.920000000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 2851.199999999996,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 2851.199999999996,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3421.4399999999973,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 3421.4399999999973,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 2851.199999999996,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 3801.599999999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 4561.920000000001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3893.788800000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3893.788800000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 4932.1324799999975,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 4932.1324799999975,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3893.788800000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 5008.608000000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 6344.236799999995,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 9435.571199999977,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 9435.571199999977,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 11167.58015999996,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 11167.58015999996,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 9435.571199999977,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 11794.463999999927,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 14034.873599999932,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3639.319200000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3639.319200000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 4609.804320000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 4609.804320000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3639.319200000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 4549.149000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 5762.255400000004,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3639.319200000006,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 3639.319200000006,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 4847.847840000007,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 4847.847840000007,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3639.319200000006,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 4549.149000000007,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 6059.809800000005,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3181.9392000000025,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3181.9392000000025,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 3606.1977600000023,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 3606.1977600000023,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3181.9392000000025,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 4242.585600000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 4808.263679999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 6415.19999999996,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 6415.19999999996,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 7270.559999999969,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 7270.559999999969,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 6415.19999999996,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 8553.599999999915,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 9694.079999999913,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 2890.0475999999935,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 2890.0475999999935,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 3275.3872799999904,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 3275.3872799999904,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 2890.0475999999935,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 3853.3967999999877,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 4367.183039999988,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3244.4873999999913,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 3244.4873999999913,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 3677.085719999988,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 3677.085719999988,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3244.4873999999913,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 4325.983199999989,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 4902.780959999993,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3005.1648000000014,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3005.1648000000014,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 3606.1977599999977,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 3606.1977599999977,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3005.1648000000014,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 4006.8864000000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 4808.263679999991,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 7040.325599999945,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 7040.325599999945,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 8174.532959999958,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 8237.544479999957,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 7040.325599999945,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 9369.597599999895,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 2,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 10969.390079999883,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 709.6320000000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 709.6320000000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 993.4848000000011,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 993.4848000000011,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 709.6320000000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 912.3840000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1277.3376000000017,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 709.6320000000003,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 709.6320000000003,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 993.4848000000011,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 993.4848000000011,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 709.6320000000003,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 912.3840000000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1277.3376000000017,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 641.1018240000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 641.1018240000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1153.9832832000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1153.9832832000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 641.1018240000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 806.5474560000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1451.7854207999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 641.1018240000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 641.1018240000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 1153.9832832000002,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 1153.9832832000002,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 641.1018240000002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 830.6749440000001,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1495.2148991999993,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 582.291072,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 582.291072,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1048.1239295999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1048.1239295999997,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 582.291072,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 776.3880959999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1397.4985728000013,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 582.291072,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 582.291072,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 1048.1239295999997,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 1048.1239295999997,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 582.291072,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 776.3880959999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 1
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1397.4985728000013,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 1055.9324159999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 1055.9324159999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1267.1188991999984,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1267.1188991999984,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 1055.9324159999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1357.6273919999999,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1629.1528703999988,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 1234.7596799999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 1234.7596799999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 1589.007974399997,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 1589.007974399997,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 1234.7596799999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 1587.5481599999996,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 2043.0102527999964,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 959.0676479999989,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 959.0676479999989,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1150.8811775999998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1150.8811775999998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 959.0676479999989,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 1233.0869759999994,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1479.7043712000009,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 1017.8783999999988,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 1017.8783999999988,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 1256.7405312000003,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 1256.7405312000003,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 1017.8783999999988,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 1308.7007999999994,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1615.8092544000017,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 747.9521280000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 747.9521280000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 1047.1329792,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 1047.1329792,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 747.9521280000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 961.6527360000011,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 1346.3138304000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 826.3664640000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 826.3664640000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 1289.614233600001,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 1289.614233600001,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 826.3664640000007,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 1062.4711680000014,
+      "hitTargets": 2,
+      "controlledSeconds": 0,
+      "radius": 0.3,
+      "count": 2
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 1,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 1658.0754432000024,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.35496478698597694,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3649.536000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3649.536000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 4379.443200000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "both",
+      "damage": 4379.443200000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3649.536000000005,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 4866.048000000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "single",
+      "setup": "all",
+      "damage": 5839.257600000009,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 3649.536000000005,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 3649.536000000005,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 4379.443200000006,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 4379.443200000006,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 3649.536000000005,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 4866.048000000007,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 5839.257600000009,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 4984.049664000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 4984.049664000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 6313.1295744000045,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 6313.1295744000045,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 4984.049664000006,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 6411.018240000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 8120.623104000008,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 12077.531136000029,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 12077.531136000029,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 14294.50260480001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 14294.50260480001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 12077.531136000029,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 15096.91392000004,
+      "hitTargets": 4,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 17964.638208000008,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 4658.328576000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 4658.328576000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 5900.549529600007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 5900.549529600007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 4658.328576000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 5822.910720000011,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 7375.686912000007,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 4658.328576000007,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 4658.328576000007,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 6205.2452352000055,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 6205.2452352000055,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 4658.328576000007,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 5822.910720000011,
+      "hitTargets": 3,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 3
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "execution",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 7756.556544000005,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 5
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 4072.882176000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 4072.882176000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 4615.933132800013,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 4615.933132800013,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 4072.882176000003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 5430.50956800003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 6154.577510400045,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 8211.456000000093,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 8211.456000000093,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 9306.316800000059,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 9306.316800000059,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 8211.456000000093,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 10948.608000000017,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "haunt"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 12408.422399999956,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3699.2609279999992,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3699.2609279999992,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 4192.495718400002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 4192.495718400002,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3699.2609279999992,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 4932.347903999995,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 5589.994291199998,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 4152.943872000001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 4152.943872000001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 4706.669721600001,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 4706.669721600001,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 4152.943872000001,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 5537.258495999991,
+      "hitTargets": 6,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "swarm",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 6275.559628799994,
+      "hitTargets": 8,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 8
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "base",
+      "damage": 3846.6109440000037,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "area",
+      "damage": 3846.6109440000037,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "amount",
+      "damage": 4615.9331328000035,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "both",
+      "damage": 4615.9331328000035,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "duration",
+      "damage": 3846.6109440000037,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "hourglass",
+      "damage": 5128.814592000008,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "single",
+      "setup": "all",
+      "damage": 6154.577510400003,
+      "hitTargets": 1,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "base",
+      "damage": 9011.616768000029,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "area",
+      "damage": 9011.616768000029,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "amount",
+      "damage": 10463.402188800008,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "both",
+      "damage": 10544.056934400007,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "duration",
+      "damage": 9011.616768000029,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "hourglass",
+      "damage": 11993.084928000031,
+      "hitTargets": 5,
+      "controlledSeconds": 0,
+      "radius": 0.36960000000000004,
+      "count": 4
+    },
+    {
+      "skill": "ghost",
+      "grade": 3,
+      "level": 8,
+      "mods": [
+        "haunt",
+        "reap"
+      ],
+      "scene": "spread",
+      "setup": "all",
+      "damage": 14040.819302400003,
+      "hitTargets": 7,
+      "controlledSeconds": 0,
+      "radius": 0.43731661756672363,
+      "count": 6
+    }
+  ]
+}

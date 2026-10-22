@@ -1,0 +1,185 @@
+{
+  "scope": "Design only: .5-grid connectivity, sampled route clearance, twelve isolated two-lock escape examples at 120Hz and formula arithmetic. No crowds, runtime integration, comprehensive escape proof, win rate or device QA.",
+  "boxes": [
+    {
+      "x": -11,
+      "y": -10,
+      "hx": 2.4,
+      "hy": 1.1
+    },
+    {
+      "x": 11,
+      "y": 10,
+      "hx": 2.4,
+      "hy": 1.1
+    },
+    {
+      "x": -11,
+      "y": 10,
+      "hx": 1.1,
+      "hy": 2.4
+    },
+    {
+      "x": 11,
+      "y": -10,
+      "hx": 1.1,
+      "hy": 2.4
+    },
+    {
+      "x": -17,
+      "y": 0,
+      "hx": 0.8,
+      "hy": 2
+    },
+    {
+      "x": 17,
+      "y": 0,
+      "hx": 0.8,
+      "hy": 2
+    }
+  ],
+  "connectivity": [
+    {
+      "radius": 0.3,
+      "freeCells": 8651,
+      "reachable": 8651,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "radius": 0.7,
+      "freeCells": 8111,
+      "reachable": 8111,
+      "connected": true,
+      "routes": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "scene": "center",
+      "action": "A",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "center",
+      "action": "B",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "center",
+      "action": "C",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "edge",
+      "action": "A",
+      "sampledEscape": {
+        "firstDirectionDeg": 90,
+        "after2p7DirectionDeg": 75
+      }
+    },
+    {
+      "scene": "edge",
+      "action": "B",
+      "sampledEscape": {
+        "firstDirectionDeg": 90,
+        "after2p7DirectionDeg": 75
+      }
+    },
+    {
+      "scene": "edge",
+      "action": "C",
+      "sampledEscape": {
+        "firstDirectionDeg": 90,
+        "after2p7DirectionDeg": 75
+      }
+    },
+    {
+      "scene": "corner",
+      "action": "A",
+      "sampledEscape": {
+        "firstDirectionDeg": 180,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "corner",
+      "action": "B",
+      "sampledEscape": {
+        "firstDirectionDeg": 180,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "corner",
+      "action": "C",
+      "sampledEscape": {
+        "firstDirectionDeg": 180,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "plinth",
+      "action": "A",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "plinth",
+      "action": "B",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "after2p7DirectionDeg": 0
+      }
+    },
+    {
+      "scene": "plinth",
+      "action": "C",
+      "sampledEscape": {
+        "firstDirectionDeg": 0,
+        "after2p7DirectionDeg": 0
+      }
+    }
+  ],
+  "budget": {
+    "normalOutput": 1.3764734113430281,
+    "normalSeconds": 2.752946822686056,
+    "eliteOutput": 1.3764734113430281,
+    "eliteSeconds": 11.764734113430281,
+    "bossDps": 552.7580004186093,
+    "bossSeconds": 116.47101170145422,
+    "health": 3.126220436021616,
+    "elite": 3.7448263553144487,
+    "bossHealth": 7.664319468431938,
+    "total": 64380.283534828275,
+    "increasePercent": 0.8450691223234941,
+    "clearCoins": 440,
+    "holyEpicCost": 1440
+  },
+  "proposal": {
+    "forms": 1,
+    "revivals": 0,
+    "addedAchievements": 2,
+    "weaponSeries": 14,
+    "weaponForms": 33
+  }
+}

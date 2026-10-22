@@ -1,3 +1,7 @@
+import {GATE_OPENERS} from "../battle/TwingateChallenge";
+import {COUNTERBEAT_ROLES} from "../battle/CounterbeatChallenge";
+import {TRACE_RECIPES} from "../battle/TraceChallenge";
+import {MODS} from "../battle/ArmoryConfig";
 import type { GameBootstrap } from "../GameBootstrap";
 import { ACHIEVEMENTS } from "../battle/UnlockConfig";
 import { ALL_WEAPONS, NAMES, Skill } from "../battle/SurvivalConfig";
@@ -12,6 +16,9 @@ type CatalogButton = (
   action: () => void,
 ) => void;
 export const OPENER_PATH_SCREENS = {
+ twingate_twelve_orders:{title:"十二途分猎 · 先倒顺序",field:"duetOrders",required:2,hint:"起手8级双改 · 双体和独猎反击 · 全Boss无伤"},
+ counterbeat_mastery:{title:"六律拆奏 · 职责认证",field:"counterbeatMastery",required:2,hint:"每类两种起手 · 完整错拍反击与全Boss无伤"},
+ trace_twelve_paths:{title:"十二途逆痕 · 顺逆配方进度",field:"traceQualified",required:10,hint:"每起手5组双改×左右两向 · 起手8级 · 四组机制反击与全Boss无伤"},
   eclipse_twelve_paths: {
     title: "十二途逐晖 · 起手进度",
     field: "eclipseQualified",
@@ -104,8 +111,24 @@ export function renderOpenerProgress(
   id: OpenerPathId,
   button: CatalogButton,
   back: () => void,
+  detail?:Skill,
+  showDetail?:(skill?:Skill)=>void,
 ) {
+  if(id==="twingate_twelve_orders"){
+    GATE_OPENERS.forEach((skill,i)=>{const x=i<7?-265:265,y=160-(i%7)*48,keys=h.progress.data.duetOrders?.[skill]??[];h.text(h.overlay,NAMES[skill],x,y,20,'#e7dcc7',450);h.text(h.overlay,`逐先 ${keys.includes('hunter_first')?'✓':'·'}  镇先 ${keys.includes('warden_first')?'✓':'·'}`,x,y-20,15,'#b5d8cb',450);});h.text(h.overlay,'每起手两种先倒顺序 · 同帧双杀正常通关但不记顺序认证',0,-215,17,'#bdcbd6',1060);button('返回成就',0,-270,260,40,back);return;
+  }
+  if(id==="counterbeat_mastery"){
+    const keys=h.progress.data.counterbeatMastery??[];
+    COUNTERBEAT_ROLES.forEach((r,i)=>{const y=155-i*62,n=r.skills.filter(s=>keys.includes(s)).length;h.text(h.overlay,`${r.name}  ${Math.min(2,n)}/2`,0,y,23,n>=2?'#a8d7c7':'#e7dcc7',1000);h.text(h.overlay,r.skills.map(s=>NAMES[s]+(keys.includes(s)?' ✓':' ·')).join('    '),0,y-27,17,'#c4d4d9',1060);});
+    h.text(h.overlay,'起手8级双改 · 双精英错拍反击 · Boss A/B/C各两组反击且无伤',0,-222,16,'#bdcbd6',1060);button('返回成就',0,-270,260,40,back);return;
+  }
   const screen = OPENER_PATH_SCREENS[id];
+  if(id==="trace_twelve_paths"&&detail){
+    h.text(h.overlay,NAMES[detail]+" · 左右辨迹",0,175,24);
+    TRACE_RECIPES[detail].forEach((pair,i)=>{const y=115-i*60,keys=h.progress.data.traceQualified?.[detail]??[];h.text(h.overlay,pair.split('+').map(mod=>MODS[detail].find(m=>m.id===mod)?.name??mod).join(' + '),0,y,21,'#e7dcc7',1000);h.text(h.overlay,`左转 ${keys.includes(pair+'|left')?'✓':'·'}      右转 ${keys.includes(pair+'|right')?'✓':'·'}`,0,y-25,17,'#b8d8ca',900);});
+    h.text(h.overlay,"方向绑定第二命首次合格循痕A；同局仅记一格",0,-225,16,'#bbc9d6',1000);button('返回起手列表',0,-270,290,40,()=>showDetail?.());return;
+  }
+
   ALL_WEAPONS.forEach((skill, i) => {
     const x = i < 7 ? -260 : 260,
       y = 160 - (i % 7) * 48,
@@ -116,12 +139,13 @@ export function renderOpenerProgress(
     h.text(
       h.overlay,
       `${NAMES[skill]}  ${n}/${screen.required}`,
-      x,
+      id==="trace_twelve_paths"?x-45:x,
       y,
-      22,
+      id==="trace_twelve_paths"?19:22,
       n >= screen.required ? "#a8d7c7" : "#e7dcc7",
       460,
     );
+    if(id==="trace_twelve_paths")button("配方",x+170,y,85,30,()=>showDetail?.(skill));
   });
   h.text(h.overlay, screen.hint, 0, -200, 17, "#b9c8d5", 1060);
   button("返回成就", 0, -260, 260, 44, back);

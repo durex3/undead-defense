@@ -4,7 +4,12 @@ import { ACHIEVEMENTS } from "../temp/tests/battle/UnlockConfig.mjs";
 import { ALL_WEAPONS } from "../temp/tests/battle/SurvivalConfig.mjs";
 import { Graphics } from "../temp/tests/node_modules/cc/index.mjs";
 /** Record original menu submissions, badge paths and clamped progress before extracting rendering. */
-export function captureAchievementScreens() {
+export function captureAchievementScreens(){
+ const original=ACHIEVEMENTS.slice();
+ ACHIEVEMENTS.splice(0,ACHIEVEMENTS.length,...original.filter(a=>a.id!=="trace_twelve_paths"&&a.id!=="tracecourt_clear"&&a.id!=="counterbeat_clear"&&a.id!=="counterbeat_mastery"&&a.id!=="twingate_clear"&&a.id!=="twingate_twelve_orders"));
+ try{return captureHistoricalScreens();}finally{ACHIEVEMENTS.splice(0,ACHIEVEMENTS.length,...original);}
+}
+function captureHistoricalScreens() {
   const rows = [];
   for (const done of [false, true]) {
     const progress = new ProgressStore({

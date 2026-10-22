@@ -4,6 +4,8 @@ export const GRADE_NAMES = ["", "普通", "精良", "稀有", "史诗"] as const
 export const GRADE_COLORS = ["", "#d3d7db", "#94d6a4", "#84bbef", "#c19aef"] as const;
 export const GRADE_PRICE = [0, 0, 360, 720, 1440] as const;
 const forms: Partial<Record<Skill, readonly string[]>> = {
+  ghost:["幽灵伙伴","守誓幽侍","巡猎冥卫"],
+  holy:["裁决圣剑","誓纹裁剑","断律圣裁","寂律天裁"],
   fire:["烈焰火球","烬纹火球","熔心火核","烬冕焚星"],
   water:["圣水瓶","巡灯净瓶","回澜圣壶","长明灵泉"],
   bone:["贯阵骨矛","棘脊骨枪","釉裂骨矛","焚髓贯星"],
@@ -25,7 +27,7 @@ export function weaponName(s: Skill, grades: Partial<Record<Skill, WeaponGrade>>
 }
 export function gradeMultiplier(s: Skill, grades: Partial<Record<Skill, WeaponGrade>> = {}) {
   const g = gradeOf(s, grades);
-  return s === "blade" || s === "bone" || s === "water" || s === "fire" ? [0, 1, 1.25, 1.6, 2.05][g] : s === "hammer" || s === "wheel" ? [0, 1, 1, 1.28, 1.64][g] : 1;
+  return s === "ghost" || s === "holy" || s === "blade" || s === "bone" || s === "water" || s === "fire" ? [0, 1, 1.25, 1.6, 2.05][g] : s === "hammer" || s === "wheel" ? [0, 1, 1, 1.28, 1.64][g] : 1;
 }
 export function nextGrade(s: Skill, grades: Partial<Record<Skill, WeaponGrade>> = {}): WeaponGrade | null {
   const g = gradeOf(s, grades);

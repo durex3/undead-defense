@@ -249,6 +249,86 @@ try {
     return rows;
   })()`);
   if(report.eliteCoordination.some(r=>r.maxSlots>2||r.casts.some(v=>v===0)))throw Error('Actual Cocos elite coordination regression');
+  await c('Emulation.setDeviceMetricsOverride',{width:844,height:390,deviceScaleFactor:1,mobile:true});
+  report.stage17=await run(`(()=>{
+    const g=__undead;g.progress.data.stages=Array.from({length:16},(_,i)=>i+1);g.selectedStage=17;g.restart();const w=g.world;w.state='battle';w.enemies=[];w.player={x:0,y:0};w.camera={x:0,y:0};g.camera={x:0,y:0};w.time=400;w.pause('capture',true);const e=w.addEnemy('boss',-4,-3);e.state='seek';e.attack=0;w.trace.state(e).action='B';const began=w.trace.begin(e);g.painter.draw(w,0,[],true);return{stage:w.stageId,total:e.trace.total,first:e.hp,began};
+  })()`);
+  if(report.stage17.stage!==17||!report.stage17.began)throw Error('Stage17 entry/first route failed');
+  await shot('stage17-first-warning-844');
+  report.stage17Death=await run(`(()=>{const g=__undead,w=g.world,e=w.enemies.find(e=>e.kind==='boss');const coins=g.progress.coins;w.hit(e,1e9,'blade');g.painter.draw(w,0,w.drain(),true);return{hp:e.hp,state:w.state,kills:w.kills,coins:g.progress.coins,before:coins};})()`);
+  if(report.stage17Death.hp!==0||report.stage17Death.state!=='battle'||report.stage17Death.kills!==0||report.stage17Death.coins!==report.stage17Death.before)throw Error('Stage17 first lethal settled');
+  await shot('stage17-revival');
+  report.stage17Trace=await run(`(()=>{const g=__undead,w=g.world,e=w.enemies.find(e=>e.kind==='boss');w.pause('capture',false);w.time=e.trace.deadUntil;w.trace.tick();w.pause('capture',true);w.hazards=[];w.trace.history.clear();[{x:-4,y:-2},{x:-1,y:-2},{x:-1,y:0}].forEach((p,i)=>w.trace.history.record(p,w.time-2+i));e.state='seek';e.trace.action='B';const began=w.trace.begin(e),h=e.trace.item;w.time+=1;g.painter.draw(w,0,[],true);return{life:e.trace.life,health:e.hp,began,genuine:h.trace.genuine,direction:h.trace.direction,route:h.trace.route};})()`);
+  if(report.stage17Trace.life!==2||!report.stage17Trace.began||!report.stage17Trace.genuine||report.stage17Trace.direction!=='left')throw Error('Stage17 real trace/Cocos collection regression');
+  await shot('stage17-trace-warning-844');
+  await c('Emulation.setDeviceMetricsOverride',{width:740,height:390,deviceScaleFactor:1,mobile:true});
+  await shot('stage17-trace-warning-740');
+  await c('Emulation.setDeviceMetricsOverride',{width:844,height:390,deviceScaleFactor:1,mobile:true});
+  report.stage17Return=await run(`(()=>{const g=__undead,w=g.world,e=w.enemies.find(e=>e.kind==='boss'),h=e.trace.item;w.time=h.trace.legs.at(-1).end+.05;w.trace.stepEnemy(e,.05);const f=h.trace.legs.find(f=>f.pass===2);g.painter.draw(w,0,[],true);return{warning:f?f.due-w.time:null,from:f?.from,body:{x:e.x,y:e.y}};})()`);
+  if(report.stage17Return.warning<2.4-1e-8||JSON.stringify(report.stage17Return.from)!==JSON.stringify(report.stage17Return.body))throw Error('Stage17 fresh return/body source failed');
+  await shot('stage17-return-warning-844');
+  report.stage17Economy=await run(`(()=>{const g=__undead,p=g.progress,w=g.world,e=w.enemies.find(e=>e.kind==='boss');const before=p.coins;w.hit(e,1e9,'blade');p.observe(w);p.observe(w);const won=p.coins;p.data.grades={...p.data.grades,holy:1};const fine=p.evolveWeapon('holy',1),rare=p.evolveWeapon('holy',2);p.data.traceQualifiedVersion=1;p.data.traceQualified={blade:['hunt+return|left']};p.pending=true;p.flush();g.menuScreens.showWeaponDetail('holy');return{before,won,after:p.coins,fine,rare,grade:p.weaponGrades.holy,best:p.data.stageBest[17]};})()`);
+  if(report.stage17Economy.won-report.stage17Economy.before!==420||report.stage17Economy.won-report.stage17Economy.after!==1080||report.stage17Economy.grade!==3)throw Error('Stage17 win/holy purchase failed');
+  await shot('stage17-holy-rare');
+  await run(`__undead.menuScreens.showOpenerPaths('trace_twelve_paths','blade');true`);
+  await shot('stage17-signed-recipes');
+  await c('Emulation.setDeviceMetricsOverride',{width:740,height:390,deviceScaleFactor:1,mobile:true});
+  await shot('stage17-signed-recipes-740');
+  await c('Page.reload');for(let i=0;i<150;i++){if(await run('Boolean(globalThis.__undead?.ready)'))break;await new Promise(r=>setTimeout(r,100));}
+  report.stage17Cold=await run(`({coins:__undead.progress.coins,grade:__undead.progress.weaponGrades.holy,keys:__undead.progress.data.traceQualified?.blade,clear:__undead.progress.hasAchievement('tracecourt_clear'),slots:__undead.progress.manualSaves.map(s=>s.state)})`);
+  if(report.stage17Cold.coins!==report.stage17Economy.after||report.stage17Cold.grade!==3||report.stage17Cold.keys?.[0]!=='hunt+return|left'||!report.stage17Cold.clear||report.stage17Cold.slots.join(',')!=='saved,saved,saved')throw Error('Stage17 cold account compatibility failed');
+  await c('Emulation.setDeviceMetricsOverride',{width:844,height:390,deviceScaleFactor:1,mobile:true});
+  report.stage18Director=await run(`(()=>{const C=__undead.world.constructor,w=new C(31,'ranger',18);w.time=400;w.state='battle';w.player={x:0,y:0};w.camera={x:0,y:0};w.viewport={x:16,y:7.5};w.director.step(w,0);return{bosses:w.enemies.filter(e=>e.kind==='boss').length};})()`);
+  if(report.stage18Director.bosses!==1)throw Error('Stage18 actual Creator director initialization failed');
+  report.stage18Support=await run(`(()=>{
+    const g=__undead;g.progress.data.stages=Array.from({length:17},(_,i)=>i+1);g.selectedStage=18;g.restart();const w=g.world;w.state='battle';w.enemies=[];w.player={x:0,y:-2};w.camera={x:0,y:0};g.camera={x:0,y:0};w.time=280;w.pause('capture',true);const e=w.addEnemy('chimeshard',0,0),s=w.addEnemy('resonancebearer',2,0);const buff=w.stageStrategy.combat.incoming(e,100,w.player,false);g.painter.draw(w,0,[],true);return{stage:w.stageId,buff,buffed:w.counter.buffed(e)};
+  })()`);
+  if(report.stage18Support.stage!==18||report.stage18Support.buff!==65||!report.stage18Support.buffed)throw Error('Stage18 support integration failed');
+  await shot('stage18-support-844');
+  report.stage18First=await run(`(()=>{const g=__undead,w=g.world;w.enemies=[];w.hazards=[];w.player={x:0,y:0};w.time=400;const e=w.addEnemy('boss',-3,0);e.state='seek';e.attack=0;const began=w.counter.begin(e,'A');g.painter.draw(w,0,[],true);return{began,hp:e.hp,pulses:e.counter.item.counter.pulses.length,first:JSON.stringify(e.counter.item.counter.pulses[0]),slots:w.counter.slots};})()`);
+  if(!report.stage18First.began||report.stage18First.pulses!==1||report.stage18First.slots!==1)throw Error('Stage18 first lock failed');
+  await shot('stage18-first-lock-844');
+  report.stage18Second=await run(`(()=>{const g=__undead,w=g.world,e=w.enemies.find(e=>e.kind==='boss');w.pause('capture',false);w.time+=.9;w.counter.clean();w.pause('capture',true);g.painter.draw(w,0,[],true);const b=e.counter.item.counter;return{pulses:b.pulses.length,warning:b.pulses[1]?.due-w.time,first:JSON.stringify(b.pulses[0]),body:{x:e.x,y:e.y},source:{x:b.pulses[1]?.x,y:b.pulses[1]?.y}};})()`);
+  if(report.stage18Second.pulses!==2||report.stage18Second.warning<2.4-1e-8||report.stage18Second.first!==report.stage18First.first||JSON.stringify(report.stage18Second.body)!==JSON.stringify(report.stage18Second.source))throw Error('Stage18 second lock or body source failed');
+  await shot('stage18-two-locks-844');
+  await c('Emulation.setDeviceMetricsOverride',{width:740,height:390,deviceScaleFactor:1,mobile:true});
+  await shot('stage18-two-locks-740');
+  report.stage18Economy=await run(`(()=>{const g=__undead,p=g.progress,w=g.world,e=w.enemies.find(e=>e.kind==='boss');const before=p.coins;w.hit(e,1e9,'blade');p.observe(w);p.observe(w);const won=p.coins;p.data.grades={...p.data.grades,holy:3};const evolved=p.evolveWeapon('holy',3);p.data.counterbeatMasteryVersion=1;p.data.counterbeatMastery=['blade','frost'];p.pending=true;p.flush();g.menuScreens.showWeaponDetail('holy');return{before,won,after:p.coins,evolved,grade:p.weaponGrades.holy,best:p.data.stageBest[18]};})()`);
+  if(report.stage18Economy.won-report.stage18Economy.before!==440||report.stage18Economy.won-report.stage18Economy.after!==1440||report.stage18Economy.grade!==4||report.stage18Economy.best.form!==1)throw Error('Stage18 win or epic transaction failed');
+  await shot('stage18-holy-epic-740');
+  await run(`__undead.menuScreens.showOpenerPaths('counterbeat_mastery');true`);
+  await shot('stage18-mastery-740');
+  await c('Page.reload');for(let i=0;i<150;i++){if(await run('Boolean(globalThis.__undead?.ready)'))break;await new Promise(r=>setTimeout(r,100));}
+  report.stage18Cold=await run(`({coins:__undead.progress.coins,grade:__undead.progress.weaponGrades.holy,mastery:__undead.progress.data.counterbeatMastery,clear:__undead.progress.hasAchievement('counterbeat_clear'),slots:__undead.progress.manualSaves.map(s=>s.state)})`);
+  if(report.stage18Cold.coins!==report.stage18Economy.after||report.stage18Cold.grade!==4||report.stage18Cold.mastery?.join(',')!=='blade,frost'||!report.stage18Cold.clear||report.stage18Cold.slots.join(',')!=='saved,saved,saved')throw Error('Stage18 cold account compatibility failed');
+  await c('Emulation.setDeviceMetricsOverride',{width:844,height:390,deviceScaleFactor:1,mobile:true});
+  report.stage19=await run(`(()=>{
+    const g=__undead;g.progress.data.stages=Array.from({length:18},(_,i)=>i+1);g.selectedStage=19;g.restart();const w=g.world;w.state='battle';w.enemies=[];w.player={x:0,y:0};w.camera={x:0,y:0};g.camera={x:0,y:0};w.time=400;w.pause('capture',false);w.director.step(w,0);w.pause('capture',true);const pair=w.twingate.encounter.members;for(const e of pair){e.state='seek';e.attack=0;e.visibleSince=399;}g.painter.draw(w,0,[],true);return{stage:w.stageId,summary:w.twingate.summary(),roles:pair.map(e=>e.twin.role)};
+  })()`);
+  if(report.stage19.stage!==19||report.stage19.roles.join(',')!=='hunter,warden'||report.stage19.summary.bodiesRemaining!==2)throw Error('Stage19 atomic encounter failed '+JSON.stringify(report.stage19));
+  await shot('stage19-duet-844');
+  report.stage19Locks=await run(`(()=>{const g=__undead,w=g.world;w.pause('capture',false);w.invulnerable=1e8;let began=false;for(let i=0;i<3600&&!began;i++){w.director.step=()=>{};w.armory.step=()=>{};w.step(1/30);w.drain();began=w.twingate.stats.pairs>0;}w.pause('capture',true);g.camera={...w.camera};g.painter.draw(w,0,[],true);return{began,slots:w.twingate.slots,parts:w.hazards.filter(h=>h.twin&&h.until>w.time).map(h=>h.twin.parts.length)};})()`);
+  if(!report.stage19Locks.began||report.stage19Locks.slots!==2||report.stage19Locks.parts.reduce((a,b)=>a+b,0)!==1)throw Error('Stage19 first pair lock failed '+JSON.stringify(report.stage19Locks));
+  await shot('stage19-first-lock-844');
+  report.stage19Second=await run(`(()=>{const g=__undead,w=g.world;w.pause('capture',false);w.time+=.91;w.twingate.clean();w.pause('capture',true);g.painter.draw(w,0,[],true);const h=w.hazards.find(h=>h.twin?.parts[0]?.locked>w.time-.02);return{slots:w.twingate.slots,warning:h?.twin.parts[0].due-w.time};})()`);
+  if(report.stage19Second.slots!==2||report.stage19Second.warning<2.4-1e-8)throw Error('Stage19 second pair warning failed');
+  await shot('stage19-two-locks-844');
+  await c('Emulation.setDeviceMetricsOverride',{width:740,height:390,deviceScaleFactor:1,mobile:true});
+  await shot('stage19-two-locks-740');
+  report.stage19FirstDeath=await run(`(()=>{const g=__undead,w=g.world,p=g.progress,[a,b]=w.twingate.encounter.members;const before=p.coins,hp=b.hp;w.hit(a,1e9,'blade');p.observe(w);w.enemies=w.enemies.filter(e=>e.hp>0);g.painter.draw(w,0,w.drain(),true);return{state:w.state,before,after:p.coins,hp,bhp:b.hp,summary:w.twingate.summary(),wait:w.twingate.encounter.soloAt-w.time};})()`);
+  if(report.stage19FirstDeath.state!=='battle'||report.stage19FirstDeath.after!==report.stage19FirstDeath.before||report.stage19FirstDeath.hp!==report.stage19FirstDeath.bhp||report.stage19FirstDeath.summary.bodiesRemaining!==1||report.stage19FirstDeath.wait<1.8-1e-8)throw Error('Stage19 first death/aggregate failed');
+  await shot('stage19-inheritance-740');
+  report.stage19Solo=await run(`(()=>{const g=__undead,w=g.world;w.pause('capture',false);w.time=w.twingate.encounter.soloAt;w.twingate.tick();w.hazards=[];const e=w.twingate.encounter.alive[0];e.x=-3;e.y=0;w.player={x:0,y:0};w.camera={x:0,y:0};g.camera={x:0,y:0};const began=w.twingate.begin(e,'B');w.pause('capture',true);g.painter.draw(w,0,[],true);return{began,phase:e.bossPhase,role:e.twin.role,hp:e.hp};})()`);
+  if(!report.stage19Solo.began||report.stage19Solo.phase!==2||report.stage19Solo.hp!==report.stage19FirstDeath.bhp)throw Error('Stage19 solo form failed');
+  await shot('stage19-warden-solo-740');
+  report.stage19Economy=await run(`(()=>{const g=__undead,p=g.progress,w=g.world,e=w.twingate.encounter.alive[0],before=p.coins;w.frame++;w.hit(e,1e9,'blade');p.observe(w);p.observe(w);const won=p.coins;p.data.grades={...p.data.grades,ghost:1};const fine=p.evolveWeapon('ghost',1),rare=p.evolveWeapon('ghost',2);p.data.duetOrdersVersion=1;p.data.duetOrders={blade:['hunter_first','warden_first']};p.pending=true;p.flush();g.menuScreens.showWeaponDetail('ghost');return{before,won,after:p.coins,fine,rare,grade:p.weaponGrades.ghost,best:p.data.stageBest[19]};})()`);
+  if(report.stage19Economy.won-report.stage19Economy.before!==460||report.stage19Economy.won-report.stage19Economy.after!==1080||report.stage19Economy.grade!==3||report.stage19Economy.best.killOrder!=='hunter_first'||report.stage19Economy.best.bodiesRemaining!==0)throw Error('Stage19 settlement/ghost upgrade failed');
+  await shot('stage19-ghost-rare-740');
+  await run(`__undead.menuScreens.showOpenerPaths('twingate_twelve_orders','blade');true`);
+  await shot('stage19-orders-740');
+  await c('Page.reload');for(let i=0;i<150;i++){if(await run('Boolean(globalThis.__undead?.ready)'))break;await new Promise(r=>setTimeout(r,100));}
+  report.stage19Cold=await run(`({coins:__undead.progress.coins,grade:__undead.progress.weaponGrades.ghost,orders:__undead.progress.data.duetOrders?.blade,clear:__undead.progress.hasAchievement('twingate_clear'),slots:__undead.progress.manualSaves.map(s=>s.state)})`);
+  if(report.stage19Cold.coins!==report.stage19Economy.after||report.stage19Cold.grade!==3||report.stage19Cold.orders?.join(',')!=='hunter_first,warden_first'||!report.stage19Cold.clear||report.stage19Cold.slots.join(',')!=='saved,saved,saved')throw Error('Stage19 cold account compatibility failed');
   report.errors = events
     .filter((e) => e.method === "Runtime.exceptionThrown")
     .map((e) => e.params.exceptionDetails);

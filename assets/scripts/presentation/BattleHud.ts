@@ -84,7 +84,8 @@ export function battleHud(
       : touchMode
         ? "全收经验"
         : "全收经验 [空格]";
-  const bossHealth = boss
+  const group=w.stageStrategy.encounter?.();
+  const bossHealth = group ? {ratio:group.remaining,label:stage.bossLabel} : boss
     ? {
         ratio: Math.max(0, Math.min(1, boss.hp / Math.max(1, boss.maxHp))),
         label: stage.bossLabel,

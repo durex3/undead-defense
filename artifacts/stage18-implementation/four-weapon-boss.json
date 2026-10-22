@@ -1,0 +1,665 @@
+{
+  "scope": "Four max-level weapons, fixed passives and mods, three seeds, native and all available upgraded forms for stage18, one life and one totalHP budget, invulnerable orbit controller. Output-window diagnostic, not human win rate.",
+  "result": [
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "armor",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 14863.50429794851,
+        "hammer": 25577.07040452944,
+        "wheel": 21391.739943654993,
+        "water": 18909.950944661756
+      },
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 89,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "armor",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 8494.387250034932,
+        "hammer": 26535.99227955444,
+        "wheel": 21850.574012226196,
+        "water": 17638.413159935626
+      },
+      "patterns": {
+        "A": 4,
+        "B": 3,
+        "C": 3
+      },
+      "seconds": 57,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "support",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "needle": 28240.521327033235,
+        "lamp": 9471.148525021012,
+        "blade": 30830.465149994474,
+        "bone": 29942.337366975324
+      },
+      "patterns": {
+        "A": 11,
+        "B": 11,
+        "C": 10
+      },
+      "seconds": 176,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "support",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "needle": 19177.28495809257,
+        "lamp": 5060.933417646295,
+        "blade": 31827.81536733014,
+        "bone": 28438.793653378776
+      },
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "seconds": 107,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "precision",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 26163.58283363597,
+        "blade": 19467.142001508695,
+        "fire": 26169.568255652375,
+        "water": 17630.030944661736
+      },
+      "patterns": {
+        "A": 9,
+        "B": 8,
+        "C": 7
+      },
+      "seconds": 132,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "precision",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 11428.327138939332,
+        "blade": 20157.82167222607,
+        "fire": 30272.354801713154,
+        "water": 15426.067588941813
+      },
+      "patterns": {
+        "A": 5,
+        "B": 4,
+        "C": 4
+      },
+      "seconds": 69,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "ground",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "void": 24122.402361409913,
+        "holy": 39473.704116783134,
+        "water": 36916.457751890426,
+        "mine": 7189.2564725054635
+      },
+      "patterns": {
+        "A": 14,
+        "B": 14,
+        "C": 13
+      },
+      "seconds": 225,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "ground",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "void": 11028.856133426465,
+        "holy": 44204.5594807199,
+        "water": 30533.46661565801,
+        "mine": 1349.5271944871245
+      },
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 7
+      },
+      "seconds": 117,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "pursuit",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "blade": 20217.902808591934,
+        "ghost": 27584.662139909,
+        "bone": 19514.87488443561,
+        "holy": 24544.88843013971
+      },
+      "patterns": {
+        "A": 9,
+        "B": 9,
+        "C": 9
+      },
+      "seconds": 144,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 19,
+      "stage": 18,
+      "build": "pursuit",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "blade": 19507.10927855702,
+        "ghost": 15111.156523843772,
+        "bone": 18362.68326188488,
+        "holy": 26051.75131602205
+      },
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 4
+      },
+      "seconds": 79,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "armor",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 15784.658537460244,
+        "hammer": 25269.36142535113,
+        "wheel": 21217.955849999867,
+        "water": 18472.66730575734
+      },
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 89,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "armor",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 8615.662496034933,
+        "hammer": 26487.223529554438,
+        "wheel": 21854.05304400009,
+        "water": 17562.427632161733
+      },
+      "patterns": {
+        "A": 4,
+        "B": 3,
+        "C": 3
+      },
+      "seconds": 57,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "support",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "needle": 28051.850035143,
+        "lamp": 9302.097054901013,
+        "blade": 30505.45324181709,
+        "bone": 29216.95931490208
+      },
+      "patterns": {
+        "A": 11,
+        "B": 11,
+        "C": 10
+      },
+      "seconds": 176,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "support",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "needle": 19132.977169795744,
+        "lamp": 5579.640987918291,
+        "blade": 32528.916199248783,
+        "bone": 28338.65034506789
+      },
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "seconds": 111,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "precision",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 24483.197228053265,
+        "blade": 18981.82428890424,
+        "fire": 28059.680151578228,
+        "water": 16820.68753356614
+      },
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "seconds": 127,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "precision",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 11079.179638939328,
+        "blade": 19948.641839999967,
+        "fire": 30794.395222636576,
+        "water": 15136.127083566149
+      },
+      "patterns": {
+        "A": 4,
+        "B": 4,
+        "C": 4
+      },
+      "seconds": 66,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "ground",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "void": 24184.85537808821,
+        "holy": 40264.13327941991,
+        "water": 36216.31178925365,
+        "mine": 7036.520255827156
+      },
+      "patterns": {
+        "A": 14,
+        "B": 14,
+        "C": 13
+      },
+      "seconds": 225,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "ground",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "void": 11153.340205652565,
+        "holy": 44656.62496794597,
+        "water": 28796.083446170884,
+        "mine": 1588.625971165431
+      },
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 6
+      },
+      "seconds": 115,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "pursuit",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "blade": 20607.601423461358,
+        "ghost": 27380.92924511399,
+        "bone": 19337.286355079,
+        "holy": 23784.776678517414
+      },
+      "patterns": {
+        "A": 9,
+        "B": 9,
+        "C": 8
+      },
+      "seconds": 142,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 41,
+      "stage": 18,
+      "build": "pursuit",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "blade": 20189.49177033705,
+        "ghost": 16361.420982783116,
+        "bone": 18026.323664522075,
+        "holy": 25472.539284248145
+      },
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 83,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "armor",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 16072.003934626808,
+        "hammer": 25166.77128482795,
+        "wheel": 21402.85128222597,
+        "water": 18285.46156134006
+      },
+      "patterns": {
+        "A": 6,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 89,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "armor",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 8163.439579356624,
+        "hammer": 26696.548557328344,
+        "wheel": 22007.675516226194,
+        "water": 17651.703048840045
+      },
+      "patterns": {
+        "A": 4,
+        "B": 3,
+        "C": 3
+      },
+      "seconds": 57,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "support",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "needle": 28873.927811756832,
+        "lamp": 8802.152282575926,
+        "blade": 30442.411384957955,
+        "bone": 28522.511223020392
+      },
+      "patterns": {
+        "A": 11,
+        "B": 10,
+        "C": 10
+      },
+      "seconds": 170,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "support",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "needle": 20647.70073914605,
+        "lamp": 5918.089864782699,
+        "blade": 32134.199706881438,
+        "bone": 26880.194391220284
+      },
+      "patterns": {
+        "A": 7,
+        "B": 7,
+        "C": 6
+      },
+      "seconds": 109,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "precision",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 25643.822000244454,
+        "blade": 18473.94654445198,
+        "fire": 27459.94018489978,
+        "water": 16767.680472505468
+      },
+      "patterns": {
+        "A": 8,
+        "B": 8,
+        "C": 7
+      },
+      "seconds": 127,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "precision",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "lightning": 12014.486027808827,
+        "blade": 18712.13349667836,
+        "fire": 31059.88032986271,
+        "water": 15498.071347470552
+      },
+      "patterns": {
+        "A": 4,
+        "B": 4,
+        "C": 4
+      },
+      "seconds": 67,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "ground",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "void": 23961.956135142274,
+        "holy": 40091.73260565263,
+        "water": 36558.11396151467,
+        "mine": 7090.018000279361
+      },
+      "patterns": {
+        "A": 14,
+        "B": 14,
+        "C": 13
+      },
+      "seconds": 223,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "ground",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "void": 11328.061077878672,
+        "holy": 44513.89356376769,
+        "water": 29598.146643705808,
+        "mine": 1279.400722261022
+      },
+      "patterns": {
+        "A": 8,
+        "B": 7,
+        "C": 6
+      },
+      "seconds": 116,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "pursuit",
+      "equipment": "native",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "blade": 20533.985984817984,
+        "ghost": 27255.781363078997,
+        "bone": 20190.48820277846,
+        "holy": 24515.363241305156
+      },
+      "patterns": {
+        "A": 10,
+        "B": 9,
+        "C": 9
+      },
+      "seconds": 152,
+      "state": "won",
+      "bossRemaining": 0
+    },
+    {
+      "seed": 73,
+      "stage": 18,
+      "build": "pursuit",
+      "equipment": "upgraded",
+      "weapons": 4,
+      "maxHp": 64380.28353482828,
+      "damage": {
+        "blade": 21159.149422556933,
+        "ghost": 14469.38068384378,
+        "bone": 18714.97142739156,
+        "holy": 24667.180854289185
+      },
+      "patterns": {
+        "A": 5,
+        "B": 5,
+        "C": 5
+      },
+      "seconds": 79,
+      "state": "won",
+      "bossRemaining": 0
+    }
+  ]
+}

@@ -1,7 +1,11 @@
+import {COUNTERBEAT_ROLES} from "./CounterbeatChallenge";
 import type { ProgressData } from "../platform/ProgressData";
 /** Read-only progress projection, independent of persistence and settlement. */
 export function achievementProgress(data: Readonly<ProgressData>, id: string) {
   if (data.achievements?.includes(id)) return "已完成";
+  if(id==="twingate_twelve_orders")return `分猎起手 ${Object.values(data.duetOrders??{}).filter(v=>v&&v.length===2).length}/12 · 每起手两种先倒顺序`;
+  if(id==="counterbeat_mastery")return `拆奏职责 ${COUNTERBEAT_ROLES.filter(r=>r.skills.filter(s=>data.counterbeatMastery?.includes(s)).length>=2).length}/6 · 每类两种不同起手`;
+  if(id==="trace_twelve_paths")return `逆痕起手 ${Object.values(data.traceQualified??{}).filter(v=>v&&v.length>=10).length}/12 · 每起手5配方×左右两向`;
   if (id === "grave_twelve_paths")
     return `断棺起手 ${Object.values(data.graveQualified ?? {}).filter((v) => v && v.length >= 5).length}/12 · 每种起手5组双改`;
   if (id === "lead_twelve_paths")

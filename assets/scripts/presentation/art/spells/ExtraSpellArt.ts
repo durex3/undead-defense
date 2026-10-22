@@ -1,3 +1,4 @@
+import {drawHolyForm} from "../WeaponFormArt";
 import {drawBoneForm} from "../WeaponFormArt";
 import {gradeOf} from "../../../battle/WeaponGrade";
 import { Graphics } from "cc";
@@ -247,11 +248,13 @@ function voidGround(g: Graphics, w: SurvivalWorld, a: ExtraAttack, quiet=false) 
 
 /* ---------------- holy ---------------- */
 
-function holyGround(g: Graphics, a: ExtraAttack) {
+function holyGround(g: Graphics, a: ExtraAttack, grade=1) {
   const c = P.holy;
   const x = a.x * 48,
     y = a.y * 48,
     r = a.stats.radius * 48;
+  if(grade===4){g.strokeColor=ink('#f6e4ad',180);g.lineWidth=2;for(let layer=0;layer<2;layer++)for(let i=0;i<8;i++){const start=(i+layer*.25)*Math.PI/4,rr=r*(.5+layer*.3);g.moveTo(x+Math.cos(start)*rr,y+Math.sin(start)*rr);g.lineTo(x+Math.cos(start+.23)*rr,y+Math.sin(start+.23)*rr);}g.stroke();}
+  if(grade>1&&grade<4){g.strokeColor=ink(grade===3?'#c3edff':'#fff4c4',180);g.lineWidth=1.8;const n=grade===3?6:4;for(let i=0;i<n;i++){const u=i*2*Math.PI/n,v=(i+.7)*2*Math.PI/n;g.moveTo(x+Math.cos(u)*r*.8,y+Math.sin(u)*r*.8);g.lineTo(x+Math.cos(v)*r*.8,y+Math.sin(v)*r*.8);}g.stroke();}
   const falling = a.phase === 0 || (a.phase === 1 && has(a, "brand"));
   const delay = a.phase === 0 ? (has(a, "execution") ? 0.8 : 0.55) : 0.7;
   const q = falling ? Math.max(0, 1 - (a.next - a.age) / delay) : 1;
@@ -286,7 +289,7 @@ function holyGround(g: Graphics, a: ExtraAttack) {
 
 /* ---------------- ghost ---------------- */
 
-function ghostBody(g: Graphics, x: number, y: number, angle: number, phase: number, time: number, hunter=false) {
+function ghostBody(g: Graphics, x: number, y: number, angle: number, phase: number, time: number, hunter=false,grade=1) {
   const face=Math.cos(angle)<0?-1:1;
   const attacking=phase===3||phase===1;
   const lean=attacking?7:phase===0?4:0;
@@ -313,12 +316,17 @@ function ghostBody(g: Graphics, x: number, y: number, angle: number, phase: numb
     g.moveTo(...point(18+reach,30-i*3));
     g.lineTo(...point(24+reach,26-i*3));g.lineTo(...point(22+reach,23-i*3));
   }g.stroke();
+  if(grade>1){
+    for(const side of[-1,1]){poly(g,[point(side*7,39),point(side*20,34),point(side*15,23),point(side*8,28)],grade===3?'#d3d4b2':'#b8d6c3',240,'#24413a');g.strokeColor=ink('#e5e9ce');g.lineWidth=2;g.moveTo(...point(side*15,29));g.lineTo(...point(side*25,20));g.lineTo(...point(side*27,12));g.stroke();}
+    if(grade===3){poly(g,[point(-7,29),point(0,33),point(7,29),point(3,10),point(-3,10)],'#bfc7ae');poly(g,[point(0,27),point(-3,21),point(0,15),point(3,21)],'#1c3930');g.strokeColor=ink('#d5c399');g.lineWidth=2;for(const side of[-1,1]){g.moveTo(...point(side*11,63));g.lineTo(...point(side*8,75));g.lineTo(...point(side*3,65));}g.stroke();g.moveTo(...point(-6,-8));g.quadraticCurveTo(...point(-18,-16),...point(-4,-26));g.stroke();}
+  }
+
 }
 
 function ghostAir(g: Graphics, w: SurvivalWorld, a: ExtraAttack) {
   const x=a.x*48,y=a.y*48;
   cutTrail(g,x,y+8,a.angle,28,5,P.ghost.edge,80);
-  ghostBody(g,x,y,a.angle,a.phase,w.time,has(a,"execution"));
+  ghostBody(g,x,y,a.angle,a.phase,w.time,has(a,"execution"),gradeOf("ghost",w.weaponGrades));
   if(has(a,"reap")&&a.phase===2) {
     // The returning partner carries a hooked soul blade, not an arrow icon.
     const dx=Math.cos(a.angle),dy=Math.sin(a.angle),nx=-dy,ny=dx;
@@ -340,7 +348,7 @@ function ghostRoster(g: Graphics,w: SurvivalWorld) {
   for(let i=0;i<count;i++) {
     if(w.armory.extra.attacks.some(a=>a.active&&a.skill==="ghost"&&a.companion===i))continue;
     const side=i%2?-1:1,row=Math.floor(i/2);
-    ghostBody(g,w.player.x*48+side*(45+row*22),w.player.y*48+8+row*12+Math.sin(w.time*3+i)*2,side<0?Math.PI:0,-1,w.time,stats.mods.includes("execution"));
+    ghostBody(g,w.player.x*48+side*(45+row*22),w.player.y*48+8+row*12+Math.sin(w.time*3+i)*2,side<0?Math.PI:0,-1,w.time,stats.mods.includes("execution"),gradeOf("ghost",w.weaponGrades));
   }
 }
 
@@ -468,7 +476,7 @@ function lightningAir(g: Graphics, w: SurvivalWorld, a: ExtraAttack, reduced: bo
 
 /* ---------------- holy air ---------------- */
 
-function holyAir(g: Graphics, a: ExtraAttack) {
+function holyAir(g: Graphics, a: ExtraAttack, grade=1) {
   const c = P.holy;
   const x = a.x * 48,
     y = a.y * 48;
@@ -487,6 +495,7 @@ function holyAir(g: Graphics, a: ExtraAttack) {
       g.moveTo(x,y);g.lineTo(x+Math.cos(angle)*a.stats.radius*35,y+Math.sin(angle)*a.stats.radius*35);
     }g.stroke();
   }
+  if(grade>1){drawHolyForm(g,x,sy+size*.3,grade,size/32);return;}
   // Blade.
   g.fillColor = ink(c.mid, 245);
   g.strokeColor = ink(c.edge, 240);
@@ -523,12 +532,12 @@ export function drawExtraSpell(g: Graphics, w: SurvivalWorld, ground: boolean, r
       if (a.skill === "frost") frostGround(g, a, reduced||crowded);
       else if (a.skill === "mine") mineGround(g, w, a, reduced);
       else if (a.skill === "void") voidGround(g, w, a, reduced||crowded);
-      else if (a.skill === "holy") holyGround(g, a);
+      else if (a.skill === "holy") holyGround(g, a,gradeOf("holy",w.weaponGrades));
     } else {
       if (a.skill === "ghost") ghostAir(g, w, a);
       else if (a.skill === "bone" && (a.phase === 0 || a.phase === -1)) boneAir(g, a,gradeOf("bone",w.weaponGrades));
       else if (a.skill === "lightning") lightningAir(g, w, a, reduced||crowded);
-      else if (a.skill === "holy") holyAir(g, a);
+      else if (a.skill === "holy") holyAir(g, a,gradeOf("holy",w.weaponGrades));
     }
   }
 }

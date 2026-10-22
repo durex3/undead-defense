@@ -72,18 +72,19 @@ export function armoredCombat(
   faction: (kind: Kind) => boolean,
   vulnerable: (e: Enemy) => boolean,
   onHit?: StageCombat["onHit"],
+  armorOverride?: (e:Enemy)=>number|undefined,
 ): StageCombat {
   return {
     onHit,
     incoming(e, amount) {
       amount *= exposure(w, e);
       const exposed = vulnerable(e),
-        base =
+        base = armorOverride?.(e) ?? (
           e.kind === "boss"
             ? 0.55
             : isElite(e.kind)
               ? 0.5
-              : (ENEMIES[e.kind].armor ?? (faction(e.kind) ? 0.35 : 0));
+              : (ENEMIES[e.kind].armor ?? (faction(e.kind) ? 0.35 : 0)));
       const fracture = (e.fractureUntil ?? 0) > w.time ? (e.fracture ?? 0) : 0;
       const armor = Math.max(
         0,

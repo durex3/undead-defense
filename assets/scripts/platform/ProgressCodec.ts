@@ -1,3 +1,6 @@
+import {GATE_OPENERS,validGateOrder,type GateOrder} from "../battle/TwingateChallenge";
+import {COUNTERBEAT_OPENERS} from "../battle/CounterbeatChallenge";
+import {validTraceKey} from "../battle/TraceChallenge";
 import type { ProgressData } from "./ProgressData";
 import { graveRecipe } from "../battle/GraveChallenge";
 import { validGrade } from "../battle/WeaponGrade";
@@ -75,7 +78,7 @@ export function decodeProgress(
           )
         )
           continue;
-        d.stageBest[key] = b;
+        const clean={...b};if(!Number.isInteger(clean.bodiesRemaining)||clean.bodiesRemaining<0||clean.bodiesRemaining>2)delete clean.bodiesRemaining;if(!validGateOrder(clean.killOrder)&&clean.killOrder!=='simultaneous')delete clean.killOrder;d.stageBest[key] = clean;
         if (b.won && !d.stages.includes(Number(key)))
           d.stages.push(Number(key));
       }
@@ -136,6 +139,16 @@ export function decodeProgress(
             ),
           );
       }
+    }
+    if((v.duetOrdersVersion===undefined||v.duetOrdersVersion===1)&&v.duetOrders&&typeof v.duetOrders==="object"&&!Array.isArray(v.duetOrders)){
+      d.duetOrdersVersion=1;d.duetOrders={};for(const skill of GATE_OPENERS)if(Array.isArray(v.duetOrders[skill]))d.duetOrders[skill]=Array.from(new Set<GateOrder>(v.duetOrders[skill].filter(validGateOrder)));
+    }
+    if((v.counterbeatMasteryVersion===undefined||v.counterbeatMasteryVersion===1)&&Array.isArray(v.counterbeatMastery)){
+      d.counterbeatMasteryVersion=1;d.counterbeatMastery=Array.from(new Set<Skill>(v.counterbeatMastery.filter((s:any)=>COUNTERBEAT_OPENERS.includes(s))));
+    }
+    if((v.traceQualifiedVersion===undefined||v.traceQualifiedVersion===1)&&v.traceQualified&&typeof v.traceQualified==="object"&&!Array.isArray(v.traceQualified)){
+      d.traceQualified={};d.traceQualifiedVersion=1;
+      for(const skill of ALL_WEAPONS)if(Array.isArray(v.traceQualified[skill]))d.traceQualified[skill]=Array.from(new Set<string>(v.traceQualified[skill].filter((key:unknown)=>validTraceKey(skill,key))));
     }
     if (
       (v.graveQualifiedVersion === undefined ||
@@ -313,6 +326,12 @@ export function validProgress(d: any): d is ProgressData {
                 pair === pair.split("+").sort().join("+"),
             ),
         ))) &&
+    (d?.duetOrdersVersion===undefined||d.duetOrdersVersion===1)&&
+    (d?.duetOrders===undefined||(d.duetOrders&&typeof d.duetOrders==="object"&&!Array.isArray(d.duetOrders)&&Object.entries(d.duetOrders).every(([skill,orders]:[string,any])=>(GATE_OPENERS as readonly string[]).includes(skill)&&Array.isArray(orders)&&orders.length<=2&&new Set(orders).size===orders.length&&orders.every(validGateOrder))))&&
+    (d?.counterbeatMasteryVersion===undefined||d.counterbeatMasteryVersion===1)&&
+    (d?.counterbeatMastery===undefined||(Array.isArray(d.counterbeatMastery)&&d.counterbeatMastery.length<=14&&new Set(d.counterbeatMastery).size===d.counterbeatMastery.length&&d.counterbeatMastery.every((s:any)=>COUNTERBEAT_OPENERS.includes(s))))&&
+    (d?.traceQualifiedVersion===undefined||d.traceQualifiedVersion===1) &&
+    (d?.traceQualified===undefined||(d.traceQualified&&typeof d.traceQualified==="object"&&!Array.isArray(d.traceQualified)&&Object.entries(d.traceQualified).every(([skill,keys]:[string,any])=>(ALL_WEAPONS as readonly string[]).includes(skill)&&Array.isArray(keys)&&new Set(keys).size===keys.length&&keys.every((key:unknown)=>validTraceKey(skill as Skill,key))))) &&
     (d?.graveQualified === undefined ||
       (d.graveQualified &&
         typeof d.graveQualified === "object" &&
@@ -427,6 +446,8 @@ export function validProgress(d: any): d is ProgressData {
     Object.entries(d.stageBest).every(
       ([id, b]: [string, any]) =>
         (STAGE_IDS as readonly number[]).includes(Number(id)) &&
+        (b?.bodiesRemaining===undefined||(Number.isInteger(b.bodiesRemaining)&&b.bodiesRemaining>=0&&b.bodiesRemaining<=2))&&
+        (b?.killOrder===undefined||validGateOrder(b.killOrder)||b.killOrder==="simultaneous")&&
         Number.isFinite(b?.time) &&
         b.time >= 0 &&
         Number.isInteger(b.phase) &&

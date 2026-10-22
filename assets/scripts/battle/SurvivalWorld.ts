@@ -1,3 +1,6 @@
+import {TwingateSystem} from "./TwingateSystem";
+import {CounterbeatSystem} from "./CounterbeatSystem";
+import {TraceCourtSystem} from "./TraceCourtSystem";
 import {EnemyTactics} from "./EnemyTactics";
 import {BossTactics} from "./BossTactics";
 import {EchoGraveSystem,graveEnemy} from "./EchoGraveSystem";
@@ -51,6 +54,9 @@ export class SurvivalWorld {
   get stageStrategy(){return this.strategy??(this.strategy=createStageStrategy(this));}
   library=new LibrarySystem(this);
   grave=new EchoGraveSystem(this);
+  trace=new TraceCourtSystem(this);
+  counter=new CounterbeatSystem(this);
+  twingate=new TwingateSystem(this);
   lead=new LeadFoundrySystem(this);
   eclipse=new EclipseSystem(this);
   edge=new EdgeCourtSystem(this);
@@ -82,6 +88,7 @@ export class SurvivalWorld {
   maxHp = 100;
   attack = 20;
   time = 0;
+  frame = 0;
   level = 1;
   xp = 0;
   kills = 0;
@@ -129,7 +136,7 @@ export class SurvivalWorld {
   readonly runId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   weaponGrades = initialGrades();
   startingWeapon: Skill | null = null;
-  challenge = { devices: new Set<number>(), seals: new Set<number>(), bossSealPhases: new Set<number>(), bossHits: 0, loomGroups:new Map<string,Set<number>>(),loomPhases:new Set<number>(),kilnPhases:new Set<number>(),edgePhases:new Set<number>(),eclipsePhases:new Set<number>(),leadPhases:new Set<number>(),graveGroups:new Set<string>() };
+  challenge = { gateGroups:new Set<string>(),gateBodies:new Set<string>(),gateSolo:new Set<string>(),counterGroups:{A:0,B:0,C:0},counterElite:false,traceGroups:new Set<string>(),traceDirection:undefined as import("./TraceHistory").TraceDirection|undefined, devices: new Set<number>(), seals: new Set<number>(), bossSealPhases: new Set<number>(), bossHits: 0, loomGroups:new Map<string,Set<number>>(),loomPhases:new Set<number>(),kilnPhases:new Set<number>(),edgePhases:new Set<number>(),eclipsePhases:new Set<number>(),leadPhases:new Set<number>(),graveGroups:new Set<string>() };
   startingWeapons: Skill[] = [];
   offerStartingWeapons() {
     if(this.time!==0 || this.state!=="battle")return false;
@@ -196,7 +203,7 @@ export class SurvivalWorld {
     const hp =
       kind === "kilnvalve"?160:kind === "boss"
         ? c.health * STAGES[this.stageId].bossHealth * 3
-        : 30 * (1 + Math.min(this.time, ["gravegrub","leadgrub","dialscrap","scrapbound","glazeling","ragbound","paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
+        : 30 * (1 + Math.min(this.time, ["gategrub","chimeshard","shackleshard","gravegrub","leadgrub","dialscrap","scrapbound","glazeling","ragbound","paperbonegrub","fledglingeffigy","rootshuffler","shardhermit","brineporter","waxbearer","thornrunner","rivetwalker","sandworker","sandlarva","sandegg","siegebone","forgeguard","mirrorguard","ferryguard","minion","sailor","drowned","boneguard","warflag","starpatrol"].includes(kind) ? 90 : 240) / 300) * c.health *
           (isElite(kind) ? STAGES[this.stageId].elite : STAGES[this.stageId].health);
     const e: Enemy = {
       id: this.id(),
@@ -386,6 +393,7 @@ export class SurvivalWorld {
     if (!this.active) return;
     if (this.upgrades.openNode()) return;
     this.time += dt;
+    this.frame++;
     if (!this.active) return;
     this.ultimate = Math.max(0, this.ultimate - dt);
     this.invulnerable = Math.max(0, this.invulnerable - dt);

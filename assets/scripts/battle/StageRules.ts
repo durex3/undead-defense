@@ -3,6 +3,9 @@ import type { StageId } from './ProgressionConfig';
 
 /** Playable identities; health is derived from the shared reference-output × target-time budgets. */
 export const STAGES = {
+ 19:{...stageGrowth(19),name:"双阙猎庭",boss:"双阙猎主",damage:1.80,xp:1.45,medicine:42},
+ 18:{...stageGrowth(18),name:"错拍鸣庭",boss:"双律监奏",damage:1.80,xp:1.45,medicine:42},
+ 17:{...stageGrowth(17),name:"逆痕刑场",boss:"执痕刑官",damage:1.80,xp:1.45,medicine:42},
  16:{...stageGrowth(16),name:"回骸墓苑",boss:"镇墓者",damage:1.78,xp:1.45,medicine:42},
  15:{...stageGrowth(15),name:"沉铅铸庭",boss:"抛铅铸主",damage:1.76,xp:1.45,medicine:42},
  14:{...stageGrowth(14),name:"蚀昼观台",boss:"噬曜仪主",damage:1.74,xp:1.45,medicine:42},
@@ -22,6 +25,9 @@ export const STAGES = {
 } satisfies Record<StageId, object>;
 
 export const STAGE_GUIDES: Record<StageId, {threat: string; builds: string}> = {
+ 19:{threat:"近远双体协同 · 先倒一体改变独猎招式 · 两体全倒才通关",builds:"先拆追击或远程；看真实身体和矢头，低猎台不挡箭与横扫"},
+ 18:{threat:"先扫后刺 · 两次独立锁定 · 共鸣架使为追兵加甲",builds:"躲完第一拍继续看第二拍；先拆支援可减压，低鸣台不挡扫刺"},
+ 17:{threat:"一次脱枷复活 · 实体循迹与返程 · 旧脚印和预警线无伤",builds:"离开公布的旧路线，留意返身箭头；冲锋到位后横扫另有完整预警"},
  16:{threat:"一次裂棺复活 · 旧骨痕与本体夹击 · 墓台不挡骨震",builds:"看身体与旧痕编号，完整预警后才有伤；第二命倒下才通关"},
  15:{threat:"空中丸与投影无伤 · 落地短冲击 · 看编号与下一落点",builds:"可从高飞铅丸投影下穿过；离开即将落点，驻丸回跳另有完整预警"},
  14:{threat:"定轴旋光 · 实体石柱截光 · 预警扇面无伤 · 三阶段双仪",builds:"看箭头转向，绕内圈或有限光束末端；借柱影换位，收招时反击"},

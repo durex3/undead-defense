@@ -9,7 +9,7 @@ import { battleHud } from "../temp/tests/presentation/BattleHud.mjs";
 export function captureArchitecture() {
   const result = { combat: [], hud: [], progress: [] };
   for (let stage = 1; stage <= 16; stage++)
-    for (const kind of ENEMY_KINDS)
+    for (const kind of ENEMY_KINDS.filter(k=>!["gategrub","shorthorn","bowwatch","splitblade","huntermarshal","gateballista","chimeshard","forklancer","pipereader","resonancebearer","broadcantor","needleconductor","shackleshard","fettersprinter","trailhound","turnwarden","trailmarshal","reversejailer"].includes(k)))
       for (const exposed of [false, true])
         for (const fracture of [0, 2]) {
           const w = new SurvivalWorld(19, "ranger", stage);
