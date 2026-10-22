@@ -592,6 +592,8 @@ export class EdgeCourtSystem {
   }
   /** Move the real body to its exact authored position before collision/rendering, even when a current dash is frozen. */
   syncBody(e: Enemy, time = this.w.time) {
+    // A completed dash must not overwrite later seeking/navigation movement.
+    if (e.state === "seek") return;
     const s = this.state(e),
       body = s.items?.find((h) => h.edge!.shape === "body");
     if (!body) return;
@@ -719,6 +721,8 @@ export class EdgeCourtSystem {
       w.enemies.some((o) => o.hp > 0 && isElite(o.kind))
     )
       return;
+    if (distance(e, w.player) < (boss ? 1 : 0.65))
+      w.hurt(boss ? 22 : ENEMIES[e.kind].contact, e.kind, false);
     if (s.relocate) {
       if (w.time < (s.relocateUntil ?? 0) && distance(e, s.relocate) > 0.3) {
         this.move(e, dt, s.relocate);
@@ -731,8 +735,6 @@ export class EdgeCourtSystem {
       this.move(e, dt);
       return;
     }
-    if (d < (boss ? 1 : 0.65))
-      w.hurt(boss ? 22 : ENEMIES[e.kind].contact, e.kind, false);
     e.attack -= dt;
     if (e.attack > 0) {
       if (d > 3.2) this.move(e, dt);

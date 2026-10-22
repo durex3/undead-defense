@@ -1,0 +1,532 @@
+[
+  {
+    "kind": "siegebone",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "thornshield",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "siegebow",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "flanker",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "siegeflag",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "siegerider",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "sandworker",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "sandlarva",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "sandegg",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "shellroller",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "sandspitter",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "sandstalker",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "broodelite",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "breakerelite",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "rivetwalker",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "anchorweaver",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "arclantern",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "railsaw",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "gridwarden",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "railreaper",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "thunderanchor",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "gridelectrode",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "thornrunner",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "crescentmantis",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "vaultlynx",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "antlerprowler",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "moonreaver",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "hornwarden",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "waxbearer",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "bellacolyte",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "waxscribe",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "waxcrawler",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "twinbell",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "waxporter",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "brineporter",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "sluiceray",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "sailharpooner",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "winchbeast",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "twinlockwarden",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "severedcrane",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "shardhermit",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "facetgastropod",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "prismmason",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "corebrood",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "bifacetregent",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "strataflinger",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "prismmirror",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "prismcore",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "rootshuffler",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "vinecantor",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "wreathpod",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "bulbmaw",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "biforktangler",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "pairedcalyx",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "migratorycorolla",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "fledglingeffigy",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "reedwhistler",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "sickleplumer",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "foldedskimmer",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "windarbiter",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "plumejudge",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "paperbonegrub",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "sealclerk",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "folioray",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "spineclasp",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "sealprovost",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "claspjailer",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "ragbound",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "weftbinder",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "hemcocoon",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "shuttlecrawler",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "twinweftwarden",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "shuttlejailer",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "glazeling",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "kilnstoker",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "forkmason",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "ashsled",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "splitcrucible",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "glazejailer",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "kilnvalve",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "scrapbound",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "edgecaster",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "stepcutter",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "reelstalker",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "twinclamp",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "edgepuppeteer",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "dialscrap",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "glowdisc",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "reversegazer",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "offsetorrery",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "twindial",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "eclipsewarden",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "gravegrub",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "ribwarden",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "echoacolyte",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "shedstalker",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "coffinregent",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "scarprelate",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "leadgrub",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "pitchframe",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "kneehopper",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "offsetcart",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "twinpitch",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "presswarden",
+    "blade": true,
+    "extra": true
+  },
+  {
+    "kind": "minion",
+    "blade": false,
+    "extra": false
+  },
+  {
+    "kind": "boss",
+    "blade": false,
+    "extra": true
+  }
+]

@@ -1,16 +1,16 @@
+import {EnemyTactics} from "./EnemyTactics";
+import {BossTactics} from "./BossTactics";
 import {EchoGraveSystem,graveEnemy} from "./EchoGraveSystem";
 import {LeadFoundrySystem,leadEnemy} from "./LeadFoundrySystem";
 import {EclipseSystem,eclipseEnemy} from "./EclipseSystem";
 import {EdgeCourtSystem,edgeEnemy} from "./EdgeCourtSystem";
 import {KilnSystem,kilnEnemy} from "./KilnSystem";
 import {LoomSystem,loomEnemy} from "./LoomSystem";
-import { BOSS_FRACTURE_PER_LAYER, NORMAL_FRACTURE_PER_LAYER } from "./StageGrowth";
 import { initialGrades } from "./WeaponGrade";
 import {LibrarySystem,libraryEnemy} from "./LibrarySystem";
 import {WindSystem,windEnemy} from "./WindSystem";
-import {windMove} from "./WindGeometry";
 import {RootSystem,rootEnemy} from "./RootSystem";
-import {PrismSystem,prismEnemy,prismDevice} from "./PrismSystem";
+import {PrismSystem,prismEnemy} from "./PrismSystem";
 import { TideSystem, tideEnemy } from "./TideSystem";
 import { createStageStrategy, StageStrategy } from "./StageStrategy";
 import { BellSystem, bellEnemy } from "./BellSystem";
@@ -19,14 +19,13 @@ import { ThunderSystem, thunderDevice, thunderEnemy } from "./ThunderSystem";
 import { Armory } from "./Armory";
 import { weaponStats, playerAttributes } from "./ArmoryConfig";
 import { SandSystem, sandEnemy } from "./SandSystem";
-import { SiegeSystem, siegeEnemy, siegeProjectileFactor } from "./SiegeSystem";
+import { SiegeSystem, siegeEnemy } from "./SiegeSystem";
 import {BOSS_REINFORCEMENT_XP} from "./HordePressure";
 import {experienceRequired} from "./ExperienceCurve";
 import {MAX_WEAPON_SLOTS} from "./EncounterPacing";
 import { UpgradeSystem } from "./UpgradeSystem";
 import { STAGES } from "./StageRules";
 import { CHARACTERS, CharacterId, StageId } from "./ProgressionConfig";
-import { bossExposed } from "./BossSystem";
 import { MAX_ENEMIES, Card, Skill, Passive, ALL_WEAPONS as WEAPONS, MAX_SKILL_LEVEL, Kind, ENEMIES, isElite, isLarge } from "./SurvivalConfig";
 import {
   Enemy,
@@ -46,6 +45,8 @@ const TACTICAL_BLESSINGS = [
 ] as const;
 type TacticalBlessing = (typeof TACTICAL_BLESSINGS)[number]["id"];
 export class SurvivalWorld {
+  readonly enemyTactics=new EnemyTactics(this);
+  readonly bossTactics=new BossTactics(this);
   private strategy?:StageStrategy;
   get stageStrategy(){return this.strategy??(this.strategy=createStageStrategy(this));}
   library=new LibrarySystem(this);
@@ -226,11 +227,11 @@ export class SurvivalWorld {
       bossPhase: 1,
       bossAction: "none",
     };
-    if(this.stageId===16&&kind==='boss')this.grave.initialize(e);
+    this.stageStrategy.lifecycle?.initialize?.(e);
     this.enemies.push(e);
     return e;
   }
-  targetPriority(e:Enemy){return this.stageId===12&&e.kind==='kilnvalve'&&e.hp>0&&distance(e,this.player)<=4.5?1:0;}
+  targetPriority(e:Enemy){return this.stageStrategy.targetPriority?.(e)??0;}
   target(origin: Point = this.player, range = 8, exclude: number[] = []) {
     return this.enemies
       .filter(
@@ -279,37 +280,12 @@ export class SurvivalWorld {
   ) {
     if (e.hp <= 0 || e.state === "arriving" || (e.sand?.buried && !ongoing)) return;
     const soulFactor = source === "needleEcho" ? 1 : this.armory.support.amplification(e);
-    let amount = base * soulFactor * (bossExposed(this, e)&&!(this.stageId===1&&e.siegeWall) ? 1.25 : 1);
-    if(this.stageId===1&&this.tacticalBlessings.includes("skirmisher")&&Math.hypot(this.move.x,this.move.y)>.1)amount*=1.25;
-    if(this.stageId===1&&this.tacticalBlessings.includes("slayer")&&(e.kind==="boss"||isElite(e.kind)))amount*=1.3;
-    if(projectile) {
-      const factor=siegeProjectileFactor(this,e,origin);
-      amount*=factor;if(factor<1)this.effects.push({type:"block",...e});
-    }
-    if(this.stageId===1){
-      if(e.siegeWall&&e.state==='recover'&&isLarge(e.kind))amount*=1.25;
-      if((e.siegeShield??0)>0&&(e.siegeShieldUntil??0)>this.time&&this.enemies.some(o=>o.id===e.siegeShieldOwner&&o.hp>0)){
-        const absorbed=Math.min(amount,e.siegeShield!);e.siegeShield!-=absorbed;amount-=absorbed;
-      }
-    }
-    if(this.stageId===2&&e.sand?.vulnerable&&e.state==='recover'&&!bossExposed(this,e))amount*=1.25;
-    if(this.stageId===4&&isElite(e.kind)&&e.state==='recover'&&e.moon?.vulnerable)amount*=1.25;
-    if(this.stageId===3&&isElite(e.kind)&&e.state==='recover'&&e.thunder?.vulnerable)amount*=1.25;
-    if(this.stageId===5||this.stageId===6||this.stageId===7||this.stageId===8||this.stageId===9||this.stageId===10||this.stageId===11||this.stageId===12||this.stageId===13||this.stageId===14||this.stageId===15||this.stageId===16){
-      const waxKind=this.stageId===5?bellEnemy(e.kind):this.stageId===6?tideEnemy(e.kind):this.stageId===7?prismEnemy(e.kind)&&!prismDevice(e.kind):this.stageId===8?rootEnemy(e.kind):this.stageId===9?windEnemy(e.kind):this.stageId===10?libraryEnemy(e.kind):this.stageId===11?loomEnemy(e.kind):this.stageId===12?kilnEnemy(e.kind)&&e.kind!=="kilnvalve":this.stageId===13?edgeEnemy(e.kind):this.stageId===14?eclipseEnemy(e.kind):this.stageId===15?leadEnemy(e.kind):graveEnemy(e.kind);
-      const exposed=this.stageId===5?e.bell?.vulnerable:this.stageId===6?e.tide?.vulnerable:this.stageId===7?e.prism?.vulnerable:this.stageId===8?e.root?.vulnerable:this.stageId===9?e.wind?.vulnerable:this.stageId===10?e.library?.vulnerable:this.stageId===11?e.loom?.vulnerable:this.stageId===12?e.kiln?.vulnerable:this.stageId===13?e.edge?.vulnerable:this.stageId===14?e.eclipse?.vulnerable:this.stageId===15?e.lead?.vulnerable:e.grave?.vulnerable;
-      const baseArmor=e.kind==='boss'?.55:isElite(e.kind)?.5:(e.kind==='waxbearer'||e.kind==='brineporter'||e.kind==='shardhermit'||e.kind==='rootshuffler'||e.kind==='fledglingeffigy'||e.kind==='paperbonegrub'||e.kind==='ragbound'||e.kind==='glazeling'||e.kind==='scrapbound'||e.kind==='dialscrap'||e.kind==='leadgrub'||e.kind==='gravegrub')?.2:waxKind?.35:0;
-      const fracture=(e.fractureUntil??0)>this.time?(e.fracture??0):0;
-      const armor=Math.max(0,baseArmor-fracture*(e.kind==="boss"?BOSS_FRACTURE_PER_LAYER:NORMAL_FRACTURE_PER_LAYER));
-      amount*=1-Math.min(armor,e.state==='recover'&&exposed?(e.kind==='boss'?.15:.2):1);
-      if(this.stageId===5&&isElite(e.kind)&&exposed&&e.state==='recover')amount*=1.25;
-    }
-    if(isElite(e.kind)&&this.stageStrategy.vulnerable?.(e))amount*=1.25;
+    const amount = this.stageStrategy.combat.incoming(e,base*soulFactor,origin,projectile);
     const dealt = Math.min(e.hp, amount);
     e.hp -= amount;
     this.stageStrategy.lifecycle?.onHit(e,source,dealt);
     if(e.kind==='boss')this.stageStrategy.lifecycle?.supplies(e);
-    if(this.stageId===13)this.edge.onHit(e,source,dealt);
+    this.stageStrategy.combat.onHit?.(e,source,dealt);
     // Boss fights provide supplies even when their summoned adds cannot drop loot.
     if (e.kind === "boss" && e.hp > 0 && !this.stageStrategy.lifecycle) {
       let milestones = this.bossPotionMilestones.get(e.id) ?? 0;
@@ -418,7 +394,6 @@ export class SurvivalWorld {
     // Small axis-separated moves prevent tunnelling and allow sliding along faces.
     const steps = Math.max(1, Math.ceil(Math.max(Math.abs(dx), Math.abs(dy)) / 0.15));
     if(this.stageStrategy.movePlayer)this.stageStrategy.movePlayer(dt);
-    else if(this.stageId===9){this.wind.clean();windMove(this.player,{x:this.move.x*this.speed,y:this.move.y*this.speed},dt,.3,this.hazards,this.time);}
     else for (let i = 0; i < steps; i++) {
       this.player.x = Math.max(-22, Math.min(22, this.player.x + dx / steps));
       arena.resolve(this.player, 0.3);

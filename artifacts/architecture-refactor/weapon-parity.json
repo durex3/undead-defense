@@ -1,0 +1,6 @@
+{
+  "cases": 1056,
+  "exact": true,
+  "baseline": "artifacts/weapon-balance-0.38.3/after.json",
+  "current": "artifacts/architecture-refactor/weapon-balance/after.json"
+}

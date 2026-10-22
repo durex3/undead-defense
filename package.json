@@ -9,7 +9,7 @@
     "dev": "npm run build:web && npm run serve:web",
     "build:web": "node tools/build.mjs web-mobile",
     "serve:web": "python -m http.server 8128 --bind 127.0.0.1 --directory build/web-mobile",
-    "test": "node tools/test-build.mjs && node --test tests/*.test.mjs",
+    "test": "node tools/test.mjs",
     "art:preview": "node tools/art-preview.mjs",
     "art:review": "node tools/art-review.mjs",
     "art:motion": "node tools/art-motion.mjs",
@@ -19,7 +19,9 @@
     "art:weapons": "node tools/weapon-showcase.mjs",
     "weapons:benchmark": "node tools/check-current-weapon-balance.mjs",
     "weapons:guide": "node tools/test-build.mjs && node tools/write-modification-guide.mjs",
-    "browser-smoke": "node tools/browser-smoke.mjs"
+    "browser-smoke": "node tools/browser-smoke.mjs",
+    "verify": "node tools/verify.mjs",
+    "check:content": "node tools/check-content-runner.mjs"
   },
   "devDependencies": {
     "prettier": "^3.9.9",

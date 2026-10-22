@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "counts": {
+    "stages": 16,
+    "weapons": 14,
+    "enemies": 106,
+    "weaponForms": 30
+  },
+  "issues": []
+}

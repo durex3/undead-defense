@@ -590,6 +590,18 @@ export class KilnSystem {
           break;
         }
       }
+    // A fork's full preview cannot fit some narrow outer corridors. Use the
+    // existing straight attack there, with its full warning and escape check.
+    if (!valid && e.kind === "boss") {
+      for (let i = 0; i < 24; i++) {
+        const candidate = [this.thread(e, "straight", this.w.player, i * Math.PI / 12)];
+        if (this.validPlan(candidate) && candidate.some(h => kilnImpact(h, this.w.player, h.until, h.due))) {
+          items = candidate;
+          valid = true;
+          break;
+        }
+      }
+    }
     if (!valid) {
       this.reject(e);
       return true;

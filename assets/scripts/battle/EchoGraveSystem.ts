@@ -5,6 +5,7 @@ import { Enemy, Hazard, Point, distance } from "./SurvivalTypes";
 import { graveMap } from "./EchoGraveMap";
 import {
   graveMove,
+  graveDistance,
   graveEscape,
   graveCut,
   graveImpact,
@@ -39,6 +40,7 @@ export interface GraveState {
   qualified?: boolean;
   moveTo?: Point;
   moveAt?: number;
+  usedActions?: number;
 }
 export class EchoGraveSystem {
   private reinforceEpoch = 360;
@@ -271,6 +273,7 @@ export class EchoGraveSystem {
       e.state = "seek";
       e.immovable = false;
       e.pattern = 0;
+      s.usedActions=0;
       e.attack = 0;
       e.bossPhase = 2;
       e.burn = 0;
@@ -602,6 +605,24 @@ export class EchoGraveSystem {
       return true;
     });
   }
+  private threatens(items:Hazard[]) {
+    return items.some(h=>h.grave!.pulses.some(f=>!f.old&&graveDistance(f,this.w.player)<=.3+1e-9));
+  }
+  bossPosition(e:Enemy):Point|undefined {
+    const w=this.w,s=this.state(e);let best:Point|undefined,score=Infinity;
+    const state={...s,action:this.selectBossAction(e)};
+    for(const radius of [2.8,3.4,3.8,1.2])for(let i=0;i<24;i++){
+      const a=i*Math.PI/12,p={x:w.player.x+Math.cos(a)*radius,y:w.player.y+Math.sin(a)*radius};
+      if(Math.abs(p.x)>21.3||Math.abs(p.y)>25.3||graveMap.blocked(p,.7))continue;
+      const cost=distance(p,e);if(cost>=score)continue;
+      const probe={...e,...p,grave:state};
+      for(const turn of [0,Math.PI/6,-Math.PI/6,Math.PI/3,-Math.PI/3,Math.PI/2,-Math.PI/2]){
+        const plan=this.plan(probe,turn,true);
+        if(plan.every(h=>this.legal(h))&&this.threatens(plan)){best=p;score=cost;break;}
+      }
+    }
+    return best;
+  }
   begin(e: Enemy) {
     const s = this.state(e),
       w = this.w;
@@ -613,6 +634,7 @@ export class EchoGraveSystem {
         if (
           this.slots + p.length <= 2 &&
           p.every((h) => this.legal(h)) &&
+          (e.kind!=="boss"||this.threatens(p)) &&
           graveEscape(w, p)
         ) {
           items = p;
@@ -717,6 +739,13 @@ export class EchoGraveSystem {
       );
     return !ready.length || ready[0].id === e.id;
   }
+  /** Reorder a three-action bag by current spacing and an available old scar. */
+  selectBossAction(e:Enemy):"A"|"B"|"C" {
+    const s=this.state(e),d=distance(e,this.w.player),used=s.usedActions===7?0:s.usedActions??0;
+    const scar=s.life===2&&s.scar&&s.scarUntil!>this.w.time&&distance(s.scar,e)>=1.5;
+    const scores={A:d>3.5?5:2,B:scar?6:1,C:d<2?5:0};
+    return (["A","B","C"] as const).filter((_,i)=>!(used&(1<<i))).sort((a,b)=>scores[b]-scores[a])[0];
+  }
   stepEnemy(e: Enemy, dt: number) {
     const w = this.w,
       s = this.state(e),
@@ -791,7 +820,7 @@ export class EchoGraveSystem {
       return;
     }
     s.action = boss
-      ? ["A", "B", "C"][e.pattern % 3]
+      ? this.selectBossAction(e)
       : e.kind === "coffinregent"
         ? "pair"
         : e.kind === "scarprelate"
@@ -802,8 +831,11 @@ export class EchoGraveSystem {
               ? "move"
               : "A";
     if (this.begin(e)) {
+      if(boss){const used=s.usedActions===7?0:s.usedActions??0;s.usedActions=used|(1<<"ABC".indexOf(s.action));}
       e.pattern++;
       this.lastStart = w.time;
+    }else if(boss&&!this.slots){
+      const used=s.usedActions===7?0:s.usedActions??0;s.usedActions=used|(1<<"ABC".indexOf(s.action));
     }
   }
   stepHazard(h: Hazard) {

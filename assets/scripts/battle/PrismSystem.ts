@@ -855,7 +855,7 @@ export class PrismSystem {
     e.attack -= dt;
     if (e.attack > 0) {
       if (d > 3.5) this.move(e, dt, boss ? 1.35 : ENEMIES[e.kind].speed);
-      if (d < 0.65) w.hurt(boss ? 22 : ENEMIES[e.kind].contact, e.kind, false);
+      if (d < (boss ? 1 : 0.65)) w.hurt(boss ? 22 : ENEMIES[e.kind].contact, e.kind, false);
       return;
     }
     if (!boss && !isElite(e.kind) && w.time - this.lastStart < 3) {

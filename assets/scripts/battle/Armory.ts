@@ -1,17 +1,19 @@
+import {FireBehavior} from "./FireBehavior";
+import {WaterBehavior} from "./WaterBehavior";
+import {BladeBehavior} from "./BladeBehavior";
 import { createWeaponStrategies, WeaponStrategyTable, WEAPON_FAMILY_ORDER, WeaponFamily } from "./WeaponStrategies";
 import { SupportArmory } from "./SupportArmory";
 import { UnlockedArmory } from "./UnlockedArmory";
 import { ExtraArmory } from "./ExtraArmory";
 import type { SurvivalWorld } from "./SurvivalWorld";
-import { Skill, WEAPONS, isElite, ENEMIES } from "./SurvivalConfig";
+import { Skill, WEAPONS, isPriorityTarget } from "./SurvivalConfig";
 import {
   Enemy,
   Point,
   distance,
   segmentDistance,
-  angleDelta,
 } from "./SurvivalTypes";
-import { weaponStats, WeaponStats, playerAttributes, orbitProgress, replicaStats } from "./ArmoryConfig";
+import { weaponStats, WeaponStats, replicaStats } from "./ArmoryConfig";
 export const ARMORY_LIMITS = { shots: 256, fields: 64, pending: 64 };
 export interface ArmoryShot extends Point {
   active: boolean;
@@ -51,7 +53,7 @@ export interface ArmoryField extends Point {
   interval: number;
   lastTick?: number;
 }
-interface Cast {
+export interface Cast {
   skill: Skill;
   stats: WeaponStats;
   due: number;
@@ -66,19 +68,19 @@ export class Armory {
   shots: ArmoryShot[] = [];
   fields: ArmoryField[] = [];
   pending: Cast[] = [];
-  private groups = new Map<
-    number,
-    {
-      left: number;
-      shards: boolean;
-    }
-  >();
+  readonly blade:BladeBehavior;
+  readonly fire:FireBehavior;
+  readonly water:WaterBehavior;
+  get groups(){return this.blade.groups;}
   readonly strategies: WeaponStrategyTable;
   private readonly strategySkills: Record<WeaponFamily,Skill[]>;
   readonly support: SupportArmory;
   readonly extra: ExtraArmory;
   readonly unlocked: UnlockedArmory;
   constructor(private w: SurvivalWorld) {
+    this.blade=new BladeBehavior(w,{shots:()=>this.shots,stepIndex:()=>this.stepIndex,filterPending:keep=>{this.pending=this.pending.filter(keep);},enemies:(p,r)=>this.enemies(p,r),hit:(e,d,p,skill,projectile,parent)=>this.hit(e,d,p,skill,projectile,parent),finish:p=>this.finish(p),launch:(cast,child)=>this.launch(cast,child)});
+    this.fire=new FireBehavior(w,{enemies:(p,r)=>this.enemies(p,r),hit:(e,d,p,skill)=>this.hit(e,d,p,skill),addField:(skill,p,a,s)=>this.addField(skill,p,a,s),launch:(c,child)=>this.launch(c,child)});
+    this.water=new WaterBehavior(w,{enemies:(p,r)=>this.enemies(p,r),addField:(skill,p,a,s)=>this.addField(skill,p,a,s)});
     this.support = new SupportArmory(w);
     this.extra = new ExtraArmory(w);
     this.unlocked = new UnlockedArmory(w);
@@ -103,7 +105,7 @@ export class Armory {
       let value = this.w.targetPriority(e)*10000-distance(e, this.w.player) * 0.01;
       if (skill === "blade")
         value +=
-          isElite(e.kind) || /bow|spitter|mage|archer|sealclerk|folioray|spineclasp|reedwhistler|sickleplumer|foldedskimmer|vinecantor|wreathpod|bulbmaw|facetgastropod|prismmason|corebrood|prismcore|sluiceray|sailharpooner|winchbeast|crescentmantis|anchorweaver|arclantern|railsaw|thunderanchor|gridelectrode/.test(e.kind) ? 100 : 0;
+          isPriorityTarget(e.kind) ? 100 : 0;
       else
         for (const other of list)
           if (distance(other, e) <= s.radius * 1.3) value++;
@@ -185,14 +187,7 @@ export class Armory {
       w.effects.push({ type: "cast", ...w.player, skill });
 
   }
-  /** Switching away from orbit cancels its old snapshots, without a free cast or fragment proc. */
-  onModification(skill:Skill,id:string){
-    if(skill!=="blade"||id!=="hunt")return;
-    const retired=new Set<number>();
-    for(const p of this.shots)if(p.active&&p.skill==="blade"&&p.orbit){p.active=false;retired.add(p.group);}
-    this.pending=this.pending.filter(c=>{if(c.skill==="blade"&&!c.stats.mods.includes("hunt")){retired.add(c.group);return false;}return true;});
-    for(const group of Array.from(retired))this.groups.delete(group);
-  }
+  onModification(skill:Skill,id:string){this.strategies[skill].onModification?.(id);}
   private advance(dt:number) {
     const w=this.w;
     for (let i = this.pending.length - 1; i >= 0; i--)
@@ -223,38 +218,16 @@ export class Armory {
     const w = this.w,
       g = w.id(),
       angle = Math.atan2(target.y - w.player.y, target.x - w.player.x);
-    if (skill === "blade")
-      this.groups.set(g, {
-        left: s.count,
-        shards: s.mods.includes("shards"),
-      });
+    if(skill==="blade")this.blade.begin(g,s);
     const targets = this.enemies(w.player, s.range).sort(
       (a, b) => distance(a, target) - distance(b, target),
     );
     const chosen: Point[] = [];
     for (let i = 0; i < s.count; i++) {
       let t: Point = { ...target };
-      if (skill === "water") {
-        const distinct = targets.find((e) =>
-          chosen.every((p) => distance(p, e) > s.radius * 1.2),
-        );
-        t = distinct
-          ? { x: distinct.x, y: distinct.y }
-          : {
-              x: target.x + Math.cos(angle + i * 2.4) * s.radius,
-              y: target.y + Math.sin(angle + i * 2.4) * s.radius,
-            };
-        chosen.push(t);
-      } else if (skill === "fire" && s.mods.includes("salvo") && targets.length)
-        t = { ...targets[i % Math.min(3, targets.length)] };
-      const delay =
-        skill === "fire"
-          ? s.mods.includes("heavy")
-            ? 0.35
-            : s.mods.includes("salvo")
-              ? Math.floor((i * 3) / s.count) * 0.12
-              : 0
-          : 0;
+      if(skill === "water") t=this.water.target(s,target,targets,chosen,angle,i);
+      else if(skill === "fire") t=this.fire.target(s,target,targets,i);
+      const delay=skill === "fire" ? this.fire.delay(s,i) : 0;
       this.pending.push({
         skill,
         stats: replicaStats(s,i),
@@ -324,7 +297,7 @@ export class Armory {
       false,
     );
     const shot=parent??p as ArmoryShot;
-    if(skill==="blade"&&e.hp<before&&shot.skill==="blade"&&!shot.child)this.splitOnHit(shot,e);
+    if(skill==="blade"&&e.hp<before&&shot.skill==="blade"&&!shot.child)this.blade.onHit(shot,e);
   }
   private stepShot(p: ArmoryShot, dt: number) {
     const w = this.w,
@@ -337,77 +310,9 @@ export class Armory {
       p.trail.push(old);
       if(p.trail.length>4)p.trail.shift();
     }
-    if (p.skill === "water") {
-      const q = Math.min(1, p.age / 0.45);
-      p.x = p.start.x + (p.target.x - p.start.x) * q;
-      p.y = p.start.y + (p.target.y - p.start.y) * q;
-      if (q >= 1) {
-        this.addField("water", p, p.angle, s);
-        p.active = false;
-      }
-      return;
-    }
-    if (p.orbit) {
-      const oldQ=Math.max(0,Math.min(1,(p.age-dt)/s.duration));
-      const q = p.age+1e-8>=s.duration?1:Math.min(1, p.age / s.duration),
-        radius =
-          ((m.includes("orbit") ? 2.7 : 1.9) + (m.includes("return") ? 1.1 * Math.sin(q * Math.PI) : 0)) *
-          playerAttributesFrom(s);
-      // Start on the circumference: never sweep a phantom damage line through the hero.
-      if (p.age === dt) {
-        old.x = w.player.x + Math.cos(p.index * Math.PI * 2 / s.count) * radius;
-        old.y = w.player.y + Math.sin(p.index * Math.PI * 2 / s.count) * radius;
-      }
-      p.angle = (p.index * Math.PI * 2) / s.count + orbitProgress(q) * Math.PI * 2;
-      p.x = w.player.x + Math.cos(p.angle) * radius;
-      p.y = w.player.y + Math.sin(p.angle) * radius;
-      // Sample the actual circular sweep, not a chord through its empty centre.
-      const slices=Math.max(1,Math.ceil((orbitProgress(q)-orbitProgress(oldQ))*48));
-      for(let i=0;i<=slices;i++) {
-        const t=oldQ+(q-oldQ)*i/slices;
-        if(m.includes("return") && t>=.5 && !p.returning) {p.returning=true;p.hit.clear();}
-        const rr=((m.includes("orbit")?2.7:1.9)+(m.includes("return")?1.1*Math.sin(t*Math.PI):0))*playerAttributesFrom(s);
-        const angle=p.index*Math.PI*2/s.count+orbitProgress(t)*Math.PI*2;
-        const sample={x:w.player.x+Math.cos(angle)*rr,y:w.player.y+Math.sin(angle)*rr};
-        for(const e of this.enemies(sample,s.radius+.45))if(!p.hit.has(e.id)) {
-          p.hit.add(e.id);this.hit(e,s.damage,sample,"blade",true,p);
-        }
-      }
-      if (q >= 1) this.finish(p);
-      return;
-    }
-    if(p.skill==="blade"&&p.child&&p.shardTarget!==undefined){
-      const target=w.enemies.find(e=>e.id===p.shardTarget&&e.hp>0&&e.state!=="arriving"&&!e.sand?.buried);
-      if(target&&distance(target,p.start)<=p.range+.45){const desired=Math.atan2(target.y-p.y,target.x-p.x);p.angle+=Math.max(-dt*6,Math.min(dt*6,angleDelta(desired,p.angle)));}
-      else p.shardTarget=undefined;
-    }
-    if (p.skill === "blade" && !p.child) {
-      if (p.returning) {
-        const t = p.end!;
-        p.angle = Math.atan2(t.y - p.y, t.x - p.x);
-        if (distance(p, t) <= p.speed * dt) {
-          this.finish(p);
-          return;
-        }
-      } else if (m.includes("hunt")) {
-        const t = this.enemies(p, 6)
-          .filter((e) => !p.hit.has(e.id))
-          .sort(
-            (a, b) =>
-              Number(isElite(b.kind) || /bow|spitter/.test(b.kind)) -
-                Number(isElite(a.kind) || /bow|spitter/.test(a.kind)) ||
-              distance(a, p) - distance(b, p),
-          )[0];
-        if (t)
-          p.angle += Math.max(
-            -dt * 2.2,
-            Math.min(
-              dt * 2.2,
-              angleDelta(Math.atan2(t.y - p.y, t.x - p.x), p.angle),
-            ),
-          );
-      }
-    }
+    if (p.skill === "water") {this.water.land(p);return;}
+    if(p.orbit){this.blade.stepOrbit(p,dt);return;}
+    if(p.skill==="blade"&&this.blade.steer(p,dt))return;
     const step = Math.min(p.speed * dt, Math.max(0,p.range-p.travel));
     p.x += Math.cos(p.angle) * step;
     p.y += Math.sin(p.angle) * step;
@@ -427,15 +332,7 @@ export class Armory {
     for (const e of collisions) {
       p.hit.add(e.id);
       if (p.skill === "fire") {
-        // Resolve at first contact, even when a fast shot crosses a whole enemy in one frame.
-        const dx=p.x-old.x,dy=p.y-old.y,len=Math.hypot(dx,dy);
-        if(len>0) {
-          const along=((e.x-old.x)*dx+(e.y-old.y)*dy)/len;
-          const across2=(e.x-old.x)**2+(e.y-old.y)**2-along**2;
-          const contact=Math.max(0,Math.min(len,along-Math.sqrt(Math.max(0,.69**2-across2))));
-          p.x=old.x+dx/len*contact;p.y=old.y+dy/len*contact;
-        }
-        this.explode(p);
+        this.fire.contact(p,old,e);
         return;
       }
       this.hit(e, s.damage, p, "blade", true);
@@ -451,85 +348,10 @@ export class Armory {
       this.explode(p);
       return;
     }
-    if (!p.child && !p.returning && p.stats.mods.includes("return")) {
-      p.returning = true;
-      p.hit.clear();
-      p.travel = 0;
-      p.end = { ...this.w.player };
-      p.range = distance(p, p.end) + 0.1;
-      return;
-    }
-    this.finish(p);
+    this.blade.terminal(p);
   }
-  private finish(p: ArmoryShot) {
-    p.active = false;
-    if (p.child || p.skill !== "blade") return;
-    const g = this.groups.get(p.group);
-    if (!g) return;
-    g.left--;
-    if(g.left<=0)this.groups.delete(p.group);
-  }
-  /** Two bounded fragments per cast, triggered by actual main damage instead of an empty terminal point. */
-  private splitOnHit(p:ArmoryShot,hit:Enemy){
-    const g=this.groups.get(p.group);if(!g?.shards)return;g.shards=false;
-    const origin={x:hit.x,y:hit.y};
-    const targets=this.enemies(origin,2.8).sort((a,b)=>Number(a.id===hit.id)-Number(b.id===hit.id)||distance(a,origin)-distance(b,origin)||a.id-b.id);
-    if(!targets.length)return;
-    for(let i=0;i<2;i++){
-      const t=targets[Math.min(i,targets.length-1)];
-      const s={...p.stats,damage:p.stats.damage*.6,mods:[],range:2.8};
-      this.launch({skill:"blade",stats:s,due:this.w.time,index:i,group:p.group,origin:{...origin},target:{x:t.x,y:t.y}},true);
-      const child=this.shots.find(q=>q.active&&q.child&&q.group===p.group&&q.index===i&&q.spawnStep===this.stepIndex);
-      if(child){child.shardTarget=t.id;if(t.id!==hit.id)child.hit.add(hit.id);if(distance(t,origin)<.05)child.angle=p.angle+(i?.28:-.28);}
-    }
-  }
-  private explode(p: ArmoryShot) {
-    p.active = false;
-    const s = p.stats,
-      m = s.mods;
-    for (const e of this.enemies(p, s.radius + 0.45)) {
-      const heavy = !p.child && m.includes("heavy");
-      const damage =
-        heavy && distance(e, p) > s.radius * 0.55
-          ? (s.damage * 1.25) / 1.8
-          : s.damage;
-      this.hit(e, damage, p, "fire");
-    }
-    this.w.effects.push({
-      type: "explosion",
-      x: p.x,
-      y: p.y,
-      radius: s.radius,
-      skill: "fire",
-      grade: this.w.weaponGrades.fire,
-      form: p.child ? "ember" : m.includes("heavy") ? "heavy" : "base",
-    });
-    if (p.child) return;
-    if (m.includes("flame")) this.addField("fire", p, p.angle, s);
-    const explosionAngle = p.angle;
-    if (m.includes("embers"))
-      for (let i = 0; i < 2; i++) {
-        const a = explosionAngle + (i ? 0.85 : -0.85),
-          child = {
-            ...s,
-            damage: s.damage * 0.35,
-            radius: s.radius * 0.6,
-            mods: [],
-          };
-        this.launch(
-          {
-            skill: "fire",
-            stats: child,
-            origin: { x: p.x, y: p.y },
-            target: { x: p.x + Math.cos(a) * 1.5, y: p.y + Math.sin(a) * 1.5 },
-            group: p.group,
-            index: i,
-            due: this.w.time,
-          },
-          true,
-        );
-      }
-  }
+  private finish(p:ArmoryShot){p.active=false;this.blade.onFinish(p);}
+  private explode(p:ArmoryShot){this.fire.explode(p);}
   private addField(
     skill: "fire" | "water",
     p: Point,
@@ -555,8 +377,7 @@ export class Armory {
       interval,
       lastTick: -Infinity,
     };
-    if (skill === "water" && s.mods.includes("spring")) f.radius *= 0.45;
-    if(skill==="water"&&w.weaponGrades.water>1)w.effects.push({type:"explosion",skill:"water",form:"waterSplash",grade:w.weaponGrades.water,...p,radius:f.radius});
+    if(skill === "water")this.water.initialize(f,p);
     const slot = this.fields.find((v) => !v.active);
     if (slot) Object.assign(slot, f);
     else this.fields.push(f);
@@ -568,29 +389,7 @@ export class Armory {
       return;
     }
     if (f.skill !== "water") return;
-    const m = f.stats.mods,
-      q = (w.time - f.created) / (f.until - f.created);
-    if (m.includes("recall") && q >= 0.5 && !f.returning) {
-      f.returning = true;
-      f.returnTarget = { ...w.player };
-    }
-    if (f.returning) {
-      // Catch up across empty ground, then stay with enemies instead of outrunning them.
-      const covered=this.enemies(f,f.radius+.35);
-      const speed=covered.length ? Math.max(.6,Math.min(1.6,...covered.map(e =>
-        e.freezeUntil>w.time ? 0 : ENEMIES[e.kind].speed*(e.slowUntil>w.time?1-e.slow:1)))) : 3.8;
-      const t = f.returnTarget!,
-        d = distance(f, t),
-        step = Math.min(d, speed * dt);
-      if (d > 0) {
-        f.x += ((t.x - f.x) / d) * step;
-        f.y += ((t.y - f.y) / d) * step;
-      }
-    } else if (m.includes("wave")) {
-      f.x += Math.cos(f.angle) * 2.5 * dt;
-      f.y += Math.sin(f.angle) * 2.5 * dt;
-    } else if (m.includes("spring"))
-      f.radius = f.baseRadius * (0.45 + 1.2 * Math.min(1, q * 2));
+    this.water.stepField(f,dt);
   }
   private tickFields() {
     const w = this.w;
@@ -625,8 +424,4 @@ export class Armory {
     for (const { f, damage, e } of buckets.values())
       this.hit(e, damage, f, f.skill);
   }
-}
-// Area affects orbit reach as well as blade collision width, using the snapshot.
-function playerAttributesFrom(s: WeaponStats) {
-  return s.radius / 0.21;
 }

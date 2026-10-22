@@ -142,7 +142,7 @@ export function drawWeaponGlyph(g: Graphics, skill: Skill, grade=1) {
       );
     }
     g.stroke();
-  } else {
+  } else if(skill === "void") {
     g.strokeColor = ink(COLORS[skill]);
     g.lineWidth = 3;
     g.ellipse(0, 0, 22, 12);
@@ -151,6 +151,7 @@ export function drawWeaponGlyph(g: Graphics, skill: Skill, grade=1) {
     g.circle(0, 0, 10);
     g.fill();
   }
+  else {const missing:never=skill;throw Error(`Missing weapon glyph: ${missing}`);}
   if (skill === "ghost") {
     g.fillColor = ink("#18222b");
     g.rect(-9, 4, 5, 4);

@@ -185,6 +185,10 @@ export function orbitProgress(q: number) {
   const t=Math.max(0,Math.min(1,q));
   return t;
 }
+/** Shared by achievement qualification and persisted recipe validation. */
+export function isLegalModPair(skill:Skill,pair:readonly string[]){
+ return pair.length===2&&new Set(pair).size===2&&pair.every(id=>MODS[skill].some(m=>m.id===id&&!pair.includes(m.excludes??"__none__")));
+}
 export function weaponStats(
   w: SurvivalWorld,
   skill: Skill,

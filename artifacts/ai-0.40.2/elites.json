@@ -1,0 +1,365 @@
+{
+  "scope": "Stages 9-16 existing elite pairs,90 seconds,center,moving and edge scenarios,no weapons or director",
+  "rows": [
+    {
+      "stage": 9,
+      "scene": "center",
+      "casts": {
+        "windarbiter": 10,
+        "plumejudge": 1
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 0,
+        "searches": 0,
+        "yields": 0
+      }
+    },
+    {
+      "stage": 9,
+      "scene": "moving",
+      "casts": {
+        "windarbiter": 10,
+        "plumejudge": 1
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 0,
+        "searches": 0,
+        "yields": 0
+      }
+    },
+    {
+      "stage": 9,
+      "scene": "edge",
+      "casts": {
+        "windarbiter": 2,
+        "plumejudge": 1
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 87,
+        "searches": 4,
+        "yields": 2
+      }
+    },
+    {
+      "stage": 10,
+      "scene": "center",
+      "casts": {
+        "sealprovost": 20,
+        "claspjailer": 20
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 740,
+        "searches": 29,
+        "yields": 28
+      }
+    },
+    {
+      "stage": 10,
+      "scene": "moving",
+      "casts": {
+        "sealprovost": 22,
+        "claspjailer": 20
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 931,
+        "searches": 50,
+        "yields": 27
+      }
+    },
+    {
+      "stage": 10,
+      "scene": "edge",
+      "casts": {
+        "sealprovost": 6,
+        "claspjailer": 20
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 711,
+        "searches": 32,
+        "yields": 22
+      }
+    },
+    {
+      "stage": 11,
+      "scene": "center",
+      "casts": {
+        "twinweftwarden": 18,
+        "shuttlejailer": 16
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 647,
+        "searches": 34,
+        "yields": 33
+      }
+    },
+    {
+      "stage": 11,
+      "scene": "moving",
+      "casts": {
+        "twinweftwarden": 18,
+        "shuttlejailer": 14
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 1145,
+        "searches": 63,
+        "yields": 33
+      }
+    },
+    {
+      "stage": 11,
+      "scene": "edge",
+      "casts": {
+        "twinweftwarden": 18,
+        "shuttlejailer": 16
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 904,
+        "searches": 43,
+        "yields": 33
+      }
+    },
+    {
+      "stage": 12,
+      "scene": "center",
+      "casts": {
+        "splitcrucible": 10,
+        "glazejailer": 14
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 712,
+        "searches": 32,
+        "yields": 31
+      }
+    },
+    {
+      "stage": 12,
+      "scene": "moving",
+      "casts": {
+        "splitcrucible": 10,
+        "glazejailer": 16
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 1035,
+        "searches": 61,
+        "yields": 31
+      }
+    },
+    {
+      "stage": 12,
+      "scene": "edge",
+      "casts": {
+        "splitcrucible": 4,
+        "glazejailer": 2
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 188,
+        "searches": 16,
+        "yields": 7
+      }
+    },
+    {
+      "stage": 13,
+      "scene": "center",
+      "casts": {
+        "twinclamp": 9,
+        "edgepuppeteer": 16
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 777,
+        "searches": 27,
+        "yields": 25
+      }
+    },
+    {
+      "stage": 13,
+      "scene": "moving",
+      "casts": {
+        "twinclamp": 9,
+        "edgepuppeteer": 14
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 881,
+        "searches": 47,
+        "yields": 24
+      }
+    },
+    {
+      "stage": 13,
+      "scene": "edge",
+      "casts": {
+        "twinclamp": 2,
+        "edgepuppeteer": 2
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 66,
+        "searches": 12,
+        "yields": 2
+      }
+    },
+    {
+      "stage": 14,
+      "scene": "center",
+      "casts": {
+        "twindial": 18,
+        "eclipsewarden": 14
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 753,
+        "searches": 33,
+        "yields": 32
+      }
+    },
+    {
+      "stage": 14,
+      "scene": "moving",
+      "casts": {
+        "twindial": 20,
+        "eclipsewarden": 10
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 1194,
+        "searches": 66,
+        "yields": 32
+      }
+    },
+    {
+      "stage": 14,
+      "scene": "edge",
+      "casts": {
+        "twindial": 16,
+        "eclipsewarden": 16
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 1063,
+        "searches": 43,
+        "yields": 30
+      }
+    },
+    {
+      "stage": 15,
+      "scene": "center",
+      "casts": {
+        "twinpitch": 20,
+        "presswarden": 10
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 615,
+        "searches": 25,
+        "yields": 23
+      }
+    },
+    {
+      "stage": 15,
+      "scene": "moving",
+      "casts": {
+        "twinpitch": 18,
+        "presswarden": 11
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 791,
+        "searches": 41,
+        "yields": 20
+      }
+    },
+    {
+      "stage": 15,
+      "scene": "edge",
+      "casts": {
+        "twinpitch": 2,
+        "presswarden": 8
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 117,
+        "searches": 7,
+        "yields": 3
+      }
+    },
+    {
+      "stage": 16,
+      "scene": "center",
+      "casts": {
+        "coffinregent": 18,
+        "scarprelate": 15
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 593,
+        "searches": 23,
+        "yields": 21
+      }
+    },
+    {
+      "stage": 16,
+      "scene": "moving",
+      "casts": {
+        "coffinregent": 14,
+        "scarprelate": 14
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 588,
+        "searches": 36,
+        "yields": 21
+      }
+    },
+    {
+      "stage": 16,
+      "scene": "edge",
+      "casts": {
+        "coffinregent": 2,
+        "scarprelate": 16
+      },
+      "maxSlots": 2,
+      "wallViolations": 0,
+      "positioning": {
+        "moves": 450,
+        "searches": 33,
+        "yields": 21
+      }
+    }
+  ]
+}

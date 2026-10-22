@@ -1,27 +1,35 @@
-import {graveMap} from "./EchoGraveMap";
-import {graveEnemy} from "./EchoGraveSystem";
-import {leadMap} from "./LeadFoundryMap";
-import {leadEnemy} from "./LeadFoundrySystem";
-import {eclipseMap} from "./EclipseMap";
-import {eclipseEnemy} from "./EclipseSystem";
-import {edgeMap} from "./EdgeCourtMap";
-import {edgeEnemy} from "./EdgeCourtSystem";
-import {kilnMap} from "./KilnMap";
-import {kilnEnemy} from "./KilnSystem";
-import {loomMap} from "./LoomMap";
-import {loomEnemy} from "./LoomSystem";
-import {libraryMap} from "./LibraryMap";
-import {libraryEnemy} from "./LibrarySystem";
-import {windMap} from "./WindMap";
-import {windEnemy} from "./WindSystem";
-import {rootMap} from "./RootMap";
-import {rootEnemy} from "./RootSystem";
-import {prismMap} from "./PrismMap";
-import {prismEnemy} from "./PrismSystem";
+import { windMove } from "./WindGeometry";
+import type { Kind } from "./SurvivalConfig";
+import {
+  siegeCombat,
+  legacyCombat,
+  armoredCombat,
+  StageCombat,
+} from "./StageCombat";
+import { graveMap } from "./EchoGraveMap";
+import { graveEnemy } from "./EchoGraveSystem";
+import { leadMap } from "./LeadFoundryMap";
+import { leadEnemy } from "./LeadFoundrySystem";
+import { eclipseMap } from "./EclipseMap";
+import { eclipseEnemy } from "./EclipseSystem";
+import { edgeMap } from "./EdgeCourtMap";
+import { edgeEnemy } from "./EdgeCourtSystem";
+import { kilnMap } from "./KilnMap";
+import { kilnEnemy } from "./KilnSystem";
+import { loomMap } from "./LoomMap";
+import { loomEnemy } from "./LoomSystem";
+import { libraryMap } from "./LibraryMap";
+import { libraryEnemy } from "./LibrarySystem";
+import { windMap } from "./WindMap";
+import { windEnemy } from "./WindSystem";
+import { rootMap } from "./RootMap";
+import { rootEnemy } from "./RootSystem";
+import { prismMap } from "./PrismMap";
+import { prismEnemy, prismDevice } from "./PrismSystem";
 import { TideSystem, tideEnemy } from "./TideSystem";
 import { tideMap } from "./TideMap";
 import type { SurvivalWorld } from "./SurvivalWorld";
-import type { Enemy, Hazard } from "./SurvivalTypes";
+import type { Enemy, Hazard, Point } from "./SurvivalTypes";
 import type { StageId } from "./ProgressionConfig";
 import { siegeMap } from "./SiegeMap";
 import { sandMap } from "./SandMap";
@@ -36,16 +44,83 @@ import { bellEnemy } from "./BellSystem";
 export interface StageStrategy {
   readonly map: typeof siegeMap;
   readonly resolveCrowd?: boolean;
-  movePlayer?(dt:number):void;
-  vulnerable?(e: Enemy): boolean;
+  readonly adaptiveBossPositioning?: boolean;
+  bossPosition?(e:Enemy):Point|undefined;
+  movePlayer?(dt: number): void;
+  readonly combat: StageCombat;
+  targetPriority?(e: Enemy): number;
   /** false delegates the shared legacy 1/2 wave scheduler. */
   director(dt: number): boolean;
   stepEnemy(enemy: Enemy, dt: number): boolean;
   stepBoss(enemy: Enemy, dt: number): void;
   clean(): void;
-  lifecycle?: { tick():void; keep(e:Enemy):boolean; onHit(e:Enemy,source:string,dealt:number):void; supplies(e:Enemy):void; };
+  lifecycle?: {
+    initialize?(e: Enemy): void;
+    tick(): void;
+    keep(e: Enemy): boolean;
+    onHit(e: Enemy, source: string, dealt: number): void;
+    supplies(e: Enemy): void;
+  };
   onDeath(enemy: Enemy): boolean;
   stepHazard(hazard: Hazard): boolean;
+}
+interface ManagedStageSystem {
+  bossPosition?(e:Enemy):Point|undefined;
+  director(dt: number): void;
+  stepEnemy(e: Enemy, dt: number): void;
+  clean(): void;
+  onDeath(e: Enemy): boolean | void;
+  stepHazard(h: Hazard): void;
+}
+type HazardKey =
+  | "bell"
+  | "tide"
+  | "prism"
+  | "root"
+  | "wind"
+  | "library"
+  | "loom"
+  | "kiln"
+  | "edge"
+  | "eclipse"
+  | "lead"
+  | "grave";
+/** Common adapter owns plumbing only; each system retains its encounter rules. */
+function managedStage(
+  map: StageStrategy["map"],
+  system: ManagedStageSystem,
+  isEnemy: (kind: Kind) => boolean,
+  hazard: HazardKey,
+  combat: StageCombat,
+  extra: Partial<
+    Pick<StageStrategy, "movePlayer" | "lifecycle" | "targetPriority">
+  > = {},
+): StageStrategy {
+  return {
+    map,
+    combat,
+    resolveCrowd: true,
+    adaptiveBossPositioning:true,
+    bossPosition:system.bossPosition?.bind(system),
+    ...extra,
+    director: (dt) => {
+      system.director(dt);
+      return true;
+    },
+    stepEnemy: (e, dt) => {
+      if (!isEnemy(e.kind)) return false;
+      system.stepEnemy(e, dt);
+      return true;
+    },
+    stepBoss: (e, dt) => system.stepEnemy(e, dt),
+    clean: () => system.clean(),
+    onDeath: (e) => system.onDeath(e) === true,
+    stepHazard: (h) => {
+      if (!h[hazard]) return false;
+      system.stepHazard(h);
+      return true;
+    },
+  };
 }
 /** Stage registration is the sole dispatch point, built once per world. Systems retain their own state. */
 export function createStageStrategy(w: SurvivalWorld): StageStrategy {
@@ -53,6 +128,7 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
   const entries: Record<StageId, () => StageStrategy> = {
     1: () => ({
       map: siegeMap,
+      combat: siegeCombat(w),
       director: () => false,
       stepEnemy: (e, dt) => {
         if (!siegeEnemy(e.kind)) return false;
@@ -65,7 +141,9 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
       stepHazard: () => false,
     }),
     2: () => ({
+      adaptiveBossPositioning: true,
       map: sandMap,
+      combat: legacyCombat(w, (e) => !!e.sand?.vulnerable),
       director: () => false,
       stepEnemy: (e, dt) => {
         if (!sandEnemy(e.kind)) return false;
@@ -82,6 +160,7 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
     }),
     3: () => ({
       map: thunderMap,
+      combat: legacyCombat(w, (e) => !!e.thunder?.vulnerable, true),
       director: (dt) => {
         w.thunder.director(dt);
         return true;
@@ -104,7 +183,9 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
       },
     }),
     4: () => ({
+      adaptiveBossPositioning: true,
       map: moonMap,
+      combat: legacyCombat(w, (e) => !!e.moon?.vulnerable, true),
       director: (dt) => {
         w.moon.director(dt);
         return true;
@@ -126,73 +207,143 @@ export function createStageStrategy(w: SurvivalWorld): StageStrategy {
         return true;
       },
     }),
-    16:()=>({map:graveMap,resolveCrowd:true,movePlayer:dt=>w.grave.movePlayer(dt),vulnerable:e=>!!e.grave?.vulnerable&&e.state==='recover',lifecycle:w.grave,director:dt=>{w.grave.director(dt);return true;},stepEnemy:(e,dt)=>{if(!graveEnemy(e.kind))return false;w.grave.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.grave.stepEnemy(e,dt),clean:()=>w.grave.clean(),onDeath:e=>w.grave.onDeath(e),stepHazard:h=>{if(!h.grave)return false;w.grave.stepHazard(h);return true;}}),
-    15:()=>({map:leadMap,resolveCrowd:true,movePlayer:dt=>w.lead.movePlayer(dt),vulnerable:e=>!!e.lead?.vulnerable&&e.state==='recover',director:dt=>{w.lead.director(dt);return true;},stepEnemy:(e,dt)=>{if(!leadEnemy(e.kind))return false;w.lead.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.lead.stepEnemy(e,dt),clean:()=>w.lead.clean(),onDeath:e=>w.lead.onDeath(e),stepHazard:h=>{if(!h.lead)return false;w.lead.stepHazard(h);return true;}}),
-    14:()=>({map:eclipseMap,resolveCrowd:true,movePlayer:dt=>w.eclipse.movePlayer(dt),vulnerable:e=>!!e.eclipse?.vulnerable&&e.state==='recover',director:dt=>{w.eclipse.director(dt);return true;},stepEnemy:(e,dt)=>{if(!eclipseEnemy(e.kind))return false;w.eclipse.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.eclipse.stepEnemy(e,dt),clean:()=>w.eclipse.clean(),onDeath:e=>w.eclipse.onDeath(e),stepHazard:h=>{if(!h.eclipse)return false;w.eclipse.stepHazard(h);return true;}}),
-    13:()=>({map:edgeMap,resolveCrowd:true,movePlayer:dt=>w.edge.movePlayer(dt),vulnerable:e=>!!e.edge?.vulnerable&&e.state==='recover',director:dt=>{w.edge.director(dt);return true;},stepEnemy:(e,dt)=>{if(!edgeEnemy(e.kind))return false;w.edge.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.edge.stepEnemy(e,dt),clean:()=>w.edge.clean(),onDeath:e=>w.edge.onDeath(e),stepHazard:h=>{if(!h.edge)return false;w.edge.stepHazard(h);return true;}}),
-    12:()=>({map:kilnMap,resolveCrowd:true,movePlayer:dt=>w.kiln.movePlayer(dt),vulnerable:e=>!!e.kiln?.vulnerable&&e.state==='recover',director:dt=>{w.kiln.director(dt);return true;},stepEnemy:(e,dt)=>{if(!kilnEnemy(e.kind))return false;w.kiln.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.kiln.stepEnemy(e,dt),clean:()=>w.kiln.clean(),onDeath:e=>w.kiln.onDeath(e),stepHazard:h=>{if(!h.kiln)return false;w.kiln.stepHazard(h);return true;}}),
-    11:()=>({map:loomMap,resolveCrowd:true,movePlayer:dt=>w.loom.movePlayer(dt),vulnerable:e=>!!e.loom?.vulnerable&&e.state==='recover',director:dt=>{w.loom.director(dt);return true;},stepEnemy:(e,dt)=>{if(!loomEnemy(e.kind))return false;w.loom.stepEnemy(e,dt);return true;},stepBoss:(e,dt)=>w.loom.stepEnemy(e,dt),clean:()=>w.loom.clean(),onDeath:e=>w.loom.onDeath(e),stepHazard:h=>{if(!h.loom)return false;w.loom.stepHazard(h);return true;}}),
-    10:()=>({map:libraryMap,resolveCrowd:true,movePlayer:dt=>w.library.movePlayer(dt),vulnerable:e=>!!e.library?.vulnerable&&e.state==='recover',
-      director:dt=>{w.library.director(dt);return true;},stepEnemy:(e,dt)=>{if(!libraryEnemy(e.kind))return false;w.library.stepEnemy(e,dt);return true;},
-      stepBoss:(e,dt)=>w.library.stepEnemy(e,dt),clean:()=>w.library.clean(),onDeath:e=>w.library.onDeath(e),stepHazard:h=>{if(!h.library)return false;w.library.stepHazard(h);return true;}}),
-    9:()=>({map:windMap,resolveCrowd:true,vulnerable:e=>!!e.wind?.vulnerable&&e.state==='recover',
-      director:dt=>{w.wind.director(dt);return true;},stepEnemy:(e,dt)=>{if(!windEnemy(e.kind))return false;w.wind.stepEnemy(e,dt);return true;},
-      stepBoss:(e,dt)=>w.wind.stepEnemy(e,dt),clean:()=>w.wind.clean(),onDeath:e=>w.wind.onDeath(e),stepHazard:h=>{if(!h.wind)return false;w.wind.stepHazard(h);return true;}}),
-    8:()=>({map:rootMap,resolveCrowd:true,vulnerable:e=>!!e.root?.vulnerable&&e.state==='recover',
-      director:dt=>{w.root.director(dt);return true;},stepEnemy:(e,dt)=>{if(!rootEnemy(e.kind))return false;w.root.stepEnemy(e,dt);return true;},
-      stepBoss:(e,dt)=>w.root.stepEnemy(e,dt),clean:()=>w.root.clean(),onDeath:e=>w.root.onDeath(e),stepHazard:h=>{if(!h.root)return false;w.root.stepHazard(h);return true;}}),
-    7:()=>({map:prismMap,resolveCrowd:true,vulnerable:e=>!!e.prism?.vulnerable&&e.state==='recover',
-      director:dt=>{w.prism.director(dt);return true;},stepEnemy:(e,dt)=>{if(!prismEnemy(e.kind))return false;w.prism.stepEnemy(e,dt);return true;},
-      stepBoss:(e,dt)=>w.prism.stepEnemy(e,dt),clean:()=>w.prism.clean(),onDeath:e=>w.prism.onDeath(e),stepHazard:h=>{if(!h.prism)return false;w.prism.stepHazard(h);return true;}}),
-    6: () => ({
-      map: tideMap,
-      resolveCrowd: true,
-      vulnerable: (e) => !!e.tide?.vulnerable && e.state === "recover",
-      director: (dt) => {
-        w.tide.director(dt);
-        return true;
-      },
-      stepEnemy: (e, dt) => {
-        if (!tideEnemy(e.kind)) return false;
-        w.tide.stepEnemy(e, dt);
-        return true;
-      },
-      stepBoss: (e, dt) => w.tide.stepEnemy(e, dt),
-      clean: () => w.tide.clean(),
-      onDeath: (e) => {
-        w.tide.onDeath(e);
-        return false;
-      },
-      stepHazard: (h) => {
-        if (!h.tide) return false;
-        w.tide.stepHazard(h);
-        return true;
-      },
-    }),
-    5: () => ({
-      map: bellMap,
-      resolveCrowd: true,
-      director: (dt) => {
-        w.bell.director(dt);
-        return true;
-      },
-      stepEnemy: (e, dt) => {
-        if (!bellEnemy(e.kind)) return false;
-        w.bell.stepEnemy(e, dt);
-        return true;
-      },
-      stepBoss: (e, dt) => w.bell.stepEnemy(e, dt),
-      clean: () => w.bell.clean(),
-      onDeath: (e) => {
-        w.bell.onDeath(e);
-        return false;
-      },
-      stepHazard: (h) => {
-        if (!h.bell) return false;
-        w.bell.stepHazard(h);
-        return true;
-      },
-    }),
+    5: () =>
+      managedStage(
+        bellMap,
+        w.bell,
+        bellEnemy,
+        "bell",
+        armoredCombat(w, bellEnemy, (e) => !!e.bell?.vulnerable),
+      ),
+    6: () =>
+      managedStage(
+        tideMap,
+        w.tide,
+        tideEnemy,
+        "tide",
+        armoredCombat(w, tideEnemy, (e) => !!e.tide?.vulnerable),
+      ),
+    7: () =>
+      managedStage(
+        prismMap,
+        w.prism,
+        prismEnemy,
+        "prism",
+        armoredCombat(
+          w,
+          (k) => prismEnemy(k) && !prismDevice(k),
+          (e) => !!e.prism?.vulnerable,
+        ),
+      ),
+    8: () =>
+      managedStage(
+        rootMap,
+        w.root,
+        rootEnemy,
+        "root",
+        armoredCombat(w, rootEnemy, (e) => !!e.root?.vulnerable),
+      ),
+    9: () =>
+      managedStage(
+        windMap,
+        w.wind,
+        windEnemy,
+        "wind",
+        armoredCombat(w, windEnemy, (e) => !!e.wind?.vulnerable),
+        {
+          movePlayer: (dt) => {
+            w.wind.clean();
+            windMove(
+              w.player,
+              { x: w.move.x * w.speed, y: w.move.y * w.speed },
+              dt,
+              0.3,
+              w.hazards,
+              w.time,
+            );
+          },
+        },
+      ),
+    10: () =>
+      managedStage(
+        libraryMap,
+        w.library,
+        libraryEnemy,
+        "library",
+        armoredCombat(w, libraryEnemy, (e) => !!e.library?.vulnerable),
+        { movePlayer: (dt) => w.library.movePlayer(dt) },
+      ),
+    11: () =>
+      managedStage(
+        loomMap,
+        w.loom,
+        loomEnemy,
+        "loom",
+        armoredCombat(w, loomEnemy, (e) => !!e.loom?.vulnerable),
+        { movePlayer: (dt) => w.loom.movePlayer(dt) },
+      ),
+    12: () =>
+      managedStage(
+        kilnMap,
+        w.kiln,
+        kilnEnemy,
+        "kiln",
+        armoredCombat(
+          w,
+          (k) => kilnEnemy(k) && k !== "kilnvalve",
+          (e) => !!e.kiln?.vulnerable,
+        ),
+        {
+          movePlayer: (dt) => w.kiln.movePlayer(dt),
+          targetPriority: (e) =>
+            e.kind === "kilnvalve" &&
+            e.hp > 0 &&
+            Math.hypot(e.x - w.player.x, e.y - w.player.y) <= 4.5
+              ? 1
+              : 0,
+        },
+      ),
+    13: () =>
+      managedStage(
+        edgeMap,
+        w.edge,
+        edgeEnemy,
+        "edge",
+        armoredCombat(
+          w,
+          edgeEnemy,
+          (e) => !!e.edge?.vulnerable,
+          (e, source, dealt) => w.edge.onHit(e, source, dealt),
+        ),
+        { movePlayer: (dt) => w.edge.movePlayer(dt) },
+      ),
+    14: () =>
+      managedStage(
+        eclipseMap,
+        w.eclipse,
+        eclipseEnemy,
+        "eclipse",
+        armoredCombat(w, eclipseEnemy, (e) => !!e.eclipse?.vulnerable),
+        { movePlayer: (dt) => w.eclipse.movePlayer(dt) },
+      ),
+    15: () =>
+      managedStage(
+        leadMap,
+        w.lead,
+        leadEnemy,
+        "lead",
+        armoredCombat(w, leadEnemy, (e) => !!e.lead?.vulnerable),
+        { movePlayer: (dt) => w.lead.movePlayer(dt) },
+      ),
+    16: () =>
+      managedStage(
+        graveMap,
+        w.grave,
+        graveEnemy,
+        "grave",
+        armoredCombat(w, graveEnemy, (e) => !!e.grave?.vulnerable),
+        { movePlayer: (dt) => w.grave.movePlayer(dt), lifecycle: w.grave },
+      ),
   };
   return entries[w.stageId]();
 }

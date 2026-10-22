@@ -1,0 +1,53 @@
+{
+  "mode": "full",
+  "startedAt": "2026-10-22T04:01:23.419Z",
+  "ok": true,
+  "steps": [
+    {
+      "name": "类型检查",
+      "ok": true,
+      "seconds": 2.332
+    },
+    {
+      "name": "准备回归模块",
+      "ok": true,
+      "seconds": 1.579
+    },
+    {
+      "name": "内容完整性",
+      "ok": true,
+      "seconds": 0.45
+    },
+    {
+      "name": "全部回归测试",
+      "ok": true,
+      "seconds": 5.84
+    },
+    {
+      "name": "架构行为快照",
+      "ok": true,
+      "seconds": 0.191
+    },
+    {
+      "name": "武器数值诊断",
+      "ok": true,
+      "seconds": 4.054
+    },
+    {
+      "name": "本地Web构建",
+      "ok": true,
+      "seconds": 21.95
+    },
+    {
+      "name": "实际浏览器回归",
+      "ok": true,
+      "seconds": 9.512
+    },
+    {
+      "name": "本地微信构建",
+      "ok": true,
+      "seconds": 22.416
+    }
+  ],
+  "finishedAt": "2026-10-22T04:02:31.745Z"
+}

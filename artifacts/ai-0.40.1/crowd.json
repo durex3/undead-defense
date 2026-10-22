@@ -1,0 +1,8 @@
+{
+  "actors": 100,
+  "seconds": 10,
+  "wallViolations": 0,
+  "maxFrameDisplacement": 0.10199999966103077,
+  "allowedFrameDisplacement": 0.10200000000000001,
+  "uniquePositions": 100
+}

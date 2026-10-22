@@ -1,3 +1,4 @@
+import type {StageId} from "../../battle/ProgressionConfig";
 import {GRAVE_BASES} from "../../battle/EchoGraveMap";
 import {LEAD_BASES} from "../../battle/LeadFoundryMap";
 import {ECLIPSE_PILLARS} from "../../battle/EclipseMap";
@@ -18,9 +19,25 @@ import { MOON_BASES } from "../../battle/MoonMap";
 import { ink } from "./Ink";
 
 type Point = [number, number];
-const floors = ["", "#303439", "#674936", "#202e35", "#24382e", "#34303b", "#25383c", "#302d3b", "#303b32", "#293740", "#30343d", "#3a3037", "#3b2c29", "#29323b", "#2b2b38", "#303638", "#2d3935"];
-export const stageMapBackdrop = (stage: number) => floors[stage] || floors[1];
-const grain = ["", "#454a4c", "#8c6345", "#374950", "#3c5140", "#554957", "#56665e", "#51485d", "#566052", "#52616a", "#575561", "#665361", "#79594b", "#53616a", "#625a72", "#5f6c6b", "#667264"];
+export const STAGE_MAP_COLORS:Record<StageId,{floor:string;grain:string}> = {
+  1:{floor:"#303439",grain:"#454a4c"},
+  2:{floor:"#674936",grain:"#8c6345"},
+  3:{floor:"#202e35",grain:"#374950"},
+  4:{floor:"#24382e",grain:"#3c5140"},
+  5:{floor:"#34303b",grain:"#554957"},
+  6:{floor:"#25383c",grain:"#56665e"},
+  7:{floor:"#302d3b",grain:"#51485d"},
+  8:{floor:"#303b32",grain:"#566052"},
+  9:{floor:"#293740",grain:"#52616a"},
+  10:{floor:"#30343d",grain:"#575561"},
+  11:{floor:"#3a3037",grain:"#665361"},
+  12:{floor:"#3b2c29",grain:"#79594b"},
+  13:{floor:"#29323b",grain:"#53616a"},
+  14:{floor:"#2b2b38",grain:"#625a72"},
+  15:{floor:"#303638",grain:"#5f6c6b"},
+  16:{floor:"#2d3935",grain:"#667264"},
+};
+export const stageMapBackdrop=(stage:number)=>STAGE_MAP_COLORS[stage as StageId]?.floor??STAGE_MAP_COLORS[1].floor;
 const hash = (x: number, y: number) => {
   const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
   return n - Math.floor(n);
@@ -91,12 +108,12 @@ function organicObstacle(g: Graphics, stage: number, x: number, y: number, w: nu
 
 /** Static, seeded scenery. Obstacle faces use the original collision extents.
  * Detail is batched and deliberately quieter than actors and hazard edges. */
-export function drawInkMap(g: Graphics, stage: number) {
-  g.fillColor = ink(floors[stage]);
+export function drawInkMap(g: Graphics, stage: StageId) {
+  g.fillColor = ink(STAGE_MAP_COLORS[stage].floor);
   g.rect(-1152, -1344, 2304, 2688); g.fill();
   // Broken flagstones, wind-carved sand, recessed metal and tufts share an
   // irregular rhythm instead of a high-contrast square grid.
-  g.fillColor = ink(grain[stage], stage === 2 ? 75 : stage === 3 ? 42 : 48);
+  g.fillColor = ink(STAGE_MAP_COLORS[stage].grain, stage === 2 ? 75 : stage === 3 ? 42 : 48);
   for (let row = -16; row <= 16; row++) for (let col = -15; col <= 15; col++) {
     const n = hash(col, row), x = col * 78 + (row % 2) * 35 + n * 52, y = row * 84 + hash(row,col)*62;
     if (stage === 1) {

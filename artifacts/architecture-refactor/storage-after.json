@@ -1,0 +1,348 @@
+[
+  {
+    "mode": "ok",
+    "seed": "valid",
+    "outcomes": [
+      "purchased",
+      "evolved",
+      "saved",
+      "loaded",
+      "deleted",
+      "restored",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "fe77d69a09ac1d65f2199518930b12def8d2a48309896027149f7ffd172c0307"
+  },
+  {
+    "mode": "ok",
+    "seed": "optional-corrupt",
+    "outcomes": [
+      "purchased",
+      "evolved",
+      "saved",
+      "loaded",
+      "deleted",
+      "restored",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "71bc06b1e2d4d910dfa45fd268d614b8d1ba0e55464bde4db58191ee2cbe62e4"
+  },
+  {
+    "mode": "ok",
+    "seed": "unknown",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "fd77e19e1e5662b3d6fd7be54660e5e84cc03c987dcf8ec4a64dddae5b781a2e"
+  },
+  {
+    "mode": "primary-write",
+    "seed": "valid",
+    "outcomes": [
+      "purchased",
+      "evolved",
+      "saved",
+      "loaded",
+      "deleted",
+      "restored",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "5f241169538552310e230905a5fe316d91676eb7b108abb17ac95c3a2ccfb402"
+  },
+  {
+    "mode": "primary-write",
+    "seed": "optional-corrupt",
+    "outcomes": [
+      "purchased",
+      "evolved",
+      "saved",
+      "loaded",
+      "deleted",
+      "restored",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "c4430e5b905a5dd6441fb5d0d94d7821be5ddbae3e600e0be25de8e97c279061"
+  },
+  {
+    "mode": "primary-write",
+    "seed": "unknown",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "19919757b5d4c6493dd85aa8c4da0bf7b240e049720db11f1a072c0e33614eb0"
+  },
+  {
+    "mode": "backup-write",
+    "seed": "valid",
+    "outcomes": [
+      "purchased",
+      "evolved",
+      "saved",
+      "loaded",
+      "deleted",
+      "restored",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "18894428660c4a00cf1efc5a22796f50a63d67bbfbd1462395b8a7a907b3ffc5"
+  },
+  {
+    "mode": "backup-write",
+    "seed": "optional-corrupt",
+    "outcomes": [
+      "purchased",
+      "evolved",
+      "saved",
+      "loaded",
+      "deleted",
+      "restored",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "78ffb44e875db7ac3566d7b4f7160f599bf9e69b0ccbde7068686cc148547669"
+  },
+  {
+    "mode": "backup-write",
+    "seed": "unknown",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "restored",
+      true
+    ],
+    "coins": 400,
+    "blocked": false,
+    "digest": "70291bdd6f349eb95dffb361696f7162e59db0f81cc8473287f19e04367ba43b"
+  },
+  {
+    "mode": "archive-write",
+    "seed": "valid",
+    "outcomes": [
+      "save-failed",
+      "save-failed",
+      "saved",
+      "save-failed",
+      "deleted",
+      "save-failed",
+      "save-failed",
+      false
+    ],
+    "coins": 2000,
+    "blocked": false,
+    "digest": "c67d5a5e12256259d33a721b2518cf30a394bf75501aa1bc0f0fc7dad33d8976"
+  },
+  {
+    "mode": "archive-write",
+    "seed": "optional-corrupt",
+    "outcomes": [
+      "save-failed",
+      "save-failed",
+      "saved",
+      "save-failed",
+      "deleted",
+      "save-failed",
+      "save-failed",
+      false
+    ],
+    "coins": 2000,
+    "blocked": false,
+    "digest": "73de83f03513409445949a15da914fa28804b7444eedca9e58afdad057bca7b6"
+  },
+  {
+    "mode": "archive-write",
+    "seed": "unknown",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "fa9f84c22a7c8109ceed3702619a19c528c1d45eb795856ef8bf4a4345369958"
+  },
+  {
+    "mode": "all-write",
+    "seed": "valid",
+    "outcomes": [
+      "save-failed",
+      "save-failed",
+      "save-failed",
+      "missing",
+      "missing",
+      "save-failed",
+      "save-failed",
+      false
+    ],
+    "coins": 2000,
+    "blocked": false,
+    "digest": "0457cdbee743a87c0a5d12d97032cac2a21ad2b5978f2c4ec11c69f62966ddd6"
+  },
+  {
+    "mode": "all-write",
+    "seed": "optional-corrupt",
+    "outcomes": [
+      "save-failed",
+      "save-failed",
+      "save-failed",
+      "missing",
+      "missing",
+      "save-failed",
+      "save-failed",
+      false
+    ],
+    "coins": 2000,
+    "blocked": false,
+    "digest": "e7f922fd2a9b1d829d4ba990c0b8a425c20e52c13fdfb39fe086cd42f7b9f2eb"
+  },
+  {
+    "mode": "all-write",
+    "seed": "unknown",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "fa9f84c22a7c8109ceed3702619a19c528c1d45eb795856ef8bf4a4345369958"
+  },
+  {
+    "mode": "primary-read",
+    "seed": "valid",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "b7a6fb55c49d77fcfac9f7424655f29933618a15627302c29694a7a26a845453"
+  },
+  {
+    "mode": "primary-read",
+    "seed": "optional-corrupt",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "44dc498bec6c9c98915eb3a73dab4d2cf2575499b19fed6ba0b368087b6229ef"
+  },
+  {
+    "mode": "primary-read",
+    "seed": "unknown",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "missing",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "472c1afe4ee0f6a26e7be199afc17d09a65de3b1a61186add687a1b15e0e5540"
+  },
+  {
+    "mode": "all-read",
+    "seed": "valid",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "save-failed",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "9b59d6e1e8b049c33373193ee89173162f89723c859fc72179ca9acfc345dba7"
+  },
+  {
+    "mode": "all-read",
+    "seed": "optional-corrupt",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "save-failed",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "3d56f74f41a2ca28da355e1d1254aaccf38aba97bd1f8fb200fb49b6988fc131"
+  },
+  {
+    "mode": "all-read",
+    "seed": "unknown",
+    "outcomes": [
+      "insufficient",
+      "insufficient",
+      "save-failed",
+      "missing",
+      "save-failed",
+      "save-failed",
+      false
+    ],
+    "coins": 0,
+    "blocked": true,
+    "digest": "217710d939825cffee21cf171d4a6969cdaabe4329f81a08794d13bca4eb60f2"
+  }
+]

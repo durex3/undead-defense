@@ -1,3 +1,4 @@
+import { BossPlanChoice, type BossAction } from "./BossPlanChoice";
 import { stageRecoveryFactor } from "./StagePressure";
 import type { SurvivalWorld } from "./SurvivalWorld";
 import { ENEMIES, Kind, isElite } from "./SurvivalConfig";
@@ -45,6 +46,7 @@ export interface EclipseState {
   earned?: boolean;
 }
 export class EclipseSystem {
+  readonly bossChoices = new BossPlanChoice();
   private wave = 0;
   private special = 0;
   private rounds = [false, false, false, false];
@@ -491,10 +493,14 @@ export class EclipseSystem {
         ? 4.4
         : 3.2;
   }
-  begin(e: Enemy) {
+  selectBossPlan(e:Enemy,preferred:BossAction){
+    const state=this.state(e);
+    return this.bossChoices.choose(e,preferred,(action,turn)=>this.plan({...e,eclipse:{...state,action}},turn),items=>items.every(h=>this.legal(h))&&eclipseEscape(this.w,items),items=>items.some(h=>eclipseImpacts(h,this.w.player,h.until,h.due).length>0));
+  }
+  begin(e: Enemy, proposal?: Hazard[]) {
     const w = this.w,
       s = this.state(e);
-    let items = this.plan(e);
+    let items = proposal ?? this.plan(e);
     s.recover = this.recovery(e);
     if (this.slots + items.length > 2) {
       e.attack = 0.2;
@@ -527,6 +533,7 @@ export class EclipseSystem {
       return false;
     }
     w.hazards.push(...items);
+    if(e.kind==="boss"&&["A","B","C"].includes(s.action))this.bossChoices.commit(e,s.action as BossAction);
     s.items = items;
     s.origin = { x: e.x, y: e.y };
     s.shadow = {};
@@ -719,7 +726,9 @@ export class EclipseSystem {
             : e.kind === "offsetorrery"
               ? "offset"
               : "sweep";
-    if (this.begin(e)) {
+    const proposal=boss&&this.slots===0?this.selectBossPlan(e,s.action as BossAction):undefined;
+    if(proposal)s.action=proposal.action;
+    if (this.begin(e,proposal?.items)) {
       e.pattern++;
       this.lastStart = w.time;
     }

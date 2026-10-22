@@ -17,5 +17,11 @@ export function stepBoss(w: SurvivalWorld, e: Enemy, dt: number) {
     return;
   }
   if (w.time < w.bossEliteRestUntil) return;
+  const adaptive=w.stageStrategy.adaptiveBossPositioning;
+  if(adaptive&&w.bossTactics.approach(e,dt))return;
+  const pattern=e.pattern,wasSeeking=e.state==="seek";
   w.stageStrategy.stepBoss(e, dt);
+  // A geometrically impossible beat must not pin the boss to that same beat forever.
+  if(adaptive&&wasSeeking&&e.state==="recover"&&e.pattern===pattern&&!w.hazards.some(h=>h.source===e.id&&h.until>w.time))e.pattern++;
+
 }

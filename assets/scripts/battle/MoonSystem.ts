@@ -612,6 +612,8 @@ export class MoonSystem {
           : (["sweeps", "blades", "leaps"] as const);
       if (this.start(e, actions[e.pattern % 3])) e.pattern++;
       else {
+        // With free danger slots, a rejected placement must not repeat forever.
+        e.pattern++;
         e.attack = 0.6;
       }
       return;

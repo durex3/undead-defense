@@ -1,0 +1,4237 @@
+{
+  "scope": "Stages14/15,three phases,four positions,four approach angles,three preferred actions; frozen pre-publication snapshots,not win-rate",
+  "changed": 35,
+  "improved": 61,
+  "rows": [
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 14,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 1,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 2,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": true,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "A",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": true,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "C",
+      "selectedThreatens": true,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 0,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 1.5707963267948966,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "A",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true,
+      "selected": "B",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 3.141592653589793,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false,
+      "selected": "C",
+      "selectedThreatens": false,
+      "selectedLegal": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "A",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "B",
+      "authoredLegal": false,
+      "authoredThreatens": true
+    },
+    {
+      "stage": 15,
+      "phase": 3,
+      "point": {
+        "x": -10,
+        "y": -10
+      },
+      "angle": 4.71238898038469,
+      "preferred": "C",
+      "authoredLegal": false,
+      "authoredThreatens": false
+    }
+  ]
+}

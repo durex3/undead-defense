@@ -1,5 +1,5 @@
 import type { Kind } from "../../battle/SurvivalConfig";
-import type { StageId } from "../../battle/ProgressionConfig";
+import { STAGE_IDS, type StageId } from "../../battle/ProgressionConfig";
 import type { MotionSpec } from "./Actor";
 
 /**
@@ -242,7 +242,7 @@ export const CATALOG_STAGE_KINDS: Record<StageId, readonly Kind[]> = {
 };
 
 const STAGE_OF: Partial<Record<Kind, StageId>> = {};
-for (const stage of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] as const)
+for (const stage of STAGE_IDS)
   for (const kind of CATALOG_STAGE_KINDS[stage]) STAGE_OF[kind] = stage;
 
 export function catalogStage(kind: Kind): StageId | 0 {

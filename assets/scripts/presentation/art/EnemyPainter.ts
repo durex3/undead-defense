@@ -11,6 +11,7 @@ import {drawPrismBody} from "./enemies/PrismArt";
 import { drawTideBody } from "./enemies/TideArt";
 import { drawBellBody } from "./enemies/BellArt";
 import { Graphics } from "cc";
+import {STAGE_IDS} from "../../battle/ProgressionConfig";
 import type { SurvivalWorld } from "../../battle/SurvivalWorld";
 import type { Enemy } from "../../battle/SurvivalTypes";
 import { isElite, isLarge } from "../../battle/SurvivalConfig";
@@ -27,7 +28,7 @@ import { drawHeroBody, drawHeroShadow } from "./HeroPainter";
 import { warningGlyph } from "./VfxBrush";
 
 /** Stages whose bodies/overlays are fully owned by the new art layer. */
-const CONVERTED = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]);
+const CONVERTED = new Set<number>(STAGE_IDS);
 
 const visible: Enemy[] = [];
 const pose = createPose();
@@ -63,9 +64,10 @@ function bodyFor(g: Graphics, w: SurvivalWorld, enemy: Enemy, art: EnemyArt) {
     case 4:
       drawMoonBody(g, w, enemy, art, pose);
       break;
-    default:
+    case 1:
       drawSiegeBody(g, w, enemy, art, pose);
       break;
+    default: {const missing:never=w.stageId;throw Error(`Missing stage body renderer: ${missing}`);}
   }
 }
 

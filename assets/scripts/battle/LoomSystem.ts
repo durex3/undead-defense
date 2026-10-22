@@ -493,6 +493,9 @@ export class LoomSystem {
       w.enemies.some((o) => o.hp > 0 && isElite(o.kind))
     )
       return;
+    // Seeking relocation is still a physical body, with the same contact radius.
+    if (distance(e, w.player) < (boss ? 1 : 0.65))
+      w.hurt(boss ? 22 : ENEMIES[e.kind].contact, e.kind, false);
     if (s.relocate) {
       if (distance(e, s.relocate) > 0.3) {
         this.move(e, dt, s.relocate);
@@ -505,8 +508,6 @@ export class LoomSystem {
       this.move(e, dt);
       return;
     }
-    if (d < (boss ? 1 : 0.65))
-      w.hurt(boss ? 22 : ENEMIES[e.kind].contact, e.kind, false);
     e.attack -= dt;
     if (e.attack > 0) {
       if (d > (boss ? 0.8 : 3.2)) this.move(e, dt);

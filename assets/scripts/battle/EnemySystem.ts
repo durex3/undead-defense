@@ -1,3 +1,4 @@
+import { separateCrowd } from "./CrowdMovement";
 import { thunderDevice } from "./ThunderSystem";
 import { crownEscape } from "./Escape";
 import { hazardLaneContains } from "./HazardLane";
@@ -69,6 +70,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
       stepBoss(w, e, dt);
       continue;
     }
+    if(w.enemyTactics.step(e,dt))continue;
     if(w.stageId!==1&&w.stageStrategy.stepEnemy(e,dt))continue;
     if (e.freezeUntil > w.time) {
       if(e.siegeNext!==undefined)e.siegeNext+=dt;
@@ -111,35 +113,7 @@ export function stepEnemies(w: SurvivalWorld, dt: number) {
     )
       w.hurt(ENEMIES[e.kind].contact, e.kind);
   }
-  const grid = new Map<string, Enemy[]>();
-  for (const e of w.enemies) {
-    if (e.hp <= 0 || e.immovable || thunderDevice(e.kind)) continue;
-    const key = Math.floor(e.x) + "," + Math.floor(e.y);
-    const list = grid.get(key) || [];
-    list.push(e);
-    grid.set(key, list);
-  }
-  for (const e of w.enemies) {
-    if (e.hp <= 0 || e.immovable || thunderDevice(e.kind) || e.state !== "seek") continue;
-    const x = Math.floor(e.x),
-      y = Math.floor(e.y);
-    for (let a = x - 1; a <= x + 1; a++)
-      for (let b = y - 1; b <= y + 1; b++)
-        for (const o of grid.get(a + "," + b) || []) {
-          if (o.id <= e.id || o.immovable || thunderDevice(o.kind) || o.state !== "seek") continue;
-          const dx = e.x - o.x,
-            dy = e.y - o.y,
-            d = Math.hypot(dx, dy);
-          if (d < 0.65 && d > 0.001) {
-            const p = (0.65 - d) * 0.5;
-            e.x += (dx / d) * p;
-            e.y += (dy / d) * p;
-            o.x -= (dx / d) * p;
-            o.y -= (dy / d) * p;
-          }
-        }
-  }
-  if(w.stageStrategy.resolveCrowd)for(const e of w.enemies)if(e.hp>0&&!e.immovable&&e.state==="seek")w.stageStrategy.map.resolve(e,e.kind==="boss"?.65:.35);
+  separateCrowd(w,dt);
 }
 export function stepHazards(w: SurvivalWorld) {
   w.stageStrategy.clean();

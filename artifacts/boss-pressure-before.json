@@ -1,0 +1,929 @@
+{
+  "scope": "45 seconds, single boss, fixed real player position, actual collision/AI/camera. Large player HP only records pressure; no auto damage or extra punishment. Does not establish full-stage win rate.",
+  "rows": [
+    {
+      "stage": 1,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 16,
+      "firstHit": 2.133333333335031,
+      "damage": 372,
+      "casts": 18,
+      "endDistance": 0.8099999999999954,
+      "moved": 3.9900000000000047
+    },
+    {
+      "stage": 1,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 16,
+      "firstHit": 2.133333333335031,
+      "damage": 372,
+      "casts": 18,
+      "endDistance": 0.8100000000000485,
+      "moved": 3.9899999999999523
+    },
+    {
+      "stage": 1,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 16,
+      "firstHit": 2.133333333335031,
+      "damage": 372,
+      "casts": 18,
+      "endDistance": 0.8100000000000485,
+      "moved": 3.9899999999999523
+    },
+    {
+      "stage": 2,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 24,
+      "firstHit": 2.7000000000021487,
+      "damage": 540,
+      "casts": 18,
+      "endDistance": 0,
+      "moved": 4.8
+    },
+    {
+      "stage": 2,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 55,
+      "firstHit": 2.7000000000021487,
+      "damage": 1112,
+      "casts": 2,
+      "endDistance": 0,
+      "moved": 4.800000000000001
+    },
+    {
+      "stage": 2,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 55,
+      "firstHit": 2.7000000000021487,
+      "damage": 1112,
+      "casts": 2,
+      "endDistance": 0,
+      "moved": 4.800000000000001
+    },
+    {
+      "stage": 3,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 5,
+      "firstHit": 2.2000000000017508,
+      "damage": 132,
+      "casts": 10,
+      "endDistance": 2.9850000000000008,
+      "moved": 1.814999999999999
+    },
+    {
+      "stage": 3,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 5,
+      "firstHit": 2.2000000000017508,
+      "damage": 132,
+      "casts": 10,
+      "endDistance": 2.98500000000001,
+      "moved": 1.8149999999999906
+    },
+    {
+      "stage": 3,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 5,
+      "firstHit": 2.2000000000017508,
+      "damage": 134,
+      "casts": 8,
+      "endDistance": 2.98500000000001,
+      "moved": 1.8149999999999906
+    },
+    {
+      "stage": 4,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 11,
+      "firstHit": 3.366666666669346,
+      "damage": 290,
+      "casts": 2,
+      "endDistance": 0,
+      "moved": 4.8
+    },
+    {
+      "stage": 4,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 7,
+      "firstHit": 3.366666666669346,
+      "damage": 182,
+      "casts": 1,
+      "endDistance": 7.4234682609200515,
+      "moved": 3.15324634957774
+    },
+    {
+      "stage": 4,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 6,
+      "firstHit": 3.366666666669346,
+      "damage": 156,
+      "casts": 1,
+      "endDistance": 5.836666666666582,
+      "moved": 2.1545953913041496
+    },
+    {
+      "stage": 5,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 2.166666666668391,
+      "damage": 152,
+      "casts": 10,
+      "endDistance": 2.4900000000000033,
+      "moved": 2.3099999999999965
+    },
+    {
+      "stage": 5,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 2.166666666668391,
+      "damage": 152,
+      "casts": 10,
+      "endDistance": 2.4899999999999594,
+      "moved": 2.3100000000000414
+    },
+    {
+      "stage": 5,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 6,
+      "firstHit": 2.166666666668391,
+      "damage": 152,
+      "casts": 8,
+      "endDistance": 2.4899999999999594,
+      "moved": 2.3100000000000414
+    },
+    {
+      "stage": 6,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 5,
+      "firstHit": 2.5666666666687092,
+      "damage": 132,
+      "casts": 7,
+      "endDistance": 3.493333333333328,
+      "moved": 1.306666666666672
+    },
+    {
+      "stage": 6,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 2.5666666666687092,
+      "damage": 156,
+      "casts": 6,
+      "endDistance": 3.4933333333333287,
+      "moved": 1.306666666666672
+    },
+    {
+      "stage": 6,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 6,
+      "firstHit": 2.5666666666687092,
+      "damage": 156,
+      "casts": 6,
+      "endDistance": 3.4933333333333287,
+      "moved": 1.306666666666672
+    },
+    {
+      "stage": 7,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 5,
+      "firstHit": 2.5000000000019895,
+      "damage": 134,
+      "casts": 2,
+      "endDistance": 3.495000000000002,
+      "moved": 1.304999999999998
+    },
+    {
+      "stage": 7,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 2.5000000000019895,
+      "damage": 160,
+      "casts": 2,
+      "endDistance": 3.4949999999999832,
+      "moved": 1.3050000000000175
+    },
+    {
+      "stage": 7,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 6,
+      "firstHit": 2.5000000000019895,
+      "damage": 156,
+      "casts": 3,
+      "endDistance": 3.4949999999999832,
+      "moved": 1.3050000000000175
+    },
+    {
+      "stage": 8,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 4,
+      "firstHit": 5.166666666670778,
+      "damage": 104,
+      "casts": 5,
+      "endDistance": 3.855094053746714,
+      "moved": 7.874392983216657
+    },
+    {
+      "stage": 8,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 5,
+      "firstHit": 5.166666666670778,
+      "damage": 130,
+      "casts": 5,
+      "endDistance": 3.8602675200974326,
+      "moved": 3.204521880354523
+    },
+    {
+      "stage": 8,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 2,
+      "firstHit": 7.700000000006128,
+      "damage": 52,
+      "casts": 2,
+      "endDistance": 3.2690301109810984,
+      "moved": 4.999049203458442
+    },
+    {
+      "stage": 9,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 11,
+      "firstHit": 2.9333333333356677,
+      "damage": 266,
+      "casts": 3,
+      "endDistance": 1.1102230246251565e-16,
+      "moved": 4.8
+    },
+    {
+      "stage": 9,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 2.9333333333356677,
+      "damage": 152,
+      "casts": 2,
+      "endDistance": 2.6505281358738434e-14,
+      "moved": 4.799999999999994
+    },
+    {
+      "stage": 9,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 4,
+      "firstHit": 2.9333333333356677,
+      "damage": 104,
+      "casts": 1,
+      "endDistance": 2.885585437544329,
+      "moved": 2.169638391818133
+    },
+    {
+      "stage": 10,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 25,
+      "firstHit": 2.0333333333349515,
+      "damage": 566,
+      "casts": 6,
+      "endDistance": 0.7999999999999997,
+      "moved": 4
+    },
+    {
+      "stage": 10,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 18,
+      "firstHit": 6.8000000000054115,
+      "damage": 396,
+      "casts": 1,
+      "endDistance": 0.7748713939366255,
+      "moved": 4.0329675441340935
+    },
+    {
+      "stage": 10,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 17,
+      "firstHit": 6.8000000000054115,
+      "damage": 374,
+      "casts": 0,
+      "endDistance": 0.7872764051805925,
+      "moved": 4.055429574145964
+    },
+    {
+      "stage": 11,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 2.133333333335031,
+      "damage": 156,
+      "casts": 8,
+      "endDistance": 4.8,
+      "moved": 0
+    },
+    {
+      "stage": 11,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 2.133333333335031,
+      "damage": 156,
+      "casts": 8,
+      "endDistance": 4.800000000000001,
+      "moved": 0
+    },
+    {
+      "stage": 11,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 8,
+      "firstHit": 2.133333333335031,
+      "damage": 208,
+      "casts": 8,
+      "endDistance": 4.800000000000001,
+      "moved": 0
+    },
+    {
+      "stage": 12,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 4,
+      "firstHit": 3.1666666666691867,
+      "damage": 104,
+      "casts": 6,
+      "endDistance": 4.8,
+      "moved": 0
+    },
+    {
+      "stage": 12,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 2,
+      "firstHit": 3.1666666666691867,
+      "damage": 52,
+      "casts": 3,
+      "endDistance": 2.9041812302062606,
+      "moved": 6.289366177730312
+    },
+    {
+      "stage": 12,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 3,
+      "firstHit": 3.7000000000029445,
+      "damage": 78,
+      "casts": 6,
+      "endDistance": 4.800000000000001,
+      "moved": 0
+    },
+    {
+      "stage": 13,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 5,
+      "firstHit": 3.533333333336145,
+      "damage": 130,
+      "casts": 5,
+      "endDistance": 2.2242067597554356,
+      "moved": 5.563747110480791
+    },
+    {
+      "stage": 13,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 0,
+      "firstHit": null,
+      "damage": 0,
+      "casts": 5,
+      "endDistance": 7.522889185265759,
+      "moved": 3.920082507525648
+    },
+    {
+      "stage": 13,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 6,
+      "firstHit": 3.533333333336145,
+      "damage": 156,
+      "casts": 5,
+      "endDistance": 1.7323248892037915,
+      "moved": 3.1741726727160158
+    },
+    {
+      "stage": 14,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 9,
+      "firstHit": 3.5000000000027853,
+      "damage": 234,
+      "casts": 7,
+      "endDistance": 4.8,
+      "moved": 0
+    },
+    {
+      "stage": 14,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 9,
+      "firstHit": 3.4666666666694255,
+      "damage": 234,
+      "casts": 7,
+      "endDistance": 4.1,
+      "moved": 0
+    },
+    {
+      "stage": 14,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 9,
+      "firstHit": 3.5000000000027853,
+      "damage": 234,
+      "casts": 7,
+      "endDistance": 4.800000000000001,
+      "moved": 0
+    },
+    {
+      "stage": 15,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 9,
+      "firstHit": 3.4000000000027057,
+      "damage": 234,
+      "casts": 8,
+      "endDistance": 4.8,
+      "moved": 0
+    },
+    {
+      "stage": 15,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 6,
+      "firstHit": 8.466666666673405,
+      "damage": 156,
+      "casts": 8,
+      "endDistance": 4.800000000000001,
+      "moved": 0
+    },
+    {
+      "stage": 15,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 9,
+      "firstHit": 3.4000000000027057,
+      "damage": 234,
+      "casts": 8,
+      "endDistance": 4.800000000000001,
+      "moved": 0
+    },
+    {
+      "stage": 16,
+      "form": 1,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 0,
+      "firstHit": null,
+      "damage": 0,
+      "casts": 9,
+      "endDistance": 4.8,
+      "moved": 0,
+      "rejected": 0
+    },
+    {
+      "stage": 16,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 0,
+      "firstHit": null,
+      "damage": 0,
+      "casts": 9,
+      "endDistance": 4.800000000000001,
+      "moved": 0,
+      "rejected": 0
+    },
+    {
+      "stage": 16,
+      "form": 1,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 0,
+      "firstHit": null,
+      "damage": 0,
+      "casts": 9,
+      "endDistance": 4.800000000000001,
+      "moved": 0,
+      "rejected": 0
+    },
+    {
+      "stage": 16,
+      "form": 2,
+      "point": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "hits": 10,
+      "firstHit": 20.733333333349833,
+      "damage": 260,
+      "casts": 7,
+      "endDistance": 0.9580097100864039,
+      "moved": 4.445730528830198,
+      "rejected": 1
+    },
+    {
+      "stage": 16,
+      "form": 2,
+      "point": {
+        "x": 20,
+        "y": 0
+      },
+      "actual": {
+        "x": 20,
+        "y": 0
+      },
+      "hits": 0,
+      "firstHit": null,
+      "damage": 0,
+      "casts": 6,
+      "endDistance": 3.1125797447828667,
+      "moved": 5.153688639527221,
+      "rejected": 2
+    },
+    {
+      "stage": 16,
+      "form": 2,
+      "point": {
+        "x": 20,
+        "y": 24
+      },
+      "actual": {
+        "x": 20,
+        "y": 24
+      },
+      "hits": 1,
+      "firstHit": 29.600000000023556,
+      "damage": 22,
+      "casts": 7,
+      "endDistance": 2.7669740598086876,
+      "moved": 2.351286761907963,
+      "rejected": 3
+    }
+  ]
+}

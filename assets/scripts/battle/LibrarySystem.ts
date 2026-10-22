@@ -440,7 +440,7 @@ export class LibrarySystem {
     if (s.action === "clamp") return this.clamp(e);
     if (s.action === "pair") {
       return [
-        this.imprint(e, 1, w.player, w.time, 0),
+        this.imprint(e, 1, w.player, w.time, fallback ? Math.PI/2 : 0),
         this.page(e, 2, w.time + 0.6),
       ];
     }
@@ -578,7 +578,14 @@ export class LibrarySystem {
   private reject(e: Enemy) {
     this.stats.rejected++;
     this.recover(e);
-    this.state(e).relocate = this.position(
+    let fitted:Point|undefined, cost=Infinity;
+    if(isElite(e.kind))for(let i=0;i<24;i++){
+      const a=i*Math.PI/12,p={x:this.w.player.x+Math.cos(a)*3.2,y:this.w.player.y+Math.sin(a)*3.2};
+      if(Math.abs(p.x)>21.3||Math.abs(p.y)>25.3||libraryMap.blocked(p,.7))continue;
+      const probe={...e,...p,pattern:e.pattern+1,library:{...this.state(e)}};
+      if([0,1,2,3].some(pattern=>this.plan({...probe,pattern},true).every(h=>this.legal(h)))&&distance(p,e)<cost){fitted=p;cost=distance(p,e);}
+    }
+    this.state(e).relocate = fitted ?? this.position(
       Math.atan2(e.y - this.w.player.y, e.x - this.w.player.x) + Math.PI / 3,
       3.2,
     );
@@ -593,6 +600,14 @@ export class LibrarySystem {
       return false;
     }
     let valid = this.validPlan(items);
+    if(!valid&&isElite(e.kind)){
+      // Choose a complete authored orientation before announcing it. No resizing,
+      // tracking or bypass of seal/pure-dodge reachability checks.
+      search:for(const pattern of [0,1,2,3])for(const fallback of [false,true]){
+        const candidate=this.plan({...e,pattern,library:{...s}},fallback);
+        if(this.validPlan(candidate)){items=candidate;valid=true;this.stats.fallback++;break search;}
+      }
+    }
     if (
       !valid &&
       e.kind === "boss" &&
