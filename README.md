@@ -1,6 +1,6 @@
 # 余烬幸存者
 
-当前本地开发版 **0.40.2** 继续优化等待精英的侧翼站位、第十四/十五关Boss发布前选招，修复第十关精英边缘反复放置失败，详见[精英与Boss记录](docs/elite-boss-tactics-0.40.2.md)。包含[0.40.1远程与群体移动](docs/enemy-movement-0.40.1.md)、[0.40.0敌人战术](docs/ai-tactics-0.40.0.md)与[0.39.0结构整理](docs/architecture-refactor-0.39.0.md)。尚未提交远程或上传后台；微信后台开发版仍为 **0.38.3**。游戏已有16关、14武器系列。以下旧版本记录按历史保留。
+当前本地开发版 **0.40.2** 继续优化等待精英的侧翼站位、第十四/十五关Boss发布前选招，修复第十关精英边缘反复放置失败，详见[精英与Boss记录](docs/elite-boss-tactics-0.40.2.md)。包含[0.40.1远程与群体移动](docs/enemy-movement-0.40.1.md)、[0.40.0敌人战术](docs/ai-tactics-0.40.0.md)与[0.39.0结构整理](docs/architecture-refactor-0.39.0.md)。已提交并推送远程，微信后台开发版已上传 **0.40.2**（3,123,053字节），未提审或正式发布；见[交付记录](docs/release-0.40.2.md)。游戏已有16关、14武器系列。以下旧版本记录按历史保留。
 
 日常检查：`npm run verify`；完整本地验收：`npm run verify -- --full`。内容接入检查、共享目录锁与报告见[验证工作流](docs/verification.md)。
 
