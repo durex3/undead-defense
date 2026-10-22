@@ -1,0 +1,33 @@
+{
+  "mode": "standard",
+  "startedAt": "2026-10-22T11:02:15.552Z",
+  "ok": true,
+  "steps": [
+    {
+      "name": "类型检查",
+      "ok": true,
+      "seconds": 2.68
+    },
+    {
+      "name": "准备回归模块",
+      "ok": true,
+      "seconds": 1.724
+    },
+    {
+      "name": "内容完整性",
+      "ok": true,
+      "seconds": 0.482
+    },
+    {
+      "name": "全部回归测试",
+      "ok": true,
+      "seconds": 6.227
+    },
+    {
+      "name": "架构行为快照",
+      "ok": true,
+      "seconds": 0.205
+    }
+  ],
+  "finishedAt": "2026-10-22T11:02:26.870Z"
+}

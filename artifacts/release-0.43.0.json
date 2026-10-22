@@ -1,0 +1,27 @@
+{
+  "version": "0.43.0",
+  "uploadedAt": "2026-10-22T11:05:33.053Z",
+  "channel": "WeChat development version",
+  "submittedForReview": false,
+  "published": false,
+  "sourceCommit": "db1573c07eb0b925d189754374363e3ac784d1a5",
+  "githubCodeCommit": "aa207e0091acac061d2054df70799bb4679f3017",
+  "sourceTree": "6d2c4415bf354de97efcea5b22f19cb74ba4c210",
+  "runtimeSourceSha256": "b17e34b4c698a064be62e04897d258619a54f35c383b035356bef3e4ce57f32d",
+  "runtimeBundleSha256": "bdb6b393a4c84b2016be14c9fdfb6c663ca878a721af8a56850d89fb1d3d78e8",
+  "projectConfigSha256": "dfb9d8cc01db6575d6c307cf8d4f907c4623a97f2ff925a18094841604919dc9",
+  "uploadSize": 3230276,
+  "stages": 19,
+  "stage20": "design only",
+  "weaponFamilies": 14,
+  "weaponForms": 35,
+  "achievements": 34,
+  "tests": {
+    "total": 759,
+    "passed": 758,
+    "skipped": 1,
+    "failed": 0
+  },
+  "fullVerification": "artifacts/verification/full.json",
+  "preReleaseVerification": "artifacts/verification/standard.json"
+}

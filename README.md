@@ -1,12 +1,12 @@
 # 余烬幸存者
 
-当前本地开发版 **0.43.0** 已开放第十九关「双阙猎庭」，详细内容及验证见[开发记录](docs/stage-19-implementation.md)；微信后台开发版仍为 **0.40.2**，本批未提交、推送或上传。此前AI优化见[0.40.2](docs/elite-boss-tactics-0.40.2.md)、[0.40.1](docs/enemy-movement-0.40.1.md)、[0.40.0](docs/ai-tactics-0.40.0.md)，结构整理见[0.39.0](docs/architecture-refactor-0.39.0.md)。以下旧版本记录按历史保留。
+当前本地开发版 **0.43.0** 已开放第十九关「双阙猎庭」，详细内容及验证见[开发记录](docs/stage-19-implementation.md)；已提交并推送 GitHub，微信开发版 **0.43.0** 已上传成功；见[交付记录](docs/release-0.43.0.md)，未提审或正式发布。此前AI优化见[0.40.2](docs/elite-boss-tactics-0.40.2.md)、[0.40.1](docs/enemy-movement-0.40.1.md)、[0.40.0](docs/ai-tactics-0.40.0.md)，结构整理见[0.39.0](docs/architecture-refactor-0.39.0.md)。以下旧版本记录按历史保留。
 
 第十七关「逆痕刑场」包含两形态复活、实体轨迹追击、双精英、两项成就及圣剑精良/稀有进阶；见[开发记录](docs/stage-17-implementation.md)。
 
 第十九关「双阙猎庭」已实现真实双体Boss、两来源配合、两种独猎继承、两成就及幽灵精良/稀有进阶。当前共19关、14系列、35形态、34成就；见[设计稿](docs/stage-19-twingate.md)与开发记录。[后续规则](docs/level-design-rules.md)已同步实施约束。
 
-第十九关的[设计与静态白盒](docs/stage-19-twingate.md)已落地为本地0.43.0，包含近远两体协同、同一场生命预算、击杀顺序改变独猎打法，配套两成就与幽灵精良/稀有。验证范围和证据见[实施记录](docs/stage-19-implementation.md)，未上传。
+第十九关的[设计与静态白盒](docs/stage-19-twingate.md)已落地为本地0.43.0，包含近远两体协同、同一场生命预算、击杀顺序改变独猎打法，配套两成就与幽灵精良/稀有。验证范围和证据见[实施记录](docs/stage-19-implementation.md)，已随0.43.0上传微信开发后台。
 
 第二十关[「锁锚铸狱」设计](docs/stage-20-chainforge.md)与静态白盒已完成：诱导链锚撞桩、单生命Boss四组招式、两项成就及幽灵史诗候选。仅设计，尚未开发、开放或上传；本地仍0.43.0/19关。
 
